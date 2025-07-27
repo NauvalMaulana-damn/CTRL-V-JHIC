@@ -1,0 +1,50 @@
+@import "tailwindcss";
+
+.nav-item {
+    cursor: pointer;
+    width: max-content;
+    position: relative;
+}
+
+.nav-item::after {
+    content: "";
+    position: absolute;
+    bottom: -1px;
+    height: 1.75px;
+    width: 100%;
+    left: 0;
+    transition: 0.3s;
+    transition-timing-function: ease-in-out;
+    transform: scaleX(0);
+}
+
+.nav-item:hover::after {
+    transform: scaleX(1);
+}
+
+@keyframes up-animation {
+    from {
+        opacity: 0;
+        transform: translateX(-150px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-up {
+    animation-name: up-animation;
+    animation-timing-function: linear;
+    animation-timeline: view();
+    animation-range: entry 0% cover 10%;
+    animation-iteration-count: 1;
+}
+
+.hero-img {
+    -webkit-mask-image: url(assets/hero-one-tp.jpg);
+    mask-image: url(assets/hero-one-tp.jpg);
+    -webkit-mask-size: cover;
+    mask-size: cover;
+}

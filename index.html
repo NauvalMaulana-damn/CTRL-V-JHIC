@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latihan Tailwind CSS</title>
+    <script src="scripts/browser@4.js"></script>
+    <link rel="stylesheet" href="scripts/style.css">
+    <link rel="shortcut icon" href="assets/skariga-favicon.png" type="image/x-icon">
+</head>
+
+<body class="bg-gray-100 font-medium">
+    <noscript>Sorry, your browser is incompatible. Please activate Javascript.</noscript>
+
+    <nav class="fixed w-full transition-colors duration-300" id="mainNav">
+        <script>
+            window.addEventListener('scroll', () => {
+                const nav = document.getElementById('mainNav');
+                if (window.scrollY > 50) {
+                    nav.classList.add('bg-white', 'shadow');
+                    nav.classList.remove('bg-transparent');
+                } else {
+                    nav.classList.add('bg-transparent');
+                    nav.classList.remove('bg-white', 'shadow');
+                }
+            });
+        </script>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <a href="index.html" title="SMK PGRI 3 MALANG" class="flex-shrink-0 w-24">
+                    <img src="assets/skariga-720px-transparent.png" alt="Logo" class="w-full h-auto">
+                </a>
+
+                <!-- Nav Links -->
+                <div class="hidden sm:flex space-x-8 items-center" id="nav-item">
+                    <script>
+                        const navItem = document.getElementById('nav-item');
+
+                        navItem.classList.add('text-white');
+                        window.addEventListener('DOMContentLoaded', () => {
+                        });
+
+                        window.addEventListener('scroll', () => {
+                            if (window.scrollY > 50) {
+                                navItem.classList.add('text-gray-700');
+                                navItem.classList.remove('text-white');
+                            } else {
+                                navItem.classList.add('text-white');
+                                navItem.classList.remove('text-gray-700');
+                            }
+                        });
+                    </script>
+                    <a href="#" class="nav-item hover:text-orange-600 after:bg-orange-600 transition">Beranda</a>
+                    <a href="#" class="nav-item hover:text-blue-600 after:bg-blue-600 transition">Jurusan</a>
+                    <a href="#" class="nav-item hover:text-orange-600 after:bg-orange-600 transition">Ekstrakurikuler</a>
+                    <a href="#" class="nav-item hover:text-blue-600 after:bg-blue-600 transition">Prestasi</a>
+                    <a href="#" class="nav-item hover:text-orange-600 after:bg-orange-600 transition">Pendaftaran</a>
+                </div>
+
+                <!-- Hamburger Menu -->
+                <button type="button" class="sm:hidden p-0.5 hover:cursor-pointer" aria-label="Open menu" id="hamburgerBtn">
+                    <svg width="30" height="30" viewBox="0 0 100 80" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="100" height="10"></rect>
+                        <rect y="30" width="100" height="10"></rect>
+                        <rect y="60" width="100" height="10"></rect>
+                    </svg>
+                </button>
+                <!-- Mobile Menu -->
+                <div id="mobileMenu" class="fixed top-0 left-0 w-full h-full bg-white z-50 flex flex-col items-center justify-center space-y-8 text-lg transition-transform duration-300 transform -translate-y-full sm:hidden">
+                    <a href="#" class="nav-item hover:text-orange-600 after:bg-orange-600 transition">Beranda</a>
+                    <a href="#" class="nav-item hover:text-blue-600 after:bg-blue-600 transition">Jurusan</a>
+                    <a href="#" class="nav-item hover:text-orange-600 after:bg-orange-600 transition">Ekstrakurikuler</a>
+                    <a href="#" class="nav-item hover:text-blue-600 after:bg-blue-600 transition">Prestasi</a>
+                    <a href="#" class="nav-item hover:text-orange-600 after:bg-orange-600 transition">Pendaftaran</a>
+                    <button type="button" id="closeMenu" class="mt-8 text-gray-500 hover:text-gray-900 text-2xl hover:cursor-pointer" aria-label="Close menu">&times;</button>
+                </div>
+                <script>
+                    const hamburgerBtn = document.getElementById('hamburgerBtn');
+                    const mobileMenu = document.getElementById('mobileMenu');
+                    const closeMenu = document.getElementById('closeMenu');
+
+                    hamburgerBtn.addEventListener('click', () => {
+                        mobileMenu.classList.remove('-translate-y-full');
+                        mobileMenu.classList.add('translate-y-0');
+                    });
+
+                    closeMenu.addEventListener('click', () => {
+                        mobileMenu.classList.remove('translate-y-0');
+                        mobileMenu.classList.add('-translate-y-full');
+                    });
+
+                    // Optional: Close menu when clicking outside
+                    mobileMenu.addEventListener('click', function(e) {
+                        if (e.target === mobileMenu) {
+                            mobileMenu.classList.remove('translate-y-0');
+                            mobileMenu.classList.add('-translate-y-full');
+                        }
+                    });
+                </script>
+            </div>
+        </div>
+    </nav>
+
+    <div class="w-full mx-auto -z-10">
+        <img src="assets/smkpgri3-sekolah.jpg" alt="Sekolah SMK PGRI 3 Malang" class="w-full h-[200px] sm:h-[350px] lg:h-[calc(100vh)] object-cover">
+    </div>
+
+    <section class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10">
+        <div class="flex flex-col text-center items-center mb-8 sm:items-start gap-6 sm:gap-12">
+            <!-- content goes here -->
+        </div>
+    </section>
+</body>
+
+</html>
+
+<!-- add changing text
+add text to the image
+refine image resolutions
+translate the design into the codes
+animation while scroll
+color palette -->
