@@ -402,8 +402,8 @@
                     <div class="flex flex-col lg:flex-row items-stretch gap-6 justify-center">
                         <!-- Habit 1 -->
                         <div class="w-full lg:w-1/3 habit-card bg-gray-300 p-5 flex flex-col">
-                            <img class="w-full h-40 md:h-48 object-cover rounded-lg mb-4"
-                                src="https://placehold.co/403x308" alt="Cek Kelengkapan Seragam">
+                            <img class="w-full h-52 md:h-48 object-cover rounded-lg mb-4"
+                                src="{{ asset('assets/cekkelengkapan.png') }}" alt="Cek Kelengkapan Seragam">
                             <h3 class="text-xl md:text-2xl font-bold text-center mb-3">Cek Kelengkapan Seragam</h3>
                             <p class="text-base text-center">
                                 Sebelum memasuki sekolah, siswa wajib menunjukan kelengkapan seragam
@@ -412,8 +412,8 @@
 
                         <!-- Habit 2 (Center - Larger) -->
                         <div class="w-full lg:w-2/5 habit-card bg-gray-400 p-5 flex flex-col">
-                            <img class="w-full h-48 md:h-56 object-cover rounded-lg mb-4"
-                                src="https://placehold.co/578x448" alt="Jalur Hijau">
+                            <img class="w-full h-56 md:h-56 object-cover rounded-lg mb-4"
+                                src="{{ asset('assets/jalur_hijau.png') }}" alt="Jalur Hijau">
                             <h3 class="text-2xl md:text-3xl font-bold text-center mb-3">Jalur Hijau</h3>
                             <p class="text-base md:text-lg text-center">
                                 SKARIGA selalu membiasakan warga sekolah untuk berjalan di jalur hijau, seperti yang
@@ -423,8 +423,8 @@
 
                         <!-- Habit 3 -->
                         <div class="w-full lg:w-1/3 habit-card bg-gray-300 p-5 flex flex-col">
-                            <img class="w-full h-40 md:h-48 object-cover rounded-lg mb-4"
-                                src="https://placehold.co/403x308" alt="Mengaji Pagi">
+                            <img class="w-full h-52 md:h-48 object-cover rounded-lg mb-4"
+                                src="{{ asset('assets/mengaji_pagi.png') }}" alt="Mengaji Pagi">
                             <h3 class="text-xl md:text-2xl font-bold text-center mb-3">Mengaji Pagi</h3>
                             <p class="text-base text-center">
                                 Bagi siswa muslim, SKARIGA mengadakan mengaji pagi bersama, seperti membaca juz amma,
