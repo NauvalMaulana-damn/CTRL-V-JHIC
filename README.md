@@ -11,7 +11,7 @@
 <p align="center">
   <a href="https://laravel.com/"><img src="https://img.shields.io/badge/Laravel-12.21.0-red?logo=laravel" alt="Laravel"></a>
   <a href="https://www.php.net/"><img src="https://img.shields.io/badge/PHP-8.2.12-blue?logo=php" alt="PHP"></a>
-  <a href="https://getbootstrap.com/"><img src="https://img.shields.io/badge/Bootstrap-5-purple?logo=bootstrap" alt="Bootstrap"></a>
+  <a href="https://tailwindcss.com/"><img src="https://img.shields.io/badge/Tailwind-4.1-blue?logo=tailwind" alt="Tailwind"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-green" alt="License"></a>
 </p>
 
@@ -41,7 +41,7 @@ Website ini adalah website sekolah yang Informatif dan Kreatif untuk menampilkan
 ## 🛠️ Teknologi yang Digunakan
 
 - **Backend:** PHP 8.2.12, Laravel 12.21.0  
-- **Frontend:** Bootstrap 5, Blade Templating  
+- **Frontend:** Tailwind 4.1, Blade Templating  
 - **Database:** SQLite  
 - **Keamanan:** Enkripsi Bcrypt  
 - **Hosting:** Cloud Computing  
