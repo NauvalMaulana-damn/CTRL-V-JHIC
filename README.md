@@ -1,61 +1,105 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+<!--<p align="center">
+  <img src="assets/banner.png" alt="Ab.sen Banner">
+</p>-->
 
 <p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
+  <a href="#" target="_blank">
+    <img src="public/assets/skariga logo 1.png" width="400" alt="Logo SMK PGRI 3 MALANG">
+  </a>
 </p>
 
-## About Laravel
+<p align="center">
+  <a href="https://laravel.com/"><img src="https://img.shields.io/badge/Laravel-12.21.0-red?logo=laravel" alt="Laravel"></a>
+  <a href="https://www.php.net/"><img src="https://img.shields.io/badge/PHP-8.2.12-blue?logo=php" alt="PHP"></a>
+  <a href="https://getbootstrap.com/"><img src="https://img.shields.io/badge/Bootstrap-5-purple?logo=bootstrap" alt="Bootstrap"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-green" alt="License"></a>
+</p>
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+<h2 align="center">📌 CTRL + V — Membangun Website Sekolah yang Informatif dan Kreatif</h2>
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+<p align="center">
+  Presensi kapan saja, di mana saja, dengan verifikasi wajah dan video untuk kehadiran yang lebih autentik.
+</p>
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+---
 
-## Learning Laravel
+## 📖 Tentang Website Ini
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+Website ini adalah website sekolah yang Informatif dan Kreatif untuk menampilkan informasi, berita, dan konten terkait sekolah. Website ini dirancang untuk memberikan pengalaman pengguna yang menarik dan mudah dinavigasi. Website ini memiliki fitur-fitur seperti halaman beranda, halaman informasi, halaman berita, halaman galeri, dan halaman kontak. Website ini juga responsif, sehingga dapat diakses dengan baik di berbagai perangkat, termasuk desktop, tablet, dan ponsel. Dengan desain yang menarik dan konten yang relevan, website ini bertujuan untuk meningkatkan komunikasi antara sekolah, siswa, orang tua, dan mitra-mitra diluar sana.
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+---
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## ✨ Fitur Utama
 
-## Laravel Sponsors
+- 📸 **Verifikasi Wajah** dengan unggah foto & video minimal 3 detik.  
+- 🌐 **Akses Web** dari perangkat apa saja yang terhubung internet.  
+- 📊 **Laporan Kehadiran** otomatis & riwayat presensi.  
+- 🔒 **Keamanan Data** dengan enkripsi & kontrol akses.
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+---
 
-### Premium Partners
+## 🛠️ Teknologi yang Digunakan
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+- **Backend:** PHP 8.2.12, Laravel 12.21.0  
+- **Frontend:** Bootstrap 5, Blade Templating  
+- **Database:** SQLite  
+- **Keamanan:** Enkripsi Bcrypt  
+- **Hosting:** Cloud Computing  
 
-## Contributing
+---
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+## 🚀 Instalasi
 
-## Code of Conduct
+```bash
+# Clone repository
+git clone https://github.com/Marvellbrazil/Ab.sen.git
+cd Ab.sen
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+# Install dependencies
+composer install
+npm install && npm run dev
 
-## Security Vulnerabilities
+# Setup environment
+php artisan key:generate
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+# Konfigurasi database di file .env
+php artisan migrate --seed
 
-## License
+# Jalankan Vite + Laravel Mix untuk frontend
+npm run build
+npm run dev
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+# Jalankan server
+php artisan serve
+
+```
+
+---
+
+## 📟 Tambahan
+
+```bash
+# Untuk membuat password yang di-hash
+# Dengan menggunakan aplikasi built-in project ini
+python -u "c:\xampp\htdocs\Ab.sen\Main\scripts\toolbcrypt.py"
+
+```
+
+---
+
+### 📲 Sosial Media
+
+<p align="left">
+  <a href="https://www.instagram.com/skariga_official/" target="_blank">
+    <img src="https://img.shields.io/badge/Instagram-Visit%20Profile-E4405F?logo=instagram&logoColor=white&labelColor=E4405F&color=808080&labelTextColor=white&colorText=E4405F" alt="Instagram">
+  </a>
+</p>
+
+---
+
+## 📄 Lisensi
+
+Aplikasi ini dirilis di bawah lisensi **MIT License**. Silakan lihat file <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-green" alt="License"></a> untuk informasi lebih lanjut.
+
+---
+<p align="center" style="font-size: 60px;">Happy Coding! :D 🎉</p>
