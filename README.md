@@ -11,7 +11,7 @@
 <p align="center">
   <a href="https://laravel.com/"><img src="https://img.shields.io/badge/Laravel-12.21.0-red?logo=laravel" alt="Laravel"></a>
   <a href="https://www.php.net/"><img src="https://img.shields.io/badge/PHP-8.2.12-blue?logo=php" alt="PHP"></a>
-  <a href="https://tailwindcss.com/"><img src="https://img.shields.io/badge/Tailwind-4.1-blue?logo=tailwind" alt="Tailwind"></a>
+  <a href="https://tailwindcss.com/"><img src="https://img.shields.io/badge/Tailwind%20CSS-4.1-blue?logo=tailwindcss&logoColor=white" alt="Tailwind"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-green" alt="License"></a>
 </p>
 
