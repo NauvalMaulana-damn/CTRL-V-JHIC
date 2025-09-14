@@ -9,6 +9,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
     <script>
     tailwind.config = {
         theme: {
@@ -179,7 +181,7 @@
         <div class="container mx-auto px-4 py-3">
             <div class="flex items-center justify-between">
                 <div class="flex items-center">
-                    <img class="w-16 h-12 md:w-24 md:h-16 object-contain" src="https://placehold.co/115x82"
+                    <img class="w-16 h-12 md:w-24 md:h-16 object-contain" src="{{ asset('assets/skariga logo 1.png') }}"
                         alt="Logo SMK PGRI 3 Malang">
                     <div class="ml-3 md:ml-4">
                         <div class="text-[#313131] text-base md:text-xl font-medium">SMK PGRI 3 MALANG</div>
@@ -228,14 +230,27 @@
             <!-- Hero Section -->
             <section
                 class="relative w-full h-[40vh] sm:h-[50vh] md:h-[60vh] lg:h-[70vh] overflow-hidden rounded-xl mb-8 animate-fade-in">
-                <img class="w-full h-full object-cover" src="https://placehold.co/1942x956" alt="SMK PGRI 3 Malang">
-                <div class="absolute bottom-0 left-0 w-full h-1/2 gradient-overlay"></div>
-                <div class="absolute bottom-6 left-5 md:left-8 text-white max-w-4xl">
-                    <h1 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-2">PARA SISWA MENJUARAI LKS
-                        DIKMEN JATIM XXXII</h1>
-                    <p class="text-base sm:text-lg md:text-xl lg:text-2xl font-bold">MEREKA MENJUARAI BERBAGAI BIDANG
-                        LOMBA DALAM LKS DIKMEN JATIM XXXII</p>
+                <div class="swiper mySwiper rounded-xl overflow-hidden">
+                    <div class="swiper-wrapper">
+                        @foreach ([1, 2, 3] as $i)
+                        <section class="swiper-slide relative w-full h-[40vh] sm:h-[50vh] md:h-[60vh] lg:h-[70vh]">
+                            <img class="w-full h-full object-cover"
+                                src="https://placehold.co/1942x956?text=Slide+{{ $i }}" alt="Slide {{ $i }}">
+                            <div class="absolute bottom-0 left-0 w-full h-1/2 gradient-overlay"></div>
+                            <div class="absolute bottom-6 left-5 md:left-8 text-white max-w-4xl">
+                                <h1 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-2">Judul Slide
+                                    {{ $i }}</h1>
+                                <p class="text-base sm:text-lg md:text-xl lg:text-2xl font-bold">Deskripsi konten untuk
+                                    slide {{ $i }}</p>
+                            </div>
+                        </section>
+                        @endforeach
+                    </div>
+
+                    <!-- Pagination -->
+                    <div class="swiper-pagination"></div>
                 </div>
+
             </section>
 
             <!-- News Ticker -->
@@ -298,7 +313,7 @@
             </div>
 
             <!-- Department Sections -->
-            <div class="py-6 md:py-10 animate-fade-in delay-200">
+            <section class="py-6 md:py-10 animate-fade-in delay-200">
                 <!-- Elektro Department -->
                 <div class="flex flex-col lg:flex-row gap-6 mb-12">
                     <div class="w-full lg:w-1/2 department-card bg-customRed p-5 md:p-6 relative overflow-hidden">
@@ -391,7 +406,7 @@
                             src="https://placehold.co/512x512" alt="Decoration">
                     </div>
                 </div>
-            </div>
+            </section>
 
             <!-- Student Habits Section -->
             <section class="bg-gray-200 py-12 rounded-xl mt-8 animate-fade-in delay-300">
@@ -494,7 +509,7 @@
         document.getElementById('loading').style.opacity = '0';
         setTimeout(function() {
             document.getElementById('loading').style.display = 'none';
-        }, 500);
+        }, 1);
 
         // Initialize components
         initMobileMenu();
@@ -549,7 +564,22 @@
             this.style.boxShadow = '0px 10px 30px rgba(0, 0, 0, 0.25)';
         });
     });
+
+    // Swiper JS Initializeconst swiper = new Swiper('.mySwiper', {
+    const swiper = new Swiper('.mySwiper', {
+        loop: true,
+        autoplay: {
+            delay: 3500,
+            disableOnInteraction: false,
+        },
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+    });
     </script>
+    <!-- Swiper JS -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 </body>
 
 </html>

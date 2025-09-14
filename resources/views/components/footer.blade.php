@@ -45,21 +45,21 @@
             <div class="w-full md:w-1/4">
                 <h3 class="text-[#B9B9B9] text-xl font-bold mb-4">Ikuti Kami</h3>
                 <div class="flex space-x-4 mb-6">
-                    <a href="#"
+                    <a href="https://www.facebook.com/SKARIGA/?locale=id_ID"
                         class="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-blue-700 transition">
                         <i class="fab fa-facebook-f"></i>
                     </a>
-                    <a href="#"
+                    <a href="https://www.instagram.com/skariga_official/"
                         class="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-customInsta transition">
                         <i class="fab fa-instagram"></i>
                     </a>
-                    <a href="#"
+                    <a href="https://www.youtube.com/channel/UCGGVdb_Wh1lvn8HIoMKdiLA"
                         class="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-red-600 transition">
                         <i class="fab fa-youtube"></i>
                     </a>
-                    <a href="#"
+                    <a href="https://x.com/smkpgri3mlg"
                         class="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-blue-400 transition">
-                        <i class="fab fa-twitter"></i>
+                        <i class="fab fa-x-twitter"></i>
                     </a>
                 </div>
 
