@@ -17,8 +17,8 @@
             extend: {
                 colors: {
                     customRed: '#FD5353',
-                    customOrange: '#FF8F4D',
-                    customBlue: '#4694FF',
+                    customOrange: '#E17626',
+                    customBlue: '#2492D1',
                     customPink: '#FD467E',
                     customInsta: '#E1306C',
                     darkGray: '#222325',
@@ -166,7 +166,7 @@
     <div id="loading"
         class="fixed inset-0 bg-white z-50 flex items-center justify-center transition-opacity duration-500">
         <div class="text-center">
-            <div class="w-16 h-16 border-4 border-t-customRed border-gray-200 rounded-full animate-spin mx-auto"></div>
+            <div class="w-16 h-16 border-4 border-t-customOrange border-gray-200 rounded-full animate-spin mx-auto"></div>
             <p class="mt-4 text-lg font-semibold">SMK PGRI 3 Malang</p>
         </div>
     </div>
@@ -192,11 +192,11 @@
                 <!-- Desktop Navigation -->
                 <nav class="hidden md:block">
                     <ul class="flex space-x-4 lg:space-x-8 text-[#313131] text-base md:text-lg font-medium">
-                        <li><a href="#" class="hover:text-customRed transition">Beranda</a></li>
-                        <li><a href="#prestasi" class="hover:text-customRed transition">Prestasi</a></li>
-                        <li><a href="#program" class="hover:text-customRed transition">Program</a></li>
-                        <li><a href="#alumni" class="hover:text-customRed transition">Alumni</a></li>
-                        <li><a href="#pendaftaran" class="hover:text-customRed transition">Pendaftaran</a></li>
+                        <li><a href="#" class="hover:text-customOrange transition">Beranda</a></li>
+                        <li><a href="#prestasi" class="hover:text-customOrange transition">Prestasi</a></li>
+                        <li><a href="#program" class="hover:text-customOrange transition">Program</a></li>
+                        <li><a href="#alumni" class="hover:text-customOrange transition">Alumni</a></li>
+                        <li><a href="#pendaftaran" class="hover:text-customOrange transition">Pendaftaran</a></li>
                     </ul>
                 </nav>
 
@@ -213,11 +213,11 @@
             <!-- Mobile Navigation -->
             <div class="nav-menu mt-2 md:hidden" id="navMenu">
                 <ul class="space-y-2 pb-4 text-[#313131] text-lg font-medium">
-                    <li><a href="#" class="block py-2 hover:text-customRed transition">Beranda</a></li>
-                    <li><a href="#prestasi" class="block py-2 hover:text-customRed transition">Prestasi</a></li>
-                    <li><a href="#program" class="block py-2 hover:text-customRed transition">Program</a></li>
-                    <li><a href="#alumni" class="block py-2 hover:text-customRed transition">Alumni</a></li>
-                    <li><a href="#pendaftaran" class="block py-2 hover:text-customRed transition">Pendaftaran</a></li>
+                    <li><a href="#" class="block py-2 hover:text-customOrange transition">Beranda</a></li>
+                    <li><a href="#prestasi" class="block py-2 hover:text-customOrange transition">Prestasi</a></li>
+                    <li><a href="#program" class="block py-2 hover:text-customOrange transition">Program</a></li>
+                    <li><a href="#alumni" class="block py-2 hover:text-customOrange transition">Alumni</a></li>
+                    <li><a href="#pendaftaran" class="block py-2 hover:text-customOrange transition">Pendaftaran</a></li>
                 </ul>
             </div>
         </div>
@@ -316,7 +316,7 @@
             <section class="py-6 md:py-10 animate-fade-in delay-200">
                 <!-- Elektro Department -->
                 <div class="flex flex-col lg:flex-row gap-6 mb-12">
-                    <div class="w-full lg:w-1/2 department-card bg-customRed p-5 md:p-6 relative overflow-hidden">
+                    <div class="w-full lg:w-1/2 department-card bg-customOrange p-5 md:p-6 relative overflow-hidden">
                         <div class="info-card bg-white p-2 mb-5 md:mb-6">
                             <img class="w-full h-auto rounded-2xl" src="https://placehold.co/868x407"
                                 alt="Elektro Department">
@@ -338,7 +338,7 @@
                     </div>
 
                     <!-- Otomotif Department -->
-                    <div class="w-full lg:w-1/2 department-card bg-customOrange p-5 md:p-6 relative overflow-hidden">
+                    <div class="w-full lg:w-1/2 department-card bg-customRed p-5 md:p-6 relative overflow-hidden">
                         <div class="info-card bg-white p-2 mb-5 md:mb-6">
                             <img class="w-full h-auto rounded-2xl" src="https://placehold.co/868x407"
                                 alt="Otomotif Department">
@@ -455,29 +455,29 @@
         <!-- News Sidebar (Not fixed) -->
         <aside class="w-full lg:w-1/4 lg:pl-8 mt-8 lg:mt-0 animate-fade-in delay-400">
             <div class="bg-white p-5 rounded-xl shadow-md">
-                <h3 class="font-bold text-xl mb-4 border-b-2 border-customRed pb-2">Berita Terbaru</h3>
+                <h3 class="font-bold text-xl mb-4 border-b-2 border-customOrange pb-2">Berita Terbaru</h3>
                 <div class="space-y-6">
                     <div class="group cursor-pointer">
                         <img class="w-full h-40 object-cover rounded-lg mb-2 group-hover:opacity-90 transition"
                             src="https://placehold.co/361x203" alt="News Image">
-                        <p class="text-sm font-semibold group-hover:text-customRed transition">Guru Turut Jadi Peserta
+                        <p class="text-sm font-semibold group-hover:text-customOrange transition">Guru Turut Jadi Peserta
                             dalam Perkemahan Pramuka Penegak</p>
                     </div>
                     <div class="group cursor-pointer">
                         <img class="w-full h-40 object-cover rounded-lg mb-2 group-hover:opacity-90 transition"
                             src="https://placehold.co/361x203" alt="News Image">
-                        <p class="text-sm font-semibold group-hover:text-customRed transition">Sambut Hari Kemerdekaan,
+                        <p class="text-sm font-semibold group-hover:text-customOrange transition">Sambut Hari Kemerdekaan,
                             SKARIGA Gelar Jalan Sehat dan Aneka Lomba Penuh Semangat</p>
                     </div>
                     <div class="group cursor-pointer">
                         <img class="w-full h-40 object-cover rounded-lg mb-2 group-hover:opacity-90 transition"
                             src="https://placehold.co/361x195" alt="News Image">
-                        <p class="text-sm font-semibold group-hover:text-customRed transition">Pusdikarhanud Galakkan
+                        <p class="text-sm font-semibold group-hover:text-customOrange transition">Pusdikarhanud Galakkan
                             Gerakan Cinta Sekolah untuk Bentuk Karakter Siswa</p>
                     </div>
                 </div>
                 <button
-                    class="mt-6 w-full bg-customRed text-white py-2 rounded-lg font-medium hover:bg-red-600 transition">
+                    class="mt-6 w-full bg-customOrange text-white py-2 rounded-lg font-medium hover:bg-customBlue transition">
                     Lihat Berita Lainnya
                 </button>
             </div>
