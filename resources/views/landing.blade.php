@@ -130,7 +130,7 @@
     @keyframes fadeIn {
         from {
             opacity: 0;
-            transform: translateY(20px);
+            transform: translateY(30px);
         }
 
         to {
@@ -140,7 +140,7 @@
     }
 
     .animate-fade-in {
-        animation: fadeIn 0.8s ease forwards;
+        animation: fadeIn 1s ease forwards;
     }
 
     .delay-100 {
@@ -166,7 +166,8 @@
     <div id="loading"
         class="fixed inset-0 bg-white z-50 flex items-center justify-center transition-opacity duration-500">
         <div class="text-center">
-            <div class="w-16 h-16 border-4 border-t-customOrange border-gray-200 rounded-full animate-spin mx-auto"></div>
+            <div class="w-16 h-16 border-4 border-t-customOrange border-gray-200 rounded-full animate-spin mx-auto">
+            </div>
             <p class="mt-4 text-lg font-semibold">SMK PGRI 3 Malang</p>
         </div>
     </div>
@@ -217,7 +218,8 @@
                     <li><a href="#prestasi" class="block py-2 hover:text-customOrange transition">Prestasi</a></li>
                     <li><a href="#program" class="block py-2 hover:text-customOrange transition">Program</a></li>
                     <li><a href="#alumni" class="block py-2 hover:text-customOrange transition">Alumni</a></li>
-                    <li><a href="#pendaftaran" class="block py-2 hover:text-customOrange transition">Pendaftaran</a></li>
+                    <li><a href="#pendaftaran" class="block py-2 hover:text-customOrange transition">Pendaftaran</a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -226,25 +228,21 @@
     <!-- Main content with news sidebar -->
     <div class="flex flex-col lg:flex-row container mx-auto px-4 py-6">
         <!-- Main content -->
-        <main class="w-full lg:w-3/4">
+        <main class="w-full lg:w-3/4 animate-fade-in">
             <!-- Hero Section -->
             <section
-                class="relative w-full h-[40vh] sm:h-[50vh] md:h-[60vh] lg:h-[70vh] overflow-hidden rounded-xl mb-8 animate-fade-in">
+                class="relative w-full h-[40vh] sm:h-[50vh] md:h-[60vh] lg:h-[70vh] overflow-hidden rounded-xl mb-8">
                 <div class="swiper mySwiper rounded-xl overflow-hidden">
                     <div class="swiper-wrapper">
-                        @foreach ([1, 2, 3] as $i)
                         <section class="swiper-slide relative w-full h-[40vh] sm:h-[50vh] md:h-[60vh] lg:h-[70vh]">
                             <img class="w-full h-full object-cover"
-                                src="https://placehold.co/1942x956?text=Slide+{{ $i }}" alt="Slide {{ $i }}">
+                                src="{{ asset('assets/head_news_1.png') }}" alt="head_news_1.png">
                             <div class="absolute bottom-0 left-0 w-full h-1/2 gradient-overlay"></div>
                             <div class="absolute bottom-6 left-5 md:left-8 text-white max-w-4xl">
-                                <h1 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-2">Judul Slide
-                                    {{ $i }}</h1>
-                                <p class="text-base sm:text-lg md:text-xl lg:text-2xl font-bold">Deskripsi konten untuk
-                                    slide {{ $i }}</p>
+                                <h1 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-2">PARA SISWA MENJUARAI LKS DIKMEN JATIM XXXII</h1>
+                                <p class="text-base sm:text-lg md:text-xl lg:text-2xl font-bold">BERBAGAI BIDANG MEREKA TAKLUKAN DENGAN POSISI JUARA 1</p>
                             </div>
                         </section>
-                        @endforeach
                     </div>
 
                     <!-- Pagination -->
@@ -318,7 +316,7 @@
                 <div class="flex flex-col lg:flex-row gap-6 mb-12">
                     <div class="w-full lg:w-1/2 department-card bg-customOrange p-5 md:p-6 relative overflow-hidden">
                         <div class="info-card bg-white p-2 mb-5 md:mb-6">
-                            <img class="w-full h-auto rounded-2xl" src="https://placehold.co/868x407"
+                            <img class="w-full h-auto rounded-2xl" src="{{ asset('assets/elektro_card.png') }}"
                                 alt="Elektro Department">
                         </div>
                         <h2 class="text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-4 md:mb-6">Elektro</h2>
@@ -340,7 +338,7 @@
                     <!-- Otomotif Department -->
                     <div class="w-full lg:w-1/2 department-card bg-customRed p-5 md:p-6 relative overflow-hidden">
                         <div class="info-card bg-white p-2 mb-5 md:mb-6">
-                            <img class="w-full h-auto rounded-2xl" src="https://placehold.co/868x407"
+                            <img class="w-full h-auto rounded-2xl" src="{{ asset('assets/otomotif_card.png') }}"
                                 alt="Otomotif Department">
                         </div>
                         <h2 class="text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-4 md:mb-6">Otomotif</h2>
@@ -365,7 +363,7 @@
                     <!-- Pemesinan Department -->
                     <div class="w-full lg:w-1/2 department-card bg-customPink p-5 md:p-6 relative overflow-hidden">
                         <div class="info-card bg-white p-2 mb-5 md:mb-6">
-                            <img class="w-full h-auto rounded-2xl" src="https://placehold.co/868x405"
+                            <img class="w-full h-auto rounded-2xl" src="{{ asset('assets/pemesinan_card.jpg') }}"
                                 alt="Pemesinan Department">
                         </div>
                         <h2 class="text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-4 md:mb-6">Pemesinan</h2>
@@ -387,7 +385,7 @@
                     <!-- TIK Department -->
                     <div class="w-full lg:w-1/2 department-card bg-customBlue p-5 md:p-6 relative overflow-hidden">
                         <div class="info-card bg-white p-2 mb-5 md:mb-6">
-                            <img class="w-full h-auto rounded-2xl" src="https://placehold.co/868x407"
+                            <img class="w-full h-auto rounded-2xl" src="{{ asset('assets/tik_card.png') }}"
                                 alt="TIK Department">
                         </div>
                         <h2 class="text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-4 md:mb-6">TIK</h2>
@@ -426,7 +424,7 @@
                         </div>
 
                         <!-- Habit 2 (Center - Larger) -->
-                        <div class="w-full lg:w-2/5 habit-card bg-gray-400 p-5 flex flex-col">
+                        <div class="w-full lg:w-2/5 habit-card bg-gray-300 p-5 flex flex-col">
                             <img class="w-full h-56 md:h-56 object-cover rounded-lg mb-4"
                                 src="{{ asset('assets/jalur_hijau.png') }}" alt="Jalur Hijau">
                             <h3 class="text-2xl md:text-3xl font-bold text-center mb-3">Jalur Hijau</h3>
@@ -460,13 +458,15 @@
                     <div class="group cursor-pointer">
                         <img class="w-full h-40 object-cover rounded-lg mb-2 group-hover:opacity-90 transition"
                             src="https://placehold.co/361x203" alt="News Image">
-                        <p class="text-sm font-semibold group-hover:text-customOrange transition">Guru Turut Jadi Peserta
+                        <p class="text-sm font-semibold group-hover:text-customOrange transition">Guru Turut Jadi
+                            Peserta
                             dalam Perkemahan Pramuka Penegak</p>
                     </div>
                     <div class="group cursor-pointer">
                         <img class="w-full h-40 object-cover rounded-lg mb-2 group-hover:opacity-90 transition"
                             src="https://placehold.co/361x203" alt="News Image">
-                        <p class="text-sm font-semibold group-hover:text-customOrange transition">Sambut Hari Kemerdekaan,
+                        <p class="text-sm font-semibold group-hover:text-customOrange transition">Sambut Hari
+                            Kemerdekaan,
                             SKARIGA Gelar Jalan Sehat dan Aneka Lomba Penuh Semangat</p>
                     </div>
                     <div class="group cursor-pointer">
@@ -484,12 +484,12 @@
 
             <!-- Quick Links -->
             <div class="bg-white p-5 rounded-xl shadow-md mt-6">
-                <h3 class="font-bold text-xl mb-4 border-b-2 border-customBlue pb-2">Link Penting</h3>
+                <h3 class="font-bold text-xl mb-4 border-b-2 border-customBlue pb-2">Lainnya</h3>
                 <ul class="space-y-3">
                     <li><a href="#" class="text-blue-600 hover:underline flex items-center"><i
-                                class="fas fa-link mr-2 text-sm"></i>Portal Siswa</a></li>
+                                class="fas fa-link mr-2 text-sm"></i>OCS (One Click Student)</a></li>
                     <li><a href="#" class="text-blue-600 hover:underline flex items-center"><i
-                                class="fas fa-link mr-2 text-sm"></i>E-Learning</a></li>
+                                class="fas fa-link mr-2 text-sm"></i>CBT (Computer Based Test)</a></li>
                     <li><a href="#" class="text-blue-600 hover:underline flex items-center"><i
                                 class="fas fa-link mr-2 text-sm"></i>Perpustakaan Digital</a></li>
                     <li><a href="#" class="text-blue-600 hover:underline flex items-center"><i
