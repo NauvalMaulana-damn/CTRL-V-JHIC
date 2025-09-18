@@ -59,7 +59,7 @@
                     </a>
                     <a href="https://x.com/smkpgri3mlg"
                         class="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-blue-400 transition">
-                        <i class="fab fa-x-twitter"></i>
+                        <i class="fab fa-twitter"></i>
                     </a>
                 </div>
 
