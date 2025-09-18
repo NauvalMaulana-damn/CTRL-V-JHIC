@@ -332,7 +332,7 @@
                             Selengkapnya
                         </button>
                         <img class="absolute -bottom-16 -right-16 w-40 md:w-52 opacity-30 -rotate-12"
-                            src="https://placehold.co/512x512" alt="Decoration">
+                            src="{{ asset('assets/bg_elektro_card.png') }}" alt="Decoration">
                     </div>
 
                     <!-- Otomotif Department -->
@@ -354,7 +354,7 @@
                             Selengkapnya
                         </button>
                         <img class="absolute -bottom-16 -right-16 w-40 md:w-52 opacity-30 -rotate-12"
-                            src="https://placehold.co/512x512" alt="Decoration">
+                            src="{{ asset('assets/bg_otomotif_card.png') }}" alt="Decoration">
                     </div>
                 </div>
 
@@ -379,7 +379,7 @@
                             Selengkapnya
                         </button>
                         <img class="absolute -bottom-16 -right-16 w-40 md:w-52 opacity-25 -rotate-12"
-                            src="https://placehold.co/512x512" alt="Decoration">
+                            src="{{ asset('assets/bg_pemesinan_card.png') }}" alt="Decoration">
                     </div>
 
                     <!-- TIK Department -->
@@ -401,7 +401,7 @@
                             Selengkapnya
                         </button>
                         <img class="absolute -bottom-16 -right-16 w-40 md:w-52 opacity-30 -rotate-12"
-                            src="https://placehold.co/512x512" alt="Decoration">
+                            src="{{ asset('assets/bg_tik_card.png') }}" alt="Decoration">
                     </div>
                 </div>
             </section>

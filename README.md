@@ -88,6 +88,6 @@ php artisan serve
 
 ## 📄 Lisensi
 
-Aplikasi ini dirilis di bawah lisensi **MIT License**. Silakan lihat file <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-green" alt="License"></a> untuk informasi lebih lanjut. abc
+Aplikasi ini dirilis di bawah lisensi **MIT License**. Silakan lihat file <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-green" alt="License"></a> untuk informasi lebih lanjut.
 
 ---
