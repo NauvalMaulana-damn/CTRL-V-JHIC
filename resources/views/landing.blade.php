@@ -453,8 +453,6 @@
         </aside>
     </div>
 
-    <x-sidebar></x-sidebar>
-
     <!-- Footer -->
     <x-footer></x-footer>
 
