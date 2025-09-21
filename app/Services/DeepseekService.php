@@ -54,7 +54,19 @@ class DeepseekService
             - Finalis UI/UX Design tingkat Provinsi
             - Siswa berprestasi internasional: Edsel Parama Mustapa
             - SMK dengan jumlah siswa terbanyak ke-4 di Indonesia (Kemendikbud 2016)
-            - Juara LKS Berturut-turut
+            - Juara 1 LKS Jawa Timur ke-32 di bidang Elctronics
+            - Juara 1 LKS Dikmen Jawa Timur ke-33 di bidang Industrial Control
+            - Juara 1 LKS Jawa Timur ke-32 di bidang RMS (RoboT Manufacturing System)
+            - Juara 2 LKS Jawa Timur ke-32 di bidang Web Technology
+            - Juara 1 LKS Jawa Timur ke-32 di bidang Car Painting
+            - Juara 1 Lomba Sistem Informasi Festival 2024 di bidang UI/UX Design
+            - Juara 1 LKS Jawa Timur ke-32 di bidang IT Software Solution For Bussiness
+            - Juara 1 LKS Jawa Timur ke-32 di bidang Prototype Modelling
+            - Juara 3 LKS Jawa Timur ke-32 di bidang Marketing Online
+            - Juara 1 LKS Dikmen Jawa Timur ke-33 di bidang RMS (Robot Manufacturing System)
+            - Juara 1 LKS Nasional 2025 di bidang RMS (Robot Manufacturing System)
+            - Juara 2 LKS Nasional 2025 di bidang Industrial Control
+            - Peraih Medali Emas & Perunggu pada ajang ASEAN WORLDSKILL 2025 di Manila, Filipina di bidang IT Software Solution For Business
 
             🎉 Kegiatan Ekstrakurikuler:
             - Futsal
