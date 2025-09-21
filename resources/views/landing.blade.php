@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Swiper CSS -->
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <!-- Alpine JS -->
+     <script src="//unpkg.com/alpinejs" defer></script>
     <script>
     tailwind.config = {
         theme: {
@@ -452,6 +454,8 @@
             </div>
         </aside>
     </div>
+
+    <x-sidebar></x-sidebar>
 
     <!-- Footer -->
     <x-footer></x-footer>

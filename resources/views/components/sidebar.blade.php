@@ -1,21 +1,24 @@
-<div x-data="{ open: true }" class="fixed top-1/2 right-4 transform -translate-y-1/2 z-50">
+<div x-data="{ open: false }" class="fixed top-1/2 right-4 transform -translate-y-1/2 z-50">
 
     <!-- Toggle Button -->
     <button @click="open = !open" class="absolute -left-10 top-1/2 transform -translate-y-1/2 bg-white/30 backdrop-blur-md
-               p-2 rounded-full shadow-lg hover:bg-blue-500 hover:text-white transition">
-        <svg x-show="open" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
-            stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
-        </svg>
-        <svg x-show="!open" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+           p-2 rounded-full shadow-lg hover:bg-customOrange hover:text-white transition">
+
+        <!-- Panah -->
+        <svg xmlns="http://www.w3.org/2000/svg" :class="open ? 'rotate-0' : 'rotate-180'"
+            class="h-5 w-5 transform transition-transform duration-500 ease-in-out" fill="none" viewBox="0 0 24 24"
             stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
         </svg>
     </button>
 
+
     <!-- Sidebar -->
-    <div x-show="open" class="w-[300px] h-[600px] bg-white/40 backdrop-blur-lg
-                rounded-xl flex flex-col justify-between shadow-2xl border border-white/20 transition">
+    <div x-show="open" x-transition:enter="transform transition ease-in-out duration-500"
+        x-transition:enter-start="translate-x-full opacity-0" x-transition:enter-end="translate-x-0 opacity-100"
+        x-transition:leave="transform transition ease-in-out duration-500"
+        x-transition:leave-start="translate-x-0 opacity-100" x-transition:leave-end="translate-x-full opacity-0" class="w-[300px] h-[600px] bg-white/40 backdrop-blur-lg
+                rounded-xl flex flex-col justify-between shadow-2xl border border-white/20">
 
         <!-- Logo -->
         <div class="p-5 border-b border-gray-200/50">
@@ -37,7 +40,7 @@
             ['icon' => 'https://placehold.co/50x50', 'label' => 'Pendaftaran'],
             ] as $item)
             <div class="menu-item flex items-center py-3 px-4 mb-2 cursor-pointer
-                            rounded-lg transition hover:bg-blue-500 hover:text-white hover:shadow-md">
+                            rounded-lg transition hover:bg-customBlue hover:text-white hover:shadow-md">
                 <img class="w-6 h-6 menu-icon" src="{{ $item['icon'] }}" alt="{{ $item['label'] }}">
                 <div class="ml-4 font-semibold">{{ $item['label'] }}</div>
             </div>
@@ -58,7 +61,7 @@
             </div>
 
             <button
-                class="w-full mt-4 bg-dark text-white py-2 rounded-lg font-semibold flex items-center justify-center hover:bg-orange-500 transition">
+                class="w-full mt-4 bg-dark text-white py-2 rounded-lg font-semibold flex items-center justify-center hover:bg-customOrange transition">
                 Selengkapnya
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-2" fill="none" viewBox="0 0 24 24"
                     stroke="currentColor">
