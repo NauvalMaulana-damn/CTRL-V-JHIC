@@ -108,7 +108,7 @@
 
         <!-- Copyright -->
         <div class="border-t border-gray-700 mt-8 pt-6 text-center text-gray-500">
-            <p>© 2023 SMK PGRI 3 Malang. All rights reserved.</p>
+            <p>© 2025 SMK PGRI 3 Malang. All rights reserved.</p>
         </div>
     </div>
 </footer>
