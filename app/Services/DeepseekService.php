@@ -57,16 +57,31 @@ class DeepseekService
             - Juara LKS Berturut-turut
 
             🎉 Kegiatan Ekstrakurikuler:
-            - Bola Basket
-            - Futsal Club
-            - Badminton Club
-            - Bola Voli
+            - Futsal
             - Sepak Bola
-            - Esports & Game Development
-            - Multimedia & Desain Grafis
-            - English Club
-            - Robotika & Otomasi
-            - Kewirausahaan & Bisnis Digital
+            - Jurnalistik
+            - BTQ (Baca Tulis Qur'an)
+            - Banjari
+            - Baca Kitab
+            - Bola Voli
+            - Bola Basket
+            - Ilustrasi
+            - Fotografi
+            - Indo Craft
+            - Menari
+            - Android Club
+            - Arduino IoT
+            - CADD & CNC
+            - Auto Plus
+            - Sains Club
+            - Bahasa Inggris
+            - Band
+            - Sastra
+            - Keputrian
+            - Audio Video
+            - 3D Modelling
+            - Bulu Tangkis
+            - PASKIBRAKA
 
             📄 Cara Daftar:
                 🧍 Daftar Offline:
@@ -77,7 +92,7 @@ class DeepseekService
                 5. Tunggu pengumuman hasil seleksi dan pengambilan fasilitas belajar.
 
                 📱 Daftar Online:
-                1. Hubungi Call Center via WhatsApp di nomor **0821-3300-0370**.
+                1. Hubungi Call Center via WhatsApp di nomor 0821-3300-0370.
                 2. Kirim salam dan tujuan pendaftaran.
                 3. Staff akan memandu proses pendaftaran secara digital hingga selesai.
 
@@ -85,6 +100,50 @@ class DeepseekService
             - Magang dalam & luar negeri (PKL 12 bulan)
             - Mitra industri: Toyota, Suzuki, PLN, Alfamart, LG, Swiss-Belhotel, dan lainnya
             - Penyuluhan karir, penempatan kerja, dan tracer study alumni
+
+            🎗️ Alumni atau Lulusan:
+            Khoko Rama Viera
+            - Angkatan: 2018
+            - Pekerjaan: Mandor Kesehatan & Keselamatan Kerja (HSE) di PT. WIKA (Wijaya Karya)
+
+            Aditya Tantra
+            - Angkatan: 2018
+            - Pekerjaan: Engineer di Daihatsu Motor Co. Ltd, Jepang
+
+            Reza Abi Utomo
+            - Angkatan: 2017
+            - Pekerjaan: Teknisi di PT. JABC
+
+            Choiriatul Aulia
+            - Angkatan: 2018
+            - Pekerjaan: Operator Produksi di PT. Surabaya Autocomp Indonesia
+
+            Febrianto Nugroho
+            - Angkatan: 2017
+            - Pekerjaan: Teknisi di PT. JABC
+
+            Ahmad Fauzan
+            - Angkatan: 2018
+            - Pekerjaan: Teknisi Elektronika di Rekavitronica
+
+            Tiyyoh Fahmi
+            - Angkatan: 2017
+            - Pekerjaan: Developer di Inovasi Tjarko Buana (ITB)
+
+            Ximent Sultan
+            - Angkatan: 2017
+            - Pekerjaan: Supervisor Proyek di PT. Bangung Dedeko Makmur (Bangdeko) Indonesia
+
+            Edsel Parama Mustapa
+            - Angkatan: 2024
+            - Prestasi: Medali Emas ASEAN WorldSkill 2025 bidang IT Software Solution for Business
+            - Training: BINUS Training Center
+            - Target: Kompetisi WorldSkill Asia 2026 di China
+
+            Risca Revan Suasmara
+            - Angkatan: 2024
+            - Prestasi: Medali Perunggu ASEAN WorldSkill 2025 bidang IT
+            - Pengalaman: Latihan intensif dan kompetisi internasional
 
             📖 Sejarah Singkat:
             SMK PGRI 3 Malang dirintis oleh 16 dosen muda dari Universitas Brawijaya pada tahun 1986. Awalnya bernama STM PGRI Dau Malang, kemudian berganti nama beberapa kali hingga menjadi SMK PGRI 3 Malang pada tahun 1998. Sekolah ini berkembang pesat berkat swadaya guru dan masyarakat, serta terus berinovasi dalam pendidikan berbasis teknologi dan industri.
