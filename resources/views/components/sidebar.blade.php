@@ -2,7 +2,7 @@
 
     <!-- Toggle Button -->
     <button @click="open = !open" class="absolute -left-10 top-1/2 transform -translate-y-1/2 bg-white/30 backdrop-blur-md
-           p-2 rounded-full shadow-lg hover:bg-customOrange hover:text-white transition">
+           p-2 rounded-xl shadow-lg hover:bg-customOrange hover:text-white transition">
 
         <!-- Panah -->
         <svg xmlns="http://www.w3.org/2000/svg" :class="open ? 'rotate-0' : 'rotate-180'"
@@ -23,8 +23,8 @@
         <!-- Logo -->
         <div class="p-5 border-b border-gray-200/50">
             <div class="flex items-center">
-                <img class="w-12 h-12" src="https://placehold.co/50x50" alt="Logo">
-                <h1 class="text-xl font-bold ml-3 text-dark">School Portal</h1>
+                <img class="w-18 h-12" src="{{ asset('assets/skariga logo 1.png') }}" alt="Logo">
+                <h1 class="text-xl font-bold ml-3 text-dark">SMK PGRI 3 MALANG</h1>
             </div>
         </div>
 

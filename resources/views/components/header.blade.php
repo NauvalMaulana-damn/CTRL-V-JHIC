@@ -1,3 +1,161 @@
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<!-- Swiper CSS -->
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+<!-- Alpine JS -->
+<script src="//unpkg.com/alpinejs" defer></script>
+<script>
+tailwind.config = {
+    theme: {
+        extend: {
+            colors: {
+                customRed: '#FD5353',
+                customOrange: '#E17626',
+                customBlue: '#2492D1',
+                customPink: '#FD467E',
+                customInsta: '#E1306C',
+                darkGray: '#222325',
+            },
+            fontFamily: {
+                poppins: ['Poppins', 'sans-serif'],
+                inter: ['Inter', 'sans-serif'],
+            },
+            backgroundImage: {
+                customIG: 'linear-gradient(135deg, #f58529, #dd2a7b, #8134af, #515bd4)',
+            },
+        }
+    }
+}
+</script>
+
+<style>
+body {
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+}
+
+.gradient-overlay {
+    background: linear-gradient(180deg, rgba(217, 217, 217, 0) 0%, black 100%);
+}
+
+.department-card {
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.25);
+    border-radius: 48px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.department-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 15px 35px rgba(0, 0, 0, 0.3);
+}
+
+.info-card {
+    border-radius: 34px;
+    overflow: hidden;
+}
+
+.habit-card {
+    border-radius: 25px;
+    transition: transform 0.3s ease;
+}
+
+.habit-card:hover {
+    transform: translateY(-5px);
+}
+
+.scroll-container {
+    animation: scroll 30s linear infinite;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.hamburger {
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.hamburger.active {
+    transform: rotate(90deg);
+}
+
+.nav-menu {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-out;
+}
+
+.nav-menu.active {
+    max-height: 500px;
+}
+
+/* Back to top button */
+.back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: #FD5353;
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 1000;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.back-to-top.visible {
+    opacity: 1;
+}
+
+/* Loading animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fade-in {
+    animation: fadeIn 1s ease forwards;
+}
+
+.delay-100 {
+    animation-delay: 0.1s;
+}
+
+.delay-200 {
+    animation-delay: 0.2s;
+}
+
+.delay-300 {
+    animation-delay: 0.3s;
+}
+
+.delay-400 {
+    animation-delay: 0.4s;
+}
+</style>
+
 <!-- Header/Navigation -->
 <header class="sticky top-0 z-40 bg-white shadow-md">
     <div class="container mx-auto px-4 py-3">

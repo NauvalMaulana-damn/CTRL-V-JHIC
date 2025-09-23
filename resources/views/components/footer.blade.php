@@ -63,15 +63,17 @@
                     </a>
                 </div>
 
-                <div class="rounded-lg overflow-hidden h-[550px] w-[550px]">
+                <!-- Google Maps -->
+                <div class="rounded-lg overflow-hidden h-[350px] w-[550px]">
                     <div class="mapouter" style="position:relative; text-align:right; width:500px; height:450px;">
                         <div class="gmap_canvas"
                             style="overflow:hidden; background:none!important; width:500px; height:450px;">
                             <iframe title="SMK PGRI 3 MALANG" width="100%" height="100%"
                                 style="border:1px; border-radius: 12px;" allowfullscreen="" loading="lazy"
                                 referrerpolicy="no-referrer-when-downgrade"
-                                src="https://www.google.com/maps/embed/v1/place?q=Jl.%20Raya%20Tlogomas%20Gg.%209%20No.29%2C%20Tlogomas%2C%20Kec.%20Lowokwaru%2C%20Kota%20Malang%2C%20Jawa%20Timur%2065144&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8"></iframe>
+                                src="https://maps.google.com/maps?width=550&amp;height=150&amp;hl=en&amp;q=smk pgri 3 malang&amp;t=p&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe>
                         </div>
+
                         <style>
                         .mapouter {
                             position: relative;
@@ -112,3 +114,82 @@
         </div>
     </div>
 </footer>
+
+<script>
+// Wait for page to fully load
+window.addEventListener('load', function() {
+    // Hide loading animation
+    document.getElementById('loading').style.opacity = '0';
+    setTimeout(function() {
+        document.getElementById('loading').style.display = 'none';
+    }, 1);
+
+    // Initialize components
+    initMobileMenu();
+    initBackToTop();
+});
+
+// Mobile menu functionality
+function initMobileMenu() {
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.getElementById('navMenu');
+
+    if (hamburger && navMenu) {
+        hamburger.addEventListener('click', function() {
+            this.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+    }
+}
+
+// Back to top button functionality
+function initBackToTop() {
+    const backToTopBtn = document.getElementById('backToTop');
+
+    if (backToTopBtn) {
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 300) {
+                backToTopBtn.classList.add('visible');
+            } else {
+                backToTopBtn.classList.remove('visible');
+            }
+        });
+
+        backToTopBtn.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    }
+}
+
+// Add hover effects to department cards
+const departmentCards = document.querySelectorAll('.department-card');
+departmentCards.forEach(card => {
+    card.addEventListener('mouseenter', function() {
+        this.style.transform = 'translateY(-5px)';
+        this.style.boxShadow = '0px 15px 35px rgba(0, 0, 0, 0.3)';
+    });
+
+    card.addEventListener('mouseleave', function() {
+        this.style.transform = 'translateY(0)';
+        this.style.boxShadow = '0px 10px 30px rgba(0, 0, 0, 0.25)';
+    });
+});
+
+// Swiper JS Initializeconst swiper = new Swiper('.mySwiper', {
+const swiper = new Swiper('.mySwiper', {
+    loop: true,
+    autoplay: {
+        delay: 3500,
+        disableOnInteraction: false,
+    },
+    pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+    },
+});
+</script>
+<!-- Swiper JS -->
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
