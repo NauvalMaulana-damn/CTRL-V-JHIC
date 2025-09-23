@@ -8,7 +8,7 @@
 </head>
 
 <body class="bg-[#F8F8F8]">
-    <!-- Loading overlay -->
+    <!-- Loading overlay
     <div id="loading"
         class="fixed inset-0 bg-white z-50 flex items-center justify-center transition-opacity duration-500">
         <div class="text-center">
@@ -16,12 +16,9 @@
             </div>
             <p class="mt-4 text-lg font-semibold">SMK PGRI 3 Malang</p>
         </div>
-    </div>
+    </div> -->
 
-    <!-- Back to top button -->
-    <div id="backToTop" class="back-to-top">
-        <i class="fas fa-arrow-up text-xl"></i>
-    </div>
+    <x-back2top></x-back2top>
 
     <x-header></x-header>
 
@@ -35,12 +32,14 @@
                 <div class="swiper mySwiper rounded-xl overflow-hidden">
                     <div class="swiper-wrapper">
                         <section class="swiper-slide relative w-full h-[40vh] sm:h-[50vh] md:h-[60vh] lg:h-[70vh]">
-                            <img class="w-full h-full object-cover"
-                                src="{{ asset('assets/head_news_1.png') }}" alt="head_news_1.png">
+                            <img class="w-full h-full object-cover" src="{{ asset('assets/head_news_1.png') }}"
+                                alt="head_news_1.png">
                             <div class="absolute bottom-0 left-0 w-full h-1/2 gradient-overlay"></div>
                             <div class="absolute bottom-6 left-5 md:left-8 text-white max-w-4xl">
-                                <h1 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-2">PARA SISWA MENJUARAI LKS DIKMEN JATIM XXXII</h1>
-                                <p class="text-base sm:text-lg md:text-xl lg:text-2xl font-bold">BERBAGAI BIDANG MEREKA TAKLUKAN DENGAN POSISI JUARA 1</p>
+                                <h1 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-2">PARA SISWA
+                                    MENJUARAI LKS DIKMEN JATIM XXXII</h1>
+                                <p class="text-base sm:text-lg md:text-xl lg:text-2xl font-bold">BERBAGAI BIDANG MEREKA
+                                    TAKLUKAN DENGAN POSISI JUARA 1</p>
                             </div>
                         </section>
                     </div>
@@ -286,13 +285,17 @@
             <div class="bg-white p-5 rounded-xl shadow-md mt-6">
                 <h3 class="font-bold text-xl mb-4 border-b-2 border-customBlue pb-2">Lainnya</h3>
                 <ul class="space-y-3">
-                    <li><a href="http://117.102.78.163/student/" class="text-blue-600 hover:underline flex items-center"><i
+                    <li><a href="http://117.102.78.163/student/"
+                            class="text-blue-600 hover:underline flex items-center"><i
                                 class="fas fa-link mr-2 text-sm"></i>OCS (One Click Student)</a></li>
-                    <li><a href="http://117.102.78.163/ocscbt/" class="text-blue-600 hover:underline flex items-center"><i
+                    <li><a href="http://117.102.78.163/ocscbt/"
+                            class="text-blue-600 hover:underline flex items-center"><i
                                 class="fas fa-link mr-2 text-sm"></i>CBT (Computer Based Test)</a></li>
-                    <li><a href="https://bki-skariga.web.id/kerjasama-industri/" class="text-blue-600 hover:underline flex items-center"><i
+                    <li><a href="https://bki-skariga.web.id/kerjasama-industri/"
+                            class="text-blue-600 hover:underline flex items-center"><i
                                 class="fas fa-link mr-2 text-sm"></i>Bidang Kerja Sama Industri</a></li>
-                    <li><a href="http://117.102.78.163/portalakademik/" class="text-blue-600 hover:underline flex items-center"><i
+                    <li><a href="http://117.102.78.163/portalakademik/"
+                            class="text-blue-600 hover:underline flex items-center"><i
                                 class="fas fa-link mr-2 text-sm"></i>Portal Akademik</a></li>
                 </ul>
             </div>
