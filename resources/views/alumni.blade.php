@@ -14,6 +14,11 @@
   </style>
 </head>
 <body class="bg-[#F8F8F8] font-sans text-gray-800">
+
+  <x-back2top></x-back2top>
+
+  <x-header></x-header>
+
   <!-- Hero -->
   <section class="relative h-[400px] md:h-[500px] rounded-xl overflow-hidden m-6">
     <img src="https://placehold.co/1920x1080" alt="Hero Image" class="w-full h-full object-cover">
@@ -111,5 +116,9 @@
     </div>
   </section>
 
+    <x-sidebar></x-sidebar>
+
+    <!-- Footer -->
+    <x-footer></x-footer>
 </body>
 </html>
