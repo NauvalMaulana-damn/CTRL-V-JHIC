@@ -20,24 +20,6 @@
     <x-back2top></x-back2top>
 
     <x-header></x-header>
-{{--
-  <!-- Header -->
-  <header class="flex items-center justify-between px-8 py-4 bg-white shadow-sm sticky top-0 z-50">
-    <div class="flex items-center space-x-2">
-      <img src="https://i.ibb.co/8zhPKHg/logo-pakhi.png" alt="Logo SKARIGA" class="h-10 w-10" />
-      <div>
-        <h1 class="text-xl font-semibold">SMK PGRI 2 MALANG</h1>
-        <p class="text-xs text-gray-600">Success By Discipline</p>
-      </div>
-    </div>
-    <nav class="space-x-6 text-gray-700 font-medium text-sm">
-      <a href="#" class="hover:text-blue-600">Beranda</a>
-      <a href="#" class="hover:text-blue-600">Prestasi</a>
-      <a href="#" class="hover:text-blue-600">Program</a>
-      <a href="#" class="hover:text-blue-600">Alumni</a>
-      <a href="#" class="hover:text-blue-600">Pendaftaran</a>
-    </nav>
-  </header> --}}
 
   <!-- Hero Section -->
   <section class="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-2 gap-10">
@@ -58,114 +40,122 @@
     </div>
 
     <!-- Hero images grid -->
-    <div class="grid grid-cols-2 gap-4">
-      <img
-        src="https://i.ibb.co/3fps5Rz/image1.jpg"
-        alt="Indonesia Skills Competition"
-        class="rounded-lg shadow-md"
-      />
-      <img
-        src="https://i.ibb.co/VQDrMsR/image2.jpg"
-        alt="Juara Robot Manufacturing"
-        class="rounded-lg shadow-md"
-      />
-      <img
-        src="https://i.ibb.co/qk50Xg7/image3.jpg"
-        alt="Group Photo"
-        class="rounded-lg shadow-md col-span-2"
-      />
-    </div>
+  <div class="grid grid-cols-2 gap-4">
+  <!-- Kiri atas -->
+  <img src="{{ asset('assets/skariga pres.jpeg') }}" class="rounded-lg shadow-md" />
+
+  <!-- Kanan (foto tinggi) -->
+  <img src="{{ asset('assets/robot-manu.jpg') }}" class="rounded-lg shadow-md row-span-2" />
+
+  <!-- Kiri bawah -->
+  <img src="{{ asset('assets/skariga prestasi.jpg') }}" class="rounded-lg shadow-md" />
+</div>
+
+
+</div>
+
   </section>
 
   <!-- Para Jawara Section -->
-    <!-- Para Jawara Section -->
-  <section class="max-w-7xl mx-auto px-6 py-12 bg-white rounded-xl shadow-lg">
-    <div class="mb-8 text-center">
-      <h3 class="text-3xl font-extrabold bg-gray-200 rounded-full inline-block px-8 py-3">PARA JAWARA!</h3>
-    </div>
+  <div class="max-w-6xl mx-auto px-4 py-8">
+  <!-- Container utama -->
+  <div class="bg-white rounded-xl shadow-lg p-8">
+    <!-- Header (titik + title) -->
+    <div class="bg-gray-100 rounded-xl shadow-lg px-6 py-4 grid grid-cols-3 items-center">
+  <!-- Titik di kiri -->
+  <div class="flex space-x-2">
+    <span class="w-4 h-4 rounded-full bg-red-500"></span>
+    <span class="w-4 h-4 rounded-full bg-yellow-500"></span>
+    <span class="w-4 h-4 rounded-full bg-green-500"></span>
+  </div>
 
-    <!-- Baris 1 (2 card) -->
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
-      <div class="bg-white rounded-lg shadow-md p-5 border border-gray-200">
-        <img src="https://via.placeholder.com/400x250" alt="Jawara 1" class="rounded-md mb-4" />
-        <h4 class="text-xl font-bold mb-1 text-red-600">JUARA 1</h4>
-        <p class="font-semibold text-gray-900">Nama Jawara 1</p>
-        <p class="text-gray-700 text-sm mt-1">Deskripsi prestasi singkat.</p>
-      </div>
-      <div class="bg-white rounded-lg shadow-md p-5 border border-gray-200">
-        <img src="https://via.placeholder.com/400x250" alt="Jawara 2" class="rounded-md mb-4" />
-        <h4 class="text-xl font-bold mb-1 text-blue-600">JUARA 1</h4>
-        <p class="font-semibold text-gray-900">Nama Jawara 2</p>
-        <p class="text-gray-700 text-sm mt-1">Deskripsi prestasi singkat.</p>
-      </div>
-    </div>
+  <!-- Judul di tengah -->
+  <h2 class="text-2xl font-bold text-center">PARA JAWARA!</h2>
 
-    <!-- Baris 2 (3 card) -->
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
-      <div class="bg-white rounded-lg shadow-md p-5 border border-gray-200">
-        <img src="https://via.placeholder.com/400x250" alt="Jawara 3" class="rounded-md mb-4" />
-        <h4 class="text-xl font-bold mb-1 text-green-600">JUARA 1</h4>
-        <p class="font-semibold text-gray-900">Nama Jawara 3</p>
-        <p class="text-gray-700 text-sm mt-1">Deskripsi prestasi singkat.</p>
-      </div>
-      <div class="bg-white rounded-lg shadow-md p-5 border border-gray-200">
-        <img src="https://via.placeholder.com/400x250" alt="Jawara 4" class="rounded-md mb-4" />
-        <h4 class="text-xl font-bold mb-1 text-teal-600">JUARA 2</h4>
-        <p class="font-semibold text-gray-900">Nama Jawara 4</p>
-        <p class="text-gray-700 text-sm mt-1">Deskripsi prestasi singkat.</p>
-      </div>
-      <div class="bg-white rounded-lg shadow-md p-5 border border-gray-200">
-        <img src="https://via.placeholder.com/400x250" alt="Jawara 5" class="rounded-md mb-4" />
-        <h4 class="text-xl font-bold mb-1 text-purple-600">JUARA 3</h4>
-        <p class="font-semibold text-gray-900">Nama Jawara 5</p>
-        <p class="text-gray-700 text-sm mt-1">Deskripsi prestasi singkat.</p>
-      </div>
-    </div>
+  <!-- Kolom kanan kosong biar judul tetap center -->
+  <div></div>
+</div>
 
-    <!-- Baris 3 (2 card) -->
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
-      <div class="bg-white rounded-lg shadow-md p-5 border border-gray-200">
-        <img src="https://via.placeholder.com/400x250" alt="Jawara 6" class="rounded-md mb-4" />
-        <h4 class="text-xl font-bold mb-1 text-orange-600">JUARA 1</h4>
-        <p class="font-semibold text-gray-900">Nama Jawara 6</p>
-        <p class="text-gray-700 text-sm mt-1">Deskripsi prestasi singkat.</p>
-      </div>
-      <div class="bg-white rounded-lg shadow-md p-5 border border-gray-200">
-        <img src="https://via.placeholder.com/400x250" alt="Jawara 7" class="rounded-md mb-4" />
-        <h4 class="text-xl font-bold mb-1 text-pink-600">JUARA 2</h4>
-        <p class="font-semibold text-gray-900">Nama Jawara 7</p>
-        <p class="text-gray-700 text-sm mt-1">Deskripsi prestasi singkat.</p>
-      </div>
-    </div>
 
-    <!-- Baris 4 (3 card) -->
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-      <div class="bg-white rounded-lg shadow-md p-5 border border-gray-200">
-        <img src="https://via.placeholder.com/400x250" alt="Jawara 8" class="rounded-md mb-4" />
-        <h4 class="text-xl font-bold mb-1 text-indigo-600">JUARA 1</h4>
-        <p class="font-semibold text-gray-900">Nama Jawara 8</p>
-        <p class="text-gray-700 text-sm mt-1">Deskripsi prestasi singkat.</p>
+
+    <div></div>
+
+    <!-- Isi juara -->
+
+    <div class="space-y-8 mt-6">
+      <!-- Baris 1: 2 foto -->
+      <div class="grid grid-cols-2 gap-6 justify-center">
+        <div class="bg-white shadow-md rounded-lg p-4">
+          <img src="{{ asset('assets/robot-manu.jpg') }}" alt="Juara 1" class="w-full h-48 object-cover rounded-lg mb-4">
+          <p class="font-semibold">Nama Juara 1</p>
+          <p class="text-sm text-gray-500">Keterangan singkat</p>
+        </div>
+        <div class="bg-white shadow-md rounded-lg p-4">
+          <img src="foto2.jpg" alt="Juara 2" class="rounded-lg mb-4">
+          <p class="font-semibold">Nama Juara 2</p>
+          <p class="text-sm text-gray-500">Keterangan singkat</p>
+        </div>
       </div>
-      <div class="bg-white rounded-lg shadow-md p-5 border border-gray-200">
-        <img src="https://via.placeholder.com/400x250" alt="Jawara 9" class="rounded-md mb-4" />
-        <h4 class="text-xl font-bold mb-1 text-lime-600">JUARA 2</h4>
-        <p class="font-semibold text-gray-900">Nama Jawara 9</p>
-        <p class="text-gray-700 text-sm mt-1">Deskripsi prestasi singkat.</p>
+
+      <!-- Baris 2: 3 foto -->
+      <div class="grid grid-cols-3 gap-6">
+        <div class="bg-white shadow-md rounded-lg p-4">
+          <img src="{{ asset('assets/robot-manu.jpg') }}" alt="Juara 3" class="w-full h-48 object-cover rounded-lg mb-4">
+          <p class="font-semibold">Nama Juara 3</p>
+          <p class="text-sm text-gray-500">Keterangan singkat</p>
+        </div>
+        <div class="bg-white shadow-md rounded-lg p-4">
+          <img src="foto4.jpg" alt="Juara 4" class="rounded-lg mb-4">
+          <p class="font-semibold">Nama Juara 4</p>
+          <p class="text-sm text-gray-500">Keterangan singkat</p>
+        </div>
+        <div class="bg-white shadow-md rounded-lg p-4">
+          <img src="foto5.jpg" alt="Juara 5" class="rounded-lg mb-4">
+          <p class="font-semibold">Nama Juara 5</p>
+          <p class="text-sm text-gray-500">Keterangan singkat</p>
+        </div>
       </div>
-      <div class="bg-white rounded-lg shadow-md p-5 border border-gray-200">
-        <img src="https://via.placeholder.com/400x250" alt="Jawara 10" class="rounded-md mb-4" />
-        <h4 class="text-xl font-bold mb-1 text-cyan-600">JUARA 3</h4>
-        <p class="font-semibold text-gray-900">Nama Jawara 10</p>
-        <p class="text-gray-700 text-sm mt-1">Deskripsi prestasi singkat.</p>
+
+      <!-- Baris 3: 2 foto -->
+      <div class="grid grid-cols-2 gap-6 justify-center">
+        <div class="bg-white shadow-md rounded-lg p-4">
+          <img src="foto6.jpg" alt="Juara 6" class="w-full max-h-60 object-contain rounded-lg mb-4">
+          <p class="font-semibold">Nama Juara 6</p>
+          <p class="text-sm text-gray-500">Keterangan singkat</p>
+        </div>
+        <div class="bg-white shadow-md rounded-lg p-4">
+          <img src="foto7.jpg" alt="Juara 7" class="rounded-lg mb-4">
+          <p class="font-semibold">Nama Juara 7</p>
+          <p class="text-sm text-gray-500">Keterangan singkat</p>
+        </div>
+      </div>
+
+      <!-- Baris 4: 3 foto -->
+      <div class="grid grid-cols-3 gap-6">
+        <div class="bg-white shadow-md rounded-lg p-4">
+          <img src="foto8.jpg" alt="Juara 8" class="rounded-lg mb-4">
+          <p class="font-semibold">Nama Juara 8</p>
+          <p class="text-sm text-gray-500">Keterangan singkat</p>
+        </div>
+        <div class="bg-white shadow-md rounded-lg p-4">
+          <img src="foto9.jpg" alt="Juara 9" class="rounded-lg mb-4">
+          <p class="font-semibold">Nama Juara 9</p>
+          <p class="text-sm text-gray-500">Keterangan singkat</p>
+        </div>
+        <div class="bg-white shadow-md rounded-lg p-4">
+          <img src="foto10.jpg" alt="Juara 10" class="rounded-lg mb-4">
+          <p class="font-semibold">Nama Juara 10</p>
+          <p class="text-sm text-gray-500">Keterangan singkat</p>
+        </div>
       </div>
     </div>
-  </section>
+</div>
+</div>
+
 
 
       <!-- Teruskan membuat kartu untuk jawara lain seperti Tegar Reyhan, Sopo e iki gakenal, Edsel Param Mustopa, Iza Aska, Ayu Dewi, Rafit & Novaldi -->
 
-    </div>
-  </section>
 
 
 
