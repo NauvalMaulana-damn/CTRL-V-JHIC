@@ -13,3 +13,7 @@ Route::get('/profil', function () {
 Route::get('/prestasi', function () {
     return view('prestasi');
 });
+
+Route::get('/alumni', function () {
+    return view('alumni');
+});
