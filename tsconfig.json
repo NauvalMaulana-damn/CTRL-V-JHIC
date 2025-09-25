@@ -1,0 +1,22 @@
+{
+    "compilerOptions": {
+        "moduleResolution": "node",
+        "lib": ["ESNext", "DOM"],
+        "types": ["node"],
+        "target": "ES2020",
+        "module": "ESNext",
+        "strict": true,
+        "esModuleInterop": true,
+        "skipLibCheck": true,
+        "baseUrl": ".",
+        "paths": {
+            "shapes": ["code_modules/shapes/dist/module.js"],
+            "schema": ["code_modules/shapes/dist/schema.js"],
+            "shapes/css": ["code_modules/shapes/dist/css/index.js"],
+            "shapes/css/repetition": [
+                "code_modules/shapes/dist/css/repetition.js"
+            ]
+        },
+    },
+    "include": ["resources/ts/**/*", "resources/ts/types/vite-env.d.ts"]
+}
