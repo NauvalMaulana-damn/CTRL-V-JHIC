@@ -7,6 +7,11 @@
     <title>Alumni SMK PGRI 3 Malang</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
+
+      body {
+        font-family: 'Poppins', sans-serif;
+      }
+
     @keyframes fadeIn {
         0% {
             opacity: 0;
@@ -29,12 +34,22 @@
 
     <x-back2top></x-back2top>
 
-    <x-header></x-header>
+    <x-header transparent="true"></x-header>
 
-    <!-- Hero -->
-    <section class="relative h-[400px] md:h-[500px] rounded-xl overflow-hidden m-6">
-        <img src="https://placehold.co/1920x1080" alt="Hero Image" class="w-full h-full object-cover">
-        <div class="absolute inset-0 bg-black/20"></div>
+    <!-- Hero SKARIGA -->
+    <section class="relative w-full h-screen flex items-end z-10">
+        <!-- Wrapper gambar -->
+        <div class="absolute inset-0 w-full h-full">
+            <img src="https://placehold.co/1920x1080" alt="Hero SKARIGA" class="w-full h-full object-cover">
+
+            <!-- Gradient overlay hanya bagian bawah -->
+            <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
+        </div>
+
+        <!-- Teks tetap di atas -->
+        <div class="relative z-10 p-8 md:p-16">
+            <h1 class="text-5xl md:text-7xl font-bold text-white drop-shadow-lg">SKARIGA!</h1>
+        </div>
     </section>
 
     <!-- Alumni Section -->
