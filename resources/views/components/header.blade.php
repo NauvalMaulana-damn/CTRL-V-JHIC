@@ -143,13 +143,36 @@
 @props(['transparent' => false])
 
 <!-- Header/Navigation -->
-<header x-data="{ scrolled: window.scrollY > 50 }" x-init="
-        const onScroll = () => { scrolled = window.scrollY > 50 };
-        window.addEventListener('scroll', onScroll);
-        onScroll(); // jalankan sekali saat load
-    " :class="scrolled
-        ? 'bg-white text-[#313131] shadow-md'
-        : '{{ $transparent ? 'bg-transparent text-white' : 'bg-white text-[#313131] shadow-md' }}'"
+@props(['transparent' => false])
+
+<!-- Header/Navigation -->
+<header x-data="{ scrolled: false }" x-init="
+            // Set initial state berdasarkan scroll position
+            scrolled = window.scrollY > 50;
+
+            // Handle scroll event
+            const onScroll = () => {
+                scrolled = window.scrollY > 50;
+                console.log('ScrollY:', window.scrollY, 'Scrolled:', scrolled);
+            };
+
+            // Debounce scroll event untuk performance
+            let ticking = false;
+            window.addEventListener('scroll', () => {
+                if (!ticking) {
+                    requestAnimationFrame(() => {
+                        onScroll();
+                        ticking = false;
+                    });
+                    ticking = true;
+                }
+            });
+
+            // Scroll ke atas saat load
+            window.scrollTo(0, 0);
+        " :class="scrolled
+            ? 'bg-white text-[#313131] shadow-md'
+            : '{{ $transparent ? 'bg-transparent text-white' : 'bg-white text-[#313131] shadow-md' }}'"
     class="{{ $transparent ? 'fixed top-0 left-0 w-full z-50 transition-all duration-300 ease-in-out' : 'sticky top-0 left-0 w-full bg-white z-50' }}">
     <div class="container mx-auto px-4 py-3">
         <div class="flex items-center justify-between">

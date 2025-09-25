@@ -30,7 +30,7 @@
             <section class="relative w-full overflow-hidden rounded-xl mb-8">
                 <div class="swiper mySwiper rounded-xl overflow-hidden">
                     <div class="swiper-wrapper">
-                        <section class="swiper-slide relative w-full h-[40vh] sm:h-[50vh] md:h-[60vh] lg:h-[70vh]">
+                        <section class="swiper-slide relative w-full h-full">
                             <img class="w-full h-[40vh] sm:h-[50vh] md:h-[60vh] lg:h-[70vh] object-cover"
                                 src="{{ asset('assets/head_news_1.png') }}" alt="head_news_1.png">
                             <div class="absolute bottom-0 left-0 w-full h-1/2 gradient-overlay"></div>
@@ -305,26 +305,6 @@
 
     <!-- Footer -->
     <x-footer></x-footer>
-
-    <script>
-    window.addEventListener('DOMContentLoaded', () => {
-        document.querySelector('header').classList.remove('bg-white', 'text-[#313131]', 'shadow-md');
-    });
-
-    window.addEventListener('scroll', () => {
-        window.scrollY > 50 ? document.querySelector('header').classList.add('bg-white', 'text-[#313131]',
-            'shadow-md') : document.querySelector('header').classList.remove('bg-white', 'text-[#313131]',
-            'shadow-md');
-    });
-
-    setTimeout(() => {
-        window.scrollTo(0, 0);
-    }, 0);
-    </script>
 </body>
 
 </html>
-
-
-<!-- FIX SCROLL Y SAAT DI REFRESH AAAAAAAAAAAAAAAAARGGGGGGGHHHHHHHHHHH -->
-<!-- :DDD -->

@@ -64,10 +64,10 @@
                 </div>
 
                 <!-- Google Maps -->
-                <div class="rounded-lg overflow-hidden h-[350px] w-[550px]">
+                <div class="rounded-lg overflow-hidden h-[350px] w-full mb-4">
                     <div class="mapouter" style="position:relative; text-align:right; width:500px; height:450px;">
                         <div class="gmap_canvas"
-                            style="overflow:hidden; background:none!important; width:500px; height:450px;">
+                            style="overflow:hidden; background:none!important; width:376px; height:350px;">
                             <iframe title="SMK PGRI 3 MALANG" width="100%" height="100%"
                                 style="border:1px; border-radius: 12px;" allowfullscreen="" loading="lazy"
                                 referrerpolicy="no-referrer-when-downgrade"
