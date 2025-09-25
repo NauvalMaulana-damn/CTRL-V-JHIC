@@ -75,6 +75,10 @@
 </head>
 <body>
 
+<x-back2top></x-back2top>
+
+<x-header></x-header>
+
    <!-- Hero -->
   <section class="relative w-full max-w-[1920px] h-[800px] rounded-xl overflow-hidden m-6 mx-auto">
     <img src="https://placehold.co/1920x800" alt="Hero Image" class="w-full h-full object-cover">
@@ -302,6 +306,12 @@
         <div class="card-desc">Pasukan Pengibar Bendera yang memiliki tugas utama mengibarkan dan menurunkan bendera merah putih pada upacara. Kegiatan ini melatih kedisiplinan, kepemimpinan, dan kerja sama tim.</div>
       </div>
     </div>
+
+    <x-sidebar></x-sidebar>
+
+    <!-- Footer -->
+    <x-footer></x-footer>
+
   </div>
 </div>
 </body>
