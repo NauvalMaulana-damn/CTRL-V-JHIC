@@ -91,7 +91,7 @@
           <p class="text-sm text-gray-500">Keterangan singkat</p>
         </div>
         <div class="bg-white shadow-md rounded-lg p-4">
-          <img src="foto2.jpg" alt="Juara 2" class="rounded-lg mb-4">
+          <img src="{{ asset('assets/electronics.png') }}" alt="Juara 2" class="w-full h-48 object-cover rounded-lg mb-4">
           <p class="font-semibold">Nama Juara 2</p>
           <p class="text-sm text-gray-500">Keterangan singkat</p>
         </div>
@@ -99,18 +99,18 @@
 
       <!-- Baris 2: 3 foto -->
       <div class="grid grid-cols-3 gap-6">
-        <div class="bg-white shadow-md rounded-lg p-4">
-          <img src="{{ asset('assets/robot-manu.jpg') }}" alt="Juara 3" class="w-full h-48 object-cover rounded-lg mb-4">
+        <div class="bg-white shadow-xl rounded-lg p-4">
+          <img src="{{ asset('assets/robot manufac.png') }}" alt="Juara 3" class="w-full h-48 object-cover rounded-lg mb-4">
           <p class="font-semibold">Nama Juara 3</p>
           <p class="text-sm text-gray-500">Keterangan singkat</p>
         </div>
         <div class="bg-white shadow-md rounded-lg p-4">
-          <img src="foto4.jpg" alt="Juara 4" class="rounded-lg mb-4">
-          <p class="font-semibold">Nama Juara 4</p>
+          <img src="foto4.jpg" alt="Juara 4" class="w-full h-48 object-cover rounded-lg mb-4">
+          <p class="{{ asset('assets/web techn.jpeg') }}">Nama Juara 4</p>
           <p class="text-sm text-gray-500">Keterangan singkat</p>
         </div>
         <div class="bg-white shadow-md rounded-lg p-4">
-          <img src="foto5.jpg" alt="Juara 5" class="rounded-lg mb-4">
+          <img src="{{ asset('assets/car paint.jpeg') }}" alt="Juara 5" class="w-full h-48 object-cover rounded-lg mb-4">
           <p class="font-semibold">Nama Juara 5</p>
           <p class="text-sm text-gray-500">Keterangan singkat</p>
         </div>
@@ -119,12 +119,12 @@
       <!-- Baris 3: 2 foto -->
       <div class="grid grid-cols-2 gap-6 justify-center">
         <div class="bg-white shadow-md rounded-lg p-4">
-          <img src="foto6.jpg" alt="Juara 6" class="w-full max-h-60 object-contain rounded-lg mb-4">
+          <img src="{{ asset('assets/uiux.jpg') }}" alt="Juara 6" class="w-full max-h-60 object-contain rounded-lg mb-4">
           <p class="font-semibold">Nama Juara 6</p>
           <p class="text-sm text-gray-500">Keterangan singkat</p>
         </div>
         <div class="bg-white shadow-md rounded-lg p-4">
-          <img src="foto7.jpg" alt="Juara 7" class="rounded-lg mb-4">
+          <img src="{{ asset('assets/it software.png') }}" alt="Juara 7" class="w-full h-48 object-cover rounded-lg mb-4">
           <p class="font-semibold">Nama Juara 7</p>
           <p class="text-sm text-gray-500">Keterangan singkat</p>
         </div>
@@ -133,17 +133,17 @@
       <!-- Baris 4: 3 foto -->
       <div class="grid grid-cols-3 gap-6">
         <div class="bg-white shadow-md rounded-lg p-4">
-          <img src="foto8.jpg" alt="Juara 8" class="rounded-lg mb-4">
+          <img src="{{ asset('assets/prototype model.png') }}" alt="Juara 8" class="w-full h-48 object-cover rounded-lg mb-4">
           <p class="font-semibold">Nama Juara 8</p>
           <p class="text-sm text-gray-500">Keterangan singkat</p>
         </div>
         <div class="bg-white shadow-md rounded-lg p-4">
-          <img src="foto9.jpg" alt="Juara 9" class="rounded-lg mb-4">
+          <img src="{{ asset('assets/marketing.jpeg') }}" alt="Juara 9" class="w-full h-48 object-cover rounded-lg mb-4">
           <p class="font-semibold">Nama Juara 9</p>
           <p class="text-sm text-gray-500">Keterangan singkat</p>
         </div>
         <div class="bg-white shadow-md rounded-lg p-4">
-          <img src="foto10.jpg" alt="Juara 10" class="rounded-lg mb-4">
+          <img src="{{ asset('assets/manufac system.jpg') }}" alt="Juara 10" class="w-full h-48 object-cover rounded-lg mb-4">
           <p class="font-semibold">Nama Juara 10</p>
           <p class="text-sm text-gray-500">Keterangan singkat</p>
         </div>
