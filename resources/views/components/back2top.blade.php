@@ -17,7 +17,7 @@
         opacity: 0;
         transition: opacity 0.3s ease;
         z-index: 1000;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3)   ;
     }
 
     .back-to-top.visible {

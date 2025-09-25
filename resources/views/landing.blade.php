@@ -71,7 +71,7 @@
                             alt="Partner Logo">
                         <img class="h-6 md:h-10 object-contain inline-block" src="{{ asset('assets/auto 2000.webp') }}"
                             alt="Partner Logo">
-                        <img class="h-6 md:h-10 object-contain inline-block" src="{{ asset('assets/Ahas logo.png') }}"
+                        <img class="h-6 md:h-10 object-contain inline-block" src="{{ asset('assets/Ahass logo.png') }}"
                             alt="Partner Logo">
                         <img class="h-6 md:h-10 object-contain inline-block" src="{{ asset('assets/yamaha.png') }}"
                             alt="Partner Logo">

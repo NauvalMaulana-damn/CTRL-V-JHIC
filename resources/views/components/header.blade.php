@@ -167,7 +167,7 @@
                 <ul class="flex space-x-4 lg:space-x-8 text-base md:text-lg font-medium">
                     <li><a href="/" class="hover:text-customOrange transition">Beranda</a></li>
                     <li><a href="/profil" class="hover:text-customOrange transition">Profil</a></li>
-                    <li><a href="#prestasi" class="hover:text-customOrange transition">Prestasi</a></li>
+                    <li><a href="/prestasi" class="hover:text-customOrange transition">Prestasi</a></li>
                     <li><a href="#program" class="hover:text-customOrange transition">Program</a></li>
                     <li><a href="#alumni" class="hover:text-customOrange transition">Alumni</a></li>
                     <li><a href="#pendaftaran" class="hover:text-customOrange transition">Pendaftaran</a></li>
