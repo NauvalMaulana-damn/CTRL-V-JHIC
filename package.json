@@ -17,5 +17,23 @@
     },
     "dependencies": {
         "alpinejs": "^3.15.0"
-    }
+    },
+    "name": "ctrl-v-jhic",
+    "version": "1.0.0",
+    "description": "<!--<p align=\"center\">   <img src=\"assets/banner.png\" alt=\"Ab.sen Banner\"> </p>-->",
+    "main": "index.js",
+    "directories": {
+        "test": "tests"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/NauvalMaulana-damn/CTRL-V-JHIC.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/NauvalMaulana-damn/CTRL-V-JHIC/issues"
+    },
+    "homepage": "https://github.com/NauvalMaulana-damn/CTRL-V-JHIC#readme"
 }
