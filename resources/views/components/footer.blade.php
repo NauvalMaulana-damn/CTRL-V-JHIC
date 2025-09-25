@@ -3,8 +3,8 @@
         <div class="flex flex-col md:flex-row gap-8 justify-between">
             <!-- School Info -->
             <div class="w-full md:w-1/4">
-                <img class="h-16 mb-4" src="https://placehold.co/146x104" alt="School Logo">
-                <p class="text-[#B9B9B9] text-lg font-bold mb-2">Succes By Discipline</p>
+                <img class="h-16 mb-4" src="{{ asset('assets/skariga logo 1.png') }}" alt="School Logo">
+                <p class="text-[#B9B9B9] text-lg font-bold mb-2">Success By Discipline</p>
                 <div class="h-px w-full bg-gray-700 mb-4"></div>
 
                 <div class="flex items-start mb-4">
@@ -25,7 +25,7 @@
                 <h3 class="text-[#B9B9B9] text-xl font-bold mb-4">Tentang Sekolah</h3>
                 <ul class="space-y-2">
                     <li><a href="#" class="text-[#828282] hover:text-white transition">Beranda</a></li>
-                    <li><a href="#" class="text-[#828282] hover:text-white transition">Profil Sekolah</a></li>
+                    <li><a href="/profil" class="text-[#828282] hover:text-white transition">Profil Sekolah</a></li>
                     <li><a href="#" class="text-[#828282] hover:text-white transition">Jurusan</a></li>
                     <li><a href="#" class="text-[#828282] hover:text-white transition">Prestasi</a></li>
                 </ul>
@@ -126,7 +126,6 @@ window.addEventListener('load', function() {
 
     // Initialize components
     initMobileMenu();
-    initBackToTop();
 });
 
 // Mobile menu functionality
@@ -138,28 +137,6 @@ function initMobileMenu() {
         hamburger.addEventListener('click', function() {
             this.classList.toggle('active');
             navMenu.classList.toggle('active');
-        });
-    }
-}
-
-// Back to top button functionality
-function initBackToTop() {
-    const backToTopBtn = document.getElementById('backToTop');
-
-    if (backToTopBtn) {
-        window.addEventListener('scroll', function() {
-            if (window.pageYOffset > 300) {
-                backToTopBtn.classList.add('visible');
-            } else {
-                backToTopBtn.classList.remove('visible');
-            }
-        });
-
-        backToTopBtn.addEventListener('click', function() {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
         });
     }
 }

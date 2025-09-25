@@ -4,10 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SMK PGRI 3 MALANG</title>
+    <title>@section('title', 'SMK PGRI 3 MALANG')</title>
 </head>
 
-<body class="bg-[#F8F8F8]">
+<body class="bg-[#F8F8F8] overflow-x-hidden m-0 p-0">
     <!-- Loading overlay
     <div id="loading"
         class="fixed inset-0 bg-white z-50 flex items-center justify-center transition-opacity duration-500">
@@ -23,17 +23,16 @@
     <x-header></x-header>
 
     <!-- Main content with news sidebar -->
-    <div class="flex flex-col lg:flex-row container mx-auto px-4 py-6">
+    <div class="flex flex-col h-full h-max-content lg:flex-row container mx-auto px-4 py-6">
         <!-- Main content -->
         <main class="w-full lg:w-3/4 animate-fade-in">
             <!-- Hero Section -->
-            <section
-                class="relative w-full h-[40vh] sm:h-[50vh] md:h-[60vh] lg:h-[70vh] overflow-hidden rounded-xl mb-8">
+            <section class="relative w-full overflow-hidden rounded-xl mb-8">
                 <div class="swiper mySwiper rounded-xl overflow-hidden">
                     <div class="swiper-wrapper">
                         <section class="swiper-slide relative w-full h-[40vh] sm:h-[50vh] md:h-[60vh] lg:h-[70vh]">
-                            <img class="w-full h-full object-cover" src="{{ asset('assets/head_news_1.png') }}"
-                                alt="head_news_1.png">
+                            <img class="w-full h-[40vh] sm:h-[50vh] md:h-[60vh] lg:h-[70vh] object-cover"
+                                src="{{ asset('assets/head_news_1.png') }}" alt="head_news_1.png">
                             <div class="absolute bottom-0 left-0 w-full h-1/2 gradient-overlay"></div>
                             <div class="absolute bottom-6 left-5 md:left-8 text-white max-w-4xl">
                                 <h1 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-2">PARA SISWA
@@ -307,6 +306,25 @@
     <!-- Footer -->
     <x-footer></x-footer>
 
+    <script>
+    window.addEventListener('DOMContentLoaded', () => {
+        document.querySelector('header').classList.remove('bg-white', 'text-[#313131]', 'shadow-md');
+    });
+
+    window.addEventListener('scroll', () => {
+        window.scrollY > 50 ? document.querySelector('header').classList.add('bg-white', 'text-[#313131]',
+            'shadow-md') : document.querySelector('header').classList.remove('bg-white', 'text-[#313131]',
+            'shadow-md');
+    });
+
+    setTimeout(() => {
+        window.scrollTo(0, 0);
+    }, 0);
+    </script>
 </body>
 
 </html>
+
+
+<!-- FIX SCROLL Y SAAT DI REFRESH AAAAAAAAAAAAAAAAARGGGGGGGHHHHHHHHHHH -->
+<!-- :DDD -->

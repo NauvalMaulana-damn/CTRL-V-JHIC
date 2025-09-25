@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profil - SMK PGRI 3 Malang</title>
+    <title>@section('title', 'Profil - SMK PGRI 3 Malang')</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="preload" as="font">
     <style>
     body {
         font-family: 'Poppins', sans-serif;
@@ -16,13 +16,15 @@
 
 <body class="bg-gray-50 text-gray-800">
 
-    <x-header></x-header>
+    <x-back2top></x-back2top>
+
+    <x-header transparent="true"></x-header>
 
     <!-- Hero SKARIGA -->
-    <section class="relative w-full h-screen flex items-end">
+    <section class="relative w-full h-screen flex items-end z-10">
         <!-- Wrapper gambar -->
         <div class="absolute inset-0 w-full h-full">
-            <img src="https://placehold.co/1920x1080" alt="Hero SKARIGA" class="w-full h-full object-cover">
+            <img src="{{ asset('assets/supporteran.jpg') }}" alt="Hero SKARIGA" class="w-full h-full object-cover">
 
             <!-- Gradient overlay hanya bagian bawah -->
             <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent"></div>
