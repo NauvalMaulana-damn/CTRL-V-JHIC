@@ -12,6 +12,11 @@
                     <span class="text-[#828282] text-sm">(0341) 554383</span>
                 </div>
 
+                <div class="flex items-start mb-4">
+                    <i class="fab fa-whatsapp text-gray-500 mt-1 mr-2"></i>
+                    <a href="https://wa.me/6282133000370" class="text-[#828282] text-sm underline">+62 821-3300-0370</a>
+                </div>
+
                 <div class="flex items-start">
                     <i class="fas fa-envelope text-gray-500 mt-1 mr-2"></i>
                     <a href="mailto:mail.smkpgri3malang@gmail.com" class="text-[#828282] text-sm underline">

@@ -1,13 +1,4 @@
-<!DOCTYPE html>
-<html lang="id">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@section('title', 'SMK PGRI 3 MALANG')</title>
-</head>
-
-<body class="bg-[#F8F8F8] overflow-x-hidden m-0 p-0">
+<x-layout title="SMK PGRI 3 Malang - Success by Discipline">
     <!-- Loading overlay
     <div id="loading"
         class="fixed inset-0 bg-white z-50 flex items-center justify-center transition-opacity duration-500">
@@ -18,10 +9,6 @@
         </div>
     </div> -->
 
-    <x-back2top></x-back2top>
-
-    <x-header></x-header>
-
     <!-- Main content with news sidebar -->
     <div class="flex flex-col h-full h-max-content lg:flex-row container mx-auto px-4 py-6">
         <!-- Main content -->
@@ -31,7 +18,7 @@
                 <div class="swiper mySwiper rounded-xl overflow-hidden">
                     <div class="swiper-wrapper">
                         <section class="swiper-slide relative w-full h-full">
-                            <img class="w-full h-[40vh] sm:h-[50vh] md:h-[60vh] lg:h-[70vh] object-cover"
+                            <img width="100%" height="100%" class="w-full h-[40vh] sm:h-[50vh] md:h-[60vh] lg:h-[70vh] object-cover"
                                 src="{{ asset('assets/head_news_1.png') }}" alt="head_news_1.png">
                             <div class="absolute bottom-0 left-0 w-full h-1/2 gradient-overlay"></div>
                             <div class="absolute bottom-6 left-5 md:left-8 text-white max-w-4xl">
@@ -53,58 +40,31 @@
             <div class="bg-white py-4 overflow-hidden rounded-lg mb-8 animate-fade-in delay-100">
                 <div class="scroll-container flex whitespace-nowrap">
                     <div class="flex space-x-8 md:space-x-12 pr-12">
-                        <img class="h-6 md:h-10 object-contain inline-block" src="{{ asset('assets/alfa logo 1.png') }}"
+                        <img width="100%" height="100%" class="h-6 md:h-10 object-contain inline-block" src="{{ asset('assets/alfa logo 1.png') }}"
                             alt="Partner Logo">
-                        <img class="h-6 md:h-10 object-contain inline-block" src="{{ asset('assets/b&d icon 1.png') }}"
+                        <img width="100%" height="100%" class="h-6 md:h-10 object-contain inline-block" src="{{ asset('assets/b&d icon 1.png') }}"
                             alt="Partner Logo">
-                        <img class="h-6 md:h-10 object-contain inline-block" src="{{ asset('assets/lg icon 1.png') }}"
+                        <img width="100%" height="100%" class="h-6 md:h-10 object-contain inline-block" src="{{ asset('assets/lg icon 1.png') }}"
                             alt="Partner Logo">
-                        <img class="h-6 md:h-10 object-contain inline-block" src="{{ asset('assets/pjb icon 1.png') }}"
+                        <img width="100%" height="100%" class="h-6 md:h-10 object-contain inline-block" src="{{ asset('assets/pjb icon 1.png') }}"
                             alt="Partner Logo">
-                        <img class="h-6 md:h-10 object-contain inline-block" src="{{ asset('assets/daihat logo 1.png') }}"
+                        <img width="100%" height="100%" class="h-6 md:h-10 object-contain inline-block"
+                            src="{{ asset('assets/daihat logo 1.png') }}" alt="Partner Logo">
+                        <img width="100%" height="100%" class="h-6 md:h-10 object-contain inline-block" src="{{ asset('assets/Honda_Logo.svg') }}"
                             alt="Partner Logo">
-                        <img class="h-6 md:h-10 object-contain inline-block" src="{{ asset('assets/Honda_Logo.svg') }}"
+                        <img width="100%" height="100%" class="h-6 md:h-10 object-contain inline-block" src="{{ asset('assets/kompas logo.svg') }}"
                             alt="Partner Logo">
-                        <img class="h-6 md:h-10 object-contain inline-block" src="{{ asset('assets/kompas logo.svg') }}"
+                        <img width="100%" height="100%" class="h-6 md:h-10 object-contain inline-block"
+                            src="{{ asset('assets/Polytron logo.png') }}" alt="Partner Logo">
+                        <img width="100%" height="100%" class="h-6 md:h-10 object-contain inline-block" src="{{ asset('assets/auto 2000.webp') }}"
                             alt="Partner Logo">
-                        <img class="h-6 md:h-10 object-contain inline-block" src="{{ asset('assets/Polytron logo.png') }}"
+                        <img width="100%" height="100%" class="h-6 md:h-10 object-contain inline-block" src="{{ asset('assets/Ahass logo.png') }}"
                             alt="Partner Logo">
-                        <img class="h-6 md:h-10 object-contain inline-block" src="{{ asset('assets/auto 2000.webp') }}"
+                        <img width="100%" height="100%" class="h-6 md:h-10 object-contain inline-block" src="{{ asset('assets/yamaha logo.png') }}"
                             alt="Partner Logo">
-                        <img class="h-6 md:h-10 object-contain inline-block" src="{{ asset('assets/Ahas logo.png') }}"
-                            alt="Partner Logo">
-                        <img class="h-6 md:h-10 object-contain inline-block" src="{{ asset('assets/yamaha.png') }}"
-                            alt="Partner Logo">
-                        <img class="h-6 md:h-10 object-contain inline-block" src="{{ asset('assets/daihat logo 1.png') }}"
-                            alt="Partner Logo">
+                        <img width="100%" height="100%" class="h-6 md:h-10 object-contain inline-block"
+                            src="{{ asset('assets/daihat logo 1.png') }}" alt="Partner Logo">
                     </div>
-                    {{-- <!-- Duplicate for seamless loop -->
-                    <div class="flex space-x-8 md:space-x-12 pr-12">
-                        <img class="h-6 md:h-10 object-contain inline-block" src="https://placehold.co/125x60"
-                            alt="Partner Logo">
-                        <img class="h-6 md:h-10 object-contain inline-block" src="https://placehold.co/155x87"
-                            alt="Partner Logo">
-                        <img class="h-6 md:h-10 object-contain inline-block" src="https://placehold.co/182x95"
-                            alt="Partner Logo">
-                        <img class="h-6 md:h-10 object-contain inline-block" src="https://placehold.co/115x71"
-                            alt="Partner Logo">
-                        <img class="h-6 md:h-10 object-contain inline-block" src="https://placehold.co/174x101"
-                            alt="Partner Logo">
-                        <img class="h-6 md:h-10 object-contain inline-block" src="https://placehold.co/177x58"
-                            alt="Partner Logo">
-                        <img class="h-6 md:h-10 object-contain inline-block" src="https://placehold.co/125x60"
-                            alt="Partner Logo">
-                        <img class="h-6 md:h-10 object-contain inline-block" src="https://placehold.co/155x87"
-                            alt="Partner Logo">
-                        <img class="h-6 md:h-10 object-contain inline-block" src="https://placehold.co/182x95"
-                            alt="Partner Logo">
-                        <img class="h-6 md:h-10 object-contain inline-block" src="https://placehold.co/115x71"
-                            alt="Partner Logo">
-                        <img class="h-6 md:h-10 object-contain inline-block" src="https://placehold.co/174x101"
-                            alt="Partner Logo">
-                        <img class="h-6 md:h-10 object-contain inline-block" src="https://placehold.co/177x58"
-                            alt="Partner Logo">
-                    </div> --}}
                 </div>
             </div>
 
@@ -114,7 +74,7 @@
                 <div class="flex flex-col lg:flex-row gap-6 mb-12">
                     <div class="w-full lg:w-1/2 department-card bg-customOrange p-5 md:p-6 relative overflow-hidden">
                         <div class="info-card bg-white p-2 mb-5 md:mb-6">
-                            <img class="w-full h-auto rounded-2xl" src="{{ asset('assets/elektro_card.png') }}"
+                            <img width="100%" height="100%" class="w-full h-auto rounded-2xl" src="{{ asset('assets/elektro_card.png') }}"
                                 alt="Elektro Department">
                         </div>
                         <h2 class="text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-4 md:mb-6">Elektro</h2>
@@ -129,14 +89,14 @@
                             class="bg-white text-[#242424] text-base md:text-lg font-medium py-2 px-6 md:px-8 rounded-full hover:bg-gray-100 transition">
                             Selengkapnya
                         </button>
-                        <img class="absolute -bottom-2 -right-6 w-64 md:w-72 opacity-35 -rotate-12"
+                        <img width="100%" height="100%" class="absolute -bottom-2 -right-6 w-64 md:w-72 opacity-35 -rotate-12"
                             src="{{ asset('assets/bg_elektro_card.png') }}" alt="Decoration">
                     </div>
 
                     <!-- Otomotif Department -->
                     <div class="w-full lg:w-1/2 department-card bg-customRed p-5 md:p-6 relative overflow-hidden">
                         <div class="info-card bg-white p-2 mb-5 md:mb-6">
-                            <img class="w-full h-auto rounded-2xl" src="{{ asset('assets/otomotif_card.png') }}"
+                            <img width="100%" height="100%" class="w-full h-auto rounded-2xl" src="{{ asset('assets/otomotif_card.png') }}"
                                 alt="Otomotif Department">
                         </div>
                         <h2 class="text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-4 md:mb-6">Otomotif</h2>
@@ -151,7 +111,7 @@
                             class="bg-white text-[#242424] text-base md:text-lg font-medium py-2 px-6 md:px-8 rounded-full hover:bg-gray-100 transition">
                             Selengkapnya
                         </button>
-                        <img class="absolute -bottom-2 -right-6 w-64 md:w-72 opacity-60 -rotate-12"
+                        <img width="100%" height="100%" class="absolute -bottom-2 -right-6 w-64 md:w-72 opacity-60 -rotate-12"
                             src="{{ asset('assets/bg_otomotif_card.png') }}" alt="Decoration">
                     </div>
                 </div>
@@ -161,7 +121,7 @@
                     <!-- Pemesinan Department -->
                     <div class="w-full lg:w-1/2 department-card bg-customPink p-5 md:p-6 relative overflow-hidden">
                         <div class="info-card bg-white p-2 mb-5 md:mb-6">
-                            <img class="w-full h-auto rounded-2xl" src="{{ asset('assets/pemesinan_card.jpg') }}"
+                            <img width="100%" height="100%" class="w-full h-auto rounded-2xl" src="{{ asset('assets/pemesinan_card.jpg') }}"
                                 alt="Pemesinan Department">
                         </div>
                         <h2 class="text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-4 md:mb-6">Pemesinan</h2>
@@ -176,14 +136,14 @@
                             class="bg-white text-[#242424] text-base md:text-lg font-medium py-2 px-6 md:px-8 rounded-full hover:bg-gray-100 transition">
                             Selengkapnya
                         </button>
-                        <img class="absolute -bottom-2 -right-6 w-64 md:w-72 opacity-60 -rotate-12"
+                        <img width="100%" height="100%" class="absolute -bottom-2 -right-6 w-64 md:w-72 opacity-60 -rotate-12"
                             src="{{ asset('assets/bg_pemesinan_card.png') }}" alt="Decoration">
                     </div>
 
                     <!-- TIK Department -->
                     <div class="w-full lg:w-1/2 department-card bg-customBlue p-5 md:p-6 relative overflow-hidden">
                         <div class="info-card bg-white p-2 mb-5 md:mb-6">
-                            <img class="w-full h-auto rounded-2xl" src="{{ asset('assets/tik_card.png') }}"
+                            <img width="100%" height="100%" class="w-full h-auto rounded-2xl" src="{{ asset('assets/tik_card.png') }}"
                                 alt="TIK Department">
                         </div>
                         <h2 class="text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-4 md:mb-6">TIK</h2>
@@ -198,7 +158,7 @@
                             class="bg-white text-[#242424] text-base md:text-lg font-medium py-2 px-6 md:px-8 rounded-full hover:bg-gray-100 transition">
                             Selengkapnya
                         </button>
-                        <img class="absolute -bottom-2 -right-6 w-64 md:w-72 opacity-35 -rotate-12"
+                        <img width="100%" height="100%" class="absolute -bottom-2 -right-6 w-64 md:w-72 opacity-35 -rotate-12"
                             src="{{ asset('assets/bg_tik_card.png') }}" alt="Decoration">
                     </div>
                 </div>
@@ -213,7 +173,7 @@
                     <div class="flex flex-col lg:flex-row items-stretch gap-6 justify-center">
                         <!-- Habit 1 -->
                         <div class="w-full lg:w-1/3 habit-card bg-gray-300 p-5 flex flex-col">
-                            <img class="w-full h-52 md:h-48 object-cover rounded-lg mb-4"
+                            <img width="100%" height="100%" class="w-full h-52 md:h-48 object-cover rounded-lg mb-4"
                                 src="{{ asset('assets/cekkelengkapan.png') }}" alt="Cek Kelengkapan Seragam">
                             <h3 class="text-xl md:text-2xl font-bold text-center mb-3">Cek Kelengkapan Seragam</h3>
                             <p class="text-base text-center">
@@ -223,7 +183,7 @@
 
                         <!-- Habit 2 (Center - Larger) -->
                         <div class="w-full lg:w-2/5 habit-card bg-gray-300 p-5 flex flex-col">
-                            <img class="w-full h-56 md:h-56 object-cover rounded-lg mb-4"
+                            <img width="100%" height="100%" class="w-full h-56 md:h-56 object-cover rounded-lg mb-4"
                                 src="{{ asset('assets/jalur_hijau.png') }}" alt="Jalur Hijau">
                             <h3 class="text-2xl md:text-3xl font-bold text-center mb-3">Jalur Hijau</h3>
                             <p class="text-base md:text-lg text-center">
@@ -234,7 +194,7 @@
 
                         <!-- Habit 3 -->
                         <div class="w-full lg:w-1/3 habit-card bg-gray-300 p-5 flex flex-col">
-                            <img class="w-full h-52 md:h-48 object-cover rounded-lg mb-4"
+                            <img width="100%" height="100%" class="w-full h-52 md:h-48 object-cover rounded-lg mb-4"
                                 src="{{ asset('assets/mengaji_pagi.png') }}" alt="Mengaji Pagi">
                             <h3 class="text-xl md:text-2xl font-bold text-center mb-3">Mengaji Pagi</h3>
                             <p class="text-base text-center">
@@ -254,21 +214,21 @@
                 <h3 class="font-bold text-xl mb-4 border-b-2 border-customOrange pb-2">Berita Terbaru</h3>
                 <div class="space-y-6">
                     <div class="group cursor-pointer">
-                        <img class="w-full h-40 object-cover rounded-lg mb-2 group-hover:opacity-90 transition"
+                        <img width="100%" height="100%" class="w-full h-40 object-cover rounded-lg mb-2 group-hover:opacity-90 transition"
                             src="{{ asset('assets/gurupramuka.png') }}" alt="News Image">
                         <p class="text-sm font-semibold group-hover:text-customOrange transition">Guru Turut Jadi
                             Peserta
                             dalam Perkemahan Pramuka Penegak</p>
                     </div>
                     <div class="group cursor-pointer">
-                        <img class="w-full h-40 object-cover rounded-lg mb-2 group-hover:opacity-90 transition"
+                        <img width="100%" height="100%" class="w-full h-40 object-cover rounded-lg mb-2 group-hover:opacity-90 transition"
                             src="{{ asset('assets/agustusan.png') }}" alt="News Image">
                         <p class="text-sm font-semibold group-hover:text-customOrange transition">Sambut Hari
                             Kemerdekaan,
                             SKARIGA Gelar Jalan Sehat dan Aneka Lomba Penuh Semangat</p>
                     </div>
                     <div class="group cursor-pointer">
-                        <img class="w-full h-40 object-cover rounded-lg mb-2 group-hover:opacity-90 transition"
+                        <img width="100%" height="100%" class="w-full h-40 object-cover rounded-lg mb-2 group-hover:opacity-90 transition"
                             src="{{ asset('assets/kcs38.png') }}" alt="News Image">
                         <p class="text-sm font-semibold group-hover:text-customOrange transition">Pusdikarhanud Galakkan
                             Gerakan Cinta Sekolah untuk Bentuk Karakter Siswa</p>
@@ -301,10 +261,17 @@
         </aside>
     </div>
 
-    <x-sidebar></x-sidebar>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            document.addEventListener('scroll', () => {
+                const header = document.getElementById('header');
+                if (window.scrollY >= 24) {
+                    header?.classList.add('bg-white', 'text-[#313131]', 'shadow-md');
+                } else {
+                    header?.classList.remove('bg-white', 'text-[#313131]', 'shadow-md');
+                }
+            });
+        });
+    </script>
 
-    <!-- Footer -->
-    <x-footer></x-footer>
-</body>
-
-</html>
+</x-layout>

@@ -1,13 +1,3 @@
-<head>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Swiper CSS -->
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
-    <!-- Alpine JS -->
-    <script src="//unpkg.com/alpinejs" defer></script>
-<!-- Header/Navigation -->
 @props(['transparent' => false])
 
 <!-- Header/Navigation -->
@@ -32,13 +22,10 @@
                     ticking = true;
                 }
             });
-
-            // Scroll ke atas saat load
-            window.scrollTo(0, 0);
         " :class="scrolled
             ? 'bg-white text-[#313131] shadow-md'
             : '{{ $transparent ? 'bg-transparent text-white' : 'bg-white text-[#313131] shadow-md' }}'"
-    class="{{ $transparent ? 'fixed top-0 left-0 w-full z-50 transition-all duration-300 ease-in-out' : 'sticky top-0 left-0 w-full bg-white z-50' }}">
+    class="{{ $transparent ? 'fixed top-0 left-0 w-full z-50 transition-all duration-300 ease-in-out' : 'sticky top-0 left-0 w-full bg-white z-50' }}" id="header">
     <div class="container mx-auto px-4 py-3">
         <div class="flex items-center justify-between">
             <div class="flex items-center">
