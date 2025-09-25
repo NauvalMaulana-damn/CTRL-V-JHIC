@@ -25,3 +25,29 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 });
+
+tailwind.config = {
+    theme: {
+        extend: {
+            colors: {
+                customRed: "#FD5353",
+                customOrange: "#E17626",
+                customBlue: "#2492D1",
+                customPink: "#FD467E",
+                customInsta: "#E1306C",
+                darkGray: "#222325",
+            },
+            fontFamily: {
+                poppins: ["Poppins", "sans-serif"],
+                inter: ["Inter", "sans-serif"],
+            },
+            backgroundImage: {
+                customIG:
+                    "linear-gradient(135deg, #f58529, #dd2a7b, #8134af, #515bd4)",
+            },
+            height: {
+                "screen-minus-88": "calc(100vh - 87.97px)",
+            },
+        },
+    },
+};
