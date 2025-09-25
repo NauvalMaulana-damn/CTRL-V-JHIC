@@ -53,32 +53,32 @@
             <div class="bg-white py-4 overflow-hidden rounded-lg mb-8 animate-fade-in delay-100">
                 <div class="scroll-container flex whitespace-nowrap">
                     <div class="flex space-x-8 md:space-x-12 pr-12">
-                        <img class="h-6 md:h-10 object-contain inline-block" src="https://placehold.co/125x60"
+                        <img class="h-6 md:h-10 object-contain inline-block" src="{{ asset('assets/alfa logo 1.png') }}"
                             alt="Partner Logo">
-                        <img class="h-6 md:h-10 object-contain inline-block" src="https://placehold.co/155x87"
+                        <img class="h-6 md:h-10 object-contain inline-block" src="{{ asset('assets/b&d icon 1.png') }}"
                             alt="Partner Logo">
-                        <img class="h-6 md:h-10 object-contain inline-block" src="https://placehold.co/182x95"
+                        <img class="h-6 md:h-10 object-contain inline-block" src="{{ asset('assets/lg icon 1.png') }}"
                             alt="Partner Logo">
-                        <img class="h-6 md:h-10 object-contain inline-block" src="https://placehold.co/115x71"
+                        <img class="h-6 md:h-10 object-contain inline-block" src="{{ asset('assets/pjb icon 1.png') }}"
                             alt="Partner Logo">
-                        <img class="h-6 md:h-10 object-contain inline-block" src="https://placehold.co/174x101"
+                        <img class="h-6 md:h-10 object-contain inline-block" src="{{ asset('assets/daihat logo 1.png') }}"
                             alt="Partner Logo">
-                        <img class="h-6 md:h-10 object-contain inline-block" src="https://placehold.co/177x58"
+                        <img class="h-6 md:h-10 object-contain inline-block" src="{{ asset('assets/Honda_Logo.svg') }}"
                             alt="Partner Logo">
-                        <img class="h-6 md:h-10 object-contain inline-block" src="https://placehold.co/125x60"
+                        <img class="h-6 md:h-10 object-contain inline-block" src="{{ asset('assets/kompas logo.svg') }}"
                             alt="Partner Logo">
-                        <img class="h-6 md:h-10 object-contain inline-block" src="https://placehold.co/155x87"
+                        <img class="h-6 md:h-10 object-contain inline-block" src="{{ asset('assets/Polytron logo.png') }}"
                             alt="Partner Logo">
-                        <img class="h-6 md:h-10 object-contain inline-block" src="https://placehold.co/182x95"
+                        <img class="h-6 md:h-10 object-contain inline-block" src="{{ asset('assets/auto 2000.webp') }}"
                             alt="Partner Logo">
-                        <img class="h-6 md:h-10 object-contain inline-block" src="https://placehold.co/115x71"
+                        <img class="h-6 md:h-10 object-contain inline-block" src="{{ asset('assets/Ahas logo.png') }}"
                             alt="Partner Logo">
-                        <img class="h-6 md:h-10 object-contain inline-block" src="https://placehold.co/174x101"
+                        <img class="h-6 md:h-10 object-contain inline-block" src="{{ asset('assets/yamaha.png') }}"
                             alt="Partner Logo">
-                        <img class="h-6 md:h-10 object-contain inline-block" src="https://placehold.co/177x58"
+                        <img class="h-6 md:h-10 object-contain inline-block" src="{{ asset('assets/daihat logo 1.png') }}"
                             alt="Partner Logo">
                     </div>
-                    <!-- Duplicate for seamless loop -->
+                    {{-- <!-- Duplicate for seamless loop -->
                     <div class="flex space-x-8 md:space-x-12 pr-12">
                         <img class="h-6 md:h-10 object-contain inline-block" src="https://placehold.co/125x60"
                             alt="Partner Logo">
@@ -104,7 +104,7 @@
                             alt="Partner Logo">
                         <img class="h-6 md:h-10 object-contain inline-block" src="https://placehold.co/177x58"
                             alt="Partner Logo">
-                    </div>
+                    </div> --}}
                 </div>
             </div>
 
