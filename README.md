@@ -31,9 +31,9 @@ Website ini adalah website sekolah yang Informatif dan Kreatif untuk menampilkan
 
 ## ✨ Fitur Utama
 
-- 📸 **Verifikasi Wajah** dengan unggah foto & video minimal 3 detik.  
+- 📸 **Side News dan Sidebar** dengan konten yang informatif.  
 - 🌐 **Akses Web** dari perangkat apa saja yang terhubung internet.  
-- 📊 **Laporan Kehadiran** otomatis & riwayat presensi.  
+- 📊 **Data yang up-to-date** Data yang selalu diperbarukan.  
 - 🔒 **Keamanan Data** dengan enkripsi & kontrol akses.
 
 ---
