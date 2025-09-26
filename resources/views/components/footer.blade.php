@@ -12,6 +12,11 @@
                     <span class="text-[#828282] text-sm">(0341) 554383</span>
                 </div>
 
+                <div class="flex items-start mb-4">
+                    <i class="fab fa-whatsapp text-gray-500 mt-1 mr-2"></i>
+                    <a href="https://wa.me/6282133000370" class="text-[#828282] text-sm underline">+62 821-3300-0370</a>
+                </div>
+
                 <div class="flex items-start">
                     <i class="fas fa-envelope text-gray-500 mt-1 mr-2"></i>
                     <a href="mailto:mail.smkpgri3malang@gmail.com" class="text-[#828282] text-sm underline">
@@ -64,10 +69,10 @@
                 </div>
 
                 <!-- Google Maps -->
-                <div class="rounded-lg overflow-hidden h-[350px] w-[550px]">
+                <div class="rounded-lg overflow-hidden h-[350px] w-full mb-4">
                     <div class="mapouter" style="position:relative; text-align:right; width:500px; height:450px;">
                         <div class="gmap_canvas"
-                            style="overflow:hidden; background:none!important; width:500px; height:450px;">
+                            style="overflow:hidden; background:none!important; width:376px; height:350px;">
                             <iframe title="SMK PGRI 3 MALANG" width="100%" height="100%"
                                 style="border:1px; border-radius: 12px;" allowfullscreen="" loading="lazy"
                                 referrerpolicy="no-referrer-when-downgrade"
