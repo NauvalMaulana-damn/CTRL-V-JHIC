@@ -14,7 +14,7 @@ export default defineConfig({
         rollupOptions: {
             output: {
                 manualChunks: {
-                    vendor: ['swiper'], // HAPUS lodash-es jika tidak digunakan
+                    vendor: ['swiper'], // lodash-es problem
                 },
             }
         }
