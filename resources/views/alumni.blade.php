@@ -35,19 +35,20 @@
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
 
         <!-- Card 1 -->
-        <div class="relative bg-[#FF885B] rounded-2xl shadow-lg p-6 text-center text-white overflow-hidden">
-          <div class="flex justify-center -mt-20">
-            <img src="https://placehold.co/150" alt="Khoko Rama Viera"
-                 class="w-32 h-32 rounded-full shadow-lg border-4 border-white object-cover">
-          </div>
-          <h3 class="mt-6 text-xl md:text-2xl font-bold">Khoko Rama Viera</h3>
-          <p class="mt-3 text-base">
-            Alumni 2018. Bekerja di Hitachi Construction Machinery Jepang
-          </p>
-        </div>
+        <div class="relative bg-[#FF885B] rounded-2xl shadow-lg p-6 text-center text-white ">
+  <div class="flex justify-center -mt-20">
+    <img src="https://placehold.co/150" alt="Khoko Rama Viera"
+         class="w-32 h-32 rounded-full shadow-lg border-4 border-white object-cover">
+  </div>
+  <h3 class="mt-6 text-xl md:text-2xl font-bold">Khoko Rama Viera</h3>
+  <p class="mt-3 text-base">
+    Alumni 2018. Bekerja di Hitachi Construction Machinery Jepang
+  </p>
+</div>
+
 
         <!-- Card 2 -->
-        <div class="relative bg-[#FF4D4D] rounded-2xl shadow-lg p-6 text-center text-white overflow-hidden">
+        <div class="relative bg-[#FF4D4D] rounded-2xl shadow-lg p-6 text-center text-white ">
           <div class="flex justify-center -mt-20">
             <img src="https://placehold.co/150" alt="Aditya Tantra"
                  class="w-32 h-32 rounded-full shadow-lg border-4 border-white object-cover">
@@ -83,7 +84,7 @@
         </div>
 
         <!-- Card 5 -->
-        <div class="relative bg-[#2ECC71] rounded-2xl shadow-lg p-6 text-center text-white overflow-hidden">
+        <div class="relative bg-[#2ECC71] rounded-2xl shadow-lg p-6 text-center text-white ">
           <div class="flex justify-center -mt-20">
             <img src="https://placehold.co/150" alt="Febrianto Nugroho"
                  class="w-32 h-32 rounded-full shadow-lg border-4 border-white object-cover">

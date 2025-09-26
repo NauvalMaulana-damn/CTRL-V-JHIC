@@ -87,13 +87,13 @@
       <div class="grid grid-cols-2 gap-6 justify-center">
         <div class="bg-white shadow-md rounded-lg p-4">
           <img src="{{ asset('assets/robot-manu.jpg') }}" alt="Juara 1" class="w-full h-48 object-cover rounded-lg mb-4">
-          <p class="font-semibold">Nama Juara 1</p>
-          <p class="text-sm text-gray-500">Keterangan singkat</p>
+          <p class="font-semibold">Syahril Faisal Ramadani</p>
+          <p class="text-sm text-gray-500">Pemenang Juara 1 LKS DikMen Jawa Timur ke 33, dibidang Industrial Control</p>
         </div>
         <div class="bg-white shadow-md rounded-lg p-4">
           <img src="{{ asset('assets/electronics.png') }}" alt="Juara 2" class="w-full h-48 object-cover rounded-lg mb-4">
-          <p class="font-semibold">Nama Juara 2</p>
-          <p class="text-sm text-gray-500">Keterangan singkat</p>
+          <p class="font-semibold">Yohan Aldi Pratama</p>
+          <p class="text-sm text-gray-500">Pemenang Juara 1 Lomba Kompetensi Siswa Jawa Timur ke 32, dibidang Electronics</p>
         </div>
       </div>
 
@@ -101,18 +101,18 @@
       <div class="grid grid-cols-3 gap-6">
         <div class="bg-white shadow-xl rounded-lg p-4">
           <img src="{{ asset('assets/robot manufac.png') }}" alt="Juara 3" class="w-full h-48 object-cover rounded-lg mb-4">
-          <p class="font-semibold">Nama Juara 3</p>
-          <p class="text-sm text-gray-500">Keterangan singkat</p>
+          <p class="font-semibold">Azriel & Celvin</p>
+          <p class="text-sm text-gray-500">Pemenang Juara 1 Lomba Kompetensi Siswa Jawa Timur ke 32, dibidang Robot Manufacturing System</p>
         </div>
         <div class="bg-white shadow-md rounded-lg p-4">
           <img src="foto4.jpg" alt="Juara 4" class="w-full h-48 object-cover rounded-lg mb-4">
-          <p class="{{ asset('assets/web techn.jpeg') }}">Nama Juara 4</p>
-          <p class="text-sm text-gray-500">Keterangan singkat</p>
+          <p class="{{ asset('assets/web techn.jpeg') }}">Arif Kurniawan</p>
+          <p class="text-sm text-gray-500">Pemenang Juara 2 Lomba Kompetensi Siswa Jawa Timur ke 32, dibidang Web Technology</p>
         </div>
         <div class="bg-white shadow-md rounded-lg p-4">
           <img src="{{ asset('assets/car paint.jpeg') }}" alt="Juara 5" class="w-full h-48 object-cover rounded-lg mb-4">
-          <p class="font-semibold">Nama Juara 5</p>
-          <p class="text-sm text-gray-500">Keterangan singkat</p>
+          <p class="font-semibold">Tegar Reyhan</p>
+          <p class="text-sm text-gray-500">Pemenang Juara 1 Lomba Kompetensi Siswa Jawa Timur ke 32, dibidang Car Painting</p>
         </div>
       </div>
 
@@ -120,13 +120,13 @@
       <div class="grid grid-cols-2 gap-6 justify-center">
         <div class="bg-white shadow-md rounded-lg p-4">
           <img src="{{ asset('assets/uiux.jpg') }}" alt="Juara 6" class="w-full max-h-60 object-contain rounded-lg mb-4">
-          <p class="font-semibold">Nama Juara 6</p>
-          <p class="text-sm text-gray-500">Keterangan singkat</p>
+          <p class="font-semibold">Sopo e iki gakenal</p>
+          <p class="text-sm text-gray-500">Pemenang Juara 1 Lomba Sistem Informasi Festival 2024, dibidang UI/UX Desain</p>
         </div>
         <div class="bg-white shadow-md rounded-lg p-4">
           <img src="{{ asset('assets/it software.png') }}" alt="Juara 7" class="w-full h-48 object-cover rounded-lg mb-4">
-          <p class="font-semibold">Nama Juara 7</p>
-          <p class="text-sm text-gray-500">Keterangan singkat</p>
+          <p class="font-semibold">Edsel Param Mustapa</p>
+          <p class="text-sm text-gray-500">Pemenang Juara 1 Lomba Kompetensi Siswa Jawa Timur ke 32, dibidang IT Software Solution For Business</p>
         </div>
       </div>
 
@@ -134,18 +134,18 @@
       <div class="grid grid-cols-3 gap-6">
         <div class="bg-white shadow-md rounded-lg p-4">
           <img src="{{ asset('assets/prototype model.png') }}" alt="Juara 8" class="w-full h-48 object-cover rounded-lg mb-4">
-          <p class="font-semibold">Nama Juara 8</p>
-          <p class="text-sm text-gray-500">Keterangan singkat</p>
+          <p class="font-semibold">Iza Aska </p>
+          <p class="text-sm text-gray-500">Pemenang Juara 1 Lomba Kompetensi Siswa Jawa Timur ke 32, dibidang Prototype Modeling</p>
         </div>
         <div class="bg-white shadow-md rounded-lg p-4">
           <img src="{{ asset('assets/marketing.jpeg') }}" alt="Juara 9" class="w-full h-48 object-cover rounded-lg mb-4">
-          <p class="font-semibold">Nama Juara 9</p>
-          <p class="text-sm text-gray-500">Keterangan singkat</p>
+          <p class="font-semibold">Ayu Dewi</p>
+          <p class="text-sm text-gray-500">Pemenang Juara 3 Lomba Kompetensi Siswa Jawa Timur ke 32, dibidang Marketing Online</p>
         </div>
         <div class="bg-white shadow-md rounded-lg p-4">
           <img src="{{ asset('assets/manufac system.jpg') }}" alt="Juara 10" class="w-full h-48 object-cover rounded-lg mb-4">
-          <p class="font-semibold">Nama Juara 10</p>
-          <p class="text-sm text-gray-500">Keterangan singkat</p>
+          <p class="font-semibold">Rafif & Novaldi</p>
+          <p class="text-sm text-gray-500">Pemenang Juara 1 LKS DIKMEN Jawa Timur 33, dibidang Robot Manufacturing System</p>
         </div>
       </div>
     </div>
