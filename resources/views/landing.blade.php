@@ -62,8 +62,12 @@
                             alt="Partner Logo">
                         <img width="100%" height="100%" class="h-6 md:h-10 object-contain inline-block" src="{{ asset('assets/yamaha logo.png') }}"
                             alt="Partner Logo">
-                        <img width="100%" height="100%" class="h-6 md:h-10 object-contain inline-block"
-                            src="{{ asset('assets/daihat logo 1.png') }}" alt="Partner Logo">
+                        <img class="h-6 md:h-10 object-contain inline-block" src="{{ asset('assets/Ahas logo.png') }}"
+                            alt="Partner Logo">
+                        <img class="h-6 md:h-10 object-contain inline-block" src="{{ asset('assets/yamaha.png') }}"
+                            alt="Partner Logo">
+                        <img class="h-6 md:h-10 object-contain inline-block" src="{{ asset('assets/daihat logo 1.png') }}"
+                            alt="Partner Logo">
                     </div>
                 </div>
             </div>
