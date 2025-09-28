@@ -1,4 +1,23 @@
 <x-layout title="SMK PGRI 3 Malang - Success by Discipline">
+    <style>
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
+
+            /* jalan sampai setengah isi */
+        }
+
+        .animate-scroll {
+            display: flex;
+            animation: scroll 25s linear infinite;
+            /* speed bisa diatur */
+        }
+    </style>
     <!-- Loading overlay
     <div id="loading"
         class="fixed inset-0 bg-white z-50 flex items-center justify-center transition-opacity duration-500">
@@ -37,40 +56,59 @@
             </section>
 
             <!-- News Ticker -->
-            <div class="bg-white py-4 overflow-hidden rounded-lg mb-8 animate-fade-in delay-100">
-                <div class="scroll-container flex whitespace-nowrap">
-                    <div class="flex space-x-8 md:space-x-12 pr-12">
-                        <img width="100%" height="100%" class="h-6 md:h-10 object-contain inline-block" src="{{ asset('assets/alfa logo 1.png') }}"
-                            alt="Partner Logo">
-                        <img width="100%" height="100%" class="h-6 md:h-10 object-contain inline-block" src="{{ asset('assets/b&d icon 1.png') }}"
-                            alt="Partner Logo">
-                        <img width="100%" height="100%" class="h-6 md:h-10 object-contain inline-block" src="{{ asset('assets/lg icon 1.png') }}"
-                            alt="Partner Logo">
-                        <img width="100%" height="100%" class="h-6 md:h-10 object-contain inline-block" src="{{ asset('assets/pjb icon 1.png') }}"
-                            alt="Partner Logo">
-                        <img width="100%" height="100%" class="h-6 md:h-10 object-contain inline-block"
-                            src="{{ asset('assets/daihat logo 1.png') }}" alt="Partner Logo">
-                        <img width="100%" height="100%" class="h-6 md:h-10 object-contain inline-block" src="{{ asset('assets/Honda_Logo.svg') }}"
-                            alt="Partner Logo">
-                        <img width="100%" height="100%" class="h-6 md:h-10 object-contain inline-block" src="{{ asset('assets/kompas logo.svg') }}"
-                            alt="Partner Logo">
-                        <img width="100%" height="100%" class="h-6 md:h-10 object-contain inline-block"
-                            src="{{ asset('assets/Polytron logo.png') }}" alt="Partner Logo">
-                        <img width="100%" height="100%" class="h-6 md:h-10 object-contain inline-block" src="{{ asset('assets/auto 2000.webp') }}"
-                            alt="Partner Logo">
-                        <img width="100%" height="100%" class="h-6 md:h-10 object-contain inline-block" src="{{ asset('assets/Ahass logo.png') }}"
-                            alt="Partner Logo">
-                        <img width="100%" height="100%" class="h-6 md:h-10 object-contain inline-block" src="{{ asset('assets/yamaha logo.png') }}"
-                            alt="Partner Logo">
-                        <img class="h-6 md:h-10 object-contain inline-block" src="{{ asset('assets/Ahass logo.png') }}"
-                            alt="Partner Logo">
-                        <img class="h-6 md:h-10 object-contain inline-block" src="{{ asset('assets/yamaha logo.png') }}"
-                            alt="Partner Logo">
-                        <img class="h-6 md:h-10 object-contain inline-block" src="{{ asset('assets/daihat logo 1.png') }}"
-                            alt="Partner Logo">
-                    </div>
+                    <div class="py-4 overflow-hidden rounded-lg mb-8 animate-fade-in delay-100">
+            <div class="scroll-container flex whitespace-nowrap animate-scroll">
+                <div class="flex space-x-8 md:space-x-12 pr-12">
+                    <!-- Logo asli -->
+                    <img class="h-6 md:h-10 object-contain inline-block" src="{{ asset('assets/alfa logo 1.png') }}"
+                        alt="Partner Logo">
+                    <img class="h-6 md:h-10 object-contain inline-block" src="{{ asset('assets/b&d icon 1.png') }}"
+                        alt="Partner Logo">
+                    <img class="h-6 md:h-10 object-contain inline-block" src="{{ asset('assets/lg icon 1.png') }}"
+                        alt="Partner Logo">
+                    <img class="h-6 md:h-10 object-contain inline-block" src="{{ asset('assets/pjb icon 1.png') }}"
+                        alt="Partner Logo">
+                    <img class="h-6 md:h-10 object-contain inline-block"
+                        src="{{ asset('assets/daihat logo 1.png') }}" alt="Partner Logo">
+                    <img class="h-6 md:h-10 object-contain inline-block" src="{{ asset('assets/Honda_Logo.svg') }}"
+                        alt="Partner Logo">
+                    <img class="h-6 md:h-10 max-w-[100px] object-contain inline-block"
+                        src="{{ asset('assets/kompas logo.svg') }}" alt="Kompas Logo">
+                    <img class="h-6 md:h-10 max-w-[100px] object-contain inline-block"
+                        src="{{ asset('assets/Polytron logo.png') }}" alt="Polytron Logo">
+                    <img class="h-6 md:h-10 object-contain inline-block" src="{{ asset('assets/auto 2000.webp') }}"
+                        alt="Partner Logo">
+                    <img class="h-6 md:h-10 object-contain inline-block" src="{{ asset('assets/Ahass logo.png') }}"
+                        alt="Partner Logo">
+                    <img class="h-6 md:h-10 max-w-[100px] object-contain inline-block"
+                        src="{{ asset('assets/yamaha logo.png') }}" alt="Yamaha Logo">
+
+                    <!-- Logo duplikat untuk looping mulus -->
+                    <img class="h-6 md:h-10 object-contain inline-block" src="{{ asset('assets/alfa logo 1.png') }}"
+                        alt="Partner Logo">
+                    <img class="h-6 md:h-10 object-contain inline-block" src="{{ asset('assets/b&d icon 1.png') }}"
+                        alt="Partner Logo">
+                    <img class="h-6 md:h-10 object-contain inline-block" src="{{ asset('assets/lg icon 1.png') }}"
+                        alt="Partner Logo">
+                    <img class="h-6 md:h-10 object-contain inline-block" src="{{ asset('assets/pjb icon 1.png') }}"
+                        alt="Partner Logo">
+                    <img class="h-6 md:h-10 object-contain inline-block"
+                        src="{{ asset('assets/daihat logo 1.png') }}" alt="Partner Logo">
+                    <img class="h-6 md:h-10 object-contain inline-block" src="{{ asset('assets/Honda_Logo.svg') }}"
+                        alt="Partner Logo">
+                    <img class="h-6 md:h-10 max-w-[100px] object-contain inline-block"
+                        src="{{ asset('assets/kompas logo.svg') }}" alt="Kompas Logo">
+                    <img class="h-6 md:h-10 max-w-[100px] object-contain inline-block"
+                        src="{{ asset('assets/Polytron logo.png') }}" alt="Polytron Logo">
+                    <img class="h-6 md:h-10 object-contain inline-block" src="{{ asset('assets/auto 2000.webp') }}"
+                        alt="Partner Logo">
+                    <img class="h-6 md:h-10 object-contain inline-block" src="{{ asset('assets/Ahass logo.png') }}"
+                        alt="Partner Logo">
+                    <img class="h-6 md:h-10 max-w-[100px] object-contain inline-block"
+                        src="{{ asset('assets/yamaha logo.png') }}" alt="Yamaha Logo">
                 </div>
             </div>
+        </div>
 
             <!-- Department Sections -->
             <section class="py-6 md:py-10 animate-fade-in delay-200">
