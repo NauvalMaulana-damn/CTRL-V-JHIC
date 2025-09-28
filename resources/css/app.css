@@ -77,6 +77,10 @@ body {
     max-height: 500px;
 }
 
+[x-cloak] {
+    display: none !important;
+}
+
 /* Loading animation */
 @keyframes fadeIn {
     from {
