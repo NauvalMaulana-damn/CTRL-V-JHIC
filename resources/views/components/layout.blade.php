@@ -16,8 +16,9 @@
     @props(['headerTransparent' => false])
     @if (!$headerTransparent)
     <x-header :transparent="$headerTransparent"></x-header>
-    @endif
+    @else
     <x-header :transparent="$headerTransparent"></x-header>
+    @endif
     {{ $slot }}
     @vite(['resources/ts/app.ts'])
     <x-sidebar></x-sidebar>

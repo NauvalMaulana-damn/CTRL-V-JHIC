@@ -1,23 +1,4 @@
 <x-layout title="SMK PGRI 3 Malang - Success by Discipline">
-    <style>
-        @keyframes scroll {
-            0% {
-                transform: translateX(0);
-            }
-
-            100% {
-                transform: translateX(-50%);
-            }
-
-            /* jalan sampai setengah isi */
-        }
-
-        .animate-scroll {
-            display: flex;
-            animation: scroll 25s linear infinite;
-            /* speed bisa diatur */
-        }
-    </style>
     <!-- Loading overlay
     <div id="loading"
         class="fixed inset-0 bg-white z-50 flex items-center justify-center transition-opacity duration-500">
@@ -52,7 +33,6 @@
                     <!-- Pagination -->
                     <div class="swiper-pagination"></div>
                 </div>
-
             </section>
 
             <!-- News Ticker -->
