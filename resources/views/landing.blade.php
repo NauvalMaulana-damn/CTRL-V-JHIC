@@ -7,7 +7,7 @@
             </div>
             <p class="mt-4 text-lg font-semibold">SMK PGRI 3 Malang</p>
         </div>
-    </div> -->
+    </div> -->  
 
     <!-- Main content with news sidebar -->
     <div class="flex flex-col h-full h-max-content lg:flex-row container mx-auto px-4 py-6">
@@ -250,7 +250,7 @@
                 <ul class="space-y-3">
                     <li><a href="http://117.102.78.163/student/"
                             class="text-blue-600 hover:underline flex items-center"><i
-                                class="fas fa-link mr-2 text-sm"></i>OCS (One Click Student)</a></li>
+                                class="fas fa-link mr-2 text-sm"></i>OCS (One Click Service)</a></li>
                     <li><a href="http://117.102.78.163/ocscbt/"
                             class="text-blue-600 hover:underline flex items-center"><i
                                 class="fas fa-link mr-2 text-sm"></i>CBT (Computer Based Test)</a></li>

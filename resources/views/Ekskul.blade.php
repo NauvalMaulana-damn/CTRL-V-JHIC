@@ -82,7 +82,7 @@
 
 <body>
 
-    <x-back2top></x-back2top>
+    {{-- <x-back2top></x-back2top> --}}
 
     <x-header transparent="true"></x-header>
 

@@ -1,11 +1,4 @@
-<!DOCTYPE html>
-<html lang="id">
-
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>@section('title', 'SMK PGRI 3 MALANG')</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+<x-layout title="Prestasi - SMK PGRI 3 Malang">
     <style>
     /* Scrollbar untuk kartu jawara (jika overflow) */
     .scrollbar-hide::-webkit-scrollbar {
@@ -17,43 +10,39 @@
         scrollbar-width: none;
     }
     </style>
-</head>
+    <div class="bg-gray-50 font-sans text-gray-900">
+        {{-- <x-back2top></x-back2top> --}}
 
-<body class="bg-gray-50 font-sans text-gray-900">
-    <x-back2top></x-back2top>
+        {{-- <x-header></x-header> --}}
 
-    <x-header></x-header>
+        <!-- Hero Section -->
+        <section class="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-2 gap-10">
+            <!-- Hero text & button -->
+            <div class="flex flex-col justify-center space-y-6">
+                <h2 class="text-3xl font-bold leading-tight">
+                    SKARIGA, Sekolahnya <br />
+                    Sang Juara! <br />
+                    Gabung Skariga untuk <br />
+                    Menjadi Sang Juara Selanjutnya!
+                </h2>
+                <button class="w-max bg-blue-600 text-white px-6 py-3 rounded-full hover:bg-blue-700 transition"
+                    onclick="alert('Daftar Sekarang clicked!')">
+                    Daftar Sekarang
+                </button>
+            </div>
 
-    <!-- Hero Section -->
-    <section class="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-2 gap-10">
-        <!-- Hero text & button -->
-        <div class="flex flex-col justify-center space-y-6">
-            <h2 class="text-3xl font-bold leading-tight">
-                SKARIGA, Sekolahnya <br />
-                Sang Juara! <br />
-                Gabung Skariga untuk <br />
-                Menjadi Sang Juara Selanjutnya!
-            </h2>
-            <button class="w-max bg-blue-600 text-white px-6 py-3 rounded-full hover:bg-blue-700 transition"
-                onclick="alert('Daftar Sekarang clicked!')">
-                Daftar Sekarang
-            </button>
-        </div>
+            <!-- Hero images grid -->
+            <div class="grid grid-cols-2 gap-4">
+                <!-- Kiri atas -->
+                <img src="{{ asset('assets/skariga pres.jpeg') }}" class="rounded-lg shadow-md" />
 
-        <!-- Hero images grid -->
-        <div class="grid grid-cols-2 gap-4">
-            <!-- Kiri atas -->
-            <img src="{{ asset('assets/skariga pres.jpeg') }}" class="rounded-lg shadow-md" />
+                <!-- Kanan (foto tinggi) -->
+                <img src="{{ asset('assets/robot-manu.jpg') }}" class="rounded-lg shadow-md row-span-2" />
 
-            <!-- Kanan (foto tinggi) -->
-            <img src="{{ asset('assets/robot-manu.jpg') }}" class="rounded-lg shadow-md row-span-2" />
-
-            <!-- Kiri bawah -->
-            <img src="{{ asset('assets/skariga prestasi.jpg') }}" class="rounded-lg shadow-md" />
-        </div>
-
-
-        </div>
+                <!-- Kiri bawah -->
+                <img src="{{ asset('assets/skariga prestasi.jpg') }}" class="rounded-lg shadow-md" />
+            </div>
+    </div>
 
     </section>
 
@@ -113,7 +102,7 @@
                     </div>
                     <div class="bg-white shadow-md rounded-lg p-4">
                         <img src="foto4.jpg" alt="Juara 4" class="w-full h-48 object-cover rounded-lg mb-4">
-                        <p class="{{ asset('assets/web techn.jpeg') }}">Arif Kurniawan</p>
+                        <p class="{{ asset('assets/webtechn.jpeg') }}">Arif Kurniawan</p>
                         <p class="text-sm text-gray-500">Pemenang Juara 2 Lomba Kompetensi Siswa Jawa Timur ke 32,
                             dibidang Web Technology</p>
                     </div>
@@ -177,14 +166,6 @@
     <!-- Teruskan membuat kartu untuk jawara lain seperti Tegar Reyhan, Sopo e iki gakenal, Edsel Param Mustopa, Iza Aska, Ayu Dewi, Rafit & Novaldi -->
 
 
-
-
-
-    <x-sidebar></x-sidebar>
-
-    <!-- Footer -->
-    <x-footer></x-footer>
-
     <script>
     window.addEventListener('DOMContentLoaded', () => {
         document.querySelector('header').classList.remove('bg-white', 'text-[#313131]', 'shadow-md');
@@ -200,6 +181,6 @@
         window.scrollTo(0, 0);
     }, 0);
     </script>
-</body>
+    </div>
 
-</html>
+</x-layout>

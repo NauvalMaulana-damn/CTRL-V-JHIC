@@ -20,3 +20,7 @@ Route::get('/prestasi', function () {
 Route::get('/alumni', function () {
     return view('alumni');
 });
+
+Route::get('/ekskul', function () {
+    return view('Ekskul');
+});
