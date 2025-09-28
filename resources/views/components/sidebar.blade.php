@@ -33,16 +33,15 @@
         <!-- Navigation Items -->
         <div class="flex-1 overflow-y-auto p-5">
             @foreach ([
-                ['icon' => asset('assets/home (1).png'), 'label' => 'Home', 'href' => '/'],
-                ['icon' => asset('assets/trophy.png'), 'label' => 'Prestasi', 'href' => '/prestasi'],
-                ['icon' => asset('assets/major.png'), 'label' => 'Jurusan', 'href' => '#'],
-                ['icon' => asset('assets/extra.png'), 'label' => 'Ekstrakurikuler', 'href' => '/ekskul'],
-                ['icon' => asset('assets/grad.png'), 'label' => 'Alumni', 'href' => '/alumni'],
-                ['icon' => asset('assets/join.png'), 'label' => 'Pendaftaran', 'href' => '#'],
-                ['icon' => asset('assets/profil.png'), 'label' => 'Profil Sekolah', 'href' => '/profil']
-                ] as $item)
-                <div
-                    class="menu-item flex items-center py-3 px-4 mb-2 cursor-pointer
+            ['icon' => asset('assets/home (1).png'), 'label' => 'Home', 'href' => '/'],
+            ['icon' => asset('assets/trophy.png'), 'label' => 'Prestasi', 'href' => '/prestasi'],
+            ['icon' => asset('assets/major.png'), 'label' => 'Jurusan', 'href' => '#'],
+            ['icon' => asset('assets/extra.png'), 'label' => 'Ekstrakurikuler', 'href' => '/ekskul'],
+            ['icon' => asset('assets/grad.png'), 'label' => 'Alumni', 'href' => '/alumni'],
+            ['icon' => asset('assets/join.png'), 'label' => 'Pendaftaran', 'href' => '#'],
+            ['icon' => asset('assets/profil.png'), 'label' => 'Profil Sekolah', 'href' => '/profil'],
+            ] as $item)
+            <div class="menu-item flex items-center py-3 px-4 mb-2 cursor-pointer
                             rounded-lg transition hover:bg-customBlue hover:text-white hover:shadow-md">
                     <img class="w-6 h-6 menu-icon" src="{{ $item['icon'] }}" alt="{{ $item['label'] }}">
                     <a class="ml-4 font-semibold" href="{{ $item['href'] }}">{{ $item['label'] }}</a>
@@ -69,6 +68,18 @@
                         Eskul nya ada apa aja?
                     </div>
                 </div>
+        <!-- Q&A Section -->
+        <div class="p-5 bg-white/30 backdrop-blur-md rounded-t-2xl border-t border-gray-200/50">
+            <div class="flex items-center mb-4">
+                <img class="w-8 h-8" src="{{ asset('assets/faq.png') }}" alt="FAQ">
+                <h2 class="text-xl font-bold ml-2 text-dark">FAQ</h2>
+            </div>
+
+            <div class="flex flex-col space-y-2">
+                <div class="chat-bubble chat-right">Cara daftar gimana?</div>
+                <div class="chat-bubble chat-left">Ada Jurusan Apa?</div>
+                <div class="chat-bubble chat-right">Eskul nya ada apa aja?</div>
+            </div>
 
                 <button
                     class="w-fit mx-auto mt-5 bg-black text-white text-sm px-4 py-1.5 rounded-full font-medium flex items-center justify-center hover:bg-[#FF885B] transition">
