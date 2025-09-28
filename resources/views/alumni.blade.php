@@ -17,7 +17,7 @@
 </head>
 <body class="bg-gray-50 text-gray-900">
 
-  <x-back2top></x-back2top>
+  {{-- <x-back2top></x-back2top> --}}
 
     <x-header></x-header>
 

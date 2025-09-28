@@ -31,13 +31,13 @@
         <!-- Navigation Items -->
         <div class="flex-1 overflow-y-auto p-5">
             @foreach ([
-            ['icon' => 'https://placehold.co/50x50', 'label' => 'Home', 'href' => '/'],
-            ['icon' => 'https://placehold.co/50x50', 'label' => 'Profil Sekolah', 'href' => '/profil'],
-            ['icon' => 'https://placehold.co/50x50', 'label' => 'Prestasi', 'href' => '#'],
-            ['icon' => 'https://placehold.co/50x50', 'label' => 'Jurusan', 'href' => '#'],
-            ['icon' => 'https://placehold.co/50x50', 'label' => 'Ekstrakurikuler', 'href' => '#'],
-            ['icon' => 'https://placehold.co/50x50', 'label' => 'Alumni', 'href' => '#'],
-            ['icon' => 'https://placehold.co/50x50', 'label' => 'Pendaftaran', 'href' => '#'],
+            ['icon' => asset('assets/home (1).png'), 'label' => 'Home', 'href' => '/'],
+            ['icon' => asset('assets/trophy.png'), 'label' => 'Prestasi', 'href' => '/prestasi'],
+            ['icon' => asset('assets/major.png'), 'label' => 'Jurusan', 'href' => '#'],
+            ['icon' => asset('assets/extra.png'), 'label' => 'Ekstrakurikuler', 'href' => '/ekskul'],
+            ['icon' => asset('assets/grad.png'), 'label' => 'Alumni', 'href' => '/alumni'],
+            ['icon' => asset('assets/join.png'), 'label' => 'Pendaftaran', 'href' => '#'],
+            ['icon' => asset('assets/profil.png'), 'label' => 'Profil Sekolah', 'href' => '/profil'],
             ] as $item)
             <div class="menu-item flex items-center py-3 px-4 mb-2 cursor-pointer
                             rounded-lg transition hover:bg-customBlue hover:text-white hover:shadow-md">
@@ -50,8 +50,8 @@
         <!-- Q&A Section -->
         <div class="p-5 bg-white/30 backdrop-blur-md rounded-t-2xl border-t border-gray-200/50">
             <div class="flex items-center mb-4">
-                <img class="w-8 h-8" src="https://placehold.co/50x50" alt="Q&A">
-                <h2 class="text-xl font-bold ml-2 text-dark">Q&A</h2>
+                <img class="w-8 h-8" src="{{ asset('assets/faq.png') }}" alt="FAQ">
+                <h2 class="text-xl font-bold ml-2 text-dark">FAQ</h2>
             </div>
 
             <div class="flex flex-col space-y-2">

@@ -17,7 +17,7 @@
   </style>
 </head>
 <body class="bg-gray-50 font-sans text-gray-900">
-    <x-back2top></x-back2top>
+    {{-- <x-back2top></x-back2top> --}}
 
     <x-header></x-header>
 
@@ -106,7 +106,7 @@
         </div>
         <div class="bg-white shadow-md rounded-lg p-4">
           <img src="foto4.jpg" alt="Juara 4" class="w-full h-48 object-cover rounded-lg mb-4">
-          <p class="{{ asset('assets/web techn.jpeg') }}">Arif Kurniawan</p>
+          <p class="{{ asset('assets/webtechn.jpeg') }}">Arif Kurniawan</p>
           <p class="text-sm text-gray-500">Pemenang Juara 2 Lomba Kompetensi Siswa Jawa Timur ke 32, dibidang Web Technology</p>
         </div>
         <div class="bg-white shadow-md rounded-lg p-4">

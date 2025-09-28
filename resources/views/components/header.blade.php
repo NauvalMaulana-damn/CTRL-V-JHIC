@@ -63,9 +63,9 @@
             <ul class="space-y-2 pb-4 text-lg font-medium">
                 <li><a href="/" class="block py-2 hover:text-customOrange transition">Beranda</a></li>
                 <li><a href="/profil" class="block py-2 hover:text-customOrange transition">Profil</a></li>
-                <li><a href="#prestasi" class="block py-2 hover:text-customOrange transition">Prestasi</a></li>
-                <li><a href="#program" class="block py-2 hover:text-customOrange transition">Program</a></li>
-                <li><a href="#alumni" class="block py-2 hover:text-customOrange transition">Alumni</a></li>
+                <li><a href="/prestasi" class="block py-2 hover:text-customOrange transition">Prestasi</a></li>
+                <li><a href="/program" class="block py-2 hover:text-customOrange transition">Program</a></li>
+                <li><a href="/alumni" class="block py-2 hover:text-customOrange transition">Alumni</a></li>
                 <li><a href="#pendaftaran" class="block py-2 hover:text-customOrange transition">Pendaftaran</a></li>
             </ul>
         </div>

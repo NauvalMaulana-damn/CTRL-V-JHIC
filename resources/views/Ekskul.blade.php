@@ -82,7 +82,7 @@
 
 <body>
 
-    <x-back2top></x-back2top>
+    {{-- <x-back2top></x-back2top> --}}
 
     <x-header transparent="true"></x-header>
 
@@ -138,7 +138,7 @@
                             <div class="card-title">Jurnalistik</div>
                             <div class="card-desc">
                                 Ekskul yang mempelajari pencarian, penulisan, dan penyajian berita.
-                                Peserta berlatih wawancara, menulis artikel, memotret, dan mengelola media sekolah.
+                            Peserta berlatih wawancara, menulis artikel, memotret, dan mengelola media sekolah.
                             </div>
                         </div>
                     </div>
@@ -176,7 +176,7 @@
                     </div>
 
                     <div class="card">
-                        <img src="{{ asset(assets/eksVoli.png) }}" alt="Voli">
+                        <img src="{{ asset("assets/eksVoli.png") }}" alt="Voli">
                         <div class="card-content">
                             <div class="card-title">Voli</div>
                             <div class="card-desc">Ekskul bola voli sama halnya dengan futsal memiliki 2 tim yaitu putra
@@ -186,7 +186,7 @@
                     </div>
 
                     <div class="card">
-                        <img src="{{ asset(assets/eksBasket.png) }}" alt="Basket">
+                        <img src="{{ asset("assets/eksBasket.png") }}" alt="Basket">
                         <div class="card-content">
                             <div class="card-title">Basket</div>
                             <div class="card-desc">Sejak pertama hadir di Skariga, ekskul bola basket terus berkembang
@@ -197,7 +197,7 @@
                     </div>
 
                     <div class="card">
-                        <img src="{{ asset(assets/eksIlustrasi.png) }}" alt="Ilustrasi">
+                        <img src="{{ asset("assets/eksIlustrasi.png") }}" alt="Ilustrasi">
                         <div class="card-content">
                             <div class="card-title">Ilustrasi</div>
                             <div class="card-desc">Kegiatan yang mengasah keterampilan menggambar secara manual maupun
@@ -207,7 +207,7 @@
                     </div>
 
                     <div class="card">
-                        <img src="{{ asset(assets/eksFotografi.png) }}" alt="Photography">
+                        <img src="{{ asset("assets/eksFotografi.png") }}" alt="Photography">
                         <div class="card-content">
                             <div class="card-title">Photography</div>
                             <div class="card-desc">Kegiatan mempelajari teknik pengambilan gambar menggunakan kamera,
@@ -217,7 +217,7 @@
                     </div>
 
                     <div class="card">
-                        <img src="{{ asset(assets/eksIndocraft.png) }}" alt="Indo Craft">
+                        <img src="{{ asset("assets/eksIndocraft.png") }}" alt="Indo Craft">
                         <div class="card-content">
                             <div class="card-title">Indo Craft</div>
                             <div class="card-desc">Kegiatan membuat kerajinan tangan khas Indonesia seperti anyaman,
