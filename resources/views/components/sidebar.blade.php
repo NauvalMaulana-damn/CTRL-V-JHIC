@@ -69,9 +69,6 @@
                         Eskul nya ada apa aja?
                     </div>
                 </div>
-        
-
-
     </div>
 
 </div>
