@@ -1,3 +1,4 @@
+<x-layout title="SMK PGRI 3 MALANG - Success by Discipline">
 <!DOCTYPE html>
 <html lang="id">
 
@@ -101,9 +102,11 @@
         <h2 class="text-3xl font-bold text-center mb-8">Profil Lengkap SKARIGA</h2>
 
         <!-- Responsive square container -->
-        <div class="relative w-full max-w-[1100px] h-full max-h-[600px] aspect-square mx-auto rounded-2xl overflow-hidden shadow-lg">
-            <iframe src="https://www.youtube.com/embed/FAwdUR9SFRU?si=JYpD_LbCAMgLP_zM&vq=hd1080&modestbranding=1&rel=0&playsinline=1" title="PROFIL SMK PGRI 3 MALANG"
-                frameborder="0"
+        <div
+            class="relative w-full max-w-[1100px] h-full max-h-[600px] aspect-square mx-auto rounded-2xl overflow-hidden shadow-lg">
+            <iframe
+                src="https://www.youtube.com/embed/FAwdUR9SFRU?si=JYpD_LbCAMgLP_zM&vq=hd1080&modestbranding=1&rel=0&playsinline=1"
+                title="PROFIL SMK PGRI 3 MALANG" frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 referrerpolicy="strict-origin-when-cross-origin" allowfullscreen
                 class="absolute inset-0 w-full h-[600px] object-cover rounded-2xl">
@@ -163,10 +166,4 @@
         </div>
     </section>
 
-    <x-sidebar></x-sidebar>
-
-    <x-footer></x-footer>
-
-</body>
-
-</html>
+</x-layout>

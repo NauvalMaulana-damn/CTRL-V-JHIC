@@ -109,6 +109,21 @@
 
             <div class="container">
                 <div class="grid">
+                    <x-ekscard title="Futsal" alt="Futsal" image="eksFutsal.png">
+                        Akademi Futsal Skariga (AFUSKA) merupakan ekskul bidang olahraga futsal
+                        yang bisa diikuti oleh seluruh siswa Skariga. Terdiri dari tim putra dan putri.
+                    </x-ekscard>
+
+                    <x-ekscard title="Sepak Bola" alt="Sepak Bola" image="eksSepakBola.png">
+                        PS Merpati Muda SMK PGRI 3 Malang berkiprah di Divisi 1 Liga internal Askot PSSI Kota
+                        Malang,
+                        dengan skuad mayoritas siswa aktif dan beberapa alumni.
+                    </x-ekscard>
+
+                    <x-ekscard title="Jurnalistik" alt="Jurnalistik" image="eksJurnalistik.png">
+                        Ekskul yang mempelajari pencarian, penulisan, dan penyajian berita.
+                        Peserta berlatih wawancara, menulis artikel, memotret, dan mengelola media sekolah.
+                    </x-ekscard>
                     <div class="card">
                         <img src="{{ asset("assets/eksFutsal.png") }}" alt="Futsal">
                         <div class="card-content">
@@ -143,6 +158,15 @@
                         </div>
                     </div>
 
+                    <x-ekscard title="BTQ" alt="Baca Tulis Qur'an" image="eksBTQ">
+                        Ekskul fokus pembelajaran membaca, menulis, dan memahami Al-Qur’an sesuai tajwid,
+                        untuk meningkatkan literasi dan keimanan peserta.
+                    </x-ekscard>
+
+                    <x-ekscard title="BTQ" alt="Baca Tulis Qur'an" image="eksBTQ">
+                        Ekskul fokus pembelajaran membaca, menulis, dan memahami Al-Qur’an sesuai tajwid,
+                        untuk meningkatkan literasi dan keimanan peserta.
+                    </x-ekscard>
                     <div class="card">
                         <img src="{{ asset('assets/eksBTQ.png') }}" alt="BTQ">
                         <div class="card-content">

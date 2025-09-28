@@ -18,7 +18,7 @@
 <h2 align="center">📌 CTRL + V — Membangun Website Sekolah yang Informatif dan Kreatif</h2>
 
 <p align="center">
-  Presensi kapan saja, di mana saja, dengan verifikasi wajah dan video untuk kehadiran yang lebih autentik.sssssssssssssssssssssssssss
+  Presensi kapan saja, di mana saja, dengan verifikasi wajah dan video untuk kehadiran yang lebih autentik.
 </p>
 
 ---
