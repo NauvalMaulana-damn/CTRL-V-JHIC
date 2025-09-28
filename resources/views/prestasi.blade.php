@@ -11,10 +11,6 @@
     }
     </style>
     <div class="bg-gray-50 font-sans text-gray-900">
-        {{-- <x-back2top></x-back2top> --}}
-
-        {{-- <x-header></x-header> --}}
-
         <!-- Hero Section -->
         <section class="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-2 gap-10">
             <!-- Hero text & button -->
@@ -34,13 +30,13 @@
             <!-- Hero images grid -->
             <div class="grid grid-cols-2 gap-4">
                 <!-- Kiri atas -->
-                <img src="{{ asset('assets/skariga pres.jpeg') }}" class="rounded-lg shadow-md" />
+                <img src="{{ asset('assets/skariga pres.jpeg') }}" class="rounded-lg shadow-md" alt="Juara Seleksi Nasional 2024"/>
 
                 <!-- Kanan (foto tinggi) -->
-                <img src="{{ asset('assets/robot-manu.jpg') }}" class="rounded-lg shadow-md row-span-2" />
+                <img src="{{ asset('assets/robot-manu.jpg') }}" class="rounded-lg shadow-md row-span-2" alt="RMS"/>
 
                 <!-- Kiri bawah -->
-                <img src="{{ asset('assets/skariga prestasi.jpg') }}" class="rounded-lg shadow-md" />
+                <img src="{{ asset('assets/skariga prestasi.jpg') }}" class="rounded-lg shadow-md" alt="Juara Car Painting"/>
             </div>
     </div>
 

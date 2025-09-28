@@ -7,7 +7,7 @@ Route::get('/', function () {
     return view('landing');
 });
 
-Route::resource('ekstrakurikuler', EkskulController::class);
+Route::resource('ekskul', EkskulController::class);
 
 Route::get('/profil', function () {
     return view('profil');
@@ -19,8 +19,4 @@ Route::get('/prestasi', function () {
 
 Route::get('/alumni', function () {
     return view('alumni');
-});
-
-Route::get('/ekskul', function () {
-    return view('Ekskul');
 });

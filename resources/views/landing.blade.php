@@ -7,7 +7,7 @@
             </div>
             <p class="mt-4 text-lg font-semibold">SMK PGRI 3 Malang</p>
         </div>
-    </div> -->  
+    </div> -->
 
     <!-- Main content with news sidebar -->
     <div class="flex flex-col h-full h-max-content lg:flex-row container mx-auto px-4 py-6">
@@ -62,9 +62,9 @@
                             alt="Partner Logo">
                         <img width="100%" height="100%" class="h-6 md:h-10 object-contain inline-block" src="{{ asset('assets/yamaha logo.png') }}"
                             alt="Partner Logo">
-                        <img class="h-6 md:h-10 object-contain inline-block" src="{{ asset('assets/Ahas logo.png') }}"
+                        <img class="h-6 md:h-10 object-contain inline-block" src="{{ asset('assets/Ahass logo.png') }}"
                             alt="Partner Logo">
-                        <img class="h-6 md:h-10 object-contain inline-block" src="{{ asset('assets/yamaha.png') }}"
+                        <img class="h-6 md:h-10 object-contain inline-block" src="{{ asset('assets/yamaha logo.png') }}"
                             alt="Partner Logo">
                         <img class="h-6 md:h-10 object-contain inline-block" src="{{ asset('assets/daihat logo 1.png') }}"
                             alt="Partner Logo">
