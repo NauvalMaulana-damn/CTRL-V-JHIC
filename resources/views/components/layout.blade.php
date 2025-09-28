@@ -13,7 +13,8 @@
 
 <body class="bg-[#F8F8F8] m-0 p-0 overflow-x-hidden">
     <x-b2t></x-b2t>
-    <x-header></x-header>
+    @props(['headerTransparent' => false])
+    <x-header :transparent="$headerTransparent"></x-header>
     {{ $slot }}
     <x-sidebar></x-sidebar>
     <x-footer></x-footer>

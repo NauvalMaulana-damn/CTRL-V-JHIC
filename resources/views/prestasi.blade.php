@@ -1,14 +1,14 @@
 <x-layout title="Prestasi - SMK PGRI 3 Malang">
     <style>
-        /* Scrollbar untuk kartu jawara (jika overflow) */
-        .scrollbar-hide::-webkit-scrollbar {
-            display: none;
-        }
+    /* Scrollbar untuk kartu jawara (jika overflow) */
+    .scrollbar-hide::-webkit-scrollbar {
+        display: none;
+    }
 
-        .scrollbar-hide {
-            -ms-overflow-style: none;
-            scrollbar-width: none;
-        }
+    .scrollbar-hide {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
     </style>
     <div class="bg-gray-50 font-sans text-gray-900">
         {{-- <x-back2top></x-back2top> --}}
@@ -42,8 +42,6 @@
                 <!-- Kiri bawah -->
                 <img src="{{ asset('assets/skariga prestasi.jpg') }}" class="rounded-lg shadow-md" />
             </div>
-
-
     </div>
 
     </section>
@@ -169,19 +167,19 @@
 
 
     <script>
-        window.addEventListener('DOMContentLoaded', () => {
-            document.querySelector('header').classList.remove('bg-white', 'text-[#313131]', 'shadow-md');
-        });
+    window.addEventListener('DOMContentLoaded', () => {
+        document.querySelector('header').classList.remove('bg-white', 'text-[#313131]', 'shadow-md');
+    });
 
-        window.addEventListener('scroll', () => {
-            window.scrollY > 50 ? document.querySelector('header').classList.add('bg-white', 'text-[#313131]',
-                'shadow-md') : document.querySelector('header').classList.remove('bg-white', 'text-[#313131]',
-                'shadow-md');
-        });
+    window.addEventListener('scroll', () => {
+        window.scrollY > 50 ? document.querySelector('header').classList.add('bg-white', 'text-[#313131]',
+            'shadow-md') : document.querySelector('header').classList.remove('bg-white', 'text-[#313131]',
+            'shadow-md');
+    });
 
-        setTimeout(() => {
-            window.scrollTo(0, 0);
-        }, 0);
+    setTimeout(() => {
+        window.scrollTo(0, 0);
+    }, 0);
     </script>
     </div>
 
