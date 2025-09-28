@@ -68,6 +68,14 @@
                         class="self-end bg-gray-300 text-gray-800 text-sm px-2.5 py-1.5 rounded-2xl rounded-br-none max-w-[75%]">
                         Eskul nya ada apa aja?
                     </div>
+                    <button
+        class="w-fit mx-auto mt-5 bg-black text-white text-sm px-4 py-1.5 rounded-full font-medium flex items-center justify-center hover:bg-[#FF885B] transition">
+        Selengkapnya
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5 ml-1.5" fill="none" viewBox="0 0 24 24"
+            stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+        </svg>
+    </button>
                 </div>
     </div>
 

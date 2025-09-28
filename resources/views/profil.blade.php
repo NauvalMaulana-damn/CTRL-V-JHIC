@@ -1,4 +1,26 @@
-<x-layout title="SMK PGRI 3 MALANG - Success by Discipline" :headerTransparent="true">
+<x-layout title="SMK PGRI 3 MALANG - Success by Discipline">
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@section('title', 'Profil - SMK PGRI 3 Malang')</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="preload" as="font">
+    <style>
+    body {
+        font-family: 'Poppins', sans-serif;
+    }
+    </style>
+</head>
+
+<body class="bg-gray-50 text-gray-800">
+
+    {{-- <x-back2top></x-back2top> --}}
+
+    {{-- <x-header transparent="true"></x-header> --}}
+
     <!-- Hero SKARIGA -->
     <section class="relative w-full h-screen flex items-end z-10">
         <!-- Wrapper gambar -->
