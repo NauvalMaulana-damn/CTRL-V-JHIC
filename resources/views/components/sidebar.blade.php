@@ -69,30 +69,7 @@
                         Eskul nya ada apa aja?
                     </div>
                 </div>
-        <!-- Q&A Section -->
-        <div class="p-5 bg-white/30 backdrop-blur-md rounded-t-2xl border-t border-gray-200/50">
-            <div class="flex items-center mb-4">
-                <img class="w-8 h-8" src="{{ asset('assets/faq.png') }}" alt="FAQ">
-                <h2 class="text-xl font-bold ml-2 text-dark">FAQ</h2>
-            </div>
-
-            <div class="flex flex-col space-y-2">
-                <div class="chat-bubble chat-right">Cara daftar gimana?</div>
-                <div class="chat-bubble chat-left">Ada Jurusan Apa?</div>
-                <div class="chat-bubble chat-right">Eskul nya ada apa aja?</div>
-            </div>
-
-                <button
-                    class="w-fit mx-auto mt-5 bg-black text-white text-sm px-4 py-1.5 rounded-full font-medium flex items-center justify-center hover:bg-[#FF885B] transition">
-                    Selengkapnya
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5 ml-1.5" fill="none" viewBox="0 0 24 24"
-                        stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                    </svg>
-                </button>
-            </div>
-        </div>
+        
 
 
     </div>
