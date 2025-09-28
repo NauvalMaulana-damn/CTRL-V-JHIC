@@ -53,16 +53,20 @@
                 <!-- Social Media Icons -->
                 <div class="flex flex-col items-center space-y-4">
                     <a href="#"
-                        class="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-gray-600 transition">
+                        class="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-red-600 transition">
                         <i class="fab fa-youtube text-lg text-gray-300"></i>
                     </a>
                     <a href="#"
-                        class="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-gray-600 transition">
+                        class="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-customInsta transition">
                         <i class="fab fa-instagram text-lg text-gray-300"></i>
                     </a>
                     <a href="#"
-                        class="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-gray-600 transition">
+                        class="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-blue-700 transition">
                         <i class="fab fa-facebook-f text-lg text-gray-300"></i>
+                    </a>
+                    <a href="https://www.tiktok.com/@skariga"
+                        class="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-black transition">
+                        <i class="fa-brands fa-tiktok text-lg text-gray-300"></i>
                     </a>
                 </div>
 
