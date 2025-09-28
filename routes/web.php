@@ -7,7 +7,7 @@ Route::get('/', function () {
     return view('landing');
 });
 
-Route::resource('ekskul', EkskulController::class);
+Route::get('/ekskul', [EkskulController::class, 'index']);
 
 Route::get('/profil', function () {
     return view('profil');

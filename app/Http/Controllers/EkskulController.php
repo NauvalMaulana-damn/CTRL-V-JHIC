@@ -12,8 +12,7 @@ class EkskulController extends Controller
      */
     public function index()
     {
-        $ekskuls = Ekskul::all();
-        return view('ekskul', ['ekskuls' => $ekskuls]);
+        return view('alumni');
     }
 
     /**

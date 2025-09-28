@@ -10,7 +10,6 @@ class Ekskul extends Model
 
     protected $fillable = [
         'title',
-        'alt',
         'desc',
         'image',
     ];

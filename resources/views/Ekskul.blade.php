@@ -1,11 +1,4 @@
-<!DOCTYPE html>
-<html lang="id">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kegiatan Ekstrakurikuler</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+<x-layout>
     <style>
     body {
         font-family: 'Poppins', sans-serif;
@@ -78,14 +71,6 @@
         line-height: 1.4;
     }
     </style>
-</head>
-
-<body>
-
-    {{-- <x-back2top></x-back2top> --}}
-
-    <x-header transparent="true"></x-header>
-
     <!-- Hero SKARIGA -->
     <section class="relative w-full h-screen flex items-end z-10">
         <!-- Wrapper gambar -->
@@ -110,14 +95,12 @@
             <div class="container">
                 <div class="grid">
                     @foreach ($ekskuls as $ekskul)
-                        <x-ekscard>
-                            <x-slot name="image">{{ $ekskul->image }}</x-slot>
-                            <x-slot name="title">{{ $ekskul->name }}</x-slot>
-                            {{ $ekskul->desc }}
-                        </x-ekscard>
+                    <x-ekscard>
+                        <x-slot name="image">{{ $ekskul->image }}</x-slot>
+                        <x-slot name="title">{{ $ekskul->name }}</x-slot>
+                        {{ $ekskul->desc }}
+                    </x-ekscard>
                     @endforeach
                 </div>
             </div>
-</body>
-
-</html>
+</x-layout>
