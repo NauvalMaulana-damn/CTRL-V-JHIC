@@ -1,4 +1,4 @@
-<x-layout title="SMK PGRI 3 MALANG - Success by Discipline">
+<x-layout title="SMK PGRI 3 MALANG - Success by Discipline" :headerTransparent="true">
     <!-- Hero SKARIGA -->
     <section class="relative w-full h-screen flex items-end z-10">
         <!-- Wrapper gambar -->
