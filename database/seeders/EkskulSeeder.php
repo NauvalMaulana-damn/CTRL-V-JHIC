@@ -18,7 +18,7 @@ class EkskulSeeder extends Seeder
             'title' => 'Futsal',
             'desc' => 'Akademi Futsal Skariga (AFUSKA) merupakan DB bidang olahraga
             yang bisa diikuti oleh seluruh siswa Skariga. Terdiri dari tim putra dan putri.',
-            'image' => 'eks.png'
+            'image' => 'eksFutsal.png'
         ]);
 
         DB::table('ekskuls')->insert([

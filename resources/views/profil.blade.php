@@ -1,5 +1,5 @@
 <x-layout title="SMK PGRI 3 MALANG - Success by Discipline" :headerTransparent="true">
-<body class="bg-gray-50 text-gray-800">
+    
     <!-- Hero SKARIGA -->
     <section class="relative w-full h-screen flex items-end z-10">
         <!-- Wrapper gambar -->
@@ -145,5 +145,4 @@
         </div>
     </section>
 
-            </body>
 </x-layout>
