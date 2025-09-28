@@ -19,7 +19,7 @@
 
     {{-- <x-back2top></x-back2top> --}}
 
-    <x-header transparent="true"></x-header>
+    {{-- <x-header transparent="true"></x-header> --}}
 
     <!-- Hero SKARIGA -->
     <section class="relative w-full h-screen flex items-end z-10">
