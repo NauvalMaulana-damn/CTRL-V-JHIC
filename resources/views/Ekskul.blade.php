@@ -21,7 +21,7 @@
             <h2 class="text-3xl md:text-5xl font-bold text-center mb-12">Ekstrakurikuler</h2>
 
             <div class="max-w-[1200px] mx-auto px-4">
-                <div class="grid gird-cols-3 gap-6">
+                <div class="grid grid-cols-3 gap-6">
                     @foreach ($ekskuls as $ekskul)
                     <x-ekscard title="{{ $ekskul->title }}" alt="{{ $ekskul->title }}" image="{{ $ekskul->image }}">
                         {{ $ekskul->desc }}
