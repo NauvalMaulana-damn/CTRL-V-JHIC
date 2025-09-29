@@ -76,7 +76,7 @@
                     <iframe title="SMK PGRI 3 MALANG" width="100%" height="100%"
                         style="border:1px; border-radius: 12px;" allowfullscreen="" loading="lazy"
                         referrerpolicy="no-referrer-when-downgrade"
-                        src="https://maps.google.com/maps?width=550&amp;height=150&amp;hl=en&amp;q=smk pgri 3 malang&amp;t=p&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed">
+                        src="https://maps.google.com/maps?width=320&amp;height=220&amp;hl=en&amp;q=smk pgri 3 malang&amp;t=p&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed">
                     </iframe>
                 </div>
             </div>
