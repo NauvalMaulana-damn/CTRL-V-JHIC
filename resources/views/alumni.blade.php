@@ -1,36 +1,4 @@
-<!DOCTYPE html>
-<html lang="id">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alumni SMK PGRI 3 Malang</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-    @keyframes fadeIn {
-        0% {
-            opacity: 0;
-            transform: translateY(20px);
-        }
-
-        100% {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-
-    .animate-fade-in {
-        animation: fadeIn 1s ease-in-out forwards;
-    }
-    </style>
-</head>
-
-<body class="bg-gray-50 text-gray-900">
-
-    <x-back2top></x-back2top>
-
-    <x-header></x-header>
-
+<x-layout>
     <!-- Hero -->
     <section class="relative h-[400px] md:h-[500px] rounded-xl overflow-hidden m-6">
         <img src="https://placehold.co/1920x1080" alt="Hero Image" class="w-full h-full object-cover">
@@ -151,27 +119,4 @@
             </div>
         </div>
     </section>
-
-    <x-sidebar></x-sidebar>
-
-    <!-- Footer -->
-    <x-footer></x-footer>
-
-    <script>
-    window.addEventListener('DOMContentLoaded', () => {
-        document.querySelector('header').classList.remove('bg-white', 'text-[#313131]', 'shadow-md');
-    });
-
-    window.addEventListener('scroll', () => {
-        window.scrollY > 50 ? document.querySelector('header').classList.add('bg-white', 'text-[#313131]',
-            'shadow-md') : document.querySelector('header').classList.remove('bg-white', 'text-[#313131]',
-            'shadow-md');
-    });
-
-    setTimeout(() => {
-        window.scrollTo(0, 0);
-    }, 0);
-    </script>
-</body>
-
-</html>
+</x-layout>

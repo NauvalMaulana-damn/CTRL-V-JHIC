@@ -14,11 +14,15 @@
 <body class="bg-[#F8F8F8] m-0 p-0 overflow-x-hidden">
     <x-b2t></x-b2t>
     @props(['headerTransparent' => false])
+    @if (!$headerTransparent)
     <x-header :transparent="$headerTransparent"></x-header>
+    @else
+    <x-header :transparent="$headerTransparent"></x-header>
+    @endif
     {{ $slot }}
+    @vite(['resources/ts/app.ts'])
     <x-sidebar></x-sidebar>
     <x-footer></x-footer>
-    @vite(['resources/ts/app.ts'])
 </body>
 
 </html>
