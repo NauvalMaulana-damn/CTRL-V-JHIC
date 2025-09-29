@@ -5,13 +5,13 @@
     <section class="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-2 gap-10 relative z-10">
         <div class="flex flex-col justify-center space-y-6">
             <div class="flex items-center gap-3 mb-4">
-                <img src="{{ asset('assets/trophy.png') }}" class="w-10 h-10 drop-shadow-md animate-bounce" alt="Trophy">
                 <h2 class="text-3xl font-bold leading-tight transition-transform duration-300 transform hover:scale-105">
                     SKARIGA, Sekolahnya <br />
                     Sang Juara! <br />
                     Gabung Skariga untuk <br />
                     Menjadi Sang Juara Selanjutnya!
                 </h2>
+                <img src="{{ asset('assets/trophy.png') }}" class="w-10 h-10 drop-shadow-md animate-bounce" alt="Trophy">
             </div>
             <button class="w-max bg-blue-600 text-white px-6 py-3 rounded-full flex items-center gap-2 transition transform hover:-translate-y-1 hover:bg-blue-700 hover:shadow-lg"
                 onclick="alert('Daftar Sekarang clicked!')">
