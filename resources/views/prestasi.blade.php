@@ -78,13 +78,13 @@
                 <div class="grid grid-cols-2 gap-6">
                     <div class="bg-white shadow-md rounded-lg p-4 transition-transform duration-300 hover:-translate-y-1 hover:border hover:border-blue-500 relative">
                         <div class="absolute -top-2 -right-2 bg-red-500 text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold transition-transform duration-300 hover:scale-105">1</div>
-                        <img src="{{ asset('assets/robot-manu.jpg') }}" alt="Juara 1" class="w-full h-48 aspect-[4/3] object-cover rounded-lg mb-4 transition-transform duration-300 hover:scale-105 hover:brightness-105">
+                        <img src="{{ asset('assets/indust-cont.jpg') }}" alt="Juara 1" class="w-full h-48 aspect-[4/3] object-cover rounded-lg mb-4 transition-transform duration-300 hover:scale-105 hover:brightness-105">
                         <p class="font-semibold">Syahril Faisal Ramadani</p>
                         <p class="text-sm text-gray-500">Pemenang Juara 1 LKS DikMen Jawa Timur ke 33, dibidang Industrial Control</p>
                     </div>
                     <div class="bg-white shadow-md rounded-lg p-4 transition-transform duration-300 hover:-translate-y-1 hover:border hover:border-blue-500 relative">
                         <div class="absolute -top-2 -right-2 bg-red-500 text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold transition-transform duration-300 hover:scale-105">1</div>
-                        <img src="{{ asset('assets/electronics.png') }}" alt="Juara 2" class="w-full h-48 aspect-[4/3] object-cover rounded-lg mb-4 transition-transform duration-300 hover:scale-105 hover:brightness-105">
+                        <img src="{{ asset('assets/electronics.jpg') }}" alt="Juara 2" class="w-full h-48 aspect-[4/3] object-cover rounded-lg mb-4 transition-transform duration-300 hover:scale-105 hover:brightness-105">
                         <p class="font-semibold">Yohan Aldi Pratama</p>
                         <p class="text-sm text-gray-500">Pemenang Juara 1 Lomba Kompetensi Siswa Jawa Timur ke 32, dibidang Electronics</p>
                     </div>
