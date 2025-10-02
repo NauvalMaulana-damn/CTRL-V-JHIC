@@ -202,7 +202,7 @@
                         <div
                             class="w-full lg:w-1/3 habit-card bg-gray-300 p-5 flex flex-col rounded-xl transition-transform duration-300 hover:scale-105 hover:shadow-xl">
                             <img class="w-full h-52 md:h-48 object-cover rounded-lg mb-4"
-                                src="{{ asset('assets/cekkelengkapan.png') }}" alt="Cek Kelengkapan Seragam">
+                                src="{{ asset('assets/ceksabuk.jpg') }}" alt="Cek Kelengkapan Seragam">
                             <h3 class="text-xl md:text-2xl font-bold text-center mb-3">Cek Kelengkapan Seragam</h3>
                             <p class="text-base text-center">
                                 Sebelum memasuki sekolah, siswa wajib menunjukan kelengkapan seragam
@@ -213,7 +213,7 @@
                         <div
                             class="w-full lg:w-2/5 habit-card bg-slate-300 p-6 flex flex-col rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-2xl z-10 min-h-[520px]">
                             <img class="w-full h-64 object-cover rounded-lg mb-4"
-                                src="{{ asset('assets/jalur_hijau.png') }}" alt="Jalur Hijau">
+                                src="{{ asset('assets/jalurhijau.jpg') }}" alt="Jalur Hijau">
                             <h3 class="text-2xl md:text-3xl font-bold text-center mb-3">Jalur Hijau</h3>
                             <p class="text-base md:text-lg text-center">
                                 SKARIGA selalu membiasakan warga sekolah untuk berjalan di jalur hijau, seperti yang
@@ -225,7 +225,7 @@
                         <div
                             class="w-full lg:w-1/3 habit-card bg-gray-300 p-5 flex flex-col rounded-xl transition-transform duration-300 hover:scale-105 hover:shadow-xl">
                             <img class="w-full h-52 md:h-48 object-cover rounded-lg mb-4"
-                                src="{{ asset('assets/mengaji_pagi.png') }}" alt="Mengaji Pagi">
+                                src="{{ asset('assets/mengajipagi.jpg') }}" alt="Mengaji Pagi">
                             <h3 class="text-xl md:text-2xl font-bold text-center mb-3">Mengaji Pagi</h3>
                             <p class="text-base text-center">
                                 Bagi siswa muslim, SKARIGA mengadakan mengaji pagi bersama, seperti membaca juz amma,

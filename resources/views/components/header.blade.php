@@ -38,21 +38,21 @@
                 <!-- Desktop Navigation -->
                 <nav class="hidden md:block">
                     <ul class="flex space-x-4 lg:space-x-8 text-base md:text-lg font-medium">
-                        <li><a href="/" class="hover:text-customOrange transition">Beranda</a></li>
-                        <li><a href="/profil" class="hover:text-customOrange transition">Profil</a></li>
-                        <li><a href="/prestasi" class="hover:text-customOrange transition">Prestasi</a></li>
+                        <li><a href="/" class="{{ request()->is('/') ? 'text-customOrange' : '' }} hover:text-customOrange transition">Beranda</a></li>
+                        <li><a href="/profil" class="{{ request()->is('profil') ? 'text-customOrange' : '' }} hover:text-customOrange transition">Profil</a></li>
+                        <li><a href="/prestasi" class="{{ request()->is('prestasi') ? 'text-customOrange' : '' }} hover:text-customOrange transition">Prestasi</a></li>
                         <li class="relative group">
-                            <a class="hover:text-customOrange hover:cursor-pointer transition flex items-center">
+                            <a class="{{ request()->is('jurusan') || request()->is('ekskul') ? 'text-customOrange' : '' }} hover:text-customOrange hover:cursor-pointer transition flex items-center">
                                 Program
                             </a>
                             <ul
                                 class="absolute left-0 mt-2 w-40 bg-white shadow-lg rounded-md opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-all duration-200 z-50">
-                                <li><a href="/jurusan" class="block px-4 py-2 hover:text-customOrange">Jurusan</a></li>
-                                <li><a href="/ekskul" class="block px-4 py-2 hover:text-customOrange">Ekskrakurikuler</a></li>
+                                <li><a href="/jurusan" class="{{ request()->is('jurusan') ? 'text-customOrange' : '' }} block px-4 py-2 hover:text-customOrange">Jurusan</a></li>
+                                <li><a href="/ekskul" class="{{ request()->is('ekskul') ? 'text-customOrange' : '' }} block px-4 py-2 hover:text-customOrange">Ekskrakurikuler</a></li>
                             </ul>
                         </li>
-                        <li><a href="/alumni" class="hover:text-customOrange transition">Alumni</a></li>
-                        <li><a href="#pendaftaran" class="hover:text-customOrange transition">Pendaftaran</a></li>
+                        <li><a href="/alumni" class="{{ request()->is('alumni' ? 'text-customOrange' : '') }} hover:text-customOrange transition">Alumni</a></li>
+                        <li><a href="#pendaftaran" class="{{ request()->is('pendaftaran') ? 'text-customOrange' : '' }} hover:text-customOrange transition">Pendaftaran</a></li>
                     </ul>
                 </nav>
 

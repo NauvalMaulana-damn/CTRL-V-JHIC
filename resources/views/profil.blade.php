@@ -214,21 +214,21 @@
                 <!-- Box 1 -->
                 <div
                     class="flex items-center justify-center gap-3 bg-orange-500 text-white rounded-lg px-6 py-4 shadow-md hover-lift hover-glow">
-                    <img src="{{ asset('assets/grad.png') }}" class="w-7 h-7 hover-scale">
+                    <img src="{{ asset('assets/grad.png') }}" class="w-7 h-7 hover-scale" alt="graduation">
                     <span class="font-semibold text-lg">Lulus Siap Kerja</span>
                 </div>
 
                 <!-- Box 2 -->
                 <div
                     class="flex items-center justify-center gap-3 bg-orange-500 text-white rounded-lg px-6 py-4 shadow-md hover-lift hover-glow">
-                    <img src="{{ asset('assets/hand shake.png') }}" class="w-7 h-7 hover-scale">
+                    <img src="{{ asset('assets/hand shake.png') }}" class="w-7 h-7 hover-scale" alt="handshake">
                     <span class="font-semibold text-lg">Kerja Sama Industri</span>
                 </div>
 
                 <!-- Box 3 -->
                 <div
                     class="flex items-center justify-center gap-3 bg-orange-500 text-white rounded-lg px-6 py-4 shadow-md hover-lift hover-glow">
-                    <img src="{{ asset('assets/trophy.png') }}" class="w-7 h-7 hover-scale">
+                    <img src="{{ asset('assets/trophy.png') }}" class="w-7 h-7 hover-scale" alt="trophy">
                     <span class="font-semibold text-lg">Prestasi Tingkat Nasional</span>
                 </div>
             </div>
