@@ -70,6 +70,7 @@
         <!-- Hero SKARIGA -->
         <section class="relative w-full h-screen flex items-end z-10">
             <div class="absolute inset-0 w-full h-full hover-scale">
+                <div class="absolute inset-0 bg-gradient-to-t from-transparent via-black/5 to-black/70"></div>
                 <img src="{{ asset('assets/depansekul.jpg') }}" alt="Hero SKARIGA" class="w-full h-full object-cover">
                 <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
             </div>
@@ -166,6 +167,7 @@
                 <div
                     class="bg-blue-500 text-white rounded-xl shadow-lg text-center p-8 flex flex-col items-center hover-lift hover-rotate">
                     <img src="{{ asset('assets/hand 1.png') }}" alt="Ikon 1" class="mb-6 w-20 h-20 hover-scale">
+                    <hr>
                     <p class="text-base leading-relaxed">
                         Menjadi SMK yang unggul dalam prestasi dengan dilandasi Iman & Taqwa serta menghasilkan tamatan
                         yang mampu bersaing di tingkat Nasional maupun Internasional.
@@ -176,6 +178,7 @@
                 <div
                     class="bg-green-500 text-white rounded-xl shadow-lg text-center p-8 flex flex-col items-center hover-lift hover-rotate">
                     <img src="{{ asset('assets/learning 1.png') }}" alt="Ikon 2" class="mb-6 w-20 h-20 hover-scale">
+                    <hr>
                     <p class="text-base leading-relaxed">
                         Melaksanakan proses belajar mengajar yang mengacu pada standar kompetensi lulusan Nasional
                         maupun Internasional, dan tetap meningkatkan kemampuan dasar peserta didik.
@@ -186,6 +189,7 @@
                 <div
                     class="bg-orange-500 text-white rounded-xl shadow-lg text-center p-8 flex flex-col items-center hover-lift hover-rotate">
                     <img src="{{ asset('assets/pray 1.png') }}" alt="Ikon 3" class="mb-6 w-20 h-20 hover-scale">
+                    <hr>
                     <p class="text-base leading-relaxed">
                         Menumbuhkan penghayatan dan pengalaman ajaran agama yang dianut dan budaya bangsa sehingga
                         terwujud insan yang berkepribadian luhur dan berkarakter.
@@ -196,6 +200,7 @@
                 <div
                     class="bg-red-500 text-white rounded-xl shadow-lg text-center p-8 flex flex-col items-center hover-lift hover-rotate">
                     <img src="{{ asset('assets/heart 1.png') }}" alt="Ikon 4" class="mb-6 w-20 h-20 hover-scale">
+                    <hr>
                     <p class="text-base leading-relaxed">
                         Menerapkan pengelolaan sekolah yang memadai secara standar nasional dengan menerapkan sistem
                         manajemen sekolah yang efektif, efisien, serta selaras dengan perkembangan teknologi.
