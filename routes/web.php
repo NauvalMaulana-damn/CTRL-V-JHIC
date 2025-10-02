@@ -16,6 +16,9 @@ Route::get('/profil', function () {
 Route::get('/prestasi', function () {
     return view('prestasi');
 });
+Route::get('/jurusan', function () {
+    return view('jurusan');
+});
 
 Route::get('/alumni', function () {
     return view('alumni');
