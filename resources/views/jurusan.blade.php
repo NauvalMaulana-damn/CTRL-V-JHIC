@@ -79,65 +79,79 @@
   </section>
 
   <!-- Q&A Section -->
-  <section class="bg-gray-100 rounded-xl mx-4 md:mx-6 p-6 mt-8 shadow-lg max-w-5xl mx-auto">
-    <div class="bg-gray-100 rounded-xl shadow-lg px-6 py-4 grid grid-cols-3 items-center transition-transform duration-300 hover:scale-105 relative">
-      <div class="flex space-x-2">
-        <span class="w-4 h-4 rounded-full bg-red-500 transition-transform duration-300 hover:scale-110"></span>
-        <span class="w-4 h-4 rounded-full bg-yellow-500 transition-transform duration-300 hover:scale-110"></span>
-        <span class="w-4 h-4 rounded-full bg-green-500 transition-transform duration-300 hover:scale-110"></span>
-      </div>
-      <h2 class="text-2xl font-bold text-center transition-transform duration-300 hover:scale-105">PARA JAWARA!</h2>
-      <div></div>
+<section class="bg-gray-100 rounded-xl p-6 mt-8 shadow-2xl max-w-5xl mx-auto flex flex-col items-center justify-center min-h-auto">
+  <!-- Header -->
+  <div class="bg-gray-200 rounded-xl shadow-lg px-6 py-4 grid grid-cols-3 items-center max-w-full mx-full w-full transition-transform duration-300 hover:scale-105">
+    <div class="flex space-x-2">
+      <span class="w-4 h-4 rounded-full bg-red-500 hover:scale-110 transition-transform"></span>
+      <span class="w-4 h-4 rounded-full bg-yellow-500 hover:scale-110 transition-transform"></span>
+      <span class="w-4 h-4 rounded-full bg-green-500 hover:scale-110 transition-transform"></span>
     </div>
+    <h2 class="text-2xl font-extrabold text-center select-none">Q&amp;A</h2>
+    <div></div>
+  </div>
 
-    <h2 class="text-center text-2xl font-extrabold mb-4 select-none">Q&amp;A</h2>
-
-    <div class="space-y-4 max-w-3xl mx-auto">
-      <div class="flex items-start space-x-3">
-        <div class="flex-shrink-0 w-8 h-8 rounded-full border border-gray-700 flex items-center justify-center text-gray-700">
-          👤
-        </div>
-        <div class="bg-blue-600 text-white px-4 py-2 rounded-lg max-w-[100%]">
-          Kak jurusan yang ada di SKARIGA apa aja?
-        </div>
+  <!-- Chat Bubbles -->
+  <div class="space-y-4 w-full max-w-full mx-auto mt-8">
+    <!-- User 1 -->
+    <div class="flex items-start space-x-3">
+      <div class="flex-shrink-0 w-8 h-8 rounded-full border border-gray-700 flex items-center justify-center text-gray-700">
+        👤
       </div>
-
-      <div class="flex items-start justify-end space-x-3 max-w-[100%] ml-auto">
-        <div class="bg-orange-500 text-white px-4 py-2 rounded-lg">
-          Ada lebih dari 10 jurusan! Yang bisa dibagi jadi 4 Departemen
-        </div>
-        <div class="flex-shrink-0 w-8 h-8 rounded-full border border-gray-700 flex items-center justify-center text-gray-700">
-          👤
-        </div>
-      </div>
-
-      <div class="flex items-start space-x-3">
-        <div class="flex-shrink-0 w-8 h-8 rounded-full border border-gray-700 flex items-center justify-center text-gray-700">
-          👤
-        </div>
-        <div class="bg-blue-600 text-white px-4 py-2 rounded-lg max-w-[100%]">
-          Buset! Mau liat dong
-        </div>
-      </div>
-
-      <div class="flex items-start justify-end space-x-3 max-w-[100%] ml-auto">
-        <div class="bg-orange-500 text-white px-4 py-2 rounded-lg cursor-pointer select-none" id="btnPencet">
-          Pencet aja!
-        </div>
-        <div class="flex-shrink-0 w-8 h-8 rounded-full border border-gray-700 flex items-center justify-center text-gray-700">
-          👤
-        </div>
+      <div class="bg-blue-600 text-white px-4 py-2 rounded-lg max-w-[85%]">
+        Kak jurusan yang ada di SKARIGA apa aja?
       </div>
     </div>
 
-    <!-- Button Navigation -->
-    <div class="mt-6 flex flex-wrap justify-center gap-4">
-      <button data-target="elektro" class="btn-dept bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-full transition">ELEKTRO</button>
-      <button data-target="otomotif" class="btn-dept bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 rounded-full transition">OTOMOTIF</button>
-      <button data-target="pemesinan" class="btn-dept bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-full transition">PEMESINAN</button>
-      <button data-target="tik" class="btn-dept bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 rounded-full transition">TIK</button>
+    <!-- Bot 1 -->
+    <div class="flex items-start justify-end space-x-3 max-w-full ml-auto">
+      <div class="bg-orange-500 text-white px-4 py-2 rounded-lg">
+        Ada lebih dari 10 jurusan! Yang bisa dibagi jadi 4 Departemen
+      </div>
+      <div class="flex-shrink-0 w-8 h-8 rounded-full border border-gray-700 flex items-center justify-center text-gray-700">
+        👤
+      </div>
     </div>
-  </section>
+
+    <!-- User 2 -->
+    <div class="flex items-start space-x-3">
+      <div class="flex-shrink-0 w-8 h-8 rounded-full border border-gray-700 flex items-center justify-center text-gray-700">
+        👤
+      </div>
+      <div class="bg-blue-600 text-white px-4 py-2 rounded-lg max-w-[85%]">
+        Buset! Mau liat dong
+      </div>
+    </div>
+
+    <!-- Bot 2 -->
+    <div class="flex items-start justify-end space-x-3 max-w-full ml-auto">
+      <div class="bg-orange-500 text-white px-4 py-2 rounded-lg cursor-pointer select-none hover:scale-105 transition-transform" id="btnPencet">
+        Pencet aja!
+      </div>
+      <div class="flex-shrink-0 w-8 h-8 rounded-full border border-gray-700 flex items-center justify-center text-gray-700">
+        👤
+      </div>
+    </div>
+  </div>
+
+  <!-- Button Navigation -->
+  <div class="mt-10 flex flex-wrap justify-center gap-4">
+    <button data-target="elektro" class="btn-dept bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-full transition">
+      ELEKTRO
+    </button>
+    <button data-target="otomotif" class="btn-dept bg-orange-500 hover:bg-orange-600 text-white px-6 py-2 rounded-full transition">
+      OTOMOTIF
+    </button>
+    <button data-target="pemesinan" class="btn-dept bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-full transition">
+      PEMESINAN
+    </button>
+    <button data-target="tik" class="btn-dept bg-orange-500 hover:bg-orange-600 text-white px-6 py-2 rounded-full transition">
+      TIK
+    </button>
+  </div>
+</section>
+
+
 
   <!-- Departemen Sections -->
 
