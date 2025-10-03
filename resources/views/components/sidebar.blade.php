@@ -39,13 +39,14 @@
         <!-- Navigation Items -->
         <div class="flex-1 overflow-y-auto p-5">
             @foreach ([
-            ['icon' => asset('assets/home (1).png'), 'label' => 'Home', 'href' => '/'],
+            ['icon' => asset('assets/home (1).png'), 'label' => 'Beranda', 'href' => '/'],
+            ['icon' => asset('assets/home (1).png'), 'label' => 'Berita', 'href' => '/berita'],
+            ['icon' => asset('assets/profil.png'), 'label' => 'Profil', 'href' => '/profil'],
             ['icon' => asset('assets/trophy.png'), 'label' => 'Prestasi', 'href' => '/prestasi'],
-            ['icon' => asset('assets/major.png'), 'label' => 'Jurusan', 'href' => '#'],
+            ['icon' => asset('assets/major.png'), 'label' => 'Jurusan', 'href' => '/jurusan'],
             ['icon' => asset('assets/extra.png'), 'label' => 'Ekstrakurikuler', 'href' => '/ekskul'],
             ['icon' => asset('assets/grad.png'), 'label' => 'Alumni', 'href' => '/alumni'],
-            ['icon' => asset('assets/join.png'), 'label' => 'Pendaftaran', 'href' => '#'],
-            ['icon' => asset('assets/profil.png'), 'label' => 'Profil Sekolah', 'href' => '/profil']
+            ['icon' => asset('assets/join.png'), 'label' => 'Pendaftaran', 'href' => '/pendaftaran'],
             ] as $item)
             <div class="menu-item flex items-center py-3 px-4 mb-2 cursor-pointer
                             rounded-lg transition hover:bg-customBlue hover:text-white hover:shadow-md">

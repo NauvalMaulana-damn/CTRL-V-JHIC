@@ -3,9 +3,8 @@
     <section class="relative w-full h-screen flex items-end z-10">
         <!-- Wrapper gambar -->
         <div class="absolute inset-0 w-full h-full">
+            <div class="absolute inset-0 bg-gradient-to-t from-transparent via-black/5 to-black/45"></div>
             <img src="{{ asset('assets/ekstrahero.jpg') }}" alt="Hero SKARIGA" class="w-full h-full object-cover">
-
-            <!-- Gradient overlay hanya bagian bawah -->
             <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
         </div>
 

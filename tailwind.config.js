@@ -1,3 +1,5 @@
+import { transform } from "typescript";
+
 export default {
     content: [
         "./resources/**/*.blade.php",
@@ -18,6 +20,16 @@ export default {
                 poppins: ['Poppins', 'sans-serif'],
                 inter: ['Inter', 'sans-serif'],
             },
-        }
+            animation: {
+                'scroll-right': 'scrollRight 40s linear infinite',
+            },
+            keyframes: {
+                scrollRight: {
+                    '0%' : { transform: 'translateX(-50%)' },
+                    '100%': { transform: 'translateX(0%)' },
+                },
+            },
+        },
     },
+    plugins: [],
 }
