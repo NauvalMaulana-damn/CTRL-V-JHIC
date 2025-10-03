@@ -51,7 +51,7 @@
                                 <li><a href="/ekskul" class="{{ request()->is('ekskul') ? 'text-customOrange' : '' }} block px-4 py-2 hover:text-customOrange">Ekskrakurikuler</a></li>
                             </ul>
                         </li>
-                        <li><a href="/alumni" class="{{ request()->is('alumni' ? 'text-customOrange' : '') }} hover:text-customOrange transition">Alumni</a></li>
+                        <li><a href="/alumni" class="{{ request()->is('alumni') ? 'text-customOrange' : '' }} hover:text-customOrange transition">Alumni</a></li>
                         <li><a href="#pendaftaran" class="{{ request()->is('pendaftaran') ? 'text-customOrange' : '' }} hover:text-customOrange transition">Pendaftaran</a></li>
                     </ul>
                 </nav>

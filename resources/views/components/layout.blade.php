@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <x-meta></x-meta>
     <title>{{ $title ?? 'SMK PGRI 3 Malang - Success by Discipline' }}</title>
     <!-- Libraries -->
     @vite(['resources/css/app.css'])
