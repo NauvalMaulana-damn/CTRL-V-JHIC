@@ -86,7 +86,7 @@
                 <div class="grid gap-4">
                     <!-- Gambar besar di atas -->
                     <img src="{{ asset('assets/gedung-seluruh.jpg') }}"
-                        class="rounded-x4 shadow-md w-full h-64 object-cover hover-scale hover-brightness"
+                        class="rounded-xl shadow-md w-full h-64 object-cover hover-scale hover-brightness"
                         alt="Gedung Seluruhs">
 
                     <!-- 3 gambar kecil di bawah -->
@@ -276,6 +276,14 @@
                         src="{{ asset('assets/Ahass logo.png') }}" alt="Partner Logo">
                     <img class="h-6 md:h-10 max-w-[100px] object-contain inline-block hover-scale"
                         src="{{ asset('assets/yamaha logo.png') }}" alt="Yamaha Logo">
+                    <img class="h-6 md:h-10 max-w-[100px] object-contain inline-block"
+                        src="{{ asset('assets/logojhic.jpg') }}" alt="Yamaha Logo">
+                    <img class="h-6 md:h-10 max-w-[100px] object-contain inline-block"
+                        src="{{ asset('assets/logokomdigi.jpg') }}" alt="Yamaha Logo">
+                    <img class="h-6 md:h-10 max-w-[100px] object-contain inline-block"
+                        src="{{ asset('assets/logomaspionit.jpg') }}" alt="Yamaha Logo">
+                    <img class="h-6 md:h-10 max-w-[100px] object-contain inline-block"
+                            src="{{ asset('assets/logo1000.jpg') }}" alt="Yamaha Logo">
 
                     <!-- Logo duplikat untuk looping mulus -->
                     <img class="h-6 md:h-10 object-contain inline-block hover-scale"
@@ -300,6 +308,14 @@
                         src="{{ asset('assets/Ahass logo.png') }}" alt="Partner Logo">
                     <img class="h-6 md:h-10 max-w-[100px] object-contain inline-block hover-scale"
                         src="{{ asset('assets/yamaha logo.png') }}" alt="Yamaha Logo">
+                    <img class="h-6 md:h-10 max-w-[100px] object-contain inline-block"
+                            src="{{ asset('assets/logojhic.jpg') }}" alt="Yamaha Logo">
+                    <img class="h-6 md:h-10 max-w-[100px] object-contain inline-block"
+                            src="{{ asset('assets/logokomdigi.jpg') }}" alt="Yamaha Logo">
+                    <img class="h-6 md:h-10 max-w-[100px] object-contain inline-block"
+                            src="{{ asset('assets/logomaspionit.jpg') }}" alt="Yamaha Logo">
+                    <img class="h-6 md:h-10 max-w-[100px] object-contain inline-block"
+                            src="{{ asset('assets/logo1000.jpg') }}" alt="Yamaha Logo">
                 </div>
             </div>
         </div>
@@ -314,10 +330,10 @@
                     <!-- Card -->
                     <div
                         class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition flex flex-col hover-lift hover-border-orange">
-                        <img src="{{ asset('assets/news/kcs38.jpg') }}" alt="KCS 38"
+                        <img src="{{ asset('assets/kcs38.png') }}" alt="KCS 38"
                             class="h-40 w-full object-cover hover-scale">
                         <div class="p-5 flex flex-col flex-grow">
-                            <h3 class="font-semibold text-lg mb-2">KCS 38 DI PUSBIDK ARHANUD</h3>
+                            <h3 class="font-semibold text-lg mb-2">KCS 38 DI PUSDIK ARHANUD</h3>
                             <p class="text-sm text-gray-600 flex-grow">
                                 Sebanyak 93 siswa baru SMK PGRI 3 Malang mengikuti Kegiatan Cinta Sekolah (KCS) ke-38
                                 yang digelar di Pusdik Arhanud.
@@ -330,7 +346,7 @@
                     <!-- Card -->
                     <div
                         class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition flex flex-col hover-lift hover-border-orange">
-                        <img src="{{ asset('assets/news/lks2025.jpg') }}" alt="Juara 1 LKS"
+                        <img src="{{ asset('assets/robot-manu.jpg') }}" alt="Juara 1 LKS"
                             class="h-40 w-full object-cover hover-scale">
                         <div class="p-5 flex flex-col flex-grow">
                             <h3 class="font-semibold text-lg mb-2">JUARA 1 LKS NASIONAL 2025</h3>
@@ -346,7 +362,7 @@
                     <!-- Card -->
                     <div
                         class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition flex flex-col hover-lift hover-border-orange">
-                        <img src="{{ asset('assets/news/gamal.jpg') }}" alt="dr. Gamal ke SKARIGA"
+                        <img src="{{ asset('assets/drgamal.png') }}" alt="dr. Gamal ke SKARIGA"
                             class="h-40 w-full object-cover hover-scale">
                         <div class="p-5 flex flex-col flex-grow">
                             <h3 class="font-semibold text-lg mb-2">dr. Gamal ke SKARIGA</h3>
@@ -362,7 +378,7 @@
                     <!-- Card -->
                     <div
                         class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition flex flex-col hover-lift hover-border-orange">
-                        <img src="{{ asset('assets/news/futsal.jpg') }}" alt="School Visit"
+                        <img src="{{ asset('assets/supporteran.jpg') }}" alt="School Visit"
                             class="h-40 w-full object-cover hover-scale">
                         <div class="p-5 flex flex-col flex-grow">
                             <h3 class="font-semibold text-lg mb-2">School Visit oleh Futsal Series</h3>

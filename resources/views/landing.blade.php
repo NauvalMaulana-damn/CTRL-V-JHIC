@@ -63,6 +63,14 @@
                             alt="Partner Logo">
                         <img class="h-6 md:h-10 max-w-[100px] object-contain inline-block"
                             src="{{ asset('assets/yamaha logo.png') }}" alt="Yamaha Logo">
+                        <img class="h-6 md:h-10 max-w-[100px] object-contain inline-block"
+                            src="{{ asset('assets/logojhic.jpg') }}" alt="Yamaha Logo">
+                        <img class="h-6 md:h-10 max-w-[100px] object-contain inline-block"
+                            src="{{ asset('assets/logokomdigi.jpg') }}" alt="Yamaha Logo">
+                        <img class="h-6 md:h-10 max-w-[100px] object-contain inline-block"
+                            src="{{ asset('assets/logomaspionit.jpg') }}" alt="Yamaha Logo">
+                        <img class="h-6 md:h-10 max-w-[100px] object-contain inline-block"
+                            src="{{ asset('assets/logo1000.jpg') }}" alt="Yamaha Logo">
 
                         <!-- Logo duplikat untuk looping mulus -->
                         <img class="h-6 md:h-10 object-contain inline-block" src="{{ asset('assets/alfa logo 1.png') }}"
@@ -87,6 +95,14 @@
                             alt="Partner Logo">
                         <img class="h-6 md:h-10 max-w-[100px] object-contain inline-block"
                             src="{{ asset('assets/yamaha logo.png') }}" alt="Yamaha Logo">
+                        <img class="h-6 md:h-10 max-w-[100px] object-contain inline-block"
+                            src="{{ asset('assets/logojhic.jpg') }}" alt="Yamaha Logo">
+                        <img class="h-6 md:h-10 max-w-[100px] object-contain inline-block"
+                            src="{{ asset('assets/logokomdigi.jpg') }}" alt="Yamaha Logo">
+                        <img class="h-6 md:h-10 max-w-[100px] object-contain inline-block"
+                            src="{{ asset('assets/logomaspionit.jpg') }}" alt="Yamaha Logo">
+                        <img class="h-6 md:h-10 max-w-[100px] object-contain inline-block"
+                            src="{{ asset('assets/logo1000.jpg') }}" alt="Yamaha Logo">
                     </div>
                 </div>
             </div>
@@ -96,9 +112,9 @@
             <section class="py-6 md:py-10 animate-fade-in delay-200">
                 <!-- Elektro Department -->
                 <div class="flex flex-col lg:flex-row gap-6 mb-12">
-                    <div class="w-full lg:w-2/5 department-card bg-customOrange p-5 md:p-6 relative overflow-hidden">
+                    <div class="w-full lg:w-1/3 department-card bg-customOrange p-5 md:p-6 relative overflow-hidden">
                         <div class="info-card bg-white p-2 mb-5 md:mb-6">
-                            <img width="25%" height="25%" class="w-full h-auto rounded-2xl"
+                            <img width="100%" height="100%" class="w-full h-auto rounded-2xl"
                                 src="{{ asset('assets/elektro_card.png') }}" alt="Elektro Department">
                         </div>
                         <h2 class="text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-4 md:mb-6">Elektro</h2>
@@ -119,9 +135,9 @@
                     </div>
 
                     <!-- Otomotif Department -->
-                    <div class="w-full lg:w-2/5 department-card bg-customRed p-5 md:p-6 relative overflow-hidden">
+                    <div class="w-full lg:w-1/3 department-card bg-customRed p-5 md:p-6 relative overflow-hidden">
                         <div class="info-card bg-white p-2 mb-5 md:mb-6">
-                            <img width="25%" height="25%" class="w-full h-auto rounded-2xl"
+                            <img width="100%" height="100%" class="w-full h-auto rounded-2xl"
                                 src="{{ asset('assets/otomotif_card.png') }}" alt="Otomotif Department">
                         </div>
                         <h2 class="text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-4 md:mb-6">Otomotif</h2>
@@ -145,9 +161,9 @@
                 <!-- Second Row Departments -->
                 <div class="flex flex-col lg:flex-row gap-6">
                     <!-- Pemesinan Department -->
-                    <div class="w-full lg:w-2/5 department-card bg-customPink p-5 md:p-6 relative overflow-hidden">
+                    <div class="w-full lg:w-1/3 department-card bg-customPink p-5 md:p-6 relative overflow-hidden">
                         <div class="info-card bg-white p-2 mb-5 md:mb-6">
-                            <img width="25%" height="25%" class="w-full h-auto rounded-2xl"
+                            <img width="100%" height="100%" class="w-full h-auto rounded-2xl"
                                 src="{{ asset('assets/pemesinan_card.jpg') }}" alt="Pemesinan Department">
                         </div>
                         <h2 class="text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-4 md:mb-6">Pemesinan</h2>
@@ -168,9 +184,9 @@
                     </div>
 
                     <!-- TIK Department -->
-                    <div class="w-full lg:w-2/5 department-card bg-customBlue p-5 md:p-6 relative overflow-hidden">
+                    <div class="w-full lg:w-1/3 department-card bg-customBlue p-5 md:p-6 relative overflow-hidden">
                         <div class="info-card bg-white p-2 mb-5 md:mb-6">
-                            <img width="25%" height="25%" class="w-full h-auto rounded-2xl"
+                            <img width="100%" height="100%" class="w-full h-auto rounded-2xl"
                                 src="{{ asset('assets/tik_card.png') }}" alt="TIK Department">
                         </div>
                         <h2 class="text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-4 md:mb-6">TIK</h2>
