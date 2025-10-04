@@ -1,7 +1,7 @@
 <x-layout>
     <!-- Hero -->
     <section class="relative h-[400px] md:h-[500px] rounded-xl overflow-hidden m-6">
-        <img src="https://placehold.co/1920x1080" alt="Hero Image" class="w-full h-full object-cover">
+        <img src="{{ asset('assets/alumni.png') }}" alt="Hero Image" class="w-full h-full object-cover">
     </section>
 
     <!-- Alumni Section -->
@@ -10,10 +10,10 @@
             <h2 class="text-3xl md:text-5xl font-bold text-center mb-12">PARA JAWARA!</h2>
 
             <!-- Alumni Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-10">
 
                 <!-- Card 1 -->
-                <div class="relative bg-[#FF885B] rounded-2xl shadow-lg p-6 text-center text-white ">
+                <div class="relative bg-[#FF885B] rounded-2xl shadow-lg p-6 mb-12 text-center text-white ">
                     <div class="flex justify-center -mt-20">
                         <img src="https://placehold.co/150" alt="Khoko Rama Viera"
                             class="w-32 h-32 rounded-full shadow-lg border-4 border-white object-cover">
@@ -26,7 +26,7 @@
 
 
                 <!-- Card 2 -->
-                <div class="relative bg-[#FF4D4D] rounded-2xl shadow-lg p-6 text-center text-white ">
+                <div class="relative bg-[#FF4D4D] rounded-2xl shadow-lg p-6 mb-12 text-center text-white ">
                     <div class="flex justify-center -mt-20">
                         <img src="https://placehold.co/150" alt="Aditya Tantra"
                             class="w-32 h-32 rounded-full shadow-lg border-4 border-white object-cover">
@@ -38,7 +38,7 @@
                 </div>
 
                 <!-- Card 3 -->
-                <div class="relative bg-[#4DA6FF] rounded-2xl shadow-lg p-6 text-center text-white overflow-hidden">
+                <div class="relative bg-[#4DA6FF] rounded-2xl shadow-lg p-6 mb-12 text-center text-white ">
                     <div class="flex justify-center -mt-20">
                         <img src="https://placehold.co/150" alt="Reza Abi Utomo"
                             class="w-32 h-32 rounded-full shadow-lg border-4 border-white object-cover">
@@ -50,7 +50,7 @@
                 </div>
 
                 <!-- Card 4 -->
-                <div class="relative bg-[#FFD84D] rounded-2xl shadow-lg p-6 text-center text-black overflow-hidden">
+                <div class="relative bg-[#FFD84D] rounded-2xl shadow-lg p-6 mb-12 text-center text-black ">
                     <div class="flex justify-center -mt-20">
                         <img src="https://placehold.co/150" alt="Choiriatul Aulia"
                             class="w-32 h-32 rounded-full shadow-lg border-4 border-white object-cover">
@@ -62,7 +62,7 @@
                 </div>
 
                 <!-- Card 5 -->
-                <div class="relative bg-[#2ECC71] rounded-2xl shadow-lg p-6 text-center text-white ">
+                <div class="relative bg-[#2ECC71] rounded-2xl shadow-lg p-6 mb-12 text-center text-white ">
                     <div class="flex justify-center -mt-20">
                         <img src="https://placehold.co/150" alt="Febrianto Nugroho"
                             class="w-32 h-32 rounded-full shadow-lg border-4 border-white object-cover">
@@ -74,7 +74,7 @@
                 </div>
 
                 <!-- Card 6 -->
-                <div class="relative bg-[#9B59B6] rounded-2xl shadow-lg p-6 text-center text-white overflow-hidden">
+                <div class="relative bg-[#9B59B6] rounded-2xl shadow-lg p-6 mb-12 text-center text-white ">
                     <div class="flex justify-center -mt-20">
                         <img src="https://placehold.co/150" alt="Ahmad Fauzan"
                             class="w-32 h-32 rounded-full shadow-lg border-4 border-white object-cover">
@@ -86,7 +86,7 @@
                 </div>
 
                 <!-- Card 7 -->
-                <div class="relative bg-[#FF5C8D] rounded-2xl shadow-lg p-6 text-center text-white overflow-hidden">
+                <div class="relative bg-[#FF5C8D] rounded-2xl shadow-lg p-6 mb-12 text-center text-white ">
                     <div class="flex justify-center -mt-20">
                         <img src="https://placehold.co/150" alt="Tiyyo Fahmi"
                             class="w-32 h-32 rounded-full shadow-lg border-4 border-white object-cover">
@@ -98,7 +98,7 @@
                 </div>
 
                 <!-- Card 8 -->
-                <div class="relative bg-[#3498DB] rounded-2xl shadow-lg p-6 text-center text-white overflow-hidden">
+                <div class="relative bg-[#3498DB] rounded-2xl shadow-lg p-6 mb-12 text-center text-white overflow-">
                     <div class="flex justify-center -mt-20">
                         <img src="https://placehold.co/150" alt="Ximent Sultan"
                             class="w-32 h-32 rounded-full shadow-lg border-4 border-white object-cover">
