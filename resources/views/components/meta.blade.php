@@ -1,3 +1,7 @@
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 @php
 $author = "CTRL + V";
 $title = "SMK PGRI 3 MALANG";
@@ -14,9 +18,6 @@ $lower_keywords = strtolower($keywords);
 <meta name="google-site-verification" content="">
 <meta name="robots" content="index, follow">
 
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <!-- <meta name="theme-color" content=""> -->
 
 <!-- <meta http-equiv="refresh" content="5; url=https://example.com"> -->
@@ -28,5 +29,5 @@ $lower_keywords = strtolower($keywords);
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="{{ $title }}">
-<meta name="twitter:description" content="{{ $desc }}">`
+<meta name="twitter:description" content="{{ $desc }}">
 <meta name="twitter:image" content="{{ $image }}">
