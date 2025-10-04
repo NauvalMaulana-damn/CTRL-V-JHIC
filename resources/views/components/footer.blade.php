@@ -82,9 +82,21 @@
             </div>
         </div>
 
-        {{-- <!-- Copyright -->
+        <!-- Logo Penting -->
         <div class="border-t border-gray-700 mt-8 pt-6 text-center text-gray-500 text-sm">
-            <p>© 2025 SMK PGRI 3 Malang. All rights reserved.</p>
-        </div> --}}
+            <img class="h-6 md:h-10 max-w-[100px] object-contain inline-block"
+                src="{{ asset('assets/logojhic.jpg') }}" alt="Yamaha Logo">
+            <img class="h-6 md:h-10 max-w-[100px] object-contain inline-block"
+                src="{{ asset('assets/logokomdigi.jpg') }}" alt="Yamaha Logo">
+            <img class="h-6 md:h-10 max-w-[100px] object-contain inline-block"
+                src="{{ asset('assets/logomaspionit.jpg') }}" alt="Yamaha Logo">
+            <img class="h-6 md:h-10 max-w-[100px] object-contain inline-block"
+                src="{{ asset('assets/logo1000.jpg') }}" alt="Yamaha Logo">
+        </div>
+
+        <!-- Copyright -->
+        <div class="border-t border-gray-700 mt-8 pt-6 text-center text-gray-500 text-sm">
+            <p>&copy; 2025 SMK PGRI 3 Malang. All rights reserved.</p>
+        </div>
     </div>
 </footer>
