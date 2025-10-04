@@ -7,7 +7,7 @@ Route::get('/', function () {
     return view('landing');
 });
 
-Route::get('/ekskul', [EkskulController::class, 'index']);
+Route::get('/ekstrakurikuler', [EkskulController::class, 'index']);
 
 Route::get('/profil', function () {
     return view('profil');

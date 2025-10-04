@@ -37,7 +37,7 @@
             </section>
 
             <!-- Marquee -->
-
+            <x-marquee></x-marquee>
 
             <!-- width && height = 100%, lg:w-2/5 -->
             <!-- Department Sections -->

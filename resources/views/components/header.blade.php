@@ -45,7 +45,7 @@
                         </li>
                         <li class="relative group">
                             <a
-                                class="{{ request()->is('jurusan') || request()->is('ekskul') ? 'text-customOrange' : '' }} hover:text-customOrange hover:cursor-pointer transition flex items-center">
+                                class="{{ request()->is('jurusan') || request()->is('ekstrakurikuler') ? 'text-customOrange' : '' }} hover:text-customOrange hover:cursor-pointer transition flex items-center">
                                 Program
                             </a>
                             <ul
@@ -53,8 +53,8 @@
                                 <li><a href="/jurusan"
                                         class="{{ request()->is('jurusan') ? 'text-customOrange' : '' }} text-black block px-4 py-2 hover:text-customOrange">Jurusan</a>
                                 </li>
-                                <li><a href="/ekskul"
-                                        class="{{ request()->is('ekskul') ? 'text-customOrange' : '' }} text-black block px-4 py-2 hover:text-customOrange">Ekskrakurikuler</a>
+                                <li><a href="/ekstrakurikuler"
+                                        class="{{ request()->is('ekstrakurikuler') ? 'text-customOrange' : '' }} text-black block px-4 py-2 hover:text-customOrange">Ekskrakurikuler</a>
                                 </li>
                             </ul>
                         </li>
@@ -80,12 +80,14 @@
             <!-- Mobile Navigation -->
             <div class="nav-menu mt-2 md:hidden" id="navMenu">
                 <ul class="space-y-2 pb-4 text-lg font-medium">
-                    <li><a href="/" class="block py-2 hover:text-customOrange transition">Beranda</a></li>
-                    <li><a href="/profil" class="block py-2 hover:text-customOrange transition">Profil</a></li>
-                    <li><a href="/prestasi" class="block py-2 hover:text-customOrange transition">Prestasi</a></li>
-                    <li><a href="/program" class="block py-2 hover:text-customOrange transition">Program</a></li>
-                    <li><a href="/alumni" class="block py-2 hover:text-customOrange transition">Alumni</a></li>
-                    <li><a href="#pendaftaran" class="block py-2 hover:text-customOrange transition">Pendaftaran</a>
+                    <li><a href="/" class="{{ request()->is('/') ? 'text-customOrange' : '' }} block py-2 hover:text-customOrange transition">Beranda</a></li>
+                    <li><a href="/berita" class="{{ request()->is('berita') ? 'text-customOrange' : '' }} block py-2 hover:text-customOrange transition">Berita</a></li>
+                    <li><a href="/profil" class="{{ request()->is('profil') ? 'text-customOrange' : '' }} block py-2 hover:text-customOrange transition">Profil</a></li>
+                    <li><a href="/prestasi" class="{{ request()->is('prestasi') ? 'text-customOrange' : '' }} block py-2 hover:text-customOrange transition">Prestasi</a></li>
+                    <li><a href="/jurusan" class="{{ request()->is('jurusan') ? 'text-customOrange' : '' }} block py-2 hover:text-customOrange transition">Program</a></li>
+                    <li><a href="/ekstrakurikuler" class="{{ request()->is('ekstrakurikuler') ? 'text-customOrange' : '' }} block py-2 hover:text-customOrange transition">Program</a></li>
+                    <li><a href="/alumni" class="{{ request()->is('alumni') ? 'text-customOrange' : '' }} block py-2 hover:text-customOrange transition">Alumni</a></li>
+                    <li><a href="/pendaftaran" class="{{ request()->is('pendaftaran') ? 'text-customOrange' : '' }} block py-2 hover:text-customOrange transition">Pendaftaran</a>
                     </li>
                 </ul>
             </div>
