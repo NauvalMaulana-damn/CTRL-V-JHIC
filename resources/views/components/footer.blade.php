@@ -52,18 +52,22 @@
                 {{-- <div class="flex flex-col items-center space-y-5"> --}}
                 <!-- Social Media Icons -->
                 <div class="flex flex-col items-center space-y-4">
-                    <a href="#"
+                    <!-- YouTube -->
+                    <a href="https://www.youtube.com/channel/UCGGVdb_Wh1lvn8HIoMKdiLA"
                         class="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-red-600 transition">
                         <i class="fab fa-youtube text-lg text-gray-300"></i>
                     </a>
-                    <a href="#"
+                    <!-- Instagram -->
+                    <a href="https://www.instagram.com/skariga_official?utm_source=ig_web_button_share_sheet&igsh=MWswcXk3ajU3dDV6OQ=="
                         class="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-customInsta transition">
                         <i class="fab fa-instagram text-lg text-gray-300"></i>
                     </a>
-                    <a href="#"
+                    <!-- Facebook -->
+                    <a href="https://www.facebook.com/SKARIGA/?locale=id_ID"
                         class="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-blue-700 transition">
                         <i class="fab fa-facebook-f text-lg text-gray-300"></i>
                     </a>
+                    <!-- TikTok -->
                     <a href="https://www.tiktok.com/@skariga"
                         class="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-black transition">
                         <i class="fa-brands fa-tiktok text-lg text-gray-300"></i>
