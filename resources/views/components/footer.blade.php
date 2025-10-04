@@ -7,17 +7,17 @@
                 <p class="text-[#B9B9B9] text-lg font-bold mb-2">Success By Discipline</p>
                 <div class="h-px w-full bg-gray-700 mb-4"></div>
 
-                <div class="flex items-start m title=""b-3">
+                <div class="flex items-start py-3" title="Nomor Telepon">
                     <i class="fas fa-phone-alt text-gray-500 mt-1 mr-2"></i>
                     <span class="text-[#828282] text-sm">(0341) 554383</span>
                 </div>
 
-                <div class="flex items-start m title=""b-3">
+                <div class="flex items-start py-3" title="WhatsApp">
                     <i class="fab fa-whatsapp text-gray-500 mt-1 mr-2"></i>
                     <a href="https://wa.me/6282133000370" class="text-[#828282] text-sm underline">+62 821-3300-0370</a>
                 </div>
 
-                <div class="flex items-st title=""art">
+                <div class="flex items-start py-3" title="Email">
                     <i class="fas fa-envelope text-gray-500 mt-1 mr-2"></i>
                     <a href="mailto:mail.smkpgri3malang@gmail.com" class="text-[#828282] text-sm underline">
                         mail.smkpgri3malang@gmail.com
@@ -47,36 +47,37 @@
             </div>
 
             <!-- Social Media & Map -->
-            <div class="w-full md:w-1/4 flex flex-col md:flex-row md:justify-end gap-4 md:grid-cols-2">
-                <!-- Ikon Sosial (vertikal di kiri map) -->
-                {{-- <div class="flex flex-col items-center space-y-5"> --}}
+            <div class="w-full md:w-1/4 flex flex-col md:flex-row md:justify-end gap-6">
                 <!-- Social Media Icons -->
-                <div class="flex flex-col items-center space-y-4">
+                <div class="flex flex-row md:flex-col items-center justify-start gap-16 md:gap-5">
                     <!-- YouTube -->
                     <a href="https://www.youtube.com/channel/UCGGVdb_Wh1lvn8HIoMKdiLA"
-                        class="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-red-600 transition" title="YouTube">
+                        class="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-red-600 transition"
+                        title="YouTube">
                         <i class="fab fa-youtube text-lg text-gray-300"></i>
                     </a>
                     <!-- Instagram -->
                     <a href="https://www.instagram.com/skariga_official?utm_source=ig_web_button_share_sheet&igsh=MWswcXk3ajU3dDV6OQ=="
-                        class="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-customInsta transition" title="Instagram">
+                        class="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-customInsta transition"
+                        title="Instagram">
                         <i class="fab fa-instagram text-lg text-gray-300"></i>
                     </a>
                     <!-- Facebook -->
                     <a href="https://www.facebook.com/SKARIGA/?locale=id_ID"
-                        class="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-blue-700 transition" title="Facebook">
+                        class="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-blue-700 transition"
+                        title="Facebook">
                         <i class="fab fa-facebook-f text-lg text-gray-300"></i>
                     </a>
                     <!-- TikTok -->
                     <a href="https://www.tiktok.com/@skariga"
-                        class="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-black transition" title="TikTok">
+                        class="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-black transition"
+                        title="TikTok">
                         <i class="fa-brands fa-tiktok text-lg text-gray-300"></i>
                     </a>
                 </div>
 
-
                 <!-- Google Maps -->
-                <div class="w-[320px] h-[220px] rounded-lg overflow-hidden flex-shrink-0">
+                <div class="w-[100%] md:w-[320px] h-[220px] rounded-lg overflow-hidden flex-shrink-0">
                     <iframe title="SMK PGRI 3 MALANG" width="100%" height="100%"
                         style="border:1px; border-radius: 12px;" allowfullscreen="" loading="lazy"
                         referrerpolicy="no-referrer-when-downgrade"
@@ -87,15 +88,15 @@
         </div>
 
         <!-- Logo Penting -->
-        <div class="border-t border-gray-700 mt-8 pt-6 text-center text-gray-500 text-sm">
-            <img class="h-6 md:h-10 max-w-[100px] object-contain inline-block"
-                src="{{ asset('assets/logojhic.jpg') }}" alt="Yamaha Logo">
+        <div class="border-t border-gray-700 mt-8 pt-6 text-center text-gray-500 text-sm space-x-3">
+            <img class="h-6 md:h-10 max-w-[100px] object-contain inline-block" src="{{ asset('assets/logojhic.jpg') }}"
+                alt="Yamaha Logo">
             <img class="h-6 md:h-10 max-w-[100px] object-contain inline-block"
                 src="{{ asset('assets/logokomdigi.jpg') }}" alt="Yamaha Logo">
             <img class="h-6 md:h-10 max-w-[100px] object-contain inline-block"
                 src="{{ asset('assets/logomaspionit.jpg') }}" alt="Yamaha Logo">
-            <img class="h-6 md:h-10 max-w-[100px] object-contain inline-block"
-                src="{{ asset('assets/logo1000.jpg') }}" alt="Yamaha Logo">
+            <img class="h-6 md:h-10 max-w-[100px] object-contain inline-block" src="{{ asset('assets/logo1000.jpg') }}"
+                alt="Yamaha Logo">
         </div>
 
         <!-- Copyright -->
