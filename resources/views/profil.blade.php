@@ -98,7 +98,7 @@
 
         <!-- Profil -->
 
-        <section class="max-w-6xl mx-auto px-4 py-16">
+        <section class="max-w-7xl mx-auto px-4 py-16">
             <div class="grid md:grid-cols-2 gap-10 items-start">
                 <!-- Kolom Kiri: Gambar -->
                 <div class="grid gap-4">
@@ -161,7 +161,7 @@
         </section>
 
         <!-- Visi -->
-        <section class="max-w-6xl mx-auto px-4 pt-6 pb-10">
+        <section class="max-w-7xl mx-auto px-4 pt-6 pb-10">
             <div class="bg-orange-500 rounded-2xl shadow-lg overflow-hidden hover-lift">
                 <div class="grid md:grid-cols-2 gap-6 items-center">
                     <div class="p-8 text-white">
@@ -177,7 +177,7 @@
         </section>
 
         <!-- Misi -->
-        <section class="max-w-6xl mx-auto px-4 pt-6 pb-10">
+        <section class="max-w-7xl mx-auto px-4 pt-6 pb-10">
             <h2 class="text-4xl font-bold text-center mb-12 hover-scale">Misi</h2>
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
 
@@ -272,7 +272,7 @@
 
         <!-- Berita Terbaru -->
         <section class=" ">
-            <div class="max-w-6xl mx-auto px-4">
+            <div class="max-w-7xl mx-auto px-4">
                 <h2 class="text-4xl font-bold text-center mb-12 bg-orange-400 py-5 rounded-2xl text-white hover-scale">
                     Berita Terbaru</h2>
 
