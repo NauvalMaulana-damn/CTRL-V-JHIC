@@ -25,7 +25,7 @@
             </div>
 
             <div class="grid grid-cols-2 gap-4 relative">
-                <div class="relative flex justify-center items-center h-[350px]">
+                <div class="relative flex justify-center items-center h-[350px] translate-x-32">
                     <!-- Kartu 1 -->
                     <div
                         class="absolute w-80 h-72 bg-gray-400 rounded-xl shadow-xl transition-transform duration-500 transform -translate-x-32 rotate-[-10deg] z-10 hover:z-30 hover:scale-110 hover:-translate-y-4 hover:rotate-0">
