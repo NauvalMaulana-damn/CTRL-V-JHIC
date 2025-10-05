@@ -1,6 +1,6 @@
 <x-layout>
     <!-- Hero -->
-    <section class="relative h-[450px] md:h-[500px] rounded-xl overflow-hidden mt-2 mx-10">
+    <section class="relative h-[450px] md:h-[530px] rounded-xl overflow-hidden mt-2 mx-10">
         <img src="{{ asset('assets/alumni.png') }}" alt="Hero Image" class="w-full h-full object-cover">
         <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
 
