@@ -250,75 +250,7 @@
         </section>
 
         <!-- Sponsor -->
-        <div class="py-4 overflow-hidden rounded-lg mb-8 animate-fade-in delay-100">
-            <div class="scroll-container flex whitespace-nowrap animate-scroll">
-                <div class="flex space-x-8 md:space-x-12 pr-12">
-                    <!-- Logo asli -->
-                    <img class="h-6 md:h-10 object-contain inline-block hover-scale"
-                        src="{{ asset('assets/alfa logo 1.png') }}" alt="Partner Logo">
-                    <img class="h-6 md:h-10 object-contain inline-block hover-scale"
-                        src="{{ asset('assets/b&d icon 1.png') }}" alt="Partner Logo">
-                    <img class="h-6 md:h-10 object-contain inline-block hover-scale"
-                        src="{{ asset('assets/lg icon 1.png') }}" alt="Partner Logo">
-                    <img class="h-6 md:h-10 object-contain inline-block hover-scale"
-                        src="{{ asset('assets/pjb icon 1.png') }}" alt="Partner Logo">
-                    <img class="h-6 md:h-10 object-contain inline-block hover-scale"
-                        src="{{ asset('assets/daihat logo 1.png') }}" alt="Partner Logo">
-                    <img class="h-6 md:h-10 object-contain inline-block hover-scale"
-                        src="{{ asset('assets/Honda_Logo.svg') }}" alt="Partner Logo">
-                    <img class="h-6 md:h-10 max-w-[100px] object-contain inline-block hover-scale"
-                        src="{{ asset('assets/kompas logo.svg') }}" alt="Kompas Logo">
-                    <img class="h-6 md:h-10 max-w-[100px] object-contain inline-block hover-scale"
-                        src="{{ asset('assets/Polytron logo.png') }}" alt="Polytron Logo">
-                    <img class="h-6 md:h-10 object-contain inline-block hover-scale"
-                        src="{{ asset('assets/auto 2000.webp') }}" alt="Partner Logo">
-                    <img class="h-6 md:h-10 object-contain inline-block hover-scale"
-                        src="{{ asset('assets/Ahass logo.png') }}" alt="Partner Logo">
-                    <img class="h-6 md:h-10 max-w-[100px] object-contain inline-block hover-scale"
-                        src="{{ asset('assets/yamaha logo.png') }}" alt="Yamaha Logo">
-                    <img class="h-6 md:h-10 max-w-[100px] object-contain inline-block"
-                        src="{{ asset('assets/logojhic.jpg') }}" alt="Yamaha Logo">
-                    <img class="h-6 md:h-10 max-w-[100px] object-contain inline-block"
-                        src="{{ asset('assets/logokomdigi.jpg') }}" alt="Yamaha Logo">
-                    <img class="h-6 md:h-10 max-w-[100px] object-contain inline-block"
-                        src="{{ asset('assets/logomaspionit.jpg') }}" alt="Yamaha Logo">
-                    <img class="h-6 md:h-10 max-w-[100px] object-contain inline-block"
-                            src="{{ asset('assets/logo1000.jpg') }}" alt="Yamaha Logo">
-
-                    <!-- Logo duplikat untuk looping mulus -->
-                    <img class="h-6 md:h-10 object-contain inline-block hover-scale"
-                        src="{{ asset('assets/alfa logo 1.png') }}" alt="Partner Logo">
-                    <img class="h-6 md:h-10 object-contain inline-block hover-scale"
-                        src="{{ asset('assets/b&d icon 1.png') }}" alt="Partner Logo">
-                    <img class="h-6 md:h-10 object-contain inline-block hover-scale"
-                        src="{{ asset('assets/lg icon 1.png') }}" alt="Partner Logo">
-                    <img class="h-6 md:h-10 object-contain inline-block hover-scale"
-                        src="{{ asset('assets/pjb icon 1.png') }}" alt="Partner Logo">
-                    <img class="h-6 md:h-10 object-contain inline-block hover-scale"
-                        src="{{ asset('assets/daihat logo 1.png') }}" alt="Partner Logo">
-                    <img class="h-6 md:h-10 object-contain inline-block hover-scale"
-                        src="{{ asset('assets/Honda_Logo.svg') }}" alt="Partner Logo">
-                    <img class="h-6 md:h-10 max-w-[100px] object-contain inline-block hover-scale"
-                        src="{{ asset('assets/kompas logo.svg') }}" alt="Kompas Logo">
-                    <img class="h-6 md:h-10 max-w-[100px] object-contain inline-block hover-scale"
-                        src="{{ asset('assets/Polytron logo.png') }}" alt="Polytron Logo">
-                    <img class="h-6 md:h-10 object-contain inline-block hover-scale"
-                        src="{{ asset('assets/auto 2000.webp') }}" alt="Partner Logo">
-                    <img class="h-6 md:h-10 object-contain inline-block hover-scale"
-                        src="{{ asset('assets/Ahass logo.png') }}" alt="Partner Logo">
-                    <img class="h-6 md:h-10 max-w-[100px] object-contain inline-block hover-scale"
-                        src="{{ asset('assets/yamaha logo.png') }}" alt="Yamaha Logo">
-                    <img class="h-6 md:h-10 max-w-[100px] object-contain inline-block"
-                            src="{{ asset('assets/logojhic.jpg') }}" alt="Yamaha Logo">
-                    <img class="h-6 md:h-10 max-w-[100px] object-contain inline-block"
-                            src="{{ asset('assets/logokomdigi.jpg') }}" alt="Yamaha Logo">
-                    <img class="h-6 md:h-10 max-w-[100px] object-contain inline-block"
-                            src="{{ asset('assets/logomaspionit.jpg') }}" alt="Yamaha Logo">
-                    <img class="h-6 md:h-10 max-w-[100px] object-contain inline-block"
-                            src="{{ asset('assets/logo1000.jpg') }}" alt="Yamaha Logo">
-                </div>
-            </div>
-        </div>
+        
 
         <!-- Berita Terbaru -->
         <section class=" ">
