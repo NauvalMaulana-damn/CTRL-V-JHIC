@@ -8,13 +8,13 @@
                         class="text-3xl font-bold leading-tight transition-transform duration-300 transform">
                         SKARIGA, Sekolahnya <br />
                         Sang Juara! <br />
-                        Gabung Skariga untuk <br />
-                        Menjadi Sang Juara Selanjutnya!
+                        Gabung SKARIGA untuk <br />
+                        Menjadi <span class="bg-yellow-300 px-1 italic">Sang Juara Selanjutnya!</span>
                     </h2>
                 </div>
-                <a href="">
+                <a href="" class="w-max">
                     <button class="w-max bg-customBlue text-white px-6 py-3 rounded-full flex items-center gap-2
-                    transition transform hover:-translate-y-1 hover:bg-customOrange hover:shadow-lg">
+                    transition transform hover:scale-105 hover:bg-customOrange hover:shadow-lg">
                 <span>Daftar Sekarang</span>
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6">
@@ -28,26 +28,34 @@
                 <div class="relative flex justify-end items-center h-[350px] translate-x-56">
                     <!-- Kartu 1 -->
                     <div
-                        class="absolute w-80 h-72 bg-gray-400 rounded-xl shadow-xl transition-transform duration-500 transform -translate-x-32 rotate-[-10deg] z-10 hover:z-30 hover:scale-110 hover:-translate-y-4 hover:rotate-0">
+                        class="absolute w-80 h-72 bg-gray-400 rounded-xl shadow-xl transition-transform duration-500 transform -translate-x-32 rotate-[-10deg] z-0 hover:z-30 hover:scale-110 hover:-translate-y-4 hover:rotate-0">
+                        <div
+                            class="absolute -top-4 -left-4 bg-green-400 text-green-900 px-3 py-1 rounded-full text-sm font-bold shadow-lg z-20 cursor-default">
+                            🥇 Juara Provinsi
+                        </div>
                         <img src="{{ asset('assets/robot-manu.jpg') }}" alt="Foto 1"
                             class="w-full h-full object-cover rounded-xl">
                     </div>
 
                     <!-- Kartu 2 (tengah) -->
                     <div
-                        class="absolute w-80 h-72 bg-gray-500 rounded-xl shadow-xl transition-transform duration-500 transform  -translate-y-6 z-20 hover:z-30 hover:scale-110 hover:-translate-y-4 hover:rotate-0">
+                        class="absolute w-80 h-72 bg-gray-500 rounded-xl shadow-xl transition-transform duration-500 transform -translate-y-6 z-10 hover:z-30 hover:scale-110 hover:-translate-y-4 hover:rotate-0">
                         <div
-                            class="absolute -top-4 -left-4 bg-yellow-400 text-yellow-900 px-3 py-1 rounded-full text-sm font-bold shadow-lg animate-bounce hover:scale-105 z-20">
-                            🏆 Juara Nasional
+                            class="absolute -top-4 -left-4 bg-sky-400 text-sky-950 px-3 py-1 rounded-full text-sm font-bold shadow-lg z-20 cursor-default">
+                            🎗️ Juara Nasional
                         </div>
-                        <img src="{{ asset('assets/skariga pres.jpeg') }}" alt="Foto 2"
+                        <img src="{{ asset('assets/skariga prestasi.jpg') }}" alt="Foto 2"
                             class="w-full h-full object-cover rounded-xl">
                     </div>
 
                     <!-- Kartu 3 -->
                     <div
-                        class="absolute w-80 h-72 bg-black rounded-xl shadow-xl transition-transform duration-500 transform translate-x-32 translate-y-6 rotate-[10deg] z-0 hover:z-30 hover:scale-110 hover:-translate-y-4 hover:rotate-0">
-                        <img src="{{ asset('assets/skariga prestasi.jpg') }}" alt="Foto 3"
+                        class="absolute w-80 h-72 bg-black rounded-xl shadow-xl transition-transform duration-500 transform translate-x-32 translate-y-6 rotate-[10deg] z-20 hover:z-30 hover:scale-110 hover:-translate-y-4 hover:rotate-0">
+                        <div
+                            class="absolute -top-4 -left-4 bg-yellow-400 text-yellow-900 px-3 py-1 rounded-full text-sm font-bold shadow-lg z-0 cursor-default">
+                            🏆 Juara Internasional
+                        </div>
+                        <img src="{{ asset('assets/skariga intl.webp') }}" alt="Foto 3"
                             class="w-full h-full object-cover rounded-xl">
                     </div>
                 </div>
