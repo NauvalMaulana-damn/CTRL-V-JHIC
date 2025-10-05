@@ -57,7 +57,7 @@
         </section>
 
         <!-- Stats Section -->
-        <section class="max-w-6xl mx-auto px-4 py-8">
+        <section class="max-w-7xl mx-auto px-4 py-8">
             <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
                 <div
                     class="bg-gray-300/50 backdrop-blur-md rounded-xl p-6 text-center shadow-md transition-transform duration-300 hover:-translate-y-1">
@@ -83,9 +83,9 @@
         </section>
 
         <!-- Para Jawara Section -->
-        <div class="max-w-6xl mx-auto px-4 py-8">
+        <div class="max-w-7xl mx-auto px-4 py-8">
             <div
-                class="bg-white rounded-xl shadow-lg p-8 transition-transform duration-300 hover:-translate-y-1 relative">
+                class="bg-white rounded-xl shadow-lg p-8 transition-transform duration-300 hover:-translate-y-1  hover:scale-10 relative">
                 <img src="{{ asset('assets/trophy.png') }}"
                     class="absolute -top-6 -right-6 w-16 h-16 drop-shadow-md animate-bounce" alt="Trophy">
 
