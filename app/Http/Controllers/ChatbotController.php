@@ -2,14 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Services\GeminiChatService;
 use Illuminate\Http\Request;
-use App\Services\HuggingfaceService;
 
 class ChatbotController extends Controller
 {
     protected $chatbot;
 
-    public function __construct(HuggingfaceService $chatbot)
+    public function __construct(GeminiChatService $chatbot)
     {
         $this->chatbot = $chatbot;
     }
@@ -21,14 +21,8 @@ class ChatbotController extends Controller
 
     public function ask(Request $request)
     {
-        $request->validate([
-            'message' => 'required|string|max:255',
-        ]);
-
+        $request->validate(['message' => 'required|string|max:500']);
         $reply = $this->chatbot->ask($request->message);
-
-        return response()->json([
-            'reply' => $reply,
-        ]);
+        return response()->json(['reply' => $reply]);
     }
 }
