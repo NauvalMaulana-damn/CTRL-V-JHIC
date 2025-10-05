@@ -82,7 +82,7 @@
 
 
         <!-- Hero SKARIGA -->
-        <section class="relative  h-[550px] mt-2 mx-2 md:mx-10  rounded-xl overflow-hidden">
+        <section class="relative  h-[535px] mt-2 mx-2 md:mx-10  rounded-xl overflow-hidden">
             <div class="absolute inset-0 w-full h-full hover-scale">
                 <div class="absolute inset-0 bg-gradient-to-t from-transparent via-black/5 to-black/70"></div>
                 <img src="{{ asset('assets/depansekul.jpg') }}" alt="Hero SKARIGA" class="w-full h-full object-cover ">
@@ -97,7 +97,7 @@
 
 
         <!-- Profil -->
-        
+
         <section class="max-w-6xl mx-auto px-4 py-16">
             <div class="grid md:grid-cols-2 gap-10 items-start">
                 <!-- Kolom Kiri: Gambar -->
