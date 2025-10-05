@@ -11,7 +11,7 @@ export default {
             colors: {
                 customRed: '#FD5353',
                 customOrange: '#E17626',
-                customBlue: '#2492D1',
+                customBlue: '#1D4ED8', //#2492D1
                 customPink: '#FD467E',
                 customInsta: '#E1306C',
                 darkGray: '#222325',

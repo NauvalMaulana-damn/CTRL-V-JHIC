@@ -156,7 +156,7 @@
                                 class="w-full h-52 md:h-48 hover:h-64 object-cover rounded-lg mb-4"
                                 src="{{ asset('assets/ceksabuk.jpg') }}" alt="Cek Kelengkapan Seragam">
                             <h3 class="text-xl md:text-2xl font-bold text-center mb-3">Cek Kelengkapan Seragam</h3>
-                            <p class="text-base text-center">
+                            <p class="text-base text-center cursor-default">
                                 Sebelum memasuki sekolah, siswa wajib menunjukan kelengkapan seragam
                             </p>
                         </div>
@@ -169,7 +169,7 @@
                                 class="w-full h-52 md:h-48 hover:h-64 object-cover rounded-lg mb-4"
                                 src="{{ asset('assets/jalurhijau.jpg') }}" alt="Jalur Hijau">
                             <h3 class="text-xl md:text-2xl font-bold text-center mb-3">Jalur Hijau</h3>
-                            <p class="text-base text-center">
+                            <p class="text-base text-center cursor-default">
                                 SKARIGA selalu membiasakan warga sekolah untuk berjalan di jalur hijau, seperti yang
                                 diterapkan di industri
                             </p>
@@ -183,7 +183,7 @@
                                 class="w-full h-52 md:h-48 hover:h-64 object-cover rounded-lg mb-4"
                                 src="{{ asset('assets/mengajipagi.jpg') }}" alt="Mengaji Pagi">
                             <h3 class="text-xl md:text-2xl font-bold text-center mb-3">Mengaji Pagi</h3>
-                            <p class="text-base text-center">
+                            <p class="text-base text-center cursor-default">
                                 Bagi siswa muslim, SKARIGA mengadakan mengaji pagi bersama, seperti membaca juz amma,
                                 dan doa pagi. Bagi non Muslim SKARIGA memberi tempat untuk beribadah pagi
                             </p>
