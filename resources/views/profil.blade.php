@@ -79,7 +79,7 @@
 
     <div class="h-full h-max-content container mx-auto px-4 py-6">
         <!-- Hero SKARIGA -->
-        <section class="relative h-[535px] mt-2 rounded-xl overflow-hidden">
+        <section class="relative h-[800px] mt-2 rounded-xl overflow-hidden">
             <div class="absolute inset-0 w-full h-full hover-scale">
                 <div class="absolute inset-0 bg-gradient-to-t from-transparent via-black/5 to-black/70"></div>
                 <img src="{{ asset('assets/depansekul.jpg') }}" alt="Hero SKARIGA" class="w-full h-full object-cover ">
