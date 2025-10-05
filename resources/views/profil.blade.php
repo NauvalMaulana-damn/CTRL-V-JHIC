@@ -1,85 +1,103 @@
-<x-layout title="SMK PGRI 3 MALANG - Success by Discipline" :headerTransparent="true">
+<x-layout title="SMK PGRI 3 MALANG - Success by Discipline" :headerTransparent="false">
     <style>
-    @keyframes scroll {
-        0% {
-            transform: translateX(0);
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
         }
 
-        100% {
-            transform: translateX(-50%);
+        .animate-scroll {
+            display: flex;
+            animation: scroll 25s linear infinite;
         }
-    }
 
-    .animate-scroll {
-        display: flex;
-        animation: scroll 25s linear infinite;
-    }
+        /* Animasi tambahan untuk hover */
+        .hover-lift {
+            transition: all 0.3s ease;
+        }
 
-    /* Animasi tambahan untuk hover */
-    .hover-lift {
-        transition: all 0.3s ease;
-    }
+        .hover-lift:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
 
-    .hover-lift:hover {
-        transform: translateY(-8px);
-        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
-    }
+        .hover-scale {
+            transition: all 0.4s ease;
+        }
 
-    .hover-scale {
-        transition: all 0.4s ease;
-    }
+        .hover-scale:hover {
+            transform: scale(1.05);
+        }
 
-    .hover-scale:hover {
-        transform: scale(1.05);
-    }
+        .hover-glow:hover {
+            box-shadow: 0 0 20px rgba(249, 115, 22, 0.5);
+        }
 
-    .hover-glow:hover {
-        box-shadow: 0 0 20px rgba(249, 115, 22, 0.5);
-    }
+        .hover-rotate:hover {
+            transform: rotate(2deg);
+        }
 
-    .hover-rotate:hover {
-        transform: rotate(2deg);
-    }
+        .hover-brightness:hover {
+            filter: brightness(1.1);
+        }
 
-    .hover-brightness:hover {
-        filter: brightness(1.1);
-    }
+        .hover-border-orange:hover {
+            border: 2px solid #f97316;
+        }
 
-    .hover-border-orange:hover {
-        border: 2px solid #f97316;
-    }
+        .hover-text-white:hover {
+            color: white;
+        }
 
-    .hover-text-white:hover {
-        color: white;
-    }
+        .hover-bg-orange:hover {
+            background-color: #f97316;
+        }
 
-    .hover-bg-orange:hover {
-        background-color: #f97316;
-    }
+        .hover-shadow-lg {
+            transition: all 0.3s ease;
+        }
 
-    .hover-shadow-lg {
-        transition: all 0.3s ease;
-    }
-
-    .hover-shadow-lg:hover {
-        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-    }
+        .hover-shadow-lg:hover {
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
     </style>
 
     <body class="bg-gray-50 text-gray-800">
+
+        {{-- Hero Skariga Before---
+        <section class="relative w-full h-screen flex items-end z-10 mx-4 md:mx-6 mt-6">
+    <div class="absolute inset-0 w-full h-full hover-scale">
+        <div class="absolute inset-0 bg-gradient-to-t from-transparent via-black/5 to-black/70"></div>
+        <img src="{{ asset('assets/depansekul.jpg') }}" alt="Hero SKARIGA" class="w-full h-full object-cover">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
+    </div>
+    <div class="relative z-10 p-8 md:p-16">
+        <h1 class="text-5xl md:text-7xl font-bold text-white drop-shadow-lg hover-scale">SKARIGA!</h1>
+    </div>
+</section> --}}
+
+
         <!-- Hero SKARIGA -->
-        <section class="relative w-full h-screen flex items-end z-10">
+        <section class="relative  h-[550px] mt-2 mx-2 md:mx-10  rounded-xl overflow-hidden">
             <div class="absolute inset-0 w-full h-full hover-scale">
                 <div class="absolute inset-0 bg-gradient-to-t from-transparent via-black/5 to-black/70"></div>
-                <img src="{{ asset('assets/depansekul.jpg') }}" alt="Hero SKARIGA" class="w-full h-full object-cover">
+                <img src="{{ asset('assets/depansekul.jpg') }}" alt="Hero SKARIGA" class="w-full h-full object-cover ">
                 <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
             </div>
-            <div class="relative z-10 p-8 md:p-16">
-                <h1 class="text-5xl md:text-7xl font-bold text-white drop-shadow-lg hover-scale">SKARIGA!</h1>
+            <div class="absolute bottom-8 left-3.5 md:left-10 z-10">
+                <h1 class="text-5xl md:text-7xl font-bold text-white drop-shadow-lg hover-scale">
+                    SKARIGA!
+                </h1>
             </div>
         </section>
 
+
         <!-- Profil -->
+        
         <section class="max-w-6xl mx-auto px-4 py-16">
             <div class="grid md:grid-cols-2 gap-10 items-start">
                 <!-- Kolom Kiri: Gambar -->
@@ -250,7 +268,7 @@
         </section>
 
         <!-- Sponsor -->
-        
+
 
         <!-- Berita Terbaru -->
         <section class=" ">
