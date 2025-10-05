@@ -1,12 +1,57 @@
 <x-layout>
     <!-- Hero -->
-    <section class="relative h-[400px] md:h-[500px] rounded-xl overflow-hidden m-6">
+    <section class="relative h-[450px] md:h-[500px] rounded-xl overflow-hidden mt-2 mx-10">
         <img src="{{ asset('assets/alumni.png') }}" alt="Hero Image" class="w-full h-full object-cover">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
+
+        <!-- Player -->
+        <div class="absolute bottom-4 left-1/2 -translate-x-1/2 w-[90%]">
+            <div class="relative mx-auto p-4 text-white shadow-lg">
+                <div class="flex items-center space-x-4">
+                    <div class="flex-1">
+                        <div class="flex items-center space-x-3">
+                            {{-- <img src="https://via.placeholder.com/50" alt="cover"
+                                class="w-14 h-14 rounded-lg object-cover"> --}}
+                            {{--
+                                <div>
+                                    <h2 class="text-3xl font-bold leading-tight">Teman Bahagia</h2>
+                                    <p class="text-lg text-gray-300">Jazz</p>
+                                </div> --}}
+                        </div>
+                        <!-- Progress Bar -->
+                        <div class="relative w-full h-1 bg-white/20 rounded-full mt-2">
+                            <!-- Batang yang terisi -->
+                            <div class="h-full bg-white rounded-full" style="width: 40%;"></div>
+
+                            <!-- Buletan indikator -->
+                            <div
+                                class="absolute top-1/2 left-[40%] -translate-x-1/2 -translate-y-1/2 w-4 h-4 bg-white rounded-full shadow">
+                            </div>
+                        </div>
+
+                        <div class="flex justify-center items-center space-x-3 mt-3">
+                            <button class="p-2 text-4xl hover:bg-white/10 rounded-full "><i
+                                    class="fa-solid fa-shuffle"></i></button>
+                            <button class="p-2 text-4xl hover:bg-white/10 rounded-full"><i
+                                    class="fa-solid fa-backward-step"></i></button>
+                            <button class="p-2 text-4xl hover:bg-white/10 rounded-full "><i
+                                    class="fa-solid fa-pause"></i></button>
+                            <button class="p-2 text-4xl hover:bg-white/10 rounded-full"><i
+                                    class="fa-solid fa-forward-step"></i></button>
+                            <button class="p-2 text-4xl hover:bg-white/10 rounded-full"><i
+                                    class="fa-solid fa-repeat"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
     </section>
 
     <!-- Alumni Section -->
-    <section class="py-12 md:py-16 animate-fade-in">
-        <div class="container mx-auto px-4">
+    <section class=" py-12 md:py-16 animate-fade-in">
+        <div class=" max-w-7xl container mx-auto px-4">
             <h2 class="text-3xl md:text-5xl font-bold text-center mb-12">PARA JAWARA!</h2>
 
             <!-- Alumni Grid -->
