@@ -256,7 +256,7 @@
         <section class="mx-auto py-16">
             <h2 class="text-5xl font-bold text-center mb-8">Profil Lengkap SKARIGA</h2>
             <div
-                class="relative w-full h-full max-h-[800px] aspect-square mx-auto rounded-2xl overflow-hidden shadow-lg hover-lift">
+                class="relative w-full h-full max-h-52 sm:max-h-80 md:max-h-96 lg:max-h-[800px] aspect-square mx-auto rounded-2xl overflow-hidden shadow-lg hover-lift">
                 <iframe
                     src="https://www.youtube.com/embed/FAwdUR9SFRU?si=JYpD_LbCAMgLP_zM&vq=hd1080&modestbranding=1&rel=0&playsinline=1"
                     title="PROFIL SMK PGRI 3 MALANG" frameborder="0"
