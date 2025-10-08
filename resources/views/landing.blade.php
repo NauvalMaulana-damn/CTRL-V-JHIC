@@ -41,105 +41,106 @@
 
             <!-- width && height = 100%, lg:w-2/5 -->
             <!-- Department Sections -->
-            <section class="py-6 md:py-10 animate-fade-in delay-200">
-                <!-- Elektro Department -->
-                <div class="flex flex-col lg:flex-row gap-6 mb-12">
-                    <div class="w-full lg:w-1/2 department-card bg-customOrange p-5 md:p-6 relative overflow-hidden">
-                        <div class="info-card bg-white p-2 mb-5 md:mb-6">
-                            <img width="100%" height="100%" class="w-full object-cover max-h-72 rounded-2xl"
-                                src="{{ asset('assets/elektro_card.png') }}" alt="Elektro Department">
-                        </div>
-                        <h2 class="text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-4 md:mb-6">Elektro</h2>
-                        <p class="text-white text-base md:text-lg mb-6 md:mb-8">
-                            Departemen Elektronika mempelajari dasar-dasar rangkaian listrik, komponen elektronik, dan
-                            sistem digital.
-                            Juga mencakup perakitan, pemrograman mikrokontroller, serta pengendalian otomatis.
-                            Keselamatan kerja,
-                            troubleshooting, dan teknologi embedded menjadi fokus penting.
-                        </p>
-                        <button
-                            class="bg-white text-[#242424] text-base md:text-lg font-medium py-2 px-6 md:px-8 rounded-full hover:bg-gray-100 transition">
-                            Selengkapnya
-                        </button>
-                        <img width="100%" height="100%"
-                            class="absolute -bottom-2 -right-6 w-64 md:w-72 opacity-35 -rotate-12"
-                            src="{{ asset('assets/bg_elektro_card.png') }}" alt="Decoration">
-                    </div>
+<section class="py-8 md:py-12 animate-fade-in">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
 
-                    <!-- Otomotif Department -->
-                    <div class="w-full lg:w-1/2 department-card bg-customRed p-5 md:p-6 relative overflow-hidden">
-                        <div class="info-card bg-white p-2 mb-5 md:mb-6">
-                            <img width="100%" height="100%" class="w-full object-cover max-h-72 rounded-2xl"
-                                src="{{ asset('assets/otomotif_card.png') }}" alt="Otomotif Department">
-                        </div>
-                        <h2 class="text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-4 md:mb-6">Otomotif</h2>
-                        <p class="text-white text-base md:text-lg mb-6 md:mb-8">
-                            Departemen Otomotif mempelajari teori sistem kendaraan seperti mesin, transmisi,
-                            kelistrikan, bodi, dan
-                            suspensi. Lalu mempraktikkannya di bengkel yang akan dibimbing oleh guru pengajar. Mencakup
-                            perawatan,
-                            perbaikan, dan diagnosa kerusakan kendaraan secara teknis.
-                        </p>
-                        <button
-                            class="bg-white text-[#242424] text-base md:text-lg font-medium py-2 px-6 md:px-8 rounded-full hover:bg-gray-100 transition">
-                            Selengkapnya
-                        </button>
-                        <img width="100%" height="100%"
-                            class="absolute -bottom-2 -right-6 w-64 md:w-72 opacity-60 -rotate-12"
-                            src="{{ asset('assets/bg_otomotif_card.png') }}" alt="Decoration">
-                    </div>
-                </div>
+        <!-- Elektro -->
+        <div
+            class="bg-customOrange p-4 md:p-5 rounded-xl relative overflow-hidden flex flex-col justify-between transform transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:scale-[1.02]">
+            <div class="bg-white p-2 mb-4 rounded-lg">
+                <img class="w-full object-cover max-h-56 rounded-lg"
+                    src="{{ asset('assets/elektro_card.png') }}" alt="Elektro Department">
+            </div>
+            <div>
+                <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-3">Elektro</h2>
+                <p class="text-white text-sm md:text-base line-clamp-3 mb-4">
+                    Departemen Elektronika mempelajari dasar-dasar rangkaian listrik, komponen elektronik,
+                    dan sistem digital.
+                    Juga mencakup perakitan, pemrograman mikrokontroller, serta pengendalian otomatis.
+                </p>
+                <button
+                    class="bg-white text-[#242424] text-sm md:text-base font-medium py-1.5 px-5 rounded-full hover:bg-gray-100 transition">
+                    Selengkapnya
+                </button>
+            </div>
+            <img class="absolute -bottom-2 -right-6 w-48 opacity-30 -rotate-12"
+                src="{{ asset('assets/bg_elektro_card.png') }}" alt="">
+        </div>
 
-                <!-- Second Row Departments -->
-                <div class="flex flex-col lg:flex-row gap-6">
-                    <!-- Pemesinan Department -->
-                    <div class="w-full lg:w-1/2 department-card bg-customPink p-5 md:p-6 relative overflow-hidden">
-                        <div class="info-card bg-white p-2 mb-5 md:mb-6">
-                            <img width="100%" height="100%"
-                                class="w-full object-cover max-h-72 rounded-2xl object-[center_20%]"
-                                src="{{ asset('assets/pemesinan_card.jpg') }}" alt="Pemesinan Department">
-                        </div>
-                        <h2 class="text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-4 md:mb-6">Pemesinan</h2>
-                        <p class="text-white text-base md:text-lg mb-6 md:mb-8">
-                            Departemen Pemesinan mempelajari teknik pengoperasian mesin produksi seperti bubut, frais,
-                            dan CNC. Juga
-                            mencakup gambar teknik, perencanaan proses manufaktur, serta kontrol kualitas produk.
-                            Material teknik,
-                            keselamatan kerja, dan pemeliharaan mesin menjadi bagian penting dalam praktik industri.
-                        </p>
-                        <button
-                            class="bg-white text-[#242424] text-base md:text-lg font-medium py-2 px-6 md:px-8 rounded-full hover:bg-gray-100 transition">
-                            Selengkapnya
-                        </button>
-                        <img width="100%" height="100%"
-                            class="absolute -bottom-2 -right-6 w-64 md:w-72 opacity-60 -rotate-12"
-                            src="{{ asset('assets/bg_pemesinan_card.png') }}" alt="Decoration">
-                    </div>
+        <!-- Otomotif -->
+        <div
+            class="bg-customRed p-4 md:p-5 rounded-xl relative overflow-hidden flex flex-col justify-between transform transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:scale-[1.02]">
+            <div class="bg-white p-2 mb-4 rounded-lg">
+                <img class="w-full object-cover max-h-56 rounded-lg"
+                    src="{{ asset('assets/otomotif_card.png') }}" alt="Otomotif Department">
+            </div>
+            <div>
+                <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-3">Otomotif</h2>
+                <p class="text-white text-sm md:text-base line-clamp-3 mb-4">
+                    Departemen Otomotif mempelajari teori sistem kendaraan seperti mesin, transmisi,
+                    kelistrikan, bodi, dan suspensi.
+                    Praktiknya dilakukan di bengkel bersama guru pengajar.
+                </p>
+                <button
+                    class="bg-white text-[#242424] text-sm md:text-base font-medium py-1.5 px-5 rounded-full hover:bg-gray-100 transition">
+                    Selengkapnya
+                </button>
+            </div>
+            <img class="absolute -bottom-2 -right-6 w-48 opacity-30 -rotate-12"
+                src="{{ asset('assets/bg_otomotif_card.png') }}" alt="">
+        </div>
 
-                    <!-- TIK Department -->
-                    <div class="w-full lg:w-1/2 department-card bg-customBlue p-5 md:p-6 relative overflow-hidden">
-                        <div class="info-card bg-white p-2 mb-5 md:mb-6">
-                            <img width="100%" height="100%" class="w-full object-cover max-h-72 rounded-2xl"
-                                src="{{ asset('assets/tik_card.png') }}" alt="TIK Department">
-                        </div>
-                        <h2 class="text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-4 md:mb-6">TIK</h2>
-                        <p class="text-white text-base md:text-lg mb-6 md:mb-8">
-                            Departemen TIK atau Teknologi Informasi dan Komunikasi mempelajari pemrograman, jaringan
-                            komputer, dan
-                            teknologi komunikasi digital. Juga mencakup analisis data, kecerdasan buatan, serta
-                            manajemen proyek TI.
-                            Etika teknologi dan dokumentasi teknis diajarkan untuk penggunaan yang profesional.
-                        </p>
-                        <button
-                            class="bg-white text-[#242424] text-base md:text-lg font-medium py-2 px-6 md:px-8 rounded-full hover:bg-gray-100 transition">
-                            Selengkapnya
-                        </button>
-                        <img width="100%" height="100%"
-                            class="absolute -bottom-2 -right-6 w-64 md:w-72 opacity-35 -rotate-12"
-                            src="{{ asset('assets/bg_tik_card.png') }}" alt="Decoration">
-                    </div>
-                </div>
-            </section>
+        <!-- Pemesinan -->
+        <div
+            class="bg-customPink p-4 md:p-5 rounded-xl relative overflow-hidden flex flex-col justify-between transform transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:scale-[1.02]">
+            <div class="bg-white p-2 mb-4 rounded-lg">
+                <img class="w-full object-cover max-h-56 rounded-lg object-[center_20%]"
+                    src="{{ asset('assets/pemesinan_card.jpg') }}" alt="Pemesinan Department">
+            </div>
+            <div>
+                <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-3">Pemesinan</h2>
+                <p class="text-white text-sm md:text-base line-clamp-3 mb-4">
+                    Departemen Pemesinan mempelajari teknik pengoperasian mesin produksi seperti bubut,
+                    frais, dan CNC.
+                    Juga mencakup gambar teknik serta kontrol kualitas produk.
+                </p>
+                <button
+                    class="bg-white text-[#242424] text-sm md:text-base font-medium py-1.5 px-5 rounded-full hover:bg-gray-100 transition">
+                    Selengkapnya
+                </button>
+            </div>
+            <img class="absolute -bottom-2 -right-6 w-48 opacity-30 -rotate-12"
+                src="{{ asset('assets/bg_pemesinan_card.png') }}" alt="">
+        </div>
+
+        <!-- TIK -->
+        <div
+            class="bg-customBlue p-4 md:p-5 rounded-xl relative overflow-hidden flex flex-col justify-between transform transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:scale-[1.02]">
+            <div class="bg-white p-2 mb-4 rounded-lg">
+                <img class="w-full object-cover max-h-56 rounded-lg"
+                    src="{{ asset('assets/tik_card.png') }}" alt="TIK Department">
+            </div>
+            <div>
+                <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-3">TIK</h2>
+                <p class="text-white text-sm md:text-base line-clamp-3 mb-4">
+                    Departemen TIK mempelajari pemrograman, jaringan komputer, teknologi digital, dan
+                    kecerdasan buatan.
+                    Siswa juga belajar manajemen proyek TI dan etika teknologi.
+                </p>
+                <button
+                    class="bg-white text-[#242424] text-sm md:text-base font-medium py-1.5 px-5 rounded-full hover:bg-gray-100 transition">
+                    Selengkapnya
+                </button>
+            </div>
+            <img class="absolute -bottom-2 -right-6 w-48 opacity-30 -rotate-12"
+                src="{{ asset('assets/bg_tik_card.png') }}" alt="">
+        </div>
+
+    </div>
+</section>
+
+            <!-- End of Department Sections -->
+
 
             <!-- Student Habits Section -->
             <section class="bg-gray-200 py-12 rounded-xl mt-8 animate-fade-in delay-900 ease-in-out">
@@ -149,7 +150,8 @@
 
                     <div class="flex flex-col lg:flex-row items-center gap-6 justify-center">
                         <!-- Habit 1 -->
-                        <div class="w-full lg:w-1/3 habit-card text-white bg-customOrange hover:bg-customBlue p-5 flex flex-col transition-all duration-900 ease-in-out
+                        <div
+                            class="w-full lg:w-1/3 habit-card text-white bg-customOrange hover:bg-customBlue p-5 flex flex-col transition-all duration-900 ease-in-out
                         hover:scale-105 hover:rounded-xl hover:shadow-2xl hover:z-10
                         min-h-[480px] hover:min-h-[520px] hover:self-start">
                             <img width="100%" height="100%"
@@ -162,7 +164,8 @@
                         </div>
 
                         <!-- Habit 2 -->
-                        <div class="w-full lg:w-1/3 habit-card text-white bg-customOrange hover:bg-customBlue p-5 flex flex-col transition-all duration-1000 ease-in-out
+                        <div
+                            class="w-full lg:w-1/3 habit-card text-white bg-customOrange hover:bg-customBlue p-5 flex flex-col transition-all duration-1000 ease-in-out
                         hover:scale-105 hover:rounded-xl hover:shadow-2xl hover:z-10
                         min-h-[480px] hover:min-h-[520px] hover:self-start">
                             <img width="100%" height="100%"
@@ -176,7 +179,8 @@
                         </div>
 
                         <!-- Habit 3 -->
-                        <div class="w-full lg:w-1/3 habit-card text-white bg-customOrange hover:bg-customBlue p-5 flex flex-col transition-all duration-900 ease-in-out
+                        <div
+                            class="w-full lg:w-1/3 habit-card text-white bg-customOrange hover:bg-customBlue p-5 flex flex-col transition-all duration-900 ease-in-out
                         hover:scale-105 hover:rounded-xl hover:shadow-2xl hover:z-10
                         min-h-[480px] hover:min-h-[520px] hover:self-start">
                             <img width="100%" height="100%"
@@ -220,7 +224,8 @@
                         <img width="100%" height="100%"
                             class="w-full h-40 object-cover rounded-lg mb-2 group-hover:opacity-90 transition"
                             src="{{ asset('assets/kcs38.png') }}" alt="News Image">
-                        <p class="text-sm font-semibold group-hover:text-customOrange transition">Pusdikarhanud Galakkan
+                        <p class="text-sm font-semibold group-hover:text-customOrange transition">Pusdikarhanud
+                            Galakkan
                             Gerakan Cinta Sekolah untuk Bentuk Karakter Siswa</p>
                     </div>
                 </div>
