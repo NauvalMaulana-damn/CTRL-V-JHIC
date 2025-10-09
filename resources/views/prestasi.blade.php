@@ -134,8 +134,7 @@
         <div class="w-full mx-auto py-8">
             <div class="bg-white rounded-xl shadow-lg p-6 sm:p-8">
                 <img src="{{ asset('assets/trophy.png') }}"
-                    class="-top-6 -right-0 w-12 h-12 sm:w-16 sm:h-16 drop-shadow-md animate-bounce"
-                    alt="Trophy">
+                    class="-top-6 -right-0 w-12 h-12 sm:w-16 sm:h-16 drop-shadow-md animate-bounce" alt="Trophy">
 
                 <div class="bg-gray-100 rounded-xl shadow-lg px-4 sm:px-6 py-3 sm:py-4 grid grid-cols-3 items-center">
                     <div class="flex space-x-2">
@@ -143,7 +142,9 @@
                         <span class="w-3 h-3 sm:w-4 sm:h-4 rounded-full bg-yellow-500"></span>
                         <span class="w-3 h-3 sm:w-4 sm:h-4 rounded-full bg-green-500"></span>
                     </div>
-                    <h2 class="text-lg sm:text-2xl font-bold text-center">PARA JAWARA!</h2>
+                    <h2 class="text-3xl sm:text-2xl font-bold text-center" style="text-shadow: 2px 2px 5px #FFD700; font-size: 2rem">
+                        PARA JAWARA!
+                    </h2>
                     <div></div>
                 </div>
 
