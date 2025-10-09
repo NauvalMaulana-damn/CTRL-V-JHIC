@@ -57,9 +57,11 @@
         <!-- Daftar Offline -->
         <!-- Alur Pendaftaran OFFLINE -->
         <section class="relative mt-12">
-            <img src="{{ asset('assets/bg-p-offline.png') }}" class="w-full h-40 object-cover opacity-80">
+            <div class="absolute inset-0 bg-gradient-to-t from-transparent via-black/5 to-black/70"></div>
+            <img src="{{ asset('assets/bg-p-offline.png') }}" class="w-full h-40 object-cover opacity-80 blur-[3px]" alt="Daftar Offline">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-black/30 to-transparent"></div>
             <div class="absolute inset-0 flex items-center justify-center">
-                <h2 class="text-3xl font-bold text-white">Daftar Offline</h2>
+                <h2 class="text-5xl font-bold text-white">Daftar Offline</h2>
             </div>
         </section>
 
@@ -71,9 +73,11 @@
 
     <!-- Alur Pendaftaran ONLINE -->
     <section class="relative mt-12">
-        <img src="{{ asset('assets/bg-p-online.png') }}" class="w-full h-40 object-cover opacity-80">
+        <div class="absolute inset-0 bg-gradient-to-t from-transparent via-black/5 to-black/70"></div>
+        <img src="{{ asset('assets/bg-p-online.png') }}" class="w-full h-40 object-cover opacity-80 blur-[3px]" alt="Daftar Online">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-black/30 to-transparent"></div>
         <div class="absolute inset-0 flex items-center justify-center">
-            <h2 class="text-3xl font-bold text-white">Daftar Online</h2>
+            <h2 class="text-5xl font-bold text-white">Daftar Online</h2>
         </div>
     </section>
 
