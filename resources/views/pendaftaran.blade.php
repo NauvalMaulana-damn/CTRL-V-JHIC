@@ -39,7 +39,24 @@
                 </div>
             </div>
 
+                <!-- Tombol CHAT ADMIN di atas tengah -->
+                <button
+                    class="bg-gray-600 text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-green-700 transition shadow-lg">
+                    CHAT ADMIN
+                </button>
 
+                <!-- Dua tombol daftar di bawah -->
+                <div class="flex gap-4">
+                    <button
+                        class="bg-gray-500 text-white px-6 py-3 rounded-full text-lg font-semibold hover:bg-orange-600 transition shadow-lg">
+                        DAFTAR ONLINE
+                    </button>
+                    <button
+                        class="bg-gray-500 text-white px-6 py-3 rounded-full text-lg font-semibold hover:bg-blue-600 transition shadow-lg">
+                        DAFTAR OFFLINE
+                    </button>
+                </div>
+            </div>
         </section>
 
         <!-- Grafik Section -->
@@ -84,62 +101,61 @@
     </div>
     </section>
 
-
     <script>
-        const labels = ['2021', '2022', '2023', '2024', '2025'];
+    const labels = ['2021', '2022', '2023', '2024', '2025'];
 
-        const chartOptions = {
-            responsive: true,
-            plugins: {
-                legend: {
-                    display: false
-                }
-            },
-            scales: {
-                y: {
-                    beginAtZero: true
-                }
-            },
-            elements: {
-                line: {
-                    tension: 0.4
-                } // bikin kurva smooth
+    const chartOptions = {
+        responsive: true,
+        plugins: {
+            legend: {
+                display: false
             }
-        };
+        },
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+        },
+        elements: {
+            line: {
+                tension: 0.4
+            } // bikin kurva smooth
+        }
+    };
 
-        const pendaftarData = {
-            labels,
-            datasets: [{
-                label: 'Pendaftar',
-                data: [200, 350, 400, 500, 620],
-                borderColor: '#f97316',
-                backgroundColor: '#f97316',
-                fill: false
-            }]
-        };
+    const pendaftarData = {
+        labels,
+        datasets: [{
+            label: 'Pendaftar',
+            data: [200, 350, 400, 500, 620],
+            borderColor: '#f97316',
+            backgroundColor: '#f97316',
+            fill: false
+        }]
+    };
 
-        const diterimaData = {
-            labels,
-            datasets: [{
-                label: 'Peserta Diterima',
-                data: [150, 300, 320, 450, 560],
-                borderColor: '#3b82f6',
-                backgroundColor: '#3b82f6',
-                fill: false
-            }]
-        };
+    const diterimaData = {
+        labels,
+        datasets: [{
+            label: 'Peserta Diterima',
+            data: [150, 300, 320, 450, 560],
+            borderColor: '#3b82f6',
+            backgroundColor: '#3b82f6',
+            fill: false
+        }]
+    };
 
-        new Chart(document.getElementById('chartPendaftar'), {
-            type: 'line',
-            data: pendaftarData,
-            options: chartOptions
-        });
+    new Chart(document.getElementById('chartPendaftar'), {
+        type: 'line',
+        data: pendaftarData,
+        options: chartOptions
+    });
 
-        new Chart(document.getElementById('chartDiterima'), {
-            type: 'line',
-            data: diterimaData,
-            options: chartOptions
-        });
+    new Chart(document.getElementById('chartDiterima'), {
+        type: 'line',
+        data: diterimaData,
+        options: chartOptions
+    });
     </script>
     </div>
 </x-layout>
