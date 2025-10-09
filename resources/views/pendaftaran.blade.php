@@ -1,13 +1,5 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Pendaftaran - SMK</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-</head>
-<body class="bg-white text-gray-800">
+<x-layout title="Pendaftaran - SMK" >
+<div class="bg-white text-gray-800">
 
   <!-- Hero Section -->
   <section class="relative h-[60vh] bg-black">
@@ -212,5 +204,5 @@
       options: chartOptions
     });
   </script>
-</body>
-</html>
+</div>
+</x-layout>
