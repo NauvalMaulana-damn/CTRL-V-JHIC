@@ -201,5 +201,13 @@ class EkskulSeeder extends Seeder
             kepemimpinan, dan kerja sama tim.',
             'image' => 'eksPaskib.png'
         ]);
+
+        DB::table('ekskuls')->insert([
+            'title' => 'E-Sports',
+            'desc' => 'Ekstrakurikuler Esports adalah kegiatan yang membina siswa dalam permainan digital kompetitif yang menekankan strategi,
+            kerja sama tim, dan sportivitas. Melalui latihan rutin dan pertandingan, siswa dilatih untuk berpikir taktis, berkomunikasi efektif,
+            serta mengembangkan mental juara di lingkungan yang positif dan terarah.',
+            'image' => 'eksEsport.avif'
+        ]);
     }
 }

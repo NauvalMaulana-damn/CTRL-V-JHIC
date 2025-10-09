@@ -30,9 +30,6 @@
                             </div>
                         </section>
                     </div>
-
-                    <!-- Pagination -->
-                    <div class="swiper-pagination"></div>
                 </div>
             </section>
 
