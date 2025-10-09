@@ -4,62 +4,70 @@ declare global {
     }
 }
 
-import Alpine from 'alpinejs';
-import Swiper from 'swiper';
-import { Autoplay, Pagination } from 'swiper/modules';
+import '../css/app.css'
+import Alpine from "alpinejs";
+import Swiper, { SwiperOptions } from "swiper";
+import { Autoplay, Pagination, Navigation } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 
-// Import CSS Swiper
-import 'swiper/css';
-import 'swiper/css/pagination';
-
-// Mobile menu functionality
+// ✅ Mobile menu
 const initMobileMenu = (): void => {
-    const hamburger = document.getElementById('hamburger');
-    const navMenu = document.getElementById('navMenu');
+    const hamburger = document.getElementById("hamburger");
+    const navMenu = document.getElementById("navMenu");
 
     if (hamburger && navMenu) {
-        hamburger.addEventListener('click', (): void => {
-            hamburger.classList.toggle('active');
-            navMenu.classList.toggle('active');
+        hamburger.addEventListener("click", (): void => {
+            hamburger.classList.toggle("active");
+            navMenu.classList.toggle("active");
         });
     }
 };
 
-// Swiper init (no dynamic import)
+// ✅ Swiper init
 const initSwiper = (): void => {
-    const swiperEl = document.querySelector('.mySwiper');
-    if (!swiperEl) return;
+    const swiperEl = document.querySelector(".mySwiper");
+    if (!(swiperEl instanceof HTMLElement)) return;
 
-    new Swiper(swiperEl as HTMLElement, {
-        modules: [Autoplay, Pagination],
+    const swiperOptions: SwiperOptions = {
+        modules: [Navigation, Pagination, Autoplay],
         loop: true,
-        pagination: {
-            el: '.swiper-pagination',
-            clickable: true,
-        },
         autoplay: {
             delay: 5000,
+            disableOnInteraction: false,
         },
-    });
-
-    console.log('Swiper initialized successfully');
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+    } as any;
+    new Swiper(swiperEl, swiperOptions);
 };
 
-// Initialize everything
-document.addEventListener('DOMContentLoaded', (): void => {
-    console.log('SMK PGRI 3 Malang - Initializing');
+// ✅ DOMContentLoaded init
+document.addEventListener("DOMContentLoaded", (): void => {
+    console.log("SMK PGRI 3 Malang - Initializing...");
 
+    // Alpine
     window.Alpine = Alpine;
     Alpine.start();
-    console.log('AlpineJS initialized successfully');
+    console.log("AlpineJS initialized successfully");
 
+    // Mobile menu
     initMobileMenu();
-    console.log('Mobile menu initialized successfully');
+    console.log("Mobile menu initialized successfully");
 
+    // Swiper
     initSwiper();
-    console.log('Swiper initialized successfully');
+    console.log("Swiper initialized successfully");
 });
 
-document.addEventListener('scroll', (): void => {
-    console.log('ScrollY:', window.scrollY);
+// Optional: scroll debug
+document.addEventListener("scroll", (): void => {
+    console.log("ScrollY:", window.scrollY);
 });
