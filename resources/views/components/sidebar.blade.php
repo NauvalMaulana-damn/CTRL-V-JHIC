@@ -8,7 +8,7 @@
     </style>
 
     <!-- Toggle Button -->
-    <button @click="open = !open" class="absolute -left-10 top-1/2 transform -translate-y-1/2 bg-white/30 backdrop-blur-md
+    <button @click="open = !open" class="flex  absolute -left-10 top-1/2 transform -translate-y-1/2 bg-white/30 backdrop-blur-md
         p-2 rounded-xl shadow-lg hover:bg-customOrange hover:text-white inline-block transition">
 
         <!-- Panah -->
@@ -18,7 +18,7 @@
             viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
         </svg>
-        <img height="20" width="20" src="{{ asset('assets/skariga logo 1.png') }}" alt="skarigalogo">
+        <img height="20" width="20" src="{{ asset('assets/skariga logo 1.png') }}" alt="skarigalogo" >
     </button>
 
     <!-- Sidebar -->

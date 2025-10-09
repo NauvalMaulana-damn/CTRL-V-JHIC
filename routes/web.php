@@ -26,7 +26,7 @@ Route::get('/alumni', function () {
 });
 
 Route::get('/pendaftaran', function () {
-    return view('pendaftaran');
+    return view('pendaftarans');
 });
 
 // Chatbot Routes
