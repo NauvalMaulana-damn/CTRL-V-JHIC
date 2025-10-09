@@ -61,7 +61,7 @@
                         <li><a href="/alumni"
                                 class="{{ request()->is('alumni') ? 'text-customOrange' : '' }} hover:text-customOrange transition">Alumni</a>
                         </li>
-                        <li><a href="#pendaftaran"
+                        <li><a href="/pendaftaran"
                                 class="{{ request()->is('pendaftaran') ? 'text-customOrange' : '' }} hover:text-customOrange transition">Pendaftaran</a>
                         </li>
                     </ul>
