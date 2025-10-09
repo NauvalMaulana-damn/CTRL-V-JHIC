@@ -1,38 +1,37 @@
 <x-layout>
     <!-- Hero -->
     <section class="relative h-[600px] mt-2 rounded-xl overflow-hidden">
-            <div class="absolute inset-0 max-w-[76rem] mx-auto h-full hover-scale rounded-2xl overflow-hidden">
-                <div class="absolute inset-0 bg-gradient-to-t from-transparent via-black/5 to-black/70"></div>
-                <img src="{{ asset('assets/alumni.png') }}" alt="Hero SKARIGA" class="w-full h-full object-cover">
-                <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
+        <div class="absolute inset-0 max-w-[76rem] mx-auto h-full hover-scale rounded-2xl overflow-hidden">
+            <div class="absolute inset-0 bg-gradient-to-t from-transparent via-black/5 to-black/70"></div>
+            <img src="{{ asset('assets/alumni.png') }}" alt="Hero SKARIGA" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
+        </div>
+
+        <!-- Progress Bar -->
+        <div class="absolute bottom-4 left-1/2 -translate-x-1/2 w-[90%] inset-x-4">
+            <div class="mb-4 h-2 md:h-3 relative max-w-[72rem] mx-auto bg-white/40 rounded-full">
+                <div class="h-full bg-white rounded-full" style="width:40%"></div>
+                <div class="absolute bottom-4 inset-x-4 md:inset-x-12 lg:inset-x-24">
+                </div>
             </div>
 
-            <!-- Progress Bar -->
-                            <div class="absolute bottom-4 left-1/2 -translate-x-1/2 w-[90%] inset-x-4">
-                                <div class="mb-4 h-2 md:h-3 relative max-w-[72rem] mx-auto bg-white/40 rounded-full">
-                                    <div class="h-full bg-white rounded-full" style="width:40%"></div>
-                                   <div class="absolute bottom-4 inset-x-4 md:inset-x-12 lg:inset-x-24">
-                                    </div>
-                                </div>
+            <!-- Controls -->
+            <div class="flex justify-center items-center space-x-4 md:space-x-6 text-xl md:text-2xl">
+                <button class="p-2 md:p-3 text-white rounded-full hover:bg-white/20 transition"><i
+                        class="fa-solid fa-shuffle"></i></button>
+                <button class="p-2 md:p-3 text-white rounded-full hover:bg-white/20 transition"><i
+                        class="fa-solid fa-backward-step"></i></button>
+                <button
+                    class="p-3 md:p-4 rounded-full bg-orange-500 text-white shadow-lg hover:bg-orange-600 transition"><i
+                        class="fa-solid fa-pause"></i></button>
+                <button class="p-2 md:p-3 text-white rounded-full hover:bg-white/20 transition"><i
+                        class="fa-solid fa-forward-step"></i></button>
+                <button class="p-2 md:p-3 text-white rounded-full hover:bg-white/20 transition"><i
+                        class="fa-solid fa-repeat"></i></button>
+            </div>
+        </div>
 
-                                <!-- Controls -->
-                                <div
-                                    class="flex justify-center items-center space-x-4 md:space-x-6 text-xl md:text-2xl">
-                                    <button class="p-2 md:p-3 text-white rounded-full hover:bg-white/20 transition"><i
-                                            class="fa-solid fa-shuffle"></i></button>
-                                    <button class="p-2 md:p-3 text-white rounded-full hover:bg-white/20 transition"><i
-                                            class="fa-solid fa-backward-step"></i></button>
-                                    <button
-                                        class="p-3 md:p-4 rounded-full bg-orange-500 text-white shadow-lg hover:bg-orange-600 transition"><i
-                                            class="fa-solid fa-pause"></i></button>
-                                    <button class="p-2 md:p-3 text-white rounded-full hover:bg-white/20 transition"><i
-                                            class="fa-solid fa-forward-step"></i></button>
-                                    <button class="p-2 md:p-3 text-white rounded-full hover:bg-white/20 transition"><i
-                                            class="fa-solid fa-repeat"></i></button>
-                                </div>
-                            </div>
-
-        </section>
+    </section>
 
     <!-- Alumni Section -->
     <section class=" py-12 md:py-16 animate-fade-in">
