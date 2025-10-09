@@ -11,8 +11,7 @@
         : '{{ $transparent ? 'absolute top-0 left-0 w-full z-50 px-4' : 'sticky top-0 z-50 px-4' }}'
     ">
     <!-- Header/Navigation -->
-    <header
-        :class="scrolled
+    <header :class="scrolled
             ? 'bg-white text-[#313131] shadow-md rounded-2xl'
             : '{{ $transparent ? 'bg-transparent text-white rounded-2xl' : 'bg-white text-[#313131] rounded-2xl' }}'"
         class="w-full transition-all duration-300 ease-in-out" id="header">
@@ -20,8 +19,8 @@
             <div class="flex items-center justify-between">
                 <!-- Logo -->
                 <div class="flex items-center">
-                    <a href="/"><img class="w-16 h-12 md:w-24 md:h-16 object-contain" src="{{ asset('assets/skariga logo 1.png') }}"
-                        alt="Logo SMK PGRI 3 Malang"></a>
+                    <a href="/"><img class="w-16 h-12 md:w-24 md:h-16 object-contain"
+                            src="{{ asset('assets/skariga logo 1.png') }}" alt="Logo SMK PGRI 3 Malang"></a>
                     <div class="ml-3 md:ml-4">
                         <div class="text-base md:text-xl font-medium">SMK PGRI 3 MALANG</div>
                         <div class="text-xs md:text-sm font-medium">Succes By Discipline</div>
@@ -64,6 +63,12 @@
                         <li><a href="/pendaftaran"
                                 class="{{ request()->is('pendaftaran') ? 'text-customOrange' : '' }} hover:text-customOrange transition">Pendaftaran</a>
                         </li>
+                        <li>
+                            <i class="fa fa-search" aria-hidden="true"></i>
+                            <input type="text" id="search-bar" name="search-bar" placeholder="Cari"
+                                class="border border-black/20 px-2 rounded w-64 focus:outline-none focus:ring-2 focus:ring-blue-300" autocomplete="off">
+                                <div id="search-results" class="mt-2 border border-gray-200 rounded hidden bg-white w-64 absolute shadow-md"></div>
+                        </li>
                     </ul>
                 </nav>
 
@@ -80,14 +85,29 @@
             <!-- Mobile Navigation -->
             <div class="nav-menu mt-2 md:hidden" id="navMenu">
                 <ul class="space-y-2 pb-4 text-lg font-medium">
-                    <li><a href="/" class="{{ request()->is('/') ? 'text-customOrange' : '' }} block py-2 hover:text-customOrange transition">Beranda</a></li>
-                    <li><a href="/berita" class="{{ request()->is('berita') ? 'text-customOrange' : '' }} block py-2 hover:text-customOrange transition">Berita</a></li>
-                    <li><a href="/profil" class="{{ request()->is('profil') ? 'text-customOrange' : '' }} block py-2 hover:text-customOrange transition">Profil</a></li>
-                    <li><a href="/prestasi" class="{{ request()->is('prestasi') ? 'text-customOrange' : '' }} block py-2 hover:text-customOrange transition">Prestasi</a></li>
-                    <li><a href="/jurusan" class="{{ request()->is('jurusan') ? 'text-customOrange' : '' }} block py-2 hover:text-customOrange transition">Program</a></li>
-                    <li><a href="/ekstrakurikuler" class="{{ request()->is('ekstrakurikuler') ? 'text-customOrange' : '' }} block py-2 hover:text-customOrange transition">Program</a></li>
-                    <li><a href="/alumni" class="{{ request()->is('alumni') ? 'text-customOrange' : '' }} block py-2 hover:text-customOrange transition">Alumni</a></li>
-                    <li><a href="/pendaftaran" class="{{ request()->is('pendaftaran') ? 'text-customOrange' : '' }} block py-2 hover:text-customOrange transition">Pendaftaran</a>
+                    <li><a href="/"
+                            class="{{ request()->is('/') ? 'text-customOrange' : '' }} block py-2 hover:text-customOrange transition">Beranda</a>
+                    </li>
+                    <li><a href="/berita"
+                            class="{{ request()->is('berita') ? 'text-customOrange' : '' }} block py-2 hover:text-customOrange transition">Berita</a>
+                    </li>
+                    <li><a href="/profil"
+                            class="{{ request()->is('profil') ? 'text-customOrange' : '' }} block py-2 hover:text-customOrange transition">Profil</a>
+                    </li>
+                    <li><a href="/prestasi"
+                            class="{{ request()->is('prestasi') ? 'text-customOrange' : '' }} block py-2 hover:text-customOrange transition">Prestasi</a>
+                    </li>
+                    <li><a href="/jurusan"
+                            class="{{ request()->is('jurusan') ? 'text-customOrange' : '' }} block py-2 hover:text-customOrange transition">Program</a>
+                    </li>
+                    <li><a href="/ekstrakurikuler"
+                            class="{{ request()->is('ekstrakurikuler') ? 'text-customOrange' : '' }} block py-2 hover:text-customOrange transition">Program</a>
+                    </li>
+                    <li><a href="/alumni"
+                            class="{{ request()->is('alumni') ? 'text-customOrange' : '' }} block py-2 hover:text-customOrange transition">Alumni</a>
+                    </li>
+                    <li><a href="/pendaftaran"
+                            class="{{ request()->is('pendaftaran') ? 'text-customOrange' : '' }} block py-2 hover:text-customOrange transition">Pendaftaran</a>
                     </li>
                 </ul>
             </div>
@@ -106,6 +126,68 @@ document.addEventListener('DOMContentLoaded', () => {
             header?.classList.remove('bg-white', 'text-[#313131]', 'shadow-md');
         }
     });
+});
+
+// Search Bar JS Section
+const data = [{
+        name: "Beranda",
+        url: "/"
+    },
+    {
+        name: "Berita",
+        url: "/berita"
+    },
+    {
+        name: "Profil",
+        url: "/profil"
+    },
+    {
+        name: "Prestasi",
+        url: "/prestasi"
+    },
+    {
+        name: "Jurusan",
+        url: "/jurusan"
+    },
+    {
+        name: "Ekstrakurikuler",
+        url: "/ekstrakurikuler"
+    },
+    {
+        name: "Alumni",
+        url: "/alumni"
+    },
+    {
+        name: "Pendaftaran",
+        url: "/pendaftaran"
+    },
+];
+
+const input = document.getElementById('search-bar');
+const resultsContainer = document.getElementById('search-results');
+
+input.addEventListener('input', () => {
+    const query = input.value.toLowerCase().trim();
+    resultsContainer.innerHTML = '';
+
+    if (query === '') {
+        resultsContainer.classList.add('hidden');
+        return;
+    }
+
+    const filtered = data.filter(item => item.name.toLowerCase().includes(query));
+
+    if (filtered.length === 0) {
+        resultsContainer.innerHTML = `<li class="p-2 text-gray-500">Tidak ada hasil</li>`;
+    } else {
+        filtered.forEach(item => {
+            const li = document.createElement('li');
+            li.innerHTML = `<a href="${item.url}" class="block p-2 hover:bg-blue-100">${item.name}</a>`;
+            resultsContainer.appendChild(li);
+        });
+    }
+
+    resultsContainer.classList.remove('hidden');
 });
 </script>
 @endif
