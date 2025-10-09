@@ -88,16 +88,19 @@
         </div>
 
         <!-- Logo Penting -->
-        <div class="border-t border-gray-700 mt-8 pt-6 text-center text-gray-500 text-sm space-x-3">
-            <img class="h-6 md:h-10 max-w-[100px] object-contain inline-block" src="{{ asset('assets/logojhic.jpg') }}"
-                alt="Yamaha Logo">
-            <img class="h-6 md:h-10 max-w-[100px] object-contain inline-block"
-                src="{{ asset('assets/logokomdigi.jpg') }}" alt="Yamaha Logo">
-            <img class="h-6 md:h-10 max-w-[100px] object-contain inline-block"
-                src="{{ asset('assets/logomaspionit.jpg') }}" alt="Yamaha Logo">
-            <img class="h-6 md:h-10 max-w-[100px] object-contain inline-block" src="{{ asset('assets/logo1000.jpg') }}"
-                alt="Yamaha Logo">
-        </div>
+        {{-- <div class="border-t border-gray-700 mt-8 pt-6 text-center text-gray-500 text-sm space-x-3"> --}}
+            <div class="flex flex-wrap justify-center items-center gap-6 mt-[-56px]">
+
+                <img class="h-6 md:h-10 max-w-[100px] object-contain inline-block" src="{{ asset('assets/logojhic.jpg') }}"
+                    alt="Yamaha Logo">
+                <img class="h-6 md:h-10 max-w-[100px] object-contain inline-block"
+                    src="{{ asset('assets/logokomdigi.jpg') }}" alt="Yamaha Logo">
+                <img class="h-6 md:h-10 max-w-[100px] object-contain inline-block"
+                    src="{{ asset('assets/logomaspionit.jpg') }}" alt="Yamaha Logo">
+                <img class="h-6 md:h-10 max-w-[100px] object-contain inline-block" src="{{ asset('assets/logo1000.jpg') }}"
+                    alt="Yamaha Logo">
+            </div>
+        {{-- </div> --}}
 
         <!-- Copyright -->
         <div class="border-t border-gray-700 mt-8 pt-6 text-center text-gray-500 text-sm">

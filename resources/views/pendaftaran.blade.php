@@ -18,16 +18,13 @@
                 </h1>
             </div>
 
+            {{-- tombol header --}}
             <div class="absolute bottom-8 right-3.5 md:right-10 z-10 flex flex-col items-center gap-3">
-
-                <!-- Tombol CHAT ADMIN di atas tengah -->
-                <button
-                    class="bg-gray-600 text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-green-700 transition shadow-lg">
-                    CHAT ADMIN
-                </button>
-
-                <!-- Dua tombol daftar di bawah -->
                 <div class="flex gap-4">
+                    <button
+                        class="bg-gray-600 text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-green-700 transition shadow-lg">
+                        CHAT ADMIN
+                    </button>
                     <button
                         class="bg-gray-500 text-white px-6 py-3 rounded-full text-lg font-semibold hover:bg-orange-600 transition shadow-lg">
                         DAFTAR ONLINE
@@ -40,22 +37,9 @@
             </div>
 
                 <!-- Tombol CHAT ADMIN di atas tengah -->
-                <button
-                    class="bg-gray-600 text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-green-700 transition shadow-lg">
-                    CHAT ADMIN
-                </button>
 
                 <!-- Dua tombol daftar di bawah -->
-                <div class="flex gap-4">
-                    <button
-                        class="bg-gray-500 text-white px-6 py-3 rounded-full text-lg font-semibold hover:bg-orange-600 transition shadow-lg">
-                        DAFTAR ONLINE
-                    </button>
-                    <button
-                        class="bg-gray-500 text-white px-6 py-3 rounded-full text-lg font-semibold hover:bg-blue-600 transition shadow-lg">
-                        DAFTAR OFFLINE
-                    </button>
-                </div>
+
             </div>
         </section>
 
