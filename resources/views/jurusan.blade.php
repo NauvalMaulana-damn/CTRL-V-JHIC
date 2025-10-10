@@ -174,33 +174,35 @@
                             teknisi audio video, instalator sistem, atau teknisi perawatan perangkat elektronik.
                         </x-jurcard>
 
-                        <!-- CARD 2 -->
-                        <x-jurcard title="Teknik Elektronika Industri" image="jurEI.jpg" departement="ELEKTRO">
-                            Dengan kode jurusan EI, merupakan jurusan yang mempelajari perancangan, instalasi, dan
-                            pemeliharaan sistem
-                            elektronika pada bidang industri. Lanjutan studi meliputi S1 Teknik Elektronika atau
-                            Teknik Elektro. Berpotensi bekerja sebagai teknisi industri,
-                            perancang sistem kontrol, atau teknisi perawatan peralatan industri.
-                        </x-jurcard>
+                    <!-- CARD 2 -->
+                    <x-jurcard title="Teknik Elektronika Industri" image="jurEI.jpg" departement="ELEKTRO">
+                        Dengan kode jurusan EI, merupakan jurusan yang mempelajari perancangan, instalasi, dan
+                        pemeliharaan sistem
+                        elektronika pada bidang industri. Lanjutan studi meliputi S1 Teknik Elektronika atau
+                        Teknik Elektro. Berpotensi bekerja sebagai teknisi industri,
+                        perancang sistem kontrol, atau teknisi perawatan peralatan industri.
+                    </x-jurcard>
 
-                        <!-- CARD 3 -->
-                        <x-jurcard title="Teknik Kimia Industri" image="jurKI.jpg" departement="ELEKTRO">
-                            Dengan kode jurusan KL (Kimia Laboratorium), merupakan jurusan yang mempelajari
-                            pengujian, analisis, dan pengolahan bahan kimia di laboratorium. Lanjutan studi meliputi
-                            S1 Kimia, Farmasi, atau Teknik Kimia. Berpotensi bekerja sebagai analis laboratorium,
-                            teknisi kimia, quality control, atau peneliti.
-                        </x-jurcard>
+                    <!-- CARD 3 -->
+                    <x-jurcard title="Teknik Kimia Industri" image="jurKI.jpg" departement="ELEKTRO">
+                        Dengan kode jurusan KL (Kimia Laboratorium), merupakan jurusan yang mempelajari
+                        pengujian, analisis, dan pengolahan bahan kimia di laboratorium. Lanjutan studi meliputi
+                        S1 Kimia, Farmasi, atau Teknik Kimia. Berpotensi bekerja sebagai analis laboratorium,
+                        teknisi kimia, quality control, atau peneliti.
+                    </x-jurcard>
 
-                        <!-- CARD 4 -->
-                        <x-jurcard title="Teknik Pembangkit Tenaga Listrik" image="jurPB.jpg" departement="ELEKTRO">
-                            Dengan kode jurusan PB, merupakan jurusan yang mempelajari pengoperasian, pemeliharaan,
-                            dan pengelolaan sistem pembangkit listrik. Lanjutan studi meliputi S1 Teknik Elektro
-                            atau Energi Terbarukan. Berpotensi bekerja sebagai teknisi pembangkit, operator, atau
-                            insinyur di bidang pembangkitan listrik.
-                        </x-jurcard>
-                    </div>
+                    <!-- CARD 4 -->
+                    <x-jurcard title="Teknik Pembangkit Tenaga Listrik" image="jurPB.jpg" departement="ELEKTRO">
+                        Dengan kode jurusan PB, merupakan jurusan yang mempelajari pengoperasian, pemeliharaan,
+                        dan pengelolaan sistem pembangkit listrik. Lanjutan studi meliputi S1 Teknik Elektro
+                        atau Energi Terbarukan. Berpotensi bekerja sebagai teknisi pembangkit, operator, atau
+                        insinyur di bidang pembangkitan listrik.
+                    </x-jurcard>
                 </div>
-            </section>
+            </div>
+        </section>
+
+
 
             <!-- OTOMOTIF -->
             <section id="elektro" class="mt-16 max-w-full mx-auto">
@@ -208,13 +210,13 @@
                 <div class="slider-container overflow-x-auto">
                     <div class=" flex space-x-6 pb-4 slider snap-x snap-mandatory">
 
-                        <!-- CARD 1 -->
-                        <x-jurcard title="Teknik Bisnis Sepeda Motor" image="jurTBSM.jpg" departement="OTOMOTIF">
-                            Dengan kode jurusan TSM, merupakan jurusan yang mempelajari perawatan, perbaikan, dan
-                            pengelolaan bisnis di bidang sepeda motor. Lanjutan studi meliputi S1 Teknik Otomotif
-                            atau Manajemen Bisnis. Berpotensi bekerja sebagai teknisi sepeda motor, service advisor,
-                            atau wirausahawan bengkel.
-                        </x-jurcard>
+                    <!-- CARD 1 -->
+                    <x-jurcard title="Teknik Bisnis Sepeda Motor" image="jurTBSM.jpg" departement="OTOMOTIF">
+                        Dengan kode jurusan TSM, merupakan jurusan yang mempelajari perawatan, perbaikan, dan
+                        pengelolaan bisnis di bidang sepeda motor. Lanjutan studi meliputi S1 Teknik Otomotif
+                        atau Manajemen Bisnis. Berpotensi bekerja sebagai teknisi sepeda motor, service advisor,
+                        atau wirausahawan bengkel.
+                    </x-jurcard>
 
                         <!-- CARD 2 -->
                         <x-jurcard title="Teknik Kendaraan Ringan" image="otomotif_card.png" departement="OTOMOTIF">
@@ -287,32 +289,32 @@
                             desainer grafis, ilustrator, animator, fotografer, atau desainer multimedia.
                         </x-jurcard>
 
-                        <!-- CARD 3 -->
-                        <x-jurcard title="Broadcasting & Perfilman" image="jurBP.jpg" departement="TIK">
-                            Dengan kode jurusan BP, merupakan jurusan yang mempelajari perencanaan,
-                            produksi, dan penyiaran konten audio-visual untuk radio, televisi, dan media digital.
-                            Lanjutan studi meliputi S1 Broadcasting, Ilmu Komunikasi, atau perfilman. Berpotensi
-                            bekerja sebagai penyiar, reporter, kameramen, editor video, atau produser.
-                        </x-jurcard>
+                    <!-- CARD 3 -->
+                    <x-jurcard title="Broadcasting & Perfilman" image="jurBP.jpg" departement="TIK">
+                        Dengan kode jurusan BP, merupakan jurusan yang mempelajari perencanaan,
+                        produksi, dan penyiaran konten audio-visual untuk radio, televisi, dan media digital.
+                        Lanjutan studi meliputi S1 Broadcasting, Ilmu Komunikasi, atau perfilman. Berpotensi
+                        bekerja sebagai penyiar, reporter, kameramen, editor video, atau produser.
+                    </x-jurcard>
 
-                        <!-- CARD 4 -->
-                        <x-jurcard title="Teknik Komputer Jaringan" image="jurTKJ.jpg" departement="TIK">
-                            Dengan kode jurusan TKJ, merupakan jurusan yang mempelajari instalasi, konfigurasi, dan
-                            pemeliharaan jaringan komputer. Lanjutan studi meliputi S1 Teknik Informatika, Teknik
-                            Elektro, atau pelatihan/sertifikasi jaringan. Berpotensi bekerja sebagai teknisi,
-                            administrator, atau konsultan jaringan, serta spesialis keamanan siber.
-                        </x-jurcard>
+                    <!-- CARD 4 -->
+                    <x-jurcard title="Teknik Komputer Jaringan" image="jurTKJ.jpg" departement="TIK">
+                        Dengan kode jurusan TKJ, merupakan jurusan yang mempelajari instalasi, konfigurasi, dan
+                        pemeliharaan jaringan komputer. Lanjutan studi meliputi S1 Teknik Informatika, Teknik
+                        Elektro, atau pelatihan/sertifikasi jaringan. Berpotensi bekerja sebagai teknisi,
+                        administrator, atau konsultan jaringan, serta spesialis keamanan siber.
+                    </x-jurcard>
 
-                        <!-- CARD 5 -->
-                        <x-jurcard title="Rekayasa Perangkat Lunak" image="jurRPL.jpg" departement="TIK">
-                            Dengan kode jurusan RPL, merupakan jurusan yang mempelajari perancangan, pengembangan,
-                            dan pemeliharaan perangkat lunak. Lanjutan studi meliputi S1 RPL, S1 Teknik Informatika,
-                            atau pelatihan/sertifikasi IT. Berpotensi bekerja sebagai pengembang, insinyur, analis,
-                            konsultan, manajer proyek, pengajar, atau peneliti perangkat lunak.
-                        </x-jurcard>
-                    </div>
+                    <!-- CARD 5 -->
+                    <x-jurcard title="Rekayasa Perangkat Lunak" image="jurRPL.jpg" departement="TIK">
+                        Dengan kode jurusan RPL, merupakan jurusan yang mempelajari perancangan, pengembangan,
+                        dan pemeliharaan perangkat lunak. Lanjutan studi meliputi S1 RPL, S1 Teknik Informatika,
+                        atau pelatihan/sertifikasi IT. Berpotensi bekerja sebagai pengembang, insinyur, analis,
+                        konsultan, manajer proyek, pengajar, atau peneliti perangkat lunak.
+                    </x-jurcard>
                 </div>
-            </section>
+            </div>
+        </section>
 
             <!-- JavaScript -->
             <script>
