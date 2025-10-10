@@ -188,7 +188,7 @@
                     <!-- CARD 1 -->
                     <div
                         class="w-[400px] h-[390px] shrink-0 bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-200 hover:shadow-2xl hover:-translate-y-1 transform transition duration-300 snap-start">
-                        <img src="https://images.unsplash.com/photo-1607082341738-6c30e29f92d8?auto=format&fit=crop&w=400&q=80"
+                        <img src="{{ asset('assets/jurTEAV.jpg') }}" alt="Teknik Elektronika dan Audio Video"
                             class="h-40 w-full object-cover" />
                         <div class="p-4">
                             <h4 class="font-bold text-lg mb-1">Teknik Elektronika &amp; Audio Video</h4>
@@ -207,7 +207,7 @@
                     <!-- CARD 2 -->
                     <div
                         class="w-[400px] h-[390px] pb-5 shrink-0 bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-200 hover:shadow-2xl hover:-translate-y-1 transform transition duration-300 snap-start">
-                        <img src="https://images.unsplash.com/photo-1596495577886-d920f1e0eee7?auto=format&fit=crop&w=400&q=80"
+                        <img src="https://images.unsplash.com/photo-1596495577886-d920f1e0eee7?auto=format&fit=crop&w=400&q=80" alt="Teknik Elektronika Industri"
                             class="h-40 w-full object-cover" />
                         <div class="p-4">
                             <h4 class="font-bold text-lg mb-1">Teknik Elektronika Industri</h4>
