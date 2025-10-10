@@ -41,9 +41,9 @@ Website ini adalah website sekolah yang Informatif dan Kreatif untuk menampilkan
 
 ## 🛠️ Teknologi yang Digunakan
 
-- **Backend:** PHP 8.2.12, Laravel 12.21.0  
-- **Frontend:** Tailwind 4.1, Blade Templating  
-- **Database:** SQLite  
+- **Backend:** PHP 8.2.12, Laravel 12+
+- **Frontend:** Tailwind 3.4.0, Blade Templating  
+- **Database:** MariaDB  
 - **Keamanan:** Enkripsi Bcrypt  
 - **Hosting:** Cloud Computing  
 
