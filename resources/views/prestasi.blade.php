@@ -131,56 +131,79 @@
         </section>
 
         <!-- ✅ Section Para Jawara tetap responsif -->
-        <div class="w-full mx-auto py-8">
-            <div class="bg-white rounded-xl shadow-lg p-6 sm:p-8">
-                <img src="{{ asset('assets/trophy.png') }}"
-                    class="-top-6 -right-0 w-12 h-12 sm:w-16 sm:h-16 drop-shadow-md animate-bounce" alt="Trophy">
+        <div class="bg-white rounded-xl shadow-lg p-6 sm:p-8">
+            <div class="w-full mx-auto py-8" x-data="{ page: 1, perPage: 6 }">
+                <div class="bg-white rounded-xl shadow-lg p-6 sm:p-8 relative">
+                    <img src="{{ asset('assets/trophy.png') }}"
+                        class="-top-6 -right-0 w-12 h-12 sm:w-16 sm:h-16 drop-shadow-md animate-bounce absolute"
+                        alt="Trophy">
 
-                <div class="bg-gray-100 rounded-xl shadow-lg px-4 sm:px-6 py-3 sm:py-4 grid grid-cols-3 items-center">
-                    <div class="flex space-x-2">
-                        <span class="w-3 h-3 sm:w-4 sm:h-4 rounded-full bg-red-500"></span>
-                        <span class="w-3 h-3 sm:w-4 sm:h-4 rounded-full bg-yellow-500"></span>
-                        <span class="w-3 h-3 sm:w-4 sm:h-4 rounded-full bg-green-500"></span>
-                    </div>
-                    <h2 class="text-3xl sm:text-2xl font-bold text-center" style="text-shadow: 2px 2px 5px #FFD700; font-size: 2rem">
-                        PARA JAWARA!
-                    </h2>
-                    <div></div>
-                </div>
-
-                <div class="space-y-8 mt-6">
-                    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-                        @foreach([
-                        ['assets/indust-cont.jpg','Syahril Faisal Ramadani','Pemenang Juara 1 LKS DikMen Jawa Timur ke
-                        33, dibidang Industrial Control'],
-                        ['assets/electronics.jpg','Yohan Aldi Pratama','Pemenang Juara 1 Lomba Kompetensi Siswa Jawa
-                        Timur ke 32, dibidang Electronics'],
-                        ['assets/robot manufac.png','Azriel & Celvin','Pemenang Juara 1 Lomba Kompetensi Siswa Jawa
-                        Timur ke 32, dibidang Robot Manufacturing System'],
-                        ['assets/webtechn.jpeg','Arif Kurniawan','Pemenang Juara 2 Lomba Kompetensi Siswa Jawa Timur ke
-                        32, dibidang Web Technology'],
-                        ['assets/car paint.jpeg','Tegar Reyhan','Pemenang Juara 1 Lomba Kompetensi Siswa Jawa Timur ke
-                        32, dibidang Car Painting'],
-                        ['assets/uiux.jpg','Kayana Indrasta','Pemenang Juara 1 Lomba Sistem Informasi Festival 2024,
-                        dibidang UI/UX Desain'],
-                        ['assets/it software.png','Edsel Param Mustapa','Pemenang Juara 1 Lomba Kompetensi Siswa Jawa
-                        Timur ke 32, dibidang IT Software Solution For Business'],
-                        ['assets/prototype model.png','Iza Aska','Pemenang Juara 1 Lomba Kompetensi Siswa Jawa Timur ke
-                        32, dibidang Prototype Modeling'],
-                        ['assets/marketing.jpeg','Ayu Dewi','Pemenang Juara 3 Lomba Kompetensi Siswa Jawa Timur ke 32,
-                        dibidang Marketing Online'],
-                        ['assets/manufac system.jpg','Rafif & Novaldi','Pemenang Juara 1 LKS DIKMEN Jawa Timur 33,
-                        dibidang Robot Manufacturing System']
-                        ] as $juara)
-                        <div
-                            class="bg-white shadow-md rounded-lg p-4 transition-transform duration-300 hover:-translate-y-1 hover:border hover:border-blue-500 relative">
-                            <div class="absolute text-3xl sm:text-4xl right-1 rotate-12 top-2 font-bold">🏅</div>
-                            <img src="{{ asset($juara[0]) }}" alt="{{ $juara[1] }}"
-                                class="w-full h-64 sm:h-80 object-cover rounded-lg mb-4">
-                            <p class="font-semibold text-sm sm:text-base">{{ $juara[1] }}</p>
-                            <p class="text-xs sm:text-sm text-gray-500">{{ $juara[2] }}</p>
+                    <div
+                        class="bg-gray-100 rounded-xl shadow-lg px-4 sm:px-6 py-3 sm:py-4 grid grid-cols-3 items-center mb-6">
+                        <div class="flex space-x-2">
+                            <span class="w-3 h-3 sm:w-4 sm:h-4 rounded-full bg-red-500"></span>
+                            <span class="w-3 h-3 sm:w-4 sm:h-4 rounded-full bg-yellow-500"></span>
+                            <span class="w-3 h-3 sm:w-4 sm:h-4 rounded-full bg-green-500"></span>
                         </div>
-                        @endforeach
+                        <h2 class="text-3xl sm:text-2xl font-bold text-center"
+                            style="text-shadow: 2px 2px 5px #FFD700; font-size: 2rem">
+                            PARA JAWARA!
+                        </h2>
+                        <div></div>
+                    </div>
+
+                    @php
+                    $juaras = [
+                    ['assets/indust-cont.jpg','Syahril Faisal Ramadani','Juara 1 LKS DikMen Jatim 33 - Industrial
+                    Control'],
+                    ['assets/electronics.jpg','Yohan Aldi Pratama','Juara 1 LKS Jatim 32 - Electronics'],
+                    ['assets/robot manufac.png','Azriel & Celvin','Juara 1 LKS Jatim 32 - Robot Manufacturing
+                    System'],
+                    ['assets/webtechn.jpeg','Arif Kurniawan','Juara 2 LKS Jatim 32 - Web Technology'],
+                    ['assets/car paint.jpeg','Tegar Reyhan','Juara 1 LKS Jatim 32 - Car Painting'],
+                    ['assets/uiux.jpg','Kayana Indrasta','Juara 1 Lomba Sistem Informasi Festival 2024 - UI/UX
+                    Desain'],
+                    ['assets/it software.png','Edsel Param Mustapa','Juara 1 LKS Jatim 32 - IT Software Solution'],
+                    ['assets/prototype model.png','Iza Aska','Juara 1 LKS Jatim 32 - Prototype Modeling'],
+                    ['assets/marketing.jpeg','Ayu Dewi','Juara 3 LKS Jatim 32 - Marketing Online'],
+                    ['assets/manufac system.jpg','Rafif & Novaldi','Juara 1 LKS DikMen Jatim 33 - Robot
+                    Manufacturing
+                    System']
+                    ];
+                    @endphp
+
+                    <!-- Grid container -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 grid-center-last">
+                        <template x-for="(juara, index) in {{ json_encode($juaras) }}" :key="index">
+                            <div x-show="index >= (page - 1) * perPage && index < page * perPage"
+                                class="bg-white shadow-md rounded-lg p-4 transition-transform duration-300 hover:-translate-y-1 hover:border hover:border-blue-500 relative">
+                                <div class="absolute text-3xl sm:text-4xl right-1 rotate-12 top-2 font-bold">🏅
+                                </div>
+                                <img :src="'{{ asset('') }}' + juara[0]" :alt="juara[1]"
+                                    class="w-full h-64 sm:h-80 object-cover rounded-lg mb-4">
+                                <p class="font-semibold text-sm sm:text-base" x-text="juara[1]"></p>
+                                <p class="text-xs sm:text-sm text-gray-500" x-text="juara[2]"></p>
+                            </div>
+                        </template>
+                    </div>
+
+                    <!-- Pagination control -->
+                    <div class="flex justify-center mt-6 space-x-2">
+                        <button
+                            class="px-3 py-1 bg-gray-200 rounded-full hover:bg-gray-300 transition disabled:opacity-50"
+                            @click="if (page > 1) { page--; window.scrollTo({ top: 0, behavior: 'smooth' }); }"
+                            :disabled="page === 1">←</button>
+
+                        <template x-for="i in Math.ceil({{ count($juaras) }} / perPage)" :key="i">
+                            <button class="px-3 py-1 rounded-full transition"
+                                :class="page === i ? 'bg-customBlue text-white' : 'bg-gray-200 hover:bg-gray-300'"
+                                @click="page = i; window.scrollTo({ top: 0, behavior: 'smooth' });" x-text="i"></button>
+                        </template>
+
+                        <button
+                            class="px-3 py-1 bg-gray-200 rounded-full hover:bg-gray-300 transition disabled:opacity-50"
+                            @click="if (page < Math.ceil({{ count($juaras) }} / perPage)) { page++; window.scrollTo({ top: 0, behavior: 'smooth' }); }"
+                            :disabled="page === Math.ceil({{ count($juaras) }} / perPage)">→</button>
                     </div>
                 </div>
             </div>

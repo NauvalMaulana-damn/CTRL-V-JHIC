@@ -282,8 +282,8 @@
                     <!-- CARD 2 -->
                     <div
                         class="w-[400px] h-[390px] pb-5 shrink-0 bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-200 hover:shadow-2xl hover:-translate-y-1 transform transition duration-300 snap-start">
-                        <img src="https://images.unsplash.com/photo-1596495577886-d920f1e0eee7?auto=format&fit=crop&w=400&q=80"
-                            class="h-40 w-full object-cover" />
+                        <img src="{{ asset('assets/otomotif_card.png') }}" alt="Teknik Kendaraan Ringan"
+                            class="h-40 w-full object-cover" style="object-position: 50% -100px;" />
                         <div class="p-4">
                             <h4 class="font-bold text-lg mb-1">Teknik Kendaraan Ringan</h4>
                             <div class="w-full h-2 bg-gray-400 mb-2"></div>
@@ -385,8 +385,8 @@
                     </div>
                     <div
                         class="w-[400px] h-[390px] shrink-0 bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-200 hover:shadow-2xl hover:-translate-y-1 transform transition duration-300 snap-start">
-                        <img src="https://images.unsplash.com/photo-1581090700227-ba320415b4d1?auto=format&fit=crop&w=400&q=80"
-                            class="h-40 w-full object-cover" />
+                        <img src="{{ asset('assets/pemesinan_card.jpg') }}" alt="Teknik Pemesinan"
+                            class="h-40 w-full object-cover" style="object-position: 50% -50px;" />
                         <div class="p-4">
                             <h4 class="font-bold text-lg mb-1">Teknik Pemesinan</h4>
                             <div class="w-full h-2 bg-red-400 mb-2"></div>
