@@ -16,8 +16,8 @@
             <!-- Hero Section -->
             <section class="relative w-full overflow-hidden rounded-xl mb-8">
                 <div class="swiper mySwiper rounded-xl overflow-hidden">
-                    <div class="swiper-wrapper">
-                        <x-headnews id="x-headnews" image1="head_news_1.png" image2="lksdikmen33rms.jpg"
+                    <div class="swiper-wrapper" id="x-headnews">
+                        <x-headnews image1="head_news_1.png" image2="lksdikmen33rms.jpg"
                             image3="lksdikmen33ic.jpg" title="PARA SISWA
                                     MENJUARAI LKS DIKMEN JATIM XXXII">
                             <x-slot>
@@ -208,10 +208,10 @@
                     'ACARA TERSEBUT MEREKA LALUI DENGAN PENUH KHIDMAT DAN TAWA',
                     'gurupramuka.png', 'default.svg', 'default.svg')">
                         Guru Turut Jadi Peserta dalam Perkemahan Pramuka Penegak</x-sidenews>
-                    <x-sidenews title="Menyambut Hari Kemerdekaan" image="agustusan.png" onclick="showNews(
+                    <x-sidenews title="Menyambut Hari Kemerdekaan" image="agustusan.jpg" onclick="showNews(
                     'SAMBUT HARI KEMERDEKAAN, SKARIGA GELAR JALAN SEHAT DAN ANEKA LOMBA PENUH SEMANGAT',
                     'KEGIATAN BERLANGSUNG DENGAN PENUH SEMANGAT',
-                    'agustusan.png', 'default.svg', 'default.svg')">
+                    'agustusan.jpg', 'agustusan2.jpg', 'agustusan3.jpg')">
                         Sambut Hari Kemerdekaan, SKARIGA Gelar Jalan Sehat dan Aneka Lomba Penuh Semangat</x-sidenews>
                     <x-sidenews title="KCS 38" image="kcs38.png" onclick="showNews(
                     'PUSDIKARHANUD GALAKKAN GERAKAN CINTA SEKOLAH UNTUK BENTUK KARAKTER MURID',
@@ -251,12 +251,19 @@
     function showNews(title, desc, image1, image2, image3) {
         console.log("showNews dipanggil:", title, desc, image1, image2, image3);
 
-        document.querySelectorAll('.headnews-img1').forEach(el => el.src = `/assets/${image1}`);
-        document.querySelectorAll('.headnews-img2').forEach(el => el.src = `/assets/${image2}`);
-        document.querySelectorAll('.headnews-img3').forEach(el => el.src = `/assets/${image3}`);
+        const container = document.getElementById("x-headnews");
 
-        document.querySelectorAll('section .text-white h1').forEach(el => el.textContent = title);
-        document.querySelectorAll('section .text-white p').forEach(el => el.textContent = desc);
+        if (!container) {
+            console.error("Container tidak ditemukan!");
+            return;
+        }
+
+        container.querySelector(".headnews-img1").src = `/assets/${image1}`;
+        container.querySelector(".headnews-img2").src = `/assets/${image2}`;
+        container.querySelector(".headnews-img3").src = `/assets/${image3}`;
+
+        container.querySelectorAll("h1").forEach(el => el.textContent = title);
+        container.querySelectorAll("p").forEach(el => el.textContent = desc);
     }
     </script>
 
