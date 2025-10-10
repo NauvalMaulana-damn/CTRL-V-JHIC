@@ -248,17 +248,15 @@
     </div>
 
     <script>
-    function showNews(title, slot, image1, image2, image3) {
-        // Ganti teks
-        document.getElementById('headnews-title').textContent = title;
-        document.getElementById('headnews-desc').textContent = slot;
+    function showNews(title, desc, image1, image2, image3) {
+        console.log("showNews dipanggil:", title, desc, image1, image2, image3);
 
-        // Ganti gambar
-        document.getElementById('headnews-img1').src = `/assets/${image1}`;
+        document.querySelectorAll('.headnews-img1').forEach(el => el.src = `/assets/${image1}`);
+        document.querySelectorAll('.headnews-img2').forEach(el => el.src = `/assets/${image2}`);
+        document.querySelectorAll('.headnews-img3').forEach(el => el.src = `/assets/${image3}`);
 
-        // Kalau kamu mau multi slide (image2, image3), ubah juga
-        document.getElementById('headnews-img2').src = `/assets/${image2}`;
-        document.getElementById('headnews-img3').src = `/assets/${image3}`;
+        document.querySelectorAll('section .text-white h1').forEach(el => el.textContent = title);
+        document.querySelectorAll('section .text-white p').forEach(el => el.textContent = desc);
     }
     </script>
 

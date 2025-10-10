@@ -112,7 +112,7 @@
     </style>
 
     <button @click="open = !open" class="absolute -left-16 top-1/2 transform -translate-y-1/2
-        bg-white/40 backdrop-blur-md border border-white/30
+        bg-gray-300/80 backdrop-blur-md border border-white/30
         w-14 h-14 rounded-2xl shadow-lg flex items-center justify-center
         transition-all duration-300 hover:bg-customOrange hover:text-white">
 
@@ -136,7 +136,7 @@
     <div x-show="open" x-cloak x-transition:enter="transform transition ease-in-out duration-500"
         x-transition:enter-start="translate-x-full opacity-0" x-transition:enter-end="translate-x-0 opacity-100"
         x-transition:leave="transform transition ease-in-out duration-500"
-        x-transition:leave-start="translate-x-0 opacity-100" x-transition:leave-end="translate-x-full opacity-0" class="w-[300px] h-[600px] bg-white/40 backdrop-blur-lg rounded-xl
+        x-transition:leave-start="translate-x-0 opacity-100" x-transition:leave-end="translate-x-full opacity-0" class="w-[300px] h-[600px] bg-white/80 backdrop-blur-lg rounded-xl
             flex flex-col justify-between shadow-2xl border border-white/20">
 
         <!-- Header -->
@@ -178,11 +178,11 @@
 
             <!-- Chat Box -->
             <!-- Chat Container -->
-            <div id="chatbox" class="h-80 overflow-y-auto border rounded-lg p-3 bg-gray-50 text-sm flex flex-col gap-2">
+            <div id="chatbox" class="h-80 overflow-y-auto border rounded-lg p-3 bg-gray-50 text-sm flex flex-col gap-2 shadow-md">
             </div>
 
             <!-- Chat Form -->
-            <form id="chatForm" class="flex max-w-full mt-2">
+            <form id="chatForm" class="flex max-w-full mt-2 h-24">
                 <textarea id="message" name="message" placeholder="Tulis pertanyaan kamu..." class="flex-grow border w-full rounded-l-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-300
             resize-none overflow-y-auto text-sm" rows="1" required></textarea>
 
