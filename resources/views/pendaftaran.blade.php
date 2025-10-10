@@ -57,33 +57,33 @@
         </div>
     </section>
 
+    <!-- Wrapper -->
+<div class="flex flex-col md:flex-row justify-center items-start mt-12">
+
     <!-- Daftar Offline -->
-    <!-- Alur Pendaftaran OFFLINE -->
-    <section class="relative mt-12">
-        <img src="{{ asset('assets/bg-p-offline.png') }}" class="w-full h-40 object-cover opacity-80">
-        <div class="absolute inset-0 flex items-center justify-center">
-            <h2 class="text-3xl font-bold text-white">Daftar Offline</h2>
-        </div>
-    </section>
-
-    <img src="{{ asset('assets/pendaftaran-offline-nobg.png') }}" alt="Hero SKARIGA"
-        class="w-full h-full object-cover ">
-
+    <div class="w-full md:w-1/2">
+        <section class="relative">
+            <img src="{{ asset('assets/bg-p-offline.png') }}" class="w-full h-40 object-cover opacity-80">
+            <div class="absolute inset-0 flex items-center justify-center">
+                <h2 class="text-3xl font-bold text-white">Daftar Offline</h2>
+            </div>
+        </section>
+        <img src="{{ asset('assets/pendaftaran-offline-nobg.png') }}" alt="Hero SKARIGA" class="w-full h-auto object-cover">
     </div>
-    </section>
 
-    <!-- Alur Pendaftaran ONLINE -->
-    <section class="relative mt-12">
-        <img src="{{ asset('assets/bg-p-online.png') }}" class="w-full h-40 object-cover opacity-80">
-        <div class="absolute inset-0 flex items-center justify-center">
-            <h2 class="text-3xl font-bold text-white">Daftar Online</h2>
-        </div>
-    </section>
-
-    <img src="{{ asset('assets/nobg-p-online.png') }}" alt="Hero SKARIGA" class="w-full h-full object-cover ">
-
+    <!-- Daftar Online -->
+    <div class="w-full md:w-1/2">
+        <section class="relative">
+            <img src="{{ asset('assets/bg-p-online.png') }}" class="w-full h-40 object-cover opacity-80">
+            <div class="absolute inset-0 flex items-center justify-center">
+                <h2 class="text-3xl font-bold text-white">Daftar Online</h2>
+            </div>
+        </section>
+        <img src="{{ asset('assets/nobg-p-online.png') }}" alt="Hero SKARIGA" class="w-full h-auto object-cover">
     </div>
-    </section>
+
+</div>
+
 
     <div class="bg-gray-50">
         <!-- Benefits Section -->
@@ -243,61 +243,37 @@
                 </div>
             </div>
 
-            <script>
-            const labels = ['2021', '2022', '2023', '2024', '2025'];
-
-            const chartOptions = {
-                responsive: true,
-                plugins: {
-                    legend: {
-                        display: false
-                    }
-                },
-                scales: {
-                    y: {
-                        beginAtZero: true
-                    }
-                },
-                elements: {
-                    line: {
-                        tension: 0.4
-                    } // bikin kurva smooth
-                }
-            };
-
-            const pendaftarData = {
-                labels,
-                datasets: [{
-                    label: 'Pendaftar',
-                    data: [200, 350, 400, 500, 620],
-                    borderColor: '#f97316',
-                    backgroundColor: '#f97316',
-                    fill: false
-                }]
-            };
-
-            const diterimaData = {
-                labels,
-                datasets: [{
-                    label: 'Peserta Diterima',
-                    data: [150, 300, 320, 450, 560],
-                    borderColor: '#3b82f6',
-                    backgroundColor: '#3b82f6',
-                    fill: false
-                }]
-            };
-
-            new Chart(document.getElementById('chartPendaftar'), {
-                type: 'line',
-                data: pendaftarData,
-                options: chartOptions
-            });
-
-            new Chart(document.getElementById('chartDiterima'), {
-                type: 'line',
-                data: diterimaData,
-                options: chartOptions
-            });
-            </script>
+            <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    const labels = ['2021', '2022', '2023', '2024', '2025'];
+    const chartOptions = {
+        responsive: true,
+        plugins: { legend: { display: false } },
+        scales: { y: { beginAtZero: true } },
+        elements: { line: { tension: 0.4 } }
+    };
+    const pendaftarData = {
+        labels,
+        datasets: [{
+            label: 'Pendaftar',
+            data: [200, 350, 400, 500, 620],
+            borderColor: '#f97316',
+            backgroundColor: '#f97316',
+            fill: false
+        }]
+    };
+    const diterimaData = {
+        labels,
+        datasets: [{
+            label: 'Peserta Diterima',
+            data: [150, 300, 320, 450, 560],
+            borderColor: '#3b82f6',
+            backgroundColor: '#3b82f6',
+            fill: false
+        }]
+    };
+    new Chart(document.getElementById('chartPendaftar'), { type: 'line', data: pendaftarData, options: chartOptions });
+    new Chart(document.getElementById('chartDiterima'), { type: 'line', data: diterimaData, options: chartOptions });
+</script>
     </div>
 </x-layout>
