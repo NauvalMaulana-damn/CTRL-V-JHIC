@@ -102,25 +102,61 @@
                 <!-- Benefits Grid -->
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
+                     <div
+                        class="bg-gradient-to-br from-orange-50 to-orange-100 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300">
+                        <div class="w-16 h-16 bg-orange-500 rounded-2xl flex items-center justify-center mb-6">
+                            <i class="fas fa-certificate text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-800 mb-4">Bonus Spesial</h3>
+                        <ul class="space-y-3">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
+                                <span>Tablet</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
+                                <span>Tas Laptop</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
+                                <span>Rekreasi Kelulusan </span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
+                                <span>Outbond</span>
+                            </li>
+                        </ul>
+                    </div>
+
                     <!-- Benefit 1 -->
                     <div
                         class="bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300">
                         <div class="w-16 h-16 bg-blue-500 rounded-2xl flex items-center justify-center mb-6">
                             <i class="fas fa-graduation-cap text-white text-2xl"></i>
                         </div>
-                        <h3 class="text-2xl font-bold text-gray-800 mb-4">Pendidikan Berkualitas</h3>
+                        <h3 class="text-2xl font-bold text-gray-800 mb-4">6 Seragam Sekolah</h3>
                         <ul class="space-y-3">
                             <li class="flex items-start">
                                 <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
-                                <span>Kurikulum terupdate sesuai industri</span>
+                                <span>Abu Abu Putih</span>
                             </li>
                             <li class="flex items-start">
                                 <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
-                                <span>Pengajar profesional dan berpengalaman</span>
+                                <span>Jeans</span>
                             </li>
                             <li class="flex items-start">
                                 <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
-                                <span>Fasilitas pembelajaran lengkap</span>
+                                <span>Pramuka</span>
+                            </li>
+
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
+                                <span>Olahraga</span>
+                            </li>
+
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
+                                <span>Wearpack (Praktek)</span>
                             </li>
                         </ul>
                     </div>
@@ -131,19 +167,15 @@
                         <div class="w-16 h-16 bg-green-500 rounded-2xl flex items-center justify-center mb-6">
                             <i class="fas fa-briefcase text-white text-2xl"></i>
                         </div>
-                        <h3 class="text-2xl font-bold text-gray-800 mb-4">Peluang Karir Luas</h3>
+                        <h3 class="text-2xl font-bold text-gray-800 mb-4">Seragam </h3>
                         <ul class="space-y-3">
                             <li class="flex items-start">
                                 <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
-                                <span>Program magang di perusahaan ternama</span>
+                                <span>2 pcs Baju PKL</span>
                             </li>
                             <li class="flex items-start">
                                 <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
-                                <span>Jaminan penempatan kerja setelah lulus</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
-                                <span>Koneksi dengan industri partner</span>
+                                <span>2 pcs baju mpls (KCS)</span>
                             </li>
                         </ul>
                     </div>
@@ -154,19 +186,19 @@
                         <div class="w-16 h-16 bg-purple-500 rounded-2xl flex items-center justify-center mb-6">
                             <i class="fas fa-tools text-white text-2xl"></i>
                         </div>
-                        <h3 class="text-2xl font-bold text-gray-800 mb-4">Fasilitas Lengkap</h3>
+                        <h3 class="text-2xl font-bold text-gray-800 mb-4">Kelengkapan Seragam</h3>
                         <ul class="space-y-3">
                             <li class="flex items-start">
                                 <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
-                                <span>Laboratorium praktik modern</span>
+                                <span>Topi</span>
                             </li>
                             <li class="flex items-start">
                                 <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
-                                <span>Perpustakaan digital</span>
+                                <span>Hasduk</span>
                             </li>
                             <li class="flex items-start">
                                 <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
-                                <span>Wifi area seluruh kampus</span>
+                                <span>Ikat Pinggang</span>
                             </li>
                         </ul>
                     </div>
@@ -181,67 +213,30 @@
                         <ul class="space-y-3">
                             <li class="flex items-start">
                                 <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
-                                <span>Sertifikasi BNSP</span>
+                                <span>Paket Pelatihan Mengemudi Mobil</span>
                             </li>
                             <li class="flex items-start">
                                 <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
-                                <span>Sertifikasi industri</span>
+                                <span>Paket Diklat Pembentukan Karakter</span>
                             </li>
                             <li class="flex items-start">
                                 <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
-                                <span>Sertifikat keahlian internasional</span>
+                                <span>Pembekalan Pra Kerja</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
+                                <span>Ujian Sertifikasi Kompetensi</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
+                                <span>Sim A</span>
                             </li>
                         </ul>
                     </div>
-
-                    <!-- Benefit 5 -->
-                    <div
-                        class="bg-gradient-to-br from-red-50 to-red-100 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300">
-                        <div class="w-16 h-16 bg-red-500 rounded-2xl flex items-center justify-center mb-6">
-                            <i class="fas fa-hand-holding-usd text-white text-2xl"></i>
-                        </div>
-                        <h3 class="text-2xl font-bold text-gray-800 mb-4">Beasiswa & Bantuan</h3>
-                        <ul class="space-y-3">
-                            <li class="flex items-start">
-                                <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
-                                <span>Beasiswa prestasi</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
-                                <span>Beasiswa untuk siswa berprestasi</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
-                                <span>Keringanan biaya pendidikan</span>
-                            </li>
-                        </ul>
+                    </div>
                     </div>
 
-                    <!-- Benefit 6 -->
-                    <div
-                        class="bg-gradient-to-br from-indigo-50 to-indigo-100 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300">
-                        <div class="w-16 h-16 bg-indigo-500 rounded-2xl flex items-center justify-center mb-6">
-                            <i class="fas fa-users text-white text-2xl"></i>
-                        </div>
-                        <h3 class="text-2xl font-bold text-gray-800 mb-4">Komunitas & Networking</h3>
-                        <ul class="space-y-3">
-                            <li class="flex items-start">
-                                <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
-                                <span>Alumni network yang kuat</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
-                                <span>Komunitas hobi dan minat</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
-                                <span>Event networking dengan industri</span>
-                            </li>
-                        </ul>
-                    </div>
 
-                </div>
-            </div>
 
             <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
