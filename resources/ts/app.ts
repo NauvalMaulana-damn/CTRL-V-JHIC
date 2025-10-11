@@ -4,12 +4,12 @@ declare global {
     }
 }
 
-import '../css/app.css'
+import "../css/app.css";
 import Alpine from "alpinejs";
 import Swiper, { SwiperOptions } from "swiper";
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
-import { initChartGabungan } from './chart';
-import { initScrollButtons } from './scroll';
+import { initChartGabungan } from "./chart";
+import { initScrollButtons } from "./scroll";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -51,8 +51,40 @@ const initSwiper = (): void => {
     new Swiper(swiperEl, swiperOptions);
 };
 
+function showNews(
+    title: string,
+    desc: string,
+    image1: string,
+    image2: string,
+    image3: string
+): void {
+    console.log("showNews dipanggil:", title, desc, image1, image2, image3);
+
+    const container = document.getElementById("x-headnews");
+    if (!container) {
+        console.error("Container tidak ditemukan!");
+        return;
+    }
+
+    const img1 = container.querySelector<HTMLImageElement>(".headnews-img1");
+    const img2 = container.querySelector<HTMLImageElement>(".headnews-img2");
+    const img3 = container.querySelector<HTMLImageElement>(".headnews-img3");
+
+    if (img1) img1.src = `/assets/${image1}`;
+    if (img2) img2.src = `/assets/${image2}`;
+    if (img3) img3.src = `/assets/${image3}`;
+
+    container.querySelectorAll("h1").forEach((el) => (el.textContent = title.toUpperCase()));
+    container.querySelectorAll("p").forEach((el) => (el.textContent = desc.toUpperCase()));
+}
+(window as any).showNews = showNews;
+
 // INIT based-on DOMContendLoaded Event Listener
 document.addEventListener("DOMContentLoaded", (): void => {
+
+    // Headnews Content INIT
+    document.querySelector<HTMLDivElement>('#x-sidenews .sidenews-item').click();
+
     console.log("SMK PGRI 3 Malang - Initializing...");
 
     // Alpine

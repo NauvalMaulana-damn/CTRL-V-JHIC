@@ -17,11 +17,11 @@
             <section class="relative w-full overflow-hidden rounded-xl mb-8">
                 <div class="swiper mySwiper rounded-xl overflow-hidden">
                     <div class="swiper-wrapper" id="x-headnews">
-                        <x-headnews image1="head_news_1.png" image2="lksdikmen33rms.jpg" image3="lksdikmen33ic.jpg"
-                            title="PARA SISWA
-                                    MENJUARAI LKS DIKMEN JATIM XXXII">
+                        <x-headnews image1="default.svg" image2="default.svg" image3="default.svg" title="TITLE">
                             <x-slot>
-                                BERBAGAI BIDANG MEREKA TAKLUKAN DENGAN POSISI JUARA 1
+                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eveniet vero dolores aliquam
+                                ab fugiat. Et, nihil voluptatum minus, at minima unde quibusdam temporibus animi dolore
+                                inventore soluta quisquam incidunt obcaecati!
                             </x-slot>
                         </x-headnews>
                     </div>
@@ -177,27 +177,27 @@
         <aside class="w-full lg:w-1/4 lg:pl-8 mt-8 lg:mt-0 animate-fade-in delay-400">
             <div class="bg-white p-5 rounded-xl shadow-md">
                 <h3 class="font-bold text-xl mb-4 border-b-2 border-customOrange pb-2">Berita Terbaru</h3>
-                <div class="space-y-6">
+                <div id="x-sidenews" class="space-y-6">
+                    <x-sidenews title="Pendaftaran SKARIGA" image="news-pendaftaran1.webp" onclick="showNews(
+                    'Kuota Pendaftaran SMK PGRI 3 Dibatasi Menjadi 500 Pendaftar',
+                    'Pada Jumat (10/10/2025), SKARIGA dibanjiri para pendaftar. Pendaftaran Berlangsung hingga malam.',
+                    'news-pendaftaran1.webp', 'news-pendaftaran2.webp', 'news-pendaftaran3.jpg')">
+                        Kuota Pendaftaran SMK PGRI 3 Dibatasi Menjadi 500 Pendaftar</x-sidenews>
                     <x-sidenews title="Juara LKS" image="head_news_1.png" onclick="showNews(
                     'PARA SISWA MENJUARAI LKS DIKMEN JATIM XXXII',
                     'BERBAGAI BIDANG MEREKA TAKLUKAN DENGAN POSISI JUARA 1',
                     'head_news_1.png', 'lksdikmen33rms.jpg', 'lksdikmen33ic.jpg')">
                         Para Siswa Menjuarai LKS DIKMEN JATIM XXXII</x-sidenews>
-                    <x-sidenews title="Guru Berpramuka" image="gurupramuka.png" onclick="showNews(
-                    'GURU TURUT JADI PESERTA DALAM PERKEMAHAN PRAMUKA PENEGAK',
-                    'ACARA TERSEBUT MEREKA LALUI DENGAN PENUH KHIDMAT DAN TAWA',
-                    'gurupramuka.png', 'default.svg', 'default.svg')">
-                        Guru Turut Jadi Peserta dalam Perkemahan Pramuka Penegak</x-sidenews>
                     <x-sidenews title="Menyambut Hari Kemerdekaan" image="agustusan.jpg" onclick="showNews(
                     'SAMBUT HARI KEMERDEKAAN, SKARIGA GELAR JALAN SEHAT DAN ANEKA LOMBA PENUH SEMANGAT',
                     'KEGIATAN BERLANGSUNG DENGAN PENUH SEMANGAT',
                     'agustusan.jpg', 'agustusan2.jpg', 'agustusan3.jpg')">
                         Sambut Hari Kemerdekaan, SKARIGA Gelar Jalan Sehat dan Aneka Lomba Penuh Semangat</x-sidenews>
-                    <x-sidenews title="KCS 38" image="kcs38.png" onclick="showNews(
-                    'PUSDIKARHANUD GALAKKAN GERAKAN CINTA SEKOLAH UNTUK BENTUK KARAKTER MURID',
-                    'MURID JUGA MENGINAP SATU MALAM PADA PUSDIKARHANUD',
-                    'kcs38.png', 'default.svg', 'default.svg')">
-                        Pusdikarhanud Galakkan Gerakan Cinta Sekolah untuk Bentuk Karakter Siswa</x-sidenews>
+                    <x-sidenews title="KCS 38" image="kcs38-1.jpg" onclick="showNews(
+                    'PUSDIKARHANUD GALAKKAN GERAKAN KEGIATAN CINTA SEKOLAH UNTUK BENTUK KARAKTER MURID',
+                    'MURID MENGIKUTI DIKLAT DENGAN INTENSIF DAN MENGINAP SATU MALAM DI PUSDIKARHANUD',
+                    'kcs38-1.jpg', 'kcs38-2.jpg', 'kcs38-3.jpg')">
+                        Pusdikarhanud Galakkan Gerakan Kegiatan Cinta Sekolah untuk Bentuk Karakter Siswa</x-sidenews>
                     <a href="/berita">
                         <button
                             class="mt-6 w-full bg-customOrange text-white py-2 rounded-lg font-medium hover:bg-customBlue transition">
@@ -226,25 +226,4 @@
                 </div>
         </aside>
     </div>
-
-    <script>
-    function showNews(title, desc, image1, image2, image3) {
-        console.log("showNews dipanggil:", title, desc, image1, image2, image3);
-
-        const container = document.getElementById("x-headnews");
-
-        if (!container) {
-            console.error("Container tidak ditemukan!");
-            return;
-        }
-
-        container.querySelector(".headnews-img1").src = `/assets/${image1}`;
-        container.querySelector(".headnews-img2").src = `/assets/${image2}`;
-        container.querySelector(".headnews-img3").src = `/assets/${image3}`;
-
-        container.querySelectorAll("h1").forEach(el => el.textContent = title);
-        container.querySelectorAll("p").forEach(el => el.textContent = desc);
-    }
-    </script>
-
 </x-layout>

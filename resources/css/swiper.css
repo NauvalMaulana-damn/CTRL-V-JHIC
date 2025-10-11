@@ -14,7 +14,7 @@
     position: relative;
     background-color: #585858 !important;
     opacity: 1 !important;
-    width: 1rem !important;
+    width: 1.5rem !important;
     border-radius: 1rem !important;
 }
 
@@ -28,7 +28,7 @@
     background-color: #fff;
     transform: scaleX(0);
     transform-origin: left;
-    animation: bullet-loading 4900ms linear forwards;
+    animation: bullet-loading 5000ms linear forwards !important;
     border-radius: 1rem;
 }
 
