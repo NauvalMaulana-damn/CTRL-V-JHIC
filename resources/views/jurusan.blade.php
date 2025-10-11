@@ -239,7 +239,7 @@
                 </section>
 
                 <!-- Top 3 Jurusan Section (Setengah Lebar) -->
-                <section class="top3-section bg-gray-100 rounded-xl p-6 shadow-2xl min-h-auto">
+                <section class="top3-section bg-gray-100 rounded-xl p-6 shadow-2xl min-h-auto transition-transform duration-300 hover:scale-105">
                     <h2>TOP 2 DEPARTEMEN PALING SERING DIKEPOIN</h2>
 
                     <div id="top3-container">
@@ -262,7 +262,7 @@
                     </div>
 
                     <div class="mt-6 text-center">
-                        <p class="text-gray-600">Statistik ini menampilkan jurusan yang paling sering dikunjungi oleh pengunjung</p>
+                        <p class="text-gray-600">Statistik ini menampilkan departement yang paling sering dikunjungi oleh pengunjung</p>
                         <div class="mt-4 p-3 bg-purple-50 rounded-lg">
                             <p class="text-sm text-purple-700">📊 <strong>Total Kunjungan:</strong> <span id="total-clicks">0</span> kali</p>
                         </div>

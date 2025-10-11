@@ -13,7 +13,8 @@
                     </h2>
                 </div>
                 <a href="" class="w-max">
-                    <button class="w-max bg-customBlue text-white px-6 py-3 rounded-full flex items-center gap-2
+                    <button
+                        class="w-max bg-customBlue text-white px-6 py-3 rounded-full flex items-center gap-2
                     transition transform hover:scale-105 hover:bg-customOrange hover:shadow-lg">
                         <span>Daftar Sekarang</span>
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -71,7 +72,8 @@
                 Menjadi <span class="bg-yellow-300 px-1 italic">Sang Juara Selanjutnya!</span>
             </h2>
             <div class="flex justify-center mb-10">
-                <button class="bg-customBlue text-white px-6 py-3 rounded-full flex items-center gap-2
+                <button
+                    class="bg-customBlue text-white px-6 py-3 rounded-full flex items-center gap-2
                     transition transform hover:scale-105 hover:bg-customOrange hover:shadow-lg">
                     <span>Daftar Sekarang</span>
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -96,14 +98,16 @@
                     🎗️ Juara Nasional
                 </div>
                 <div class="w-full h-80 bg-gray-500 rounded-xl shadow-xl overflow-hidden">
-                    <img src="{{ asset('assets/skariga prestasi.jpg') }}" class="w-full h-full object-cover" alt="">
+                    <img src="{{ asset('assets/skariga prestasi.jpg') }}" class="w-full h-full object-cover"
+                        alt="">
                 </div>
                 <div
                     class="bg-yellow-400 text-yellow-900 px-3 py-1 rounded-full text-sm font-bold shadow-lg z-0 cursor-default">
                     🏆 Juara Internasional
                 </div>
                 <div class="w-full h-80 bg-black rounded-xl shadow-xl overflow-hidden sm:col-span-2">
-                    <img src="{{ asset('assets/skariga intl.webp') }}" class="w-full h-full object-cover" alt="">
+                    <img src="{{ asset('assets/skariga intl.webp') }}" class="w-full h-full object-cover"
+                        alt="">
                 </div>
             </div>
         </section>
@@ -133,11 +137,7 @@
         <!-- ✅ Section Para Jawara tetap responsif -->
         <div class="bg-white rounded-xl shadow-lg p-6 sm:p-8">
             <div class="w-full mx-auto py-8" x-data="{ page: 1, perPage: 6 }">
-                <div class="bg-white rounded-xl shadow-lg p-6 sm:p-8 relative">
-                    <img src="{{ asset('assets/trophy.png') }}"
-                        class="-top-6 -right-0 w-12 h-12 sm:w-16 sm:h-16 drop-shadow-md animate-bounce absolute"
-                        alt="Trophy">
-
+                <div class="bg-white rounded-xl shadow-lg p-6 sm:p-8 mb-6 relative">
                     <div
                         class="bg-gray-100 rounded-xl shadow-lg px-4 sm:px-6 py-3 sm:py-4 grid grid-cols-3 items-center mb-6">
                         <div class="flex space-x-2">
@@ -145,31 +145,59 @@
                             <span class="w-3 h-3 sm:w-4 sm:h-4 rounded-full bg-yellow-500"></span>
                             <span class="w-3 h-3 sm:w-4 sm:h-4 rounded-full bg-green-500"></span>
                         </div>
-                        <h2 class="text-3xl sm:text-2xl font-bold text-center"
-                            style="text-shadow: 2px 2px 5px #FFD700; font-size: 2rem">
-                            PARA JAWARA!
-                        </h2>
+
+                        <div class="flex items-center justify-center">
+                            <!-- Trophy di samping tulisan -->
+                            <h2 class="text-4xl sm:text-5xl font-bold text-center"
+                                style="text-shadow: 2px 2px 5px #FFD700;">
+                                PARA JAWARA
+                            </h2>
+                            <img src="{{ asset('assets/troph-pres.png') }}"
+                                class="w-50 h-50 sm:w-14 sm:h-14 drop-shadow-md transform -rotate-12 ml-3"
+                                alt="Trophy">
+                        <div></div>
+                        </div>
                         <div></div>
                     </div>
 
                     @php
-                    $juaras = [
-                    ['assets/indust-cont.jpg','Syahril Faisal Ramadani','Juara 1 LKS DikMen Jatim 33 - Industrial
-                    Control'],
-                    ['assets/electronics.jpg','Yohan Aldi Pratama','Juara 1 LKS Jatim 32 - Electronics'],
-                    ['assets/robot manufac.png','Azriel & Celvin','Juara 1 LKS Jatim 32 - Robot Manufacturing
-                    System'],
-                    ['assets/webtechn.jpeg','Arif Kurniawan','Juara 2 LKS Jatim 32 - Web Technology'],
-                    ['assets/car paint.jpeg','Tegar Reyhan','Juara 1 LKS Jatim 32 - Car Painting'],
-                    ['assets/uiux.jpg','Kayana Indrasta','Juara 1 Lomba Sistem Informasi Festival 2024 - UI/UX
-                    Desain'],
-                    ['assets/it software.png','Edsel Param Mustapa','Juara 1 LKS Jatim 32 - IT Software Solution'],
-                    ['assets/prototype model.png','Iza Aska','Juara 1 LKS Jatim 32 - Prototype Modeling'],
-                    ['assets/marketing.jpeg','Ayu Dewi','Juara 3 LKS Jatim 32 - Marketing Online'],
-                    ['assets/manufac system.jpg','Rafif & Novaldi','Juara 1 LKS DikMen Jatim 33 - Robot
+                        $juaras = [
+                            [
+                                'assets/indust-cont.jpg',
+                                'Syahril Faisal Ramadani',
+                                'Juara 1 LKS DikMen Jatim 33 - Industrial
+                    Control',
+                            ],
+                            ['assets/electronics.jpg', 'Yohan Aldi Pratama', 'Juara 1 LKS Jatim 32 - Electronics'],
+                            [
+                                'assets/robot manufac.png',
+                                'Azriel & Celvin',
+                                'Juara 1 LKS Jatim 32 - Robot Manufacturing
+                    System',
+                            ],
+                            ['assets/webtechn.jpeg', 'Arif Kurniawan', 'Juara 2 LKS Jatim 32 - Web Technology'],
+                            ['assets/car paint.jpeg', 'Tegar Reyhan', 'Juara 1 LKS Jatim 32 - Car Painting'],
+                            [
+                                'assets/uiux.jpg',
+                                'Kayana Indrasta',
+                                'Juara 1 Lomba Sistem Informasi Festival 2024 - UI/UX
+                    Desain',
+                            ],
+                            [
+                                'assets/it software.png',
+                                'Edsel Param Mustapa',
+                                'Juara 1 LKS Jatim 32 - IT Software Solution',
+                            ],
+                            ['assets/prototype model.png', 'Iza Aska', 'Juara 1 LKS Jatim 32 - Prototype Modeling'],
+                            ['assets/marketing.jpeg', 'Ayu Dewi', 'Juara 3 LKS Jatim 32 - Marketing Online'],
+                            [
+                                'assets/manufac system.jpg',
+                                'Rafif & Novaldi',
+                                'Juara 1 LKS DikMen Jatim 33 - Robot
                     Manufacturing
-                    System']
-                    ];
+                    System',
+                            ],
+                        ];
                     @endphp
 
                     <!-- Grid container -->
@@ -197,7 +225,8 @@
                         <template x-for="i in Math.ceil({{ count($juaras) }} / perPage)" :key="i">
                             <button class="px-3 py-1 rounded-full transition"
                                 :class="page === i ? 'bg-customBlue text-white' : 'bg-gray-200 hover:bg-gray-300'"
-                                @click="page = i; window.scrollTo({ top: 0, behavior: 'smooth' });" x-text="i"></button>
+                                @click="page = i; window.scrollTo({ top: 0, behavior: 'smooth' });"
+                                x-text="i"></button>
                         </template>
 
                         <button
