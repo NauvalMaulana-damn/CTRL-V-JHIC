@@ -207,8 +207,8 @@
             <!-- OTOMOTIF -->
             <section id="elektro" class="mt-16 max-w-full mx-auto">
                 <h3 class="text-3xl font-bold mb-6 text-center">OTOMOTIF</h3>
-                <div class="slider-container overflow-x-auto">
-                    <div class=" flex space-x-6 pb-4 slider snap-x snap-mandatory">
+                <div class="slider-container overflow-x-auto justify-center">
+                    <div class=" flex space-x-6 pb-4 slider snap-x snap-mandatory justify-center">
 
                     <!-- CARD 1 -->
                     <x-jurcard title="Teknik Bisnis Sepeda Motor" image="jurTBSM.jpg" departement="OTOMOTIF">
@@ -238,10 +238,10 @@
             </section>
 
             <!-- PEMESINAN -->
-            <section id="elektro" class="mt-16 max-w-full mx-auto">
+            <section id="elektro" class="mt-16 max-w-full mx-auto ">
                 <h3 class="text-3xl font-bold mb-6 text-center">PEMESINAN</h3>
-                <div class="slider-container overflow-x-auto">
-                    <div class=" flex space-x-6 pb-4 slider snap-x snap-mandatory">
+                <div class="slider-container overflow-x-auto justify-center">
+                    <div class=" flex space-x-6 pb-4 slider snap-x snap-mandatory justify-center">
 
                         <!-- CARD 1 -->
                         <x-jurcard title="Bisnis Digital & Pemasaran" image="jurBDP.jpg" departement="PEMESINAN">
@@ -268,7 +268,7 @@
             </section>
 
             <!-- TIK -->
-            <section id="elektro" class="mt-16 max-w-full mx-auto">
+            <section id="elektro" class="mt-16 max-w-full mx-auto justify-center">
                 <h3 class="text-3xl font-bold mb-6 text-center">TEKNOLOGI INFORMASI & KOMUNIKASI</h3>
                 <div class="slider-container overflow-x-auto">
                     <div class=" flex space-x-6 pb-4 slider snap-x snap-mandatory">
