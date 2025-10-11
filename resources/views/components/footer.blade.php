@@ -19,7 +19,8 @@
 
                 <div class="flex items-start py-3" title="Email">
                     <i class="fas fa-envelope text-gray-500 mt-1 mr-2"></i>
-                    <a href="mailto:mail.smkpgri3malang@gmail.com" class="text-[#828282] text-sm underline">
+                    <a href="https://mail.google.com/mail/u/0/?view=cm&fs=1&tf=1&to=mail.smkpgri3malang@gmail.com"
+                        class="text-[#828282] text-sm underline">
                         mail.smkpgri3malang@gmail.com
                     </a>
                 </div>
@@ -40,7 +41,8 @@
             <div class="w-full md:w-1/4">
                 <h3 class="text-[#B9B9B9] text-xl font-bold mb-4">Informasi & Layanan</h3>
                 <ul class="space-y-2">
-                    <li><a href="/ekstrakurikuler" class="text-[#828282] hover:text-white transition">Ekstrakurikuler</a></li>
+                    <li><a href="/ekstrakurikuler"
+                            class="text-[#828282] hover:text-white transition">Ekstrakurikuler</a></li>
                     <li><a href="/alumni" class="text-[#828282] hover:text-white transition">Alumni</a></li>
                     <li><a href="/Pendaftaran" class="text-[#828282] hover:text-white transition">Pendaftaran</a></li>
                 </ul>
@@ -89,19 +91,19 @@
 
         <!-- Logo Penting -->
         {{-- <div class="border-t border-gray-700 mt-8 pt-6 text-center text-gray-500 text-sm space-x-3"> --}}
-            {{-- <div class="flex flex-wrap justify-center items-center gap-6 mt-[-56px]">
+        {{-- <div class="flex flex-wrap justify-center items-center gap-6 mt-[-56px]">
                 <img class="w-[420px]" src="{{ asset('assets/logopenting.png') }}" alt="LOGOS">
-            </div> --}}
-            {{-- <div class="border-t border-gray-700 mt-8 pt-6 text-center text-gray-500 text-sm space-x-3">  --}}
-            <div class="flex flex-wrap justify-center items-center gap-6 mt-[-50px]">
-                <img class="h-8 md:h-12 object-contain inline-block" src="{{ asset('assets/logopenting.png') }}"
-                    alt="Yamaha Logo">
-            </div>
-        {{-- </div> --}}
+    </div> --}}
+    {{-- <div class="border-t border-gray-700 mt-8 pt-6 text-center text-gray-500 text-sm space-x-3">  --}}
+    <div class="flex flex-wrap justify-center items-center gap-6 mt-[-50px]">
+        <img class="h-8 md:h-12 object-contain inline-block" src="{{ asset('assets/logopenting.png') }}"
+            alt="Yamaha Logo">
+    </div>
+    {{-- </div> --}}
 
-        <!-- Copyright -->
-        <div class="border-t border-gray-700 mt-8 pt-6 text-center text-gray-500 text-sm">
-            <p>&copy; 2025 SMK PGRI 3 Malang. All rights reserved.</p>
-        </div>
+    <!-- Copyright -->
+    <div class="border-t border-gray-700 mt-8 pt-6 text-center text-gray-500 text-sm">
+        <p>&copy; 2025 SMK PGRI 3 Malang. All rights reserved.</p>
+    </div>
     </div>
 </footer>
