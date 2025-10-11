@@ -22,6 +22,7 @@
     @vite(['resources/ts/app.ts'])
     <x-sidebar></x-sidebar>
     <x-footer></x-footer>
+    <noscript>JavaScript anda sekarang sedang dimatikan<br>Mohon aktifkan JavaScript anda agar website ini dapat berjalan.</noscript>
 </body>
 
 </html>

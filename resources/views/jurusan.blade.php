@@ -335,7 +335,7 @@
 
                         <!-- CARD 2 -->
                         <x-jurcard title="Teknik Kendaraan Ringan" image="otomotif_card.png" departement="OTOMOTIF">
-                             Dengan kode jurusan TKR, merupakan jurusan yang mempelajari perawatan, perbaikan, dan
+                            Dengan kode jurusan TKR, merupakan jurusan yang mempelajari perawatan, perbaikan, dan
                             diagnosis kerusakan kendaraan ringan. Lanjutan studi meliputi S1 Teknik Otomotif atau
                             Manufaktur. Berpotensi bekerja sebagai teknisi, mekanik, atau wirausahawan bengkel
                             kendaraan ringan.

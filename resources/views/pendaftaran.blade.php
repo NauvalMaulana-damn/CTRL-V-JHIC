@@ -1,11 +1,7 @@
 <x-layout title="Pendaftaran - SMK">
     <div class="bg-white text-gray-800">
         <div class="h-full h-max-content container mx-auto px-4 py-6">
-
-
             <!-- Hero Section -->
-
-
             <section class="relative  h-[535px] mt-2   rounded-xl overflow-hidden"> {{-- before: mx-2 md:mx-10 --}}
                 <div class="absolute inset-0 w-full  h-full hover-scale items-center ">
                     {{-- <div class="absolute inset-0 bg-gradient-to-t from-transparent via-black/5 to-black/70"></div> --}}
@@ -25,10 +21,12 @@
                 {{-- tombol header --}}
                 <div class="absolute bottom-8 right-3.5 md:right-10 z-10 flex flex-col items-center gap-3">
                     <div class="flex gap-4">
-                        <button
-                            class="btn-pend bg-gray-600 text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-green-700 transition shadow-lg">
-                            CHAT ADMIN
-                        </button>
+                        <a href="https://wa.me/6282133000370">
+                            <button
+                                class="btn-pend bg-gray-600 text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-green-700 transition shadow-lg">
+                                CHAT ADMIN
+                            </button>
+                        </a>
                         <button
                             class="btn-pend bg-gray-500 text-white px-6 py-3 rounded-full text-lg font-semibold hover:bg-orange-600 transition shadow-lg"
                             data-target="dafOn">
@@ -58,11 +56,14 @@
 
             <!-- Daftar Offline -->
 
-            <div class=" w-full md:w-1/2 ">
+            <div class="w-full md:w-1/2 ">
                 <section class="relative" id="dafOff">
-                    <img src="{{ asset('assets/bg-p-offline.png') }}" class="w-full h-40 object-cover opacity-80">
+                    <div class="absolute inset-0 bg-gradient-to-t from-transparent via-black/5 to-black/70"></div>
+                    <img src="{{ asset('assets/bg-p-offline.png') }}"
+                        class="w-full h-40 object-cover blur-[0.125rem] opacity-80" alt="Daftar Offline">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/45 via-black/30 to-transparent"></div>
                     <div class="absolute inset-0 flex items-center justify-center">
-                        <h2 class="text-3xl font-bold text-white">Daftar Offline</h2>
+                        <h2 class="text-4xl font-bold text-white">Daftar Offline</h2>
                     </div>
                 </section>
                 <img src="{{ asset('assets/pendaftaran-offline-nobg.png') }}" alt="Hero SKARIGA"
@@ -71,16 +72,21 @@
 
             <!-- Daftar Online -->
             <div class="w-full md:w-1/2">
-    <section class="relative" id="dafOn">
-        <img src="{{ asset('assets/bg-p-online.png') }}" class="w-full h-40 object-cover opacity-80">
-        <div class="absolute inset-0 flex items-center justify-center">
-            <h2 class="text-3xl font-bold text-white">Daftar Online</h2>
-        </div>
-        <div class=" md:mr-5 mt-2"> <!-- Bungkus margin kanan di sini -->
-            <img src="{{ asset('assets/pend-onl-nobg.png') }}" alt="Hero SKARIGA"
-            class="w-full h-auto object-cover">
-        </div>
-</div>
+                <section class="relative" id="dafOn">
+                    <div class="absolute inset-0 bg-gradient-to-t from-transparent via-black/5 to-black/70"></div>
+                    <img src="{{ asset('assets/bg-p-online.png') }}"
+                        class="w-full h-40 object-cover blur-[0.125rem] opacity-80" alt="Daftar Online">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/45 via-black/30 to-transparent"></div>
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <h2 class="text-4xl font-bold text-white">Daftar Online</h2>
+                    </div>
+                </section>
+                <div class=" md:mr-5 mt-2">
+                    <!-- Bungkus margin kanan di sini -->
+                    <img src="{{ asset('assets/pend-onl-nobg.png') }}" alt="Hero SKARIGA"
+                        class="w-full h-auto object-cover">
+                </div>
+            </div>
 
 
         </div>
@@ -139,7 +145,7 @@
                                         class="fas fa-check text-green-500 mt-1 mr-3"></i><span>Olahraga</span></li>
                                 <li class="flex items-start"><i
                                         class="fas fa-check text-green-500 mt-1 mr-3"></i><span>Wearpack
-                                        (Praktek)</span></li>
+                                        (Praktik)</span></li>
                             </ul>
                         </div>
 
@@ -211,84 +217,86 @@
         </div>
     </div>
 
-
-
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <!-- Script Btn Header -->
     <script>
-        // Scroll to pendaftaran section saat tombol ditekan
-        document.querySelectorAll('.btn-pend').forEach(button => {
-            button.addEventListener('click', () => {
-                const targetId = button.getAttribute('data-target');
-                const targetSection = document.getElementById(targetId);
-                if (targetSection) {
-                    targetSection.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
+    // Scroll to pendaftaran section saat tombol ditekan
+    document.querySelectorAll('.btn-pend').forEach(button => {
+        button.addEventListener('click', () => {
+            const targetId = button.getAttribute('data-target');
+            const targetSection = document.getElementById(targetId);
+            if (targetSection) {
+                targetSection.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
         });
+    });
     </script>
 
     <!-- Script CHart -->
     <script>
-        const labels = ['2021', '2022', '2023', '2024', '2025'];
+    const labels = ['2021', '2022', '2023', '2024', '2025'];
 
-        const chartData = {
-            labels,
-            datasets: [{
-                    label: 'Pendaftar',
-                    data: [200, 350, 400, 500, 620],
-                    borderColor: '#f97316',
-                    backgroundColor: '#f97316',
-                    fill: false,
-                    tension: 0.4
-                },
-                {
-                    label: 'Peserta Diterima',
-                    data: [150, 300, 320, 450, 560],
-                    borderColor: '#3b82f6',
-                    backgroundColor: '#3b82f6',
-                    fill: false,
-                    tension: 0.4
-                }
-            ]
-        };
+    const chartData = {
+        labels,
+        datasets: [{
+                label: 'Pendaftar',
+                data: [200, 350, 400, 500, 620],
+                borderColor: '#f97316',
+                backgroundColor: '#f97316',
+                fill: false,
+                tension: 0.4
+            },
+            {
+                label: 'Peserta Diterima',
+                data: [150, 300, 320, 450, 560],
+                borderColor: '#3b82f6',
+                backgroundColor: '#3b82f6',
+                fill: false,
+                tension: 0.4
+            }
+        ]
+    };
 
-        const chartOptions = {
-            responsive: true,
-            plugins: {
-                legend: {
-                    display: true,
-                    position: 'bottom',
-                    labels: {
-                        font: {
-                            size: 20
-                        }
+    const chartOptions = {
+        responsive: true,
+        plugins: {
+            legend: {
+                display: true,
+                position: 'bottom',
+                labels: {
+                    font: {
+                        size: 20
                     }
                 }
-            },
-            scales: {
-                x: {
-            ticks: {
-                font: { size: 18 } // ukuran label tahun di bawah
             }
         },
-        y: {
-            beginAtZero: true,
-            ticks: {
-                font: { size: 18 } // ukuran angka di sumbu Y
+        scales: {
+            x: {
+                ticks: {
+                    font: {
+                        size: 18
+                    } // ukuran label tahun di bawah
+                }
+            },
+            y: {
+                beginAtZero: true,
+                ticks: {
+                    font: {
+                        size: 18
+                    } // ukuran angka di sumbu Y
+                }
             }
         }
-            }
-        };
+    };
 
-        new Chart(document.getElementById('chartGabungan'), {
-            type: 'line',
-            data: chartData,
-            options: chartOptions
-        });
+    new Chart(document.getElementById('chartGabungan'), {
+        type: 'line',
+        data: chartData,
+        options: chartOptions
+    });
     </script>
     </div>
 </x-layout>
