@@ -48,17 +48,17 @@
         <!-- Grafik Section -->
         <section class=" max-w-5xl mx-auto py-10 px-4 md:px-10">
             <div class="bg-white rounded-2xl shadow p-5">
-                <h2 class="text-xl font-semibold mb-4 text-center">Perbandingan Pendaftar dan Peserta Diterima</h2>
+                <h2 class="text-3xl font-bold mb-4 text-center">Perbandingan Pendaftar dan Peserta Diterima</h2>
                 <canvas id="chartGabungan"></canvas>
             </div>
         </section>
 
         <!-- Wrapper -->
-        <div class="flex flex-col md:flex-row justify-center items-start mt-12">
+        <div class="flex flex-col md:flex-row justify-center items-start mt-12 mx-auto ">
 
             <!-- Daftar Offline -->
 
-            <div class=" w-full md:w-1/2">
+            <div class=" w-full md:w-1/2 ">
                 <section class="relative" id="dafOff">
                     <img src="{{ asset('assets/bg-p-offline.png') }}" class="w-full h-40 object-cover opacity-80">
                     <div class="absolute inset-0 flex items-center justify-center">
@@ -66,20 +66,22 @@
                     </div>
                 </section>
                 <img src="{{ asset('assets/pendaftaran-offline-nobg.png') }}" alt="Hero SKARIGA"
-                    class="w-full h-auto object-cover">
+                    class="w-full h-auto object-cover md:ml-10">
             </div>
 
             <!-- Daftar Online -->
             <div class="w-full md:w-1/2">
-                <section class="relative" id="dafOn">
-                    <img src="{{ asset('assets/bg-p-online.png') }}" class="w-full h-40 object-cover opacity-80">
-                    <div class="absolute inset-0 flex items-center justify-center">
-                        <h2 class="text-3xl font-bold text-white">Daftar Online</h2>
-                    </div>
-                </section>
-                <img src="{{ asset('assets/nobg-p-online.png') }}" alt="Hero SKARIGA"
-                    class="w-full h-auto object-cover">
-            </div>
+    <section class="relative" id="dafOn">
+        <img src="{{ asset('assets/bg-p-online.png') }}" class="w-full h-40 object-cover opacity-80">
+        <div class="absolute inset-0 flex items-center justify-center">
+            <h2 class="text-3xl font-bold text-white">Daftar Online</h2>
+        </div>
+        <div class="md:mr-5 mt-2"> <!-- Bungkus margin kanan di sini -->
+            <img src="{{ asset('assets/pend-onl-nobg.png') }}" alt="Hero SKARIGA"
+            class="w-full h-auto object-cover">
+        </div>
+</div>
+
 
         </div>
 
@@ -100,7 +102,7 @@
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                         <!-- Card 1 -->
                         <div
-                            class="bg-gradient-to-br from-orange-50 to-orange-100 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300">
+                            class="bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300">
                             <div class="w-16 h-16 bg-orange-500 rounded-2xl flex items-center justify-center mb-6">
                                 <i class="fas fa-certificate text-white text-2xl"></i>
                             </div>
@@ -120,7 +122,7 @@
 
                         <!-- Card 2 -->
                         <div
-                            class="bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300">
+                            class="bg-gradient-to-br from-orange-50 to-orange-100 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300">
                             <div class="w-16 h-16 bg-blue-500 rounded-2xl flex items-center justify-center mb-6">
                                 <i class="fas fa-graduation-cap text-white text-2xl"></i>
                             </div>
@@ -145,9 +147,9 @@
                         <div
                             class="bg-gradient-to-br from-green-50 to-green-100 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300">
                             <div class="w-16 h-16 bg-green-500 rounded-2xl flex items-center justify-center mb-6">
-                                <i class="fas fa-briefcase text-white text-2xl"></i>
+                                <i class="fas fa-shirt text-white text-2xl"></i>
                             </div>
-                            <h3 class="text-2xl font-bold text-gray-800 mb-4">Seragam</h3>
+                            <h3 class="text-2xl font-bold text-gray-800 mb-4">Seragam Tambahan</h3>
                             <ul class="space-y-3">
                                 <li class="flex items-start"><i
                                         class="fas fa-check text-green-500 mt-1 mr-3"></i><span>2 pcs Baju PKL</span>
@@ -183,7 +185,7 @@
                         <div
                             class="w-full md:w-[45%] lg:w-[30%] bg-gradient-to-br from-orange-50 to-orange-100 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300">
                             <div class="w-16 h-16 bg-orange-500 rounded-2xl flex items-center justify-center mb-6">
-                                <i class="fas fa-certificate text-white text-2xl"></i>
+                                <i class="fas fa-ticket text-white text-2xl"></i>
                             </div>
                             <h3 class="text-2xl font-bold text-gray-800 mb-4">Sertifikasi Kompetensi</h3>
                             <ul class="space-y-3">
@@ -259,7 +261,12 @@
             plugins: {
                 legend: {
                     display: true,
-                    position: 'bottom'
+                    position: 'bottom',
+                    labels: {
+                        font: {
+                            size: 16
+                        }
+                    }
                 }
             },
             scales: {
