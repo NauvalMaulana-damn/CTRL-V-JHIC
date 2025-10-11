@@ -74,6 +74,10 @@
         .top3-section {
             margin-top: 2rem;
         }
+
+        .chart-container {
+            height: 250px !important;
+        }
     }
 
     /* Styling untuk Top 3 Section */
@@ -156,7 +160,53 @@
         font-weight: bold;
         color: #1f2937;
     }
+
+    /* Styling untuk diagram lingkaran */
+    .chart-container {
+        position: relative;
+        height: 300px;
+        margin: 1rem 0;
+    }
+
+    .pie-chart-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .chart-legend {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.5rem;
+        margin-top: 1rem;
+    }
+
+    .legend-item {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 0.875rem;
+    }
+
+    .legend-color {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+    }
+
+    .no-data-message {
+        text-align: center;
+        padding: 2rem;
+        color: #6b7280;
+        font-style: italic;
+    }
     </style>
+
+    <!-- Sertakan Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
     <div class="bg-white text-gray-900 font-sans">
         <div class="h-full h-max-content container mx-auto px-4 py-6">
             <!-- Hero Section -->
@@ -238,31 +288,22 @@
                     </div>
                 </section>
 
-                <!-- Top 3 Jurusan Section (Setengah Lebar) -->
+                <!-- Top 3 Jurusan Section (Setengah Lebar) - DIUBAH -->
                 <section class="top3-section bg-gray-100 rounded-xl p-6 shadow-2xl min-h-auto transition-transform duration-300 hover:scale-105">
-                    <h2>TOP 2 DEPARTEMEN PALING SERING DIKEPOIN</h2>
+                    <h2>STATISTIK KUNJUNGAN DEPARTEMEN</h2>
 
-                    <div id="top3-container">
-                        <!-- Data akan diisi oleh JavaScript -->
-                        <div class="top3-card first">
-                            <div class="flex items-center">
-                                <span class="rank-badge first">1</span>
-                                <h3 class="text-xl font-bold" id="top1-name">-</h3>
-                            </div>
-                            <p class="click-count" id="top1-count">0 klik</p>
+                    <div class="pie-chart-wrapper">
+                        <div class="chart-container">
+                            <canvas id="jurusanPieChart"></canvas>
                         </div>
 
-                        <div class="top3-card second">
-                            <div class="flex items-center">
-                                <span class="rank-badge second">2</span>
-                                <h3 class="text-xl font-bold" id="top2-name">-</h3>
-                            </div>
-                            <p class="click-count" id="top2-count">0 klik</p>
+                        <div class="chart-legend" id="chartLegend">
+                            <!-- Legend akan diisi oleh JavaScript -->
                         </div>
                     </div>
 
                     <div class="mt-6 text-center">
-                        <p class="text-gray-600">Statistik ini menampilkan departement yang paling sering dikunjungi oleh pengunjung</p>
+                        <p class="text-gray-600">Statistik ini menampilkan persentase kunjungan ke setiap departemen</p>
                         <div class="mt-4 p-3 bg-purple-50 rounded-lg">
                             <p class="text-sm text-purple-700">📊 <strong>Total Kunjungan:</strong> <span id="total-clicks">0</span> kali</p>
                         </div>
@@ -270,8 +311,7 @@
                 </section>
             </div>
 
-            <!-- Departemen Sections -->
-
+            <!-- Departemen Sections (sama seperti sebelumnya) -->
             <!-- ELEKTRO -->
             <section id="elektro" class="mt-16 max-w-full mx-auto">
                 <h3 class="text-3xl font-bold mb-6 text-center">ELEKTRO</h3>
@@ -379,7 +419,7 @@
                         <x-jurcard title="Teknik Pemesinan" image="jurTP.jpg" departement="PEMESINAN">
                              Dengan kode jurusan TP, merupakan jurusan yang mempelajari proses permesinan, pembuatan,
                             dan perawatan komponen mesin. Lanjutan studi meliputi S1 Teknik Mesin atau Manufaktur.
-                            Berpotensi bekerja sebagai teknisi mesin, operator CNC, atau perancang komponen mekanik.
+                            Berpotensi bekerja sebagai teknisi mesin, operator CNC, atau perancang komponen mekanic.
 
                         </x-jurcard>
                     </div>
@@ -449,13 +489,16 @@
                 tik: 0
             };
 
+            // Variabel untuk chart
+            let jurusanChart = null;
+
             // Fungsi untuk memuat statistik dari localStorage
             function loadStats() {
                 const savedStats = localStorage.getItem('jurusanClickStats');
                 if (savedStats) {
                     clickStats = JSON.parse(savedStats);
                 }
-                updateTop3Display();
+                updateChart();
                 updateTotalClicks();
             }
 
@@ -470,22 +513,26 @@
                 document.getElementById('total-clicks').textContent = total;
             }
 
-            // Fungsi untuk memperbarui tampilan Top 3
-            function updateTop3Display() {
-                // Mengubah objek menjadi array untuk diurutkan
-                const statsArray = Object.entries(clickStats).map(([name, count]) => ({ name, count }));
+            // Fungsi untuk membuat atau memperbarui diagram lingkaran
+            function updateChart() {
+                const ctx = document.getElementById('jurusanPieChart').getContext('2d');
+                const totalClicks = Object.values(clickStats).reduce((sum, count) => sum + count, 0);
 
-                // Mengurutkan berdasarkan jumlah klik (descending)
-                statsArray.sort((a, b) => b.count - a.count);
-
-                // Mengambil 2 teratas (sesuai dengan judul "TOP 2")
-                const top2 = statsArray.slice(0, 2);
-
-                // Memperbarui tampilan
-                const top1Name = document.getElementById('top1-name');
-                const top1Count = document.getElementById('top1-count');
-                const top2Name = document.getElementById('top2-name');
-                const top2Count = document.getElementById('top2-count');
+                // Format data untuk chart
+                const labels = [];
+                const data = [];
+                const backgroundColors = [
+                    'rgba(59, 130, 246, 0.8)',  // Biru untuk ELEKTRO
+                    'rgba(249, 115, 22, 0.8)',  // Orange untuk OTOMOTIF
+                    'rgba(16, 185, 129, 0.8)',  // Hijau untuk PEMESINAN
+                    'rgba(139, 92, 246, 0.8)'   // Ungu untuk TIK
+                ];
+                const borderColors = [
+                    'rgb(59, 130, 246)',
+                    'rgb(249, 115, 22)',
+                    'rgb(16, 185, 129)',
+                    'rgb(139, 92, 246)'
+                ];
 
                 // Format nama jurusan
                 const formatJurusanName = (name) => {
@@ -498,23 +545,79 @@
                     return names[name] || name.toUpperCase();
                 };
 
-                // Update peringkat 1
-                if (top2.length > 0) {
-                    top1Name.textContent = formatJurusanName(top2[0].name);
-                    top1Count.textContent = `${top2[0].count} klik`;
-                } else {
-                    top1Name.textContent = '-';
-                    top1Count.textContent = '0 klik';
+                // Siapkan data untuk chart
+                Object.entries(clickStats).forEach(([key, value], index) => {
+                    labels.push(formatJurusanName(key));
+                    data.push(value);
+                });
+
+                // Hancurkan chart sebelumnya jika ada
+                if (jurusanChart) {
+                    jurusanChart.destroy();
                 }
 
-                // Update peringkat 2
-                if (top2.length > 1) {
-                    top2Name.textContent = formatJurusanName(top2[1].name);
-                    top2Count.textContent = `${top2[1].count} klik`;
-                } else {
-                    top2Name.textContent = '-';
-                    top2Count.textContent = '0 klik';
+                // Buat chart baru
+                jurusanChart = new Chart(ctx, {
+                    type: 'pie',
+                    data: {
+                        labels: labels,
+                        datasets: [{
+                            data: data,
+                            backgroundColor: backgroundColors,
+                            borderColor: borderColors,
+                            borderWidth: 2
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: {
+                                display: false // Kita akan buat custom legend
+                            },
+                            tooltip: {
+                                callbacks: {
+                                    label: function(context) {
+                                        const label = context.label || '';
+                                        const value = context.raw || 0;
+                                        const total = context.dataset.data.reduce((a, b) => a + b, 0);
+                                        const percentage = total > 0 ? Math.round((value / total) * 100) : 0;
+                                        return `${label}: ${value} (${percentage}%)`;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                });
+
+                // Update custom legend
+                updateChartLegend(labels, data, backgroundColors, totalClicks);
+            }
+
+            // Fungsi untuk memperbarui legend chart
+            function updateChartLegend(labels, data, colors, totalClicks) {
+                const legendContainer = document.getElementById('chartLegend');
+                legendContainer.innerHTML = '';
+
+                if (totalClicks === 0) {
+                    legendContainer.innerHTML = '<div class="no-data-message">Belum ada data kunjungan</div>';
+                    return;
                 }
+
+                labels.forEach((label, index) => {
+                    const value = data[index];
+                    const percentage = totalClicks > 0 ? Math.round((value / totalClicks) * 100) : 0;
+
+                    const legendItem = document.createElement('div');
+                    legendItem.className = 'legend-item';
+
+                    legendItem.innerHTML = `
+                        <span class="legend-color" style="background-color: ${colors[index]}"></span>
+                        <span>${label}: ${percentage}% (${value})</span>
+                    `;
+
+                    legendContainer.appendChild(legendItem);
+                });
             }
 
             // Scroll to department section saat tombol ditekan
@@ -527,7 +630,7 @@
                     if (clickStats.hasOwnProperty(targetId)) {
                         clickStats[targetId]++;
                         saveStats();
-                        updateTop3Display();
+                        updateChart();
                         updateTotalClicks();
                     }
 

@@ -29,10 +29,10 @@
             <div class="w-full md:w-1/4">
                 <h3 class="text-[#B9B9B9] text-xl font-bold mb-4">Tentang Sekolah</h3>
                 <ul class="space-y-2">
-                    <li><a href="#" class="text-[#828282] hover:text-white transition">Beranda</a></li>
+                    <li><a href="/" class="text-[#828282] hover:text-white transition">Beranda</a></li>
                     <li><a href="/profil" class="text-[#828282] hover:text-white transition">Profil Sekolah</a></li>
-                    <li><a href="#" class="text-[#828282] hover:text-white transition">Jurusan</a></li>
-                    <li><a href="#" class="text-[#828282] hover:text-white transition">Prestasi</a></li>
+                    <li><a href="/jurusan" class="text-[#828282] hover:text-white transition">Jurusan</a></li>
+                    <li><a href="/prestasi" class="text-[#828282] hover:text-white transition">Prestasi</a></li>
                 </ul>
             </div>
 
@@ -40,9 +40,9 @@
             <div class="w-full md:w-1/4">
                 <h3 class="text-[#B9B9B9] text-xl font-bold mb-4">Informasi & Layanan</h3>
                 <ul class="space-y-2">
-                    <li><a href="#" class="text-[#828282] hover:text-white transition">Ekstrakurikuler</a></li>
-                    <li><a href="#" class="text-[#828282] hover:text-white transition">Alumni</a></li>
-                    <li><a href="#" class="text-[#828282] hover:text-white transition">Pendaftaran</a></li>
+                    <li><a href="/ekstrakurikuler" class="text-[#828282] hover:text-white transition">Ekstrakurikuler</a></li>
+                    <li><a href="/alumni" class="text-[#828282] hover:text-white transition">Alumni</a></li>
+                    <li><a href="/Pendaftaran" class="text-[#828282] hover:text-white transition">Pendaftaran</a></li>
                 </ul>
             </div>
 
