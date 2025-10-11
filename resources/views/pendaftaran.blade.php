@@ -66,7 +66,7 @@
                     </div>
                 </section>
                 <img src="{{ asset('assets/pendaftaran-offline-nobg.png') }}" alt="Hero SKARIGA"
-                    class="w-full h-auto object-cover md:ml-10">
+                    class="w-full h-auto object-cover  md:ml-10">
             </div>
 
             <!-- Daftar Online -->
@@ -76,7 +76,7 @@
         <div class="absolute inset-0 flex items-center justify-center">
             <h2 class="text-3xl font-bold text-white">Daftar Online</h2>
         </div>
-        <div class="md:mr-5 mt-2"> <!-- Bungkus margin kanan di sini -->
+        <div class=" md:mr-5 mt-2"> <!-- Bungkus margin kanan di sini -->
             <img src="{{ asset('assets/pend-onl-nobg.png') }}" alt="Hero SKARIGA"
             class="w-full h-auto object-cover">
         </div>
@@ -264,15 +264,23 @@
                     position: 'bottom',
                     labels: {
                         font: {
-                            size: 16
+                            size: 20
                         }
                     }
                 }
             },
             scales: {
-                y: {
-                    beginAtZero: true
-                }
+                x: {
+            ticks: {
+                font: { size: 18 } // ukuran label tahun di bawah
+            }
+        },
+        y: {
+            beginAtZero: true,
+            ticks: {
+                font: { size: 18 } // ukuran angka di sumbu Y
+            }
+        }
             }
         };
 
