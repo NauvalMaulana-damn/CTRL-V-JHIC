@@ -170,79 +170,8 @@
             </div>
             @endforeach
 
-            <!-- FAQ Section -->
-            <div class="flex flex-col items-center mt-6">
-                <img class="w-8 h-8" src="{{ asset('assets/faq.png') }}" alt="FAQ">
-                <h2 class="text-xl font-bold text-dark text-center mt-1">QnA</h2>
-            </div>
-
-            <!-- Chat Box -->
-            <!-- Chat Container -->
-            <div id="chatbox" class="h-80 overflow-y-auto border rounded-lg p-3 bg-gray-50 text-sm flex flex-col gap-2 shadow-md">
-            </div>
-
-            <!-- Chat Form -->
-            <form id="chatForm" class="flex max-w-full mt-2 h-24">
-                <textarea id="message" name="message" placeholder="Tulis pertanyaan kamu..." class="flex-grow border w-full rounded-l-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-300
-            resize-none overflow-y-auto text-sm" rows="1" required></textarea>
-
-                <button type="submit" class="bg-blue-500 text-white px-4 rounded-r-lg hover:bg-blue-600 transition">
-                    Kirim
-                </button>
-            </form>
-
+            <!-- QNA -->
+            <x-qna></x-qna>
         </div>
     </div>
-
-    <!-- Script Chat -->
-    <script>
-    const chatForm = document.getElementById('chatForm');
-    const chatbox = document.getElementById('chatbox');
-    const messageInput = document.getElementById('message');
-
-    chatForm.addEventListener('submit', async (e) => {
-        e.preventDefault();
-        const message = messageInput.value.trim();
-        if (!message) return;
-
-        appendMessage('user', message);
-        messageInput.value = '';
-
-        const typingBubble = appendTyping();
-
-        const res = await fetch("{{ route('chat.ask') }}", {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'X-CSRF-TOKEN': "{{ csrf_token() }}"
-            },
-            body: JSON.stringify({
-                message
-            })
-        });
-
-        const data = await res.json();
-
-        typingBubble.remove(); // hapus "mengetik..."
-        appendMessage('bot', data.reply);
-    });
-
-    function appendMessage(sender, text) {
-        const div = document.createElement('div');
-        div.classList.add('bubble', sender);
-        div.innerHTML = text;
-        chatbox.appendChild(div);
-        chatbox.scrollTop = chatbox.scrollHeight;
-        return div;
-    }
-
-    function appendTyping() {
-        const typing = document.createElement('div');
-        typing.classList.add('bubble', 'bot');
-        typing.innerHTML = `<div class="typing"><span></span><span></span><span></span></div>`;
-        chatbox.appendChild(typing);
-        chatbox.scrollTop = chatbox.scrollHeight;
-        return typing;
-    }
-    </script>
 </div>
