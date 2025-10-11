@@ -63,12 +63,18 @@
                         <li><a href="/pendaftaran"
                                 class="{{ request()->is('pendaftaran') ? 'text-customOrange' : '' }} hover:text-customOrange transition">Pendaftaran</a>
                         </li>
-                        <li>
-                            <i class="fa fa-search" aria-hidden="true"></i>
-                            <input type="text" id="search-bar" name="search-bar" placeholder="Cari"
-                                class="border border-black/20 px-2 rounded w-64 focus:outline-none focus:ring-2 focus:ring-blue-300" autocomplete="off">
-                                <div id="search-results" class="mt-2 border border-gray-200 rounded hidden bg-white w-64 absolute shadow-md"></div>
+                        <li class="flex items-center space-x-2 max-w-full">
+                            <i class="fa fa-search text-gray-500" aria-hidden="true"></i>
+                            <div class="flex-1 relative">
+                                <input type="text" id="search-bar" name="search-bar" placeholder="Cari"
+                                    class="border border-black/20 px-2 rounded w-full focus:outline-none focus:ring-2 focus:ring-blue-300"
+                                    autocomplete="off">
+                                <div id="search-results"
+                                    class="mt-2 border border-gray-200 rounded hidden bg-white absolute w-full shadow-md z-10">
+                                </div>
+                            </div>
                         </li>
+
                     </ul>
                 </nav>
 

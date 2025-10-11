@@ -79,7 +79,7 @@
 
     <div class="h-full h-max-content container mx-auto px-4 py-6">
         <!-- Hero SKARIGA -->
-        <section class="relative h-[800px] mt-2 rounded-xl overflow-hidden">
+        <section class="relative h-[535px] mt-2 rounded-xl overflow-hidden">
             <div class="absolute inset-0 w-full h-full hover-scale">
                 <div class="absolute inset-0 bg-gradient-to-t from-transparent via-black/5 to-black/70"></div>
                 <img src="{{ asset('assets/depansekul.jpg') }}" alt="Hero SKARIGA" class="w-full h-full object-cover ">
@@ -159,14 +159,14 @@
         <!-- Visi -->
         <section class="w-full mx-auto pt-6 pb-10">
             <div class="bg-orange-500 rounded-2xl shadow-lg overflow-hidden hover-lift hover-glow">
-                <div class="grid md:grid-cols-2 gap-6 items-center">
-                    <div class="p-8 text-white">
+                <div class="grid md:grid-cols-2 gap-0 md:gap-6 items-center">
+                    <img src="{{ asset('assets/kcs-manjat.png') }}" alt="Visi"
+                        class="w-full h-full object-cover">
+                    <div class="px-8 py-4 text-white">
                         <h2 class="text-5xl font-bold mb-4">Visi</h2>
                         <p>Menjadi SMK yang unggul dalam prestasi dengan dilandasi Iman & Taqwa serta menghasilkan
                             tamatan yang mampu bersaing ditingkat Nasional maupun Internasional</p>
                     </div>
-                    <img src="{{ asset('assets/kcs-manjat.png') }}" alt="Visi"
-                        class="w-full h-full object-cover">
                 </div>
 
             </div>

@@ -8,6 +8,8 @@ import '../css/app.css'
 import Alpine from "alpinejs";
 import Swiper, { SwiperOptions } from "swiper";
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
+import { initChartGabungan } from './chart';
+import { initScrollButtons } from './scroll';
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -49,7 +51,7 @@ const initSwiper = (): void => {
     new Swiper(swiperEl, swiperOptions);
 };
 
-// ✅ DOMContentLoaded init
+// INIT based-on DOMContendLoaded Event Listener
 document.addEventListener("DOMContentLoaded", (): void => {
     console.log("SMK PGRI 3 Malang - Initializing...");
 
@@ -65,6 +67,10 @@ document.addEventListener("DOMContentLoaded", (): void => {
     // Swiper
     initSwiper();
     console.log("Swiper initialized successfully");
+
+    // Scroll and Chart
+    initScrollButtons();
+    initChartGabungan();
 });
 
 // Optional: scroll debug
