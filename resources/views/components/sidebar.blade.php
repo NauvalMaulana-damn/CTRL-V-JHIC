@@ -136,7 +136,7 @@
     <div x-show="open" x-cloak x-transition:enter="transform transition ease-in-out duration-500"
         x-transition:enter-start="translate-x-full opacity-0" x-transition:enter-end="translate-x-0 opacity-100"
         x-transition:leave="transform transition ease-in-out duration-500"
-        x-transition:leave-start="translate-x-0 opacity-100" x-transition:leave-end="translate-x-full opacity-0" class="w-[300px] h-[600px] bg-white/80 backdrop-blur-lg rounded-xl
+        x-transition:leave-start="translate-x-0 opacity-100" x-transition:leave-end="translate-x-full opacity-0" class="w-[350px] h-[600px] bg-white/80 backdrop-blur-lg rounded-xl
             flex flex-col justify-between shadow-2xl border border-white/20">
 
         <!-- Header -->
