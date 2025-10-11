@@ -59,10 +59,12 @@
                                 dan sistem digital.
                                 Juga mencakup perakitan, pemrograman mikrokontroller, serta pengendalian otomatis.
                             </p>
-                            <button
+                            <a href="/jurusan">
+                                <button
                                 class="bg-white text-[#242424] text-sm md:text-base font-medium py-1.5 px-5 rounded-full hover:bg-gray-100 transition">
                                 Selengkapnya
                             </button>
+                            </a>
                         </div>
                         <img class="absolute -bottom-2 -right-6 w-48 opacity-30 -rotate-12"
                             src="{{ asset('assets/bg_elektro_card.png') }}" alt="">
@@ -82,10 +84,12 @@
                                 kelistrikan, bodi, dan suspensi.
                                 Praktiknya dilakukan di bengkel bersama guru pengajar.
                             </p>
-                            <button
+                            <a href="/jurusan">
+                                <button
                                 class="bg-white text-[#242424] text-sm md:text-base font-medium py-1.5 px-5 rounded-full hover:bg-gray-100 transition">
                                 Selengkapnya
                             </button>
+                            </a>
                         </div>
                         <img class="absolute -bottom-2 -right-6 w-48 opacity-30 -rotate-12"
                             src="{{ asset('assets/bg_otomotif_card.png') }}" alt="">
@@ -105,10 +109,12 @@
                                 frais, dan CNC.
                                 Juga mencakup gambar teknik serta kontrol kualitas produk.
                             </p>
-                            <button
+                            <a href="/jurusan">
+                                <button
                                 class="bg-white text-[#242424] text-sm md:text-base font-medium py-1.5 px-5 rounded-full hover:bg-gray-100 transition">
                                 Selengkapnya
                             </button>
+                            </a>
                         </div>
                         <img class="absolute -bottom-2 -right-6 w-48 opacity-30 -rotate-12"
                             src="{{ asset('assets/bg_pemesinan_card.png') }}" alt="">
@@ -128,10 +134,12 @@
                                 kecerdasan buatan.
                                 Siswa juga belajar manajemen proyek TI dan etika teknologi.
                             </p>
-                            <button
+                            <a href="/jurusan">
+                                <button
                                 class="bg-white text-[#242424] text-sm md:text-base font-medium py-1.5 px-5 rounded-full hover:bg-gray-100 transition">
                                 Selengkapnya
                             </button>
+                            </a>
                         </div>
                         <img class="absolute -bottom-2 -right-6 w-48 opacity-30 -rotate-12"
                             src="{{ asset('assets/bg_tik_card.png') }}" alt="">
@@ -167,6 +175,12 @@
                         <x-habitcard title="Mengaji Pagi" image="mengajipagi.jpg">
                             Bagi siswa muslim, SKARIGA mengadakan mengaji pagi bersama, seperti membaca juz amma,
                             dan doa pagi. Bagi non Muslim SKARIGA memberi tempat untuk beribadah pagi
+                        </x-habitcard>
+
+                        <!-- Habit 4 -->
+                        <x-habitcard title="Makan Bersama" image="kebiasaan-4(2).jpg">
+                            Pada istirahat pertama, budaya yang melekat pada murid-murid SKARIGA
+                            adalah budaya makan bersama secara lesehan
                         </x-habitcard>
                     </div>
                 </div>
