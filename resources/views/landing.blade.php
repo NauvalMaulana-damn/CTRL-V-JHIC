@@ -17,8 +17,8 @@
             <section class="relative w-full overflow-hidden rounded-xl mb-8">
                 <div class="swiper mySwiper rounded-xl overflow-hidden">
                     <div class="swiper-wrapper" id="x-headnews">
-                        <x-headnews image1="head_news_1.png" image2="lksdikmen33rms.jpg"
-                            image3="lksdikmen33ic.jpg" title="PARA SISWA
+                        <x-headnews image1="head_news_1.png" image2="lksdikmen33rms.jpg" image3="lksdikmen33ic.jpg"
+                            title="PARA SISWA
                                     MENJUARAI LKS DIKMEN JATIM XXXII">
                             <x-slot>
                                 BERBAGAI BIDANG MEREKA TAKLUKAN DENGAN POSISI JUARA 1
@@ -142,53 +142,29 @@
             <!-- Student Habits Section -->
             <section class="bg-gray-200 py-12 rounded-xl mt-8 animate-fade-in delay-900 ease-in-out">
                 <div class="container mx-auto px-4">
-                    <h2 class="text-2xl md:text-4xl lg:text-5xl font-bold text-center mb-8 md:mb-12">3 KEBIASAAN MURID
+                    <h2 class="text-2xl md:text-4xl lg:text-5xl font-bold text-center mb-8 md:mb-12">KEBIASAAN MURID
                         SKARIGA</h2>
 
+                    <!-- Card Wrapper -->
                     <div class="flex flex-col lg:flex-row items-center gap-6 justify-center">
+
                         <!-- Habit 1 -->
-                        <div class="w-full lg:w-1/3 habit-card text-white bg-customOrange hover:bg-customBlue p-5 flex flex-col transition-all duration-900 ease-in-out
-                        hover:scale-105 hover:rounded-xl hover:shadow-2xl hover:z-10
-                        min-h-[480px] hover:min-h-[520px] hover:self-start">
-                            <img width="100%" height="100%"
-                                class="w-full h-52 md:h-48 hover:h-64 object-cover rounded-lg mb-4"
-                                src="{{ asset('assets/ceksabuk.jpg') }}" alt="Cek Kelengkapan Seragam">
-                            <h3 class="text-xl md:text-2xl font-bold text-center mb-3">Cek Kelengkapan Seragam</h3>
-                            <p class="text-base text-center cursor-default">
-                                Sebelum memasuki sekolah, siswa wajib menunjukan kelengkapan seragam
-                            </p>
-                        </div>
+                        <x-habitcard title="Cek Kelengkapan Seragam" image="ceksabuk.jpg">
+                            Sebelum memasuki sekolah, siswa wajib menunjukan kelengkapan seragam
+                        </x-habitcard>
 
                         <!-- Habit 2 -->
-                        <div class="w-full lg:w-1/3 habit-card text-white bg-customOrange hover:bg-customBlue p-5 flex flex-col transition-all duration-1000 ease-in-out
-                        hover:scale-105 hover:rounded-xl hover:shadow-2xl hover:z-10
-                        min-h-[480px] hover:min-h-[520px] hover:self-start">
-                            <img width="100%" height="100%"
-                                class="w-full h-52 md:h-48 hover:h-64 object-cover rounded-lg mb-4"
-                                src="{{ asset('assets/jalurhijau.jpg') }}" alt="Jalur Hijau">
-                            <h3 class="text-xl md:text-2xl font-bold text-center mb-3">Jalur Hijau</h3>
-                            <p class="text-base text-center cursor-default">
-                                SKARIGA selalu membiasakan warga sekolah untuk berjalan di jalur hijau, seperti yang
-                                diterapkan di industri
-                            </p>
-                        </div>
+                        <x-habitcard title="Jalur Hijau" image="jalurhijau.jpg">
+                            SKARIGA selalu membiasakan warga sekolah untuk berjalan di jalur hijau, seperti yang
+                            diterapkan di industri
+                        </x-habitcard>
 
                         <!-- Habit 3 -->
-                        <div class="w-full lg:w-1/3 habit-card text-white bg-customOrange hover:bg-customBlue p-5 flex flex-col transition-all duration-900 ease-in-out
-                        hover:scale-105 hover:rounded-xl hover:shadow-2xl hover:z-10
-                        min-h-[480px] hover:min-h-[520px] hover:self-start">
-                            <img width="100%" height="100%"
-                                class="w-full h-52 md:h-48 hover:h-64 object-cover rounded-lg mb-4"
-                                src="{{ asset('assets/mengajipagi.jpg') }}" alt="Mengaji Pagi">
-                            <h3 class="text-xl md:text-2xl font-bold text-center mb-3">Mengaji Pagi</h3>
-                            <p class="text-base text-center cursor-default">
-                                Bagi siswa muslim, SKARIGA mengadakan mengaji pagi bersama, seperti membaca juz amma,
-                                dan doa pagi. Bagi non Muslim SKARIGA memberi tempat untuk beribadah pagi
-                            </p>
-                        </div>
+                        <x-habitcard title="Mengaji Pagi" image="mengajipagi.jpg">
+                            Bagi siswa muslim, SKARIGA mengadakan mengaji pagi bersama, seperti membaca juz amma,
+                            dan doa pagi. Bagi non Muslim SKARIGA memberi tempat untuk beribadah pagi
+                        </x-habitcard>
                     </div>
-
-
                 </div>
             </section>
         </main>
