@@ -1,0 +1,45 @@
+@layer utilities {
+    .swiper-pagination-bullet {
+        @apply bg-white opacity-50 transition-opacity duration-300;
+    }
+
+    .swiper-pagination-bullet-active {
+        @apply bg-white opacity-100;
+    }
+
+    /* ⚪ Tombol Next & Prev (Navigation) */
+    .swiper-button-next,
+    .swiper-button-prev {
+        @apply text-white transition-colors duration-300;
+    }
+
+    .swiper-button-next:hover,
+    .swiper-button-prev:hover {
+        @apply text-gray-300;
+    }
+
+    /* ✨ Ukuran panah */
+    .swiper-button-next::after,
+    .swiper-button-prev::after {
+        font-size: 1.5rem !important;
+    }
+
+    /* 🌑 Dark mode (opsional tapi keren) */
+    .dark .swiper-pagination-bullet {
+        @apply bg-gray-400 opacity-60;
+    }
+
+    .dark .swiper-pagination-bullet-active {
+        @apply bg-gray-100 opacity-100;
+    }
+
+    .dark .swiper-button-next,
+    .dark .swiper-button-prev {
+        @apply text-gray-100;
+    }
+
+    .dark .swiper-button-next:hover,
+    .dark .swiper-button-prev:hover {
+        @apply text-gray-300;
+    }
+}
