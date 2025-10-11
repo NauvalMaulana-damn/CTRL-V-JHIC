@@ -1,9 +1,13 @@
 <x-layout title="Pendaftaran - SMK">
     <div class="bg-white text-gray-800">
+            <div class="h-full h-max-content container mx-auto px-4 py-6">
+
 
         <!-- Hero Section -->
-        <section class="relative  h-[535px] mt-2 mx-2 md:mx-10  rounded-xl overflow-hidden">
-            <div class="absolute inset-0 w-full h-full hover-scale">
+
+
+        <section class="relative  h-[535px] mt-2   rounded-xl overflow-hidden"> {{-- before: mx-2 md:mx-10 --}}
+            <div class="absolute inset-0 w-full  h-full hover-scale items-center ">
                 {{-- <div class="absolute inset-0 bg-gradient-to-t from-transparent via-black/5 to-black/70"></div> --}}
                 <img src="{{ asset('assets/header-pendaftaran.png') }}" alt="Hero SKARIGA"
                     class="w-full h-full object-cover ">
@@ -58,217 +62,178 @@
     </section>
 
     <!-- Wrapper -->
-<div class="flex flex-col md:flex-row justify-center items-start mt-12">
+    <div class="flex flex-col md:flex-row justify-center items-start mt-12">
 
-    <!-- Daftar Offline -->
-    <div class="w-full md:w-1/2">
-        <section class="relative">
-            <img src="{{ asset('assets/bg-p-offline.png') }}" class="w-full h-40 object-cover opacity-80">
-            <div class="absolute inset-0 flex items-center justify-center">
-                <h2 class="text-3xl font-bold text-white">Daftar Offline</h2>
-            </div>
-        </section>
-        <img src="{{ asset('assets/pendaftaran-offline-nobg.png') }}" alt="Hero SKARIGA" class="w-full h-auto object-cover">
+        <!-- Daftar Offline -->
+        <div class="w-full md:w-1/2">
+            <section class="relative">
+                <img src="{{ asset('assets/bg-p-offline.png') }}" class="w-full h-40 object-cover opacity-80">
+                <div class="absolute inset-0 flex items-center justify-center">
+                    <h2 class="text-3xl font-bold text-white">Daftar Offline</h2>
+                </div>
+            </section>
+            <img src="{{ asset('assets/pendaftaran-offline-nobg.png') }}" alt="Hero SKARIGA"
+                class="w-full h-auto object-cover">
+        </div>
+
+        <!-- Daftar Online -->
+        <div class="w-full md:w-1/2">
+            <section class="relative">
+                <img src="{{ asset('assets/bg-p-online.png') }}" class="w-full h-40 object-cover opacity-80">
+                <div class="absolute inset-0 flex items-center justify-center">
+                    <h2 class="text-3xl font-bold text-white">Daftar Online</h2>
+                </div>
+            </section>
+            <img src="{{ asset('assets/nobg-p-online.png') }}" alt="Hero SKARIGA" class="w-full h-auto object-cover">
+        </div>
+
     </div>
-
-    <!-- Daftar Online -->
-    <div class="w-full md:w-1/2">
-        <section class="relative">
-            <img src="{{ asset('assets/bg-p-online.png') }}" class="w-full h-40 object-cover opacity-80">
-            <div class="absolute inset-0 flex items-center justify-center">
-                <h2 class="text-3xl font-bold text-white">Daftar Online</h2>
-            </div>
-        </section>
-        <img src="{{ asset('assets/nobg-p-online.png') }}" alt="Hero SKARIGA" class="w-full h-auto object-cover">
-    </div>
-
-</div>
 
 
     <div class="bg-gray-50">
-        <!-- Benefits Section -->
-        <section class="py-16 bg-white">
-            <div class="max-w-7xl mx-auto px-4">
-                <!-- Header -->
-                <div class="text-center mb-16">
-                    <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
-                        Keuntungan Bergabung Dengan Kami
-                    </h2>
-                    <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                        Dapatkan berbagai benefit eksklusif ketika Anda mendaftar di SMK PGRI 3 MALANG
-                    </p>
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
+                    Keuntungan Bergabung Dengan Kami
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Dapatkan berbagai benefit eksklusif ketika Anda mendaftar di SMK PGRI 3 MALANG
+                </p>
+            </div>
+
+            <!-- Grid untuk 3 card pertama -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="bg-gradient-to-br from-orange-50 to-orange-100 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300">
+                    <div class="w-16 h-16 bg-orange-500 rounded-2xl flex items-center justify-center mb-6">
+                        <i class="fas fa-certificate text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Bonus Spesial</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start"><i class="fas fa-check text-green-500 mt-1 mr-3"></i><span>Tablet</span></li>
+                        <li class="flex items-start"><i class="fas fa-check text-green-500 mt-1 mr-3"></i><span>Tas Laptop</span></li>
+                        <li class="flex items-start"><i class="fas fa-check text-green-500 mt-1 mr-3"></i><span>Rekreasi Kelulusan</span></li>
+                        <li class="flex items-start"><i class="fas fa-check text-green-500 mt-1 mr-3"></i><span>Outbond</span></li>
+                    </ul>
                 </div>
 
-                <!-- Benefits Grid -->
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-
-                     <div
-                        class="bg-gradient-to-br from-orange-50 to-orange-100 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300">
-                        <div class="w-16 h-16 bg-orange-500 rounded-2xl flex items-center justify-center mb-6">
-                            <i class="fas fa-certificate text-white text-2xl"></i>
-                        </div>
-                        <h3 class="text-2xl font-bold text-gray-800 mb-4">Bonus Spesial</h3>
-                        <ul class="space-y-3">
-                            <li class="flex items-start">
-                                <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
-                                <span>Tablet</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
-                                <span>Tas Laptop</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
-                                <span>Rekreasi Kelulusan </span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
-                                <span>Outbond</span>
-                            </li>
-                        </ul>
+                <!-- Card 2 -->
+                <div class="bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300">
+                    <div class="w-16 h-16 bg-blue-500 rounded-2xl flex items-center justify-center mb-6">
+                        <i class="fas fa-graduation-cap text-white text-2xl"></i>
                     </div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">6 Seragam Sekolah</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start"><i class="fas fa-check text-green-500 mt-1 mr-3"></i><span>Abu Abu Putih</span></li>
+                        <li class="flex items-start"><i class="fas fa-check text-green-500 mt-1 mr-3"></i><span>Jeans</span></li>
+                        <li class="flex items-start"><i class="fas fa-check text-green-500 mt-1 mr-3"></i><span>Pramuka</span></li>
+                        <li class="flex items-start"><i class="fas fa-check text-green-500 mt-1 mr-3"></i><span>Olahraga</span></li>
+                        <li class="flex items-start"><i class="fas fa-check text-green-500 mt-1 mr-3"></i><span>Wearpack (Praktek)</span></li>
+                    </ul>
+                </div>
 
-                    <!-- Benefit 1 -->
-                    <div
-                        class="bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300">
-                        <div class="w-16 h-16 bg-blue-500 rounded-2xl flex items-center justify-center mb-6">
-                            <i class="fas fa-graduation-cap text-white text-2xl"></i>
-                        </div>
-                        <h3 class="text-2xl font-bold text-gray-800 mb-4">6 Seragam Sekolah</h3>
-                        <ul class="space-y-3">
-                            <li class="flex items-start">
-                                <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
-                                <span>Abu Abu Putih</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
-                                <span>Jeans</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
-                                <span>Pramuka</span>
-                            </li>
+                <!-- Card 3 -->
+                <div class="bg-gradient-to-br from-green-50 to-green-100 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300">
+                    <div class="w-16 h-16 bg-green-500 rounded-2xl flex items-center justify-center mb-6">
+                        <i class="fas fa-briefcase text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Seragam</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start"><i class="fas fa-check text-green-500 mt-1 mr-3"></i><span>2 pcs Baju PKL</span></li>
+                        <li class="flex items-start"><i class="fas fa-check text-green-500 mt-1 mr-3"></i><span>2 pcs baju MPLS (KCS)</span></li>
+                    </ul>
+                </div>
+            </div>
 
-                            <li class="flex items-start">
-                                <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
-                                <span>Olahraga</span>
-                            </li>
+            <!-- Flex container buat 2 card terakhir (biar center) -->
+            <div class="flex justify-center flex-wrap gap-8 mt-8">
+                <!-- Card 4 -->
+                <div class="w-full md:w-[45%] lg:w-[30%] bg-gradient-to-br from-purple-50 to-purple-100 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300">
+                    <div class="w-16 h-16 bg-purple-500 rounded-2xl flex items-center justify-center mb-6">
+                        <i class="fas fa-tools text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Kelengkapan Seragam</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start"><i class="fas fa-check text-green-500 mt-1 mr-3"></i><span>Topi</span></li>
+                        <li class="flex items-start"><i class="fas fa-check text-green-500 mt-1 mr-3"></i><span>Hasduk</span></li>
+                        <li class="flex items-start"><i class="fas fa-check text-green-500 mt-1 mr-3"></i><span>Ikat Pinggang</span></li>
+                    </ul>
+                </div>
 
-                            <li class="flex items-start">
-                                <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
-                                <span>Wearpack (Praktek)</span>
-                            </li>
-                        </ul>
+                <!-- Card 5 -->
+                <div class="w-full md:w-[45%] lg:w-[30%] bg-gradient-to-br from-orange-50 to-orange-100 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300">
+                    <div class="w-16 h-16 bg-orange-500 rounded-2xl flex items-center justify-center mb-6">
+                        <i class="fas fa-certificate text-white text-2xl"></i>
                     </div>
-
-                    <!-- Benefit 2 -->
-                    <div
-                        class="bg-gradient-to-br from-green-50 to-green-100 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300">
-                        <div class="w-16 h-16 bg-green-500 rounded-2xl flex items-center justify-center mb-6">
-                            <i class="fas fa-briefcase text-white text-2xl"></i>
-                        </div>
-                        <h3 class="text-2xl font-bold text-gray-800 mb-4">Seragam </h3>
-                        <ul class="space-y-3">
-                            <li class="flex items-start">
-                                <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
-                                <span>2 pcs Baju PKL</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
-                                <span>2 pcs baju mpls (KCS)</span>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <!-- Benefit 3 -->
-                    <div
-                        class="bg-gradient-to-br from-purple-50 to-purple-100 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300">
-                        <div class="w-16 h-16 bg-purple-500 rounded-2xl flex items-center justify-center mb-6">
-                            <i class="fas fa-tools text-white text-2xl"></i>
-                        </div>
-                        <h3 class="text-2xl font-bold text-gray-800 mb-4">Kelengkapan Seragam</h3>
-                        <ul class="space-y-3">
-                            <li class="flex items-start">
-                                <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
-                                <span>Topi</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
-                                <span>Hasduk</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
-                                <span>Ikat Pinggang</span>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <!-- Benefit 4 -->
-                    <div
-                        class="bg-gradient-to-br from-orange-50 to-orange-100 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300">
-                        <div class="w-16 h-16 bg-orange-500 rounded-2xl flex items-center justify-center mb-6">
-                            <i class="fas fa-certificate text-white text-2xl"></i>
-                        </div>
-                        <h3 class="text-2xl font-bold text-gray-800 mb-4">Sertifikasi Kompetensi</h3>
-                        <ul class="space-y-3">
-                            <li class="flex items-start">
-                                <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
-                                <span>Paket Pelatihan Mengemudi Mobil</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
-                                <span>Paket Diklat Pembentukan Karakter</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
-                                <span>Pembekalan Pra Kerja</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
-                                <span>Ujian Sertifikasi Kompetensi</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
-                                <span>Sim A</span>
-                            </li>
-                        </ul>
-                    </div>
-                    </div>
-                    </div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Sertifikasi Kompetensi</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start"><i class="fas fa-check text-green-500 mt-1 mr-3"></i><span>Paket Pelatihan Mengemudi Mobil</span></li>
+                        <li class="flex items-start"><i class="fas fa-check text-green-500 mt-1 mr-3"></i><span>Paket Diklat Pembentukan Karakter</span></li>
+                        <li class="flex items-start"><i class="fas fa-check text-green-500 mt-1 mr-3"></i><span>Pembekalan Pra Kerja</span></li>
+                        <li class="flex items-start"><i class="fas fa-check text-green-500 mt-1 mr-3"></i><span>Ujian Sertifikasi Kompetensi</span></li>
+                        <li class="flex items-start"><i class="fas fa-check text-green-500 mt-1 mr-3"></i><span>SIM A</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    </div>
+</div>
 
 
 
             <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script>
-    const labels = ['2021', '2022', '2023', '2024', '2025'];
-    const chartOptions = {
-        responsive: true,
-        plugins: { legend: { display: false } },
-        scales: { y: { beginAtZero: true } },
-        elements: { line: { tension: 0.4 } }
-    };
-    const pendaftarData = {
-        labels,
-        datasets: [{
-            label: 'Pendaftar',
-            data: [200, 350, 400, 500, 620],
-            borderColor: '#f97316',
-            backgroundColor: '#f97316',
-            fill: false
-        }]
-    };
-    const diterimaData = {
-        labels,
-        datasets: [{
-            label: 'Peserta Diterima',
-            data: [150, 300, 320, 450, 560],
-            borderColor: '#3b82f6',
-            backgroundColor: '#3b82f6',
-            fill: false
-        }]
-    };
-    new Chart(document.getElementById('chartPendaftar'), { type: 'line', data: pendaftarData, options: chartOptions });
-    new Chart(document.getElementById('chartDiterima'), { type: 'line', data: diterimaData, options: chartOptions });
-</script>
+            <script>
+                const labels = ['2021', '2022', '2023', '2024', '2025'];
+                const chartOptions = {
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            display: false
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    },
+                    elements: {
+                        line: {
+                            tension: 0.4
+                        }
+                    }
+                };
+                const pendaftarData = {
+                    labels,
+                    datasets: [{
+                        label: 'Pendaftar',
+                        data: [200, 350, 400, 500, 620],
+                        borderColor: '#f97316',
+                        backgroundColor: '#f97316',
+                        fill: false
+                    }]
+                };
+                const diterimaData = {
+                    labels,
+                    datasets: [{
+                        label: 'Peserta Diterima',
+                        data: [150, 300, 320, 450, 560],
+                        borderColor: '#3b82f6',
+                        backgroundColor: '#3b82f6',
+                        fill: false
+                    }]
+                };
+                new Chart(document.getElementById('chartPendaftar'), {
+                    type: 'line',
+                    data: pendaftarData,
+                    options: chartOptions
+                });
+                new Chart(document.getElementById('chartDiterima'), {
+                    type: 'line',
+                    data: diterimaData,
+                    options: chartOptions
+                });
+            </script>
     </div>
 </x-layout>

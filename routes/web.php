@@ -28,6 +28,9 @@ Route::get('/alumni', function () {
 Route::get('/pendaftaran', function () {
     return view('pendaftaran');
 });
+Route::get('/berita', function () {
+    return view('berita');
+});
 
 // Chatbot Routes
 Route::get('/chat', [ChatbotController::class, 'index'])->name('chat.index');

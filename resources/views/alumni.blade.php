@@ -35,8 +35,20 @@
 
         <!-- Alumni Section -->
         <section class=" py-12 md:py-16 animate-fade-in">
+            <div
+                    class="bg-gray-100 rounded-xl shadow-lg px-4 sm:px-6 py-3 sm:py-4 grid grid-cols-3 items-center mb-6">
+                    <div class="flex space-x-2">
+                        <span class="w-3 h-3 sm:w-4 sm:h-4 rounded-full bg-red-500"></span>
+                        <span class="w-3 h-3 sm:w-4 sm:h-4 rounded-full bg-yellow-500"></span>
+                        <span class="w-3 h-3 sm:w-4 sm:h-4 rounded-full bg-green-500"></span>
+                    </div>
+                    <h2 class="text-3xl sm:text-2xl font-bold text-center"
+                        style="text-shadow: 2px 2px 5px #FFD700; font-size: 2rem">
+                        PARA JAWARA!
+                    </h2>
+                    <div></div>
+                </div>
             <div class=" max-w-full container mx-auto">
-                <h2 class="text-3xl md:text-5xl font-bold text-center mb-12">PARA JAWARA!</h2>
 
                 <!-- Alumni Grid -->
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-10">
