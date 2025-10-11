@@ -27,9 +27,13 @@
                     </div>
 
                     <!-- Pagination & Navigation -->
+                    <div class="swiper-button-prev" style="color: white;">
+                        <!-- <i class="fas fa-chevron-left"></i> -->
+                    </div>
+                    <div class="swiper-button-next" style="color: white;">
+                        <!-- <i class="fas fa-chevron-right"></i> -->
+                    </div>
                     <div class="swiper-pagination"></div>
-                    <div class="swiper-button-next"></div>
-                    <div class="swiper-button-prev"></div>
                 </div>
             </section>
 
