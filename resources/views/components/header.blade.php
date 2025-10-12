@@ -135,40 +135,17 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // Search Bar JS Section
-const url = ["/", "/berita", "/profil", "/prestasi", "/jurusan", ];
+const url = ["/", "/berita", "/profil", "/prestasi", "/jurusan", "/ekstrakurikuler", "/alumni", "/pendaftaran"];
 
-const data = [{
-        name: "Beranda",
-        url: "/"
-    },
-    {
-        name: "Berita",
-        url: "/berita"
-    },
-    {
-        name: "Profil",
-        url: "/profil"
-    },
-    {
-        name: "Prestasi",
-        url: "/prestasi"
-    },
-    {
-        name: "Jurusan",
-        url: "/jurusan"
-    },
-    {
-        name: "Ekstrakurikuler",
-        url: "/ekstrakurikuler"
-    },
-    {
-        name: "Alumni",
-        url: "/alumni"
-    },
-    {
-        name: "Pendaftaran",
-        url: "/pendaftaran"
-    },
+const data = [
+    {name: "Beranda", url: url[0]}, {name: "Kebiasaan Murid SKARIGA", url: url[0]}, {name: "Landing Page", url: url[0]}, {name: "Home", url: url[0]}, {name: "Headnews", url: url[0]}, {name: "Departemen", url: url[0]},
+    {name: "Berita", url: url[1]}, {name: "News", url: url[1]}, {name: "Kalender Akademik", url: url[1]},
+    {name: "Profil", url: url[2]}, {name: "Visi", url: url[2]}, {name: "Misi", url: url[2]},
+    {name: "Prestasi", url: url[3]}, {name: "Para Jawara", url: url[3]}, {name: "Daftar Juara", url: url[3]},
+    {name: "Jurusan", url: url[4]}, {name: "Konsentrasi Keahlian", url: url[4]}, {name: "Major", url: url[4]}, {name: "Elektronika", url: url[4]}, {name: "Otomotif", url: url[4]}, {name: "Pemesinan", url: url[4]}, {name: "TIK", url: url[4]},
+    {name: "Ekstrakurikuler", url: url[5]}, {name: "Ekskul", url: url[5]},
+    {name: "Alumni", url: url[6]}, {name: "Lulusan", url: url[6]}, {name: "Graduate", url: url[6]},
+    {name: "Pendaftaran", url: url[7]}, {name: "Chat Admin", url: url[7]}, {name: "Daftar Offline", url: url[7]}, {name: "Daftar Online", url: url[7]}, {name: "Keuntungan Bergabung", url: url[7]},
 ];
 
 const input = document.getElementById('search-bar');
