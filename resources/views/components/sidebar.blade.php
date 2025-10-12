@@ -153,7 +153,7 @@
             <!-- Menu -->
             @foreach ([
             ['icon' => asset('assets/home (1).png'), 'label' => 'Beranda', 'href' => '/'],
-            ['icon' => asset('assets/home (1).png'), 'label' => 'Berita', 'href' => '/berita'],
+            ['icon' => asset('assets/news.png'), 'label' => 'Berita', 'href' => '/berita'],
             ['icon' => asset('assets/profil.png'), 'label' => 'Profil', 'href' => '/profil'],
             ['icon' => asset('assets/trophy.png'), 'label' => 'Prestasi', 'href' => '/prestasi'],
             ['icon' => asset('assets/major.png'), 'label' => 'Jurusan', 'href' => '/jurusan'],
