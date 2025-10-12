@@ -135,6 +135,8 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // Search Bar JS Section
+const url = ["/", "/berita", "/profil", "/prestasi", "/jurusan", ];
+
 const data = [{
         name: "Beranda",
         url: "/"
