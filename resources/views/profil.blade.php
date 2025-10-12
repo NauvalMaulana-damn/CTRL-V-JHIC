@@ -280,7 +280,7 @@
                     <!-- Card -->
                     <div
                         class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition flex flex-col hover-lift hover-border-orange min-h-[560px]">
-                        <img src="{{ asset('assets/kcs38.png') }}" alt="KCS 38"
+                        <img src="{{ asset('assets/kcs38-1.jpg') }}" alt="KCS 38"
                             class="h-48 w-full object-cover">
                         <div class="p-8 flex flex-col flex-grow">
                             <h3 class="font-semibold text-lg mb-2">KCS 38 DI PUSDIK ARHANUD</h3>

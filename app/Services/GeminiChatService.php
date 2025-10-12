@@ -40,7 +40,6 @@ class GeminiChatService
             - Gunakan unordered list seperti •, untuk list, jangan *, (seperti untuk Jurusan, Ekstra, dan Prestasi)
             - Untuk prestasi bold dan italic semua
             - Setiap langkah pisahkan dengan baris baru agar rapi
-            - Gunakan bold untuk istilah penting dan ganti dengan <b>Judul</b>
             - Akhiri jawaban dengan kalimat positif dan emoji sekolah seperti ✨
             - Jangan tampilkan JSON atau data mentah
 

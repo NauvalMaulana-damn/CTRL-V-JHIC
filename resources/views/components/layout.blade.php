@@ -3,6 +3,7 @@
 
 <head>
     <x-meta></x-meta>
+    @props(['title'])
     <title>{{ $title ?? 'SMK PGRI 3 Malang - Success by Discipline' }}</title>
     <!-- Libraries -->
     @vite(['resources/css/app.css'])
