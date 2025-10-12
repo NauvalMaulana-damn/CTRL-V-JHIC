@@ -61,17 +61,25 @@
 
         <!-- Main Content -->
         <main class="container mx-auto px-4 py-8">
-            <!-- Modal (Hidden Default) -->
-            <div id="modalBerita"
-                class="fixed inset-0 bg-black/50 hidden items-center justify-center z-50 transition-opacity duration-300">
-                <div class="bg-white rounded-xl shadow-lg max-w-2xl w-full p-6 relative">
-                    <button id="closeModal"
-                        class="absolute top-3 right-3 text-gray-400 hover:text-gray-700 text-2xl">&times;</button>
+            <!-- Modal -->
+            <div id="newsModal" class="hidden fixed inset-0 bg-black/50 flex items-center justify-center z-50 px-4">
+                <div class="bg-white rounded-xl w-full max-w-2xl max-h-[90vh] overflow-y-auto shadow-2xl relative">
+                    <!-- Tombol Close -->
+                    <button id="closeModal" class="absolute top-3 right-3 text-gray-500 hover:text-gray-700">
+                        <i class="fas fa-times text-xl"></i>
+                    </button>
 
-                    <h2 id="modalTitle" class="text-2xl font-bold text-skariga-blue mb-4"></h2>
-                    <p id="modalContent" class="text-gray-700 leading-relaxed"></p>
+                    <!-- Gambar -->
+                    <img id="modalImage" src="" alt="" class="w-full h-64 object-cover rounded-t-xl">
+
+                    <!-- Konten -->
+                    <div class="p-6">
+                        <h2 id="modalTitle" class="text-2xl font-bold text-skariga-blue mb-4"></h2>
+                        <p id="modalContent" class="text-gray-700 leading-relaxed whitespace-pre-line"></p>
+                    </div>
                 </div>
             </div>
+
 
             <!-- Filter Section -->
             <div class="flex flex-wrap justify-between items-center mb-8 bg-white p-4 rounded-lg shadow">
@@ -98,7 +106,8 @@
                 <!-- Berita 1 -->
                 <div
                     class="bg-white rounded-xl shadow-md overflow-hidden transition-transform duration-300 hover:shadow-lg hover:-translate-y-1">
-                    <div class="h-48 bg-gradient-to-r from-skariga-blue to-blue-700 relative">
+                    <div class="h-48 relative">
+                        <img src="{{ asset('assets/uiux.jpg') }}" alt="Berita" class="w-full h-full object-cover">
                         <span
                             class="absolute top-4 left-4 bg-skariga-orange text-white px-3 py-1 rounded-full text-xs font-semibold">Prestasi</span>
                         <div class="absolute bottom-4 left-4 text-white">
@@ -114,7 +123,14 @@
                             <a href="javascript:void(0)"
                                 class="text-skariga-orange font-semibold hover:underline openModal"
                                 data-title="Siswa Skariga Juara 1 Lomba Web Design Tingkat Nasional"
-                                data-content="Tim siswa SMK PGRI 3 Malang berhasil meraih juara 1 dalam kompetisi web design tingkat nasional yang diselenggarakan oleh Kementerian Pendidikan. Kompetisi ini diikuti oleh lebih dari 100 sekolah dari seluruh Indonesia.">
+                                data-content="Tim siswa SMK PGRI 3 Malang berhasil meraih juara 1 dalam kompetisi web design tingkat nasional yang diselenggarakan oleh Kementerian Pendidikan.
+                                Kompetisi ini diikuti oleh lebih dari 100 sekolah dari seluruh Indonesia. Tim siswa SMK PGRI 3 Malang berhasil meraih juara 1 dalam kompetisi web design tingkat nasional yang diselenggarakan oleh Kementerian Pendidikan.
+                                Kompetisi ini diikuti oleh lebih dari 100 sekolah dari seluruh Indonesia. Tim siswa SMK PGRI 3 Malang berhasil meraih juara 1 dalam kompetisi web design tingkat nasional yang diselenggarakan oleh Kementerian Pendidikan.
+                                Kompetisi ini diikuti oleh lebih dari 100 sekolah dari seluruh Indonesia. Tim siswa SMK PGRI 3 Malang berhasil meraih juara 1 dalam kompetisi web design tingkat nasional yang diselenggarakan oleh Kementerian Pendidikan.
+                                Kompetisi ini diikuti oleh lebih dari 100 sekolah dari seluruh Indonesia. Tim siswa SMK PGRI 3 Malang berhasil meraih juara 1 dalam kompetisi web design tingkat nasional yang diselenggarakan oleh Kementerian Pendidikan.
+                                Kompetisi ini diikuti oleh lebih dari 100 sekolah dari seluruh Indonesia. Tim siswa SMK PGRI 3 Malang berhasil meraih juara 1 dalam kompetisi web design tingkat nasional yang diselenggarakan oleh Kementerian Pendidikan.
+                                Kompetisi ini diikuti oleh lebih dari 100 sekolah dari seluruh Indonesia."
+                                data-image="{{ asset('assets/uiux.jpg') }}">
                                 Baca Selengkapnya
                             </a>
 
@@ -203,9 +219,11 @@
                         </div>
                     </div>
                     <div class="p-6">
-                        <h3 class="text-xl font-bold text-skariga-blue mb-3">Tim Robotik Skariga Raih Medali Perunggu di
+                        <h3 class="text-xl font-bold text-skariga-blue mb-3">Tim Robotik Skariga Raih Medali Perunggu
+                            di
                             Kompetisi Internasional</h3>
-                        <p class="text-gray-600 mb-4">Tim robotik SMK PGRI 3 Malang berhasil mengharumkan nama Indonesia
+                        <p class="text-gray-600 mb-4">Tim robotik SMK PGRI 3 Malang berhasil mengharumkan nama
+                            Indonesia
                             dengan meraih medali perunggu dalam kompetisi robotik internasional di Singapura.</p>
                         <div class="flex justify-between items-center">
                             <a href="#" class="text-skariga-orange font-semibold hover:underline">Baca
@@ -262,33 +280,26 @@
 
     </div>
     <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const modal = document.getElementById("modalBerita");
-            const closeModal = document.getElementById("closeModal");
-            const modalTitle = document.getElementById("modalTitle");
-            const modalContent = document.getElementById("modalContent");
+document.querySelectorAll('.openModal').forEach(btn => {
+    btn.addEventListener('click', function() {
+        const title = this.getAttribute('data-title')
+        const content = this.getAttribute('data-content')
+        const image = this.getAttribute('data-image')
 
-            document.querySelectorAll(".openModal").forEach(btn => {
-                btn.addEventListener("click", () => {
-                    modalTitle.textContent = btn.dataset.title;
-                    modalContent.textContent = btn.dataset.content;
-                    modal.classList.remove("hidden");
-                    modal.classList.add("flex");
-                });
-            });
+        document.getElementById('modalTitle').textContent = title
+        document.getElementById('modalContent').textContent = content
+        document.getElementById('modalImage').src = image
 
-            closeModal.addEventListener("click", () => {
-                modal.classList.add("hidden");
-                modal.classList.remove("flex");
-            });
+        document.getElementById('newsModal').classList.remove('hidden')
+        document.body.classList.add('overflow-hidden') // biar body-nya gak scroll di belakang
+    })
+})
 
-            modal.addEventListener("click", (e) => {
-                if (e.target === modal) {
-                    modal.classList.add("hidden");
-                    modal.classList.remove("flex");
-                }
-            });
-        });
-    </script>
+document.getElementById('closeModal').addEventListener('click', () => {
+    document.getElementById('newsModal').classList.add('hidden')
+    document.body.classList.remove('overflow-hidden')
+})
+</script>
+
 
 </x-layout>
