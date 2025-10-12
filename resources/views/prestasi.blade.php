@@ -219,19 +219,19 @@
                     <div class="flex justify-center mt-6 space-x-2">
                         <button
                             class="px-3 py-1 bg-gray-200 rounded-full hover:bg-gray-300 transition disabled:opacity-50"
-                            @click="if (page > 1) { page--; window.scrollTo({ top: 0, behavior: 'smooth' }); }"
+                            @click="if (page > 1) { page--; }"
                             :disabled="page === 1">←</button>
 
                         <template x-for="i in Math.ceil({{ count($juaras) }} / perPage)" :key="i">
                             <button class="px-3 py-1 rounded-full transition"
                                 :class="page === i ? 'bg-customBlue text-white' : 'bg-gray-200 hover:bg-gray-300'"
-                                @click="page = i; window.scrollTo({ top: 0, behavior: 'smooth' });"
+                                @click="page = i;"
                                 x-text="i"></button>
                         </template>
 
                         <button
                             class="px-3 py-1 bg-gray-200 rounded-full hover:bg-gray-300 transition disabled:opacity-50"
-                            @click="if (page < Math.ceil({{ count($juaras) }} / perPage)) { page++; window.scrollTo({ top: 0, behavior: 'smooth' }); }"
+                            @click="if (page < Math.ceil({{ count($juaras) }} / perPage)) { page++; }"
                             :disabled="page === Math.ceil({{ count($juaras) }} / perPage)">→</button>
                     </div>
                 </div>
