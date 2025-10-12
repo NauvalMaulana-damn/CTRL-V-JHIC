@@ -39,7 +39,7 @@
         }
     </style>
     <div class="bg-gray-50">
-        <section class="bg-gradient-to-r from-skariga-blue to-blue-800 text-white py-12">
+        <section class="bg-gradient-to-r from-skariga-blue to-blue-800 text-white py-12  mt-[-8rem]">
             <div class="container mx-auto px-4">
                 <div class="max-w-3xl">
                     <h1 class="text-4xl font-bold mb-4">Berita Terkini Skariga</h1>
@@ -61,6 +61,18 @@
 
         <!-- Main Content -->
         <main class="container mx-auto px-4 py-8">
+            <!-- Modal (Hidden Default) -->
+            <div id="modalBerita"
+                class="fixed inset-0 bg-black/50 hidden items-center justify-center z-50 transition-opacity duration-300">
+                <div class="bg-white rounded-xl shadow-lg max-w-2xl w-full p-6 relative">
+                    <button id="closeModal"
+                        class="absolute top-3 right-3 text-gray-400 hover:text-gray-700 text-2xl">&times;</button>
+
+                    <h2 id="modalTitle" class="text-2xl font-bold text-skariga-blue mb-4"></h2>
+                    <p id="modalContent" class="text-gray-700 leading-relaxed"></p>
+                </div>
+            </div>
+
             <!-- Filter Section -->
             <div class="flex flex-wrap justify-between items-center mb-8 bg-white p-4 rounded-lg shadow">
                 <div class="mb-4 md:mb-0">
@@ -99,8 +111,13 @@
                         <p class="text-gray-600 mb-4">Tim siswa SMK PGRI 3 Malang berhasil meraih juara 1 dalam
                             kompetisi web design tingkat nasional yang diselenggarakan oleh Kementerian Pendidikan.</p>
                         <div class="flex justify-between items-center">
-                            <a href="#" class="text-skariga-orange font-semibold hover:underline">Baca
-                                Selengkapnya</a>
+                            <a href="javascript:void(0)"
+                                class="text-skariga-orange font-semibold hover:underline openModal"
+                                data-title="Siswa Skariga Juara 1 Lomba Web Design Tingkat Nasional"
+                                data-content="Tim siswa SMK PGRI 3 Malang berhasil meraih juara 1 dalam kompetisi web design tingkat nasional yang diselenggarakan oleh Kementerian Pendidikan. Kompetisi ini diikuti oleh lebih dari 100 sekolah dari seluruh Indonesia.">
+                                Baca Selengkapnya
+                            </a>
+
                             <span class="text-gray-500 text-sm"><i class="far fa-eye mr-1"></i>245</span>
                         </div>
                     </div>
@@ -244,4 +261,34 @@
 
 
     </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const modal = document.getElementById("modalBerita");
+            const closeModal = document.getElementById("closeModal");
+            const modalTitle = document.getElementById("modalTitle");
+            const modalContent = document.getElementById("modalContent");
+
+            document.querySelectorAll(".openModal").forEach(btn => {
+                btn.addEventListener("click", () => {
+                    modalTitle.textContent = btn.dataset.title;
+                    modalContent.textContent = btn.dataset.content;
+                    modal.classList.remove("hidden");
+                    modal.classList.add("flex");
+                });
+            });
+
+            closeModal.addEventListener("click", () => {
+                modal.classList.add("hidden");
+                modal.classList.remove("flex");
+            });
+
+            modal.addEventListener("click", (e) => {
+                if (e.target === modal) {
+                    modal.classList.add("hidden");
+                    modal.classList.remove("flex");
+                }
+            });
+        });
+    </script>
+
 </x-layout>
