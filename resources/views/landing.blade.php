@@ -17,25 +17,32 @@
             <section class="relative w-full overflow-hidden rounded-xl mb-8">
                 <div class="swiper mySwiper rounded-xl overflow-hidden">
                     <div class="swiper-wrapper" id="x-headnews">
-                        <x-headnews image1="default.svg" image2="default.svg" image3="default.svg" title="TITLE">
-                            <x-slot>
-                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eveniet vero dolores aliquam
-                                ab fugiat. Et, nihil voluptatum minus, at minima unde quibusdam temporibus animi dolore
-                                inventore soluta quisquam incidunt obcaecati!
-                            </x-slot>
-                        </x-headnews>
+                        <!-- Hanya gambar -->
+                        <x-headnews image1="default.svg" image2="default.svg" image3="default.svg" />
+                    </div>
+
+                    <!-- Overlay + teks tetap di sini -->
+                    <div
+                        class="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-black/70 to-transparent pointer-events-none">
+                    </div>
+                    <div id="x-headnews-content" class="absolute bottom-6 left-5 md:left-8 text-white max-w-4xl z-10 pointer-events-none">
+                        <h1 class="title text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-2">
+                            TITLE
+                        </h1>
+                        <p class="desc text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-6">
+                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eveniet vero dolores aliquam
+                            ab fugiat. Et, nihil voluptatum minus, at minima unde quibusdam temporibus animi dolore
+                            inventore soluta quisquam incidunt obcaecati!
+                        </p>
                     </div>
 
                     <!-- Pagination & Navigation -->
-                    <div class="swiper-button-prev" style="color: white;">
-                        <!-- <i class="fas fa-chevron-left"></i> -->
-                    </div>
-                    <div class="swiper-button-next" style="color: white;">
-                        <!-- <i class="fas fa-chevron-right"></i> -->
-                    </div>
+                    <div class="swiper-button-prev" style="color: white;"></div>
+                    <div class="swiper-button-next" style="color: white;"></div>
                     <div class="swiper-pagination"></div>
                 </div>
             </section>
+
 
             <!-- Marquee -->
             <x-marquee></x-marquee>
@@ -61,9 +68,9 @@
                             </p>
                             <a href="/jurusan">
                                 <button
-                                class="bg-white text-[#242424] text-sm md:text-base font-medium py-1.5 px-5 rounded-full hover:bg-gray-100 transition">
-                                Selengkapnya
-                            </button>
+                                    class="bg-white text-[#242424] text-sm md:text-base font-medium py-1.5 px-5 rounded-full hover:bg-gray-100 transition">
+                                    Selengkapnya
+                                </button>
                             </a>
                         </div>
                         <img class="absolute -bottom-2 -right-6 w-48 opacity-30 -rotate-12"
@@ -86,9 +93,9 @@
                             </p>
                             <a href="/jurusan">
                                 <button
-                                class="bg-white text-[#242424] text-sm md:text-base font-medium py-1.5 px-5 rounded-full hover:bg-gray-100 transition">
-                                Selengkapnya
-                            </button>
+                                    class="bg-white text-[#242424] text-sm md:text-base font-medium py-1.5 px-5 rounded-full hover:bg-gray-100 transition">
+                                    Selengkapnya
+                                </button>
                             </a>
                         </div>
                         <img class="absolute -bottom-2 -right-6 w-48 opacity-30 -rotate-12"
@@ -111,9 +118,9 @@
                             </p>
                             <a href="/jurusan">
                                 <button
-                                class="bg-white text-[#242424] text-sm md:text-base font-medium py-1.5 px-5 rounded-full hover:bg-gray-100 transition">
-                                Selengkapnya
-                            </button>
+                                    class="bg-white text-[#242424] text-sm md:text-base font-medium py-1.5 px-5 rounded-full hover:bg-gray-100 transition">
+                                    Selengkapnya
+                                </button>
                             </a>
                         </div>
                         <img class="absolute -bottom-2 -right-6 w-48 opacity-30 -rotate-12"
@@ -136,9 +143,9 @@
                             </p>
                             <a href="/jurusan">
                                 <button
-                                class="bg-white text-[#242424] text-sm md:text-base font-medium py-1.5 px-5 rounded-full hover:bg-gray-100 transition">
-                                Selengkapnya
-                            </button>
+                                    class="bg-white text-[#242424] text-sm md:text-base font-medium py-1.5 px-5 rounded-full hover:bg-gray-100 transition">
+                                    Selengkapnya
+                                </button>
                             </a>
                         </div>
                         <img class="absolute -bottom-2 -right-6 w-48 opacity-30 -rotate-12"

@@ -28,11 +28,11 @@ const initMobileMenu = (): void => {
 };
 
 // ✅ Swiper init
-const initSwiper = (): void => {
+const initSwiper = () => {
     const swiperEl = document.querySelector(".mySwiper");
     if (!(swiperEl instanceof HTMLElement)) return;
 
-    const swiperOptions: SwiperOptions = {
+    const swiperOptions = {
         modules: [Navigation, Pagination, Autoplay],
         loop: true,
         autoplay: {
@@ -47,7 +47,10 @@ const initSwiper = (): void => {
             nextEl: ".swiper-button-next",
             prevEl: ".swiper-button-prev",
         },
-    } as any;
+        effect: "fade",
+        speed: 1000,
+    } as SwiperOptions;
+
     new Swiper(swiperEl, swiperOptions);
 };
 
@@ -58,32 +61,51 @@ function showNews(
     image2: string,
     image3: string
 ): void {
-    console.log("showNews dipanggil:", title, desc, image1, image2, image3);
+    const imgContainer = document.getElementById("x-headnews");
+    const txtContainer = document.getElementById("x-headnews-content");
+    if (!imgContainer || !txtContainer) return;
 
-    const container = document.getElementById("x-headnews");
-    if (!container) {
-        console.error("Container tidak ditemukan!");
-        return;
-    }
+    // Tambah class transition supaya animasi aktif
+    imgContainer.classList.add("transition-opacity", "duration-500");
+    txtContainer.classList.add("transition-opacity", "duration-500");
 
-    const img1 = container.querySelector<HTMLImageElement>(".headnews-img1");
-    const img2 = container.querySelector<HTMLImageElement>(".headnews-img2");
-    const img3 = container.querySelector<HTMLImageElement>(".headnews-img3");
+    // Fade out
+    imgContainer.style.opacity = "0";
+    txtContainer.style.opacity = "0";
 
-    if (img1) img1.src = `/assets/${image1}`;
-    if (img2) img2.src = `/assets/${image2}`;
-    if (img3) img3.src = `/assets/${image3}`;
+    setTimeout(() => {
+        // Ganti gambar & teks setelah fade out selesai
+        const img1 =
+            imgContainer.querySelector<HTMLImageElement>(".headnews-img1");
+        const img2 =
+            imgContainer.querySelector<HTMLImageElement>(".headnews-img2");
+        const img3 =
+            imgContainer.querySelector<HTMLImageElement>(".headnews-img3");
 
-    container.querySelectorAll("h1").forEach((el) => (el.textContent = title.toUpperCase()));
-    container.querySelectorAll("p").forEach((el) => (el.textContent = desc.toUpperCase()));
+        if (img1) img1.src = `/assets/${image1}`;
+        if (img2) img2.src = `/assets/${image2}`;
+        if (img3) img3.src = `/assets/${image3}`;
+
+        txtContainer
+            .querySelectorAll(".title")
+            .forEach((el) => (el.textContent = title.toUpperCase()));
+        txtContainer
+            .querySelectorAll(".desc")
+            .forEach((el) => (el.textContent = desc));
+
+        // Fade in lagi
+        imgContainer.style.opacity = "1";
+        txtContainer.style.opacity = "1";
+    }, 500); // 500ms = durasi transisi
 }
 (window as any).showNews = showNews;
 
 // INIT based-on DOMContendLoaded Event Listener
 document.addEventListener("DOMContentLoaded", (): void => {
-
     // Headnews Content INIT
-    document.querySelector<HTMLDivElement>('#x-sidenews .sidenews-item').click();
+    document
+        .querySelector<HTMLDivElement>("#x-sidenews .sidenews-item")
+        .click();
 
     console.log("SMK PGRI 3 Malang - Initializing...");
 
@@ -105,7 +127,7 @@ document.addEventListener("DOMContentLoaded", (): void => {
     initChartGabungan();
 });
 
-// Optional: scroll debug
-document.addEventListener("scroll", (): void => {
+const scrollDebug: boolean = false;
+if (scrollDebug) document.addEventListener("scroll", (): void => {
     console.log("ScrollY:", window.scrollY);
 });
