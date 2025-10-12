@@ -102,11 +102,6 @@ function showNews(
 
 // INIT based-on DOMContendLoaded Event Listener
 document.addEventListener("DOMContentLoaded", (): void => {
-    // Headnews Content INIT
-    document
-        .querySelector<HTMLDivElement>("#x-sidenews .sidenews-item")
-        .click();
-
     console.log("SMK PGRI 3 Malang - Initializing...");
 
     // Alpine
@@ -127,7 +122,7 @@ document.addEventListener("DOMContentLoaded", (): void => {
     initChartGabungan();
 });
 
-const scrollDebug: boolean = false;
+const scrollDebug: boolean = true;
 if (scrollDebug) document.addEventListener("scroll", (): void => {
     console.log("ScrollY:", window.scrollY);
 });

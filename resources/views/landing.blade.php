@@ -25,7 +25,8 @@
                     <div
                         class="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-black/70 to-transparent pointer-events-none">
                     </div>
-                    <div id="x-headnews-content" class="absolute bottom-6 left-5 md:left-8 text-white max-w-4xl z-10 pointer-events-none">
+                    <div id="x-headnews-content"
+                        class="absolute bottom-6 left-5 md:left-8 text-white max-w-4xl z-10 pointer-events-none">
                         <h1 class="title text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-2">
                             TITLE
                         </h1>
@@ -247,4 +248,9 @@
                 </div>
         </aside>
     </div>
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        document.querySelector("#x-sidenews .sidenews-item").click();
+    });
+    </script>
 </x-layout>
