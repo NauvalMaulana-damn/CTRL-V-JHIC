@@ -10,6 +10,7 @@ import Swiper, { SwiperOptions } from "swiper";
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
 import { initChartGabungan } from "./chart";
 import { initScrollButtons } from "./scroll";
+import MicroModal from "micromodal";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -100,6 +101,39 @@ function showNews(
 }
 (window as any).showNews = showNews;
 
+// Inisialisasi Micromodal
+
+// Inisialisasi Micromodal
+MicroModal.init({
+    disableScroll: true,
+    awaitOpenAnimation: true,
+    awaitCloseAnimation: true,
+});
+
+// Event listener global untuk semua tombol modal
+document.addEventListener("click", (e) => {
+    const trigger = (e.target as HTMLElement).closest(
+        "[data-micromodal-trigger]"
+    ) as HTMLElement | null;
+    if (!trigger) return;
+
+    const title = trigger.dataset.title || "Tanpa Judul";
+    const content = trigger.dataset.content || "Tidak ada konten.";
+    const image = trigger.dataset.image || "/default.jpg";
+
+    const modalTitle = document.getElementById("modalTitle");
+    const modalContent = document.getElementById("modalContent");
+    const modalImage = document.getElementById(
+        "modalImage"
+    ) as HTMLImageElement;
+
+    if (modalTitle) modalTitle.textContent = title;
+    if (modalContent) modalContent.innerHTML = content;
+    if (modalImage) modalImage.src = image;
+
+    MicroModal.show("newsModal");
+});
+
 // INIT based-on DOMContendLoaded Event Listener
 document.addEventListener("DOMContentLoaded", (): void => {
     console.log("SMK PGRI 3 Malang - Initializing...");
@@ -123,6 +157,7 @@ document.addEventListener("DOMContentLoaded", (): void => {
 });
 
 const scrollDebug: boolean = true;
-if (scrollDebug) document.addEventListener("scroll", (): void => {
-    console.log("ScrollY:", window.scrollY);
-});
+if (scrollDebug)
+    document.addEventListener("scroll", (): void => {
+        console.log("ScrollY:", window.scrollY);
+    });

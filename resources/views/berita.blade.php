@@ -1,45 +1,76 @@
 <x-layout title="Berita Skariga">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+    body {
+        font-family: 'Poppins', sans-serif;
+    }
 
-        body {
-            font-family: 'Poppins', sans-serif;
-        }
+    .bg-skariga-blue {
+        background-color: #1e3a8a;
+    }
 
-        .bg-skariga-blue {
-            background-color: #1e3a8a;
-        }
+    .bg-skariga-orange {
+        background-color: #f97316;
+    }
 
-        .bg-skariga-orange {
-            background-color: #f97316;
-        }
+    .text-skariga-blue {
+        color: #1e3a8a;
+    }
 
-        .text-skariga-blue {
-            color: #1e3a8a;
-        }
+    .text-skariga-orange {
+        color: #f97316;
+    }
 
-        .text-skariga-orange {
-            color: #f97316;
-        }
+    .border-skariga-blue {
+        border-color: #1e3a8a;
+    }
 
-        .border-skariga-blue {
-            border-color: #1e3a8a;
-        }
+    .border-skariga-orange {
+        border-color: #f97316;
+    }
 
-        .border-skariga-orange {
-            border-color: #f97316;
-        }
+    .hover-bg-skariga-orange:hover {
+        background-color: #f97316;
+    }
 
-        .hover-bg-skariga-orange:hover {
-            background-color: #f97316;
-        }
+    .hover-bg-skariga-blue:hover {
+        background-color: #1e3a8a;
+    }
 
-        .hover-bg-skariga-blue:hover {
-            background-color: #1e3a8a;
-        }
+    /* Micromodal Styles */
+    .modal {
+        position: fixed;
+        inset: 0;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 50;
+    }
+
+    .modal.is-open {
+        display: flex;
+    }
+
+    .modal__container {
+        background: white;
+        border-radius: 1rem;
+        max-width: 42rem;
+        width: 100%;
+        max-height: 90vh;
+        overflow-y: auto;
+        transform: scale(0.95);
+        opacity: 0;
+        transition: all 0.2s ease;
+    }
+
+    .modal.is-open .modal__container {
+        transform: scale(1);
+        opacity: 1;
+    }
     </style>
+
     <div class="bg-gray-50">
-        <section class="bg-gradient-to-r from-skariga-blue to-blue-800 text-white py-12  mt-[-8rem]">
+        <section class="bg-gradient-to-r from-skariga-blue to-blue-800 text-white py-12 mt-[-8rem]">
             <div class="container mx-auto px-4">
                 <div class="max-w-3xl">
                     <h1 class="text-4xl font-bold mb-4">Berita Terkini Skariga</h1>
@@ -59,18 +90,19 @@
             </div>
         </section>
 
-        <!-- Main Content -->
-        <main class="container mx-auto px-4 py-8">
-            <!-- Modal -->
-            <div id="newsModal" class="hidden fixed inset-0 bg-black/50 flex items-center justify-center z-50 px-4">
-                <div class="bg-white rounded-xl w-full max-w-2xl max-h-[90vh] overflow-y-auto shadow-2xl relative">
+        <!-- Modal -->
+        <div class="modal micromodal-slide" id="newsModal" aria-hidden="true">
+            <div class="modal__overlay" tabindex="-1" data-micromodal-close>
+                <div class="modal__container bg-white rounded-xl w-full max-w-2xl shadow-2xl relative" role="dialog"
+                    aria-modal="true" aria-labelledby="modalTitle">
                     <!-- Tombol Close -->
-                    <button id="closeModal" class="absolute top-3 right-3 text-gray-500 hover:text-gray-700">
+                    <button class="absolute top-3 right-3 text-white hover:text-gray-400 transition-colors delay-[25ms  ]" aria-label="Close modal"
+                        data-micromodal-close>
                         <i class="fas fa-times text-xl"></i>
                     </button>
 
                     <!-- Gambar -->
-                    <img id="modalImage" src="" alt="" class="w-full h-64 object-cover rounded-t-xl">
+                    <img id="modalImage" src="" alt="" class="w-full h-80 object-cover rounded-t-xl">
 
                     <!-- Konten -->
                     <div class="p-6">
@@ -79,8 +111,10 @@
                     </div>
                 </div>
             </div>
+        </div>
 
-
+        <!-- Main Content -->
+        <main class="container mx-auto px-4 py-8">
             <!-- Filter Section -->
             <div class="flex flex-wrap justify-between items-center mb-8 bg-white p-4 rounded-lg shadow">
                 <div class="mb-4 md:mb-0">
@@ -103,158 +137,15 @@
 
             <!-- News Grid -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-                <!-- Berita 1 -->
-                <div
-                    class="bg-white rounded-xl shadow-md overflow-hidden transition-transform duration-300 hover:shadow-lg hover:-translate-y-1">
-                    <div class="h-48 relative">
-                        <img src="{{ asset('assets/uiux.jpg') }}" alt="Berita" class="w-full h-full object-cover">
-                        <span
-                            class="absolute top-4 left-4 bg-skariga-orange text-white px-3 py-1 rounded-full text-xs font-semibold">Prestasi</span>
-                        <div class="absolute bottom-4 left-4 text-white">
-                            <span class="text-sm"><i class="far fa-calendar mr-1"></i>15 Oktober 2023</span>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-skariga-blue mb-3">Siswa Skariga Juara 1 Lomba Web Design
-                            Tingkat Nasional</h3>
-                        <p class="text-gray-600 mb-4">Tim siswa SMK PGRI 3 Malang berhasil meraih juara 1 dalam
-                            kompetisi web design tingkat nasional yang diselenggarakan oleh Kementerian Pendidikan.</p>
-                        <div class="flex justify-between items-center">
-                            <a href="javascript:void(0)"
-                                class="text-skariga-orange font-semibold hover:underline openModal"
-                                data-title="Siswa Skariga Juara 1 Lomba Web Design Tingkat Nasional"
-                                data-content="Tim siswa SMK PGRI 3 Malang berhasil meraih juara 1 dalam kompetisi web design tingkat nasional yang diselenggarakan oleh Kementerian Pendidikan.
-                                Kompetisi ini diikuti oleh lebih dari 100 sekolah dari seluruh Indonesia. Tim siswa SMK PGRI 3 Malang berhasil meraih juara 1 dalam kompetisi web design tingkat nasional yang diselenggarakan oleh Kementerian Pendidikan.
-                                Kompetisi ini diikuti oleh lebih dari 100 sekolah dari seluruh Indonesia. Tim siswa SMK PGRI 3 Malang berhasil meraih juara 1 dalam kompetisi web design tingkat nasional yang diselenggarakan oleh Kementerian Pendidikan.
-                                Kompetisi ini diikuti oleh lebih dari 100 sekolah dari seluruh Indonesia. Tim siswa SMK PGRI 3 Malang berhasil meraih juara 1 dalam kompetisi web design tingkat nasional yang diselenggarakan oleh Kementerian Pendidikan.
-                                Kompetisi ini diikuti oleh lebih dari 100 sekolah dari seluruh Indonesia. Tim siswa SMK PGRI 3 Malang berhasil meraih juara 1 dalam kompetisi web design tingkat nasional yang diselenggarakan oleh Kementerian Pendidikan.
-                                Kompetisi ini diikuti oleh lebih dari 100 sekolah dari seluruh Indonesia. Tim siswa SMK PGRI 3 Malang berhasil meraih juara 1 dalam kompetisi web design tingkat nasional yang diselenggarakan oleh Kementerian Pendidikan.
-                                Kompetisi ini diikuti oleh lebih dari 100 sekolah dari seluruh Indonesia."
-                                data-image="{{ asset('assets/uiux.jpg') }}">
-                                Baca Selengkapnya
-                            </a>
-
-                            <span class="text-gray-500 text-sm"><i class="far fa-eye mr-1"></i>245</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Berita 2 -->
-                <div
-                    class="bg-white rounded-xl shadow-md overflow-hidden transition-transform duration-300 hover:shadow-lg hover:-translate-y-1">
-                    <div class="h-48 bg-gradient-to-r from-skariga-orange to-orange-500 relative">
-                        <span
-                            class="absolute top-4 left-4 bg-skariga-blue text-white px-3 py-1 rounded-full text-xs font-semibold">Kegiatan</span>
-                        <div class="absolute bottom-4 left-4 text-white">
-                            <span class="text-sm"><i class="far fa-calendar mr-1"></i>12 Oktober 2023</span>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-skariga-blue mb-3">Workshop Kewirausahaan untuk Siswa Kelas
-                            XII</h3>
-                        <p class="text-gray-600 mb-4">Sebagai persiapan memasuki dunia kerja, sekolah mengadakan
-                            workshop kewirausahaan dengan menghadirkan praktisi industri ternama.</p>
-                        <div class="flex justify-between items-center">
-                            <a href="#" class="text-skariga-orange font-semibold hover:underline">Baca
-                                Selengkapnya</a>
-                            <span class="text-gray-500 text-sm"><i class="far fa-eye mr-1"></i>189</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Berita 3 -->
-                <div
-                    class="bg-white rounded-xl shadow-md overflow-hidden transition-transform duration-300 hover:shadow-lg hover:-translate-y-1">
-                    <div class="h-48 bg-gradient-to-r from-blue-600 to-skariga-blue relative">
-                        <span
-                            class="absolute top-4 left-4 bg-skariga-orange text-white px-3 py-1 rounded-full text-xs font-semibold">Pengumuman</span>
-                        <div class="absolute bottom-4 left-4 text-white">
-                            <span class="text-sm"><i class="far fa-calendar mr-1"></i>10 Oktober 2023</span>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-skariga-blue mb-3">Penerimaan Peserta Didik Baru Tahun Ajaran
-                            2024/2025</h3>
-                        <p class="text-gray-600 mb-4">Pendaftaran calon peserta didik baru untuk tahun ajaran 2024/2025
-                            akan dibuka mulai 1 November 2023. Simak informasi lengkapnya di sini.</p>
-                        <div class="flex justify-between items-center">
-                            <a href="#" class="text-skariga-orange font-semibold hover:underline">Baca
-                                Selengkapnya</a>
-                            <span class="text-gray-500 text-sm"><i class="far fa-eye mr-1"></i>356</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Berita 4 -->
-                <div
-                    class="bg-white rounded-xl shadow-md overflow-hidden transition-transform duration-300 hover:shadow-lg hover:-translate-y-1">
-                    <div class="h-48 bg-gradient-to-r from-orange-500 to-skariga-orange relative">
-                        <span
-                            class="absolute top-4 left-4 bg-skariga-blue text-white px-3 py-1 rounded-full text-xs font-semibold">Acara</span>
-                        <div class="absolute bottom-4 left-4 text-white">
-                            <span class="text-sm"><i class="far fa-calendar mr-1"></i>8 Oktober 2023</span>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-skariga-blue mb-3">Peringatan Hari Sumpah Pemuda dengan
-                            Berbagai Lomba</h3>
-                        <p class="text-gray-600 mb-4">Dalam rangka memperingati Hari Sumpah Pemuda, OSIS SMK PGRI 3
-                            Malang mengadakan berbagai lomba untuk meningkatkan semangat kebangsaan.</p>
-                        <div class="flex justify-between items-center">
-                            <a href="#" class="text-skariga-orange font-semibold hover:underline">Baca
-                                Selengkapnya</a>
-                            <span class="text-gray-500 text-sm"><i class="far fa-eye mr-1"></i>278</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Berita 5 -->
-                <div
-                    class="bg-white rounded-xl shadow-md overflow-hidden transition-transform duration-300 hover:shadow-lg hover:-translate-y-1">
-                    <div class="h-48 bg-gradient-to-r from-skariga-blue to-blue-800 relative">
-                        <span
-                            class="absolute top-4 left-4 bg-skariga-orange text-white px-3 py-1 rounded-full text-xs font-semibold">Prestasi</span>
-                        <div class="absolute bottom-4 left-4 text-white">
-                            <span class="text-sm"><i class="far fa-calendar mr-1"></i>5 Oktober 2023</span>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-skariga-blue mb-3">Tim Robotik Skariga Raih Medali Perunggu
-                            di
-                            Kompetisi Internasional</h3>
-                        <p class="text-gray-600 mb-4">Tim robotik SMK PGRI 3 Malang berhasil mengharumkan nama
-                            Indonesia
-                            dengan meraih medali perunggu dalam kompetisi robotik internasional di Singapura.</p>
-                        <div class="flex justify-between items-center">
-                            <a href="#" class="text-skariga-orange font-semibold hover:underline">Baca
-                                Selengkapnya</a>
-                            <span class="text-gray-500 text-sm"><i class="far fa-eye mr-1"></i>421</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Berita 6 -->
-                <div
-                    class="bg-white rounded-xl shadow-md overflow-hidden transition-transform duration-300 hover:shadow-lg hover:-translate-y-1">
-                    <div class="h-48 bg-gradient-to-r from-skariga-orange to-orange-600 relative">
-                        <span
-                            class="absolute top-4 left-4 bg-skariga-blue text-white px-3 py-1 rounded-full text-xs font-semibold">Kegiatan</span>
-                        <div class="absolute bottom-4 left-4 text-white">
-                            <span class="text-sm"><i class="far fa-calendar mr-1"></i>1 Oktober 2023</span>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-skariga-blue mb-3">Kunjungan Industri ke Perusahaan Teknologi
-                            Terkemuka</h3>
-                        <p class="text-gray-600 mb-4">Siswa jurusan Teknik Komputer dan Jaringan melakukan kunjungan
-                            industri ke perusahaan teknologi terkemuka untuk menambah wawasan tentang dunia kerja.</p>
-                        <div class="flex justify-between items-center">
-                            <a href="#" class="text-skariga-orange font-semibold hover:underline">Baca
-                                Selengkapnya</a>
-                            <span class="text-gray-500 text-sm"><i class="far fa-eye mr-1"></i>198</span>
-                        </div>
-                    </div>
-                </div>
+                <x-cardberita views="545" type="Prestasi" date="15 Oktober 2025" image="uiux.jpg"
+                    title="Siswa SKARIGA Juara 1 Lomba Web Design Tingkat Nasional" desc="Tim siswa SMK PGRI 3 Malang berhasil meraih juara 1 dalam
+                kompetisi web design tingkat nasional yang diselenggarakan oleh Kementerian Pendidikan.">
+                    Tim siswa SMK PGRI 3 Malang berhasil meraih juara 1 dalam kompetisi web design tingkat nasional yang
+                    diselenggarakan oleh Kementerian Pendidikan.
+                    Siswa tersebut bernama Kayana Indrasta, ia dan timnya berhasil berjuang dan memperebutkan juara
+                    pertama, dengan memikul dan menggeret hasil jerih payah dan perjuangan tanpa hentinya, Kayana mampu
+                    mendapatkan gelar Juara 1, dengan pengorbanan waktu, tenaga, dan pikiran tentunya.
+                </x-cardberita>
             </div>
 
             <!-- Pagination -->
@@ -276,30 +167,18 @@
                 </div>
             </div>
         </main>
-
-
     </div>
+
     <script>
-document.querySelectorAll('.openModal').forEach(btn => {
-    btn.addEventListener('click', function() {
-        const title = this.getAttribute('data-title')
-        const content = this.getAttribute('data-content')
-        const image = this.getAttribute('data-image')
+    // Fallback kalau klik luar modal belum menutup
+    document.addEventListener('click', (e) => {
+        const modal = document.getElementById('newsModal');
+        if (!modal) return;
 
-        document.getElementById('modalTitle').textContent = title
-        document.getElementById('modalContent').textContent = content
-        document.getElementById('modalImage').src = image
-
-        document.getElementById('newsModal').classList.remove('hidden')
-        document.body.classList.add('overflow-hidden') // biar body-nya gak scroll di belakang
-    })
-})
-
-document.getElementById('closeModal').addEventListener('click', () => {
-    document.getElementById('newsModal').classList.add('hidden')
-    document.body.classList.remove('overflow-hidden')
-})
-</script>
-
-
+        const container = modal.querySelector('.modal__container');
+        if (modal.classList.contains('is-open') && container && !container.contains(e.target)) {
+            MicroModal.close('newsModal');
+        }
+    });
+    </script>
 </x-layout>
