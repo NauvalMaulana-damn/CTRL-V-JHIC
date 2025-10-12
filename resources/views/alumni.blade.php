@@ -94,7 +94,7 @@
                     position: "Teknisi Mesin",
                     company: "Hitachi Construction Machinery Jepang",
                     description: "Berhasil bekerja di perusahaan konstruksi terkemuka di Jepang dengan kontrak 3 tahun.",
-                    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&h=200&q=80",
+                    image: "assets/image 17.png",
                     bgColor: "from-[#FF885B] to-[#FF6B6B]",
                     achievements: ["Juara 1 Lomba Kompetensi Siswa 2017", "Sertifikasi Teknisi Internasional"]
                 },
@@ -105,7 +105,7 @@
                     position: "Teknisi Otomotif",
                     company: "Daihatsu Motor CO.LTD Jepang",
                     description: "Berkarier di perusahaan otomotif ternama Jepang dengan spesialisasi mesin diesel.",
-                    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&h=200&q=80",
+                    image: "assets/image 46.png",
                     bgColor: "from-[#FF4D4D] to-[#FF6B9D]",
                     achievements: ["Magang di Daihatsu 2017", "Nilai UN Tertinggi Jurusan TKR"]
                 },
@@ -116,7 +116,7 @@
                     position: "Quality Control Engineer",
                     company: "PT. JIAEC Indonesia",
                     description: "Memastikan kualitas produk elektronik dengan standar internasional.",
-                    image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&h=200&q=80",
+                    image: "assets/image 43.png",
                     bgColor: "from-[#4DA6FF] to-[#6B8CFF]",
                     achievements: ["Inovator Terbaik 2019", "Sertifikasi ISO 9001"]
                 },
@@ -138,7 +138,7 @@
                     position: "Production Supervisor",
                     company: "Eagle Industry Indonesia",
                     description: "Memimpin tim produksi dengan efisiensi tinggi dan inovasi berkelanjutan.",
-                    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&h=200&q=80",
+                    image: "assets/image 44.png",
                     bgColor: "from-[#2ECC71] to-[#27AE60]",
                     achievements: ["Employee of the Year 2020", "Peningkatan Produktivitas 35%"]
                 },
@@ -160,7 +160,7 @@
                     position: "System Administrator",
                     company: "PT. Inovasi Tjaraka Buana (MYNET)",
                     description: "Mengelola sistem server dan keamanan jaringan untuk klien korporat.",
-                    image: "https://images.unsplash.com/photo-1519345182560-3f2917c472ef?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&h=200&q=80",
+                    image: "assets/image 45.png",
                     bgColor: "from-[#FF5C8D] to-[#FF6B6B]",
                     achievements: ["Microsoft Certified", "Pengembang Cybersecurity System"]
                 },
@@ -171,7 +171,7 @@
                     position: "Automotive Technician",
                     company: "PT. Bagong Dekaka Makmur",
                     description: "Fresh graduate yang langsung terserap industri dengan skill mumpuni.",
-                    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&h=200&q=80",
+                    image: "assets/Ellipse 24.png",
                     bgColor: "from-[#3498DB] to-[#2980B9]",
                     achievements: ["Lulusan Terbaik 2024", "Nilai Praktik Tertinggi"]
                 }
