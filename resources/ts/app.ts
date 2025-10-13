@@ -12,7 +12,6 @@ import { initChartGabungan } from "./chart";
 import { initScrollButtons } from "./scroll";
 import MicroModal from "micromodal";
 import "swiper/css";
-import "swiper/css";
 // import "swiper/css/navigation";
 import "swiper/css/pagination";
 
