@@ -8,7 +8,9 @@ Route::get('/', function () {
     return view('landing');
 });
 
-Route::get('/ekstrakurikuler', [EkskulController::class, 'index']);
+Route::get('/berita', function () {
+    return view('berita');
+});
 
 Route::get('/profil', function () {
     return view('profil');
@@ -17,9 +19,12 @@ Route::get('/profil', function () {
 Route::get('/prestasi', function () {
     return view('prestasi');
 });
+
 Route::get('/jurusan', function () {
     return view('jurusan');
 });
+
+Route::get('/ekstrakurikuler', [EkskulController::class, 'index']);
 
 Route::get('/alumni', function () {
     return view('alumni');
@@ -27,9 +32,6 @@ Route::get('/alumni', function () {
 
 Route::get('/pendaftaran', function () {
     return view('pendaftaran');
-});
-Route::get('/berita', function () {
-    return view('berita');
 });
 
 // Chatbot Routes

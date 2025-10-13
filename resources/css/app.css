@@ -128,7 +128,7 @@ body {
     animation-delay: 0.7s;
 }
 
-/* Modal background */
+/* Micromodal Styles */
 .modal {
     position: fixed;
     inset: 0;
@@ -143,7 +143,6 @@ body {
     display: flex;
 }
 
-/* Konten modal */
 .modal__container {
     background: white;
     border-radius: 1rem;
@@ -156,8 +155,6 @@ body {
     transition: all 0.2s ease;
 }
 
-/* Animasi buka/tutup */
-[data-micromodal-open].is-open .modal__container,
 .modal.is-open .modal__container {
     transform: scale(1);
     opacity: 1;
