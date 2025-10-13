@@ -1,4 +1,4 @@
-<x-layout>
+<x-layout title="">
     <div class="h-full h-max-content container mx-auto px-4 py-6">
         <section class="w-full relative h-[600px] mt-2 rounded-xl overflow-hidden">
             <div class="absolute inset-0 max-w-full mx-auto h-full hover-scale rounded-2xl overflow-hidden">
@@ -56,27 +56,27 @@
             transition: all 0.3s ease;
             background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
         }
-        
+
         .alumni-card:hover {
             transform: translateY(-8px);
             box-shadow: 0 20px 40px rgba(0,0,0,0.1);
         }
-        
+
         .alumni-image {
             transition: all 0.3s ease;
             border: 4px solid white;
             box-shadow: 0 10px 25px rgba(0,0,0,0.1);
         }
-        
+
         .alumni-card:hover .alumni-image {
             transform: scale(1.05);
             border-color: #FF885B;
         }
-        
+
         .pagination-btn {
             transition: all 0.3s ease;
         }
-        
+
         .pagination-btn.active {
             background-color: #3b82f6; /* bg-customBlue */
             color: white;
@@ -101,7 +101,7 @@
                 {
                     id: 2,
                     name: "Aditya Tantra",
-                    graduation: "Alumni TKR 2018", 
+                    graduation: "Alumni TKR 2018",
                     position: "Teknisi Otomotif",
                     company: "Daihatsu Motor CO.LTD Jepang",
                     description: "Berkarier di perusahaan otomotif ternama Jepang dengan spesialisasi mesin diesel.",
@@ -194,7 +194,7 @@
                     const alumni = alumniData[i];
                     const card = document.createElement('div');
                     card.className = 'alumni-card bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100';
-                    
+
                     card.innerHTML = `
                         <div class="relative h-40 bg-gradient-to-r ${alumni.bgColor}">
                             <div class="absolute -bottom-12 left-1/2 transform -translate-x-1/2">
@@ -202,33 +202,33 @@
                                     class="alumni-image w-24 h-24 rounded-full object-cover">
                             </div>
                         </div>
-                        
+
                         <div class="pt-16 pb-6 px-6 text-center">
                             <h3 class="text-xl font-bold text-gray-800 mb-1">${alumni.name}</h3>
                             <p class="text-sm text-gray-600 mb-2">${alumni.graduation}</p>
-                            
+
                             <div class="bg-gradient-to-r ${alumni.bgColor} text-white py-2 px-4 rounded-full inline-block mb-4">
                                 <p class="text-sm font-semibold">${alumni.position}</p>
                             </div>
-                            
+
                             <div class="flex items-center justify-center mb-3 text-gray-700">
                                 <i class="fas fa-building text-sm mr-2"></i>
                                 <p class="text-sm font-medium">${alumni.company}</p>
                             </div>
-                            
+
                             <p class="text-gray-600 text-sm mb-4 leading-relaxed">${alumni.description}</p>
-                            
+
                             <div class="border-t border-gray-100 pt-4">
                                 <p class="text-xs font-semibold text-gray-500 mb-2">PRESTASI:</p>
                                 <div class="flex flex-wrap justify-center gap-2">
-                                    ${alumni.achievements.map(achievement => 
+                                    ${alumni.achievements.map(achievement =>
                                         `<span class="bg-gray-100 text-gray-700 text-xs px-3 py-1 rounded-full">${achievement}</span>`
                                     ).join('')}
                                 </div>
                             </div>
                         </div>
                     `;
-                    
+
                     container.appendChild(card);
                 }
             }
