@@ -3,7 +3,7 @@
         <!-- Hero SKARIGA -->
         <section class="relative h-[800px] mt-2 rounded-xl overflow-hidden">
             <div class="absolute inset-0 w-full h-full hover-scale">
-                <img src="{{ asset('assets/ekstrahero.jpg') }}" alt="Hero SKARIGA" class="w-full h-full object-cover ">
+                <img src="{{ asset('assets/ekstrahero.jpg') }}" alt="Hero SKARIGA" loading="lazy" class="w-full h-full object-cover ">
                 <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent"></div>
             </div>
             <div class="absolute bottom-8 left-3.5 md:left-10 z-10">
@@ -21,7 +21,7 @@
             <div class="max-w-full mx-auto">
                 <div class="grid grid-cols-3 gap-6">
                     @foreach ($ekskuls as $ekskul)
-                    <x-ekscard title="{{ $ekskul->title }}" alt="{{ $ekskul->title }}" image="{{ $ekskul->image }}">
+                    <x-ekscard title="{{ $ekskul->title }}" alt="{{ $ekskul->title }}" image="{{ $ekskul->image }}" >
                         {{ $ekskul->desc }}
                     </x-ekscard>
                     @endforeach

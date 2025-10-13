@@ -180,7 +180,7 @@
                 <!-- Card 1 -->
                 <div
                     class="bg-blue-500 text-white rounded-xl shadow-lg text-center p-8 flex flex-col items-center hover-lift hover-rotate">
-                    <img src="{{ asset('assets/hand 1.png') }}" alt="Ikon 1" class="mb-6 w-20 h-20 hover-scale invert">
+                    <img src="{{ asset('assets/hand 1.png') }}" alt="Ikon 1" class="mb-6 w-20 h-20 hover-scale invert"  loading="lazy">
                     <h3 class="text-2xl font-bold text-center mt-2">Unggul & Beriman</h3>
                     <hr class="w-full h-px bg-gray-300 border-0 my-4">
                     <p class="text-base leading-relaxed">
@@ -192,7 +192,7 @@
                 <!-- Card 2 -->
                 <div
                     class="bg-green-500 text-white rounded-xl shadow-lg text-center p-8 flex flex-col items-center hover-lift hover-rotate">
-                    <img src="{{ asset('assets/learning 1.png') }}" alt="Ikon 2" class="mb-6 w-20 h-20 hover-scale invert">
+                    <img src="{{ asset('assets/learning 1.png') }}" alt="Ikon 2" class="mb-6 w-20 h-20 hover-scale invert" loading="lazy">
                     <h3 class="text-2xl font-bold text-center mt-2">Kurikulum Unggul</h3>
                     <hr class="w-full h-px bg-gray-300 border-0 my-4">
                     <p class="text-base leading-relaxed">
@@ -204,7 +204,7 @@
                 <!-- Card 3 -->
                 <div
                     class="bg-orange-500 text-white rounded-xl shadow-lg text-center p-8 flex flex-col items-center hover-lift hover-rotate">
-                    <img src="{{ asset('assets/pray 1.png') }}" alt="Ikon 3" class="mb-6 w-20 h-20 hover-scale invert">
+                    <img src="{{ asset('assets/pray 1.png') }}" alt="Ikon 3" class="mb-6 w-20 h-20 hover-scale invert"  loading="lazy">
                     <h3 class="text-2xl font-bold text-center mt-2">Berbudi Pekerti</h3>
                     <hr class="w-full h-px bg-gray-300 border-0 my-4">
                     <p class="text-base leading-relaxed">
@@ -216,7 +216,7 @@
                 <!-- Card 4 -->
                 <div
                     class="bg-red-500 text-white rounded-xl shadow-lg text-center p-8 flex flex-col items-center hover-lift hover-rotate">
-                    <img src="{{ asset('assets/heart 1.png') }}" alt="Ikon 4" class="mb-6 w-20 h-20 hover-scale invert">
+                    <img src="{{ asset('assets/heart 1.png') }}" alt="Ikon 4" class="mb-6 w-20 h-20 hover-scale invert" loading="lazy">
                     <h3 class="text-2xl font-bold text-center mt-2">Sistem Terpadu</h3>
                     <hr class="w-full h-px bg-gray-300 border-0 my-4">
                     <p class="text-base leading-relaxed">
@@ -232,21 +232,21 @@
                 <!-- Box 1 -->
                 <div
                     class="flex items-center justify-center gap-3 bg-orange-500 text-white rounded-lg px-6 py-4 shadow-md hover-lift hover-glow">
-                    <img src="{{ asset('assets/grad.png') }}" class="w-7 h-7 hover-scale invert" alt="graduation">
+                    <img src="{{ asset('assets/grad.png') }}" class="w-7 h-7 hover-scale invert" alt="graduation" loading="lazy">
                     <span class="font-semibold text-lg cursor-default">Lulus Siap Kerja</span>
                 </div>
 
                 <!-- Box 2 -->
                 <div
                     class="flex items-center justify-center gap-3 bg-orange-500 text-white rounded-lg px-6 py-4 shadow-md hover-lift hover-glow">
-                    <img src="{{ asset('assets/hand shake.png') }}" class="w-7 h-7 hover-scale invert" alt="handshake">
+                    <img src="{{ asset('assets/hand shake.png') }}" class="w-7 h-7 hover-scale invert" alt="handshake" loading="lazy">
                     <span class="font-semibold text-lg cursor-default">Kerja Sama Industri</span>
                 </div>
 
                 <!-- Box 3 -->
                 <div
                     class="flex items-center justify-center gap-3 bg-orange-500 text-white rounded-lg px-6 py-4 shadow-md hover-lift hover-glow">
-                    <img src="{{ asset('assets/trophy.png') }}" class="w-7 h-7 hover-scale invert" alt="trophy">
+                    <img src="{{ asset('assets/trophy.png') }}" class="w-7 h-7 hover-scale invert" alt="trophy" loading="lazy">
                     <span class="font-semibold text-lg cursor-default">Prestasi Tingkat Nasional</span>
                 </div>
             </div>
@@ -281,7 +281,7 @@
                     <div
                         class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition flex flex-col hover-lift hover-border-orange min-h-[560px]">
                         <img src="{{ asset('assets/kcs38-1.jpg') }}" alt="KCS 38"
-                            class="h-48 w-full object-cover">
+                            class="h-48 w-full object-cover" loading="lazy">
                         <div class="p-8 flex flex-col flex-grow">
                             <h3 class="font-semibold text-lg mb-2">KCS 38 DI PUSDIK ARHANUD</h3>
                             <p class="text-sm text-gray-600 flex-grow text-justify">
@@ -297,7 +297,7 @@
                     <div
                         class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition flex flex-col hover-lift hover-border-orange min-h-[560px]">
                         <img src="{{ asset('assets/robot-manu.jpg') }}" alt="Juara 1 LKS"
-                            class="h-48 w-full object-cover">
+                            class="h-48 w-full object-cover" loading="lazy">
                         <div class="p-8 flex flex-col flex-grow">
                             <h3 class="font-semibold text-lg mb-2">JUARA 1 LKS NASIONAL 2025</h3>
                             <p class="text-sm text-gray-600 flex-grow text-justify">
@@ -313,7 +313,7 @@
                     <div
                         class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition flex flex-col hover-lift hover-border-orange min-h-[560px]">
                         <img src="{{ asset('assets/drgamal.png') }}" alt="dr. Gamal ke SKARIGA"
-                            class="h-48 w-full object-cover">
+                            class="h-48 w-full object-cover" loading="lazy">
                         <div class="p-8 flex flex-col flex-grow">
                             <h3 class="font-semibold text-lg mb-2">dr. Gamal ke SKARIGA</h3>
                             <p class="text-sm text-gray-600 flex-grow text-justify">
@@ -329,7 +329,7 @@
                     <div
                         class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition flex flex-col hover-lift hover-border-orange min-h-[560px]">
                         <img src="{{ asset('assets/supporteran.jpg') }}" alt="School Visit"
-                            class="h-48 w-full object-cover">
+                            class="h-48 w-full object-cover" loading="lazy">
                         <div class="p-8 flex flex-col flex-grow">
                             <h3 class="font-semibold text-lg mb-2">School Visit oleh Futsal Series</h3>
                             <p class="text-sm text-gray-600 flex-grow text-justify">

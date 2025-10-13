@@ -3,7 +3,7 @@
                         hover:scale-105 hover:rounded-xl hover:shadow-2xl hover:z-10
                         min-h-[500px] hover:min-h-[520px] hover:self-start">
     <img width="100%" height="100%" class="w-full h-64 md:h-52 object-cover rounded-lg mb-4"
-        src="{{ asset('assets/' . $image) }}" alt="{{ $title }}">
+        src="{{ asset('assets/' . $image) }}" alt="{{ $title }}"  loading="lazy">
     <h3 class="text-xl md:text-2xl font-bold text-center mb-3">{{ $title }}</h3>
     <p class="text-base text-center cursor-default">
         {{ $slot }}
