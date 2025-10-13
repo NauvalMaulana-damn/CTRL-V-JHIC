@@ -29,7 +29,7 @@
                     </button>
 
                     <!-- Gambar -->
-                    <img id="modalImage" src="" alt="" class="w-full h-80 object-cover rounded-t-xl">
+                    <img id="modalImage" src="" alt="" class="w-full h-80 object-cover rounded-t-xl" loading="lazy">
 
                     <!-- Konten -->
                     <div class="p-6">
