@@ -3,7 +3,7 @@
         <section class="w-full relative h-[600px] mt-2 rounded-xl overflow-hidden">
             <div class="absolute inset-0 max-w-full mx-auto h-full hover-scale rounded-2xl overflow-hidden">
                 <div class="absolute inset-0 bg-gradient-to-t from-transparent via-black/5 to-black/70"></div>
-                <img src="{{ asset('assets/alumni.png') }}" alt="Hero SKARIGA" class="w-full h-full object-cover">
+                <img src="{{ asset('assets/alumni.png') }}" alt="Hero SKARIGA"  loading="lazy" class="w-full h-full object-cover">
                 <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
             </div>
 
@@ -56,27 +56,27 @@
             transition: all 0.3s ease;
             background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
         }
-        
+
         .alumni-card:hover {
             transform: translateY(-8px);
             box-shadow: 0 20px 40px rgba(0,0,0,0.1);
         }
-        
+
         .alumni-image {
             transition: all 0.3s ease;
             border: 4px solid white;
             box-shadow: 0 10px 25px rgba(0,0,0,0.1);
         }
-        
+
         .alumni-card:hover .alumni-image {
             transform: scale(1.05);
             border-color: #FF885B;
         }
-        
+
         .pagination-btn {
             transition: all 0.3s ease;
         }
-        
+
         .pagination-btn.active {
             background-color: #3b82f6; /* bg-customBlue */
             color: white;
@@ -96,17 +96,19 @@
                     description: "Berhasil bekerja di perusahaan konstruksi terkemuka di Jepang dengan kontrak 3 tahun.",
                     image: "assets/image 17.png",
                     bgColor: "from-[#FF885B] to-[#FF6B6B]",
+                    loading: "lazy",
                     achievements: ["Juara 1 Lomba Kompetensi Siswa 2017", "Sertifikasi Teknisi Internasional"]
                 },
                 {
                     id: 2,
                     name: "Aditya Tantra",
-                    graduation: "Alumni TKR 2018", 
+                    graduation: "Alumni TKR 2018",
                     position: "Teknisi Otomotif",
                     company: "Daihatsu Motor CO.LTD Jepang",
                     description: "Berkarier di perusahaan otomotif ternama Jepang dengan spesialisasi mesin diesel.",
                     image: "assets/image 46.png",
                     bgColor: "from-[#FF4D4D] to-[#FF6B9D]",
+                    loading: "lazy",
                     achievements: ["Magang di Daihatsu 2017", "Nilai UN Tertinggi Jurusan TKR"]
                 },
                 {
@@ -118,6 +120,7 @@
                     description: "Memastikan kualitas produk elektronik dengan standar internasional.",
                     image: "assets/image 43.png",
                     bgColor: "from-[#4DA6FF] to-[#6B8CFF]",
+                    loading: "lazy",
                     achievements: ["Inovator Terbaik 2019", "Sertifikasi ISO 9001"]
                 },
                 {
@@ -129,6 +132,7 @@
                     description: "Mengembangkan sistem kelistrikan untuk komponen otomotif modern.",
                     image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&h=200&q=80",
                     bgColor: "from-[#FFD84D] to-[#FFB84D]",
+                    loading: "lazy",
                     achievements: ["Perempuan Berprestasi 2018", "Pengembang Sistem IoT"]
                 },
                 {
@@ -140,6 +144,7 @@
                     description: "Memimpin tim produksi dengan efisiensi tinggi dan inovasi berkelanjutan.",
                     image: "assets/image 44.png",
                     bgColor: "from-[#2ECC71] to-[#27AE60]",
+                    loading: "lazy",
                     achievements: ["Employee of the Year 2020", "Peningkatan Produktivitas 35%"]
                 },
                 {
@@ -151,6 +156,7 @@
                     description: "Membangun infrastruktur jaringan untuk perusahaan teknologi terdepan.",
                     image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&h=200&q=80",
                     bgColor: "from-[#9B59B6] to-[#8E44AD]",
+                    loading: "lazy",
                     achievements: ["CCNA Certified", "Arsitek Jaringan 5G Pertama"]
                 },
                 {
@@ -162,6 +168,7 @@
                     description: "Mengelola sistem server dan keamanan jaringan untuk klien korporat.",
                     image: "assets/image 45.png",
                     bgColor: "from-[#FF5C8D] to-[#FF6B6B]",
+                    loading: "lazy",
                     achievements: ["Microsoft Certified", "Pengembang Cybersecurity System"]
                 },
                 {
@@ -173,6 +180,7 @@
                     description: "Fresh graduate yang langsung terserap industri dengan skill mumpuni.",
                     image: "assets/Ellipse 24.png",
                     bgColor: "from-[#3498DB] to-[#2980B9]",
+                    loading: "lazy",
                     achievements: ["Lulusan Terbaik 2024", "Nilai Praktik Tertinggi"]
                 }
             ];
@@ -194,41 +202,41 @@
                     const alumni = alumniData[i];
                     const card = document.createElement('div');
                     card.className = 'alumni-card bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100';
-                    
+
                     card.innerHTML = `
                         <div class="relative h-40 bg-gradient-to-r ${alumni.bgColor}">
                             <div class="absolute -bottom-12 left-1/2 transform -translate-x-1/2">
-                                <img src="${alumni.image}" alt="${alumni.name}"
+                                <img src="${alumni.image}" alt="${alumni.name}" loading="${alumni.loading}"
                                     class="alumni-image w-24 h-24 rounded-full object-cover">
                             </div>
                         </div>
-                        
+
                         <div class="pt-16 pb-6 px-6 text-center">
                             <h3 class="text-xl font-bold text-gray-800 mb-1">${alumni.name}</h3>
                             <p class="text-sm text-gray-600 mb-2">${alumni.graduation}</p>
-                            
+
                             <div class="bg-gradient-to-r ${alumni.bgColor} text-white py-2 px-4 rounded-full inline-block mb-4">
                                 <p class="text-sm font-semibold">${alumni.position}</p>
                             </div>
-                            
+
                             <div class="flex items-center justify-center mb-3 text-gray-700">
                                 <i class="fas fa-building text-sm mr-2"></i>
                                 <p class="text-sm font-medium">${alumni.company}</p>
                             </div>
-                            
+
                             <p class="text-gray-600 text-sm mb-4 leading-relaxed">${alumni.description}</p>
-                            
+
                             <div class="border-t border-gray-100 pt-4">
                                 <p class="text-xs font-semibold text-gray-500 mb-2">PRESTASI:</p>
                                 <div class="flex flex-wrap justify-center gap-2">
-                                    ${alumni.achievements.map(achievement => 
+                                    ${alumni.achievements.map(achievement =>
                                         `<span class="bg-gray-100 text-gray-700 text-xs px-3 py-1 rounded-full">${achievement}</span>`
                                     ).join('')}
                                 </div>
                             </div>
                         </div>
                     `;
-                    
+
                     container.appendChild(card);
                 }
             }

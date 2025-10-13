@@ -70,12 +70,9 @@
     </style>
 
     <div class="bg-gray-50">
-        <section class="bg-gradient-to-r from-skariga-blue to-blue-800 text-white py-12 mt-[-8rem]">
+        <section class="bg-gradient-to-r from-skariga-blue to-blue-800 text-white py-12 ">
             <div class="container mx-auto px-4">
                 <div class="max-w-3xl">
-                    <h1 class="text-4xl font-bold mb-4">Berita Terkini Skariga</h1>
-                    <p class="text-lg mb-6">Ikuti perkembangan terbaru seputar kegiatan, prestasi, dan informasi penting
-                        dari SMK PGRI 3 Malang.</p>
                     <div class="flex space-x-4">
                         <button
                             class="bg-skariga-orange hover:bg-orange-600 text-white px-6 py-2 rounded-lg font-semibold transition-colors">
