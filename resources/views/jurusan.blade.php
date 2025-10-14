@@ -213,7 +213,8 @@
             <!-- Hero Section -->
             <section class="relative h-[535px] mt-2 rounded-xl overflow-hidden">
                 <div class="absolute inset-0 w-full h-full hover-scale">
-                    <img src="{{ asset('assets/jurusan.png') }}" alt="Hero SKARIGA" class="w-full h-full object-cover " loading="lazy">
+                    <img src="{{ asset('assets/jurusan.png') }}" alt="Hero SKARIGA" class="w-full h-full object-cover "
+                        loading="lazy">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
                 </div>
                 <div class="absolute bottom-8 left-3.5 md:left-10 z-10">
@@ -327,7 +328,8 @@
                 <div class="slider-container overflow-x-auto">
                     <div class=" flex space-x-6 pb-4 slider snap-x snap-mandatory">
                         <!-- CARD 1 -->
-                        <x-jurcard title="Teknik Elektronika & Audio Video" image="jurTEAV.jpg" departement="ELEKTRO" loading="lazy">
+                        <x-jurcard title="Teknik Elektronika & Audio Video" image="jurTEAV.jpg" departement="ELEKTRO"
+                            loading="lazy">
                             Dengan kode jurusan AV, merupakan jurusan yang mempelajari perancangan, instalasi, dan
                             perawatan sistem elektronika
                             serta peralatan audio video. Lanjutan studi meliputi S1 Teknik Elektronika, Teknik
@@ -338,7 +340,8 @@
                         </x-jurcard>
 
                         <!-- CARD 2 -->
-                        <x-jurcard title="Teknik Elektronika Industri" image="jurEI.jpg" departement="ELEKTRO" loading="lazy">
+                        <x-jurcard title="Teknik Elektronika Industri" image="jurEI.jpg" departement="ELEKTRO"
+                            loading="lazy">
                             Dengan kode jurusan EI, merupakan jurusan yang mempelajari perancangan, instalasi, dan
                             pemeliharaan sistem
                             elektronika pada bidang industri. Lanjutan studi meliputi S1 Teknik Elektronika atau
@@ -357,7 +360,8 @@
                         </x-jurcard>
 
                         <!-- CARD 4 -->
-                        <x-jurcard title="Teknik Pembangkit Tenaga Listrik" image="jurPB.jpg" departement="ELEKTRO" loading="lazy">
+                        <x-jurcard title="Teknik Pembangkit Tenaga Listrik" image="jurPB.jpg" departement="ELEKTRO"
+                            loading="lazy">
                             Dengan kode jurusan PB, merupakan jurusan yang mempelajari pengoperasian, pemeliharaan,
                             dan pengelolaan sistem pembangkit listrik. Lanjutan studi meliputi S1 Teknik Elektro
                             atau Energi Terbarukan. Berpotensi bekerja sebagai teknisi pembangkit, operator, atau
@@ -374,7 +378,8 @@
                 <div class="slider-container overflow-x-auto justify-center">
                     <div class=" flex space-x-6 pb-4 slider snap-x snap-mandatory justify-center">
                         <!-- CARD 1 -->
-                        <x-jurcard title="Teknik Bisnis Sepeda Motor" image="jurTBSM.jpg" departement="OTOMOTIF" loading="lazy">
+                        <x-jurcard title="Teknik Bisnis Sepeda Motor" image="jurTBSM.jpg" departement="OTOMOTIF"
+                            loading="lazy">
                             Dengan kode jurusan TSM, merupakan jurusan yang mempelajari perawatan, perbaikan, dan
                             pengelolaan bisnis di bidang sepeda motor. Lanjutan studi meliputi S1 Teknik Otomotif
                             atau Manajemen Bisnis. Berpotensi bekerja sebagai teknisi sepeda motor, service advisor,
@@ -383,7 +388,8 @@
                         </x-jurcard>
 
                         <!-- CARD 2 -->
-                        <x-jurcard title="Teknik Kendaraan Ringan" image="otomotif_card.png" departement="OTOMOTIF" loading="lazy">
+                        <x-jurcard title="Teknik Kendaraan Ringan" image="otomotif_card.png" departement="OTOMOTIF"
+                            loading="lazy">
                             Dengan kode jurusan TKR, merupakan jurusan yang mempelajari perawatan, perbaikan, dan
                             diagnosis kerusakan kendaraan ringan. Lanjutan studi meliputi S1 Teknik Otomotif atau
                             Manufaktur. Berpotensi bekerja sebagai teknisi, mekanik, atau wirausahawan bengkel
@@ -409,7 +415,8 @@
                 <div class="slider-container overflow-x-auto justify-center">
                     <div class=" flex space-x-6 pb-4 slider snap-x snap-mandatory justify-center">
                         <!-- CARD 1 -->
-                        <x-jurcard title="Bisnis Digital & Pemasaran" image="jurBDP.jpg" departement="PEMESINAN" loading="lazy">
+                        <x-jurcard title="Bisnis Digital & Pemasaran" image="jurBDP.jpg" departement="PEMESINAN"
+                            loading="lazy">
                             Dengan kode jurusan BDP, merupakan jurusan yang mempelajari pemasaran, penjualan, dan
                             pengelolaan bisnis. Lanjutan studi meliputi S1 Manajemen, Bisnis, atau Pemasaran.
                             Berpotensi bekerja sebagai staf pemasaran, sales, wirausahawan, atau manajer bisnis.
@@ -450,7 +457,8 @@
                         </x-jurcard>
 
                         <!-- CARD 2 -->
-                        <x-jurcard title="Desain Komunikasi Visual" image="jurDKV.jpg" departement="TIK" loading="lazy">
+                        <x-jurcard title="Desain Komunikasi Visual" image="jurDKV.jpg" departement="TIK"
+                            loading="lazy">
                             Dengan kode jurusan DKV, merupakan jurusan yang mempelajari desain komunikasi visual
                             untuk menyampaikan pesan melalui media cetak maupun digital. Lanjutan studi meliputi S1
                             Desain Komunikasi Visual atau bidang seni dan desain terkait. Berpotensi bekerja sebagai
@@ -459,7 +467,8 @@
                         </x-jurcard>
 
                         <!-- CARD 3 -->
-                        <x-jurcard title="Broadcasting & Perfilman" image="jurBP.jpg" departement="TIK"  loading="lazy">
+                        <x-jurcard title="Broadcasting & Perfilman" image="jurBP.jpg" departement="TIK"
+                            loading="lazy">
                             Dengan kode jurusan BP, merupakan jurusan yang mempelajari perencanaan,
                             produksi, dan penyiaran konten audio-visual untuk radio, televisi, dan media digital.
                             Lanjutan studi meliputi S1 Broadcasting, Ilmu Komunikasi, atau perfilman. Berpotensi
@@ -468,7 +477,8 @@
                         </x-jurcard>
 
                         <!-- CARD 4 -->
-                        <x-jurcard title="Teknik Komputer Jaringan" image="jurTKJ.jpg" departement="TIK" loading="lazy">
+                        <x-jurcard title="Teknik Komputer Jaringan" image="jurTKJ.jpg" departement="TIK"
+                            loading="lazy">
                             Dengan kode jurusan TKJ, merupakan jurusan yang mempelajari instalasi, konfigurasi, dan
                             pemeliharaan jaringan komputer. Lanjutan studi meliputi S1 Teknik Informatika, Teknik
                             Elektro, atau pelatihan/sertifikasi jaringan. Berpotensi bekerja sebagai teknisi,
@@ -477,7 +487,8 @@
                         </x-jurcard>
 
                         <!-- CARD 5 -->
-                        <x-jurcard title="Rekayasa Perangkat Lunak" image="jurRPL.jpg" departement="TIK"  loading="lazy">
+                        <x-jurcard title="Rekayasa Perangkat Lunak" image="jurRPL.jpg" departement="TIK"
+                            loading="lazy">
                             Dengan kode jurusan RPL, merupakan jurusan yang mempelajari perancangan, pengembangan,
                             dan pemeliharaan perangkat lunak. Lanjutan studi meliputi S1 RPL, S1 Teknik Informatika,
                             atau pelatihan/sertifikasi IT. Berpotensi bekerja sebagai pengembang, insinyur, analis,
@@ -489,145 +500,194 @@
             </section>
 
             <!-- JavaScript -->
-            <script>
-                // Data untuk menyimpan jumlah klik pada setiap jurusan
-                let clickStats = {
-                    elektro: 0,
-                    otomotif: 0,
-                    pemesinan: 0,
-                    tik: 0
-                };
+            <!-- Tambahkan di <head> atau sebelum </body> -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2"></script>
 
-                // Variabel untuk chart
-                let jurusanChart = null;
+<script>
+let clickStats = {
+    elektro: 0,
+    otomotif: 0,
+    pemesinan: 0,
+    tik: 0
+};
 
-                // Fungsi untuk memuat statistik dari localStorage
-                function loadStats() {
-                    const savedStats = localStorage.getItem('jurusanClickStats');
-                    if (savedStats) {
-                        clickStats = JSON.parse(savedStats);
+let jurusanChart = null;
+
+function loadStats() {
+    const savedStats = localStorage.getItem('jurusanClickStats');
+    if (savedStats) clickStats = JSON.parse(savedStats);
+    updateChart();
+    updateTotalClicks();
+}
+
+function saveStats() {
+    localStorage.setItem('jurusanClickStats', JSON.stringify(clickStats));
+}
+
+function updateTotalClicks() {
+    const total = Object.values(clickStats).reduce((a, b) => a + b, 0);
+    document.getElementById('total-clicks').textContent = total;
+}
+
+function updateChart() {
+    const ctx = document.getElementById('jurusanPieChart').getContext('2d');
+    const totalClicks = Object.values(clickStats).reduce((a, b) => a + b, 0);
+
+    const labels = [];
+    const data = [];
+    const backgroundColors = [
+        'rgb(249, 115, 22, 0.8)',
+        'rgb(239, 68, 68)',
+        'rgba(59, 130, 246, 0.8)',
+        'rgb(139, 92, 246)'
+    ];
+
+    const formatJurusanName = (key) => ({
+        elektro: 'ELEKTRO',
+        otomotif: 'OTOMOTIF',
+        pemesinan: 'PEMESINAN',
+        tik: 'TIK'
+    }[key] || key.toUpperCase());
+
+    Object.entries(clickStats).forEach(([key, value]) => {
+        labels.push(formatJurusanName(key));
+        data.push(value);
+    });
+
+    if (jurusanChart) jurusanChart.destroy();
+
+    const centerTextPlugin = {
+        id: 'centerText',
+        afterDraw(chart) {
+            const { ctx, chartArea: { width, height } } = chart;
+            ctx.save();
+            ctx.font = 'bold 16px Arial';
+            ctx.fillStyle = '#6B7280';
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            const total = data.reduce((a, b) => a + b, 0);
+            if (total === 0) ctx.fillText('Tidak ada data', width / 2, height / 2);
+            ctx.restore();
+        }
+    };
+
+    jurusanChart = new Chart(ctx, {
+        type: 'pie',
+        plugins: [ChartDataLabels, centerTextPlugin],
+        data: {
+            labels: labels,
+            datasets: [{
+                data: data,
+                backgroundColor: backgroundColors,
+                borderColor: backgroundColors,
+                borderWidth: 2
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: { display: false },
+                tooltip: {
+                    callbacks: {
+                        label: (context) => {
+                            const label = context.label || '';
+                            const value = context.raw || 0;
+                            const total = context.dataset.data.reduce((a, b) => a + b, 0);
+                            const percentage = total > 0 ? Math.round((value / total) * 100) : 0;
+                            return `${label}: ${percentage}%`;
+                        }
                     }
-                    updateChart();
-                    updateTotalClicks();
-                }
-
-                // Fungsi untuk menyimpan statistik ke localStorage
-                function saveStats() {
-                    localStorage.setItem('jurusanClickStats', JSON.stringify(clickStats));
-                }
-
-                // Fungsi untuk update total klik
-                function updateTotalClicks() {
-                    const total = Object.values(clickStats).reduce((sum, count) => sum + count, 0);
-                    document.getElementById('total-clicks').textContent = total;
-                }
-
-                // Fungsi untuk membuat atau memperbarui diagram lingkaran
-                function updateChart() {
-                    const ctx = document.getElementById('jurusanPieChart').getContext('2d');
-                    const totalClicks = Object.values(clickStats).reduce((sum, count) => sum + count, 0);
-
-                    // Format data untuk chart
-                    const labels = [];
-                    const data = [];
-                    const backgroundColors = [
-                        'rgb(249, 115, 22, 0.8)', // Orange untuk ELEKTRO
-                        'rgb(239, 68, 68)', // Merah untuk OTOMOTIF
-                        'rgba(59, 130, 246, 0.8)', // Biru untuk PEMESINAN
-                        'rgb(139, 92, 246)' // Ungu untuk TIK
-                    ];
-                    const borderColors = [
-                        'rgb(249, 115, 22, 0.8)', // Orange untuk ELEKTRO
-                        'rgb(239, 68, 68)', // Merah untuk OTOMOTIF
-                        'rgba(59, 130, 246, 0.8)', // Biru untuk PEMESINAN
-                        'rgb(139, 92, 246)' // Ungu untuk TIK
-                    ];
-
-                    // Format nama jurusan
-                    const formatJurusanName = (name) => {
-                        const names = {
-                            'elektro': 'ELEKTRO',
-                            'otomotif': 'OTOMOTIF',
-                            'pemesinan': 'PEMESINAN',
-                            'tik': 'TIK'
-                        };
-                        return names[name] || name.toUpperCase();
-                    };
-
-                    // Siapkan data untuk chart
-                    Object.entries(clickStats).forEach(([key, value], index) => {
-                        labels.push(formatJurusanName(key));
-                        data.push(value);
-                    });
-
-                    // Hancurkan chart sebelumnya jika ada
-                    if (jurusanChart) {
-                        jurusanChart.destroy();
+                },
+                datalabels: {
+                    color: '#fff',
+                    align: 'center',
+                    formatter: (value, ctx) => {
+                        if (value === 0) return '';
+                        const label = ctx.chart.data.labels[ctx.dataIndex];
+                        const total = ctx.dataset.data.reduce((a, b) => a + b, 0);
+                        const percentage = (value * 100 / total).toFixed(0);
+                        return `${label}\n${percentage}%`;
+                    },
+                    font: {
+                        weight: 'bold',
+                        size: 13
                     }
+                }
+            }
+        }
+    });
 
-                    // Buat chart baru
-                    jurusanChart = new Chart(ctx, {
-                        type: 'pie',
-                        data: {
-                            labels: labels,
-                            datasets: [{
-                                data: data,
-                                backgroundColor: backgroundColors,
-                                borderColor: borderColors,
-                                borderWidth: 2
-                            }]
-                        },
-                        options: {
-                            responsive: true,
-                            maintainAspectRatio: false,
-                            plugins: {
-                                legend: {
-                                    display: false // Kita akan buat custom legend
-                                },
-                                tooltip: {
-                                    callbacks: {
-                                        label: function(context) {
-                                            const label = context.label || '';
-                                            const value = context.raw || 0;
-                                            const total = context.dataset.data.reduce((a, b) => a + b, 0);
-                                            const percentage = total > 0 ? Math.round((value / total) * 100) : 0;
-                                            return `${label}: ${value} (${percentage}%)`;
-                                        }
-                                    }
-                                }
-                            }
+    updateChartLegend(labels, data, backgroundColors, totalClicks);
+}
+
+function updateChartLegend(labels, data, colors, totalClicks) {
+    const legendContainer = document.getElementById('chartLegend');
+    legendContainer.innerHTML = '';
+
+    if (totalClicks === 0) {
+        legendContainer.innerHTML = '<div class="no-data-message">Belum ada data kunjungan</div>';
+        return;
+    }
+
+    labels.forEach((label, i) => {
+        const value = data[i];
+        const percentage = totalClicks > 0 ? Math.round((value / totalClicks) * 100) : 0;
+        const legendItem = document.createElement('div');
+        legendItem.className = 'legend-item';
+        legendItem.innerHTML = `
+            <span class="legend-color" style="background-color:${colors[i]}"></span>
+            <span>${label}: ${percentage}%</span>
+        `;
+        legendContainer.appendChild(legendItem);
+    });
+}
+
+document.querySelectorAll('.btn-dept').forEach(btn => {
+    btn.addEventListener('click', () => {
+        const id = btn.getAttribute('data-target');
+        const section = document.getElementById(id);
+        if (clickStats.hasOwnProperty(id)) {
+            clickStats[id]++;
+            saveStats();
+            updateChart();
+            updateTotalClicks();
+        }
+        if (section) section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+});
+
+document.addEventListener('DOMContentLoaded', loadStats);
+
+
+                // Scroll to department section saat tombol ditekan
+                document.querySelectorAll('.btn-dept').forEach(button => {
+                    button.addEventListener('click', () => {
+                        const targetId = button.getAttribute('data-target');
+                        const targetSection = document.getElementById(targetId);
+
+                        // Meningkatkan jumlah klik untuk jurusan ini
+                        if (clickStats.hasOwnProperty(targetId)) {
+                            clickStats[targetId]++;
+                            saveStats();
+                            updateChart();
+                            updateTotalClicks();
+                        }
+
+                        if (targetSection) {
+                            targetSection.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'start'
+                            });
                         }
                     });
+                });
 
-                    // Update custom legend
-                    updateChartLegend(labels, data, backgroundColors, totalClicks);
-                }
-
-                // Fungsi untuk memperbarui legend chart
-                function updateChartLegend(labels, data, colors, totalClicks) {
-                    const legendContainer = document.getElementById('chartLegend');
-                    legendContainer.innerHTML = '';
-
-                    if (totalClicks === 0) {
-                        legendContainer.innerHTML = '<div class="no-data-message">Belum ada data kunjungan</div>';
-                        return;
-                    }
-
-                    labels.forEach((label, index) => {
-                        const value = data[index];
-                        const percentage = totalClicks > 0 ? Math.round((value / totalClicks) * 100) : 0;
-
-                        const legendItem = document.createElement('div');
-                        legendItem.className = 'legend-item';
-
-                        legendItem.innerHTML = `
-                        <span class="legend-color" style="background-color: ${colors[index]}"></span>
-                        <span>${label}: ${percentage}% (${value})</span>
-                    `;
-
-                        legendContainer.appendChild(legendItem);
-                    });
-                }
+                // Load statistik saat halaman dimuat
+                document.addEventListener('DOMContentLoaded', function() {
+                    loadStats();
+                });
 
                 // Scroll to department section saat tombol ditekan
                 document.querySelectorAll('.btn-dept').forEach(button => {
