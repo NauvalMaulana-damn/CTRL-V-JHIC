@@ -158,19 +158,23 @@
 
         <!-- Visi -->
         <section class="w-full mx-auto pt-6 pb-10">
-            <div class="bg-orange-500 rounded-2xl shadow-lg overflow-hidden hover-lift hover-glow">
-                <div class="grid md:grid-cols-2 gap-0 md:gap-6 items-center">
-                    <img src="{{ asset('assets/kcs-manjat.png') }}" alt="Visi"
-                        class="w-full h-full object-cover">
-                    <div class="px-8 py-4 text-white">
-                        <h2 class="text-5xl font-bold mb-4">Visi</h2>
-                        <p>Menjadi SMK yang unggul dalam prestasi dengan dilandasi Iman & Taqwa serta menghasilkan
-                            tamatan yang mampu bersaing ditingkat Nasional maupun Internasional</p>
-                    </div>
-                </div>
-
+    <div class="bg-orange-500 rounded-2xl shadow-lg overflow-hidden hover-lift hover-glow">
+        <div class="grid md:grid-cols-2 items-center">
+            <div class="flex justify-center">
+                <img src="{{ asset('assets/bp.Luqman_kepsek.jpg') }}" alt="Visi"
+                    class="w-full md:w-[100%] h-80% object-contain md:max-h-[450px]">
             </div>
-        </section>
+            <div class="px-8 py-8 text-white">
+                <h2 class="text-5xl font-bold mb-4">Visi</h2>
+                <p class="text-lg leading-relaxed">
+                    Menjadi SMK yang unggul dalam prestasi dengan dilandasi Iman & Taqwa serta menghasilkan
+                    tamatan yang mampu bersaing ditingkat Nasional maupun Internasional
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
 
         <!-- Misi -->
         <section class="w-full mx-auto pt-6 pb-10">
