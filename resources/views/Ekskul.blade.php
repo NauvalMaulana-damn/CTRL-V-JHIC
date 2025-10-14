@@ -13,7 +13,7 @@
             </div>
         </section>
 
-    <!-- Alumni Section -->
+    <!-- Ekskul Section -->
     <section class="w-full container py-12 md:py-16 overflow-hidden animate-fade-in">
         <div class="max-w-full mx-auto">
             <h2 class="text-3xl md:text-5xl font-bold text-center mb-12">Ekstrakurikuler</h2>
@@ -28,5 +28,9 @@
                 </div>
             </div>
         </section>
+
+         <div class="mt-12">
+                        {{ $ekskuls->links() }}
+                    </div>
     </div>
 </x-layout>

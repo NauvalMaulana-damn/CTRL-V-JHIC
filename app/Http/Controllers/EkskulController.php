@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Http\Controllers;
 
 use App\Models\Ekskul;
@@ -12,7 +11,7 @@ class EkskulController extends Controller
      */
     public function index()
     {
-        $ekskuls = Ekskul::all();
+        $ekskuls = Ekskul::paginate(9);
         return view('ekskul', compact('ekskuls'));
     }
 
