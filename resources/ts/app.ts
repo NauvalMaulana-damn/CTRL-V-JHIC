@@ -102,8 +102,6 @@ function showNews(
 (window as any).showNews = showNews;
 
 // Inisialisasi Micromodal
-
-// Inisialisasi Micromodal
 MicroModal.init({
     disableScroll: true,
     awaitOpenAnimation: true,
@@ -156,7 +154,7 @@ document.addEventListener("DOMContentLoaded", (): void => {
     initChartGabungan();
 });
 
-const scrollDebug: boolean = true;
+const scrollDebug: boolean = false;
 if (scrollDebug)
     document.addEventListener("scroll", (): void => {
         console.log("ScrollY:", window.scrollY);

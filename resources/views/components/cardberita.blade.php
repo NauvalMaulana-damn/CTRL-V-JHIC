@@ -3,7 +3,7 @@
 <div
     class="bg-white rounded-xl shadow-md overflow-hidden transition-transform duration-300 hover:shadow-lg hover:-translate-y-1">
     <div class="h-72 relative">
-        <img src="{{ asset('assets/uiux.jpg') }}" alt="{{ $title }}" class="w-full h-full object-cover">
+        <img src="{{ asset('storage/' . $image) }}" class="w-full h-full object-cover" alt="{{ $title }}">
         <span
             class="absolute top-4 left-4 bg-customOrange text-white px-3 py-1 rounded-full text-xs font-semibold">{{ $type }}</span>
         <div class="absolute bottom-4 left-4 text-white">
@@ -18,7 +18,7 @@
             data-micromodal-trigger="newsModal"
                 data-title="{{ $title }}"
                 data-content="{{ $slot }}"
-                data-image="{{ asset('assets/' . $image) }}" class="text-customOrange font-semibold hover:underline">
+                data-image="{{ asset('storage/' . $image) }}" class="text-customOrange font-semibold hover:underline">
                 Baca Selengkapnya
             </a>
             <span class="text-gray-500 text-sm"><i class="far fa-eye mr-1"></i>{{ $views }}</span>

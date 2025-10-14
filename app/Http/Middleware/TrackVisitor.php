@@ -4,29 +4,42 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
-use Symfony\Component\HttpFoundation\Response;
 use App\Models\Visitor;
-use Illuminate\Support\Facades\DB;
+use Carbon\Carbon;
+use Illuminate\Support\Facades\Cookie;
 
 class TrackVisitor
 {
-    /**
-     * Handle an incoming request.
-     *
-     * @param  \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next
-     */
-    public function handle(Request $request, Closure $next): Response
+    public function handle(Request $request, Closure $next)
     {
-         // Simpan IP pengunjung dan user agent
         $ip = $request->ip();
-        $userAgent = $request->header('User-Agent');
+        $userAgent = $request->userAgent();
+        $today = Carbon::today();
 
-        // Catat kunjungan (boleh dikembangkan untuk filter unik per hari)
-        DB::table('visitors')->insert([
-            'ip_address' => $ip,
-            'user_agent' => $userAgent,
-            'visited_at' => now(),
-        ]);
+        // Ambil visitor_id dari cookie, kalau belum ada, buat baru
+        $visitorId = Cookie::get('visitor_id');
+        if (!$visitorId) {
+            $visitorId = hash('sha256', uniqid('visitor_', true));
+            Cookie::queue('visitor_id', $visitorId, 60 * 24 * 30); // simpan 30 hari
+        }
+
+        // Cek apakah user sudah tercatat hari ini
+        $visitor = Visitor::where('ip_address', $ip)
+            ->where('user_agent', $userAgent)
+            ->whereDate('visited_at', $today)
+            ->first();
+
+        if (!$visitor) {
+            Visitor::create([
+                'visitor_id' => $visitorId,
+                'ip_address' => $ip,
+                'user_agent' => $userAgent,
+                'visited_at' => now(),
+            ]);
+        } else {
+            // 🟢 Update waktu terakhir supaya bisa dihitung "aktif"
+            $visitor->update(['visited_at' => now()]);
+        }
 
         return $next($request);
     }

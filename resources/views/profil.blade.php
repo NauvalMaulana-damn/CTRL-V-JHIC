@@ -1,4 +1,4 @@
-<x-layout title="SMK PGRI 3 MALANG - Success by Discipline" :headerTransparent="false">
+<x-layout title="Profil - SMK PGRI 3 Malang" :headerTransparent="false">
     <style>
     @keyframes scroll {
         0% {

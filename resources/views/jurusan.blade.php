@@ -1,4 +1,4 @@
-<x-layout title="Prestasi - SMK PGRI 3 Malang">
+<x-layout title="Jurusan - SMK PGRI 3 Malang">
     <style>
         /* Custom scrollbar untuk slider */
         .slider::-webkit-scrollbar {

@@ -7,6 +7,7 @@
     <title>Admin Panel - SMK PGRI 3 Malang</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdn.jsdelivr.net/npm/flyonui/dist/flyonui.min.css" rel="stylesheet">
+    <link rel="shortcut icon" href="{{ asset('assets/skariga300rbg.png') }}" type="image/x-icon">
 </head>
 
 <body class="bg-gradient-to-br from-blue-50 to-blue-100 flex items-center justify-center min-h-screen">
@@ -26,7 +27,7 @@
             <div>
                 <label for="username" class="block text-sm font-medium text-gray-700 mb-1">Username</label>
                 <input type="text" id="username" name="username" required autocomplete="off" class="w-full border border-gray-300 bg-gray-50 text-gray-700 rounded-lg px-3 py-2
-                focus:bg-white focus:border-blue-500 focus:ring-2 focus:ring-blue-100 transition" />
+                focus:bg-white focus:border-blue-500 focus:ring-2 focus:ring-blue-100 transition" style="font-family: 'Courier New', Courier, monospace;" />
             </div>
 
             <!-- Password -->
@@ -34,7 +35,7 @@
                 <label for="password" class="block text-sm font-medium text-gray-700 mb-1">Password</label>
                 <div class="relative">
                     <input type="password" id="password" name="password" required class="w-full border border-gray-300 bg-gray-50 text-gray-700 rounded-lg px-3 py-2
-                    focus:bg-white focus:border-blue-500 focus:ring-2 focus:ring-blue-100 transition" />
+                    focus:bg-white focus:border-blue-500 focus:ring-2 focus:ring-blue-100 transition" style="font-family: 'Courier New', Courier, monospace;" />
                     <button type="button" id="togglePassword"
                         class="absolute inset-y-0 right-3 flex items-center text-gray-500 hover:text-blue-600 transition">
                         <svg id="eyeIcon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"

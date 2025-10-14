@@ -13,13 +13,14 @@ return new class extends Migration
     {
         Schema::create('visitors', function (Blueprint $table) {
             $table->id();
-            $table->string('ip_address', 45);
+            $table->string('visitor_id')->index();
+            $table->string('ip_address')->nullable();
             $table->string('user_agent')->nullable();
-            $table->string('page')->nullable();
             $table->timestamp('visited_at')->useCurrent();
+            $table->timestamps();
         });
     }
-    
+
     /**
      * Reverse the migrations.
      */

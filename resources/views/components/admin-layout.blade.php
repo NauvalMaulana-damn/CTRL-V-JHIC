@@ -20,10 +20,9 @@
 
             <nav class="flex-1 p-4 space-y-2">
                 <x-admin-navitem href="{{ route('admin.dashboard') }}" name="Dashboard" logo="fa-solid fa-chart-line" route="admin/dashboard"/>
-                <x-admin-navitem href="{{ route('admin.berita') }}" name="Berita" logo="fa-solid fa-newspaper" route="admin/berita"/>
-                <x-admin-navitem href="{{ route('admin.prestasi') }}" name="Prestasi" logo="fa-solid fa-trophy" route="admin/prestasi"/>
-                <x-admin-navitem href="{{ route('admin.jurusan') }}" name="Jurusan" logo="fa-solid fa-graduation-cap" route="admin/jurusan"/>
-                <x-admin-navitem href="{{ route('admin.alumni') }}" name="Alumni" logo="fa-solid fa-user-graduate" route="admin/alumni"/>
+                <x-admin-navitem href="{{ route('admin.berita.index') }}" name="Berita" logo="fa-solid fa-newspaper" route="admin/berita"/>
+                <x-admin-navitem href="{{ route('admin.prestasi.index') }}" name="Prestasi" logo="fa-solid fa-trophy" route="admin/prestasi"/>
+                <x-admin-navitem href="{{ route('admin.alumni.index') }}" name="Alumni" logo="fa-solid fa-user-graduate" route="admin/alumni"/>
             </nav>
 
             <div class="p-4 border-t border-gray-200">

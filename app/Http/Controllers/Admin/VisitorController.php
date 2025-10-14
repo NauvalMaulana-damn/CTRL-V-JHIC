@@ -17,15 +17,14 @@ class VisitorController extends Controller
     }
 
     // API data visitor
-    public function apiData()
+    public function index()
     {
         $totalVisitors = Visitor::count();
-        $todayVisitors = Visitor::whereDate('visited_at', Carbon::today())->count();
-        $weeklyVisitors = Visitor::select(
-                DB::raw('DATE(visited_at) as date'),
-                DB::raw('COUNT(*) as total')
-            )
-            ->where('visited_at', '>=', Carbon::now()->subDays(7))
+        $todayVisitors = Visitor::whereDate('visited_at', today())->count();
+        $activeVisitors = Visitor::where('visited_at', '>=', now()->subMinutes(10))->count();
+
+        $weeklyVisitors = Visitor::selectRaw('DATE(visited_at) as date, COUNT(*) as total')
+            ->where('visited_at', '>=', now()->subDays(7))
             ->groupBy('date')
             ->orderBy('date', 'asc')
             ->get();
@@ -33,8 +32,8 @@ class VisitorController extends Controller
         return response()->json([
             'totalVisitors' => $totalVisitors,
             'todayVisitors' => $todayVisitors,
+            'activeVisitors' => $activeVisitors,
             'weeklyVisitors' => $weeklyVisitors,
         ]);
     }
 }
-

@@ -1,19 +1,25 @@
 <?php
 
-use App\Http\Controllers\Admin\VisitorController;
-use App\Http\Controllers\ChatbotController;
+use App\Http\Controllers\Admin\AlumniController as AdminAlumniController;
+use App\Http\Controllers\Admin\BeritaController as AdminBeritaController;
+use App\Http\Controllers\Admin\VisitorController as AdminVisitorController;
+use App\Http\Controllers\Admin\PrestasiController as AdminPrestasiController;
 use App\Http\Controllers\EkskulController;
+use App\Http\Controllers\ChatbotController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\BeritaController;
+use App\Http\Controllers\AlumniController;
+use App\Http\Controllers\PrestasiController;
 use Illuminate\Support\Facades\Route;
 
 Route::middleware('trackvisitor')->group(function () {
     Route::view('/', 'landing');
-    Route::view('/berita', 'berita');
+    Route::get('/berita', [BeritaController::class, 'index'])->name('berita.index');
     Route::view('/profil', 'profil');
-    Route::view('/prestasi', 'prestasi');
+    Route::get('/prestasi', [PrestasiController::class, 'index'])->name('prestasi.index');
     Route::view('/jurusan', 'jurusan');
     Route::get('/ekstrakurikuler', [EkskulController::class, 'index']);
-    Route::view('/alumni', 'alumni');
+    Route::get('alumni', [AlumniController::class, 'index'])->name('alumni.index');
     Route::view('/pendaftaran', 'pendaftaran');
 });
 
@@ -21,15 +27,15 @@ Route::middleware('trackvisitor')->group(function () {
 Route::get('/chat', [ChatbotController::class, 'index'])->name('chat.index');
 Route::post('/chat/ask', [ChatbotController::class, 'ask'])->name('chat.ask');
 
-// Admin area
-Route::middleware(['auth', 'admin'])->prefix('admin')->group(function () {
-    Route::get('/dashboard', [VisitorController::class, 'dashboard'])->name('admin.dashboard');
-    Route::get('/api/visitors', [VisitorController::class, 'apiData'])->name('admin.visitors.api');
+// Admin area (prefix + name 'admin.')
+Route::prefix('admin')->name('admin.')->middleware(['admin'])->group(function () {
+    Route::get('/dashboard', [AdminVisitorController::class, 'dashboard'])->name('dashboard');
+    Route::get('/api/visitors', [AdminVisitorController::class, 'apiData'])->name('visitors.api');
 
-    Route::view('/berita', 'admin.berita')->name('admin.berita');
-    Route::view('/prestasi', 'admin.prestasi')->name('admin.prestasi');
-    Route::view('/jurusan', 'admin.jurusan')->name('admin.jurusan');
-    Route::view('/alumni', 'admin.alumni')->name('admin.alumni');
+    Route::resource('berita', AdminBeritaController::class);
+    Route::resource('prestasi', AdminPrestasiController::class);
+    Route::view('/jurusan', 'admin.jurusan')->name('jurusan');
+    Route::resource('alumni', AdminAlumniController::class);
 });
 
 // Login

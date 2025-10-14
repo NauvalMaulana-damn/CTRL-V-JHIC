@@ -1,4 +1,4 @@
-<x-layout title="Pendaftaran - SMK">
+<x-layout title="Pendaftaran - SMK PGRI 3 Malang">
     <div class="bg-white text-gray-800">
         <div class="h-full h-max-content container mx-auto px-4 py-6">
 

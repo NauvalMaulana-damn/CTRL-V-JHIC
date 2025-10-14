@@ -108,24 +108,24 @@
         <section class="w-full mx-auto py-8">
             <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6">
                 <div class="bg-gray-300/50 rounded-xl p-4 sm:p-6 text-center shadow-md">
-                    <div class="text-2xl sm:text-3xl font-bold text-blue-600 mb-1 sm:mb-2">50+</div>
-                    <div class="text-gray-600 text-sm sm:text-base">Kejuaraan</div>
+                    <div class="text-2xl sm:text-3xl font-bold text-blue-600 mb-1 sm:mb-2">{{ $prestasis->count() }}+</div>
+                    <div class="text-gray-600 text-sm sm:text-base">Prestasi</div>
                 </div>
                 <div class="bg-gray-300/50 rounded-xl p-4 sm:p-6 text-center shadow-md">
-                    <div class="text-2xl sm:text-3xl font-bold text-green-600 mb-1 sm:mb-2">100+</div>
+                    <div class="text-2xl sm:text-3xl font-bold text-green-600 mb-1 sm:mb-2">{{ $prestasis->count() * 2 }}+</div>
                     <div class="text-gray-600 text-sm sm:text-base">Siswa Berprestasi</div>
                 </div>
                 <div class="bg-gray-300/50 rounded-xl p-4 sm:p-6 text-center shadow-md">
-                    <div class="text-2xl sm:text-3xl font-bold text-orange-600 mb-1 sm:mb-2">20+</div>
+                    <div class="text-2xl sm:text-3xl font-bold text-orange-600 mb-1 sm:mb-2">10+</div>
                     <div class="text-gray-600 text-sm sm:text-base">Bidang Lomba</div>
                 </div>
                 <div class="bg-gray-300/50 rounded-xl p-4 sm:p-6 text-center shadow-md">
-                    <div class="text-2xl sm:text-3xl font-bold text-purple-600 mb-1 sm:mb-2">10+</div>
+                    <div class="text-2xl sm:text-3xl font-bold text-purple-600 mb-1 sm:mb-2">5+</div>
                     <div class="text-gray-600 text-sm sm:text-base">Tahun Berprestasi</div>
                 </div>
             </div>
         </section>
-        <!-- ✅ Section Para Jawara tetap responsif -->
+        <!-- ✅ Section Para Jawara dengan data dari database -->
         <div class="bg-white rounded-xl shadow-lg p-6 sm:p-8">
             <div class="w-full mx-auto py-8" x-data="{ page: 1, perPage: 6 }">
                 <div class="bg-white rounded-xl shadow-lg p-6 sm:p-8 mb-6 relative">
@@ -148,40 +148,31 @@
                         </div>
                         <div></div>
                     </div>
-                    @php
-                        $juaras = [
-                            ['assets/indust-cont.jpg', 'Syahril Faisal Ramadani', 'Juara 1 LKS DikMen Jatim 33 - Industrial Control'],
-                            ['assets/electronics.jpg', 'Yohan Aldi Pratama', 'Juara 1 LKS Jatim 32 - Electronics'],
-                            ['assets/robot manufac.png', 'Azriel & Celvin', 'Juara 1 LKS Jatim 32 - Robot Manufacturing System'],
-                            ['assets/webtechn.jpeg', 'Arif Kurniawan', 'Juara 2 LKS Jatim 32 - Web Technology'],
-                            ['assets/car paint.jpeg', 'Tegar Reyhan', 'Juara 1 LKS Jatim 32 - Car Painting'],
-                            ['assets/uiux.jpg', 'Kayana Indrasta', 'Juara 1 Lomba Sistem Informasi Festival 2024 - UI/UX Desain'],
-                            ['assets/it software.png', 'Edsel Param Mustapa', 'Juara 1 LKS Jatim 32 - IT Software Solution'],
-                            ['assets/prototype model.png', 'Iza Aska', 'Juara 1 LKS Jatim 32 - Prototype Modeling'],
-                            ['assets/marketing.jpeg', 'Ayu Dewi', 'Juara 3 LKS Jatim 32 - Marketing Online'],
-                            ['assets/manufac system.jpg', 'Rafif & Novaldi', 'Juara 1 LKS DikMen Jatim 33 - Robot Manufacturing System'],
-                        ];
-                    @endphp
-                    <!-- Grid container -->
+
+                    <!-- Grid container dengan data dari database -->
+                    @if($prestasis->count() > 0)
                     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 grid-center-last">
-                        <template x-for="(juara, index) in {{ json_encode($juaras) }}" :key="index">
-                            <div x-show="index >= (page - 1) * perPage && index < page * perPage"
-                                class="bg-white shadow-md rounded-lg p-4 transition-transform duration-300 hover:-translate-y-1 hover:border hover:border-blue-500 relative">
-                                <div class="absolute text-3xl sm:text-4xl right-1 rotate-12 top-2 font-bold">🏅</div>
-                                <img :src="'{{ asset('') }}' + juara[0]" :alt="juara[1]" loading="lazy"
-                                    class="w-full h-64 sm:h-80 object-cover rounded-lg mb-4">
-                                <p class="font-semibold text-sm sm:text-base" x-text="juara[1]"></p>
-                                <p class="text-xs sm:text-sm text-gray-500" x-text="juara[2]"></p>
-                            </div>
-                        </template>
+                        @foreach($prestasis as $index => $prestasi)
+                        <div x-show="{{ $index }} >= (page - 1) * perPage && {{ $index }} < page * perPage"
+                            class="bg-white shadow-md rounded-lg p-4 transition-transform duration-300 hover:-translate-y-1 hover:border hover:border-blue-500 relative">
+                            <div class="absolute text-3xl sm:text-4xl right-1 rotate-12 top-2 font-bold">🏅</div>
+                            <img src="{{ $prestasi->gambar && $prestasi->gambar !== 'default.svg' ? asset('storage/' . $prestasi->gambar) : asset('assets/default.svg') }}"
+                                alt="{{ $prestasi->nama }}"
+                                loading="lazy"
+                                class="w-full h-64 sm:h-80 object-cover rounded-lg mb-4">
+                            <p class="font-semibold text-sm sm:text-base">{{ $prestasi->nama }}</p>
+                            <p class="text-xs sm:text-sm text-gray-500">{{ $prestasi->subjudul }}</p>
+                        </div>
+                        @endforeach
                     </div>
+
                     <!-- Pagination control -->
                     <div class="flex justify-center mt-6 space-x-2">
                         <button
                             class="px-3 py-1 bg-gray-200 rounded-full hover:bg-gray-300 transition disabled:opacity-50"
                             @click="if (page > 1) { page--; }"
                             :disabled="page === 1">←</button>
-                        <template x-for="i in Math.ceil({{ count($juaras) }} / perPage)" :key="i">
+                        <template x-for="i in Math.ceil({{ $prestasis->count() }} / perPage)" :key="i">
                             <button class="px-3 py-1 rounded-full transition"
                                 :class="page === i ? 'bg-customBlue text-white' : 'bg-gray-200 hover:bg-gray-300'"
                                 @click="page = i;"
@@ -189,9 +180,17 @@
                         </template>
                         <button
                             class="px-3 py-1 bg-gray-200 rounded-full hover:bg-gray-300 transition disabled:opacity-50"
-                            @click="if (page < Math.ceil({{ count($juaras) }} / perPage)) { page++; }"
-                            :disabled="page === Math.ceil({{ count($juaras) }} / perPage)">→</button>
+                            @click="if (page < Math.ceil({{ $prestasis->count() }} / perPage)) { page++; }"
+                            :disabled="page === Math.ceil({{ $prestasis->count() }} / perPage)">→</button>
                     </div>
+                    @else
+                    <!-- Empty State -->
+                    <div class="text-center py-12">
+                        <i class="fas fa-trophy text-gray-300 text-6xl mb-4"></i>
+                        <h3 class="text-xl font-semibold text-gray-500 mb-2">Belum Ada Data Prestasi</h3>
+                        <p class="text-gray-400">Data prestasi akan segera diumumkan.</p>
+                    </div>
+                    @endif
                 </div>
             </div>
         </div>

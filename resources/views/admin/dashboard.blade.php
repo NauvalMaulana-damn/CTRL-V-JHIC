@@ -1,8 +1,11 @@
 <x-admin-layout>
     <div class="space-y-6">
-        <div class="bg-white rounded-xl shadow p-6 text-gray-800">
+        <div class="inline-flex items-center justify-between bg-white rounded-xl shadow p-6 text-gray-800 w-full">
             <h2 class="text-2xl font-bold mb-2">
                 Total Pengunjung: <span id="totalVisitors" class="text-blue-600 font-semibold">0</span>
+            </h2>
+            <h2>
+                Pengunjung Aktif: <span id="activeVisitors" class="text-blue-600 font-semibold">0</span>
             </h2>
             <h2>
                 Pengunjung hari ini: <span id="todayVisitors" class="text-green-600 font-semibold">0</span>
@@ -24,8 +27,9 @@
                 const res = await fetch('/admin/api/visitors');
                 const data = await res.json();
 
-                // Update angka
+                // Update angka-angka di dashboard
                 document.getElementById('totalVisitors').innerText = data.totalVisitors;
+                document.getElementById('activeVisitors').innerText = data.activeVisitors;
                 document.getElementById('todayVisitors').innerText = data.todayVisitors;
 
                 // Sembunyikan teks loading kalau sudah ada data

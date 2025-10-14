@@ -68,15 +68,12 @@
 
             <!-- News Grid -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-                <x-cardberita views="545" type="Prestasi" date="15 Oktober 2025" image="uiux.jpg"
-                    title="Siswa SKARIGA Juara 1 Lomba Web Design Tingkat Nasional" desc="Tim siswa SMK PGRI 3 Malang berhasil meraih juara 1 dalam
-                kompetisi web design tingkat nasional yang diselenggarakan oleh Kementerian Pendidikan.">
-                    Tim siswa SMK PGRI 3 Malang berhasil meraih juara 1 dalam kompetisi web design tingkat nasional yang
-                    diselenggarakan oleh Kementerian Pendidikan.
-                    Siswa tersebut bernama Kayana Indrasta, ia dan timnya berhasil berjuang dan memperebutkan juara
-                    pertama, dengan memikul dan menggeret hasil jerih payah dan perjuangan tanpa hentinya, Kayana mampu
-                    mendapatkan gelar Juara 1, dengan pengorbanan waktu, tenaga, dan pikiran tentunya.
+                @foreach ($beritas as $berita)
+                <x-cardberita views="{{ $berita->views }}" desc="{{ $berita->deskripsi }}" type="{{ $berita->type }}" date="{{ $berita->created_at }}" image="{{ $berita->gambar }}"
+                    title="{{ $berita->title }}">
+                    {{ $berita->deskripsi }}
                 </x-cardberita>
+                @endforeach
             </div>
 
             <!-- Pagination -->
