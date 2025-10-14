@@ -127,7 +127,7 @@
             </svg>
 
             <!-- Logo -->
-            <img src="{{ asset('assets/skariga logo 1.png') }}" alt="Logo" class="w-6 h-6 object-contain">
+            <img src="{{ asset('assets/skariga logo 1.png') }}" alt="Logo" class="w-10 h-10 object-contain">
         </div>
     </button>
 
