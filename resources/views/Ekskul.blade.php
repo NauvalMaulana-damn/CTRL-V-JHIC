@@ -29,8 +29,11 @@
             </div>
         </section>
 
-         <div class="mt-12">
+         <div class="flex justify-center mt-0 space-x-2">
+
                         {{ $ekskuls->links() }}
-                    </div>
+
+                    <!-- Pagination akan di-generate oleh JavaScript -->
+                </div>
     </div>
 </x-layout>
