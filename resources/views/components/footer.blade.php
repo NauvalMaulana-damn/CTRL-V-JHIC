@@ -96,7 +96,7 @@
     </div> --}}
     {{-- <div class="border-t border-gray-700 mt-8 pt-6 text-center text-gray-500 text-sm space-x-3">  --}}
     <div class="flex flex-wrap justify-center items-center gap-6 mt-[-50px]">
-        <img class="h-8 md:h-12 object-contain inline-block" src="{{ asset('assets/logopenting.png') }}"
+        <img class="h-12 md:h-16 object-contain inline-block bg-white rounded-lg" src="{{ asset('assets/logo-penting.png') }}"
             alt="Yamaha Logo">
     </div>
     {{-- </div> --}}
