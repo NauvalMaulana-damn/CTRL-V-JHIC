@@ -21,7 +21,7 @@ class VisitorController extends Controller
     {
         $totalVisitors = Visitor::count();
         $todayVisitors = Visitor::whereDate('visited_at', today())->count();
-        $activeVisitors = Visitor::where('visited_at', '>=', now()->subMinutes(10))->count();
+        $activeVisitors = Visitor::where('visited_at', '>=', now())->count();
 
         $weeklyVisitors = Visitor::selectRaw('DATE(visited_at) as date, COUNT(*) as total')
             ->where('visited_at', '>=', now()->subDays(7))

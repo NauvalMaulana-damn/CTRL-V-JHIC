@@ -13,10 +13,4 @@ class Ekskul extends Model
         'desc',
         'image',
     ];
-
-    // Example relationship: one ekskul has many members
-    // public function members()
-    // {
-    //     return $this->hasMany(Member::class, 'ekskul_id');
-    // }
 }

@@ -14,15 +14,22 @@
     <div class="flex h-screen">
         <!-- SIDEBAR -->
         <aside class="w-64 bg-white border-r border-gray-200 flex flex-col">
-            <div class="h-16 flex items-center justify-center border-b border-gray-200">
+            <div class="flex flex-col items-center text-center border-b border-gray-200 p-4">
                 <h1 class="text-2xl font-bold text-blue-600">Admin Sekolah</h1>
+                <h2 class="text-sm text-gray-500 mt-1">Logged in as <b>{{ Auth::user()->username }}</b></h2>
             </div>
 
             <nav class="flex-1 p-4 space-y-2">
-                <x-admin-navitem href="{{ route('admin.dashboard') }}" name="Dashboard" logo="fa-solid fa-chart-line" route="admin/dashboard"/>
-                <x-admin-navitem href="{{ route('admin.berita.index') }}" name="Berita" logo="fa-solid fa-newspaper" route="admin/berita"/>
-                <x-admin-navitem href="{{ route('admin.prestasi.index') }}" name="Prestasi" logo="fa-solid fa-trophy" route="admin/prestasi"/>
-                <x-admin-navitem href="{{ route('admin.alumni.index') }}" name="Alumni" logo="fa-solid fa-user-graduate" route="admin/alumni"/>
+                <x-admin-navitem href="{{ route('admin.dashboard') }}" name="Dashboard" logo="fa-solid fa-chart-line"
+                    route="admin/dashboard" />
+                <x-admin-navitem href="{{ route('admin.berita.index') }}" name="Berita" logo="fa-solid fa-newspaper"
+                    route="admin/berita" />
+                <x-admin-navitem href="{{ route('admin.prestasi.index') }}" name="Prestasi" logo="fa-solid fa-trophy"
+                    route="admin/prestasi" />
+                <x-admin-navitem href="{{ route('admin.ekskul.index') }}" name="Ekstrakurikuler"
+                    logo="fa-solid fa-volleyball-ball" route="admin/ekskul" />
+                <x-admin-navitem href="{{ route('admin.alumni.index') }}" name="Alumni" logo="fa-solid fa-user-graduate"
+                    route="admin/alumni" />
             </nav>
 
             <div class="p-4 border-t border-gray-200">
@@ -44,4 +51,5 @@
     <script src="https://kit.fontawesome.com/a2e0e6ad8d.js" crossorigin="anonymous"></script>
     @vite(['resources/ts/app.ts', 'resources/css/app.css'])
 </body>
+
 </html>

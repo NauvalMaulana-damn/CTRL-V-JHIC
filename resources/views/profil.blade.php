@@ -157,24 +157,26 @@
         </section>
 
         <!-- Visi -->
-        <section class="w-full mx-auto pt-6 pb-10">
-    <div class="bg-orange-500 rounded-2xl shadow-lg overflow-hidden hover-lift hover-glow">
-        <div class="grid md:grid-cols-2 items-center">
-            <div class="flex justify-center">
-                <img src="{{ asset('assets/bp.Luqman_kepsek.jpg') }}" alt="Visi"
-                    class="w-full md:w-[100%] h-80% object-contain md:max-h-[450px]">
-            </div>
-            <div class="px-8 py-8 text-white">
-                <h2 class="text-5xl font-bold mb-4">Visi</h2>
-                <p class="text-lg leading-relaxed">
-                    Menjadi SMK yang unggul dalam prestasi dengan dilandasi Iman & Taqwa serta menghasilkan
-                    tamatan yang mampu bersaing ditingkat Nasional maupun Internasional
-                </p>
-            </div>
-        </div>
-    </div>
-</section>
+        <section class="w-full mx-auto pt-6 pb-10 mt-12">
+            <div class="bg-orange-500 rounded-2xl shadow-lg overflow-visible relative hover-lift hover-glow">
+                <div class="grid md:grid-cols-2 items-start relative py-12">
+                    <!-- Gambar di absolute supaya tidak memengaruhi tinggi kotak -->
+                    <div class="relative">
+                        <img src="{{ asset('assets/bp.Luqman_kepsek-removebg-preview.png') }}" alt="Visi"
+                            class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-[41.2%] w-full md:w-[100%] max-h-[450px] object-contain">
+                    </div>
 
+                    <!-- Teks -->
+                    <div class="px-8 py-8 text-white z-10">
+                        <h2 class="text-5xl font-bold mb-4">Visi</h2>
+                        <p class="text-lg leading-relaxed">
+                            Menjadi SMK yang unggul dalam prestasi dengan dilandasi Iman & Taqwa serta menghasilkan
+                            tamatan yang mampu bersaing ditingkat Nasional maupun Internasional
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
         <!-- Misi -->
         <section class="w-full mx-auto pt-6 pb-10">
@@ -184,7 +186,8 @@
                 <!-- Card 1 -->
                 <div
                     class="bg-blue-500 text-white rounded-xl shadow-lg text-center p-8 flex flex-col items-center hover-lift hover-rotate">
-                    <img src="{{ asset('assets/hand 1.png') }}" alt="Ikon 1" class="mb-6 w-20 h-20 hover-scale invert"  loading="lazy">
+                    <img src="{{ asset('assets/hand 1.png') }}" alt="Ikon 1" class="mb-6 w-20 h-20 hover-scale invert"
+                        loading="lazy">
                     <h3 class="text-2xl font-bold text-center mt-2">Unggul & Beriman</h3>
                     <hr class="w-full h-px bg-gray-300 border-0 my-4">
                     <p class="text-base leading-relaxed">
@@ -196,7 +199,8 @@
                 <!-- Card 2 -->
                 <div
                     class="bg-green-500 text-white rounded-xl shadow-lg text-center p-8 flex flex-col items-center hover-lift hover-rotate">
-                    <img src="{{ asset('assets/learning 1.png') }}" alt="Ikon 2" class="mb-6 w-20 h-20 hover-scale invert" loading="lazy">
+                    <img src="{{ asset('assets/learning 1.png') }}" alt="Ikon 2"
+                        class="mb-6 w-20 h-20 hover-scale invert" loading="lazy">
                     <h3 class="text-2xl font-bold text-center mt-2">Kurikulum Unggul</h3>
                     <hr class="w-full h-px bg-gray-300 border-0 my-4">
                     <p class="text-base leading-relaxed">
@@ -208,7 +212,8 @@
                 <!-- Card 3 -->
                 <div
                     class="bg-orange-500 text-white rounded-xl shadow-lg text-center p-8 flex flex-col items-center hover-lift hover-rotate">
-                    <img src="{{ asset('assets/pray 1.png') }}" alt="Ikon 3" class="mb-6 w-20 h-20 hover-scale invert"  loading="lazy">
+                    <img src="{{ asset('assets/pray 1.png') }}" alt="Ikon 3" class="mb-6 w-20 h-20 hover-scale invert"
+                        loading="lazy">
                     <h3 class="text-2xl font-bold text-center mt-2">Berbudi Pekerti</h3>
                     <hr class="w-full h-px bg-gray-300 border-0 my-4">
                     <p class="text-base leading-relaxed">
@@ -220,7 +225,8 @@
                 <!-- Card 4 -->
                 <div
                     class="bg-red-500 text-white rounded-xl shadow-lg text-center p-8 flex flex-col items-center hover-lift hover-rotate">
-                    <img src="{{ asset('assets/heart 1.png') }}" alt="Ikon 4" class="mb-6 w-20 h-20 hover-scale invert" loading="lazy">
+                    <img src="{{ asset('assets/heart 1.png') }}" alt="Ikon 4" class="mb-6 w-20 h-20 hover-scale invert"
+                        loading="lazy">
                     <h3 class="text-2xl font-bold text-center mt-2">Sistem Terpadu</h3>
                     <hr class="w-full h-px bg-gray-300 border-0 my-4">
                     <p class="text-base leading-relaxed">
@@ -236,21 +242,24 @@
                 <!-- Box 1 -->
                 <div
                     class="flex items-center justify-center gap-3 bg-orange-500 text-white rounded-lg px-6 py-4 shadow-md hover-lift hover-glow">
-                    <img src="{{ asset('assets/grad.png') }}" class="w-7 h-7 hover-scale invert" alt="graduation" loading="lazy">
+                    <img src="{{ asset('assets/grad.png') }}" class="w-7 h-7 hover-scale invert" alt="graduation"
+                        loading="lazy">
                     <span class="font-semibold text-lg cursor-default">Lulus Siap Kerja</span>
                 </div>
 
                 <!-- Box 2 -->
                 <div
                     class="flex items-center justify-center gap-3 bg-orange-500 text-white rounded-lg px-6 py-4 shadow-md hover-lift hover-glow">
-                    <img src="{{ asset('assets/hand shake.png') }}" class="w-7 h-7 hover-scale invert" alt="handshake" loading="lazy">
+                    <img src="{{ asset('assets/hand shake.png') }}" class="w-7 h-7 hover-scale invert" alt="handshake"
+                        loading="lazy">
                     <span class="font-semibold text-lg cursor-default">Kerja Sama Industri</span>
                 </div>
 
                 <!-- Box 3 -->
                 <div
                     class="flex items-center justify-center gap-3 bg-orange-500 text-white rounded-lg px-6 py-4 shadow-md hover-lift hover-glow">
-                    <img src="{{ asset('assets/trophy.png') }}" class="w-7 h-7 hover-scale invert" alt="trophy" loading="lazy">
+                    <img src="{{ asset('assets/trophy.png') }}" class="w-7 h-7 hover-scale invert" alt="trophy"
+                        loading="lazy">
                     <span class="font-semibold text-lg cursor-default">Prestasi Tingkat Nasional</span>
                 </div>
             </div>
@@ -275,17 +284,17 @@
         <x-marquee></x-marquee>
 
         <!-- Berita Terbaru -->
-        <section class=" ">
+        <!-- <section class=" ">
             <div class="w-full mx-auto">
                 <h2 class="text-4xl font-bold text-center mb-12 bg-orange-400 py-5 rounded-2xl text-white">
                     Berita Terbaru</h2>
 
-                <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-8">
+                <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-8"> -->
                     <!-- Card -->
-                    <div
+                    <!-- <div
                         class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition flex flex-col hover-lift hover-border-orange min-h-[560px]">
-                        <img src="{{ asset('assets/kcs38-1.jpg') }}" alt="KCS 38"
-                            class="h-48 w-full object-cover" loading="lazy">
+                        <img src="{{ asset('assets/kcs38-1.jpg') }}" alt="KCS 38" class="h-48 w-full object-cover"
+                            loading="lazy">
                         <div class="p-8 flex flex-col flex-grow">
                             <h3 class="font-semibold text-lg mb-2">KCS 38 DI PUSDIK ARHANUD</h3>
                             <p class="text-sm text-gray-600 flex-grow text-justify">
@@ -295,10 +304,10 @@
                             <a href="#"
                                 class="text-orange-500 font-medium text-sm mt-4 inline-block hover-text-white hover-bg-orange px-3 py-1 rounded transition-all">Selengkapnya</a>
                         </div>
-                    </div>
+                    </div> -->
 
                     <!-- Card -->
-                    <div
+                    <!-- <div
                         class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition flex flex-col hover-lift hover-border-orange min-h-[560px]">
                         <img src="{{ asset('assets/robot-manu.jpg') }}" alt="Juara 1 LKS"
                             class="h-48 w-full object-cover" loading="lazy">
@@ -311,10 +320,10 @@
                             <a href="#"
                                 class="text-orange-500 font-medium text-sm mt-4 inline-block hover-text-white hover-bg-orange px-3 py-1 rounded transition-all">Selengkapnya</a>
                         </div>
-                    </div>
+                    </div> -->
 
                     <!-- Card -->
-                    <div
+                    <!-- <div
                         class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition flex flex-col hover-lift hover-border-orange min-h-[560px]">
                         <img src="{{ asset('assets/drgamal.png') }}" alt="dr. Gamal ke SKARIGA"
                             class="h-48 w-full object-cover" loading="lazy">
@@ -327,10 +336,10 @@
                             <a href="#"
                                 class="text-orange-500 font-medium text-sm mt-4 inline-block hover-text-white hover-bg-orange px-3 py-1 rounded transition-all">Selengkapnya</a>
                         </div>
-                    </div>
+                    </div> -->
 
                     <!-- Card -->
-                    <div
+                    <!-- <div
                         class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition flex flex-col hover-lift hover-border-orange min-h-[560px]">
                         <img src="{{ asset('assets/supporteran.jpg') }}" alt="School Visit"
                             class="h-48 w-full object-cover" loading="lazy">
@@ -346,6 +355,6 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section> -->
     </div>
 </x-layout>
