@@ -114,7 +114,7 @@
     <button @click="open = !open" class="absolute -left-16 top-1/2 transform -translate-y-1/2
         bg-gray-300/80 backdrop-blur-md border border-white/30
         w-14 h-14 rounded-2xl shadow-lg flex items-center justify-center
-        transition-all duration-300 hover:bg-customOrange hover:text-white">
+        transition-all duration-300 hover:bg-customOrange/70 hover:text-white">
 
         <!-- Konten tombol: panah dan ikon -->
         <div class="flex items-center justify-center gap-1">
