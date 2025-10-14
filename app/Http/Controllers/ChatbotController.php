@@ -14,11 +14,6 @@ class ChatbotController extends Controller
         $this->chatbot = $chatbot;
     }
 
-    public function index()
-    {
-        return view('chatbot');
-    }
-
     public function ask(Request $request)
     {
         $request->validate(['message' => 'required|string|max:500']);
