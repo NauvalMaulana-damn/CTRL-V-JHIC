@@ -156,7 +156,7 @@
                         <div x-show="{{ $index }} >= (page - 1) * perPage && {{ $index }} < page * perPage"
                             class="bg-white shadow-md rounded-lg p-4 transition-transform duration-300 hover:-translate-y-1 hover:border hover:border-blue-500 relative">
                             <div class="absolute text-3xl sm:text-4xl right-1 rotate-12 top-2 font-bold">🏅</div>
-                            <img src="{{ $prestasi->gambar && $prestasi->gambar !== 'default.svg' ? asset('storage/' . $prestasi->gambar) : asset('assets/default.svg') }}"
+                            <img src="{{ $prestasi->gambar && $prestasi->gambar !== 'default.svg' ? asset('' . $prestasi->gambar) : asset('assets/default.svg') }}"
                                 alt="{{ $prestasi->nama }}"
                                 loading="lazy"
                                 class="w-full h-64 sm:h-80 object-cover rounded-lg mb-4">

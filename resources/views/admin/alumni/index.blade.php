@@ -37,7 +37,7 @@
                     <td class="p-3">{{ $alumni->position }}</td>
                     <td class="p-3">{{ $alumni->company }}</td>
                     <td class="p-3">
-                        <img src="{{ $alumni->image && $alumni->image !== 'default.svg' ? asset('storage/' . $alumni->image) : asset('images/default.svg') }}"
+                        <img src="{{ $alumni->image && $alumni->image !== 'default.svg' ? asset('' . $alumni->image) : asset('images/default.svg') }}"
                             class="h-12 w-12 rounded-full object-cover" alt="">
                     </td>
                     <td class="p-3 text-center">

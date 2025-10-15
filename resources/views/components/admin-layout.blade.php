@@ -7,6 +7,7 @@
     <title>Admin Panel - @yield('title', 'Dashboard')</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="shortcut icon" href="{{ asset('assets/skariga300rbg.png') }}" type="image/x-icon">
 </head>
 
 <body class="bg-gray-100">
@@ -15,7 +16,9 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center py-4">
                 <div class="flex items-center">
-                    <h1 class="text-xl font-semibold text-gray-800">Admin Panel</h1>
+                    <img class="w-16 h-12 md:w-24 md:h-16 object-contain"
+                            src="{{ asset('assets/skariga logo 1.png') }}" alt="Logo SMK PGRI 3 Malang">
+                    <h1 class="text-xl font-semibold text-gray-800 ml-4">SKARIGA Admin Panel</h1>
                 </div>
 
                 <div class="flex items-center space-x-4">
