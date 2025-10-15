@@ -18,8 +18,6 @@
                             </div>
                         </div>
 
-                        <!-- Judul & Deskripsi di bawah gambar -->
-
                         <!-- Info Berita + Konten -->
                         <div class="p-8">
                             <div class="flex flex-wrap justify-between items-center text-sm text-gray-500 mb-6 gap-2">
@@ -29,9 +27,9 @@
                                 </div>
                             </div>
 
-                            <div class="p-8 border-b border-gray-200">
+                            <div class="border-b border-gray-200">
                                 <h1 class="text-3xl font-bold mb-3 text-gray-800 break-words">{{ $berita->title }}</h1>
-                                <p class="text-gray-600 text-base break-words">{{ Str::limit($berita->deskripsi, 200) }}</p>
+                                <p class="text-gray-600 font-semibold text-base break-words">{{ Str::limit($berita->deskripsi, 200) }}</p>
                             </div>
                             <!-- Isi Berita -->
                             <article class="max-w-none">
