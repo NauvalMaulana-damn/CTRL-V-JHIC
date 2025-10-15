@@ -31,6 +31,7 @@
                 <h3 class="text-[#B9B9B9] text-xl font-bold mb-4">Tentang Sekolah</h3>
                 <ul class="space-y-2">
                     <li><a href="/" class="text-[#828282] hover:text-white transition">Beranda</a></li>
+                    <li><a href="/berita" class="text-[#828282] hover:text-white transition">Berita</a></li>
                     <li><a href="/profil" class="text-[#828282] hover:text-white transition">Profil Sekolah</a></li>
                     <li><a href="/jurusan" class="text-[#828282] hover:text-white transition">Jurusan</a></li>
                     <li><a href="/prestasi" class="text-[#828282] hover:text-white transition">Prestasi</a></li>
