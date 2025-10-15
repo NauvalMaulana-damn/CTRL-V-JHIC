@@ -34,11 +34,11 @@ Route::get('/chat', [ChatbotController::class, 'index'])->name('chat.index');
 Route::post('/chat/ask', [ChatbotController::class, 'ask'])->name('chat.ask');
 
 // Login routes (tanpa middleware admin)
-Route::get('/admin/login', [LoginController::class, 'showLoginForm'])->name('admin.login');
-Route::post('/admin/login', [LoginController::class, 'login'])->name('admin.login.post');
+Route::get('/admin', [LoginController::class, 'showLoginForm'])->name('admin.login');
+Route::post('/admin', [LoginController::class, 'login'])->name('admin.login.post');
 
 // Admin area (harus login dulu)
-Route::prefix('admin')->name('admin.')->middleware(['auth', 'admin'])->group(function () {
+Route::prefix('admin')->name('admin.')->middleware(['admin'])->group(function () {
     // Dashboard
     Route::get('/dashboard', [AdminVisitorController::class, 'dashboard'])->name('dashboard');
 

@@ -12,7 +12,7 @@ use App\Models\Ekskul;
 use App\Models\ActivityLog;
 use App\Models\User;
 use Carbon\Carbon;
-use illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Auth;
 
 class VisitorController extends Controller
 {
@@ -78,8 +78,8 @@ class VisitorController extends Controller
                 'weeklyVisitors' => $weeklyVisitors
             ]);
 
-        } catch (Exception $e) {
-            Log::error('Error fetching visitor data: ' . $e->getMessage());
+        } catch (\Exception $e) {
+            ActivityLog::error('Error fetching visitor data: ' . $e->getMessage());
 
             return response()->json([
                 'success' => false,
