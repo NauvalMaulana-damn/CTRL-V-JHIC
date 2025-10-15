@@ -68,11 +68,11 @@
                 </div>
 
                 <!-- Visitor Chart -->
-                <div class="bg-white rounded-xl shadow-lg p-6">
+                <!-- <div class="bg-white rounded-xl shadow-lg p-6">
                     <h3 class="text-lg font-semibold text-gray-800 mb-4">Statistik Pengunjung 7 Hari Terakhir</h3>
-                    <canvas id="visitorsChart" height="100"></canvas>
+                    <canvas id="visitorsChart" class="h-[350px] w-full"></canvas>
                     <p id="loadingText" class="text-center text-gray-500 mt-4">Memuat data pengunjung...</p>
-                </div>
+                </div> -->
             </div>
 
             <!-- Content Statistics -->
@@ -367,7 +367,6 @@
         try {
             console.log('Fetching visitor data from API...');
 
-            // Pastikan URL ini sesuai dengan route name 'admin.visitors.api'
             const res = await fetch('{{ route("admin.visitors.api") }}', {
                 headers: {
                     'X-Requested-With': 'XMLHttpRequest',
@@ -386,7 +385,7 @@
                 throw new Error(data.error || 'API returned error');
             }
 
-            // Update angka-angka di dashboard
+            // Update angka di dashboard
             document.getElementById('totalVisitors').innerText = data.totalVisitors.toLocaleString();
             document.getElementById('activeVisitors').innerText = data.activeVisitors.toLocaleString();
             document.getElementById('todayVisitors').innerText = data.todayVisitors.toLocaleString();
@@ -394,7 +393,7 @@
             // Sembunyikan teks loading
             document.getElementById('loadingText').style.display = 'none';
 
-            // Process chart data
+            // Siapkan data chart
             const labels = data.weeklyVisitors.map(v => {
                 const date = new Date(v.date);
                 return date.toLocaleDateString('id-ID', {
@@ -409,58 +408,60 @@
             console.log('Chart data - Labels:', labels);
             console.log('Chart data - Totals:', totals);
 
-            // Initialize or update chart
+            // Hancurkan chart lama secara total
+            const oldCanvas = document.getElementById('visitorsChart');
+            if (chart) {
+                chart.destroy();
+                chart = null;
+            }
+            const newCanvas = oldCanvas.cloneNode(true);
+            oldCanvas.parentNode.replaceChild(newCanvas, oldCanvas);
+
+            // Ambil context baru
             const ctx = document.getElementById('visitorsChart').getContext('2d');
 
-            if (chart) {
-                // Update existing chart
-                chart.data.labels = labels;
-                chart.data.datasets[0].data = totals;
-                chart.update();
-            } else {
-                // Create new chart
-                chart = new Chart(ctx, {
-                    type: 'line',
-                    data: {
-                        labels: labels,
-                        datasets: [{
-                            label: 'Jumlah Pengunjung',
-                            data: totals,
-                            borderColor: 'rgb(37, 99, 235)',
-                            backgroundColor: 'rgba(37, 99, 235, 0.1)',
-                            tension: 0.3,
-                            fill: true,
-                            pointRadius: 5,
-                            pointHoverRadius: 7,
-                            pointBackgroundColor: 'rgb(37, 99, 235)',
-                            pointBorderColor: 'white',
-                            pointBorderWidth: 2,
-                        }],
-                    },
-                    options: {
-                        responsive: true,
-                        maintainAspectRatio: false,
-                        plugins: {
-                            legend: {
-                                display: false
-                            },
-                            tooltip: {
-                                backgroundColor: 'rgba(0, 0, 0, 0.8)',
-                                titleColor: 'white',
-                                bodyColor: 'white',
-                            }
+            // Buat chart baru
+            chart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: 'Jumlah Pengunjung',
+                        data: totals,
+                        borderColor: 'rgb(37, 99, 235)',
+                        backgroundColor: 'rgba(37, 99, 235, 0.1)',
+                        tension: 0.3,
+                        fill: true,
+                        pointRadius: 5,
+                        pointHoverRadius: 7,
+                        pointBackgroundColor: 'rgb(37, 99, 235)',
+                        pointBorderColor: 'white',
+                        pointBorderWidth: 2,
+                    }],
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            display: false
                         },
-                        scales: {
-                            y: {
-                                beginAtZero: true,
-                                ticks: {
-                                    precision: 0
-                                }
-                            }
-                        },
+                        tooltip: {
+                            backgroundColor: 'rgba(0, 0, 0, 0.8)',
+                            titleColor: 'white',
+                            bodyColor: 'white',
+                        }
                     },
-                });
-            }
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            ticks: {
+                                precision: 0
+                            }
+                        }
+                    },
+                },
+            });
 
         } catch (err) {
             console.error('Error fetching visitor data:', err);
@@ -470,11 +471,12 @@
         }
     }
 
-    // Initialize when page loads
+    // Jalankan saat halaman dimuat
     document.addEventListener('DOMContentLoaded', function() {
         fetchVisitorData();
-        // Refresh every 15 seconds
+        // Refresh setiap 15 detik
         setInterval(fetchVisitorData, 15000);
     });
     </script>
+
 </x-admin-layout>
