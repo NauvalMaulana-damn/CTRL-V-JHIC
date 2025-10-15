@@ -14,7 +14,6 @@
             </div>
         </section>
 
-        <!-- Ekskul Section -->
         <section class="w-full container py-12 md:py-16 overflow-hidden animate-fade-in">
             <div class="max-w-full mx-auto">
                 <h2 class="text-3xl md:text-5xl font-bold text-center mb-12">Ekstrakurikuler</h2>
@@ -31,7 +30,6 @@
         </section>
 
         <div class="flex justify-center mt-0 space-x-2">
-
             {{ $ekskuls->links() }}
         </div>
     </div>
