@@ -63,7 +63,7 @@ class BeritaController extends Controller
             'deskripsi' => 'required|max:175',
             'content'   => 'required',
             'type'      => 'required|in:PRESTASI,KEGIATAN,PENGUMUMAN,ACARA',
-            'gambar'    => 'nullable|image|mimes:jpg,jpeg,png,svg,webp',
+            'gambar'    => 'nullable|image|mimes:jpg,jpeg,png,svg,webp ',
         ]);
 
         $gambarPath = $beritum->gambar;

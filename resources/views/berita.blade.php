@@ -49,17 +49,6 @@
                 <!-- Konten -->
                 <div id="sidebarContent" class="text-gray-700 leading-relaxed whitespace-pre-line mb-8"></div>
 
-                <!-- Tombol aksi -->
-                <div class="flex space-x-4">
-                    <button
-                        class="bg-customBlue hover:bg-blue-800 text-white px-4 py-2 rounded-lg font-medium transition-colors">
-                        <i class="fas fa-share-alt mr-2"></i>Bagikan
-                    </button>
-                    <button
-                        class="bg-gray-200 hover:bg-gray-300 text-gray-700 px-4 py-2 rounded-lg font-medium transition-colors">
-                        <i class="far fa-bookmark mr-2"></i>Simpan
-                    </button>
-                </div>
             </div>
         </div>
 

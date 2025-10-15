@@ -1,13 +1,9 @@
 <?php
-
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
-use Illuminate\Database\Seeder;
 use App\Models\User;
+use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
-
-
 
 class UserSeeder extends Seeder
 {
@@ -19,22 +15,22 @@ class UserSeeder extends Seeder
         User::create([
             'username' => 'admin',
             'password' => Hash::make('admin1234'),
-            'role' => 'SUPERADMIN',
-            'roleKey' => env('SUPERADMIN_ROLE_KEY'),
+            'role'     => 'SUPERADMIN',
+            'Key'      => env('SUPERADMIN_ROLE_KEY'),
         ]);
 
         User::create([
             'username' => 'editor',
             'password' => Hash::make('editor1234'),
-            'role' => 'EDITOR',
-            'roleKey' => env('EDITOR_ROLE_KEY'),
+            'role'     => 'EDITOR',
+            'Key'      => env('EDITOR_ROLE_KEY'),
         ]);
 
         User::create([
             'username' => 'viewer',
             'password' => Hash::make('viewer1234'),
-            'role' => 'VIEWER',
-            'roleKey' => env('VIEWER_ROLE_KEY'),
+            'role'     => 'VIEWER',
+            'Key'      => env('VIEWER_ROLE_KEY'),
         ]);
     }
 }
