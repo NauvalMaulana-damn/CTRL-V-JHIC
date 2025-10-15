@@ -19,7 +19,49 @@
 const chatForm = document.getElementById('chatForm');
 const chatbox = document.querySelector('#chatbox');
 const messageInput = document.getElementById('message');
-const submitButton = document.getElementById('submitBtn')
+const submitButton = document.getElementById('submitBtn');
+
+// Fungsi untuk mendapatkan atau membuat chat history
+function getChatHistory() {
+    const history = localStorage.getItem('skaribot_chat_history');
+    const timestamp = localStorage.getItem('skaribot_chat_timestamp');
+
+    // Cek jika history lebih dari 3 jam
+    if (timestamp && (Date.now() - parseInt(timestamp)) > 3 * 60 * 60 * 1000) {
+        localStorage.removeItem('skaribot_chat_history');
+        localStorage.removeItem('skaribot_chat_timestamp');
+        return [];
+    }
+
+    return history ? JSON.parse(history) : [];
+}
+
+// Fungsi untuk menyimpan chat history
+function saveChatHistory(history) {
+    localStorage.setItem('skaribot_chat_history', JSON.stringify(history));
+    localStorage.setItem('skaribot_chat_timestamp', Date.now().toString());
+}
+
+// Fungsi untuk memuat history chat
+function loadChatHistory() {
+    const history = getChatHistory();
+    chatbox.innerHTML = '';
+
+    history.forEach(chat => {
+        appendMessage(chat.sender, chat.text, false);
+    });
+
+    chatbox.scrollTop = chatbox.scrollHeight;
+}
+
+// Fungsi untuk membersihkan history otomatis
+function cleanupOldHistory() {
+    const timestamp = localStorage.getItem('skaribot_chat_timestamp');
+    if (timestamp && (Date.now() - parseInt(timestamp)) > 3600000) {
+        localStorage.removeItem('skaribot_chat_history');
+        localStorage.removeItem('skaribot_chat_timestamp');
+    }
+}
 
 messageInput.addEventListener('keydown', async (e) => {
     if (e.key === "Enter" || e.keyCode === 13) {
@@ -58,12 +100,20 @@ chatForm.addEventListener('submit', async (e) => {
     appendMessage('bot', data.reply);
 });
 
-function appendMessage(sender, text) {
+function appendMessage(sender, text, saveToHistory = true) {
     const div = document.createElement('div');
     div.classList.add('bubble', sender);
     div.innerHTML = text;
     chatbox.appendChild(div);
     chatbox.scrollTop = chatbox.scrollHeight;
+
+    // Simpan ke history jika diperlukan
+    if (saveToHistory) {
+        const history = getChatHistory();
+        history.push({ sender, text, timestamp: Date.now() });
+        saveChatHistory(history);
+    }
+
     return div;
 }
 
@@ -75,4 +125,10 @@ function appendTyping() {
     chatbox.scrollTop = chatbox.scrollHeight;
     return typing;
 }
+
+// Inisialisasi saat halaman dimuat
+document.addEventListener('DOMContentLoaded', function() {
+    cleanupOldHistory(); // Bersihkan history lama
+    loadChatHistory(); // Muat history yang valid
+});
 </script>

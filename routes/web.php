@@ -28,11 +28,13 @@ Route::middleware('trackvisitor')->group(function () {
     Route::get('/alumni', [AlumniController::class, 'index'])->name('alumni.index');
     Route::view('/pendaftaran', 'pendaftaran');
     Route::get('/berita/{id}', [BeritaController::class, 'show'])->name('berita.show');
-});
 
-// Chatbot routes
-Route::get('/chat', [ChatbotController::class, 'index'])->name('chat.index');
-Route::post('/chat/ask', [ChatbotController::class, 'ask'])->name('chat.ask');
+    // Chatbot routes
+    Route::post('/chat/ask', [ChatbotController::class, 'ask'])->name('chat.ask');
+    Route::get('/chat/history', [ChatbotController::class, 'getHistory'])->name('chat.history');
+    Route::delete('/chat/clear-history', [ChatbotController::class, 'clearHistory'])->name('chat.clear-history');
+    Route::get('/chat/check-session', [ChatbotController::class, 'checkSession'])->name('chat.check-session');
+});
 
 // Login routes (tanpa middleware admin)
 Route::get('/admin', [LoginController::class, 'showLoginForm'])->name('admin.login');
