@@ -26,7 +26,6 @@ Route::middleware('trackvisitor')->group(function () {
     Route::get('/alumni', [AlumniController::class, 'index'])->name('alumni.index');
     Route::view('/pendaftaran', 'pendaftaran');
     Route::get('/berita/{slug}', [BeritaController::class, 'show'])->name('berita.show');
-
 });
 
 // Chatbot routes
@@ -36,6 +35,10 @@ Route::post('/chat/ask', [ChatbotController::class, 'ask'])->name('chat.ask');
 // Login routes (tanpa middleware admin)
 Route::get('/admin', [LoginController::class, 'showLoginForm'])->name('admin.login');
 Route::post('/admin', [LoginController::class, 'login'])->name('admin.login.post');
+
+// Route::prefix('admin')->group(function () {
+//     Route::get('/berita/{id}', [AdminBeritaController::class, 'show'])->name('admin.berita.show');
+// });
 
 // Admin area (harus login dulu)
 Route::prefix('admin')->name('admin.')->middleware(['admin'])->group(function () {

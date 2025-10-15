@@ -71,6 +71,12 @@
                                 </div>
                             </div>
                             @endforeach
+                            <a href="/berita">
+                        <button
+                            class="mt-6 w-full bg-customOrange text-white py-2 rounded-lg font-medium hover:bg-customBlue transition">
+                            Lihat Berita Lainnya
+                        </button>
+                    </a>
                         </div>
                     </div>
 

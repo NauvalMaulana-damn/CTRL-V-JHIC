@@ -36,7 +36,7 @@
         <section class="py-12 md:py-16 animate-fade-in">
             <div class="max-w-full container mx-auto">
                 <h2 class="text-3xl md:text-5xl font-bold text-center mb-4 text-gray-800">ALUMNI HEBAT!</h2>
-                <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto">Alumni-alumni berprestasi SMK Negeri 1 Geger yang telah sukses di dunia kerja</p>
+                <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto">Alumni-alumni berprestasi SMK PGRI 3 MALANG yang telah sukses di dunia kerja</p>
 
                 <!-- Alumni Grid -->
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="alumni-container">
