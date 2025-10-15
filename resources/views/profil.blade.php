@@ -158,25 +158,33 @@
 
         <!-- Visi -->
         <section class="w-full mx-auto pt-6 pb-10 mt-12">
-            <div class="bg-orange-500 rounded-2xl shadow-lg overflow-visible relative hover-lift hover-glow">
-                <div class="grid md:grid-cols-2 items-start relative py-12">
-                    <!-- Gambar di absolute supaya tidak memengaruhi tinggi kotak -->
-                    <div class="relative">
-                        <img src="{{ asset('assets/bp.Luqman_kepsek-removebg-preview.png') }}" alt="Visi"
-                            class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-[41.2%] w-full md:w-[100%] max-h-[450px] object-contain">
-                    </div>
+    <div class="bg-orange-500 rounded-2xl shadow-lg overflow-visible relative hover-lift hover-glow">
+        <div class="grid md:grid-cols-2 items-start relative py-12">
+            <!-- Gambar Kepala Sekolah -->
+            <div class="relative flex justify-center items-start">
+                <img src="{{ asset('assets/bp.Luqman_kepsek-removebg-preview.png') }}"
+                    alt="Kepala Sekolah SMK PGRI 3 Malang"
+                    class="absolute top-0 left-[40%] transform -translate-x-1/2 -translate-y-[41.2%] w-full md:w-[100%] max-h-[450px] object-contain">
 
-                    <!-- Teks -->
-                    <div class="px-8 py-8 text-white z-10">
-                        <h2 class="text-5xl font-bold mb-4">Visi</h2>
-                        <p class="text-lg leading-relaxed">
-                            Menjadi SMK yang unggul dalam prestasi dengan dilandasi Iman & Taqwa serta menghasilkan
-                            tamatan yang mampu bersaing ditingkat Nasional maupun Internasional
-                        </p>
-                    </div>
+                <!-- Nama di sebelah kanan leher -->
+                <div class="absolute top-[52%] left-[62%] text-white">
+                    <h3 class="text-lg font-bold leading-tight drop-shadow-md">Moch. Lukman Hakim, S.T., M.M.</h3>
+                    <p class="text-base font-medium opacity-90 drop-shadow-md">Kepala SMK PGRI 3 Malang</p>
                 </div>
             </div>
-        </section>
+
+            <!-- Bagian Visi -->
+            <div class="px-8 py-8 text-white z-10">
+                <h2 class="text-5xl font-bold mb-4">Visi</h2>
+                <p class="text-lg leading-relaxed">
+                    Menjadi SMK yang unggul dalam prestasi dengan dilandasi Iman &amp; Taqwa serta menghasilkan
+                    tamatan yang mampu bersaing di tingkat Nasional maupun Internasional.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
 
         <!-- Misi -->
         <section class="w-full mx-auto pt-6 pb-10">
