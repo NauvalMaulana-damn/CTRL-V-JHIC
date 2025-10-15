@@ -8,7 +8,7 @@ use App\Models\Prestasi;
 class PrestasiController extends Controller
 {
     public function index() {
-        $prestasis = Prestasi::latest()->get();
+        $prestasis = Prestasi::latest()->paginate(6);
         return view('prestasi', compact('prestasis'));
     }
 }

@@ -5,7 +5,7 @@ use App\Http\Controllers\Admin\BeritaController as AdminBeritaController;
 use App\Http\Controllers\Admin\VisitorController as AdminVisitorController;
 use App\Http\Controllers\Admin\PrestasiController as AdminPrestasiController;
 use App\Http\Controllers\Admin\EkskulController as AdminEkskulController;
-
+use App\Http\Controllers\Admin\UserController as AdminUserController;
 use App\Http\Controllers\Admin\ActivityLogController;
 
 use App\Http\Controllers\EkskulController;
@@ -16,6 +16,7 @@ use App\Http\Controllers\AlumniController;
 use App\Http\Controllers\PrestasiController;
 use Illuminate\Support\Facades\Route;
 
+// Public routes dengan tracking visitor
 Route::middleware('trackvisitor')->group(function () {
     Route::view('/', 'landing');
     Route::get('/berita', [BeritaController::class, 'index'])->name('berita.index');
@@ -27,29 +28,37 @@ Route::middleware('trackvisitor')->group(function () {
     Route::view('/pendaftaran', 'pendaftaran');
 });
 
-// Chatbot
+// Chatbot routes
 Route::get('/chat', [ChatbotController::class, 'index'])->name('chat.index');
 Route::post('/chat/ask', [ChatbotController::class, 'ask'])->name('chat.ask');
 
-// Admin area (prefix + name 'admin.')
-Route::prefix('admin')->name('admin.')->middleware(['admin'])->group(function () {
+// Login routes (tanpa middleware admin)
+Route::get('/admin', [LoginController::class, 'showLoginForm'])->name('admin.login');
+Route::post('/admin', [LoginController::class, 'login'])->name('admin.login.post');
+
+// Admin area (harus login dulu)
+Route::prefix('admin')->name('admin.')->middleware(['auth', 'admin'])->group(function () {
+    // Dashboard
     Route::get('/dashboard', [AdminVisitorController::class, 'dashboard'])->name('dashboard');
     Route::get('/api/visitors', [AdminVisitorController::class, 'index'])->name('visitors.api');
+
+    // CRUD resources
     Route::resource('ekskul', AdminEkskulController::class);
     Route::resource('berita', AdminBeritaController::class);
     Route::resource('prestasi', AdminPrestasiController::class);
     Route::resource('alumni', AdminAlumniController::class);
 
-    Route::middleware(['admin', 'superadmin'])->group(function () {
+    // Logout
+    Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
+
+    // Activity Logs - Hanya untuk SUPERADMIN
+    Route::middleware('superadmin')->group(function () {
         Route::get('/logs', [ActivityLogController::class, 'index'])->name('logs.index');
         Route::get('/logs/filter', [ActivityLogController::class, 'filter'])->name('logs.filter');
         Route::get('/logs/{log}', [ActivityLogController::class, 'show'])->name('logs.show');
+
+        // User Management - Hanya SUPERADMIN
+        Route::resource('users', AdminUserController::class);
+        Route::patch('/users/{user}/toggle-status', [AdminUserController::class, 'toggleStatus'])->name('users.toggle-status');
     });
 });
-
-
-
-// Login
-Route::get('/admin', [LoginController::class, 'showLoginForm'])->name('admin.login');
-Route::post('/admin', [LoginController::class, 'login'])->name('admin.login.post');
-Route::post('/admin/logout', [LoginController::class, 'logout'])->name('admin.logout');
