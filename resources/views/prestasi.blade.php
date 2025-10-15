@@ -150,47 +150,20 @@
                     </div>
 
                     <!-- Grid container dengan data dari database -->
-                    @if($prestasis->count() > 0)
-                    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 grid-center-last">
-                        @foreach($prestasis as $index => $prestasi)
-                        <div x-show="{{ $index }} >= (page - 1) * perPage && {{ $index }} < page * perPage"
-                            class="bg-white shadow-md rounded-lg p-4 transition-transform duration-300 hover:-translate-y-1 hover:border hover:border-blue-500 relative">
-                            <div class="absolute text-3xl sm:text-4xl right-1 rotate-12 top-2 font-bold">🏅</div>
-                            <img src="{{ $prestasi->gambar && $prestasi->gambar !== 'default.svg' ? asset('' . $prestasi->gambar) : asset('assets/default.svg') }}"
-                                alt="{{ $prestasi->nama }}"
-                                loading="lazy"
-                                class="w-full h-64 sm:h-80 object-cover rounded-lg mb-4">
-                            <p class="font-semibold text-sm sm:text-base">{{ $prestasi->nama }}</p>
-                            <p class="text-xs sm:text-sm text-gray-500">{{ $prestasi->subjudul }}</p>
-                        </div>
-                        @endforeach
-                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+    @foreach ($prestasis as $prestasi)
+        <div class="bg-white shadow-md rounded-lg p-4">
+            <img src="{{ $prestasi->gambar ? asset($prestasi->gambar) : asset('assets/default.svg') }}" class="w-full h-64 object-cover rounded-lg mb-4">
+            <p class="font-semibold">{{ $prestasi->nama }}</p>
+            <p class="text-gray-500 text-sm">{{ $prestasi->subjudul }}</p>
+        </div>
+    @endforeach
+</div>
 
-                    <!-- Pagination control -->
-                    <div class="flex justify-center mt-6 space-x-2">
-                        <button
-                            class="px-3 py-1 bg-gray-200 rounded-full hover:bg-gray-300 transition disabled:opacity-50"
-                            @click="if (page > 1) { page--; }"
-                            :disabled="page === 1">←</button>
-                        <template x-for="i in Math.ceil({{ $prestasis->count() }} / perPage)" :key="i">
-                            <button class="px-3 py-1 rounded-full transition"
-                                :class="page === i ? 'bg-customBlue text-white' : 'bg-gray-200 hover:bg-gray-300'"
-                                @click="page = i;"
-                                x-text="i"></button>
-                        </template>
-                        <button
-                            class="px-3 py-1 bg-gray-200 rounded-full hover:bg-gray-300 transition disabled:opacity-50"
-                            @click="if (page < Math.ceil({{ $prestasis->count() }} / perPage)) { page++; }"
-                            :disabled="page === Math.ceil({{ $prestasis->count() }} / perPage)">→</button>
-                    </div>
-                    @else
-                    <!-- Empty State -->
-                    <div class="text-center py-12">
-                        <i class="fas fa-trophy text-gray-300 text-6xl mb-4"></i>
-                        <h3 class="text-xl font-semibold text-gray-500 mb-2">Belum Ada Data Prestasi</h3>
-                        <p class="text-gray-400">Data prestasi akan segera diumumkan.</p>
-                    </div>
-                    @endif
+<div class="flex justify-center mt-6">
+    {{ $prestasis->links('pagination::tailwind') }}
+</div>
+
                 </div>
             </div>
         </div>
