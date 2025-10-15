@@ -2,48 +2,72 @@
 
 namespace App\Models;
 
-// use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
 class User extends Authenticatable
 {
-    /** @use HasFactory<\Database\Factories\UserFactory> */
     use HasFactory, Notifiable;
 
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var list<string>
-     */
     protected $fillable = [
-        'name',
-        'email',
+        'username',
         'password',
-        'roleKey'
+        'role',
+        'role_key',
+        'is_active',
     ];
 
-    /**
-     * The attributes that should be hidden for serialization.
-     *
-     * @var list<string>
-     */
     protected $hidden = [
         'password',
         'remember_token',
     ];
 
-    /**
-     * Get the attributes that should be cast.
-     *
-     * @return array<string, string>
-     */
-    protected function casts(): array
+    protected $casts = [
+        'password' => 'hashed',
+        'is_active' => 'boolean',
+    ];
+
+    // Scope untuk role
+    public function scopeSuperadmin($query)
     {
-        return [
-            'email_verified_at' => 'datetime',
-            'password' => 'hashed',
-        ];
+        return $query->where('role', 'SUPERADMIN');
+    }
+
+    public function scopeEditor($query)
+    {
+        return $query->where('role', 'EDITOR');
+    }
+
+    public function scopeViewer($query)
+    {
+        return $query->where('role', 'VIEWER');
+    }
+
+    public function scopeActive($query)
+    {
+        return $query->where('is_active', true);
+    }
+
+    // Check role
+    public function isSuperadmin()
+    {
+        return $this->role === 'SUPERADMIN';
+    }
+
+    public function isEditor()
+    {
+        return $this->role === 'EDITOR';
+    }
+
+    public function isViewer()
+    {
+        return $this->role === 'VIEWER';
+    }
+
+    // Relationships
+    public function activityLogs()
+    {
+        return $this->hasMany(ActivityLog::class);
     }
 }

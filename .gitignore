@@ -16,7 +16,7 @@
 /node_modules
 /public/build
 /public/hot
-/public/storage
+!public/storage
 /storage/*.key
 /storage/pail
 /vendor
@@ -26,4 +26,4 @@ Thumbs.db
 
 # UNIGNORE
 !/storage/app/data/*
-!/public/storage/*
+!public/storage/*

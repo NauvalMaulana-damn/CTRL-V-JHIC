@@ -1,13 +1,14 @@
 <?php
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Traits\Loggable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
 
 class Berita extends Model
 {
-    use HasFactory;
+    use Loggable;
+    protected $table = 'beritas';
 
     protected $fillable = [
         'title',
