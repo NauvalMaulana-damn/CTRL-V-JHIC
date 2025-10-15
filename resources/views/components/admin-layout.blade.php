@@ -21,15 +21,15 @@
                 <div class="flex items-center space-x-4">
                     <!-- User info dengan badge role -->
                     <div class="text-right">
-                        <p class="text-sm font-medium text-gray-700">{{ auth()->user()->username }}</p>
+                        <p class="text-sm font-medium text-gray-700">{{ Auth::user()->username }}</p>
                         <div class="flex items-center space-x-2">
                             <span class="text-xs px-2 py-1 rounded-full
-                                @if(auth()->user()->isSuperadmin()) bg-purple-100 text-purple-800
-                                @elseif(auth()->user()->isEditor()) bg-blue-100 text-blue-800
+                                @if(Auth::user()->isSuperadmin()) bg-purple-100 text-purple-800
+                                @elseif(Auth::user()->isEditor()) bg-blue-100 text-blue-800
                                 @else bg-gray-100 text-gray-800 @endif">
-                                {{ auth()->user()->role }}
+                                {{ Auth::user()->role }}
                             </span>
-                            @if(!auth()->user()->verifyRoleKey())
+                            @if(!Auth::user()->verifyRoleKey())
                             <span class="text-xs px-2 py-1 rounded-full bg-red-100 text-red-800">
                                 Invalid Key
                             </span>
@@ -82,7 +82,7 @@
                 </a>
 
                 <!-- Hanya SUPERADMIN yang bisa melihat Logs dan User Management -->
-                @if(auth()->user()->canViewLogs())
+                @if(Auth::user()->canViewLogs())
                 <a href="{{ route('admin.logs.index') }}"
                     class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium {{ request()->routeIs('admin.logs.*') ? 'bg-gray-700 text-white' : '' }}">
                     <i class="fas fa-history mr-2"></i>Activity Logs
@@ -127,7 +127,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
             <div class="text-center text-gray-500 text-sm">
                 &copy; {{ date('Y') }} Admin Panel - Logged in as
-                <span class="font-semibold capitalize">{{ auth()->user()->role }}</span>
+                <span class="font-semibold capitalize">{{ Auth::user()->role }}</span>
             </div>
         </div>
     </footer>
