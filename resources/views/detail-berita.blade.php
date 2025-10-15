@@ -7,11 +7,6 @@
                     <h1 class="text-4xl font-bold mb-4 break-words">{{ $berita->title }}</h1>
                     <p class="text-lg mb-6 break-words">{{ Str::limit($berita->deskripsi, 150) }}</p>
                     <div class="flex space-x-4">
-                        <a href="/berita">
-                            <button class="bg-customOrange hover:bg-orange-600 text-white px-6 py-2 rounded-lg font-semibold transition-colors">
-                                <i class="fas fa-arrow-left mr-2"></i>Kembali ke Berita
-                            </button>
-                        </a>
                     </div>
                 </div>
             </div>
