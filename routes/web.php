@@ -3,16 +3,16 @@
 use App\Http\Controllers\Admin\AlumniController as AdminAlumniController;
 use App\Http\Controllers\Admin\BeritaController as AdminBeritaController;
 use App\Http\Controllers\Admin\VisitorController as AdminVisitorController;
-use App\Http\Controllers\Admin\PrestasiController as AdminPrestasiController;
 use App\Http\Controllers\Admin\EkskulController as AdminEkskulController;
 use App\Http\Controllers\Admin\UserController as AdminUserController;
+use App\Http\Controllers\Admin\PrestasiController as AdminPrestasiController;
 use App\Http\Controllers\Admin\ActivityLogController;
 
-use App\Http\Controllers\EkskulController;
-use App\Http\Controllers\ChatbotController;
-use App\Http\Controllers\LoginController;
-use App\Http\Controllers\BeritaController;
 use App\Http\Controllers\AlumniController;
+use App\Http\Controllers\BeritaController;
+use App\Http\Controllers\ChatbotController;
+use App\Http\Controllers\EkskulController;
+use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PrestasiController;
 use Illuminate\Support\Facades\Route;
 
@@ -26,6 +26,7 @@ Route::middleware('trackvisitor')->group(function () {
     Route::get('/ekstrakurikuler', [EkskulController::class, 'index'])->name('ekskul.index');
     Route::get('/alumni', [AlumniController::class, 'index'])->name('alumni.index');
     Route::view('/pendaftaran', 'pendaftaran');
+    Route::get('/berita/{slug}', [BeritaController::class, 'show'])->name('berita.show');
 });
 
 // Chatbot routes

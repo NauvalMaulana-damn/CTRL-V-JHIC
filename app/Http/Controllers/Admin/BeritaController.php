@@ -1,10 +1,9 @@
 <?php
-
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
 use App\Models\Berita;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
 class BeritaController extends Controller
@@ -23,11 +22,11 @@ class BeritaController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'title' => 'required|max:100',
+            'title'     => 'required|max:100',
             'deskripsi' => 'required|max:175',
-            'content' => 'required',
-            'type' => 'required|in:PRESTASI,KEGIATAN,PENGUMUMAN,ACARA',
-            'gambar' => 'nullable|image|mimes:jpg,jpeg,png,svg,webp',
+            'content'   => 'required',
+            'type'      => 'required|in:PRESTASI,KEGIATAN,PENGUMUMAN,ACARA',
+            'gambar'    => 'nullable|image|mimes:jpg,jpeg,png,svg,webp',
         ]);
 
         $gambarPath = 'default.svg';
@@ -36,11 +35,11 @@ class BeritaController extends Controller
         }
 
         Berita::create([
-            'title' => $request->title,
+            'title'     => $request->title,
             'deskripsi' => $request->deskripsi,
-            'content' => $request->content,
-            'type' => $request->type,
-            'gambar' => $gambarPath,
+            'content'   => $request->content,
+            'type'      => $request->type,
+            'gambar'    => $gambarPath,
         ]);
 
         return redirect()->route('admin.berita.index')->with('success', 'Berita berhasil ditambahkan!');
@@ -60,11 +59,11 @@ class BeritaController extends Controller
     public function update(Request $request, Berita $beritum)
     {
         $request->validate([
-            'title' => 'required|max:100',
+            'title'     => 'required|max:100',
             'deskripsi' => 'required|max:175',
-            'content' => 'required',
-            'type' => 'required|in:PRESTASI,KEGIATAN,PENGUMUMAN,ACARA',
-            'gambar' => 'nullable|image|mimes:jpg,jpeg,png,svg,webp|max:2048',
+            'content'   => 'required',
+            'type'      => 'required|in:PRESTASI,KEGIATAN,PENGUMUMAN,ACARA',
+            'gambar'    => 'nullable|image|mimes:jpg,jpeg,png,svg,webp',
         ]);
 
         $gambarPath = $beritum->gambar;
@@ -77,11 +76,11 @@ class BeritaController extends Controller
         }
 
         $beritum->update([
-            'title' => $request->title,
+            'title'     => $request->title,
             'deskripsi' => $request->deskripsi,
-            'content' => $request->content,
-            'type' => $request->type,
-            'gambar' => $gambarPath,
+            'content'   => $request->content,
+            'type'      => $request->type,
+            'gambar'    => $gambarPath,
         ]);
 
         return redirect()->route('admin.berita.index')->with('success', 'Berita berhasil diperbarui!');
