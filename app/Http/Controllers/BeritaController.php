@@ -16,7 +16,7 @@ class BeritaController extends Controller
             $query->where('type', $type);
         }
 
-        $beritas = $query->latest()->paginate(9);
+        $beritas = $query->latest()->paginate(9)->withQueryString();
 
         // Jika request AJAX, kembalikan JSON
         if ($request->ajax() || $request->has('ajax')) {

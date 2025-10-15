@@ -129,23 +129,10 @@
 </div>
 
             <!-- Pagination -->
-            <div class="flex justify-center mb-12">
-                <div class="flex space-x-2">
-                    <button class="w-10 h-10 flex items-center justify-center rounded-lg bg-customBlue text-white">
-                        <i class="fas fa-chevron-left"></i>
-                    </button>
-                    <button
-                        class="w-10 h-10 flex items-center justify-center rounded-lg bg-customBlue text-white">1</button>
-                    <button
-                        class="w-10 h-10 flex items-center justify-center rounded-lg bg-gray-200 text-gray-700 hover:bg-gray-300">2</button>
-                    <button
-                        class="w-10 h-10 flex items-center justify-center rounded-lg bg-gray-200 text-gray-700 hover:bg-gray-300">3</button>
-                    <button
-                        class="w-10 h-10 flex items-center justify-center rounded-lg bg-gray-200 text-gray-700 hover:bg-gray-300">
-                        <i class="fas fa-chevron-right"></i>
-                    </button>
-                </div>
-            </div>
+<div class="flex justify-center mt-8 space-x-2" id="pagination-container">
+    {{ $beritas->links('pagination::tailwind') }}
+</div>
+
         </main>
     </div>
 
