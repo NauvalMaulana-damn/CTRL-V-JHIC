@@ -195,7 +195,7 @@
                 <h3 class="font-bold text-xl mb-4 border-b-2 border-customOrange pb-2">Berita Terbaru</h3>
                 <div id="x-sidenews" class="space-y-6">
                     @foreach ($beritas as $berita)
-                        <x-sidenews :title="$berita->title" :image="$berita->image" :onclick="" />
+                        <x-sidenews title="{{ $berita->title }}" image="{{ $berita->gambar }}" onclick="showNews('{{ $berita->title }}', '{{ $berita->deskripsi }}', '{{ $berita->gambar }}')"/>
                     @endforeach
                     <a href="/berita">
                         <button

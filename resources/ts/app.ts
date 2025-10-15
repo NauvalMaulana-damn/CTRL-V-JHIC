@@ -58,9 +58,7 @@ const initSwiper = () => {
 function showNews(
     title: string,
     desc: string,
-    image1: string,
-    image2: string,
-    image3: string
+    image: string,
 ): void {
     const imgContainer = document.getElementById("x-headnews");
     const txtContainer = document.getElementById("x-headnews-content");
@@ -76,16 +74,10 @@ function showNews(
 
     setTimeout(() => {
         // Ganti gambar & teks setelah fade out selesai
-        const img1 =
-            imgContainer.querySelector<HTMLImageElement>(".headnews-img1");
-        const img2 =
-            imgContainer.querySelector<HTMLImageElement>(".headnews-img2");
-        const img3 =
-            imgContainer.querySelector<HTMLImageElement>(".headnews-img3");
+        const img =
+            imgContainer.querySelector<HTMLImageElement>(".headnews-img");
 
-        if (img1) img1.src = `/assets/${image1}`;
-        if (img2) img2.src = `/assets/${image2}`;
-        if (img3) img3.src = `/assets/${image3}`;
+        if (img) img.src = `storage/${image}`;
 
         txtContainer
             .querySelectorAll(".title")

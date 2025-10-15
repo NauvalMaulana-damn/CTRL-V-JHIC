@@ -7,6 +7,8 @@ use App\Http\Controllers\Admin\EkskulController as AdminEkskulController;
 use App\Http\Controllers\Admin\PrestasiController as AdminPrestasiController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\VisitorController as AdminVisitorController;
+
+use App\Http\Controllers\LandingController;
 use App\Http\Controllers\AlumniController;
 use App\Http\Controllers\BeritaController;
 use App\Http\Controllers\ChatbotController;
@@ -17,7 +19,7 @@ use Illuminate\Support\Facades\Route;
 
 // Public routes dengan tracking visitor
 Route::middleware('trackvisitor')->group(function () {
-    Route::view('/', 'landing');
+    Route::get('/', [LandingController::class, 'index'])->name('landing.index');
     Route::get('/berita', [BeritaController::class, 'index'])->name('berita.index');
     Route::view('/profil', 'profil');
     Route::get('/prestasi', [PrestasiController::class, 'index'])->name('prestasi.index');
