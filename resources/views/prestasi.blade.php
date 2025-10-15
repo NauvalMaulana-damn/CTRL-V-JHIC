@@ -91,8 +91,8 @@
                     🎗️ Juara Nasional
                 </div>
                 <div class="w-full h-80 bg-gray-500 rounded-xl shadow-xl overflow-hidden">
-                    <img src="{{ asset('assets/skariga prestasi.jpg') }}" class="w-full h-full object-cover" alt="Gambar"
-                        loading="lazy">
+                    <img src="{{ asset('assets/skariga prestasi.jpg') }}" class="w-full h-full object-cover"
+                        alt="Gambar" loading="lazy">
                 </div>
                 <div
                     class="bg-yellow-400 text-yellow-900 px-3 py-1 rounded-full text-sm font-bold shadow-lg z-0 cursor-default">
@@ -108,11 +108,13 @@
         <section class="w-full mx-auto py-8">
             <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6">
                 <div class="bg-gray-300/50 rounded-xl p-4 sm:p-6 text-center shadow-md">
-                    <div class="text-2xl sm:text-3xl font-bold text-blue-600 mb-1 sm:mb-2">{{ $prestasis->count() }}+</div>
+                    <div class="text-2xl sm:text-3xl font-bold text-blue-600 mb-1 sm:mb-2">{{ $prestasis->count() }}+
+                    </div>
                     <div class="text-gray-600 text-sm sm:text-base">Prestasi</div>
                 </div>
                 <div class="bg-gray-300/50 rounded-xl p-4 sm:p-6 text-center shadow-md">
-                    <div class="text-2xl sm:text-3xl font-bold text-green-600 mb-1 sm:mb-2">{{ $prestasis->count() * 2 }}+</div>
+                    <div class="text-2xl sm:text-3xl font-bold text-green-600 mb-1 sm:mb-2">
+                        {{ $prestasis->count() * 2 }}+</div>
                     <div class="text-gray-600 text-sm sm:text-base">Siswa Berprestasi</div>
                 </div>
                 <div class="bg-gray-300/50 rounded-xl p-4 sm:p-6 text-center shadow-md">
@@ -143,7 +145,8 @@
                                 PARA JAWARA
                             </h2>
                         </div>
-                        <img src="{{ asset('assets/troph-pres.png') }}" class="w-20 h-20 sm:w-28 sm:h-28 drop-shadow-md transform scale-125  -rotate-12 ml-3"
+                        <img src="{{ asset('assets/troph-pres.png') }}"
+                            class="w-20 h-20 sm:w-28 sm:h-28 drop-shadow-md transform scale-125  -rotate-12 ml-3"
                             alt="Gambar" loading="lazy">
                         <div></div>
                         <div></div>
@@ -151,18 +154,19 @@
 
                     <!-- Grid container dengan data dari database -->
                     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-    @foreach ($prestasis as $prestasi)
-        <div class="bg-white shadow-md rounded-lg p-4">
-            <img src="{{ $prestasi->gambar ? asset($prestasi->gambar) : asset('assets/default.svg') }}" class="w-full h-64 object-cover rounded-lg mb-4">
-            <p class="font-semibold">{{ $prestasi->nama }}</p>
-            <p class="text-gray-500 text-sm">{{ $prestasi->subjudul }}</p>
-        </div>
-    @endforeach
-</div>
+                        @foreach ($prestasis as $prestasi)
+                        <div class="bg-white shadow-md rounded-lg p-4">
+                            <img src="{{ $prestasi->gambar ? asset($prestasi->gambar) : asset('assets/default.svg') }}"
+                                class="w-full h-64 object-cover rounded-lg mb-4" alt="{{ $prestasi->nama }}">
+                            <p class="font-semibold">{{ $prestasi->nama }}</p>
+                            <p class="text-gray-500 text-sm">{{ $prestasi->subjudul }}</p>
+                        </div>
+                        @endforeach
+                    </div>
 
-<div class="flex justify-center mt-6">
-    {{ $prestasis->links('pagination::tailwind') }}
-</div>
+                    <div class="flex justify-center mt-6">
+                        {{ $prestasis->links('pagination::tailwind') }}
+                    </div>
 
                 </div>
             </div>

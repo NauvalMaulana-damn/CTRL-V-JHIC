@@ -13,6 +13,18 @@ declare module 'swiper' {
     }
 
     export class Swiper {
+        activeIndex: any;
+        realIndex: any;
+        slideTo(newsIndex: number) {
+            throw new Error("Method not implemented.");
+        }
+        params: any;
+        slideToLoop(newsIndex: number) {
+            throw new Error("Method not implemented.");
+        }
+        destroy(arg0: boolean, arg1: boolean) {
+            throw new Error("Method not implemented.");
+        }
         constructor(container: string | HTMLElement, options?: SwiperOptions);
     }
 

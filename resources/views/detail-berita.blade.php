@@ -29,7 +29,7 @@
 
                             <div class="border-b border-gray-200">
                                 <h1 class="text-3xl font-bold mb-3 text-gray-800 break-words">{{ $berita->title }}</h1>
-                                <p class="text-gray-600 font-semibold text-base break-words">{{ Str::limit($berita->deskripsi, 200) }}</p>
+                                <p class="text-gray-600 font-semibold text-base break-words mb-4">{{ Str::limit($berita->deskripsi, 200) }}</p>
                             </div>
                             <!-- Isi Berita -->
                             <article class="max-w-none">

@@ -1,13 +1,11 @@
 <x-layout title="SMK PGRI 3 Malang - Success by Discipline">
-    <!-- Loading overlay
-<div id="loading"
-    class="fixed inset-0 bg-white z-50 flex items-center justify-center transition-opacity duration-500">
-    <div class="text-center">
-        <div class="w-16 h-16 border-4 border-t-customOrange border-gray-200 rounded-full animate-spin mx-auto">
-        </div>
-        <p class="mt-4 text-lg font-semibold">SMK PGRI 3 Malang</p>
-    </div>
-</div> -->
+    <script>
+    // Pass data dari PHP ke JavaScript sebagai array object, bukan JSON string
+    window.beritas = @json($beritas);
+    console.log('📊 Beritas data loaded:', window.beritas);
+
+    // Jangan panggil initializeNewsSlider di sini, biarkan app.ts yang handle
+    </script>
 
     <!-- Main content with news sidebar -->
     <div class="flex flex-col h-full h-max-content lg:flex-row container mx-auto px-4 py-6">
@@ -17,26 +15,15 @@
             <section class="relative w-full overflow-hidden rounded-xl mb-8">
                 <div class="swiper mySwiper rounded-xl overflow-hidden">
                     <div class="swiper-wrapper" id="x-headnews">
-                        <x-headnews image="default.svg" title="TITLE">
-                            <x-slot>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure exercitationem excepturi
-                                architecto qui? Exercitationem voluptates tempora distinctio quas eveniet quod
-                                dignissimos, vero deleniti unde laboriosam quasi obcaecati blanditiis mollitia beatae?
-                            </x-slot>
-                        </x-headnews>
+
                     </div>
 
                     <!-- Pagination & Navigation -->
-                    <div class="swiper-button-prev" style="color: white;">
-                        <!-- <i class="fas fa-chevron-left"></i> -->
-                    </div>
-                    <div class="swiper-button-next" style="color: white;">
-                        <!-- <i class="fas fa-chevron-right"></i> -->
-                    </div>
+                    <div class="swiper-button-prev" style="color: white;"></div>
+                    <div class="swiper-button-next" style="color: white;"></div>
                     <div class="swiper-pagination"></div>
                 </div>
             </section>
-
 
             <!-- Marquee -->
             <x-marquee></x-marquee>
@@ -149,9 +136,6 @@
                 </div>
             </section>
 
-            <!-- End of Department Sections -->
-
-
             <!-- Student Habits Section -->
             <section class="bg-gray-200 py-12 rounded-xl mt-8 animate-fade-in delay-900 ease-in-out">
                 <div class="container mx-auto px-4">
@@ -195,7 +179,10 @@
                 <h3 class="font-bold text-xl mb-4 border-b-2 border-customOrange pb-2">Berita Terbaru</h3>
                 <div id="x-sidenews" class="space-y-6">
                     @foreach ($beritas as $berita)
-                        <x-sidenews title="{{ $berita->title }}" image="{{ $berita->gambar }}" onclick="showNews('{{ $berita->title }}', '{{ $berita->deskripsi }}', '{{ $berita->gambar }}')"/>
+                    <div class="sidenews-item cursor-pointer transition-all duration-300 hover:bg-gray-50 p-2 rounded-lg"
+                        onclick="window.showNews('{{ $berita->id }}', '{{ $berita->title }}', '{{ $berita->deskripsi }}', '{{ $berita->gambar }}')">
+                        <x-sidenews title="{{ $berita->title }}" image="{{ $berita->gambar }}" />
+                    </div>
                     @endforeach
                     <a href="/berita">
                         <button
@@ -204,30 +191,32 @@
                         </button>
                     </a>
                 </div>
+            </div>
 
-                <!-- Quick Links -->
-                <div class="bg-white p-5 rounded-xl shadow-md mt-6">
-                    <h3 class="font-bold text-xl mb-4 border-b-2 border-customBlue pb-2">Lainnya</h3>
-                    <ul class="space-y-3">
-                        <li><a href="http://117.102.78.163/student/"
-                                class="text-blue-600 hover:underline flex items-center"><i
-                                    class="fas fa-link mr-2 text-sm"></i>OCS (One Click Service)</a></li>
-                        <li><a href="http://117.102.78.163/ocscbt/"
-                                class="text-blue-600 hover:underline flex items-center"><i
-                                    class="fas fa-link mr-2 text-sm"></i>CBT (Computer Based Test)</a></li>
-                        <li><a href="https://bki-skariga.web.id/kerjasama-industri/"
-                                class="text-blue-600 hover:underline flex items-center"><i
-                                    class="fas fa-link mr-2 text-sm"></i>Bidang Kerja Sama Industri</a></li>
-                        <li><a href="http://117.102.78.163/portalakademik/"
-                                class="text-blue-600 hover:underline flex items-center"><i
-                                    class="fas fa-link mr-2 text-sm"></i>Portal Akademik</a></li>
-                    </ul>
-                </div>
+            <!-- Quick Links -->
+            <div class="bg-white p-5 rounded-xl shadow-md mt-6">
+                <h3 class="font-bold text-xl mb-4 border-b-2 border-customBlue pb-2">Lainnya</h3>
+                <ul class="space-y-3">
+                    <li><a href="http://117.102.78.163/student/"
+                            class="text-blue-600 hover:underline flex items-center"><i
+                                class="fas fa-link mr-2 text-sm"></i>OCS (One Click Service)</a></li>
+                    <li><a href="http://117.102.78.163/ocscbt/"
+                            class="text-blue-600 hover:underline flex items-center"><i
+                                class="fas fa-link mr-2 text-sm"></i>CBT (Computer Based Test)</a></li>
+                    <li><a href="https://bki-skariga.web.id/kerjasama-industri/"
+                            class="text-blue-600 hover:underline flex items-center"><i
+                                class="fas fa-link mr-2 text-sm"></i>Bidang Kerja Sama Industri</a></li>
+                    <li><a href="http://117.102.78.163/portalakademik/"
+                            class="text-blue-600 hover:underline flex items-center"><i
+                                class="fas fa-link mr-2 text-sm"></i>Portal Akademik</a></li>
+                </ul>
+            </div>
         </aside>
     </div>
     <script>
-    document.addEventListener('DOMContentLoaded', () => {
-        document.querySelector("#x-sidenews .sidenews-item").click();
+    document.addEventListener('DOMContentLoaded', function() {
+        // Inisialisasi swiper dengan data berita
+        initializeNewsSlider();
     });
     </script>
 </x-layout>
