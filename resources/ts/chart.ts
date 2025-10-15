@@ -1,12 +1,14 @@
 import Chart from "chart.js/auto";
 
 export function initChartGabungan(): void {
-    const canvas = document.getElementById(
-        "chartGabungan"
-    ) as HTMLCanvasElement | null;
+    const canvas = document.getElementById("chartGabungan") as HTMLCanvasElement | null;
     if (!canvas) return;
 
-    // Plugin custom untuk membuat panah di ujung garis
+    // Pastikan parent-nya punya tinggi tetap
+    if (canvas.parentElement) {
+        canvas.parentElement.style.height = "420px"; // atur tinggi chart di sini
+    }
+
     const arrowPlugin = {
         id: 'arrowPlugin',
         afterDraw(chart: any) {
@@ -23,23 +25,15 @@ export function initChartGabungan(): void {
                 const x = lastElement.x;
                 const y = lastElement.y;
 
-                // Simpan context state
                 ctx.save();
-
-                // Pindah ke posisi terakhir
                 ctx.translate(x, y);
 
-                // Rotasi berdasarkan kemiringan garis
                 const secondLastElement = meta.data[meta.data.length - 2];
                 if (secondLastElement) {
-                    const angle = Math.atan2(
-                        y - secondLastElement.y,
-                        x - secondLastElement.x
-                    );
+                    const angle = Math.atan2(y - secondLastElement.y, x - secondLastElement.x);
                     ctx.rotate(angle);
                 }
 
-                // Gambar panah
                 ctx.fillStyle = dataset.borderColor;
                 ctx.beginPath();
                 ctx.moveTo(0, 0);
@@ -48,13 +42,12 @@ export function initChartGabungan(): void {
                 ctx.closePath();
                 ctx.fill();
 
-                // Restore context
                 ctx.restore();
             });
         }
     };
 
-    const chart = new Chart(canvas, {
+    new Chart(canvas, {
         type: "line",
         plugins: [arrowPlugin],
         data: {
@@ -66,15 +59,13 @@ export function initChartGabungan(): void {
                     borderColor: "#f97316",
                     backgroundColor: "rgba(249, 115, 22, 0.05)",
                     borderWidth: 4,
-                    pointBorderWidth: 0,
-                    pointRadius: 0, // Hilangkan titik default
+                    pointRadius: 0,
                     pointHoverRadius: 6,
                     pointHoverBackgroundColor: "#f97316",
                     pointHoverBorderColor: "#fff",
                     pointHoverBorderWidth: 2,
                     fill: true,
-                    tension: 0, // 0 untuk garis tajam lurus
-                    spanGaps: false,
+                    tension: 0,
                 },
                 {
                     label: "Peserta Diterima",
@@ -82,20 +73,19 @@ export function initChartGabungan(): void {
                     borderColor: "#3b82f6",
                     backgroundColor: "rgba(59, 130, 246, 0.05)",
                     borderWidth: 4,
-                    pointBorderWidth: 0,
-                    pointRadius: 0, // Hilangkan titik default
+                    pointRadius: 0,
                     pointHoverRadius: 6,
                     pointHoverBackgroundColor: "#3b82f6",
                     pointHoverBorderColor: "#fff",
                     pointHoverBorderWidth: 2,
                     fill: true,
-                    tension: 0, // 0 untuk garis tajam lurus
-                    spanGaps: false,
+                    tension: 0,
                 },
             ],
         },
         options: {
             responsive: true,
+            maintainAspectRatio: false, // biar tinggi dari parent (320px) dipakai
             interaction: {
                 intersect: false,
                 mode: 'index',
@@ -105,45 +95,28 @@ export function initChartGabungan(): void {
                     display: true,
                     position: "bottom",
                     labels: {
-                        font: {
-                            size: 16,
-                            weight: 'bold',
-                        },
+                        font: { size: 16, weight: 'bold' },
                         usePointStyle: true,
                         padding: 20,
                     },
                 },
                 tooltip: {
                     backgroundColor: 'rgba(0, 0, 0, 0.9)',
-                    titleFont: {
-                        size: 14,
-                        weight: 'bold',
-                    },
-                    bodyFont: {
-                        size: 13,
-                        weight: 'bold',
-                    },
+                    titleFont: { size: 14, weight: 'bold' },
+                    bodyFont: { size: 13, weight: 'bold' },
                     padding: 12,
                     cornerRadius: 8,
                     displayColors: true,
                     callbacks: {
-                        label: function(context) {
-                            return `${context.dataset.label}: ${context.parsed.y.toLocaleString('id-ID')}`;
-                        }
-                    }
-                }
+                        label: (context) => `${context.dataset.label}: ${context.parsed.y.toLocaleString('id-ID')}`,
+                    },
+                },
             },
             scales: {
                 x: {
-                    grid: {
-                        display: false,
-                        drawBorder: false,
-                    },
+                    grid: { display: false, drawBorder: false },
                     ticks: {
-                        font: {
-                            size: 14,
-                            weight: 'bold',
-                        },
+                        font: { size: 14, weight: 'bold' },
                         color: '#374151',
                     },
                 },
@@ -154,23 +127,18 @@ export function initChartGabungan(): void {
                         drawBorder: false,
                     },
                     ticks: {
-                        font: {
-                            size: 13,
-                            weight: 'bold',
-                        },
+                        font: { size: 13, weight: 'bold' },
                         color: '#374151',
-                        callback: function(value) {
-                            return value.toLocaleString('id-ID');
-                        }
+                        callback: (value) => value.toLocaleString('id-ID'),
                     },
                 },
             },
             elements: {
                 line: {
-                    tension: 0, // Garis lurus tajam
+                    tension: 0,
                     borderCapStyle: 'round' as const,
-                }
-            }
+                },
+            },
         },
     });
 }
