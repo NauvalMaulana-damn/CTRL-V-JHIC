@@ -11,15 +11,15 @@
                 </p>
                 @if(Auth::user()->isSuperadmin())
                 <p class="text-sm text-blue-600 mt-1">
-                    💪 Anda memiliki akses penuh sebagai Super Administrator
+                    Anda memiliki akses penuh sebagai Super Administrator
                 </p>
                 @elseif(Auth::user()->isEditor())
                 <p class="text-sm text-green-600 mt-1">
-                    ✏️ Anda memiliki akses sebagai Editor
+                    Anda memiliki akses sebagai Editor
                 </p>
                 @else
                 <p class="text-sm text-gray-600 mt-1">
-                    👀 Anda memiliki akses sebagai Viewer
+                    Anda memiliki akses sebagai Viewer
                 </p>
                 @endif
             </div>
@@ -68,11 +68,13 @@
                 </div>
 
                 <!-- Visitor Chart -->
-                <!-- <div class="bg-white rounded-xl shadow-lg p-6">
+                <div class="bg-white rounded-xl shadow-lg p-6">
                     <h3 class="text-lg font-semibold text-gray-800 mb-4">Statistik Pengunjung 7 Hari Terakhir</h3>
-                    <canvas id="visitorsChart" class="h-[350px] w-full"></canvas>
+                    <div class="h-[350px] w-full">
+                        <canvas id="visitorsChart"></canvas>
+                    </div>
                     <p id="loadingText" class="text-center text-gray-500 mt-4">Memuat data pengunjung...</p>
-                </div> -->
+                </div>
             </div>
 
             <!-- Content Statistics -->
@@ -361,12 +363,10 @@
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script>
-    let chart;
+    let chart = null;
 
     async function fetchVisitorData() {
         try {
-            console.log('Fetching visitor data from API...');
-
             const res = await fetch('{{ route("admin.visitors.api") }}', {
                 headers: {
                     'X-Requested-With': 'XMLHttpRequest',
@@ -374,21 +374,15 @@
                 }
             });
 
-            if (!res.ok) {
-                throw new Error(`HTTP error! status: ${res.status}`);
-            }
+            if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
 
             const data = await res.json();
-            console.log('Visitor API response:', data);
-
-            if (!data.success) {
-                throw new Error(data.error || 'API returned error');
-            }
+            if (!data.success) throw new Error(data.error || 'API returned error');
 
             // Update angka di dashboard
-            document.getElementById('totalVisitors').innerText = data.totalVisitors.toLocaleString();
-            document.getElementById('activeVisitors').innerText = data.activeVisitors.toLocaleString();
-            document.getElementById('todayVisitors').innerText = data.todayVisitors.toLocaleString();
+            document.getElementById('totalVisitors').textContent = data.totalVisitors.toLocaleString();
+            document.getElementById('activeVisitors').textContent = data.activeVisitors.toLocaleString();
+            document.getElementById('todayVisitors').textContent = data.todayVisitors.toLocaleString();
 
             // Sembunyikan teks loading
             document.getElementById('loadingText').style.display = 'none';
@@ -405,22 +399,14 @@
 
             const totals = data.weeklyVisitors.map(v => v.total);
 
-            console.log('Chart data - Labels:', labels);
-            console.log('Chart data - Totals:', totals);
-
-            // Hancurkan chart lama secara total
-            const oldCanvas = document.getElementById('visitorsChart');
-            if (chart) {
-                chart.destroy();
-                chart = null;
-            }
-            const newCanvas = oldCanvas.cloneNode(true);
-            oldCanvas.parentNode.replaceChild(newCanvas, oldCanvas);
-
-            // Ambil context baru
             const ctx = document.getElementById('visitorsChart').getContext('2d');
 
-            // Buat chart baru
+            // Destroy chart lama
+            if (chart) {
+                chart.destroy();
+            }
+
+            // Buat chart baru dengan FIXED height
             chart = new Chart(ctx, {
                 type: 'line',
                 data: {
@@ -445,11 +431,6 @@
                     plugins: {
                         legend: {
                             display: false
-                        },
-                        tooltip: {
-                            backgroundColor: 'rgba(0, 0, 0, 0.8)',
-                            titleColor: 'white',
-                            bodyColor: 'white',
                         }
                     },
                     scales: {
@@ -457,26 +438,29 @@
                             beginAtZero: true,
                             ticks: {
                                 precision: 0
-                            }
+                            },
+                            suggestedMax: Math.max(...totals) > 0 ? Math.max(...totals) + 2 :
+                                10 // FIXED MAX
                         }
                     },
+                    layout: {
+                        padding: {
+                            top: 10,
+                            bottom: 10
+                        }
+                    }
                 },
             });
 
         } catch (err) {
-            console.error('Error fetching visitor data:', err);
+            console.error('Error:', err);
             document.getElementById('loadingText').innerHTML =
-                '<div class="text-red-500 text-center">Gagal memuat data pengunjung<br><small>' + err.message +
-                '</small></div>';
+                '<div class="text-red-500">Gagal memuat data</div>';
         }
     }
 
-    // Jalankan saat halaman dimuat
-    document.addEventListener('DOMContentLoaded', function() {
-        fetchVisitorData();
-        // Refresh setiap 15 detik
-        setInterval(fetchVisitorData, 15000);
-    });
+    // Load sekali saja, hapus interval
+    document.addEventListener('DOMContentLoaded', fetchVisitorData);
     </script>
 
 </x-admin-layout>

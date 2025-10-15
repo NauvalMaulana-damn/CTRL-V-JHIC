@@ -44,7 +44,7 @@
                     <div class="alumni-card bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100">
                         <div class="relative h-40 bg-gradient-to-r {{ $alumni->bg_color ?? 'from-[#FF885B] to-[#FF6B6B]' }}">
                             <div class="absolute -bottom-12 left-1/2 transform -translate-x-1/2">
-                                <img src="{{ $alumni->image && $alumni->image !== 'default.svg' ? asset('storage/' . $alumni->image) : asset('images/default.svg') }}"
+                                <img src="{{ $alumni->image && $alumni->image !== 'default.svg' ? asset('' . $alumni->image) : asset('images/default.svg') }}"
                                      alt="{{ $alumni->name }}"
                                      loading="lazy"
                                      class="alumni-image w-24 h-24 rounded-full object-cover">
