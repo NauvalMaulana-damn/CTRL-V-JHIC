@@ -92,7 +92,7 @@
             </div>
 
             <!-- Loading Indicator -->
-            <div id="loadingIndicator" class="hidden flex justify-center items-center py-12">
+            <div id="loadingIndicator" class="hidden justify-center items-center py-12">
                 <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-customBlue"></div>
                 <span class="ml-3 text-gray-600">Memuat berita...</span>
             </div>
@@ -119,7 +119,7 @@
                 </div>
                 <h3 class="text-xl font-bold text-gray-800 mb-3">{{ $berita->title }}</h3>
                 <p class="text-gray-600 mb-4 line-clamp-3">{{ Str::limit($berita->deskripsi, 120) }}</p>
-                <a href="{{ route('berita.show', $berita->slug) }}"
+                <a href="{{ route('berita.show', $berita->id) }}"
                    class="inline-block bg-customBlue hover:bg-blue-800 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors">
                    Baca Selengkapnya
                 </a>
@@ -206,7 +206,6 @@ document.addEventListener('DOMContentLoaded', () => {
 </script>
 
     <script>
-        // Fungsi untuk membuka sidebar
         function openSidebar(image, title, date, views, content) {
             document.getElementById('sidebarImage').src = image;
             document.getElementById('sidebarTitle').textContent = title;
@@ -217,20 +216,16 @@ document.addEventListener('DOMContentLoaded', () => {
             document.getElementById('sidebarOverlay').classList.add('active');
             document.getElementById('newsSidebar').classList.add('active');
 
-            // Mencegah scroll pada body saat sidebar terbuka
             document.body.style.overflow = 'hidden';
         }
 
-        // Fungsi untuk menutup sidebar
         function closeSidebar() {
             document.getElementById('sidebarOverlay').classList.remove('active');
             document.getElementById('newsSidebar').classList.remove('active');
 
-            // Mengembalikan scroll pada body
             document.body.style.overflow = 'auto';
         }
 
-        // Event listener untuk tombol "Baca Selengkapnya"
         document.addEventListener('DOMContentLoaded', function() {
             document.querySelectorAll('.read-more-btn').forEach(button => {
                 button.addEventListener('click', function() {
@@ -244,13 +239,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
             });
 
-            // Event listener untuk tombol close sidebar
             document.getElementById('closeSidebar').addEventListener('click', closeSidebar);
 
-            // Event listener untuk overlay (menutup sidebar saat klik di luar)
             document.getElementById('sidebarOverlay').addEventListener('click', closeSidebar);
 
-            // Menutup sidebar dengan tombol ESC
             document.addEventListener('keydown', function(event) {
                 if (event.key === 'Escape') {
                     closeSidebar();

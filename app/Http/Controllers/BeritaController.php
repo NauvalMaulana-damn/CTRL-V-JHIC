@@ -45,9 +45,9 @@ class BeritaController extends Controller
         return view('berita', compact('beritas', 'type'));
     }
 
-    public function show($slug)
+    public function show($id)
     {
-        $berita = Berita::where('slug', $slug)->firstOrFail();
+        $berita = Berita::findOrFail($id);
 
         // Increment views
         $berita->increment('views');

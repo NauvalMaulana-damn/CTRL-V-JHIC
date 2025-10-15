@@ -25,7 +25,7 @@ Route::middleware('trackvisitor')->group(function () {
     Route::get('/ekstrakurikuler', [EkskulController::class, 'index'])->name('ekskul.index');
     Route::get('/alumni', [AlumniController::class, 'index'])->name('alumni.index');
     Route::view('/pendaftaran', 'pendaftaran');
-    Route::get('/berita/{slug}', [BeritaController::class, 'show'])->name('berita.show');
+    Route::get('/berita/{id}', [BeritaController::class, 'show'])->name('berita.show');
 });
 
 // Chatbot routes
