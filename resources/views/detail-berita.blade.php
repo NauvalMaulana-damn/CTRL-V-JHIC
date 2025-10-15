@@ -1,7 +1,6 @@
 <x-layout title="{{ $berita->title }} - SMK PGRI 3 Malang">
     <div class="bg-gray-50">
         <!-- Header Kosong (Hanya background) -->
-        <section class="bg-gradient-to-r from-customBlue to-blue-800 text-white py-12 mt-8"></section>
 
         <!-- Main Content -->
         <main class="container mx-auto px-4 py-8">
