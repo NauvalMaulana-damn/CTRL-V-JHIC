@@ -142,10 +142,10 @@
                                 style="text-shadow: 2px 2px 5px #FFD700;">
                                 PARA JAWARA
                             </h2>
-                            <img src="{{ asset('assets/troph-pres.png') }}" class="w-50 h-50 sm:w-14 sm:h-14 drop-shadow-md transform -rotate-12 ml-3"
-                                alt="Gambar" loading="lazy">
-                            <div></div>
                         </div>
+                        <img src="{{ asset('assets/troph-pres.png') }}" class="w-20 h-20 sm:w-28 sm:h-28 drop-shadow-md transform scale-125  -rotate-12 ml-3"
+                            alt="Gambar" loading="lazy">
+                        <div></div>
                         <div></div>
                     </div>
 

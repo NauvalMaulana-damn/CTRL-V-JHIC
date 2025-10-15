@@ -20,26 +20,45 @@
             </div>
         </section>
 
-        <!-- Modal -->
-        <div class="modal micromodal-slide" id="newsModal" aria-hidden="true">
-            <div class="modal__overlay" tabindex="-1" data-micromodal-close>
-                <div class="modal__container bg-white rounded-xl w-full max-w-2xl shadow-2xl relative" role="dialog"
-                    aria-modal="true" aria-labelledby="modalTitle">
-                    <!-- Tombol Close -->
+        <!-- Sidebar untuk Detail Berita -->
+        <div class="sidebar-overlay fixed inset-0 bg-black bg-opacity-50 z-40 opacity-0 invisible transition-all duration-300 ease-in-out"
+            id="sidebarOverlay"></div>
+
+        <div class="sidebar fixed top-0 right-[-100%] w-1/2 h-full bg-white z-50 overflow-y-auto transition-right duration-300 ease-in-out shadow-2xl"
+            id="newsSidebar">
+            <!-- Tombol Close -->
+            <button class="absolute top-4 right-4 text-gray-500 hover:text-gray-700 z-10 transition-colors"
+                id="closeSidebar">
+                <i class="fas fa-times text-xl"></i>
+            </button>
+
+            <!-- Konten Sidebar -->
+            <div class="p-6 pt-12">
+                <!-- Gambar -->
+                <img id="sidebarImage" src="" alt="" class="w-full h-64 object-cover rounded-xl mb-6">
+
+                <!-- Judul -->
+                <h2 id="sidebarTitle" class="text-2xl font-bold text-custombbg-customBlue mb-4"></h2>
+
+                <!-- Info tambahan -->
+                <div class="flex items-center text-sm text-gray-500 mb-6">
+                    <span class="mr-4"><i class="far fa-calendar-alt mr-1"></i> <span id="sidebarDate"></span></span>
+                    <span><i class="far fa-eye mr-1"></i> <span id="sidebarViews"></span> dilihat</span>
+                </div>
+
+                <!-- Konten -->
+                <div id="sidebarContent" class="text-gray-700 leading-relaxed whitespace-pre-line mb-8"></div>
+
+                <!-- Tombol aksi -->
+                <div class="flex space-x-4">
                     <button
-                        class="absolute top-3 right-3 text-white hover:text-gray-400 transition-colors delay-[25ms  ]"
-                        aria-label="Close modal" data-micromodal-close>
-                        <i class="fas fa-times text-xl"></i>
+                        class="bg-customBlue hover:bg-blue-800 text-white px-4 py-2 rounded-lg font-medium transition-colors">
+                        <i class="fas fa-share-alt mr-2"></i>Bagikan
                     </button>
-
-                    <!-- Gambar -->
-                    <img id="modalImage" src="" alt="" class="w-full h-80 object-cover rounded-t-xl">
-
-                    <!-- Konten -->
-                    <div class="p-6">
-                        <h2 id="modalTitle" class="text-2xl font-bold text-custombbg-customBlue mb-4"></h2>
-                        <p id="modalContent" class="text-gray-700 leading-relaxed whitespace-pre-line"></p>
-                    </div>
+                    <button
+                        class="bg-gray-200 hover:bg-gray-300 text-gray-700 px-4 py-2 rounded-lg font-medium transition-colors">
+                        <i class="far fa-bookmark mr-2"></i>Simpan
+                    </button>
                 </div>
             </div>
         </div>
@@ -67,12 +86,33 @@
             </div>
 
             <!-- News Grid -->
+            <!-- Di dalam grid -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
                 @foreach ($beritas as $berita)
-                <x-cardberita views="{{ $berita->views }}" desc="{{ $berita->deskripsi }}" type="{{ $berita->type }}" date="{{ $berita->created_at }}" image="{{ $berita->gambar }}"
-                    title="{{ $berita->title }}">
-                    {{ $berita->deskripsi }}
-                </x-cardberita>
+                    <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                        <div class="relative">
+                            <img src="{{ $berita->gambar_url }}" alt="{{ $berita->title }}"
+                                class="w-full h-48 object-cover">
+                            <div class="absolute top-4 left-4">
+                                <span class="bg-customBlue text-white px-3 py-1 rounded-full text-xs font-medium">
+                                    {{ $berita->type }}
+                                </span>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex justify-between text-sm text-gray-500 mb-2">
+                                <span><i class="far fa-calendar-alt mr-1"></i>
+                                    {{ $berita->created_at->format('d M Y') }}</span>
+                                <span><i class="far fa-eye mr-1"></i> {{ $berita->views }}</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-800 mb-3">{{ $berita->title }}</h3>
+                            <p class="text-gray-600 mb-4 line-clamp-3">{{ Str::limit($berita->deskripsi, 120) }}</p>
+                            <a href="{{ route('berita.show', $berita->slug) }}"
+                                class="inline-block bg-customBlue hover:bg-blue-800 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors">
+                                Baca Selengkapnya
+                            </a>
+                        </div>
+                    </div>
                 @endforeach
             </div>
 
@@ -97,15 +137,88 @@
         </main>
     </div>
 
-    <script>
-    document.addEventListener('click', (e) => {
-        const modal = document.getElementById('newsModal');
-        if (!modal) return;
-
-        const container = modal.querySelector('.modal__container');
-        if (modal.classList.contains('is-open') && container && !container.contains(e.target)) {
-            MicroModal.close('newsModal');
+    <style>
+        /* Custom styles untuk sidebar responsif */
+        @media (max-width: 768px) {
+            .sidebar {
+                width: 85% !important;
+            }
         }
-    });
+
+        @media (max-width: 480px) {
+            .sidebar {
+                width: 95% !important;
+            }
+        }
+
+        .sidebar.active {
+            right: 0 !important;
+        }
+
+        .sidebar-overlay.active {
+            opacity: 1 !important;
+            visibility: visible !important;
+        }
+
+        .line-clamp-3 {
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+    </style>
+
+    <script>
+        // Fungsi untuk membuka sidebar
+        function openSidebar(image, title, date, views, content) {
+            document.getElementById('sidebarImage').src = image;
+            document.getElementById('sidebarTitle').textContent = title;
+            document.getElementById('sidebarDate').textContent = date;
+            document.getElementById('sidebarViews').textContent = views;
+            document.getElementById('sidebarContent').textContent = content;
+
+            document.getElementById('sidebarOverlay').classList.add('active');
+            document.getElementById('newsSidebar').classList.add('active');
+
+            // Mencegah scroll pada body saat sidebar terbuka
+            document.body.style.overflow = 'hidden';
+        }
+
+        // Fungsi untuk menutup sidebar
+        function closeSidebar() {
+            document.getElementById('sidebarOverlay').classList.remove('active');
+            document.getElementById('newsSidebar').classList.remove('active');
+
+            // Mengembalikan scroll pada body
+            document.body.style.overflow = 'auto';
+        }
+
+        // Event listener untuk tombol "Baca Selengkapnya"
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('.read-more-btn').forEach(button => {
+                button.addEventListener('click', function() {
+                    const image = this.getAttribute('data-image');
+                    const title = this.getAttribute('data-title');
+                    const date = this.getAttribute('data-date');
+                    const views = this.getAttribute('data-views');
+                    const content = this.getAttribute('data-content');
+
+                    openSidebar(image, title, date, views, content);
+                });
+            });
+
+            // Event listener untuk tombol close sidebar
+            document.getElementById('closeSidebar').addEventListener('click', closeSidebar);
+
+            // Event listener untuk overlay (menutup sidebar saat klik di luar)
+            document.getElementById('sidebarOverlay').addEventListener('click', closeSidebar);
+
+            // Menutup sidebar dengan tombol ESC
+            document.addEventListener('keydown', function(event) {
+                if (event.key === 'Escape') {
+                    closeSidebar();
+                }
+            });
+        });
     </script>
 </x-layout>
