@@ -6,6 +6,8 @@ use App\Http\Controllers\Admin\VisitorController as AdminVisitorController;
 use App\Http\Controllers\Admin\PrestasiController as AdminPrestasiController;
 use App\Http\Controllers\Admin\EkskulController as AdminEkskulController;
 
+use App\Http\Controllers\Admin\ActivityLogController;
+
 use App\Http\Controllers\EkskulController;
 use App\Http\Controllers\ChatbotController;
 use App\Http\Controllers\LoginController;
@@ -37,7 +39,15 @@ Route::prefix('admin')->name('admin.')->middleware(['admin'])->group(function ()
     Route::resource('berita', AdminBeritaController::class);
     Route::resource('prestasi', AdminPrestasiController::class);
     Route::resource('alumni', AdminAlumniController::class);
+
+    Route::middleware(['admin', 'superadmin'])->group(function () {
+        Route::get('/logs', [ActivityLogController::class, 'index'])->name('logs.index');
+        Route::get('/logs/filter', [ActivityLogController::class, 'filter'])->name('logs.filter');
+        Route::get('/logs/{log}', [ActivityLogController::class, 'show'])->name('logs.show');
+    });
 });
+
+
 
 // Login
 Route::get('/admin', [LoginController::class, 'showLoginForm'])->name('admin.login');

@@ -2,10 +2,12 @@
 
 namespace App\Models;
 
+use App\Traits\Loggable;
 use Illuminate\Database\Eloquent\Model;
 
 class Alumni extends Model
 {
+    use Loggable;
     protected $table = 'alumnis';
 
     protected $fillable = [
