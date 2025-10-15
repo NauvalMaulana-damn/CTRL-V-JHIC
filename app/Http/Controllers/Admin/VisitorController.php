@@ -4,36 +4,37 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\Visitor;
-use Carbon\Carbon;
-use Illuminate\Support\Facades\DB;
+use App\Models\Berita;
+use App\Models\Alumni;
+use App\Models\Prestasi;
+use App\Models\Ekskul;
+use App\Models\ActivityLog;
+use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 
 class VisitorController extends Controller
 {
-    // View dashboard
     public function dashboard()
     {
-        return view('admin.dashboard');
-    }
+        $user = Auth::user();
 
-    // API data visitor
-    public function index()
-    {
-        $totalVisitors = Visitor::count();
-        $todayVisitors = Visitor::whereDate('visited_at', today())->count();
-        $activeVisitors = Visitor::where('visited_at', '>=', now())->count();
+        $data = [
+            'totalBerita' => Berita::count(),
+            'totalAlumni' => Alumni::count(),
+            'totalPrestasi' => Prestasi::count(),
+            'totalEkskul' => Ekskul::count(),
+        ];
 
-        $weeklyVisitors = Visitor::selectRaw('DATE(visited_at) as date, COUNT(*) as total')
-            ->where('visited_at', '>=', now()->subDays(7))
-            ->groupBy('date')
-            ->orderBy('date', 'asc')
-            ->get();
+        // Hanya SUPERADMIN yang melihat stats logs dan users
+        if ($user->isSuperadmin()) {
+            $data['totalLogs'] = ActivityLog::count();
+            $data['totalUsers'] = User::count();
+            $data['recentLogs'] = ActivityLog::with('user')
+                ->latest()
+                ->take(5)
+                ->get();
+        }
 
-        return response()->json([
-            'totalVisitors' => $totalVisitors,
-            'todayVisitors' => $todayVisitors,
-            'activeVisitors' => $activeVisitors,
-            'weeklyVisitors' => $weeklyVisitors,
-        ]);
+        return view('admin.dashboard', $data);
     }
 }

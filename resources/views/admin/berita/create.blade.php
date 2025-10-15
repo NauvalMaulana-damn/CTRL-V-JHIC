@@ -1,11 +1,17 @@
 <x-admin-layout>
     <h1 class="text-2xl font-bold mb-4">Tambah Berita</h1>
 
+    <!-- Cek permission -->
+    @if(!auth()->user()->canCreate())
+    <div class="bg-red-100 text-red-700 p-3 rounded mb-4">
+        <i class="fas fa-ban mr-2"></i>Anda tidak memiliki izin untuk menambah berita.
+    </div>
+    @else
     @if ($errors->any())
         <div class="bg-red-100 text-red-700 p-3 rounded mb-4">
             <ul class="list-disc pl-5">
                 @foreach ($errors->all() as $err)
-                    <li>{{ $err }}</li>
+                <li>{{ $err }}</li>
                 @endforeach
             </ul>
         </div>
@@ -25,7 +31,7 @@
         </div>
 
         <div>
-            <label class="block mb-1">Konten (Content)</label>
+            <label class="block mb-1">Konten</label>
             <textarea name="content" rows="6" class="w-full border rounded p-2" required>{{ old('content') }}</textarea>
         </div>
 
@@ -41,10 +47,18 @@
         </div>
 
         <div>
-            <label class="block mb-1">Gambar (opsional)</label>
+            <label class="block mb-1">Gambar</label>
             <input type="file" name="gambar" class="border rounded p-2 w-full" accept="image/*">
         </div>
 
-        <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Simpan</button>
+        <div class="flex space-x-4">
+            <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
+                <i class="fas fa-save mr-2"></i>Simpan
+            </button>
+            <a href="{{ route('admin.berita.index') }}" class="bg-gray-600 text-white px-4 py-2 rounded hover:bg-gray-700">
+                <i class="fas fa-arrow-left mr-2"></i>Kembali
+            </a>
+        </div>
     </form>
+    @endif
 </x-admin-layout>

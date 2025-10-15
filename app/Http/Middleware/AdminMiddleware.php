@@ -5,23 +5,35 @@ namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
+
 use Illuminate\Support\Facades\Auth;
 
 class AdminMiddleware
 {
-    /**
-     * Handle an incoming request.
-     *
-     * @param  \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next
-     */
     public function handle(Request $request, Closure $next): Response
     {
         if (!Auth::check()) {
-            return redirect()->route('admin.login')->with('error', 'Silahkan login terlebih dahulu.');
+            return redirect()->route('admin.login');
         }
 
-        if (Auth::user()->roleKey !== env('ROLE_KEY')) {
-            return redirect()->route('admin.login')->with('error', 'Anda tidak memiliki akses Admin.');
+        $user = Auth::user();
+
+        // Cek jika user aktif
+        if (!$user->is_active) {
+            Auth::logout();
+            return redirect()->route('admin.login')->with('error', 'Akun Anda telah dinonaktifkan.');
+        }
+
+        // Cek role (SUPERADMIN, EDITOR, atau VIEWER)
+        if (!in_array($user->role, ['SUPERADMIN', 'EDITOR', 'VIEWER'])) {
+            Auth::logout();
+            return redirect()->route('admin.login')->with('error', 'Akses ditolak.');
+        }
+
+        // Verify role key
+        if (!$user->verifyRoleKey()) {
+            Auth::logout();
+            return redirect()->route('admin.login')->with('error', 'Role key tidak valid.');
         }
 
         return $next($request);
