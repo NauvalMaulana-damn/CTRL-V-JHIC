@@ -34,7 +34,7 @@
                                 class="{{ request()->is('/') ? 'text-customOrange' : '' }} hover:text-customOrange transition">Beranda</a>
                         </li>
                         <li><a href="/berita"
-                                class="{{ request()->is('berita') ? 'text-customOrange' : '' }} hover:text-customOrange transition">Berita</a>
+                                class="{{ request()->is('berita*') ? 'text-customOrange' : '' }} hover:text-customOrange transition">Berita</a>
                         </li>
                         <li><a href="/profil"
                                 class="{{ request()->is('profil') ? 'text-customOrange' : '' }} hover:text-customOrange transition">Profil</a>
