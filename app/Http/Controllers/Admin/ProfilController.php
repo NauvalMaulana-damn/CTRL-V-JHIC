@@ -33,24 +33,24 @@ class ProfilController extends Controller
         $profil = Profil::with('misis')->firstOrFail();
 
         $request->validate([
-            'heroImage' => 'nullable|image|mimes:jpg,jpeg,png,svg,webp',
+            'heroImage' => 'nullable|image|mimes:jpg,jpeg,png,svg,webp|max:3072',
             'heroTitle' => 'required|max:30',
 
-            'profilImage1' => 'nullable|image|mimes:jpg,jpeg,png,svg,webp',
-            'profilImage2' => 'nullable|image|mimes:jpg,jpeg,png,svg,webp',
-            'profilImage3' => 'nullable|image|mimes:jpg,jpeg,png,svg,webp',
-            'profilDesc' => 'required|max:200',
+            'profilImage1' => 'nullable|image|mimes:jpg,jpeg,png,svg,webp|max:3072',
+            'profilImage2' => 'nullable|image|mimes:jpg,jpeg,png,svg,webp|max:3072',
+            'profilImage3' => 'nullable|image|mimes:jpg,jpeg,png,svg,webp|max:3072',
+            'profilDesc' => 'required|max:500',
 
-            'visiImage' => 'nullable|image|mimes:jpg,jpeg,png,svg,webp',
+            'visiImage' => 'nullable|image|mimes:jpg,jpeg,png,svg,webp|max:3072',
             'visiImageName' => 'required|max:200',
-            'visiDesc' => 'required|max:200',
+            'visiDesc' => 'required|max:500',
 
             'youtubeSrc' => 'required|url',
 
             // Validation for misi (array)
-            'misiImage.*' => 'nullable|image|mimes:jpg,jpeg,png,svg,webp',
+            'misiImage.*' => 'nullable|image|mimes:jpg,jpeg,png,svg,webp|max:3072',
             'misiTitle.*' => 'required|max:40',
-            'misiDesc.*' => 'required|max:200',
+            'misiDesc.*' => 'required|max:500',
             'misiColor.*' => 'required|in:BLUE,GREEN,ORANGE,RED',
             'misiId.*' => 'nullable|exists:misis,id'
         ]);

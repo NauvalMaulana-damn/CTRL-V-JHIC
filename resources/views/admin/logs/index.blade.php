@@ -45,7 +45,7 @@
                 </a>
             </div>
             <div class="flex items-end">
-                @if(auth()->user()->isSuperadmin())
+                @if(auth()->user()->canDeleteLogs())
                 <form action="{{ route('admin.logs.clear') }}" method="POST"
                       onsubmit="return confirm('Hapus logs yang lebih dari 30 hari?')">
                     @csrf
@@ -105,7 +105,7 @@
                             class="text-blue-600 hover:underline text-sm">
                             Details
                         </a>
-                        @if(auth()->user()->isSuperadmin())
+                        @if(auth()->user()->canDeleteLogs())
                         <span class="text-gray-400 mx-2">|</span>
                         <form action="{{ route('admin.logs.destroy', $log->id) }}" method="POST"
                               class="inline" onsubmit="return confirm('Hapus log ini?')">

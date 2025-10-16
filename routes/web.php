@@ -43,7 +43,6 @@ Route::middleware('trackvisitor')->group(function () {
 
     //chart data
     Route::get('/api/chart-data', [PendaftaranController::class, 'getChartData']);
-
 });
 
 // Login routes (tanpa middleware admin)
@@ -58,7 +57,6 @@ Route::prefix('admin')->name('admin.')->middleware(['admin'])->group(function ()
     // Visitor API - method getVisitorData
     Route::get('/api/visitors', [AdminVisitorController::class, 'getVisitorData'])->name('visitors.api');
 
-
     // CRUD resources
     Route::resource('marquee', AdminMarqueeController::class);
     Route::resource('berita', AdminBeritaController::class);
@@ -67,22 +65,26 @@ Route::prefix('admin')->name('admin.')->middleware(['admin'])->group(function ()
     Route::resource('ekskul', AdminEkskulController::class);
     Route::resource('prestasi', AdminPrestasiController::class);
     Route::resource('alumni', AdminAlumniController::class);
-
     Route::resource('pendaftaran', AdminPendaftaranController::class);
+
+    // User Management - Bisa diakses SUPERADMIN dan ADMIN (dengan batasan)
+    Route::resource('users', AdminUserController::class);
+    Route::patch('/users/{user}/toggle-status', [AdminUserController::class, 'toggleStatus'])
+    ->name('users.toggle-status');
+
+    // Activity Logs - Hanya SUPERADMIN yang bisa hapus logs
+    Route::prefix('logs')->name('logs.')->group(function () {
+        Route::get('/', [ActivityLogController::class, 'index'])->name('index');
+        Route::get('/filter', [ActivityLogController::class, 'filter'])->name('filter');
+        Route::get('/{log}', [ActivityLogController::class, 'show'])->name('show');
+
+        // Hanya SUPERADMIN yang bisa hapus logs
+        Route::middleware('superadmin')->group(function () {
+            Route::delete('/{log}', [ActivityLogController::class, 'destroy'])->name('destroy');
+            Route::delete('/filter/clear/old', [ActivityLogController::class, 'clearOldLogs'])->name('clear');
+        });
+    });
 
     // Logout
     Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
-
-    // Activity Logs & User Management - Hanya SUPERADMIN
-    Route::middleware('superadmin')->group(function () {
-        Route::get('/logs', [ActivityLogController::class, 'index'])->name('logs.index');
-        Route::get('/logs/filter', [ActivityLogController::class, 'filter'])->name('logs.filter');
-        Route::get('/logs/{log}', [ActivityLogController::class, 'show'])->name('logs.show');
-        Route::delete('logs/{log}', [ActivityLogController::class, 'destroy'])->name('logs.destroy');
-        Route::delete('logs/filter/clear/old', [ActivityLogController::class, 'clearOldLogs'])->name('logs.clear');
-
-        // User Management
-        Route::resource('users', AdminUserController::class);
-        Route::patch('/users/{user}/toggle-status', [AdminUserController::class, 'toggleStatus'])->name('users.toggle-status');
-    });
 });

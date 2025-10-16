@@ -15,13 +15,16 @@ class UserController extends Controller
     {
         $currentUser = Auth::user();
 
+        // Cek permission untuk view users
+        if (!$currentUser->canManageUsers()) {
+            abort(403, 'Unauthorized action.');
+        }
+
         // Filter users berdasarkan role
         if ($currentUser->isSuperadmin()) {
             $users = User::where('role', '!=', 'SUPERADMIN')->latest()->paginate(10);
         } elseif ($currentUser->isAdmin()) {
             $users = User::where('role', 'EDITOR')->latest()->paginate(10);
-        } else {
-            abort(403, 'Unauthorized action.');
         }
 
         return view('admin.users.index', compact('users'));
@@ -43,14 +46,17 @@ class UserController extends Controller
     {
         $currentUser = Auth::user();
 
+        // Cek permission untuk create user
+        if (!$currentUser->canManageUsers()) {
+            abort(403, 'Unauthorized action.');
+        }
+
         // Validasi role berdasarkan user yang login
         $allowedRoles = [];
         if ($currentUser->isSuperadmin()) {
             $allowedRoles = 'required|in:ADMIN,EDITOR';
         } elseif ($currentUser->isAdmin()) {
             $allowedRoles = 'required|in:EDITOR';
-        } else {
-            abort(403, 'Unauthorized action.');
         }
 
         $request->validate([
@@ -85,7 +91,7 @@ class UserController extends Controller
         $currentUser = Auth::user();
 
         // Cek permission untuk edit user
-        if (!$this->canModifyUser($currentUser, $user)) {
+        if (!$currentUser->canManageUsers() || !$this->canModifyUser($currentUser, $user)) {
             abort(403, 'Unauthorized action.');
         }
 
@@ -97,7 +103,7 @@ class UserController extends Controller
         $currentUser = Auth::user();
 
         // Cek permission untuk update user
-        if (!$this->canModifyUser($currentUser, $user)) {
+        if (!$currentUser->canManageUsers() || !$this->canModifyUser($currentUser, $user)) {
             abort(403, 'Unauthorized action.');
         }
 
@@ -152,7 +158,7 @@ class UserController extends Controller
         }
 
         // Cek permission untuk delete user
-        if (!$this->canModifyUser($currentUser, $user)) {
+        if (!$currentUser->canManageUsers() || !$this->canModifyUser($currentUser, $user)) {
             abort(403, 'Unauthorized action.');
         }
 
@@ -183,7 +189,7 @@ class UserController extends Controller
         }
 
         // Cek permission untuk toggle status user
-        if (!$this->canModifyUser($currentUser, $user)) {
+        if (!$currentUser->canManageUsers() || !$this->canModifyUser($currentUser, $user)) {
             abort(403, 'Unauthorized action.');
         }
 

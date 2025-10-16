@@ -92,7 +92,7 @@
                                         Total Berita
                                     </dt>
                                     <dd class="text-2xl font-bold text-gray-900">
-                                        {{ $totalBerita ?? 0 }}
+                                        {{ $stats['berita'] ?? 0 }}
                                     </dd>
                                 </dl>
                             </div>
@@ -113,7 +113,7 @@
                                         Total Alumni
                                     </dt>
                                     <dd class="text-2xl font-bold text-gray-900">
-                                        {{ $totalAlumni ?? 0 }}
+                                        {{ $stats['alumni'] ?? 0 }}
                                     </dd>
                                 </dl>
                             </div>
@@ -134,7 +134,7 @@
                                         Total Prestasi
                                     </dt>
                                     <dd class="text-2xl font-bold text-gray-900">
-                                        {{ $totalPrestasi ?? 0 }}
+                                        {{ $stats['prestasi'] ?? 0 }}
                                     </dd>
                                 </dl>
                             </div>
@@ -155,7 +155,7 @@
                                         Total Ekskul
                                     </dt>
                                     <dd class="text-2xl font-bold text-gray-900">
-                                        {{ $totalEkskul ?? 0 }}
+                                        {{ $stats['ekskul'] ?? 0 }}
                                     </dd>
                                 </dl>
                             </div>
@@ -180,7 +180,7 @@
                                         Activity Logs
                                     </dt>
                                     <dd class="text-2xl font-bold text-gray-900">
-                                        {{ $totalLogs ?? 0 }}
+                                        {{ $stats['logs'] ?? 0 }}
                                     </dd>
                                 </dl>
                             </div>
@@ -201,7 +201,7 @@
                                         Total Users
                                     </dt>
                                     <dd class="text-2xl font-bold text-gray-900">
-                                        {{ $totalUsers ?? 0 }}
+                                        {{ $stats['users'] ?? 0 }}
                                     </dd>
                                 </dl>
                             </div>
@@ -332,7 +332,7 @@
                                 </div>
                             </div>
                             <div>
-                                <span class="text-sm font-medium text-gray-900">{{ $log->user->username }}</span>
+                                <span class="text-sm font-medium text-gray-900">{{ $log->user->username ?? 'System' }}</span>
                                 <span class="text-sm text-gray-600 ml-2">{{ $log->description }}</span>
                                 <span class="text-xs text-gray-400 block mt-1">
                                     {{ $log->created_at->diffForHumans() }}

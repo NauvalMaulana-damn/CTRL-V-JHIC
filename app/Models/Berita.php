@@ -2,12 +2,13 @@
 namespace App\Models;
 
 use App\Traits\Loggable;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
 
 class Berita extends Model
 {
-    use Loggable;
+    use Loggable, HasFactory;
     protected $table = 'beritas';
 
     protected $fillable = [

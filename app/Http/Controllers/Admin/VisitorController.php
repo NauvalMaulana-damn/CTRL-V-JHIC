@@ -1,16 +1,17 @@
 <?php
+
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\ActivityLog;
-use App\Models\Alumni;
+use Illuminate\Http\Request;
 use App\Models\Berita;
+use App\Models\Alumni;
+use App\Models\Prestasi;
 use App\Models\Ekskul;
 use App\Models\Pendaftaran;
-use App\Models\Prestasi;
+use App\Models\ActivityLog;
 use App\Models\User;
 use App\Models\Visitor;
-use Illuminate\Support\Facades\Auth;
 
 class VisitorController extends Controller
 {
@@ -19,27 +20,23 @@ class VisitorController extends Controller
      */
     public function dashboard()
     {
-        $user = Auth::user();
-
-        $data = [
-            'totalBerita'      => Berita::count(),
-            'totalAlumni'      => Alumni::count(),
-            'totalPrestasi'    => Prestasi::count(),
-            'totalEkskul'      => Ekskul::count(),
-            'totalPendaftaran' => Pendaftaran::count(),
+        $stats = [
+            'berita' => Berita::count(),
+            'alumni' => Alumni::count(),
+            'prestasi' => Prestasi::count(),
+            'ekskul' => Ekskul::count(),
+            'pendaftaran' => Pendaftaran::count(),
+            'logs' => ActivityLog::count(),
+            'users' => User::count(),
         ];
 
-        // Hanya SUPERADMIN yang melihat stats logs dan users
-        if ($user->isSuperadmin()) {
-            $data['totalLogs']  = ActivityLog::count();
-            $data['totalUsers'] = User::count();
-            $data['recentLogs'] = ActivityLog::with('user')
-                ->latest()
-                ->take(10)
-                ->get();
-        }
+        // Ambil recent logs dengan eager loading yang aman
+        $recentLogs = ActivityLog::with('user')
+            ->latest()
+            ->limit(10)
+            ->get();
 
-        return view('admin.dashboard', $data);
+        return view('admin.dashboard', compact('stats', 'recentLogs'));
     }
 
     /**

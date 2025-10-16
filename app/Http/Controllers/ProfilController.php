@@ -1,87 +1,31 @@
 <?php
-// app/Http\Controllers\ProfilController.php
 
 namespace App\Http\Controllers;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Profil;
-use Illuminate\Support\Facades\Storage;
 use App\Models\Marquee;
 
 class ProfilController extends Controller
 {
     public function index()
     {
-        // Ambil data profil dengan relasi misi
-        $profil = Profil::with('misis')->first();
+        // Ambil data profil pertama
+        $profil = Profil::first();
 
-        // Ambil data marquee yang aktif
-        $marquees = Marquee::active()->ordered()->get();
-
-        // Jika tidak ada data profil, gunakan default
+        // Jika tidak ada data profil, redirect atau handle error
         if (!$profil) {
-            $profil = $this->getDefaultProfilData();
+            abort(404, 'Profil tidak ditemukan');
         }
 
-        return view('profil', [
-            'profil' => $profil,
-            'marquees' => $marquees, // Kirim data marquee ke view
-            'getImagePath' => function($image, $default = 'default.svg') {
-                return $this->getImagePath($image, $default);
-            }
-        ]);
-    }
+        // Helper function untuk mendapatkan path gambar
+        $getImagePath = function ($image, $default = 'default.svg') {
+            return $image && $image !== 'default.svg'
+                ? asset('storage/' . $image)
+                : asset('images/' . $default);
+        };
 
-    /**
-     * Helper method untuk mendapatkan path gambar
-     */
-    private function getImagePath($image, $default = 'default.svg')
-    {
-        if ($image && $image !== 'default.svg') {
-            // Cek di storage public
-            if (Storage::disk('public')->exists($image)) {
-                return asset('storage/' . $image);
-            }
-            // Cek di assets
-            if (file_exists(public_path('assets/' . $image))) {
-                return asset('assets/' . $image);
-            }
-            // Cek di root public
-            if (file_exists(public_path($image))) {
-                return asset($image);
-            }
-        }
-        return asset('images/' . $default);
-    }
-
-    /**
-     * Data default jika tidak ada di database
-     */
-    private function getDefaultProfilData()
-    {
-        return (object) [
-            'heroImage' => 'depansekul.jpg',
-            'heroTitle' => 'SKARIGA!',
-
-            'profilImage1' => 'gedung-seluruh.jpg',
-            'profilImage2' => 'foto-depanadmin.JPG',
-            'profilImage3' => 'depan-alfa.webp',
-            'profilDesc' => 'SMK PGRI 3 Malang dirintis sejak tahun 1986 atas prakarsa sebanyak 16 dosen dari Universitas Brawijaya, Kota Malang. Pada bulan September 1986, SMK PGRI Malang didirikan dengan nama STM PGRI Dau Malang. Pengelolaan dilakukan oleh Yayasan PGRI Kecamatan DAU Kabupaten Malang. Lokasi pembelajaran awalnya dilakukan di SD Negeri Tlogomas 2 Malang yang berlokasi di wilayah Kecamatan Dau, Kabupaten Malang.',
-
-            'visiImage' => 'bp.Luqman_kepsek-removebg-preview.png',
-            'visiImageName' => 'Moch. Lukman Hakim, S.T, M.M. - Kepala SMK PGRI 3 Malang',
-            'visiDesc' => 'Menjadi SMK yang unggul dalam prestasi dengan dilandasi Iman & Taqwa serta menghasilkan tamatan yang mampu bersaing di tingkat Nasional maupun Internasional.',
-
-            'youtubeSrc' => 'https://www.youtube.com/embed/FAwdUR9SFRU',
-
-            'misis' => collect([
-                (object) [
-                    'misiImage' => 'default.svg',
-                    'misiTitle' => 'Unggul & Beriman',
-                    'misiDesc' => 'Menjadi SMK yang unggul dalam prestasi dengan dilandasi Iman & Taqwa serta menghasilkan tamatan yang mampu bersaing di tingkat Nasional maupun Internasional.',
-                    'misiColor' => 'BLUE'
-                ],
-            ])
-        ];
+        return view('profil', compact('profil', 'getImagePath'));
     }
 }

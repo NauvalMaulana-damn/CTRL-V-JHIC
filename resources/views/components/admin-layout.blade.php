@@ -28,8 +28,10 @@
                         <div class="flex items-center space-x-2">
                             <span class="text-xs px-2 py-1 rounded-full
                                 @if(Auth::user()->isSuperadmin()) bg-purple-100 text-purple-800
-                                @elseif(Auth::user()->isEditor()) bg-blue-100 text-blue-800
-                                @else bg-gray-100 text-gray-800 @endif">
+                                @elseif(Auth::user()->isAdmin()) bg-blue-100 text-blue-800
+                                @elseif(Auth::user()->isEditor()) bg-green-100 text-green-800
+                                @else bg-gray-100 text-gray-700
+                                @endif">
                                 {{ Auth::user()->role }}
                             </span>
                             @if(!Auth::user()->verifyRoleKey())
@@ -124,11 +126,11 @@
     <main class="flex-1">
         <!-- Flash Messages -->
         @if(session('success'))
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-4">
+        <!-- <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-4">
             <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded">
                 {{ session('success') }}
             </div>
-        </div>
+        </div> -->
         @endif
 
         @if(session('error'))

@@ -38,10 +38,23 @@
             <div>
                 <label class="block mb-1 font-medium">Role</label>
                 <select name="role" class="w-full border rounded p-2" required>
-                    <option value="SUPERADMIN" @selected(old('role', $user->role) == 'SUPERADMIN')>SUPERADMIN</option>
-                    <option value="EDITOR" @selected(old('role', $user->role) == 'EDITOR')>EDITOR</option>
-                    <option value="VIEWER" @selected(old('role', $user->role) == 'VIEWER')>VIEWER</option>
+                    @if(auth()->user()->isSuperadmin())
+                        @if($user->role !== 'SUPERADMIN')
+                        <option value="ADMIN" @selected(old('role', $user->role) == 'ADMIN')>ADMIN</option>
+                        <option value="EDITOR" @selected(old('role', $user->role) == 'EDITOR')>EDITOR</option>
+                        @else
+                        <option value="SUPERADMIN" selected>SUPERADMIN</option>
+                        @endif
+                    @elseif(auth()->user()->isAdmin())
+                        <option value="EDITOR" @selected(old('role', $user->role) == 'EDITOR')>EDITOR</option>
+                    @endif
                 </select>
+                @if(auth()->user()->isAdmin())
+                <p class="text-sm text-gray-500 mt-1">Admin hanya dapat mengubah role menjadi EDITOR</p>
+                @endif
+                @if($user->role === 'SUPERADMIN' && auth()->user()->isSuperadmin())
+                <p class="text-sm text-yellow-600 mt-1">SUPERADMIN role tidak dapat diubah</p>
+                @endif
             </div>
 
             <div>

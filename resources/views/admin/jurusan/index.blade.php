@@ -43,8 +43,18 @@
                              class="h-12 w-12 rounded object-cover" alt="{{ $jurusan->jurusan }}">
                     </td>
                     <td class="p-3 text-center">
-                        @if(Auth::user()->isViewer())
-                        <span class="text-gray-400 text-sm">View Only</span>
+                        <!-- EDITOR hanya bisa lihat dan edit, tidak bisa hapus -->
+                        @if(Auth::user()->isEditor())
+                        <div class="flex justify-center space-x-2">
+                            @if(Auth::user()->canEdit())
+                            <a href="{{ route('admin.jurusan.edit', $jurusan->id) }}"
+                               class="text-blue-600 hover:underline text-sm">
+                                <i class="fas fa-edit mr-1"></i>Edit
+                            </a>
+                            @endif
+                            <span class="text-gray-400 text-sm">|</span>
+                            <span class="text-gray-400 text-sm">No Delete</span>
+                        </div>
                         @else
                         <div class="flex justify-center space-x-2">
                             @if(Auth::user()->canEdit())
@@ -120,10 +130,10 @@
                     <p class="text-sm font-semibold">
                         @if(Auth::user()->isSuperadmin())
                         Full Access
-                        @elseif(Auth::user()->isEditor())
-                        Create & Edit
+                        @elseif(Auth::user()->isAdmin())
+                        Create, Edit & Delete
                         @else
-                        View Only
+                        Create & Edit Only
                         @endif
                     </p>
                 </div>

@@ -1,8 +1,11 @@
 <x-admin-layout>
     <div class="flex justify-between items-center mb-6">
         <h1 class="text-2xl font-bold text-gray-800">Daftar Ekstrakurikuler</h1>
+
+        @if(auth()->user()->canCreate())
         <a href="{{ route('admin.ekskul.create') }}"
             class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">+ Tambah Ekstrakurikuler</a>
+        @endif
     </div>
 
     @if(session('success'))
@@ -33,8 +36,18 @@
                         {{ Str::limit($ekskul->desc, 100) }}
                     </td>
                     <td class="p-3 text-center">
-                        @if(Auth::user()->isViewer())
-                        <span class="text-gray-400 text-sm">View Only</span>
+                        <!-- EDITOR hanya bisa lihat dan edit, tidak bisa hapus -->
+                        @if(Auth::user()->isEditor())
+                        <div class="flex justify-center space-x-2">
+                            @if(Auth::user()->canEdit())
+                            <a href="{{ route('admin.ekskul.edit', $ekskul->id) }}"
+                               class="text-blue-600 hover:underline text-sm">
+                                <i class="fas fa-edit mr-1"></i>Edit
+                            </a>
+                            @endif
+                            <span class="text-gray-400 text-sm">|</span>
+                            <span class="text-gray-400 text-sm">No Delete</span>
+                        </div>
                         @else
                         <div class="flex justify-center space-x-2">
                             @if(Auth::user()->canEdit())

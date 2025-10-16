@@ -1,10 +1,13 @@
 <x-admin-layout>
     <div class="flex justify-between items-center mb-6">
         <h1 class="text-2xl font-bold text-gray-800">Data Pendaftaran Siswa</h1>
+
+        @if(auth()->user()->canCreate())
         <a href="{{ route('admin.pendaftaran.create') }}"
             class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
             + Tambah Data Pendaftaran
         </a>
+        @endif
     </div>
 
     @if (session('success'))
@@ -30,15 +33,31 @@
                         <td class="p-3 text-gray-700">{{ $pendaftaran->jumlah_pendaftar }}</td>
                         <td class="p-3 text-gray-700">{{ $pendaftaran->jumlah_diterima }}</td>
                         <td class="p-3 text-center">
-                            <a href="{{ route('admin.pendaftaran.edit', $pendaftaran->id) }}"
-                                class="text-blue-600 hover:underline">Edit</a> |
-                            <form action="{{ route('admin.pendaftaran.destroy', $pendaftaran->id) }}" method="POST"
-                                class="inline"
-                                onsubmit="return confirm('Yakin ingin menghapus data pendaftaran tahun ini?')">
-                                @csrf
-                                @method('DELETE')
-                                <button type="submit" class="text-red-600 hover:underline">Hapus</button>
-                            </form>
+                            <!-- EDITOR hanya bisa lihat dan edit, tidak bisa hapus -->
+                            @if(auth()->user()->isEditor())
+                            <div class="flex justify-center space-x-2">
+                                <a href="{{ route('admin.pendaftaran.edit', $pendaftaran->id) }}"
+                                    class="text-blue-600 hover:underline">Edit</a>
+                                <span class="text-gray-400">|</span>
+                                <span class="text-gray-400 text-sm">No Delete</span>
+                            </div>
+                            @else
+                            <div class="flex justify-center space-x-2">
+                                <a href="{{ route('admin.pendaftaran.edit', $pendaftaran->id) }}"
+                                    class="text-blue-600 hover:underline">Edit</a>
+
+                                @if(auth()->user()->canDelete())
+                                <span class="text-gray-400">|</span>
+                                <form action="{{ route('admin.pendaftaran.destroy', $pendaftaran->id) }}" method="POST"
+                                    class="inline"
+                                    onsubmit="return confirm('Yakin ingin menghapus data pendaftaran tahun ini?')">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="text-red-600 hover:underline">Hapus</button>
+                                </form>
+                                @endif
+                            </div>
+                            @endif
                         </td>
                     </tr>
                 @empty

@@ -37,10 +37,16 @@
             <label class="block mb-1 font-medium">Role</label>
             <select name="role" class="w-full border rounded p-2" required>
                 <option value="">Pilih Role</option>
-                <option value="SUPERADMIN" @selected(old('role')=='SUPERADMIN' )>SUPERADMIN</option>
+                @if(auth()->user()->isSuperadmin())
+                <option value="ADMIN" @selected(old('role')=='ADMIN' )>ADMIN</option>
                 <option value="EDITOR" @selected(old('role')=='EDITOR' )>EDITOR</option>
-                <option value="VIEWER" @selected(old('role')=='VIEWER' )>VIEWER</option>
+                @elseif(auth()->user()->isAdmin())
+                <option value="EDITOR" @selected(old('role')=='EDITOR' )>EDITOR</option>
+                @endif
             </select>
+            @if(auth()->user()->isAdmin())
+            <p class="text-sm text-gray-500 mt-1">Admin hanya dapat membuat user dengan role EDITOR</p>
+            @endif
         </div>
 
         <div class="flex space-x-4">

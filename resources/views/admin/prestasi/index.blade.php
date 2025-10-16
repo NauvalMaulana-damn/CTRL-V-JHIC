@@ -2,7 +2,7 @@
     <div class="flex justify-between items-center mb-6">
         <h1 class="text-2xl font-bold text-gray-800">Daftar Prestasi</h1>
 
-        <!-- Hanya SUPERADMIN dan EDITOR yang bisa tambah prestasi -->
+        <!-- Hanya SUPERADMIN, ADMIN, dan EDITOR yang bisa tambah prestasi -->
         @if(auth()->user()->canCreate())
         <a href="{{ route('admin.prestasi.create') }}" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 flex items-center">
             <i class="fas fa-trophy mr-2"></i>Tambah Prestasi
@@ -38,12 +38,21 @@
                              class="h-12 w-12 rounded object-cover" alt="">
                     </td>
                     <td class="p-3 text-center">
-                        <!-- VIEWER hanya bisa lihat -->
-                        @if(auth()->user()->isViewer())
-                        <span class="text-gray-400 text-sm">View Only</span>
+                        <!-- EDITOR hanya bisa lihat dan edit, tidak bisa hapus -->
+                        @if(auth()->user()->isEditor())
+                        <div class="flex justify-center space-x-2">
+                            @if(auth()->user()->canEdit())
+                            <a href="{{ route('admin.prestasi.edit', $prestasi->id) }}"
+                               class="text-blue-600 hover:underline text-sm">
+                                <i class="fas fa-edit mr-1"></i>Edit
+                            </a>
+                            @endif
+                            <span class="text-gray-400 text-sm">|</span>
+                            <span class="text-gray-400 text-sm">No Delete</span>
+                        </div>
                         @else
                         <div class="flex justify-center space-x-2">
-                            <!-- EDITOR dan SUPERADMIN bisa edit -->
+                            <!-- ADMIN dan SUPERADMIN bisa edit -->
                             @if(auth()->user()->canEdit())
                             <a href="{{ route('admin.prestasi.edit', $prestasi->id) }}"
                                class="text-blue-600 hover:underline text-sm">
@@ -51,7 +60,7 @@
                             </a>
                             @endif
 
-                            <!-- Hanya SUPERADMIN yang bisa hapus -->
+                            <!-- Hanya SUPERADMIN dan ADMIN yang bisa hapus -->
                             @if(auth()->user()->canDelete())
                             <form action="{{ route('admin.prestasi.destroy', $prestasi->id) }}" method="POST" class="inline"
                                   onsubmit="return confirm('Yakin ingin menghapus prestasi ini?')">
@@ -106,10 +115,10 @@
                     <p class="text-sm font-semibold">
                         @if(auth()->user()->isSuperadmin())
                         Full Access
-                        @elseif(auth()->user()->isEditor())
-                        Create & Edit
+                        @elseif(auth()->user()->isAdmin())
+                        Create, Edit & Delete
                         @else
-                        View Only
+                        Create & Edit Only
                         @endif
                     </p>
                 </div>

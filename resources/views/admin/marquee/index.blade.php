@@ -1,4 +1,3 @@
-{{-- resources/views/admin/marquee/index.blade.php --}}
 <x-admin-layout>
     <div class="flex justify-between items-center mb-6">
         <h1 class="text-2xl font-bold text-gray-800">Kelola Marquee Logo</h1>
@@ -59,8 +58,18 @@
                     <td class="p-3 font-semibold">{{ $marquee->nama }}</td>
                     <td class="p-3 text-gray-600">{{ $marquee->urutan }}</td>
                     <td class="p-3 text-center">
-                        @if(auth()->user()->isViewer())
-                        <span class="text-gray-400 text-sm">View Only</span>
+                        <!-- EDITOR hanya bisa lihat dan edit, tidak bisa hapus -->
+                        @if(auth()->user()->isEditor())
+                        <div class="flex justify-center space-x-2">
+                            @if(auth()->user()->canEdit())
+                            <a href="{{ route('admin.marquee.edit', $marquee->id) }}"
+                                class="text-blue-600 hover:underline text-sm">
+                                <i class="fas fa-edit mr-1"></i>Edit
+                            </a>
+                            @endif
+                            <span class="text-gray-400 text-sm">|</span>
+                            <span class="text-gray-400 text-sm">No Delete</span>
+                        </div>
                         @else
                         <div class="flex justify-center space-x-2">
                             @if(auth()->user()->canEdit())
