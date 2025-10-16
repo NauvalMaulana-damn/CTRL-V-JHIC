@@ -158,32 +158,53 @@
 
         <!-- Visi -->
         <section class="w-full mx-auto pt-6 pb-10 mt-12">
-    <div class="bg-orange-500 rounded-2xl shadow-lg overflow-visible relative hover-lift hover-glow">
-        <div class="grid md:grid-cols-2 items-start relative py-12">
-            <!-- Gambar Kepala Sekolah -->
-            <div class="relative flex justify-center items-start">
-                <img src="{{ asset('assets/bp.Luqman_kepsek-removebg-preview.png') }}"
-                    alt="Kepala Sekolah SMK PGRI 3 Malang"
-                    class="absolute top-0 left-[40%] transform -translate-x-1/2 -translate-y-[41.2%] w-full md:w-[100%] max-h-[450px] object-contain">
+            <div class="bg-orange-500 rounded-2xl shadow-lg overflow-visible relative hover-lift hover-glow">
+                <div class="grid md:grid-cols-2 items-start relative py-12">
+                    <div class="relative flex justify-center items-start w-full">
+                        <!-- Gambar Kepala Sekolah - Desktop (tetap seperti semula) -->
+                        <img src="{{ asset('assets/bp.Luqman_kepsek-removebg-preview.png') }}"
+                            alt="Kepala Sekolah SMK PGRI 3 Malang"
+                            class="hidden md:block absolute top-0 left-[40%] transform -translate-x-1/2 -translate-y-[41.2%] w-full md:w-[100%] max-h-[450px] object-contain">
 
-                <!-- Nama di sebelah kanan leher -->
-                <div class="absolute top-[52%] left-[62%] text-white">
-                    <h3 class="text-lg font-bold leading-tight drop-shadow-md">Moch. Lukman Hakim, S.T., M.M.</h3>
-                    <p class="text-base font-medium opacity-90 drop-shadow-md">Kepala SMK PGRI 3 Malang</p>
+                        <!-- Nama di sebelah kanan leher - Desktop (tetap seperti semula) -->
+                        <div class="hidden md:block absolute top-[52%] left-[62%] text-white">
+                            <h3 class="text-lg font-bold leading-tight drop-shadow-md">Moch. Lukman Hakim, S.T., M.M.
+                            </h3>
+                            <p class="text-base font-medium opacity-90 drop-shadow-md">Kepala SMK PGRI 3 Malang</p>
+                        </div>
+
+                        <!-- Mobile Layout (di bawah 768px) -->
+                        <div
+                            class="md:hidden flex flex-col items-center w-full bg-transparent rounded-2xl p-6">
+                            <!-- Gambar untuk Mobile -->
+                            <img src="{{ asset('assets/bp.Luqman_kepsek-removebg-preview.png') }}"
+                                alt="Kepala Sekolah SMK PGRI 3 Malang" class="w-full max-w-[280px] object-contain mb-6">
+
+
+                            <!-- Teks untuk Mobile -->
+                            <div class="text-center text-white">
+                                <h3 class="text-2xl font-bold leading-tight drop-shadow-lg mb-2">
+                                    Moch. Lukman Hakim, S.T., M.M.
+                                </h3>
+                                <p class="text-xl font-medium opacity-95 drop-shadow-lg">
+                                    Kepala SMK PGRI 3 Malang
+                                </p>
+                            </div>
+                            <hr class="w-full h-px bg-gray-300 border-0 my-4">
+                        </div>
+                    </div>
+
+                    <!-- Bagian Visi -->
+                    <div class="px-8 py-8 text-white z-10">
+                        <h2 class="text-5xl font-bold mb-4">Visi</h2>
+                        <p class="text-lg leading-relaxed">
+                            Menjadi SMK yang unggul dalam prestasi dengan dilandasi Iman &amp; Taqwa serta menghasilkan
+                            tamatan yang mampu bersaing di tingkat Nasional maupun Internasional.
+                        </p>
+                    </div>
                 </div>
             </div>
-
-            <!-- Bagian Visi -->
-            <div class="px-8 py-8 text-white z-10">
-                <h2 class="text-5xl font-bold mb-4">Visi</h2>
-                <p class="text-lg leading-relaxed">
-                    Menjadi SMK yang unggul dalam prestasi dengan dilandasi Iman &amp; Taqwa serta menghasilkan
-                    tamatan yang mampu bersaing di tingkat Nasional maupun Internasional.
-                </p>
-            </div>
-        </div>
-    </div>
-</section>
+        </section>
 
 
         <!-- Misi -->
@@ -298,8 +319,8 @@
                     Berita Terbaru</h2>
 
                 <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-8"> -->
-                    <!-- Card -->
-                    <!-- <div
+        <!-- Card -->
+        <!-- <div
                         class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition flex flex-col hover-lift hover-border-orange min-h-[560px]">
                         <img src="{{ asset('assets/kcs38-1.jpg') }}" alt="KCS 38" class="h-48 w-full object-cover"
                             loading="lazy">
@@ -314,8 +335,8 @@
                         </div>
                     </div> -->
 
-                    <!-- Card -->
-                    <!-- <div
+        <!-- Card -->
+        <!-- <div
                         class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition flex flex-col hover-lift hover-border-orange min-h-[560px]">
                         <img src="{{ asset('assets/robot-manu.jpg') }}" alt="Juara 1 LKS"
                             class="h-48 w-full object-cover" loading="lazy">
@@ -330,8 +351,8 @@
                         </div>
                     </div> -->
 
-                    <!-- Card -->
-                    <!-- <div
+        <!-- Card -->
+        <!-- <div
                         class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition flex flex-col hover-lift hover-border-orange min-h-[560px]">
                         <img src="{{ asset('assets/drgamal.png') }}" alt="dr. Gamal ke SKARIGA"
                             class="h-48 w-full object-cover" loading="lazy">
@@ -346,8 +367,8 @@
                         </div>
                     </div> -->
 
-                    <!-- Card -->
-                    <!-- <div
+        <!-- Card -->
+        <!-- <div
                         class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition flex flex-col hover-lift hover-border-orange min-h-[560px]">
                         <img src="{{ asset('assets/supporteran.jpg') }}" alt="School Visit"
                             class="h-48 w-full object-cover" loading="lazy">

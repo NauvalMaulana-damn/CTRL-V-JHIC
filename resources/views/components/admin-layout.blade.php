@@ -16,8 +16,8 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center py-4">
                 <div class="flex items-center">
-                    <img class="w-16 h-12 md:w-24 md:h-16 object-contain"
-                            src="{{ asset('assets/skariga logo 1.png') }}" alt="Logo SMK PGRI 3 Malang">
+                    <img class="w-16 h-12 md:w-24 md:h-16 object-contain" src="{{ asset('assets/skariga logo 1.png') }}"
+                        alt="Logo SMK PGRI 3 Malang">
                     <h1 class="text-xl font-semibold text-gray-800 ml-4">SKARIGA Admin Panel</h1>
                 </div>
 
@@ -69,9 +69,14 @@
                     <i class="fas fa-newspaper mr-2"></i>Berita
                 </a>
 
-                <a href="{{ route('admin.alumni.index') }}"
-                    class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium {{ request()->routeIs('admin.alumni.*') ? 'bg-gray-700 text-white' : '' }}">
-                    <i class="fas fa-graduation-cap mr-2"></i>Alumni
+                <a href="{{ route('admin.jurusan.index') }}"
+                    class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium {{ request()->routeIs('admin.jurusan.*') ? 'bg-gray-700 text-white' : '' }}">
+                    <i class="fas fa-list mr-2"></i>Jurusan
+                </a>
+
+                <a href="{{ route('admin.ekskul.index') }}"
+                    class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium {{ request()->routeIs('admin.ekskul.*') ? 'bg-gray-700 text-white' : '' }}">
+                    <i class="fas fa-football-ball mr-2"></i>Ekstrakurikuler
                 </a>
 
                 <a href="{{ route('admin.prestasi.index') }}"
@@ -79,9 +84,9 @@
                     <i class="fas fa-trophy mr-2"></i>Prestasi
                 </a>
 
-                <a href="{{ route('admin.ekskul.index') }}"
-                    class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium {{ request()->routeIs('admin.ekskul.*') ? 'bg-gray-700 text-white' : '' }}">
-                    <i class="fas fa-football-ball mr-2"></i>Ekstrakurikuler
+                <a href="{{ route('admin.alumni.index') }}"
+                    class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium {{ request()->routeIs('admin.alumni.*') ? 'bg-gray-700 text-white' : '' }}">
+                    <i class="fas fa-graduation-cap mr-2"></i>Alumni
                 </a>
 
                 <!-- Hanya SUPERADMIN yang bisa melihat Logs dan User Management -->
@@ -172,7 +177,7 @@
     }
     </style>
 
-@vite(['resources/ts/app.ts', 'resources/css/app.css'])
+    @vite(['resources/ts/app.ts', 'resources/css/app.css'])
 </body>
 
 </html>

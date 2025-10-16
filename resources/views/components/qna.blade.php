@@ -128,7 +128,7 @@ function appendTyping() {
 
 // Inisialisasi saat halaman dimuat
 document.addEventListener('DOMContentLoaded', function() {
-    cleanupOldHistory(); // Bersihkan history lama
-    loadChatHistory(); // Muat history yang valid
+    cleanupOldHistory();
+    loadChatHistory();
 });
 </script>

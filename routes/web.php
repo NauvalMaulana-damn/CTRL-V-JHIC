@@ -5,9 +5,11 @@ use App\Http\Controllers\Admin\AlumniController as AdminAlumniController;
 use App\Http\Controllers\Admin\BeritaController as AdminBeritaController;
 use App\Http\Controllers\Admin\EkskulController as AdminEkskulController;
 use App\Http\Controllers\Admin\PrestasiController as AdminPrestasiController;
-use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\Admin\JurusanController as AdminJurusanController;
+use App\Http\Controllers\Admin\UserController as AdminUserController;
 use App\Http\Controllers\Admin\VisitorController as AdminVisitorController;
 
+use App\Http\Controllers\JurusanController;
 use App\Http\Controllers\LandingController;
 use App\Http\Controllers\AlumniController;
 use App\Http\Controllers\BeritaController;
@@ -23,7 +25,7 @@ Route::middleware('trackvisitor')->group(function () {
     Route::get('/berita', [BeritaController::class, 'index'])->name('berita.index');
     Route::view('/profil', 'profil');
     Route::get('/prestasi', [PrestasiController::class, 'index'])->name('prestasi.index');
-    Route::view('/jurusan', 'jurusan');
+    Route::get('/jurusan', [JurusanController::class, 'index'])->name('jurusan.index');
     Route::get('/ekstrakurikuler', [EkskulController::class, 'index'])->name('ekskul.index');
     Route::get('/alumni', [AlumniController::class, 'index'])->name('alumni.index');
     Route::view('/pendaftaran', 'pendaftaran');
@@ -53,6 +55,7 @@ Route::prefix('admin')->name('admin.')->middleware(['admin'])->group(function ()
     Route::get('/api/visitors', [AdminVisitorController::class, 'getVisitorData'])->name('visitors.api');
 
     // CRUD resources
+    Route::resource('jurusan', AdminJurusanController::class);
     Route::resource('ekskul', AdminEkskulController::class);
     Route::resource('berita', AdminBeritaController::class);
     Route::resource('prestasi', AdminPrestasiController::class);
@@ -68,7 +71,7 @@ Route::prefix('admin')->name('admin.')->middleware(['admin'])->group(function ()
         Route::get('/logs/{log}', [ActivityLogController::class, 'show'])->name('logs.show');
 
         // User Management
-        Route::resource('users', UserController::class);
-        Route::patch('/users/{user}/toggle-status', [UserController::class, 'toggleStatus'])->name('users.toggle-status');
+        Route::resource('users', AdminUserController::class);
+        Route::patch('/users/{user}/toggle-status', [AdminUserController::class, 'toggleStatus'])->name('users.toggle-status');
     });
 });
