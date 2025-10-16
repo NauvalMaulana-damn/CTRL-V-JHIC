@@ -52,7 +52,7 @@
                                     <thead class="bg-gray-100">
                                         <tr>
                                             <th
-                                                class="px-4 py-3 text-left text-sm font-semibold text-gray-700 uppercase">
+                                                class="px-4 py-3 text-left text-sm font-semibold text-gray-700 uppercase bg-">
                                                 Tahun</th>
                                             <th
                                                 class="px-4 py-3 text-left text-sm font-semibold text-gray-700 uppercase">
@@ -65,10 +65,10 @@
                                     <tbody class="divide-y divide-gray-100">
                                         @foreach ($pendaftarans as $row)
                                             <tr class="hover:bg-gray-50 transition">
-                                                <td class="px-4 py-3 text-gray-800 font-medium">{{ $row->tahun }}</td>
-                                                <td class="px-4 py-3 text-blue-600 font-semibold">
+                                                <td class="px-4 py-3 text-gray-800 font-medium ">{{ $row->tahun }}</td>
+                                                <td class="px-4 py-3 text-orange-600 text-center font-semibold" style="background-color: #fef0e5">
                                                     {{ $row->jumlah_pendaftar }}</td>
-                                                <td class="px-4 py-3 text-green-600 font-semibold">
+                                                <td class="px-4 py-3 text-blue-600 font-semibold bg-blue-100 text-center" style="background-color : #ece6e6">
                                                     {{ $row->jumlah_diterima }}</td>
                                             </tr>
                                         @endforeach
