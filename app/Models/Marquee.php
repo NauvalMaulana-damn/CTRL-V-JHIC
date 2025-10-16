@@ -13,22 +13,6 @@ class Marquee extends Model
     protected $fillable = [
         'nama',
         'gambar',
-        'urutan',
-        'is_active'
+        'urutan'
     ];
-
-    protected $casts = [
-        'is_active' => 'boolean'
-    ];
-
-    // Scope untuk yang aktif
-    public function scopeActive($query)
-    {
-        return $query->where('is_active', true);
-    }
-
-    public function scopeOrdered($query)
-    {
-        return $query->orderBy('urutan')->orderBy('nama');
-    }
 }

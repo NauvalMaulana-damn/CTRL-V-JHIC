@@ -1,3 +1,4 @@
+{{-- resources/views/admin/marquee/edit.blade.php --}}
 <x-admin-layout>
     <h1 class="text-2xl font-bold mb-4">Edit Logo Marquee</h1>
 
@@ -32,18 +33,10 @@
             <p class="text-sm text-gray-500 mt-1">Kosongkan jika tidak ingin mengubah gambar</p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div>
-                <label class="block mb-1 font-medium">Urutan Tampil</label>
-                <input type="number" name="urutan" value="{{ old('urutan', $marquee->urutan) }}"
-                    class="w-full border rounded p-2" min="0">
-            </div>
-
-            <div class="flex items-center">
-                <input type="checkbox" name="is_active" id="is_active" value="1"
-                    {{ old('is_active', $marquee->is_active) ? 'checked' : '' }} class="mr-2">
-                <label for="is_active" class="font-medium">Aktif</label>
-            </div>
+        <div>
+            <label class="block mb-1 font-medium">Urutan Tampil</label>
+            <input type="number" name="urutan" value="{{ old('urutan', $marquee->urutan) }}"
+                class="w-full border rounded p-2" min="0">
         </div>
 
         <div class="flex justify-end space-x-2">

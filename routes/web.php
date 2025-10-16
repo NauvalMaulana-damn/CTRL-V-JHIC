@@ -61,7 +61,6 @@ Route::prefix('admin')->name('admin.')->middleware(['admin'])->group(function ()
 
     // CRUD resources
     Route::resource('marquee', AdminMarqueeController::class);
-    Route::patch('marquee/{marquee}/toggle-status', [AdminMarqueeController::class, 'toggleStatus'])->name('marquee.toggle-status');
     Route::resource('berita', AdminBeritaController::class);
     Route::resource('profil', AdminProfilController::class);
     Route::resource('jurusan', AdminJurusanController::class);

@@ -13,21 +13,50 @@ class UserController extends Controller
 {
     public function index()
     {
-        $users = User::latest()->paginate(10);
+        $currentUser = Auth::user();
+
+        // Filter users berdasarkan role
+        if ($currentUser->isSuperadmin()) {
+            $users = User::where('role', '!=', 'SUPERADMIN')->latest()->paginate(10);
+        } elseif ($currentUser->isAdmin()) {
+            $users = User::where('role', 'EDITOR')->latest()->paginate(10);
+        } else {
+            abort(403, 'Unauthorized action.');
+        }
+
         return view('admin.users.index', compact('users'));
     }
 
     public function create()
     {
+        $currentUser = Auth::user();
+
+        // Cek permission untuk create user
+        if (!$currentUser->canManageUsers()) {
+            abort(403, 'Unauthorized action.');
+        }
+
         return view('admin.users.create');
     }
 
     public function store(Request $request)
     {
+        $currentUser = Auth::user();
+
+        // Validasi role berdasarkan user yang login
+        $allowedRoles = [];
+        if ($currentUser->isSuperadmin()) {
+            $allowedRoles = 'required|in:ADMIN,EDITOR';
+        } elseif ($currentUser->isAdmin()) {
+            $allowedRoles = 'required|in:EDITOR';
+        } else {
+            abort(403, 'Unauthorized action.');
+        }
+
         $request->validate([
             'username' => 'required|unique:users|max:50',
             'password' => 'required|min:6|confirmed',
-            'role' => 'required|in:SUPERADMIN,EDITOR,VIEWER',
+            'role' => $allowedRoles,
         ]);
 
         $user = User::create([
@@ -53,15 +82,37 @@ class UserController extends Controller
 
     public function edit(User $user)
     {
+        $currentUser = Auth::user();
+
+        // Cek permission untuk edit user
+        if (!$this->canModifyUser($currentUser, $user)) {
+            abort(403, 'Unauthorized action.');
+        }
+
         return view('admin.users.edit', compact('user'));
     }
 
     public function update(Request $request, User $user)
     {
+        $currentUser = Auth::user();
+
+        // Cek permission untuk update user
+        if (!$this->canModifyUser($currentUser, $user)) {
+            abort(403, 'Unauthorized action.');
+        }
+
+        // Validasi role berdasarkan user yang login
+        $allowedRoles = [];
+        if ($currentUser->isSuperadmin()) {
+            $allowedRoles = 'required|in:ADMIN,EDITOR';
+        } elseif ($currentUser->isAdmin()) {
+            $allowedRoles = 'required|in:EDITOR';
+        }
+
         $request->validate([
             'username' => 'required|max:50|unique:users,username,' . $user->id,
             'password' => 'nullable|min:6|confirmed',
-            'role' => 'required|in:SUPERADMIN,EDITOR,VIEWER',
+            'role' => $allowedRoles,
             'is_active' => 'boolean',
         ]);
 
@@ -93,9 +144,16 @@ class UserController extends Controller
 
     public function destroy(User $user)
     {
+        $currentUser = Auth::user();
+
         // Prevent self-deletion
         if ($user->id === Auth::id()) {
             return redirect()->back()->with('error', 'Tidak dapat menghapus akun sendiri!');
+        }
+
+        // Cek permission untuk delete user
+        if (!$this->canModifyUser($currentUser, $user)) {
+            abort(403, 'Unauthorized action.');
         }
 
         $username = $user->username;
@@ -117,9 +175,16 @@ class UserController extends Controller
 
     public function toggleStatus(User $user)
     {
+        $currentUser = Auth::user();
+
         // Prevent self-deactivation
         if ($user->id === Auth::id()) {
             return redirect()->back()->with('error', 'Tidak dapat menonaktifkan akun sendiri!');
+        }
+
+        // Cek permission untuk toggle status user
+        if (!$this->canModifyUser($currentUser, $user)) {
+            abort(403, 'Unauthorized action.');
         }
 
         $user->update([
@@ -140,5 +205,16 @@ class UserController extends Controller
         ]);
 
         return redirect()->back()->with('success', "User berhasil $status!");
+    }
+
+    // Helper method untuk cek permission modify user
+    private function canModifyUser($currentUser, $targetUser)
+    {
+        if ($currentUser->isSuperadmin()) {
+            return $targetUser->role !== 'SUPERADMIN';
+        } elseif ($currentUser->isAdmin()) {
+            return $targetUser->role === 'EDITOR';
+        }
+        return false;
     }
 }
