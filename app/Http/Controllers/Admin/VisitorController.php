@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\Admin;
+use Illuminate\Support\Facades\Log;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -42,51 +43,54 @@ class VisitorController extends Controller
     /**
      * API endpoint untuk data pengunjung (digunakan oleh chart)
      */
-    public function getVisitorData()
-    {
-        try {
-            // Total semua pengunjung
-            $totalVisitors = Visitor::count();
+    // Di VisitorController.php - ganti method getVisitorData()
+public function getVisitorData()
+{
+    try {
+        // Total semua pengunjung
+        $totalVisitors = Visitor::count();
 
-            // Pengunjung aktif (dalam 30 menit terakhir)
-            $activeVisitors = Visitor::where('visited_at', '>=', now()->subMinutes(30))->count();
+        // 🔴 FIX: Pengunjung aktif (dalam 15 menit terakhir, bukan 30)
+        $activeVisitors = Visitor::where('visited_at', '>=', now()->subMinutes(15))
+            ->distinct('visitor_id')
+            ->count('visitor_id');
 
-            // Pengunjung hari ini
-            $todayVisitors = Visitor::whereDate('visited_at', today())->count();
+        // Pengunjung hari ini
+        $todayVisitors = Visitor::whereDate('visited_at', today())->count();
 
-            // Data 7 hari terakhir
-            $weeklyVisitors = [];
-            for ($i = 6; $i >= 0; $i--) {
-                $date  = now()->subDays($i);
-                $count = Visitor::whereDate('visited_at', $date->format('Y-m-d'))->count();
+        // Data 7 hari terakhir
+        $weeklyVisitors = [];
+        for ($i = 6; $i >= 0; $i--) {
+            $date = now()->subDays($i);
+            $count = Visitor::whereDate('visited_at', $date->format('Y-m-d'))->count();
 
-                $weeklyVisitors[] = [
-                    'date'  => $date->format('Y-m-d'),
-                    'total' => $count,
-                ];
-            }
-
-            return response()->json([
-                'success'        => true,
-                'totalVisitors'  => $totalVisitors,
-                'activeVisitors' => $activeVisitors,
-                'todayVisitors'  => $todayVisitors,
-                'weeklyVisitors' => $weeklyVisitors,
-            ]);
-
-        } catch (\Exception $e) {
-            ActivityLog::error('Error fetching visitor data: ' . $e->getMessage());
-
-            return response()->json([
-                'success'        => false,
-                'error'          => $e->getMessage(),
-                'totalVisitors'  => 0,
-                'activeVisitors' => 0,
-                'todayVisitors'  => 0,
-                'weeklyVisitors' => $this->getFallbackWeeklyData(),
-            ], 500);
+            $weeklyVisitors[] = [
+                'date'  => $date->format('Y-m-d'),
+                'total' => $count,
+            ];
         }
+
+        return response()->json([
+            'success'        => true,
+            'totalVisitors'  => $totalVisitors,
+            'activeVisitors' => $activeVisitors,
+            'todayVisitors'  => $todayVisitors,
+            'weeklyVisitors' => $weeklyVisitors,
+        ]);
+
+    } catch (\Exception $e) {
+        Log::error('Error fetching visitor data: ' . $e->getMessage());
+
+        return response()->json([
+            'success'        => false,
+            'error'          => $e->getMessage(),
+            'totalVisitors'  => 0,
+            'activeVisitors' => 0,
+            'todayVisitors'  => 0,
+            'weeklyVisitors' => $this->getFallbackWeeklyData(),
+        ], 500);
     }
+}
 
     /**
      * Fallback data jika database error

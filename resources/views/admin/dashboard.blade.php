@@ -92,7 +92,7 @@
                                         Total Berita
                                     </dt>
                                     <dd class="text-2xl font-bold text-gray-900">
-                                        {{ $stats['berita'] ?? 0 }}
+                                        {{ $stats['berita'] ?? 'Unavailable' }}
                                     </dd>
                                 </dl>
                             </div>
@@ -113,7 +113,7 @@
                                         Total Alumni
                                     </dt>
                                     <dd class="text-2xl font-bold text-gray-900">
-                                        {{ $stats['alumni'] ?? 0 }}
+                                        {{ $stats['alumni'] ?? 'Unavailable' }}
                                     </dd>
                                 </dl>
                             </div>
@@ -134,7 +134,7 @@
                                         Total Prestasi
                                     </dt>
                                     <dd class="text-2xl font-bold text-gray-900">
-                                        {{ $stats['prestasi'] ?? 0 }}
+                                        {{ $stats['prestasi'] ?? 'Unavailable' }}
                                     </dd>
                                 </dl>
                             </div>
@@ -155,7 +155,7 @@
                                         Total Ekskul
                                     </dt>
                                     <dd class="text-2xl font-bold text-gray-900">
-                                        {{ $stats['ekskul'] ?? 0 }}
+                                        {{ $stats['ekskul'] ?? 'Unavailable' }}
                                     </dd>
                                 </dl>
                             </div>
@@ -180,7 +180,7 @@
                                         Activity Logs
                                     </dt>
                                     <dd class="text-2xl font-bold text-gray-900">
-                                        {{ $stats['logs'] ?? 0 }}
+                                        {{ $stats['logs'] ?? 'Unavailable' }}
                                     </dd>
                                 </dl>
                             </div>
@@ -201,7 +201,7 @@
                                         Total Users
                                     </dt>
                                     <dd class="text-2xl font-bold text-gray-900">
-                                        {{ $stats['users'] ?? 0 }}
+                                        {{ $stats['users'] ?? 'Unavailable' }}
                                     </dd>
                                 </dl>
                             </div>

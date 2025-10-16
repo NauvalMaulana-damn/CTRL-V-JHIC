@@ -12,35 +12,58 @@ class TrackVisitor
 {
     public function handle(Request $request, Closure $next)
     {
-        $ip = $request->ip();
-        $userAgent = $request->userAgent();
-        $today = Carbon::today();
-
-        // Ambil visitor_id dari cookie, kalau belum ada, buat baru
-        $visitorId = Cookie::get('visitor_id');
-        if (!$visitorId) {
-            $visitorId = hash('sha256', uniqid('visitor_', true));
-            Cookie::queue('visitor_id', $visitorId, 60 * 24 * 30); // simpan 30 hari
+        // Skip tracking untuk admin routes dan API
+        if ($this->shouldSkipTracking($request)) {
+            return $next($request);
         }
 
-        // Cek apakah user sudah tercatat hari ini
-        $visitor = Visitor::where('ip_address', $ip)
-            ->where('user_agent', $userAgent)
-            ->whereDate('visited_at', $today)
+        $ip = $request->ip();
+        $userAgent = $request->userAgent();
+        $currentUrl = $request->fullUrl();
+
+        // Generate atau ambil visitor_id dari cookie
+        $visitorId = Cookie::get('visitor_id');
+        if (!$visitorId) {
+            $visitorId = 'visitor_'.md5(uniqid().$ip.$userAgent);
+            Cookie::queue('visitor_id', $visitorId, 60 * 24 * 30); // 30 hari
+        }
+
+        // 🔴 FIX: Cek apakah visitor dengan ID ini sudah ada dalam 2 menit terakhir
+        $recentVisit = Visitor::where('visitor_id', $visitorId)
+            ->where('visited_at', '>=', now()->subMinutes(2))
             ->first();
 
-        if (!$visitor) {
+        if (!$recentVisit) {
+            // Catat kunjungan baru
             Visitor::create([
                 'visitor_id' => $visitorId,
                 'ip_address' => $ip,
-                'user_agent' => $userAgent,
+                'user_agent' => substr($userAgent, 0, 255), // Pastikan tidak lebih dari 255 char
+                'page' => $currentUrl,
                 'visited_at' => now(),
             ]);
         } else {
-            // 🟢 Update waktu terakhir supaya bisa dihitung "aktif"
-            $visitor->update(['visited_at' => now()]);
+            // Update waktu untuk pengunjung aktif
+            $recentVisit->update([
+                'visited_at' => now(),
+                'page' => $currentUrl
+            ]);
         }
 
         return $next($request);
+    }
+
+    /**
+     * Skip tracking untuk route tertentu
+     */
+    private function shouldSkipTracking(Request $request): bool
+    {
+        $path = $request->path();
+
+        return str_contains($path, 'admin') ||
+               str_contains($path, 'login') ||
+               str_contains($path, 'dashboard') ||
+               str_contains($path, 'api') ||
+               $request->ajax();
     }
 }
