@@ -84,22 +84,37 @@
     <div class="mt-4">
         {{ $alumnis->links() }}
     </div>
+    <!-- Quick Stats -->
+    <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div class="bg-white p-4 rounded-lg shadow">
+            <div class="flex items-center">
+                <div class="p-2 bg-blue-100 rounded-lg">
+                    <i class="fas fa-graduation-cap text-blue-600"></i>
+                </div>
+                <div class="ml-4">
+                    <p class="text-sm text-gray-500">Total Alumni</p>
+                    <p class="text-xl font-bold">{{ $alumnis->total() }}</p>
+                </div>
+            </div>
+        </div>
 
-    <!-- Role Info -->
-    <div class="mt-6 p-4 bg-gray-50 rounded-lg">
-        <h3 class="font-semibold text-gray-700 mb-2">Permission Info:</h3>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
+        <div class="bg-white p-4 rounded-lg shadow">
             <div class="flex items-center">
-                <div class="w-3 h-3 bg-purple-500 rounded-full mr-2"></div>
-                <span class="text-gray-600"><strong>SUPERADMIN:</strong> Create, Edit, Delete</span>
-            </div>
-            <div class="flex items-center">
-                <div class="w-3 h-3 bg-blue-500 rounded-full mr-2"></div>
-                <span class="text-gray-600"><strong>EDITOR:</strong> Create, Edit (No Delete)</span>
-            </div>
-            <div class="flex items-center">
-                <div class="w-3 h-3 bg-gray-500 rounded-full mr-2"></div>
-                <span class="text-gray-600"><strong>VIEWER:</strong> View Only</span>
+                <div class="p-2 bg-purple-100 rounded-lg">
+                    <i class="fas fa-shield-alt text-purple-600"></i>
+                </div>
+                <div class="ml-4">
+                    <p class="text-sm text-gray-500">Permissions</p>
+                    <p class="text-sm font-semibold">
+                        @if(Auth::user()->isSuperadmin())
+                        Full Access
+                        @elseif(Auth::user()->isEditor())
+                        Create & Edit
+                        @else
+                        View Only
+                        @endif
+                    </p>
+                </div>
             </div>
         </div>
     </div>
