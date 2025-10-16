@@ -53,17 +53,14 @@ Route::prefix('admin')->name('admin.')->middleware(['admin'])->group(function ()
     // Visitor API - method getVisitorData
     Route::get('/api/visitors', [AdminVisitorController::class, 'getVisitorData'])->name('visitors.api');
 
-    // Special Routes for Profil
-    Route::get('/profil', [AdminProfilController::class, 'index'])->name('profil.index');
-    Route::get('/profil/edit', [AdminProfilController::class, 'edit'])->name('profil.edit');
-    Route::get('/profil/edit', [AdminProfilController::class, 'edit'])->name('profil.edit');
 
     // CRUD resources
-    Route::resource('marquees', AdminMarqueeController::class);
-    Route::patch('admin/marquee/{marquee}/toggle-status', [AdminMarqueeController::class, 'toggleStatus'])->name('admin.marquee.toggle-status');
+    Route::resource('marquee', AdminMarqueeController::class);
+    Route::patch('marquee/{marquee}/toggle-status', [AdminMarqueeController::class, 'toggleStatus'])->name('marquee.toggle-status');
+    Route::resource('berita', AdminBeritaController::class);
+    Route::resource('profil', AdminProfilController::class);
     Route::resource('jurusan', AdminJurusanController::class);
     Route::resource('ekskul', AdminEkskulController::class);
-    Route::resource('berita', AdminBeritaController::class);
     Route::resource('prestasi', AdminPrestasiController::class);
     Route::resource('alumni', AdminAlumniController::class);
 
@@ -75,6 +72,8 @@ Route::prefix('admin')->name('admin.')->middleware(['admin'])->group(function ()
         Route::get('/logs', [ActivityLogController::class, 'index'])->name('logs.index');
         Route::get('/logs/filter', [ActivityLogController::class, 'filter'])->name('logs.filter');
         Route::get('/logs/{log}', [ActivityLogController::class, 'show'])->name('logs.show');
+        Route::delete('logs/{log}', [ActivityLogController::class, 'destroy'])->name('logs.destroy');
+        Route::delete('logs/filter/clear/old', [ActivityLogController::class, 'clearOldLogs'])->name('logs.clear');
 
         // User Management
         Route::resource('users', AdminUserController::class);

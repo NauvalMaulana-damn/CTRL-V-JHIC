@@ -1,4 +1,5 @@
 <?php
+// app/Http\Controllers\Admin\MarqueeController.php
 
 namespace App\Http\Controllers\Admin;
 
@@ -11,7 +12,9 @@ class MarqueeController extends Controller
 {
     public function index()
     {
-        $marquees = Marquee::ordered()->paginate(10);
+        // PASTIKAN menggunakan paginate() bukan get()
+        $marquees = Marquee::orderBy('urutan')->orderBy('nama')->paginate(10);
+
         return view('admin.marquee.index', compact('marquees'));
     }
 
@@ -60,7 +63,6 @@ class MarqueeController extends Controller
         ];
 
         if ($request->hasFile('gambar')) {
-            // Hapus gambar lama
             if ($marquee->gambar) {
                 Storage::disk('public')->delete($marquee->gambar);
             }
@@ -74,7 +76,6 @@ class MarqueeController extends Controller
 
     public function destroy(Marquee $marquee)
     {
-        // Hapus gambar
         if ($marquee->gambar) {
             Storage::disk('public')->delete($marquee->gambar);
         }

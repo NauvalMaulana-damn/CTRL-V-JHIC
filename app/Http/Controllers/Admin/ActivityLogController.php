@@ -1,11 +1,12 @@
 <?php
+// app/Http/Controllers/Admin/ActivityLogController.php
 
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\ActivityLog;
-use Illuminate\Support\Facades\Auth;
+use Carbon\Carbon;
 
 class ActivityLogController extends Controller
 {
@@ -16,23 +17,15 @@ class ActivityLogController extends Controller
             ->paginate(20);
 
         $stats = [
-            'total' => ActivityLog::count(),
-            'today' => ActivityLog::today()->count(),
-            'logins' => ActivityLog::loginActions()->count(),
-            'crud' => ActivityLog::crudActions()->count(),
-        ];
+        'total' => ActivityLog::count(),
+        'today' => ActivityLog::whereDate('created_at', today())->count(),
+        'active_users' => ActivityLog::whereDate('created_at', today())
+            ->distinct('user_id')
+            ->count('user_id'),
+        'filtered' => $logs->count()
+];
 
         return view('admin.logs.index', compact('logs', 'stats'));
-    }
-
-    public function show(ActivityLog $log)
-    {
-        // Hanya superadmin yang bisa melihat detail log
-        if (!Auth::user()->isSuperadmin()) {
-            abort(403);
-        }
-
-        return view('admin.logs.show', compact('log'));
     }
 
     public function filter(Request $request)
@@ -44,12 +37,7 @@ class ActivityLogController extends Controller
             $query->where('action', $request->action);
         }
 
-        // Filter by user
-        if ($request->user_id) {
-            $query->where('user_id', $request->user_id);
-        }
-
-        // Filter by date
+        // Filter by date range
         if ($request->date_from) {
             $query->whereDate('created_at', '>=', $request->date_from);
         }
@@ -60,6 +48,43 @@ class ActivityLogController extends Controller
 
         $logs = $query->latest()->paginate(20);
 
-        return view('admin.logs.index', compact('logs'));
+        // Hitung stats untuk filtered data
+        $stats = [
+        'total' => ActivityLog::count(),
+        'today' => ActivityLog::whereDate('created_at', today())->count(),
+        'active_users' => ActivityLog::whereDate('created_at', today())
+            ->distinct('user_id')
+            ->count('user_id'),
+        'filtered' => $logs->count()
+];
+
+        // Pertahankan parameter filter di pagination
+        $logs->appends($request->all());
+
+        return view('admin.logs.index', compact('logs', 'stats'));
+    }
+
+    public function show(ActivityLog $log)
+    {
+        $log->load('user');
+        return view('admin.logs.show', compact('log'));
+    }
+
+    public function destroy(ActivityLog $log)
+    {
+        $log->delete();
+
+        return redirect()->route('admin.logs.index')
+            ->with('success', 'Log berhasil dihapus!');
+    }
+
+    public function clearOldLogs()
+    {
+        // Hapus logs yang lebih dari 30 hari
+        $cutoffDate = Carbon::now()->subDays(30);
+        ActivityLog::where('created_at', '<', $cutoffDate)->delete();
+
+        return redirect()->route('admin.logs.index')
+            ->with('success', 'Logs lama berhasil dibersihkan!');
     }
 }

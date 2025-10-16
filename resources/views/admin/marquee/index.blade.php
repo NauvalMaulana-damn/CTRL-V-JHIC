@@ -23,13 +23,15 @@
                 <div class="flex space-x-8 md:space-x-12 pr-12">
                     @foreach($marquees->where('is_active', true) as $marquee)
                     <img class="h-6 md:h-10 max-w-[100px] object-contain inline-block"
-                        src="{{ asset('storage/' . $marquee->gambar) }}" alt="{{ $marquee->nama }}">
+                        src="{{ asset('storage/' . $marquee->gambar) }}" alt="{{ $marquee->nama }}"
+                        loading="lazy">
                     @endforeach
 
                     <!-- Duplicated for seamless loop -->
                     @foreach($marquees->where('is_active', true) as $marquee)
                     <img class="h-6 md:h-10 max-w-[100px] object-contain inline-block"
-                        src="{{ asset('storage/' . $marquee->gambar) }}" alt="{{ $marquee->nama }}">
+                        src="{{ asset('storage/' . $marquee->gambar) }}" alt="{{ $marquee->nama }}"
+                        loading="lazy">
                     @endforeach
                 </div>
             </div>
@@ -110,11 +112,14 @@
         </table>
     </div>
 
+    <!-- Pagination dengan pengecekan -->
     <div class="mt-4">
-        {{ $marquees->links() }}
+        @if(method_exists($marquees, 'links'))
+            {{ $marquees->links() }}
+        @endif
     </div>
 
-    <!-- Quick Stats -->
+    <!-- Quick Stats dengan pengecekan -->
     <div class="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4">
         <div class="bg-white p-4 rounded-lg shadow">
             <div class="flex items-center">
@@ -123,7 +128,13 @@
                 </div>
                 <div class="ml-4">
                     <p class="text-sm text-gray-500">Total Logo</p>
-                    <p class="text-xl font-bold">{{ $marquees->total() }}</p>
+                    <p class="text-xl font-bold">
+                        @if(method_exists($marquees, 'total'))
+                            {{ $marquees->total() }}
+                        @else
+                            {{ $marquees->count() }}
+                        @endif
+                    </p>
                 </div>
             </div>
         </div>

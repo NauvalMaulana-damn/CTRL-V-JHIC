@@ -3,7 +3,7 @@
         <h1 class="text-2xl font-bold text-gray-800">Kelola Profil Sekolah</h1>
 
         @if(auth()->user()->canEdit())
-        <a href="{{ route('admin.profil.edit') }}"
+        <a href="{{ route('admin.profil.edit', $profil->id) }}"
             class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 flex items-center">
             <i class="fas fa-edit mr-2"></i>Edit Profil
         </a>

@@ -83,7 +83,7 @@
     </div>
 
     <!-- Quick Stats -->
-    <div class="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4">
+    <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4">
         <div class="bg-white p-4 rounded-lg shadow">
             <div class="flex items-center">
                 <div class="p-2 bg-blue-100 rounded-lg">
@@ -92,18 +92,6 @@
                 <div class="ml-4">
                     <p class="text-sm text-gray-500">Total Prestasi</p>
                     <p class="text-xl font-bold">{{ $prestasis->total() }}</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="bg-white p-4 rounded-lg shadow">
-            <div class="flex items-center">
-                <div class="p-2 bg-green-100 rounded-lg">
-                    <i class="fas fa-user text-green-600"></i>
-                </div>
-                <div class="ml-4">
-                    <p class="text-sm text-gray-500">Your Role</p>
-                    <p class="text-xl font-bold capitalize">{{ auth()->user()->role }}</p>
                 </div>
             </div>
         </div>

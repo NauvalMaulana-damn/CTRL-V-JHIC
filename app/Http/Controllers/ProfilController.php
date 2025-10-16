@@ -1,10 +1,12 @@
 <?php
+// app/Http\Controllers\ProfilController.php
 
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Profil;
 use Illuminate\Support\Facades\Storage;
+use App\Models\Marquee;
 
 class ProfilController extends Controller
 {
@@ -13,15 +15,20 @@ class ProfilController extends Controller
         // Ambil data profil dengan relasi misi
         $profil = Profil::with('misis')->first();
 
-        // Jika tidak ada data, redirect atau tampilkan default
+        // Ambil data marquee yang aktif
+        $marquees = Marquee::active()->ordered()->get();
+
+        // Jika tidak ada data profil, gunakan default
         if (!$profil) {
             $profil = $this->getDefaultProfilData();
         }
 
-        // Kirim data ke view dengan helper methods
         return view('profil', [
             'profil' => $profil,
-            'getImagePath' => fn($image, $default = 'default.svg') => $this->getImagePath($image, $default)
+            'marquees' => $marquees, // Kirim data marquee ke view
+            'getImagePath' => function($image, $default = 'default.svg') {
+                return $this->getImagePath($image, $default);
+            }
         ]);
     }
 
@@ -74,24 +81,6 @@ class ProfilController extends Controller
                     'misiDesc' => 'Menjadi SMK yang unggul dalam prestasi dengan dilandasi Iman & Taqwa serta menghasilkan tamatan yang mampu bersaing di tingkat Nasional maupun Internasional.',
                     'misiColor' => 'BLUE'
                 ],
-                (object) [
-                    'misiImage' => 'default.svg',
-                    'misiTitle' => 'Akreditasi A',
-                    'misiDesc' => 'Mempertahankan dan meningkatkan akreditasi A yang telah ditetapkan oleh BAN-PDM dengan sk 1857/BAN-SM/SK/2022.',
-                    'misiColor' => 'GREEN'
-                ],
-                (object) [
-                    'misiImage' => 'default.svg',
-                    'misiTitle' => 'Success By Discipline',
-                    'misiDesc' => 'Dengan motto tersebut SMK PGRI 3 MALANG mampu menghasilkan lulusan yang sukses dan berkarakter disiplin.',
-                    'misiColor' => 'ORANGE'
-                ],
-                (object) [
-                    'misiImage' => 'default.svg',
-                    'misiTitle' => 'Lulus Siap Kerja',
-                    'misiDesc' => 'Menghasilkan lulusan yang kompeten dan siap bekerja di berbagai bidang industri dengan skill yang relevan.',
-                    'misiColor' => 'RED'
-                ]
             ])
         ];
     }

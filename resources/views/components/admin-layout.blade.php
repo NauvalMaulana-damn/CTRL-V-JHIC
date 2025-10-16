@@ -69,6 +69,11 @@
                     <i class="fas fa-newspaper mr-2"></i>Berita
                 </a>
 
+                <a href="{{ route('admin.profil.index') }}"
+                    class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium {{ request()->routeIs('admin.profil.*') ? 'bg-gray-700 text-white' : '' }}">
+                    <i class="fas fa-school mr-2"></i>Profil
+                </a>
+
                 <a href="{{ route('admin.jurusan.index') }}"
                     class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium {{ request()->routeIs('admin.jurusan.*') ? 'bg-gray-700 text-white' : '' }}">
                     <i class="fas fa-list mr-2"></i>Jurusan
@@ -87,6 +92,11 @@
                 <a href="{{ route('admin.alumni.index') }}"
                     class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium {{ request()->routeIs('admin.alumni.*') ? 'bg-gray-700 text-white' : '' }}">
                     <i class="fas fa-graduation-cap mr-2"></i>Alumni
+                </a>
+
+                <a href="{{ route('admin.marquee.index') }}"
+                    class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium {{ request()->routeIs('admin.marquee.*') ? 'bg-gray-700 text-white' : '' }}">
+                    <i class="fas fa-font-awesome mr-2"></i>Marquee
                 </a>
 
                 <!-- Hanya SUPERADMIN yang bisa melihat Logs dan User Management -->

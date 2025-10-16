@@ -33,14 +33,32 @@
                         {{ Str::limit($ekskul->desc, 100) }}
                     </td>
                     <td class="p-3 text-center">
-                        <a href="{{ route('admin.ekskul.edit', $ekskul->id) }}"
-                            class="text-blue-600 hover:underline">Edit</a> |
-                        <form action="{{ route('admin.ekskul.destroy', $ekskul->id) }}" method="POST" class="inline"
-                            onsubmit="return confirm('Yakin ingin menghapus ekstrakurikuler ini?')">
-                            @csrf
-                            @method('DELETE')
-                            <button type="submit" class="text-red-600 hover:underline">Hapus</button>
-                        </form>
+                        @if(Auth::user()->isViewer())
+                        <span class="text-gray-400 text-sm">View Only</span>
+                        @else
+                        <div class="flex justify-center space-x-2">
+                            @if(Auth::user()->canEdit())
+                            <a href="{{ route('admin.ekskul.edit', $ekskul->id) }}"
+                               class="text-blue-600 hover:underline text-sm">
+                                <i class="fas fa-edit mr-1"></i>Edit
+                            </a>
+                            @endif
+
+                            @if(Auth::user()->canDelete())
+                            <form action="{{ route('admin.ekskul.destroy', $ekskul->id) }}" method="POST" class="inline"
+                                  onsubmit="return confirm('Yakin ingin menghapus ekstrakurikuler ini?')">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="text-red-600 hover:underline text-sm">
+                                    <i class="fas fa-trash mr-1"></i>Hapus
+                                </button>
+                            </form>
+                            @else
+                            <span class="text-gray-400 text-sm">|</span>
+                            <span class="text-gray-400 text-sm">No Delete</span>
+                            @endif
+                        </div>
+                        @endif
                     </td>
                 </tr>
                 @empty

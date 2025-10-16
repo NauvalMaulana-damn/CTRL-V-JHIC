@@ -27,7 +27,6 @@ class Marquee extends Model
         return $query->where('is_active', true);
     }
 
-    // Scope untuk urutan
     public function scopeOrdered($query)
     {
         return $query->orderBy('urutan')->orderBy('nama');
