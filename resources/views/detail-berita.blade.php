@@ -50,9 +50,9 @@
                     <div class="bg-white p-5 rounded-xl shadow-md">
                         <h3 class="font-bold text-xl mb-4 border-b-2 border-customOrange pb-2">Berita Terbaru</h3>
                         <div id="x-sidenews" class="space-y-6">
-                            @foreach ($beritaTerbaru->take(6) as $item)
-                                <div class="sidenews-item cursor-pointer transition-all duration-300 hover:bg-gray-50 p-2 rounded-lg"
-                                    onclick="window.showNews('{{ $item->id }}', '{{ $item->title }}', '{{ $item->deskripsi }}', '{{ $item->gambar }}')">
+                            @foreach ($beritaTerbaru->take(3) as $item)
+                            <a href="{{ route('berita.show', $item->id) }}">
+                                <div class="sidenews-item cursor-pointer transition-all duration-300 hover:bg-gray-50 p-2 rounded-lg">
                                     <x-sidenews title="{{ $item->title }}" image="{{ $item->gambar }}" />
                                 </div>
                             </a>
