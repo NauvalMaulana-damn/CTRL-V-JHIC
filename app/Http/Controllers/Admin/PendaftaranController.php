@@ -9,7 +9,7 @@ class PendaftaranController extends Controller
 {
     public function index()
     {
-        $pendaftarans = Pendaftaran::orderBy('tahun', 'desc')->paginate(10);
+        $pendaftarans = Pendaftaran::orderBy('tahun', 'desc')->paginate(5);
         return view('admin.pendaftaran.index', compact('pendaftarans'));
     }
 

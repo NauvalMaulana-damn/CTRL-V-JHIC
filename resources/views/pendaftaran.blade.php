@@ -26,20 +26,60 @@
             </section>
 
             <!-- Grafik Section -->
-            <section class=" max-w-[104rem] mx-auto py-10 px-4 md:px-10">
-                <div class="bg-white rounded-2xl shadow p-5 max-w-5xl mx-auto">
-    <h2 class="text-3xl font-bold mb-4 text-center">
-        Perbandingan Pendaftar dan Peserta Diterima
-    </h2>
+            <!-- Grafik Section -->
+            <section class="max-w-[104rem] mx-auto py-10 px-4 md:px-10">
+                <div class="bg-white rounded-2xl shadow p-8 md:p-10 max-w-7xl mx-auto">
+                    <!-- Judul -->
+                    <div class="text-center mb-10">
+                        <h2 class="text-3xl font-bold">
+                            Perbandingan Pendaftar dan Peserta Diterima
+                        </h2>
+                    </div>
 
-    <!-- Tambahkan container dengan tinggi tetap -->
-    <div class="relative w-full h-[400px]">
-        <canvas id="chartGabungan" class="w-full h-full"></canvas>
-    </div>
-</div>
+                    <!-- Wrapper Chart + Tabel -->
+                    <div class="flex flex-col md:flex-row justify-center items-center md:items-center gap-10">
+                        <!-- Chart -->
+                        <div class="flex-1 flex justify-center">
+                            <div class="relative w-full max-w-[700px] h-[400px]">
+                                <canvas id="chartGabungan" class="w-full h-full"></canvas>
+                            </div>
+                        </div>
 
-
-        </div>
+                        <!-- Tabel -->
+                        <div class="w-full md:w-[35%] flex justify-center">
+                            <div class="overflow-x-auto rounded-xl shadow-sm border border-gray-200 self-center">
+                                <table class="min-w-full divide-y divide-gray-200">
+                                    <thead class="bg-gray-100">
+                                        <tr>
+                                            <th
+                                                class="px-4 py-3 text-left text-sm font-semibold text-gray-700 uppercase">
+                                                Tahun</th>
+                                            <th
+                                                class="px-4 py-3 text-left text-sm font-semibold text-gray-700 uppercase">
+                                                Pendaftar</th>
+                                            <th
+                                                class="px-4 py-3 text-left text-sm font-semibold text-gray-700 uppercase">
+                                                Diterima</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="divide-y divide-gray-100">
+                                        @foreach ($pendaftarans as $row)
+                                            <tr class="hover:bg-gray-50 transition">
+                                                <td class="px-4 py-3 text-gray-800 font-medium">{{ $row->tahun }}</td>
+                                                <td class="px-4 py-3 text-blue-600 font-semibold">
+                                                    {{ $row->jumlah_pendaftar }}</td>
+                                                <td class="px-4 py-3 text-green-600 font-semibold">
+                                                    {{ $row->jumlah_diterima }}</td>
+                                            </tr>
+                                        @endforeach
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            </div>
         </section>
         <!-- Wrapper -->
         <div class="flex flex-col md:flex-row justify-center items-start mt-12 mx-auto ">
