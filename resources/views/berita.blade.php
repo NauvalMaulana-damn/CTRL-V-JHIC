@@ -125,7 +125,7 @@
                 {{ $berita->title }}
             </h3>
 
-            <p class="text-gray-600 mb-4 line-clamp-3 min-h-[72px]">
+            <p class="text-gray-600 mb-4 break-words line-clamp-3 min-h-[72px]">
                 {{ Str::limit($berita->deskripsi, 120) }}
             </p>
 
