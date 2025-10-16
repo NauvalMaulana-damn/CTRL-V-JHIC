@@ -150,8 +150,8 @@
                             class="hidden md:block absolute top-0 left-[40%] transform -translate-x-1/2 -translate-y-[41.2%] w-full md:w-[100%] max-h-[450px] object-contain">
 
                         <!-- Nama di sebelah kanan leher - Desktop -->
-                        <div class="hidden md:block absolute top-[52%] left-[62%] text-white">
-                            <h3 class="text-lg font-bold leading-tight drop-shadow-md">{{ $profil->visiImageName }}</h3>
+                        <div class="hidden md:block absolute top-0 left-[100px] text-white">
+                            <h3 class="text-md font-bold leading-tight drop-shadow-md">{{ $profil->visiImageName }}</h3>
                         </div>
 
                         <!-- Mobile Layout -->
