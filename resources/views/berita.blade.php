@@ -117,8 +117,8 @@
                     <span><i class="far fa-calendar-alt mr-1"></i> {{ $berita->created_at->format('d M Y') }}</span>
                     <span><i class="far fa-eye mr-1"></i> {{ $berita->views }}</span>
                 </div>
-                <h3 class="text-xl font-bold text-gray-800 mb-3">{{ $berita->title }}</h3>
-                <p class="text-gray-600 mb-4 line-clamp-3">{{ Str::limit($berita->deskripsi, 120) }}</p>
+                <h3 class="text-xl font-bold text-gray-800 mb-3 break-words line-clamp-1">{{ $berita->title }}</h3>
+                <p class="text-gray-600 mb-4 line-clamp-1 break-words">{{ Str::limit($berita->deskripsi, 120) }}</p>
                 <a href="{{ route('berita.show', $berita->id) }}"
                    class="inline-block bg-customBlue hover:bg-blue-800 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors">
                    Baca Selengkapnya
