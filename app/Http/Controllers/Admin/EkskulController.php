@@ -57,7 +57,7 @@ class EkskulController extends Controller
         $request->validate([
             'title' => 'required|max:255',
             'desc' => 'required',
-            'image' => 'nullable|image|mimes:jpg,jpeg,png,svg,webp|max:2048',
+            'image' => 'nullable|image|mimes:jpg,jpeg,png,svg,webp',
         ]);
 
         $imagePath = $ekskul->image;

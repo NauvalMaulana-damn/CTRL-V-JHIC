@@ -41,7 +41,7 @@
                                 src="{{ asset('assets/elektro_card.png') }}" alt="Elektro Department">
                         </div>
                         <div>
-                            <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-3">Elektro</h2>
+                            <h2 class="text-3xl lg:text-4xl font-bold text-white mb-3">Elektro</h2>
                             <p class="text-white text-sm md:text-base line-clamp-3 mb-4">
                                 Departemen Elektronika mempelajari dasar-dasar rangkaian listrik, komponen elektronik,
                                 dan sistem digital.
@@ -66,7 +66,7 @@
                                 src="{{ asset('assets/otomotif_card.png') }}" alt="Otomotif Department">
                         </div>
                         <div>
-                            <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-3">Otomotif</h2>
+                            <h2 class="text-3xl lg:text-4xl font-bold text-white mb-3">Otomotif</h2>
                             <p class="text-white text-sm md:text-base line-clamp-3 mb-4">
                                 Departemen Otomotif mempelajari teori sistem kendaraan seperti mesin, transmisi,
                                 kelistrikan, bodi, dan suspensi.
@@ -91,7 +91,7 @@
                                 src="{{ asset('assets/pemesinan_card.jpg') }}" alt="Pemesinan Department">
                         </div>
                         <div>
-                            <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-3">Pemesinan</h2>
+                            <h2 class="text-3xl lg:text-4xl font-bold text-white mb-3">Pemesinan</h2>
                             <p class="text-white text-sm md:text-base line-clamp-3 mb-4">
                                 Departemen Pemesinan mempelajari teknik pengoperasian mesin produksi seperti bubut,
                                 frais, dan CNC.
@@ -116,7 +116,7 @@
                                 src="{{ asset('assets/tik_card.png') }}" alt="TIK Department">
                         </div>
                         <div>
-                            <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-3">TIK</h2>
+                            <h2 class="text-3xl lg:text-4xl font-bold text-white mb-3">TIK</h2>
                             <p class="text-white text-sm md:text-base line-clamp-3 mb-4">
                                 Departemen TIK mempelajari pemrograman, jaringan komputer, teknologi digital, dan
                                 kecerdasan buatan.

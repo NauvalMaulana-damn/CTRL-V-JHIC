@@ -327,47 +327,14 @@
                 <h3 class="text-3xl font-bold mb-6 text-center">ELEKTRO</h3>
                 <div class="slider-container overflow-x-auto">
                     <div class=" flex space-x-6 pb-4 slider snap-x snap-mandatory">
-                        <!-- CARD 1 -->
-                        <x-jurcard title="Teknik Elektronika & Audio Video" image="jurTEAV.jpg" departement="ELEKTRO"
-                            loading="lazy">
-                            Dengan kode jurusan AV, merupakan jurusan yang mempelajari perancangan, instalasi, dan
-                            perawatan sistem elektronika
-                            serta peralatan audio video. Lanjutan studi meliputi S1 Teknik Elektronika, Teknik
-                            Elektro, atau pelatihan/sertifikasi teknisi AV. Berpotensi bekerja sebagai teknisi
-                            elektronika,
-                            teknisi audio video, instalator sistem, atau teknisi perawatan perangkat elektronik.
-
-                        </x-jurcard>
-
-                        <!-- CARD 2 -->
-                        <x-jurcard title="Teknik Elektronika Industri" image="jurEI.jpg" departement="ELEKTRO"
-                            loading="lazy">
-                            Dengan kode jurusan EI, merupakan jurusan yang mempelajari perancangan, instalasi, dan
-                            pemeliharaan sistem
-                            elektronika pada bidang industri. Lanjutan studi meliputi S1 Teknik Elektronika atau
-                            Teknik Elektro. Berpotensi bekerja sebagai teknisi industri,
-                            perancang sistem kontrol, atau teknisi perawatan peralatan industri.
-
-                        </x-jurcard>
-
-                        <!-- CARD 3 -->
-                        <x-jurcard title="Teknik Kimia Industri" image="jurKI.jpg" departement="ELEKTRO" loading="lazy">
-                            Dengan kode jurusan KL (Kimia Laboratorium), merupakan jurusan yang mempelajari
-                            pengujian, analisis, dan pengolahan bahan kimia di laboratorium. Lanjutan studi meliputi
-                            S1 Kimia, Farmasi, atau Teknik Kimia. Berpotensi bekerja sebagai analis laboratorium,
-                            teknisi kimia, quality control, atau peneliti.
-
-                        </x-jurcard>
-
-                        <!-- CARD 4 -->
-                        <x-jurcard title="Teknik Pembangkit Tenaga Listrik" image="jurPB.jpg" departement="ELEKTRO"
-                            loading="lazy">
-                            Dengan kode jurusan PB, merupakan jurusan yang mempelajari pengoperasian, pemeliharaan,
-                            dan pengelolaan sistem pembangkit listrik. Lanjutan studi meliputi S1 Teknik Elektro
-                            atau Energi Terbarukan. Berpotensi bekerja sebagai teknisi pembangkit, operator, atau
-                            insinyur di bidang pembangkitan listrik.
-
-                        </x-jurcard>
+                        @foreach ($jurusans as $jurusan)
+                        @if ($jurusan->departemen == "ELEKTRO")
+                        <x-jurcard title="{{ $jurusan->jurusan }}" image="{{ $jurusan->gambar }}" departement="{{ $jurusan->departemen }}"
+                        loading="lazy">
+                        {{ $jurusan->deskripsi }}
+                    </x-jurcard>
+                    @endif
+                    @endforeach
                     </div>
                 </div>
             </section>
@@ -377,34 +344,14 @@
                 <h3 class="text-3xl font-bold mb-6 text-center">OTOMOTIF</h3>
                 <div class="slider-container overflow-x-auto justify-center">
                     <div class=" flex space-x-6 pb-4 slider snap-x snap-mandatory justify-center">
-                        <!-- CARD 1 -->
-                        <x-jurcard title="Teknik Bisnis Sepeda Motor" image="jurTBSM.jpg" departement="OTOMOTIF"
+                        @foreach ($jurusans as $jurusan)
+                        @if ($jurusan->departemen == "OTOMOTIF")
+                        <x-jurcard title="{{ $jurusan->jurusan }}" image="{{ $jurusan->gambar }}" departement="{{ $jurusan->departemen }}"
                             loading="lazy">
-                            Dengan kode jurusan TSM, merupakan jurusan yang mempelajari perawatan, perbaikan, dan
-                            pengelolaan bisnis di bidang sepeda motor. Lanjutan studi meliputi S1 Teknik Otomotif
-                            atau Manajemen Bisnis. Berpotensi bekerja sebagai teknisi sepeda motor, service advisor,
-                            atau wirausahawan bengkel.
-
+                            {{ $jurusan->deskripsi }}
                         </x-jurcard>
-
-                        <!-- CARD 2 -->
-                        <x-jurcard title="Teknik Kendaraan Ringan" image="otomotif_card.png" departement="OTOMOTIF"
-                            loading="lazy">
-                            Dengan kode jurusan TKR, merupakan jurusan yang mempelajari perawatan, perbaikan, dan
-                            diagnosis kerusakan kendaraan ringan. Lanjutan studi meliputi S1 Teknik Otomotif atau
-                            Manufaktur. Berpotensi bekerja sebagai teknisi, mekanik, atau wirausahawan bengkel
-                            kendaraan ringan.
-
-                        </x-jurcard>
-
-                        <!-- CARD 3 -->
-                        <x-jurcard title="Teknik Body Otomotif" image="jurBO.jpg" departement="OTOMOTIF" loading="lazy">
-                            Dengan kode jurusan BO, merupakan jurusan yang mempelajari perbaikan, perawatan, dan
-                            pengecatan body kendaraan. Lanjutan studi meliputi S1 Teknik Otomotif atau Rekayasa
-                            Material. Berpotensi bekerja sebagai teknisi body repair, pengecat kendaraan, atau
-                            wirausahawan bengkel body.
-
-                        </x-jurcard>
+                        @endif
+                        @endforeach
                     </div>
                 </div>
             </section>
@@ -414,30 +361,14 @@
                 <h3 class="text-3xl font-bold mb-6 text-center">PEMESINAN</h3>
                 <div class="slider-container overflow-x-auto justify-center">
                     <div class=" flex space-x-6 pb-4 slider snap-x snap-mandatory justify-center">
-                        <!-- CARD 1 -->
-                        <x-jurcard title="Bisnis Digital & Pemasaran" image="jurBDP.jpg" departement="PEMESINAN"
+                        @foreach ($jurusans as $jurusan)
+                        @if ($jurusan->departemen == "PEMESINAN")
+                        <x-jurcard title="{{ $jurusan->jurusan }}" image="{{ $jurusan->gambar }}" departement="{{ $jurusan->departemen }}"
                             loading="lazy">
-                            Dengan kode jurusan BDP, merupakan jurusan yang mempelajari pemasaran, penjualan, dan
-                            pengelolaan bisnis. Lanjutan studi meliputi S1 Manajemen, Bisnis, atau Pemasaran.
-                            Berpotensi bekerja sebagai staf pemasaran, sales, wirausahawan, atau manajer bisnis.
-
+                            {{ $jurusan->deskripsi }}
                         </x-jurcard>
-
-                        <!-- CARD 2 -->
-                        <x-jurcard title="Teknik Pengelasan" image="jurTL.jpg" departement="PEMESINAN" loading="lazy">
-                            Dengan kode jurusan TL, merupakan jurusan yang mempelajari teknik pengelasan dan
-                            fabrikasi logam. Lanjutan studi meliputi S1 Teknik Mesin atau Metalurgi. Berpotensi
-                            bekerja sebagai juru las, teknisi fabrikasi, atau inspektur pengelasan.
-
-                        </x-jurcard>
-
-                        <!-- CARD 3 -->
-                        <x-jurcard title="Teknik Pemesinan" image="jurTP.jpg" departement="PEMESINAN" loading="lazy">
-                            Dengan kode jurusan TP, merupakan jurusan yang mempelajari proses permesinan, pembuatan,
-                            dan perawatan komponen mesin. Lanjutan studi meliputi S1 Teknik Mesin atau Manufaktur.
-                            Berpotensi bekerja sebagai teknisi mesin, operator CNC, atau perancang komponen mekanic.
-
-                        </x-jurcard>
+                        @endif
+                        @endforeach
                     </div>
                 </div>
             </section>
@@ -447,54 +378,14 @@
                 <h3 class="text-3xl font-bold mb-6 text-center">TEKNOLOGI INFORMASI & KOMUNIKASI</h3>
                 <div class="slider-container overflow-x-auto">
                     <div class=" flex space-x-6 pb-4 slider snap-x snap-mandatory">
-                        <!-- CARD 1 -->
-                        <x-jurcard title="Animasi" image="jurNIMA.jpg" departement="TIK" loading="lazy">
-                            Dengan kode jurusan NIM, merupakan jurusan yang mempelajari pembuatan animasi 2D dan 3D
-                            untuk keperluan hiburan, pendidikan, maupun media komersial. Lanjutan studi meliputi S1
-                            Animasi, Desain Komunikasi Visual, atau Perfilman. Berpotensi bekerja sebagai animator,
-                            ilustrator, storyboard artist, atau desainer multimedia.
-
-                        </x-jurcard>
-
-                        <!-- CARD 2 -->
-                        <x-jurcard title="Desain Komunikasi Visual" image="jurDKV.jpg" departement="TIK"
+                        @foreach ($jurusans as $jurusan)
+                        @if ($jurusan->departemen == "TIK")
+                        <x-jurcard title="{{ $jurusan->jurusan }}" image="{{ $jurusan->gambar }}" departement="{{ $jurusan->departemen }}"
                             loading="lazy">
-                            Dengan kode jurusan DKV, merupakan jurusan yang mempelajari desain komunikasi visual
-                            untuk menyampaikan pesan melalui media cetak maupun digital. Lanjutan studi meliputi S1
-                            Desain Komunikasi Visual atau bidang seni dan desain terkait. Berpotensi bekerja sebagai
-                            desainer grafis, ilustrator, animator, fotografer, atau desainer multimedia.
-
+                            {{ $jurusan->deskripsi }}
                         </x-jurcard>
-
-                        <!-- CARD 3 -->
-                        <x-jurcard title="Broadcasting & Perfilman" image="jurBP.jpg" departement="TIK"
-                            loading="lazy">
-                            Dengan kode jurusan BP, merupakan jurusan yang mempelajari perencanaan,
-                            produksi, dan penyiaran konten audio-visual untuk radio, televisi, dan media digital.
-                            Lanjutan studi meliputi S1 Broadcasting, Ilmu Komunikasi, atau perfilman. Berpotensi
-                            bekerja sebagai penyiar, reporter, kameramen, editor video, atau produser.
-
-                        </x-jurcard>
-
-                        <!-- CARD 4 -->
-                        <x-jurcard title="Teknik Komputer Jaringan" image="jurTKJ.jpg" departement="TIK"
-                            loading="lazy">
-                            Dengan kode jurusan TKJ, merupakan jurusan yang mempelajari instalasi, konfigurasi, dan
-                            pemeliharaan jaringan komputer. Lanjutan studi meliputi S1 Teknik Informatika, Teknik
-                            Elektro, atau pelatihan/sertifikasi jaringan. Berpotensi bekerja sebagai teknisi,
-                            administrator, atau konsultan jaringan, serta spesialis keamanan siber.
-
-                        </x-jurcard>
-
-                        <!-- CARD 5 -->
-                        <x-jurcard title="Rekayasa Perangkat Lunak" image="jurRPL.jpg" departement="TIK"
-                            loading="lazy">
-                            Dengan kode jurusan RPL, merupakan jurusan yang mempelajari perancangan, pengembangan,
-                            dan pemeliharaan perangkat lunak. Lanjutan studi meliputi S1 RPL, S1 Teknik Informatika,
-                            atau pelatihan/sertifikasi IT. Berpotensi bekerja sebagai pengembang, insinyur, analis,
-                            konsultan, manajer proyek, pengajar, atau peneliti perangkat lunak.
-
-                        </x-jurcard>
+                        @endif
+                        @endforeach
                     </div>
                 </div>
             </section>

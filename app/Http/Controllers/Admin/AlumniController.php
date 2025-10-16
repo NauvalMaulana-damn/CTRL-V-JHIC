@@ -78,7 +78,7 @@ class AlumniController extends Controller
             'position' => 'required|max:100',
             'company' => 'required|max:100',
             'description' => 'required',
-            'image' => 'nullable|image|mimes:jpg,jpeg,png,svg,webp|max:2048',
+            'image' => 'nullable|image|mimes:jpg,jpeg,png,svg,webp',
             'bg_color' => 'required|max:50',
             'achievements' => 'nullable',
         ]);
