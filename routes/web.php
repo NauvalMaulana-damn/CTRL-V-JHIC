@@ -32,7 +32,7 @@ Route::middleware('trackvisitor')->group(function () {
     Route::get('/jurusan', [JurusanController::class, 'index'])->name('jurusan.index');
     Route::get('/ekstrakurikuler', [EkskulController::class, 'index'])->name('ekskul.index');
     Route::get('/alumni', [AlumniController::class, 'index'])->name('alumni.index');
-    Route::view('/pendaftaran', 'pendaftaran');
+    Route::get('/pendaftaran', [PendaftaranController::class, 'index'])->name('pendaftaran.index');
     Route::get('/berita/{id}', [BeritaController::class, 'show'])->name('berita.show');
 
     // Chatbot routes

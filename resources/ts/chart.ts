@@ -99,13 +99,23 @@ export async function initChartGabungan(): Promise<void> {
                 display: true,
                 text: "Jumlah Siswa",
                 color: "#374151",
-                font: { weight: "bold" },
+                font: {
+                    size: 18,
+                     weight: "bold" },
             },
         },
         x: {
             grid: {
                 color: "rgba(0,0,0,0.05)",
             },
+            title:{
+                display: true,
+                text: "Tahun",
+                color: "#374151",
+                font: {
+                    size: 18,
+                     weight: "bold" },
+            }
         },
     },
     plugins: {
