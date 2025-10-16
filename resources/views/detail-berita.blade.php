@@ -76,8 +76,8 @@
                     </div>
 
                     <!-- Quick Links -->
-                    <div class="bg-white p-5 rounded-xl shadow-md">
-                        <h3 class="font-bold text-xl mb-4 border-b-2 border-customBlue pb-2 break-words">Lainnya</h3>
+                    <div class="bg-white p-5 rounded-xl shadow-md mt-6">
+                        <h3 class="font-bold text-xl mb-4 border-b-2 border-customBlue pb-2">Lainnya</h3>
                         <ul class="space-y-3">
                             <li><a href="http://117.102.78.163/student/"
                                     class="text-blue-600 hover:underline flex items-center break-words"><i
@@ -93,7 +93,7 @@
                                         class="fas fa-link mr-2 text-sm"></i>Portal Akademik</a></li>
                         </ul>
                     </div>
-                </div>
+                </aside>
             </div>
         </main>
     </div>
