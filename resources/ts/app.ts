@@ -1,9 +1,9 @@
 declare global {
     interface Window {
         Alpine: typeof Alpine;
-        showNews: (id: number, title: string, desc: string, image: string) => void;
+        showNews: (index: number) => void; // Simplify: hanya butuh index
         initializeNewsSlider: () => void;
-        beritas: any[]; // Ubah dari string ke any[]
+        beritas: any[];
     }
 }
 
@@ -19,17 +19,9 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/effect-fade";
 
-// Interface untuk data berita
-interface Berita {
-    id: number;
-    title: string;
-    deskripsi: string;
-    gambar: string;
-}
-
 // Variabel global
 let newsSwiper: Swiper | null = null;
-let allBeritas: Berita[] = [];
+let allBeritas: any[] = [];
 
 // ✅ Mobile menu
 const initMobileMenu = (): void => {
@@ -49,7 +41,7 @@ const initializeNewsSlider = (): void => {
     console.log("🔄 Initializing news slider...");
 
     try {
-        // Ambil data berita dari window object - langsung sebagai array
+        // Ambil data berita dari window object
         const beritasData = window.beritas;
         console.log("📊 Beritas data:", beritasData);
 
@@ -79,21 +71,18 @@ const initializeNewsSlider = (): void => {
         swiperWrapper.innerHTML = "";
 
         // Create slides untuk setiap berita
-        allBeritas.forEach((berita: Berita, index: number) => {
+        allBeritas.forEach((berita: any, index: number) => {
             const slide = document.createElement("div");
             slide.className = "swiper-slide relative w-full h-full";
 
-            // Handle image path - check if it already has storage/ prefix
+            // Handle image path
             let imagePath = berita.gambar;
-            if (
-                !imagePath.startsWith("storage/") &&
-                !imagePath.startsWith("http")
-            ) {
+            if (!imagePath.startsWith("storage/") && !imagePath.startsWith("http")) {
                 imagePath = `storage/${berita.gambar}`;
             }
 
             slide.innerHTML = `
-                <a href="berita/${berita.id}">
+                <a href="/berita/${berita.id}">
                     <img src="${imagePath}" alt="${berita.title}"
                         class="headnews-img w-full h-[40vh] sm:h-[50vh] md:h-[60vh] lg:h-[70vh] object-cover"
                         onerror="this.src='/assets/default.svg'"/>
@@ -113,11 +102,6 @@ const initializeNewsSlider = (): void => {
 
         // Initialize Swiper
         initializeSwiperInstance();
-
-        // Set active pertama di sidebar setelah Swiper ready
-        setTimeout(() => {
-            setActiveSidebarItem(0);
-        }, 500);
 
         console.log("✅ News slider initialized successfully");
     } catch (error) {
@@ -150,7 +134,7 @@ const createDefaultSlide = (): void => {
     initializeSwiperInstance();
 };
 
-// ✅ Initialize Swiper instance
+// ✅ Initialize Swiper instance - FIXED
 const initializeSwiperInstance = (): void => {
     const swiperEl = document.querySelector(".mySwiper");
     if (!swiperEl) {
@@ -167,14 +151,11 @@ const initializeSwiperInstance = (): void => {
     try {
         newsSwiper = new Swiper(".mySwiper", {
             modules: [Navigation, Pagination, Autoplay, EffectFade],
-            loop: allBeritas.length > 1, // Only loop if more than 1 slide
-            autoplay:
-                allBeritas.length > 1
-                    ? {
-                          delay: 5000,
-                          disableOnInteraction: false,
-                      }
-                    : false,
+            loop: allBeritas.length > 1,
+            autoplay: allBeritas.length > 1 ? {
+                delay: 5000,
+                disableOnInteraction: false,
+            } : false,
             pagination: {
                 el: ".swiper-pagination",
                 clickable: true,
@@ -191,15 +172,7 @@ const initializeSwiperInstance = (): void => {
             on: {
                 init: function () {
                     console.log("✅ Swiper initialized successfully");
-                    console.log(
-                        `🔄 Loop mode: ${this.params.loop}, Autoplay: ${this.params.autoplay}`
-                    );
-                },
-                slideChange: function () {
-                    // Sync dengan sidebar saat slide berubah
-                    const activeIndex = this.realIndex;
-                    setActiveSidebarItem(activeIndex);
-                },
+                }
             },
         });
     } catch (error) {
@@ -207,44 +180,34 @@ const initializeSwiperInstance = (): void => {
     }
 };
 
-// ✅ Function untuk handle klik berita di sidebar
-const showNews = (id: number, title: string, desc: string, image: string): void => {
-    console.log("🔄 Showing news:", title);
+// ✅ FIXED: Function untuk handle klik berita di sidebar - SIMPLE VERSION
+const showNews = (index: number): void => {
+    console.log("🔄 Showing news index:", index);
 
     if (!newsSwiper || allBeritas.length === 0) {
         console.error("❌ Swiper not initialized or no beritas data");
         return;
     }
 
-    // Cari index berita yang diklik
-    const newsIndex = allBeritas.findIndex(
-        (berita) =>
-            berita.id === id &&
-            berita.title === title &&
-            berita.deskripsi === desc &&
-            berita.gambar === image
-    );
-
-    console.log(`📌 Found news at index: ${newsIndex}`);
-
-    if (newsIndex !== -1 && newsSwiper) {
-        // Direct ke slide yang sesuai
-        newsSwiper.slideToLoop(newsIndex);
-        // setActiveSidebarItem(newsIndex);
+    if (index >= 0 && index < allBeritas.length) {
+        // FIX: Gunakan slideTo() bukan slideToLoop() karena loop bisa false
+        newsSwiper.slideTo(index);
+        console.log(`✅ Navigated to slide: ${index}`);
+    } else {
+        console.error(`❌ Invalid index: ${index}`);
     }
 };
 
-// ✅ Set active item di sidebar
-const setActiveSidebarItem = (activeIndex: number): void => {
-    document.querySelectorAll("#x-sidenews .sidenews-item");
-};
+// ✅ Hapus function yang tidak perlu
+// const setActiveSidebarItem = (activeIndex: number): void => {
+//     // Hapus functionality active item
+// };
 
 // ✅ Initialize regular Swiper (untuk swiper lainnya jika ada)
 const initSwiper = (): void => {
     const swiperEl = document.querySelector(".mySwiper");
     if (!swiperEl) return;
 
-    // Jika news slider sudah dihandle oleh initializeNewsSlider, skip
     if (document.getElementById("x-headnews")) {
         console.log("📰 News swiper will be handled by initializeNewsSlider");
         return;
@@ -270,7 +233,6 @@ const initSwiper = (): void => {
             effect: "fade",
             speed: 1000,
         });
-        console.log("✅ Regular Swiper initialized");
     } catch (error) {
         console.error("❌ Error initializing regular Swiper:", error);
     }
@@ -311,40 +273,21 @@ document.addEventListener("click", (e) => {
 document.addEventListener("DOMContentLoaded", (): void => {
     console.log("🏫 SMK PGRI 3 Malang - Initializing...");
 
-    // Export functions ke global scope FIRST
+    // Export functions ke global scope
     window.showNews = showNews;
     window.initializeNewsSlider = initializeNewsSlider;
 
-    // Alpine
+    // Initialize semua components
     window.Alpine = Alpine;
     Alpine.start();
-    console.log("✅ AlpineJS initialized successfully");
 
-    // Mobile menu
     initMobileMenu();
-    console.log("✅ Mobile menu initialized successfully");
-
-    // Initialize news slider first
     initializeNewsSlider();
-    console.log("✅ News slider initialization triggered");
-
-    // Regular swiper (fallback)
     initSwiper();
-
-    // Scroll and Chart
     initScrollButtons();
     initChartGabungan();
 
     console.log("🎉 All components initialized successfully");
 });
 
-// ✅ Debug scroll (opsional)
-const scrollDebug: boolean = false;
-if (scrollDebug) {
-    document.addEventListener("scroll", (): void => {
-        console.log("ScrollY:", window.scrollY);
-    });
-}
-
-// ✅ Export untuk modul lainnya
 export { showNews, initializeNewsSlider };
