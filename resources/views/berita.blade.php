@@ -102,49 +102,45 @@
             <!-- News Grid -->
             {{--  --}}
             <!-- Di dalam grid -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12" id="newsGrid">
-                @foreach ($beritas as $berita)
-                <div class="news-card bg-white rounded-xl shadow-md overflow-hidden"
-                    data-type="{{ strtolower($berita->type) }}">
-                    <div class="relative">
-                        <img src="{{ $berita->gambar_url }}" alt="{{ $berita->title }}"
-                            class="w-full h-48 object-cover">
-                        <div class="absolute top-4 left-4">
-                            <span class="bg-customOrange text-white px-3 py-1 rounded-full text-xs font-medium">
-                                {{ $berita->type }}
-                            </span>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <div class="flex justify-between text-sm text-gray-500 mb-2">
-                            <span><i class="far fa-calendar-alt mr-1"></i>
-                                {{ $berita->created_at->format('d M Y') }}</span>
-                            <span><i class="far fa-eye mr-1"></i> {{ $berita->views }}</span>
-                        </div>
-                        <h3 class="text-xl font-bold text-gray-800 mb-3">{{ $berita->title }}</h3>
-                        <p class="text-gray-600 mb-4 line-clamp-3">{{ Str::limit($berita->deskripsi, 120) }}</p>
-                        <a href="{{ route('berita.show', $berita->id) }}"
-                            class="inline-block bg-customBlue hover text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors">
-                            Baca Selengkapnya
-                        </a>
-                    </div>
-                </div>
-                @endforeach
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12 items-stretch" id="newsGrid">
+    @foreach ($beritas as $berita)
+    <div class="news-card bg-white rounded-xl shadow-md overflow-hidden flex flex-col h-full"
+        data-type="{{ strtolower($berita->type) }}">
+        <div class="relative">
+            <img src="{{ $berita->gambar_url }}" alt="{{ $berita->title }}" class="w-full h-48 object-cover">
+            <div class="absolute top-4 left-4">
+                <span class="bg-customOrange text-white px-3 py-1 rounded-full text-xs font-medium">
+                    {{ $berita->type }}
+                </span>
             </div>
-            <div class="p-6">
-                <div class="flex justify-between text-sm text-gray-500 mb-2">
-                    <span><i class="far fa-calendar-alt mr-1"></i> {{ $berita->created_at->format('d M Y') }}</span>
-                    <span><i class="far fa-eye mr-1"></i> {{ $berita->views }}</span>
-                </div>
-                <h3 class="text-xl font-bold text-gray-800 mb-3 break-words line-clamp-1">{{ $berita->title }}</h3>
-                <p class="text-gray-600 mb-4 line-clamp-1s break-words">{{ Str::limit($berita->deskripsi, 120) }}</p>
+        </div>
+
+        <div class="p-6 flex flex-col flex-1">
+            <div class="flex justify-between text-sm text-gray-500 mb-2">
+                <span><i class="far fa-calendar-alt mr-1"></i> {{ $berita->created_at->format('d M Y') }}</span>
+                <span><i class="far fa-eye mr-1"></i> {{ $berita->views }}</span>
+            </div>
+
+            <h3 class="text-xl font-bold text-gray-800 mb-3 break-words line-clamp-2 min-h-[56px]">
+                {{ $berita->title }}
+            </h3>
+
+            <p class="text-gray-600 mb-4 line-clamp-3 min-h-[72px]">
+                {{ Str::limit($berita->deskripsi, 120) }}
+            </p>
+
+            <div class="mt-auto">
                 <a href="{{ route('berita.show', $berita->id) }}"
-                   class="inline-block bg-customBlue hover:bg-blue-800 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors">
-                   Baca Selengkapnya
+                    class="inline-block bg-customBlue hover:bg-blue-800 text-white px-4 py-2 rounded-lg text-sm font-medium transition-all self-start">
+                    Baca Selengkapnya
                 </a>
             </div>
         </div>
+    </div>
     @endforeach
+</div>
+
+
 </div>
 
             <!-- Pagination -->

@@ -1,10 +1,10 @@
 <x-layout title="SMK PGRI 3 Malang - Success by Discipline">
     <script>
-    // Pass data dari PHP ke JavaScript sebagai array object, bukan JSON string
-    window.beritas = @json($beritas);
-    console.log('📊 Beritas data loaded:', window.beritas);
+        // Pass data dari PHP ke JavaScript sebagai array object, bukan JSON string
+        window.beritas = @json($beritas);
+        console.log('📊 Beritas data loaded:', window.beritas);
 
-    // Jangan panggil initializeNewsSlider di sini, biarkan app.ts yang handle
+        // Jangan panggil initializeNewsSlider di sini, biarkan app.ts yang handle
     </script>
 
     <!-- Main content with news sidebar -->
@@ -138,57 +138,57 @@
 
             <!-- Student Habits Section -->
             <section class="bg-gray-200 py-12 rounded-xl mt-8 animate-fade-in delay-900 ease-in-out">
-    <div class="container mx-auto px-4">
-        <h2 class="text-2xl md:text-4xl lg:text-5xl font-bold text-center mb-8 md:mb-12">
-            KEBIASAAN MURID SKARIGA
-        </h2>
+                <div class="container mx-auto px-4">
+                    <h2 class="text-2xl md:text-4xl lg:text-5xl font-bold text-center mb-8 md:mb-12">
+                        KEBIASAAN MURID SKARIGA
+                    </h2>
 
-        <!-- Card Wrapper -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 justify-items-center">
-            <x-habitcard title="Cek Kelengkapan Seragam" image="ceksabuk.jpg">
-                Sebelum memasuki sekolah, siswa wajib menunjukan kelengkapan seragam
-            </x-habitcard>
+                    <!-- Card Wrapper -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 justify-items-center">
+                        <x-habitcard title="Cek Kelengkapan Seragam" image="ceksabuk.jpg">
+                            Sebelum memasuki sekolah, siswa wajib menunjukan kelengkapan seragam
+                        </x-habitcard>
 
-            <x-habitcard title="Jalur Hijau" image="jalurhijau.jpg">
-                SKARIGA selalu membiasakan warga sekolah untuk berjalan di jalur hijau, seperti yang
-                diterapkan di industri
-            </x-habitcard>
+                        <x-habitcard title="Jalur Hijau" image="jalurhijau.jpg">
+                            SKARIGA selalu membiasakan warga sekolah untuk berjalan di jalur hijau, seperti yang
+                            diterapkan di industri
+                        </x-habitcard>
 
-            <x-habitcard title="Mengaji Pagi" image="mengajipagi.jpg">
-                Bagi siswa muslim, SKARIGA mengadakan mengaji pagi bersama, seperti membaca juz amma,
-                dan doa pagi. Bagi non Muslim SKARIGA memberi tempat untuk beribadah pagi
-            </x-habitcard>
+                        <x-habitcard title="Mengaji Pagi" image="mengajipagi.jpg">
+                            Bagi siswa muslim, SKARIGA mengadakan mengaji pagi bersama, seperti membaca juz amma,
+                            dan doa pagi. Bagi non Muslim SKARIGA memberi tempat untuk beribadah pagi
+                        </x-habitcard>
 
-            <x-habitcard title="Makan Bersama" image="kebiasaan-4(2).jpg">
-                Pada istirahat pertama, budaya yang melekat pada murid-murid SKARIGA
-                adalah budaya makan bersama secara lesehan
-            </x-habitcard>
-        </div>
-    </div>
-</section>
+                        <x-habitcard title="Makan Bersama" image="kebiasaan-4(2).jpg">
+                            Pada istirahat pertama, budaya yang melekat pada murid-murid SKARIGA
+                            adalah budaya makan bersama secara lesehan
+                        </x-habitcard>
+                    </div>
+                </div>
+            </section>
 
 
         </main>
 
         <!-- News Sidebar (Not fixed) -->
         <aside class="w-full lg:w-1/4 lg:pl-8 mt-8 lg:mt-0 animate-fade-in delay-400">
-                    <div class="bg-white p-5 rounded-xl shadow-md">
-                        <h3 class="font-bold text-xl mb-4 border-b-2 border-customOrange pb-2">Berita Terbaru</h3>
-                        <div id="x-sidenews" class="space-y-6">
-                            @foreach ($beritas as $berita)
-                            <div class="sidenews-item cursor-pointer transition-all duration-300 hover:bg-gray-50 p-2 rounded-lg"
-                                onclick="window.showNews('{{ $berita->id }}', '{{ $berita->title }}', '{{ $berita->deskripsi }}', '{{ $berita->gambar }}')">
-                                <x-sidenews title="{{ $berita->title }}" image="{{ $berita->gambar }}" />
-                            </div>
-                            @endforeach
-                            <a href="/berita">
-                                <button
-                                    class="mt-6 w-full bg-customOrange text-white py-2 rounded-lg font-medium hover:bg-customBlue transition">
-                                    Lihat Berita Lainnya
-                                </button>
-                            </a>
+            <div class="bg-white p-5 rounded-xl shadow-md">
+                <h3 class="font-bold text-xl mb-4 border-b-2 border-customOrange pb-2">Berita Terbaru</h3>
+                <div id="x-sidenews" class="space-y-6">
+                    @foreach ($beritas as $berita)
+                        <div class="sidenews-item cursor-pointer transition-all duration-300 hover:bg-gray-50 p-2 rounded-lg"
+                            onclick="window.showNews('{{ $berita->id }}', '{{ $berita->title }}', '{{ $berita->deskripsi }}', '{{ $berita->gambar }}')">
+                            <x-sidenews title="{{ $berita->title }}" image="{{ $berita->gambar }}" />
                         </div>
-                    </div>
+                    @endforeach
+                    <a href="/berita">
+                        <button
+                            class="mt-6 w-full bg-customOrange text-white py-2 rounded-lg font-medium hover:bg-customBlue transition">
+                            Lihat Berita Lainnya
+                        </button>
+                    </a>
+                </div>
+            </div>
 
             <!-- Quick Links -->
             <div class="bg-white p-5 rounded-xl shadow-md mt-6">
@@ -211,9 +211,9 @@
         </aside>
     </div>
     <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        // Inisialisasi swiper dengan data berita
-        initializeNewsSlider();
-    });
+        document.addEventListener('DOMContentLoaded', function() {
+            // Inisialisasi swiper dengan data berita
+            initializeNewsSlider();
+        });
     </script>
 </x-layout>
