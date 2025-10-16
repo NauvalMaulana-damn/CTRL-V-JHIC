@@ -24,8 +24,8 @@ class AdminMiddleware
             return redirect()->route('admin.login')->with('error', 'Akun Anda telah dinonaktifkan.');
         }
 
-        // Cek role (SUPERADMIN, EDITOR, atau VIEWER)
-        if (!in_array($user->role, ['SUPERADMIN', 'EDITOR', 'VIEWER'])) {
+        // Cek role (SUPERADMIN, ADMIN, atau EDITOR)
+        if (!in_array($user->role, ['SUPERADMIN', 'ADMIN', 'EDITOR'])) {
             Auth::logout();
             return redirect()->route('admin.login')->with('error', 'Akses ditolak.');
         }

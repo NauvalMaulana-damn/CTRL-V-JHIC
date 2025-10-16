@@ -11,25 +11,29 @@ class AppServiceProvider extends ServiceProvider
 {
     public function boot()
     {
-        // Share marquee data to all views
+        // Share marquee data to all views - dengan error handling
         View::composer('*', function ($view) {
-            $marquees = Marquee::active()->ordered()->get();
-            $view->with('marquees', $marquees);
+            try {
+                $marquees = Marquee::orderBy('urutan')
+                                ->orderBy('nama')
+                                ->get();
+                $view->with('marquees', $marquees);
+            } catch (\Exception $e) {
+                // Jika ada error, kirim collection kosong
+                $view->with('marquees', collect());
+            }
         });
 
         // Share getImagePath function to all views
         View::composer('*', function ($view) {
             $view->with('getImagePath', function ($image, $default = 'default.svg') {
                 if ($image && $image !== 'default.svg') {
-                    // Cek di storage public
                     if (\Illuminate\Support\Facades\Storage::disk('public')->exists($image)) {
                         return asset('storage/' . $image);
                     }
-                    // Cek di assets
                     if (file_exists(public_path('assets/' . $image))) {
                         return asset('assets/' . $image);
                     }
-                    // Cek di root public
                     if (file_exists(public_path($image))) {
                         return asset($image);
                     }

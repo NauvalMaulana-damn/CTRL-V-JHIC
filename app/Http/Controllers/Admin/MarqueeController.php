@@ -12,9 +12,7 @@ class MarqueeController extends Controller
 {
     public function index()
     {
-        // PASTIKAN menggunakan paginate() bukan get()
         $marquees = Marquee::orderBy('urutan')->orderBy('nama')->paginate(10);
-
         return view('admin.marquee.index', compact('marquees'));
     }
 
@@ -37,7 +35,6 @@ class MarqueeController extends Controller
             'nama' => $request->nama,
             'gambar' => $gambarPath,
             'urutan' => $request->urutan ?? 0,
-            'is_active' => $request->has('is_active'),
         ]);
 
         return redirect()->route('admin.marquee.index')->with('success', 'Logo marquee berhasil ditambahkan!');
@@ -59,7 +56,6 @@ class MarqueeController extends Controller
         $data = [
             'nama' => $request->nama,
             'urutan' => $request->urutan ?? 0,
-            'is_active' => $request->has('is_active'),
         ];
 
         if ($request->hasFile('gambar')) {
@@ -83,15 +79,5 @@ class MarqueeController extends Controller
         $marquee->delete();
 
         return redirect()->route('admin.marquee.index')->with('success', 'Logo marquee berhasil dihapus!');
-    }
-
-    public function toggleStatus(Marquee $marquee)
-    {
-        $marquee->update([
-            'is_active' => !$marquee->is_active
-        ]);
-
-        $status = $marquee->is_active ? 'diaktifkan' : 'dinonaktifkan';
-        return redirect()->route('admin.marquee.index')->with('success', "Logo marquee berhasil $status!");
     }
 }
