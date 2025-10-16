@@ -138,38 +138,35 @@
 
             <!-- Student Habits Section -->
             <section class="bg-gray-200 py-12 rounded-xl mt-8 animate-fade-in delay-900 ease-in-out">
-                <div class="container mx-auto px-4">
-                    <h2 class="text-2xl md:text-4xl lg:text-5xl font-bold text-center mb-8 md:mb-12">KEBIASAAN MURID
-                        SKARIGA</h2>
+    <div class="container mx-auto px-4">
+        <h2 class="text-2xl md:text-4xl lg:text-5xl font-bold text-center mb-8 md:mb-12">
+            KEBIASAAN MURID SKARIGA
+        </h2>
 
-                    <!-- Card Wrapper -->
-                    <div class="flex flex-col lg:flex-row items-center gap-6 justify-center">
+        <!-- Card Wrapper -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 justify-items-center">
+            <x-habitcard title="Cek Kelengkapan Seragam" image="ceksabuk.jpg">
+                Sebelum memasuki sekolah, siswa wajib menunjukan kelengkapan seragam
+            </x-habitcard>
 
-                        <!-- Habit 1 -->
-                        <x-habitcard title="Cek Kelengkapan Seragam" image="ceksabuk.jpg">
-                            Sebelum memasuki sekolah, siswa wajib menunjukan kelengkapan seragam
-                        </x-habitcard>
+            <x-habitcard title="Jalur Hijau" image="jalurhijau.jpg">
+                SKARIGA selalu membiasakan warga sekolah untuk berjalan di jalur hijau, seperti yang
+                diterapkan di industri
+            </x-habitcard>
 
-                        <!-- Habit 2 -->
-                        <x-habitcard title="Jalur Hijau" image="jalurhijau.jpg">
-                            SKARIGA selalu membiasakan warga sekolah untuk berjalan di jalur hijau, seperti yang
-                            diterapkan di industri
-                        </x-habitcard>
+            <x-habitcard title="Mengaji Pagi" image="mengajipagi.jpg">
+                Bagi siswa muslim, SKARIGA mengadakan mengaji pagi bersama, seperti membaca juz amma,
+                dan doa pagi. Bagi non Muslim SKARIGA memberi tempat untuk beribadah pagi
+            </x-habitcard>
 
-                        <!-- Habit 3 -->
-                        <x-habitcard title="Mengaji Pagi" image="mengajipagi.jpg">
-                            Bagi siswa muslim, SKARIGA mengadakan mengaji pagi bersama, seperti membaca juz amma,
-                            dan doa pagi. Bagi non Muslim SKARIGA memberi tempat untuk beribadah pagi
-                        </x-habitcard>
+            <x-habitcard title="Makan Bersama" image="kebiasaan-4(2).jpg">
+                Pada istirahat pertama, budaya yang melekat pada murid-murid SKARIGA
+                adalah budaya makan bersama secara lesehan
+            </x-habitcard>
+        </div>
+    </div>
+</section>
 
-                        <!-- Habit 4 -->
-                        <x-habitcard title="Makan Bersama" image="kebiasaan-4(2).jpg">
-                            Pada istirahat pertama, budaya yang melekat pada murid-murid SKARIGA
-                            adalah budaya makan bersama secara lesehan
-                        </x-habitcard>
-                    </div>
-                </div>
-            </section>
 
         </main>
 
