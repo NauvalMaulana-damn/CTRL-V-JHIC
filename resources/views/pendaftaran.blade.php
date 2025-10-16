@@ -79,6 +79,8 @@
                     </div>
                 </div>
             </section>
+            </div>
+        </section>
         <!-- Wrapper -->
         <div class="flex flex-col md:flex-row justify-center items-start mt-12 mx-auto ">
             <!-- Daftar Offline -->
