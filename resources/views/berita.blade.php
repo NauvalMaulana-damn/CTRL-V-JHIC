@@ -99,6 +99,7 @@
             </div>
 
             <!-- News Grid -->
+            {{--  --}}
             <!-- Di dalam grid -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12" id="newsGrid">
     @foreach ($beritas as $berita)
@@ -118,7 +119,7 @@
                     <span><i class="far fa-eye mr-1"></i> {{ $berita->views }}</span>
                 </div>
                 <h3 class="text-xl font-bold text-gray-800 mb-3 break-words line-clamp-1">{{ $berita->title }}</h3>
-                <p class="text-gray-600 mb-4 line-clamp-1 break-words">{{ Str::limit($berita->deskripsi, 120) }}</p>
+                <p class="text-gray-600 mb-4 line-clamp-1s break-words">{{ Str::limit($berita->deskripsi, 120) }}</p>
                 <a href="{{ route('berita.show', $berita->id) }}"
                    class="inline-block bg-customBlue hover:bg-blue-800 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors">
                    Baca Selengkapnya
