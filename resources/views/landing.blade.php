@@ -175,23 +175,23 @@
 
         <!-- News Sidebar (Not fixed) -->
         <aside class="w-full lg:w-1/4 lg:pl-8 mt-8 lg:mt-0 animate-fade-in delay-400">
-            <div class="bg-white p-5 rounded-xl shadow-md">
-                <h3 class="font-bold text-xl mb-4 border-b-2 border-customOrange pb-2">Berita Terbaru</h3>
-                <div id="x-sidenews" class="space-y-6">
-                    @foreach ($beritas as $berita)
-                    <div class="sidenews-item cursor-pointer transition-all duration-300 hover:bg-gray-50 p-2 rounded-lg"
-                        onclick="window.showNews('{{ $berita->id }}', '{{ $berita->title }}', '{{ $berita->deskripsi }}', '{{ $berita->gambar }}')">
-                        <x-sidenews title="{{ $berita->title }}" image="{{ $berita->gambar }}" />
+                    <div class="bg-white p-5 rounded-xl shadow-md">
+                        <h3 class="font-bold text-xl mb-4 border-b-2 border-customOrange pb-2">Berita Terbaru</h3>
+                        <div id="x-sidenews" class="space-y-6">
+                            @foreach ($beritas as $berita)
+                            <div class="sidenews-item cursor-pointer transition-all duration-300 hover:bg-gray-50 p-2 rounded-lg"
+                                onclick="window.showNews('{{ $berita->id }}', '{{ $berita->title }}', '{{ $berita->deskripsi }}', '{{ $berita->gambar }}')">
+                                <x-sidenews title="{{ $berita->title }}" image="{{ $berita->gambar }}" />
+                            </div>
+                            @endforeach
+                            <a href="/berita">
+                                <button
+                                    class="mt-6 w-full bg-customOrange text-white py-2 rounded-lg font-medium hover:bg-customBlue transition">
+                                    Lihat Berita Lainnya
+                                </button>
+                            </a>
+                        </div>
                     </div>
-                    @endforeach
-                    <a href="/berita">
-                        <button
-                            class="mt-6 w-full bg-customOrange text-white py-2 rounded-lg font-medium hover:bg-customBlue transition">
-                            Lihat Berita Lainnya
-                        </button>
-                    </a>
-                </div>
-            </div>
 
             <!-- Quick Links -->
             <div class="bg-white p-5 rounded-xl shadow-md mt-6">
