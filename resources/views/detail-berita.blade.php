@@ -46,23 +46,14 @@
                 </div>
 
                 <!-- Sidebar -->
-                <div class="w-full lg:w-1/4">
-                    <div class="bg-white p-5 rounded-xl shadow-md mb-6">
-                        <h3 class="font-bold text-xl mb-4 border-b-2 border-customOrange pb-2 break-words">Berita
-                            Terbaru</h3>
-                        <div class="space-y-4">
-                            @foreach($beritaTerbaru as $item)
-                            <a href="{{ route('berita.show', $item->id) }}"
-                                class="font-medium text-sm hover:text-customBlue transition-colors line-clamp-2 break-words">
-                                <div class="flex items-start space-x-3 pb-4 border-b border-gray-100 last:border-b-0">
-                                    <img src="{{ $item->gambar_url }}" alt="{{ $item->title }}"
-                                        class="w-16 h-16 object-cover rounded-lg flex-shrink-0">
-                                    <div class="min-w-0 flex-1">
-                                        {{ $item->title }}
-                                        <p class="text-xs text-gray-500 mt-1">
-                                            {{ $item->created_at->format('d M Y') }}
-                                        </p>
-                                    </div>
+                <aside class="w-full lg:w-1/4 lg:pl-8 mt-8 lg:mt-0 animate-fade-in delay-400">
+                    <div class="bg-white p-5 rounded-xl shadow-md">
+                        <h3 class="font-bold text-xl mb-4 border-b-2 border-customOrange pb-2">Berita Terbaru</h3>
+                        <div id="x-sidenews" class="space-y-6">
+                            @foreach ($beritaTerbaru->take(6) as $item)
+                                <div class="sidenews-item cursor-pointer transition-all duration-300 hover:bg-gray-50 p-2 rounded-lg"
+                                    onclick="window.showNews('{{ $item->id }}', '{{ $item->title }}', '{{ $item->deskripsi }}', '{{ $item->gambar }}')">
+                                    <x-sidenews title="{{ $item->title }}" image="{{ $item->gambar }}" />
                                 </div>
                             </a>
                             @endforeach
