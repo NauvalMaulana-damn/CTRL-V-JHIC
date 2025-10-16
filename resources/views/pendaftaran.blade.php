@@ -27,10 +27,18 @@
 
             <!-- Grafik Section -->
             <section class=" max-w-[104rem] mx-auto py-10 px-4 md:px-10">
-                <div class="bg-white rounded-2xl shadow p-5">
-                    <h2 class="text-3xl font-bold mb-4 text-center">Perbandingan Pendaftar dan Peserta Diterima</h2>
-                    <canvas id="chartGabungan"></canvas>
-                </div>
+                <div class="bg-white rounded-2xl shadow p-5 max-w-5xl mx-auto">
+    <h2 class="text-3xl font-bold mb-4 text-center">
+        Perbandingan Pendaftar dan Peserta Diterima
+    </h2>
+
+    <!-- Tambahkan container dengan tinggi tetap -->
+    <div class="relative w-full h-[400px]">
+        <canvas id="chartGabungan" class="w-full h-full"></canvas>
+    </div>
+</div>
+
+
         </div>
         </section>
         <!-- Wrapper -->

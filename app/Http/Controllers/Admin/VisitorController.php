@@ -1,17 +1,15 @@
 <?php
-
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
-use App\Models\Visitor;
-use App\Models\Berita;
-use App\Models\Alumni;
-use App\Models\Prestasi;
-use App\Models\Ekskul;
 use App\Models\ActivityLog;
+use App\Models\Alumni;
+use App\Models\Berita;
+use App\Models\Ekskul;
+use App\Models\Pendaftaran;
+use App\Models\Prestasi;
 use App\Models\User;
-use Carbon\Carbon;
+use App\Models\Visitor;
 use Illuminate\Support\Facades\Auth;
 
 class VisitorController extends Controller
@@ -24,15 +22,16 @@ class VisitorController extends Controller
         $user = Auth::user();
 
         $data = [
-            'totalBerita' => Berita::count(),
-            'totalAlumni' => Alumni::count(),
-            'totalPrestasi' => Prestasi::count(),
-            'totalEkskul' => Ekskul::count(),
+            'totalBerita'      => Berita::count(),
+            'totalAlumni'      => Alumni::count(),
+            'totalPrestasi'    => Prestasi::count(),
+            'totalEkskul'      => Ekskul::count(),
+            'totalPendaftaran' => Pendaftaran::count(),
         ];
 
         // Hanya SUPERADMIN yang melihat stats logs dan users
         if ($user->isSuperadmin()) {
-            $data['totalLogs'] = ActivityLog::count();
+            $data['totalLogs']  = ActivityLog::count();
             $data['totalUsers'] = User::count();
             $data['recentLogs'] = ActivityLog::with('user')
                 ->latest()
@@ -61,33 +60,33 @@ class VisitorController extends Controller
             // Data 7 hari terakhir
             $weeklyVisitors = [];
             for ($i = 6; $i >= 0; $i--) {
-                $date = now()->subDays($i);
+                $date  = now()->subDays($i);
                 $count = Visitor::whereDate('visited_at', $date->format('Y-m-d'))->count();
 
                 $weeklyVisitors[] = [
-                    'date' => $date->format('Y-m-d'),
-                    'total' => $count
+                    'date'  => $date->format('Y-m-d'),
+                    'total' => $count,
                 ];
             }
 
             return response()->json([
-                'success' => true,
-                'totalVisitors' => $totalVisitors,
+                'success'        => true,
+                'totalVisitors'  => $totalVisitors,
                 'activeVisitors' => $activeVisitors,
-                'todayVisitors' => $todayVisitors,
-                'weeklyVisitors' => $weeklyVisitors
+                'todayVisitors'  => $todayVisitors,
+                'weeklyVisitors' => $weeklyVisitors,
             ]);
 
         } catch (\Exception $e) {
             ActivityLog::error('Error fetching visitor data: ' . $e->getMessage());
 
             return response()->json([
-                'success' => false,
-                'error' => $e->getMessage(),
-                'totalVisitors' => 0,
+                'success'        => false,
+                'error'          => $e->getMessage(),
+                'totalVisitors'  => 0,
                 'activeVisitors' => 0,
-                'todayVisitors' => 0,
-                'weeklyVisitors' => $this->getFallbackWeeklyData()
+                'todayVisitors'  => 0,
+                'weeklyVisitors' => $this->getFallbackWeeklyData(),
             ], 500);
         }
     }
@@ -99,10 +98,10 @@ class VisitorController extends Controller
     {
         $weeklyData = [];
         for ($i = 6; $i >= 0; $i--) {
-            $date = now()->subDays($i);
+            $date         = now()->subDays($i);
             $weeklyData[] = [
-                'date' => $date->format('Y-m-d'),
-                'total' => rand(10, 50) // Random data untuk demo
+                'date'  => $date->format('Y-m-d'),
+                'total' => rand(10, 50), // Random data untuk demo
             ];
         }
         return $weeklyData;

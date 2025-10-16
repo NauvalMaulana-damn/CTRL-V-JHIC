@@ -89,6 +89,11 @@
                     <i class="fas fa-graduation-cap mr-2"></i>Alumni
                 </a>
 
+                <a href="{{ route('admin.pendaftaran.index') }}"
+                class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium {{ request()->routeIs('admin.pendaftaran.*') ? 'bg-gray-700 text-white' : '' }}">
+                    <i class="fas fa-graduation-cap mr-2"></i>Pendaftaran
+                </a>
+
                 <!-- Hanya SUPERADMIN yang bisa melihat Logs dan User Management -->
                 @if(Auth::user()->canViewLogs())
                 <a href="{{ route('admin.logs.index') }}"
