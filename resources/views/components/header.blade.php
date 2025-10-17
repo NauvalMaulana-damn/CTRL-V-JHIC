@@ -104,10 +104,10 @@
                             class="{{ request()->is('prestasi') ? 'text-customOrange' : '' }} block py-2 hover:text-customOrange transition">Prestasi</a>
                     </li>
                     <li><a href="/jurusan"
-                            class="{{ request()->is('jurusan') ? 'text-customOrange' : '' }} block py-2 hover:text-customOrange transition">Program</a>
+                            class="{{ request()->is('jurusan') ? 'text-customOrange' : '' }} block py-2 hover:text-customOrange transition">Jurusan</a>
                     </li>
                     <li><a href="/ekstrakurikuler"
-                            class="{{ request()->is('ekstrakurikuler') ? 'text-customOrange' : '' }} block py-2 hover:text-customOrange transition">Program</a>
+                            class="{{ request()->is('ekstrakurikuler') ? 'text-customOrange' : '' }} block py-2 hover:text-customOrange transition">Ekstrakurikuler</a>
                     </li>
                     <li><a href="/alumni"
                             class="{{ request()->is('alumni') ? 'text-customOrange' : '' }} block py-2 hover:text-customOrange transition">Alumni</a>

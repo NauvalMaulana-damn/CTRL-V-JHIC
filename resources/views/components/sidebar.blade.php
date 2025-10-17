@@ -157,7 +157,7 @@
             ['icon' => asset('assets/profil.png'), 'label' => 'Profil', 'href' => '/profil'],
             ['icon' => asset('assets/trophy.png'), 'label' => 'Prestasi', 'href' => '/prestasi'],
             ['icon' => asset('assets/major.png'), 'label' => 'Jurusan', 'href' => '/jurusan'],
-            ['icon' => asset('assets/extra.png'), 'label' => 'Ekstrakurikuler', 'href' => '/ekskul'],
+            ['icon' => asset('assets/extra.png'), 'label' => 'Ekstrakurikuler', 'href' => '/ekstrakurikuler'],
             ['icon' => asset('assets/grad.png'), 'label' => 'Alumni', 'href' => '/alumni'],
             ['icon' => asset('assets/join.png'), 'label' => 'Pendaftaran', 'href' => '/pendaftaran'],
             ] as $item)
