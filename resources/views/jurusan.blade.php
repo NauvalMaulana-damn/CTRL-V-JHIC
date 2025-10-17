@@ -396,260 +396,189 @@
             <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2"></script>
 
             <script>
-                let clickStats = {
-                    elektro: 0,
-                    otomotif: 0,
-                    pemesinan: 0,
-                    tik: 0
-                };
+    let clickStats = {
+        elektro: 0,
+        otomotif: 0,
+        pemesinan: 0,
+        tik: 0
+    };
 
-                let jurusanChart = null;
+    let jurusanChart = null;
 
-                function loadStats() {
-                    const savedStats = localStorage.getItem('jurusanClickStats');
-                    if (savedStats) clickStats = JSON.parse(savedStats);
-                    updateChart();
-                    updateTotalClicks();
-                }
+    function loadStats() {
+        const savedStats = localStorage.getItem('jurusanClickStats');
+        if (savedStats) clickStats = JSON.parse(savedStats);
+        updateChart();
+        updateTotalClicks();
+    }
 
-                function saveStats() {
-                    localStorage.setItem('jurusanClickStats', JSON.stringify(clickStats));
-                }
+    function saveStats() {
+        localStorage.setItem('jurusanClickStats', JSON.stringify(clickStats));
+    }
 
-                function updateTotalClicks() {
-                    const total = Object.values(clickStats).reduce((a, b) => a + b, 0);
-                    document.getElementById('total-clicks').textContent = total;
-                }
+    function updateTotalClicks() {
+        const total = Object.values(clickStats).reduce((a, b) => a + b, 0);
+        document.getElementById('total-clicks').textContent = total;
+    }
 
-                function updateChart() {
-                    const ctx = document.getElementById('jurusanPieChart').getContext('2d');
-                    const totalClicks = Object.values(clickStats).reduce((a, b) => a + b, 0);
+    function updateChart() {
+        const ctx = document.getElementById('jurusanPieChart').getContext('2d');
+        const totalClicks = Object.values(clickStats).reduce((a, b) => a + b, 0);
 
-                    const labels = [];
-                    const data = [];
-                    const backgroundColors = [
-                        'rgb(249, 115, 22, 0.8)',
-                        'rgb(239, 68, 68)',
-                        'rgba(59, 130, 246, 0.8)',
-                        'rgb(139, 92, 246)'
-                    ];
+        const labels = [];
+        const data = [];
+        const backgroundColors = [
+            'rgb(249, 115, 22, 0.8)',
+            'rgb(239, 68, 68)',
+            'rgba(59, 130, 246, 0.8)',
+            'rgb(139, 92, 246)'
+        ];
 
-                    const formatJurusanName = (key) => ({
-                        elektro: 'ELEKTRO',
-                        otomotif: 'OTOMOTIF',
-                        pemesinan: 'PEMESINAN',
-                        tik: 'TIK'
-                    } [key] || key.toUpperCase());
+        const formatJurusanName = (key) => ({
+            elektro: 'ELEKTRO',
+            otomotif: 'OTOMOTIF',
+            pemesinan: 'PEMESINAN',
+            tik: 'TIK'
+        }[key] || key.toUpperCase());
 
-                    Object.entries(clickStats).forEach(([key, value]) => {
-                        labels.push(formatJurusanName(key));
-                        data.push(value);
-                    });
+        Object.entries(clickStats).forEach(([key, value]) => {
+            labels.push(formatJurusanName(key));
+            data.push(value);
+        });
 
-                    if (jurusanChart) jurusanChart.destroy();
+        if (jurusanChart) jurusanChart.destroy();
 
-                    const centerTextPlugin = {
-                        id: 'centerText',
-                        afterDraw(chart) {
-                            const {
-                                ctx,
-                                chartArea: {
-                                    width,
-                                    height
-                                }
-                            } = chart;
-                            ctx.save();
-                            ctx.font = 'bold 16px Arial';
-                            ctx.fillStyle = '#6B7280';
-                            ctx.textAlign = 'center';
-                            ctx.textBaseline = 'middle';
-                            const total = data.reduce((a, b) => a + b, 0);
-                            if (total === 0) ctx.fillText('Tidak ada data', width / 2, height / 2);
-                            ctx.restore();
-                        }
-                    };
+        const centerTextPlugin = {
+            id: 'centerText',
+            afterDraw(chart) {
+                const { ctx, chartArea: { width, height } } = chart;
+                ctx.save();
+                ctx.font = 'bold 16px Arial';
+                ctx.fillStyle = '#6B7280';
+                ctx.textAlign = 'center';
+                ctx.textBaseline = 'middle';
+                const total = data.reduce((a, b) => a + b, 0);
+                if (total === 0) ctx.fillText('Tidak ada data', width / 2, height / 2);
+                ctx.restore();
+            }
+        };
 
-                    jurusanChart = new Chart(ctx, {
-                        type: 'pie',
-                        plugins: [ChartDataLabels, centerTextPlugin],
-                        data: {
-                            labels: labels,
-                            datasets: [{
-                                data: data,
-                                backgroundColor: backgroundColors,
-                                borderColor: backgroundColors,
-                                borderWidth: 2
-                            }]
-                        },
-                        options: {
-                            responsive: true,
-                            maintainAspectRatio: false,
-                            plugins: {
-                                legend: {
-                                    display: false
-                                },
-                                tooltip: {
-                                    callbacks: {
-                                        label: (context) => {
-                                            const label = context.label || '';
-                                            const value = context.raw || 0;
-                                            const total = context.dataset.data.reduce((a, b) => a + b, 0);
-                                            const percentage = total > 0 ? Math.round((value / total) * 100) : 0;
-                                            return `${label}: ${percentage}%`;
-                                        }
-                                    }
-                                },
-                                datalabels: {
-                                    color: '#fff',
-                                    align: 'center',
-                                    formatter: (value, ctx) => {
-                                        if (value === 0) return '';
-                                        const label = ctx.chart.data.labels[ctx.dataIndex];
-                                        const total = ctx.dataset.data.reduce((a, b) => a + b, 0);
-                                        const percentage = (value * 100 / total).toFixed(0);
-                                        return `${label}\n${percentage}%`;
-                                    },
-                                    font: {
-                                        weight: 'bold',
-                                        size: 13
-                                    }
-                                }
+        jurusanChart = new Chart(ctx, {
+            type: 'pie',
+            plugins: [ChartDataLabels, centerTextPlugin],
+            data: {
+                labels: labels,
+                datasets: [{
+                    data: data,
+                    backgroundColor: backgroundColors,
+                    borderColor: backgroundColors,
+                    borderWidth: 2
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { display: false },
+                    tooltip: {
+                        callbacks: {
+                            label: (context) => {
+                                const label = context.label || '';
+                                const value = context.raw || 0;
+                                const total = context.dataset.data.reduce((a, b) => a + b, 0);
+                                const percentage = total > 0 ? Math.round((value / total) * 100) : 0;
+                                return `${label}: ${percentage}%`;
                             }
                         }
-                    });
-
-                    updateChartLegend(labels, data, backgroundColors, totalClicks);
+                    },
+                    datalabels: {
+                        color: '#fff',
+                        align: 'center',
+                        formatter: (value, ctx) => {
+                            if (value === 0) return '';
+                            const label = ctx.chart.data.labels[ctx.dataIndex];
+                            const total = ctx.dataset.data.reduce((a, b) => a + b, 0);
+                            const percentage = (value * 100 / total).toFixed(0);
+                            return `${label}\n${percentage}%`;
+                        },
+                        font: { weight: 'bold', size: 13 }
+                    }
                 }
+            }
+        });
 
-                function updateChartLegend(labels, data, colors, totalClicks) {
-                    const legendContainer = document.getElementById('chartLegend');
-                    legendContainer.innerHTML = '';
+        updateChartLegend(labels, data, backgroundColors, totalClicks);
+    }
 
-                    if (totalClicks === 0) {
-                        legendContainer.innerHTML = '<div class="no-data-message">Belum ada data kunjungan</div>';
-                        return;
-                    }
+    function updateChartLegend(labels, data, colors, totalClicks) {
+        const legendContainer = document.getElementById('chartLegend');
+        legendContainer.innerHTML = '';
 
-                    labels.forEach((label, i) => {
-                        const value = data[i];
-                        const percentage = totalClicks > 0 ? Math.round((value / totalClicks) * 100) : 0;
-                        const legendItem = document.createElement('div');
-                        legendItem.className = 'legend-item';
-                        legendItem.innerHTML = `
-            <span class="legend-color" style="background-color:${colors[i]}"></span>
-            <span>${label}: ${percentage}%</span>
-        `;
-                        legendContainer.appendChild(legendItem);
-                    });
-                }
+        if (totalClicks === 0) {
+            legendContainer.innerHTML = '<div class="no-data-message">Belum ada data kunjungan</div>';
+            return;
+        }
 
-                document.querySelectorAll('.btn-dept').forEach(btn => {
-                    btn.addEventListener('click', () => {
-                        const id = btn.getAttribute('data-target');
-                        const section = document.getElementById(id);
-                        if (clickStats.hasOwnProperty(id)) {
-                            clickStats[id]++;
-                            saveStats();
-                            updateChart();
-                            updateTotalClicks();
-                        }
-                        if (section) section.scrollIntoView({
-                            behavior: 'smooth',
-                            block: 'start'
-                        });
-                    });
+        labels.forEach((label, i) => {
+            const value = data[i];
+            const percentage = totalClicks > 0 ? Math.round((value / totalClicks) * 100) : 0;
+            const legendItem = document.createElement('div');
+            legendItem.className = 'legend-item';
+            legendItem.innerHTML = `
+                <span class="legend-color" style="background-color:${colors[i]}"></span>
+                <span>${label}: ${percentage}%</span>
+            `;
+            legendContainer.appendChild(legendItem);
+        });
+    }
+
+    // HANYA SATU EVENT LISTENER UNTUK TOMBOL
+    document.querySelectorAll('.btn-dept').forEach(button => {
+        button.addEventListener('click', () => {
+            const targetId = button.getAttribute('data-target');
+            const targetSection = document.getElementById(targetId);
+
+            // Meningkatkan jumlah klik untuk jurusan ini
+            if (clickStats.hasOwnProperty(targetId)) {
+                clickStats[targetId]++;
+                saveStats();
+                updateChart();
+                updateTotalClicks();
+            }
+
+            if (targetSection) {
+                targetSection.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
                 });
+            }
+        });
+    });
 
-                document.addEventListener('DOMContentLoaded', loadStats);
+    // Load statistik saat halaman dimuat
+    document.addEventListener('DOMContentLoaded', function() {
+        loadStats();
 
+        // Fungsi untuk slider (jika diperlukan)
+        document.querySelectorAll('.slider-container').forEach(container => {
+            const slider = container.querySelector('.slider');
+            const prevBtn = container.querySelector('.prev-btn');
+            const nextBtn = container.querySelector('.next-btn');
 
-                // Scroll to department section saat tombol ditekan
-                document.querySelectorAll('.btn-dept').forEach(button => {
-                    button.addEventListener('click', () => {
-                        const targetId = button.getAttribute('data-target');
-                        const targetSection = document.getElementById(targetId);
-
-                        // Meningkatkan jumlah klik untuk jurusan ini
-                        if (clickStats.hasOwnProperty(targetId)) {
-                            clickStats[targetId]++;
-                            saveStats();
-                            updateChart();
-                            updateTotalClicks();
-                        }
-
-                        if (targetSection) {
-                            targetSection.scrollIntoView({
-                                behavior: 'smooth',
-                                block: 'start'
-                            });
-                        }
-                    });
+            if (nextBtn) {
+                nextBtn.addEventListener('click', () => {
+                    slider.scrollBy({ left: 324, behavior: 'smooth' });
                 });
+            }
 
-                // Load statistik saat halaman dimuat
-                document.addEventListener('DOMContentLoaded', function() {
-                    loadStats();
+            if (prevBtn) {
+                prevBtn.addEventListener('click', () => {
+                    slider.scrollBy({ left: -324, behavior: 'smooth' });
                 });
-
-                // Scroll to department section saat tombol ditekan
-                document.querySelectorAll('.btn-dept').forEach(button => {
-                    button.addEventListener('click', () => {
-                        const targetId = button.getAttribute('data-target');
-                        const targetSection = document.getElementById(targetId);
-
-                        // Meningkatkan jumlah klik untuk jurusan ini
-                        if (clickStats.hasOwnProperty(targetId)) {
-                            clickStats[targetId]++;
-                            saveStats();
-                            updateChart();
-                            updateTotalClicks();
-                        }
-
-                        if (targetSection) {
-                            targetSection.scrollIntoView({
-                                behavior: 'smooth',
-                                block: 'start'
-                            });
-                        }
-                    });
-                });
-
-                // Fungsi untuk slider
-                document.querySelectorAll('.slider-container').forEach(container => {
-                    const slider = container.querySelector('.slider');
-                    const prevBtn = container.querySelector('.prev-btn');
-                    const nextBtn = container.querySelector('.next-btn');
-
-                    // Hitung lebar kartu + gap
-                    const cardWidth = 300;
-                    const gap = 24;
-                    const scrollAmount = cardWidth + gap;
-
-                    // Event listener untuk tombol next
-                    if (nextBtn) {
-                        nextBtn.addEventListener('click', () => {
-                            slider.scrollBy({
-                                left: scrollAmount,
-                                behavior: 'smooth'
-                            });
-                        });
-                    }
-
-                    // Event listener untuk tombol previous
-                    if (prevBtn) {
-                        prevBtn.addEventListener('click', () => {
-                            slider.scrollBy({
-                                left: -scrollAmount,
-                                behavior: 'smooth'
-                            });
-                        });
-                    }
-                });
-
-                // Memuat statistik saat halaman dimuat
-                document.addEventListener('DOMContentLoaded', loadStats);
-            </script>
-
+            }
+        });
+    });
+</script>
         </div>
     </div>
 </x-layout>
