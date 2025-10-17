@@ -26,6 +26,6 @@ Thumbs.db
 
 # UNIGNORE
 !/storage/app/data/*
-!/public/storage/*
+/public/storage/*
 !/public/storage/.gitkeep
 !/public/storage/**/*
