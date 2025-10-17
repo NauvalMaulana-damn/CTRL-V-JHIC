@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('username');
             $table->string('password');
-            $table->string('Key')->default(env('VIEWER_ROLE_KEY'));
+            $table->string('Key');
             $table->rememberToken();
             $table->timestamps();
         });

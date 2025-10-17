@@ -240,7 +240,7 @@
                                 class="w-4 h-4 rounded-full bg-yellow-500 hover:scale-110 transition-transform"></span>
                             <span class="w-4 h-4 rounded-full bg-green-500 hover:scale-110 transition-transform"></span>
                         </div>
-                        <h2 class="text-3xl font-extrabold text-center select-none">Q&amp;A</h2>
+                        <h2 class="text-3xl font-extrabold text-center select-none">Q&A</h2>
                         <div></div>
                     </div>
 

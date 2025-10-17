@@ -227,11 +227,11 @@
             <div
                 class="relative w-full h-full max-h-52 sm:max-h-80 md:max-h-96 lg:max-h-[800px] aspect-square mx-auto rounded-2xl overflow-hidden shadow-lg hover-lift">
                 <iframe
-                    src="{{ $profil->youtubeSrc }}?si=JYpD_LbCAMgLP_zM&vq=hd1080&modestbranding=1&rel=0&playsinline=1"
+                    src="{{ $profil->youtubeSrc }}?si=JYpD_LbCAMgLP_zM&vq=hd480&modestbranding=1&rel=0&playsinline=1"
                     title="PROFIL SMK PGRI 3 MALANG" frameborder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     referrerpolicy="strict-origin-when-cross-origin" allowfullscreen
-                    class="absolute inset-0 w-full h-full object-cover rounded-2xl">
+                    class="absolute inset-0 w-full h-full object-cover rounded-2xl"><!-- vq=hd<res> -->
                 </iframe>
             </div>
         </section>

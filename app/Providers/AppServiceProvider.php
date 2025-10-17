@@ -6,11 +6,16 @@ namespace App\Providers;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\View;
 use App\Models\Marquee;
+use Illuminate\Support\Facades\URL;
 
 class AppServiceProvider extends ServiceProvider
 {
     public function boot()
     {
+        if (app()->environment('production')) {
+            URL::forceScheme('https');
+        }
+
         // Share marquee data to all views - dengan error handling
         View::composer('*', function ($view) {
             try {
