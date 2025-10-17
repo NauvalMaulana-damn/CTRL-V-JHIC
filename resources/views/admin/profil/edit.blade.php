@@ -11,6 +11,10 @@
     </div>
     @endif
 
+    <div class="bg-yellow-100 text-yellow-800 p-3 rounded mb-4">
+        ⚠️ Hanya bisa upload gambar kurang dari dari 3072 KB
+    </div>
+
     <form action="{{ route('admin.profil.update', $profil->id) }}" method="POST" enctype="multipart/form-data"
         class="space-y-6 bg-white p-6 rounded shadow">
         @csrf

@@ -27,7 +27,7 @@ class JurusanController extends Controller
             'jurusan' => 'required|max:100',
             'departemen' => 'required|in:OTOMOTIF,TIK,ELEKTRO,PEMESINAN',
             'deskripsi' => 'required|max:500',
-            'gambar' => 'required|image|mimes:jpg,jpeg,png,svg,webp',
+            'gambar' => 'required|image|mimes:jpg,jpeg,png,svg,webp|max:3072',
         ]);
 
         $gambarPath = 'default.svg';
@@ -60,8 +60,8 @@ class JurusanController extends Controller
         $request->validate([
             'jurusan' => 'required|max:100',
             'departemen' => 'required|in:OTOMOTIF,TIK,ELEKTRO,PEMESINAN',
-            'deskripsi' => 'required|max:225',
-            'gambar' => 'nullable|image|mimes:jpg,jpeg,png,svg,webp|max:2048',
+            'deskripsi' => 'required|max:500',
+            'gambar' => 'nullable|image|mimes:jpg,jpeg,png,svg,webp|max:3072',
         ]);
 
         $gambarPath = $jurusan->gambar;

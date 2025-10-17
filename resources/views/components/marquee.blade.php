@@ -2,37 +2,32 @@
 @props(['marquees' => collect()])
 
 @if($marquees->count() > 0)
-<div class="py-4 overflow-hidden rounded-lg mb-8 bg-white">
-    <div class="w-[200%] flex animate-scroll-right">
-        <div class="flex space-x-8 md:space-x-12 pr-12">
-            <!-- First Wave Logos -->
-            @foreach ($marquees as $marquee)
-            <img class="h-6 md:h-10 max-w-[100px] object-contain inline-block"
+<div class="py-4 overflow-hidden rounded-lg bg-white">
+    <div class="flex animate-marquee whitespace-nowrap">
+        @foreach ($marquees as $marquee)
+        <div class="mx-8 flex-shrink-0">
+            <img class="h-6 md:h-10 max-w-[100px] object-contain inline-block scale-150"
                 src="{{ asset('storage/' . $marquee->gambar) }}" alt="{{ $marquee->nama }}" loading="lazy">
-            @endforeach
-
-            <!-- Duplicated Logos -->
-            @foreach ($marquees as $marquee)
-            <img class="h-6 md:h-10 max-w-[100px] object-contain inline-block"
-                src="{{ asset('storage/' . $marquee->gambar) }}" alt="{{ $marquee->nama }}" loading="lazy">
-            @endforeach
         </div>
+        @endforeach
+
+        <!-- Duplicate for seamless loop -->
     </div>
 </div>
 
 <style>
-@keyframes scroll-right {
+@keyframes marquee {
     0% {
-        transform: translateX(0);
+        transform: translateX(0%);
     }
 
     100% {
-        transform: translateX(-50%);
+        transform: translateX(100%);
     }
 }
 
-.animate-scroll-right {
-    animation: scroll-right 25s linear infinite;
+.animate-marquee {
+    animation: marquee 20s linear infinite;
 }
 </style>
 @endif

@@ -11,7 +11,7 @@
                         <!-- Gambar Utama -->
                         <div class="relative">
                             <img src="{{ $berita->gambar_url }}" alt="{{ $berita->title }}"
-                                class="w-full h-96 object-cover">
+                                class="w-full h-[600px] object-cover">
                             <div class="absolute top-4 left-4">
                                 <span class="bg-customBlue text-white px-3 py-1 rounded-full text-xs font-medium">
                                     {{ $berita->type }}

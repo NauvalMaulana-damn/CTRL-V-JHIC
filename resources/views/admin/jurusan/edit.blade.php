@@ -38,8 +38,8 @@
 
         <div>
             <label class="block mb-1">Deskripsi</label>
-            <textarea name="deskripsi" value="{{ old('deskripsi', $jurusan->deskripsi) }}"
-                class="w-full border rounded p-2" required maxlength="500"></textarea>
+            <textarea name="deskripsi"
+                class="w-full border rounded p-2 h-28" required maxlength="500">{{ old('deskripsi', html_entity_decode($jurusan->deskripsi)) }}</textarea>
         </div>
 
         <div>

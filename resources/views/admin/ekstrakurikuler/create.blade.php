@@ -29,6 +29,13 @@
             <input type="file" name="image" class="border rounded p-2 w-full" accept="image/*" required>
         </div>
 
-        <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Simpan</button>
+        <div class="flex space-x-4">
+            <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
+                <i class="fas fa-save mr-2"></i>Simpan
+            </button>
+            <a href="{{ route('admin.ekskul.index') }}" class="bg-gray-600 text-white px-4 py-2 rounded hover:bg-gray-700">
+                <i class="fas fa-arrow-left mr-2"></i>Kembali
+            </a>
+        </div>
     </form>
 </x-admin-layout>

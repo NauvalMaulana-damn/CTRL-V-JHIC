@@ -14,10 +14,6 @@
     <div class="bg-green-100 text-green-800 p-3 rounded mb-4">
         {{ session('success') }}
     </div>
-    @else
-    <div class="bg-yellow-100 text-yellow-800 p-3 rounded mb-4">
-        Upload gambar tidak lebih dari 3072 KB
-    </div>
     @endif
 
     <div class="bg-white shadow rounded-lg overflow-hidden">

@@ -278,19 +278,19 @@
                     <!-- Button Navigation -->
                     <div class="mt-10 flex flex-wrap justify-center gap-4">
                         <button data-target="elektro"
-                            class="btn-dept elektro-btn bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-full transition shadow-md hover:scale-105 transition-transform hover:shadow-[0_0_15px_rgba(59,130,246,0.8)]">
+                            class="btn-dept elektro-btn bg-orange-500 hover:bg-orange-500 text-white px-6 py-2 rounded-full shadow-md hover:scale-105 transition-transform">
                             ELEKTRO
                         </button>
                         <button data-target="otomotif"
-                            class="btn-dept otomotif-btn bg-orange-500 hover:bg-orange-600 text-white px-6 py-2 rounded-full transition shadow-md hover:scale-105 transition-transform hover:shadow-[0_0_15px_rgba(249,115,22,0.8)]">
+                            class="btn-dept otomotif-btn bg-orange-500 hover:bg-orange-600 text-white px-6 py-2 rounded-full shadow-md hover:scale-105 transition-transform" style="background-color: rgb(239, 68, 68);">
                             OTOMOTIF
                         </button>
                         <button data-target="pemesinan"
-                            class="btn-dept pemesinan-btn bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-full transition shadow-md hover:scale-105 transition-transform hover:shadow-[0_0_15px_rgba(59,130,246,0.8)]">
+                            class="btn-dept pemesinan-btn bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-full shadow-md hover:scale-105 transition-transform" style="background-color: rgba(59, 130, 246, 0.8);">
                             PEMESINAN
                         </button>
                         <button data-target="tik"
-                            class="btn-dept tik-btn bg-orange-500 hover:bg-orange-600 text-white px-6 py-2 rounded-full transition shadow-md hover:scale-105 transition-transform hover:shadow-[0_0_15px_rgba(249,115,22,0.8)]">
+                            class="btn-dept tik-btn text-white px-6 py-2 rounded-full shadow-md hover:scale-105 transition-transform" style="background-color: rgb(139, 92, 246);">
                             TIK
                         </button>
                     </div>
@@ -329,7 +329,7 @@
                     <div class=" flex space-x-6 pb-4 slider snap-x snap-mandatory">
                         @foreach ($jurusans as $jurusan)
                         @if ($jurusan->departemen == "ELEKTRO")
-                        <x-jurcard title="{{ $jurusan->jurusan }}" image="{{ $jurusan->gambar }}" departement="{{ $jurusan->departemen }}"
+                        <x-jurcard title="{!! $jurusan->jurusan !!}" image="{{ $jurusan->gambar }}" departement="{{ $jurusan->departemen }}"
                         loading="lazy">
                         {{ $jurusan->deskripsi }}
                     </x-jurcard>
@@ -346,7 +346,7 @@
                     <div class=" flex space-x-6 pb-4 slider snap-x snap-mandatory justify-center">
                         @foreach ($jurusans as $jurusan)
                         @if ($jurusan->departemen == "OTOMOTIF")
-                        <x-jurcard title="{{ $jurusan->jurusan }}" image="{{ $jurusan->gambar }}" departement="{{ $jurusan->departemen }}"
+                        <x-jurcard title="{!! $jurusan->jurusan !!}" image="{{ $jurusan->gambar }}" departement="{{ $jurusan->departemen }}"
                             loading="lazy">
                             {{ $jurusan->deskripsi }}
                         </x-jurcard>
@@ -363,7 +363,7 @@
                     <div class=" flex space-x-6 pb-4 slider snap-x snap-mandatory justify-center">
                         @foreach ($jurusans as $jurusan)
                         @if ($jurusan->departemen == "PEMESINAN")
-                        <x-jurcard title="{{ $jurusan->jurusan }}" image="{{ $jurusan->gambar }}" departement="{{ $jurusan->departemen }}"
+                        <x-jurcard title="{!! $jurusan->jurusan !!}" image="{{ $jurusan->gambar }}" departement="{{ $jurusan->departemen }}"
                             loading="lazy">
                             {{ $jurusan->deskripsi }}
                         </x-jurcard>
@@ -380,7 +380,7 @@
                     <div class=" flex space-x-6 pb-4 slider snap-x snap-mandatory">
                         @foreach ($jurusans as $jurusan)
                         @if ($jurusan->departemen == "TIK")
-                        <x-jurcard title="{{ $jurusan->jurusan }}" image="{{ $jurusan->gambar }}" departement="{{ $jurusan->departemen }}"
+                        <x-jurcard title="{!! $jurusan->jurusan !!}" image="{{ $jurusan->gambar }}" departement="{{ $jurusan->departemen }}"
                             loading="lazy">
                             {{ $jurusan->deskripsi }}
                         </x-jurcard>
