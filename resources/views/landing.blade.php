@@ -2,8 +2,9 @@
     <script>
         // Pass data dari PHP ke JavaScript sebagai array object, bukan JSON string
         window.beritas = @json($beritas);
-        console.log('📊 Beritas data loaded:', window.beritas);
-
+        isDebug = false;
+        if (!isDebug)
+            console.log('📊 Beritas data loaded:', window.beritas);
         // Jangan panggil initializeNewsSlider di sini, biarkan app.ts yang handle
     </script>
 
@@ -210,10 +211,4 @@
             </div>
         </aside>
     </div>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Inisialisasi swiper dengan data berita
-            initializeNewsSlider();
-        });
-    </script>
 </x-layout>

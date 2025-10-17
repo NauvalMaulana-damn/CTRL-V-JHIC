@@ -63,12 +63,48 @@ export class JurusanChartManager {
     private currentActiveSection: string | null = null;
 
     constructor() {
+        this.loadStatsFromServer();
         this.loadStatsFromLocalStorage();
         this.initializeChart();
         this.setupEventListeners();
         this.setupIntersectionObserver();
 
+        // Retry failed requests saat init
+        this.retryFailedRequests();
+
         console.log("🎯 JurusanChartManager initialized");
+    }
+
+    public async initializeAsync(): Promise<void> {
+        // Load stats from server and retry any failed requests after construction
+        await this.loadStatsFromServer();
+        await this.retryFailedRequests();
+
+        // Ensure chart/UI reflect any updated stats
+        this.updateChart();
+        this.updateTotalClicks();
+
+        console.log("🎯 JurusanChartManager async initialization complete");
+    }
+
+    private async loadStatsFromServer(): Promise<void> {
+        try {
+            const response = await fetch("/jurusan/get-stats");
+            if (!response.ok) throw new Error("Failed to fetch stats");
+
+            const result = await response.json();
+            if (result.success) {
+                this.stats = { ...this.stats, ...result.data };
+                console.log("📊 Loaded stats from server:", this.stats);
+
+                // Sync dengan localStorage
+                this.saveStatsToLocalStorage();
+            }
+        } catch (error) {
+            console.error("❌ Failed to load stats from server:", error);
+            // Fallback ke localStorage
+            this.loadStatsFromLocalStorage();
+        }
     }
 
     // Load statistik dari localStorage
@@ -76,8 +112,10 @@ export class JurusanChartManager {
         const savedStats = localStorage.getItem("jurusanClickStats");
         if (savedStats) {
             try {
-                this.stats = { ...this.stats, ...JSON.parse(savedStats) };
-                console.log("📊 Loaded stats from localStorage:", this.stats);
+                const localStats = JSON.parse(savedStats);
+                // Merge dengan stats yang ada (server data lebih prioritas)
+                this.stats = { ...this.stats, ...localStats };
+                console.log("📊 Loaded stats from localStorage:", localStats);
             } catch (error) {
                 console.error("Error loading stats from localStorage:", error);
             }
@@ -190,6 +228,7 @@ export class JurusanChartManager {
     }
 
     // Siapkan data untuk chart
+    // Siapkan data untuk chart
     private prepareChartData() {
         const labels = Object.keys(this.stats).map((key) => {
             const nameMap: { [key: string]: string } = {
@@ -214,7 +253,6 @@ export class JurusanChartManager {
         return { labels, data, colors, total };
     }
 
-    // Update chart legend
     private updateChartLegend(): void {
         const legendContainer = document.getElementById("chartLegend");
         if (!legendContainer) return;
@@ -238,12 +276,12 @@ export class JurusanChartManager {
             item.className = "legend-item";
             item.style.borderLeftColor = colors[i];
             item.innerHTML = `
-                <span class="legend-color" style="background-color:${colors[i]}"></span>
-                <div>
-                    <div class="font-semibold text-gray-800">${label}</div>
-                    <div class="text-sm text-gray-600">(${percentage}%)</div>
-                </div>
-            `;
+            <span class="legend-color" style="background-color:${colors[i]}"></span>
+            <div>
+                <div class="font-semibold text-gray-800">${label}</div>
+                <div class="text-sm text-gray-600">${value} kunjungan (${percentage}%)</div>
+            </div>
+        `;
             legendContainer.appendChild(item);
         });
     }
@@ -596,17 +634,29 @@ export class JurusanChartManager {
         type: "click" | "view"
     ): Promise<void> {
         try {
+            // Dapatkan CSRF token dari meta tag
+            const csrfToken =
+                document
+                    .querySelector('meta[name="csrf-token"]')
+                    ?.getAttribute("content") || "";
+
+            console.log(
+                `📤 Mengirim: ${departemen}, ${type}, CSRF: ${
+                    csrfToken ? "✅" : "❌"
+                }`
+            );
+
             const response = await fetch("/jurusan/increment-stats", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
-                    "X-CSRF-TOKEN":
-                        document
-                            .querySelector('meta[name="csrf-token"]')
-                            ?.getAttribute("content") || "",
                     Accept: "application/json",
+                    "X-CSRF-TOKEN": csrfToken,
                 },
-                body: JSON.stringify({ departemen, type }),
+                body: JSON.stringify({
+                    departemen,
+                    type,
+                }),
             });
 
             if (!response.ok) {
@@ -614,9 +664,100 @@ export class JurusanChartManager {
             }
 
             const result = await response.json();
-            console.log("📊 Statistik terkirim:", result);
+            console.log("✅ Statistik terkirim:", result);
         } catch (error) {
             console.error("❌ Gagal mengirim statistik:", error);
+            this.queueFailedRequest(departemen, type);
+        }
+    }
+
+    private getCsrfToken(): string {
+        // Coba beberapa cara untuk mendapatkan CSRF token
+        const metaTag = document.querySelector('meta[name="csrf-token"]');
+        if (metaTag) {
+            return metaTag.getAttribute("content") || "";
+        }
+
+        // Fallback: cari token dari input hidden
+        const csrfInput = document.querySelector('input[name="_token"]');
+        if (csrfInput) {
+            return (csrfInput as HTMLInputElement).value;
+        }
+
+        // Fallback: cari dari header
+        const csrfHeader = document.querySelector('meta[name="csrf-token"]');
+        if (csrfHeader) {
+            return csrfHeader.getAttribute("content") || "";
+        }
+
+        console.warn("⚠️ CSRF token tidak ditemukan");
+        return "";
+    }
+
+    private queueFailedRequest(
+        departemen: keyof DepartmentStats,
+        type: "click" | "view"
+    ): void {
+        try {
+            const failedRequests = JSON.parse(
+                localStorage.getItem("failedStatsRequests") || "[]"
+            );
+            failedRequests.push({
+                departemen,
+                type,
+                timestamp: Date.now(),
+            });
+            localStorage.setItem(
+                "failedStatsRequests",
+                JSON.stringify(failedRequests)
+            );
+            console.log(
+                "📦 Request disimpan di queue untuk dikirim ulang nanti"
+            );
+        } catch (error) {
+            console.error("Gagal menyimpan failed request:", error);
+        }
+    }
+
+    private async retryFailedRequests(): Promise<void> {
+        try {
+            const failedRequests = JSON.parse(
+                localStorage.getItem("failedStatsRequests") || "[]"
+            );
+            if (failedRequests.length === 0) return;
+
+            console.log(`🔄 Retrying ${failedRequests.length} failed requests`);
+
+            const successful: any[] = [];
+            const failed: any[] = [];
+
+            for (const request of failedRequests) {
+                try {
+                    await this.sendStatsToServer(
+                        request.departemen,
+                        request.type
+                    );
+                    successful.push(request);
+                } catch (error) {
+                    failed.push(request);
+                }
+            }
+
+            // Simpan ulang yang gagal
+            localStorage.setItem("failedStatsRequests", JSON.stringify(failed));
+
+            if (successful.length > 0) {
+                console.log(
+                    `✅ Berhasil mengirim ulang ${successful.length} requests`
+                );
+            }
+            if (failed.length > 0) {
+                console.log(
+                    `❌ Masih ada ${failed.length} requests yang gagal`
+                );
+            }
+        } catch (error) {
+            console.error("Error retrying failed requests:", error);
         }
     }
 
@@ -798,6 +939,7 @@ export async function initChartGabungan(): Promise<void> {
 export let jurusanChartManager: JurusanChartManager;
 
 // Initialize function untuk jurusan chart
-export function initJurusanChart(): void {
+export async function initJurusanChart(): Promise<void> {
     jurusanChartManager = new JurusanChartManager();
+    await jurusanChartManager.initializeAsync();
 }

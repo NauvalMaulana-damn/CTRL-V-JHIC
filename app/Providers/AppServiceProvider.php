@@ -14,14 +14,12 @@ class AppServiceProvider extends ServiceProvider
 {
     public function boot(): void
     {
-        // ✅ Trust proxies using Symfony Request
         SymfonyRequest::setTrustedProxies(
             ['*'], // atau array IP proxy yang kamu percaya
             SymfonyRequest::HEADER_X_FORWARDED_FOR |
                                 SymfonyRequest::HEADER_X_FORWARDED_HOST |
                                 SymfonyRequest::HEADER_X_FORWARDED_PROTO |
                                 SymfonyRequest::HEADER_X_FORWARDED_PORT
-
         );
 
         // ✅ Force HTTPS in production

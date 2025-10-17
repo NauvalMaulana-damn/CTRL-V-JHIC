@@ -77,7 +77,10 @@ const initializeNewsSlider = (): void => {
 
             // Handle image path
             let imagePath = berita.gambar;
-            if (!imagePath.startsWith("storage/") && !imagePath.startsWith("http")) {
+            if (
+                !imagePath.startsWith("storage/") &&
+                !imagePath.startsWith("http")
+            ) {
                 imagePath = `storage/${berita.gambar}`;
             }
 
@@ -152,10 +155,13 @@ const initializeSwiperInstance = (): void => {
         newsSwiper = new Swiper(".mySwiper", {
             modules: [Navigation, Pagination, Autoplay, EffectFade],
             loop: allBeritas.length > 1,
-            autoplay: allBeritas.length > 1 ? {
-                delay: 5000,
-                disableOnInteraction: false,
-            } : false,
+            autoplay:
+                allBeritas.length > 1
+                    ? {
+                          delay: 5000,
+                          disableOnInteraction: false,
+                      }
+                    : false,
             pagination: {
                 el: ".swiper-pagination",
                 clickable: true,
@@ -172,7 +178,7 @@ const initializeSwiperInstance = (): void => {
             on: {
                 init: function () {
                     console.log("✅ Swiper initialized successfully");
-                }
+                },
             },
         });
     } catch (error) {
@@ -180,21 +186,33 @@ const initializeSwiperInstance = (): void => {
     }
 };
 
-// ✅ FIXED: Function untuk handle klik berita di sidebar - SIMPLE VERSION
-const showNews = (index: number): void => {
-    console.log("🔄 Showing news index:", index);
+const showNews = (beritaId: string | number): void => {
+    console.log(
+        "🔄 Showing news for ID:",
+        beritaId,
+        "Total beritas:",
+        allBeritas.length
+    );
 
     if (!newsSwiper || allBeritas.length === 0) {
         console.error("❌ Swiper not initialized or no beritas data");
         return;
     }
 
+    // Cari index berdasarkan ID berita
+    const index = allBeritas.findIndex((berita) => berita.id == beritaId);
+
+    console.log(`🔍 Found index: ${index} for ID: ${beritaId}`);
+
     if (index >= 0 && index < allBeritas.length) {
-        // FIX: Gunakan slideTo() bukan slideToLoop() karena loop bisa false
-        newsSwiper.slideTo(index);
-        console.log(`✅ Navigated to slide: ${index}`);
+        try {
+            newsSwiper.slideTo(index);
+            console.log(`✅ Navigated to slide: ${index} (ID: ${beritaId})`);
+        } catch (error) {
+            console.error(`❌ Error navigating to slide ${index}:`, error);
+        }
     } else {
-        console.error(`❌ Invalid index: ${index}`);
+        console.error(`❌ Invalid ID or not found: ${beritaId}`);
     }
 };
 

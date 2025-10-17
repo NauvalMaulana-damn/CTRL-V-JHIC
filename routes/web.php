@@ -24,6 +24,8 @@ use App\Http\Controllers\ProfilController;
 use Illuminate\Support\Facades\Route;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\DB;
 
 // Public routes dengan tracking visitor
 Route::middleware('trackvisitor')->group(function () {
@@ -32,7 +34,6 @@ Route::middleware('trackvisitor')->group(function () {
     Route::get('/profil', [ProfilController::class, 'index'])->name('profil.index');
     Route::get('/prestasi', [PrestasiController::class, 'index'])->name('prestasi.index');
     Route::get('/jurusan', [JurusanController::class, 'index'])->name('jurusan.index');
-    Route::post('/jurusan/increment-stats', [JurusanController::class, 'incrementStats'])->name('jurusan.increment-stats');
     Route::get('/jurusan/get-stats', [JurusanController::class, 'getStats'])->name('jurusan.get-stats');
     Route::get('/ekstrakurikuler', [EkskulController::class, 'index'])->name('ekskul.index');
     Route::get('/alumni', [AlumniController::class, 'index'])->name('alumni.index');
@@ -98,5 +99,67 @@ Route::get('/ip', function (Request $request) {
         'ip' => $request->ip(),
         'ips' => $request->ips(),
         'isSecure' => $request->isSecure(),
+    ]);
+});
+
+Route::post('/jurusan/increment-stats', [JurusanController::class, 'incrementStats'])
+    ->name('jurusan.increment-stats')
+    ->withoutMiddleware(['web']);
+Route::get('/debug-jurusan-setup', function() {
+    return response()->json([
+        'app_url' => config('app.url'),
+        'app_env' => config('app.env'),
+        'csrf_token' => csrf_token(),
+        'session_id' => session()->getId(),
+        'routes_available' => [
+            'jurusan_index' => route('jurusan.index'),
+            'jurusan_increment' => route('jurusan.increment-stats'),
+        ],
+        'time' => now()->toISOString()
+    ]);
+});
+
+Route::post('/debug-jurusan-simple', function(Request $request) {
+    Log::info('=== DEBUG JURUSAN SIMPLE ===');
+    Log::info('Headers:', $request->headers->all());
+    Log::info('Data:', $request->all());
+    Log::info('IP: ' . $request->ip());
+    Log::info('Method: ' . $request->method());
+    Log::info('============================');
+
+    // Simpan ke database langsung
+    DB::table('jurusan_statistiks')->insert([
+        'tanggal' => now()->format('Y-m-d'),
+        'departemen' => $request->departemen ?? 'debug',
+        'type' => $request->type ?? 'debug',
+        'jumlah' => 1,
+        'created_at' => now(),
+        'updated_at' => now()
+    ]);
+
+    return response()->json([
+        'success' => true,
+        'message' => 'DEBUG: Data received and saved',
+        'received' => $request->all(),
+        'saved_to_db' => true
+    ]);
+});
+
+// TEST SUPER SIMPLE - tambahkan di bagian atas
+Route::post('/test-simple', function(Request $request) {
+    // Langsung simpan ke database tanpa log ribet
+    DB::table('jurusan_statistiks')->insert([
+        'tanggal' => now()->format('Y-m-d'),
+        'departemen' => $request->departemen ?? 'test',
+        'type' => $request->type ?? 'test',
+        'jumlah' => 1,
+        'created_at' => now(),
+        'updated_at' => now()
+    ]);
+
+    return response()->json([
+        'success' => true,
+        'message' => 'SIMPLE: Data saved to DB',
+        'data' => $request->all()
     ]);
 });
