@@ -31,7 +31,6 @@ class AlumniSeeder extends Seeder
                 'bg_color' => 'from-[#FF4D4D] to-[#FF6B9D]',
                 'achievements' => json_encode(['Magang di Daihatsu 2017', 'Nilai UN Tertinggi Jurusan TKR'])
             ],
-            // ... tambahkan data lainnya sesuai kebutuhan
         ];
 
         foreach ($alumnis as $alumni) {

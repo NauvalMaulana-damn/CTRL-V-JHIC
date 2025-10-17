@@ -6,7 +6,7 @@
     <div class="flex animate-marquee whitespace-nowrap">
         @foreach ($marquees as $marquee)
         <div class="mx-8 flex-shrink-0">
-            <img class="h-6 md:h-10 max-w-[100px] object-contain inline-block scale-150"
+            <img class="h-6 md:h-10 max-w-[100px] object-contain inline-block scale-110"
                 src="{{ asset('storage/' . $marquee->gambar) }}" alt="{{ $marquee->nama }}" loading="lazy">
         </div>
         @endforeach
