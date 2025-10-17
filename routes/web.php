@@ -23,6 +23,8 @@ use App\Http\Controllers\PrestasiController;
 use App\Http\Controllers\ProfilController;
 use Illuminate\Support\Facades\Route;
 
+use Illuminate\Http\Request;
+
 // Public routes dengan tracking visitor
 Route::middleware('trackvisitor')->group(function () {
     Route::get('/', [LandingController::class, 'index'])->name('landing.index');
@@ -89,4 +91,12 @@ Route::prefix('admin')->name('admin.')->middleware(['admin'])->group(function ()
 
     // Logout
     Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
+});
+
+Route::get('/ip', function (Request $request) {
+    return response()->json([
+        'ip' => $request->ip(),
+        'ips' => $request->ips(),
+        'isSecure' => $request->isSecure(),
+    ]);
 });
