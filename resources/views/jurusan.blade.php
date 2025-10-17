@@ -1,208 +1,208 @@
 <x-layout title="Jurusan - SMK PGRI 3 Malang">
     <style>
-        /* Custom scrollbar untuk slider */
-        .slider::-webkit-scrollbar {
-            height: 8px;
-        }
+    /* Custom scrollbar untuk slider */
+    .slider::-webkit-scrollbar {
+        height: 8px;
+    }
 
-        .slider::-webkit-scrollbar-track {
-            background: #f1f1f1;
-            border-radius: 4px;
-        }
+    .slider::-webkit-scrollbar-track {
+        background: #f1f1f1;
+        border-radius: 4px;
+    }
 
-        .slider::-webkit-scrollbar-thumb {
-            background: #3b82f6;
-            border-radius: 4px;
-        }
+    .slider::-webkit-scrollbar-thumb {
+        background: #3b82f6;
+        border-radius: 4px;
+    }
 
-        /* Tambahan untuk slider yang lebih baik */
-        .slider-container {
-            position: relative;
-        }
+    /* Tambahan untuk slider yang lebih baik */
+    .slider-container {
+        position: relative;
+    }
 
-        .slider-nav {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            margin-top: 1rem;
-        }
+    .slider-nav {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        margin-top: 1rem;
+    }
 
-        .slider-btn {
-            background: #3b82f6;
-            color: white;
-            border: none;
-            border-radius: 50%;
-            width: 40px;
-            height: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            transition: background 0.3s;
-        }
+    .slider-btn {
+        background: #3b82f6;
+        color: white;
+        border: none;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: background 0.3s;
+    }
 
-        .slider-btn:hover {
-            background: #2563eb;
-        }
+    .slider-btn:hover {
+        background: #2563eb;
+    }
 
-        .slider-btn:disabled {
-            background: #9ca3af;
-            cursor: not-allowed;
-        }
+    .slider-btn:disabled {
+        background: #9ca3af;
+        cursor: not-allowed;
+    }
 
-        /* Efek hover untuk kartu jurusan */
-        .jurusan-card {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
+    /* Efek hover untuk kartu jurusan */
+    .jurusan-card {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
 
-        .jurusan-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-        }
+    .jurusan-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
 
-        /* Responsif untuk mobile */
-        @media (max-width: 768px) {
-            .btn-dept {
-                padding: 0.5rem 1rem;
-                font-size: 0.875rem;
-            }
-
-            .qna-top3-container {
-                flex-direction: column;
-            }
-
-            .top3-section {
-                margin-top: 2rem;
-            }
-
-            .chart-container {
-                height: 250px !important;
-            }
-        }
-
-        /* Styling untuk Top 3 Section */
-        .top3-card {
-            background: white;
-            border-radius: 12px;
-            padding: 1.5rem;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
-            margin-bottom: 1rem;
-            border-left: 4px solid;
-        }
-
-        .top3-card:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
-        }
-
-        .top3-card.first {
-            border-left-color: #FFD700;
-            background: linear-gradient(to right, #fff8e1, white);
-        }
-
-        .top3-card.second {
-            border-left-color: #C0C0C0;
-            background: linear-gradient(to right, #f5f5f5, white);
-        }
-
-        .top3-card.third {
-            border-left-color: #CD7F32;
-            background: linear-gradient(to right, #f9f0e6, white);
-        }
-
-        .rank-badge {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 30px;
-            height: 30px;
-            border-radius: 50%;
-            font-weight: bold;
-            margin-right: 10px;
-        }
-
-        .rank-badge.first {
-            background-color: #FFD700;
-            color: #333;
-        }
-
-        .rank-badge.second {
-            background-color: #C0C0C0;
-            color: #333;
-        }
-
-        .rank-badge.third {
-            background-color: #CD7F32;
-            color: white;
-        }
-
-        .click-count {
+    /* Responsif untuk mobile */
+    @media (max-width: 768px) {
+        .btn-dept {
+            padding: 0.5rem 1rem;
             font-size: 0.875rem;
-            color: #6b7280;
-            margin-top: 0.5rem;
         }
 
         .qna-top3-container {
-            display: flex;
-            gap: 2rem;
+            flex-direction: column;
+        }
+
+        .top3-section {
             margin-top: 2rem;
         }
 
-        .qna-section,
-        .top3-section {
-            flex: 1;
-        }
-
-        .top3-section h2 {
-            text-align: center;
-            margin-bottom: 1.5rem;
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: #1f2937;
-        }
-
-        /* Styling untuk diagram lingkaran */
         .chart-container {
-            position: relative;
-            height: 300px;
-            margin: 1rem 0;
+            height: 250px !important;
         }
+    }
 
-        .pie-chart-wrapper {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 1rem;
-        }
+    /* Styling untuk Top 3 Section */
+    .top3-card {
+        background: white;
+        border-radius: 12px;
+        padding: 1.5rem;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+        margin-bottom: 1rem;
+        border-left: 4px solid;
+    }
 
-        .chart-legend {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 0.5rem;
-            margin-top: 1rem;
-        }
+    .top3-card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+    }
 
-        .legend-item {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-size: 0.875rem;
-        }
+    .top3-card.first {
+        border-left-color: #FFD700;
+        background: linear-gradient(to right, #fff8e1, white);
+    }
 
-        .legend-color {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-        }
+    .top3-card.second {
+        border-left-color: #C0C0C0;
+        background: linear-gradient(to right, #f5f5f5, white);
+    }
 
-        .no-data-message {
-            text-align: center;
-            padding: 2rem;
-            color: #6b7280;
-            font-style: italic;
-        }
+    .top3-card.third {
+        border-left-color: #CD7F32;
+        background: linear-gradient(to right, #f9f0e6, white);
+    }
+
+    .rank-badge {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        font-weight: bold;
+        margin-right: 10px;
+    }
+
+    .rank-badge.first {
+        background-color: #FFD700;
+        color: #333;
+    }
+
+    .rank-badge.second {
+        background-color: #C0C0C0;
+        color: #333;
+    }
+
+    .rank-badge.third {
+        background-color: #CD7F32;
+        color: white;
+    }
+
+    .click-count {
+        font-size: 0.875rem;
+        color: #6b7280;
+        margin-top: 0.5rem;
+    }
+
+    .qna-top3-container {
+        display: flex;
+        gap: 2rem;
+        margin-top: 2rem;
+    }
+
+    .qna-section,
+    .top3-section {
+        flex: 1;
+    }
+
+    .top3-section h2 {
+        text-align: center;
+        margin-bottom: 1.5rem;
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: #1f2937;
+    }
+
+    /* Styling untuk diagram lingkaran */
+    .chart-container {
+        position: relative;
+        height: 300px;
+        margin: 1rem 0;
+    }
+
+    .pie-chart-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .chart-legend {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.5rem;
+        margin-top: 1rem;
+    }
+
+    .legend-item {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 0.875rem;
+    }
+
+    .legend-color {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+    }
+
+    .no-data-message {
+        text-align: center;
+        padding: 2rem;
+        color: #6b7280;
+        font-style: italic;
+    }
     </style>
 
     <!-- Sertakan Chart.js -->
@@ -282,15 +282,18 @@
                             ELEKTRO
                         </button>
                         <button data-target="otomotif"
-                            class="btn-dept otomotif-btn bg-orange-500 hover:bg-orange-600 text-white px-6 py-2 rounded-full shadow-md hover:scale-105 transition-transform" style="background-color: rgb(239, 68, 68);">
+                            class="btn-dept otomotif-btn bg-orange-500 hover:bg-orange-600 text-white px-6 py-2 rounded-full shadow-md hover:scale-105 transition-transform"
+                            style="background-color: rgb(239, 68, 68);">
                             OTOMOTIF
                         </button>
                         <button data-target="pemesinan"
-                            class="btn-dept pemesinan-btn bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-full shadow-md hover:scale-105 transition-transform" style="background-color: rgba(59, 130, 246, 0.8);">
+                            class="btn-dept pemesinan-btn bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-full shadow-md hover:scale-105 transition-transform"
+                            style="background-color: rgba(59, 130, 246, 0.8);">
                             PEMESINAN
                         </button>
                         <button data-target="tik"
-                            class="btn-dept tik-btn text-white px-6 py-2 rounded-full shadow-md hover:scale-105 transition-transform" style="background-color: rgb(139, 92, 246);">
+                            class="btn-dept tik-btn text-white px-6 py-2 rounded-full shadow-md hover:scale-105 transition-transform"
+                            style="background-color: rgb(139, 92, 246);">
                             TIK
                         </button>
                     </div>
@@ -329,12 +332,12 @@
                     <div class=" flex space-x-6 pb-4 slider snap-x snap-mandatory">
                         @foreach ($jurusans as $jurusan)
                         @if ($jurusan->departemen == "ELEKTRO")
-                        <x-jurcard title="{!! $jurusan->jurusan !!}" image="{{ $jurusan->gambar }}" departement="{{ $jurusan->departemen }}"
-                        loading="lazy">
-                        {{ $jurusan->deskripsi }}
-                    </x-jurcard>
-                    @endif
-                    @endforeach
+                        <x-jurcard title="{!! $jurusan->jurusan !!}" image="{{ $jurusan->gambar }}"
+                            departement="{{ $jurusan->departemen }}" loading="lazy">
+                            {{ $jurusan->deskripsi }}
+                        </x-jurcard>
+                        @endif
+                        @endforeach
                     </div>
                 </div>
             </section>
@@ -346,8 +349,8 @@
                     <div class=" flex space-x-6 pb-4 slider snap-x snap-mandatory justify-center">
                         @foreach ($jurusans as $jurusan)
                         @if ($jurusan->departemen == "OTOMOTIF")
-                        <x-jurcard title="{!! $jurusan->jurusan !!}" image="{{ $jurusan->gambar }}" departement="{{ $jurusan->departemen }}"
-                            loading="lazy">
+                        <x-jurcard title="{!! $jurusan->jurusan !!}" image="{{ $jurusan->gambar }}"
+                            departement="{{ $jurusan->departemen }}" loading="lazy">
                             {{ $jurusan->deskripsi }}
                         </x-jurcard>
                         @endif
@@ -363,8 +366,8 @@
                     <div class=" flex space-x-6 pb-4 slider snap-x snap-mandatory justify-center">
                         @foreach ($jurusans as $jurusan)
                         @if ($jurusan->departemen == "PEMESINAN")
-                        <x-jurcard title="{!! $jurusan->jurusan !!}" image="{{ $jurusan->gambar }}" departement="{{ $jurusan->departemen }}"
-                            loading="lazy">
+                        <x-jurcard title="{!! $jurusan->jurusan !!}" image="{{ $jurusan->gambar }}"
+                            departement="{{ $jurusan->departemen }}" loading="lazy">
                             {{ $jurusan->deskripsi }}
                         </x-jurcard>
                         @endif
@@ -380,8 +383,8 @@
                     <div class=" flex space-x-6 pb-4 slider snap-x snap-mandatory">
                         @foreach ($jurusans as $jurusan)
                         @if ($jurusan->departemen == "TIK")
-                        <x-jurcard title="{!! $jurusan->jurusan !!}" image="{{ $jurusan->gambar }}" departement="{{ $jurusan->departemen }}"
-                            loading="lazy">
+                        <x-jurcard title="{!! $jurusan->jurusan !!}" image="{{ $jurusan->gambar }}"
+                            departement="{{ $jurusan->departemen }}" loading="lazy">
                             {{ $jurusan->deskripsi }}
                         </x-jurcard>
                         @endif
@@ -389,196 +392,6 @@
                     </div>
                 </div>
             </section>
-
-            <!-- JavaScript -->
-            <!-- Tambahkan di <head> atau sebelum </body> -->
-            <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-            <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2"></script>
-
-            <script>
-    let clickStats = {
-        elektro: 0,
-        otomotif: 0,
-        pemesinan: 0,
-        tik: 0
-    };
-
-    let jurusanChart = null;
-
-    function loadStats() {
-        const savedStats = localStorage.getItem('jurusanClickStats');
-        if (savedStats) clickStats = JSON.parse(savedStats);
-        updateChart();
-        updateTotalClicks();
-    }
-
-    function saveStats() {
-        localStorage.setItem('jurusanClickStats', JSON.stringify(clickStats));
-    }
-
-    function updateTotalClicks() {
-        const total = Object.values(clickStats).reduce((a, b) => a + b, 0);
-        document.getElementById('total-clicks').textContent = total;
-    }
-
-    function updateChart() {
-        const ctx = document.getElementById('jurusanPieChart').getContext('2d');
-        const totalClicks = Object.values(clickStats).reduce((a, b) => a + b, 0);
-
-        const labels = [];
-        const data = [];
-        const backgroundColors = [
-            'rgb(249, 115, 22, 0.8)',
-            'rgb(239, 68, 68)',
-            'rgba(59, 130, 246, 0.8)',
-            'rgb(139, 92, 246)'
-        ];
-
-        const formatJurusanName = (key) => ({
-            elektro: 'ELEKTRO',
-            otomotif: 'OTOMOTIF',
-            pemesinan: 'PEMESINAN',
-            tik: 'TIK'
-        }[key] || key.toUpperCase());
-
-        Object.entries(clickStats).forEach(([key, value]) => {
-            labels.push(formatJurusanName(key));
-            data.push(value);
-        });
-
-        if (jurusanChart) jurusanChart.destroy();
-
-        const centerTextPlugin = {
-            id: 'centerText',
-            afterDraw(chart) {
-                const { ctx, chartArea: { width, height } } = chart;
-                ctx.save();
-                ctx.font = 'bold 16px Arial';
-                ctx.fillStyle = '#6B7280';
-                ctx.textAlign = 'center';
-                ctx.textBaseline = 'middle';
-                const total = data.reduce((a, b) => a + b, 0);
-                if (total === 0) ctx.fillText('Tidak ada data', width / 2, height / 2);
-                ctx.restore();
-            }
-        };
-
-        jurusanChart = new Chart(ctx, {
-            type: 'pie',
-            plugins: [ChartDataLabels, centerTextPlugin],
-            data: {
-                labels: labels,
-                datasets: [{
-                    data: data,
-                    backgroundColor: backgroundColors,
-                    borderColor: backgroundColors,
-                    borderWidth: 2
-                }]
-            },
-            options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                plugins: {
-                    legend: { display: false },
-                    tooltip: {
-                        callbacks: {
-                            label: (context) => {
-                                const label = context.label || '';
-                                const value = context.raw || 0;
-                                const total = context.dataset.data.reduce((a, b) => a + b, 0);
-                                const percentage = total > 0 ? Math.round((value / total) * 100) : 0;
-                                return `${label}: ${percentage}%`;
-                            }
-                        }
-                    },
-                    datalabels: {
-                        color: '#fff',
-                        align: 'center',
-                        formatter: (value, ctx) => {
-                            if (value === 0) return '';
-                            const label = ctx.chart.data.labels[ctx.dataIndex];
-                            const total = ctx.dataset.data.reduce((a, b) => a + b, 0);
-                            const percentage = (value * 100 / total).toFixed(0);
-                            return `${label}\n${percentage}%`;
-                        },
-                        font: { weight: 'bold', size: 13 }
-                    }
-                }
-            }
-        });
-
-        updateChartLegend(labels, data, backgroundColors, totalClicks);
-    }
-
-    function updateChartLegend(labels, data, colors, totalClicks) {
-        const legendContainer = document.getElementById('chartLegend');
-        legendContainer.innerHTML = '';
-
-        if (totalClicks === 0) {
-            legendContainer.innerHTML = '<div class="no-data-message">Belum ada data kunjungan</div>';
-            return;
-        }
-
-        labels.forEach((label, i) => {
-            const value = data[i];
-            const percentage = totalClicks > 0 ? Math.round((value / totalClicks) * 100) : 0;
-            const legendItem = document.createElement('div');
-            legendItem.className = 'legend-item';
-            legendItem.innerHTML = `
-                <span class="legend-color" style="background-color:${colors[i]}"></span>
-                <span>${label}: ${percentage}%</span>
-            `;
-            legendContainer.appendChild(legendItem);
-        });
-    }
-
-    // HANYA SATU EVENT LISTENER UNTUK TOMBOL
-    document.querySelectorAll('.btn-dept').forEach(button => {
-        button.addEventListener('click', () => {
-            const targetId = button.getAttribute('data-target');
-            const targetSection = document.getElementById(targetId);
-
-            // Meningkatkan jumlah klik untuk jurusan ini
-            if (clickStats.hasOwnProperty(targetId)) {
-                clickStats[targetId]++;
-                saveStats();
-                updateChart();
-                updateTotalClicks();
-            }
-
-            if (targetSection) {
-                targetSection.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            }
-        });
-    });
-
-    // Load statistik saat halaman dimuat
-    document.addEventListener('DOMContentLoaded', function() {
-        loadStats();
-
-        // Fungsi untuk slider (jika diperlukan)
-        document.querySelectorAll('.slider-container').forEach(container => {
-            const slider = container.querySelector('.slider');
-            const prevBtn = container.querySelector('.prev-btn');
-            const nextBtn = container.querySelector('.next-btn');
-
-            if (nextBtn) {
-                nextBtn.addEventListener('click', () => {
-                    slider.scrollBy({ left: 324, behavior: 'smooth' });
-                });
-            }
-
-            if (prevBtn) {
-                prevBtn.addEventListener('click', () => {
-                    slider.scrollBy({ left: -324, behavior: 'smooth' });
-                });
-            }
-        });
-    });
-</script>
         </div>
     </div>
 </x-layout>

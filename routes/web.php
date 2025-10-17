@@ -30,6 +30,8 @@ Route::middleware('trackvisitor')->group(function () {
     Route::get('/profil', [ProfilController::class, 'index'])->name('profil.index');
     Route::get('/prestasi', [PrestasiController::class, 'index'])->name('prestasi.index');
     Route::get('/jurusan', [JurusanController::class, 'index'])->name('jurusan.index');
+    Route::post('/jurusan/increment-stats', [JurusanController::class, 'incrementStats'])->name('jurusan.increment-stats');
+    Route::get('/jurusan/get-stats', [JurusanController::class, 'getStats'])->name('jurusan.get-stats');
     Route::get('/ekstrakurikuler', [EkskulController::class, 'index'])->name('ekskul.index');
     Route::get('/alumni', [AlumniController::class, 'index'])->name('alumni.index');
     Route::get('/pendaftaran', [PendaftaranController::class, 'index'])->name('pendaftaran.index');

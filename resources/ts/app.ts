@@ -1,7 +1,7 @@
 declare global {
     interface Window {
         Alpine: typeof Alpine;
-        showNews: (index: number) => void; // Simplify: hanya butuh index
+        showNews: (index: number) => void;
         initializeNewsSlider: () => void;
         beritas: any[];
     }
@@ -11,7 +11,7 @@ import "../css/app.css";
 import Alpine from "alpinejs";
 import Swiper from "swiper";
 import { Autoplay, Pagination, Navigation, EffectFade } from "swiper/modules";
-import { initChartGabungan } from "./chart";
+import { initChartGabungan, initJurusanChart } from "./chart";
 import { initScrollButtons } from "./scroll";
 import MicroModal from "micromodal";
 import "swiper/css";
@@ -198,11 +198,6 @@ const showNews = (index: number): void => {
     }
 };
 
-// ✅ Hapus function yang tidak perlu
-// const setActiveSidebarItem = (activeIndex: number): void => {
-//     // Hapus functionality active item
-// };
-
 // ✅ Initialize regular Swiper (untuk swiper lainnya jika ada)
 const initSwiper = (): void => {
     const swiperEl = document.querySelector(".mySwiper");
@@ -286,6 +281,7 @@ document.addEventListener("DOMContentLoaded", (): void => {
     initSwiper();
     initScrollButtons();
     initChartGabungan();
+    initJurusanChart(); // ✅ Tambahkan inisialisasi chart jurusan
 
     console.log("🎉 All components initialized successfully");
 });

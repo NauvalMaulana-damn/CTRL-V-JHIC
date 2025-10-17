@@ -159,3 +159,100 @@ body {
     transform: scale(1);
     opacity: 1;
 }
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background: #f8fafc;
+    border-radius: 8px;
+    border-left: 4px solid;
+    margin-bottom: 0.5rem;
+}
+
+.legend-color {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    border: 2px solid white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.no-data-message {
+    text-align: center;
+    padding: 2rem;
+    color: #6b7280;
+    font-style: italic;
+}
+
+.viewing-notification {
+    animation: slideInRight 0.3s ease-out;
+    min-width: 180px;
+}
+
+.auto-increment-notification {
+    animation: slideInRight 0.3s ease-out, fadeOut 0.3s ease-in 2.7s forwards;
+    min-width: 140px;
+}
+
+/* Warna berbeda untuk setiap jurusan */
+.viewing-notification[data-section="elektro"] {
+    background: #f97316;
+    border-left: 4px solid #ea580c;
+}
+
+.viewing-notification[data-section="otomotif"] {
+    background: #ef4444;
+    border-left: 4px solid #dc2626;
+}
+
+.viewing-notification[data-section="pemesinan"] {
+    background: #3b82f6;
+    border-left: 4px solid #2563eb;
+}
+
+.viewing-notification[data-section="tik"] {
+    background: #8b5cf6;
+    border-left: 4px solid #7c3aed;
+}
+
+.viewing-notification,
+.auto-increment-notification {
+    z-index: 9999;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
