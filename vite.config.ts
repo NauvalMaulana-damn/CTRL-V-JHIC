@@ -9,13 +9,13 @@ export default defineConfig({
         }),
     ],
     server: {
-        host: '15.15.36.209',
+        host: '192.168.1.7',
         watch: {
             usePolling: true,
             interval: 500,
         },
         hmr: {
-            host: '15.15.36.209',
+            host: '192.168.1.7',
             protocol: 'ws',
             port: 5173,
         },

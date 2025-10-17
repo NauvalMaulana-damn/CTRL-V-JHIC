@@ -38,7 +38,7 @@
                         class="bg-customOrange p-4 md:p-5 rounded-xl relative overflow-hidden flex flex-col justify-between transform transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:scale-[1.02]">
                         <div class="bg-white p-2 mb-4 rounded-lg">
                             <img class="w-full object-cover max-h-56 rounded-lg"
-                                src="{{ asset('assets/elektro_card.png') }}" alt="Elektro Department">
+                                src="{{ asset('assets/elektro_card.webp') }}" alt="Elektro Department">
                         </div>
                         <div>
                             <h2 class="text-3xl lg:text-4xl font-bold text-white mb-3">Elektro</h2>
@@ -63,7 +63,7 @@
                         class="bg-customRed p-4 md:p-5 rounded-xl relative overflow-hidden flex flex-col justify-between transform transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:scale-[1.02]">
                         <div class="bg-white p-2 mb-4 rounded-lg">
                             <img class="w-full object-cover max-h-56 rounded-lg"
-                                src="{{ asset('assets/otomotif_card.png') }}" alt="Otomotif Department">
+                                src="{{ asset('assets/otomotif_card.webp') }}" alt="Otomotif Department">
                         </div>
                         <div>
                             <h2 class="text-3xl lg:text-4xl font-bold text-white mb-3">Otomotif</h2>
@@ -88,7 +88,7 @@
                         class="bg-customPink p-4 md:p-5 rounded-xl relative overflow-hidden flex flex-col justify-between transform transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:scale-[1.02]">
                         <div class="bg-white p-2 mb-4 rounded-lg">
                             <img class="w-full object-cover max-h-56 rounded-lg object-[center_20%]"
-                                src="{{ asset('assets/pemesinan_card.jpg') }}" alt="Pemesinan Department">
+                                src="{{ asset('assets/pemesinan_card.webp') }}" alt="Pemesinan Department">
                         </div>
                         <div>
                             <h2 class="text-3xl lg:text-4xl font-bold text-white mb-3">Pemesinan</h2>
@@ -113,7 +113,7 @@
                         class="bg-customBlue p-4 md:p-5 rounded-xl relative overflow-hidden flex flex-col justify-between transform transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:scale-[1.02]">
                         <div class="bg-white p-2 mb-4 rounded-lg">
                             <img class="w-full object-cover max-h-56 rounded-lg"
-                                src="{{ asset('assets/tik_card.png') }}" alt="TIK Department">
+                                src="{{ asset('assets/tik_card.webp') }}" alt="TIK Department">
                         </div>
                         <div>
                             <h2 class="text-3xl lg:text-4xl font-bold text-white mb-3">TIK</h2>
@@ -159,7 +159,7 @@
                             dan doa pagi. Bagi non Muslim SKARIGA memberi tempat untuk beribadah pagi
                         </x-habitcard>
 
-                        <x-habitcard title="Makan Bersama" image="kebiasaan-4(2).jpg">
+                        <x-habitcard title="Makan Bersama" image="kebiasaan-4(2).webp">
                             Pada istirahat pertama, budaya yang melekat pada murid-murid SKARIGA
                             adalah budaya makan bersama secara lesehan
                         </x-habitcard>
