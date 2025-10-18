@@ -186,7 +186,7 @@
                 @foreach ($profil->misis as $misi)
                 <x-profilcard
                     bgColor="{{ $misi->misiColor }}"
-                    title="{{ $misi->misiTitle }}"
+                    title="{!! $misi->misiTitle !!}"
                     image="{{ $getImagePath($misi->misiImage) }}">
                     {{ $misi->misiDesc }}
                 </x-profilcard>

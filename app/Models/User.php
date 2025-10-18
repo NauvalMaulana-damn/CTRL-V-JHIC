@@ -14,7 +14,7 @@ class User extends Authenticatable
         'username',
         'password',
         'role',
-        'role_key',
+        'Key',
         'is_active',
     ];
 
@@ -59,12 +59,12 @@ class User extends Authenticatable
         parent::boot();
 
         static::creating(function ($user) {
-            $user->role_key = self::ROLE_KEYS()[$user->role] ?? null;
+            $user->Key = self::ROLE_KEYS()[$user->role] ?? null;
         });
 
         static::updating(function ($user) {
             if ($user->isDirty('role')) {
-                $user->role_key = self::ROLE_KEYS()[$user->role] ?? null;
+                $user->Key = self::ROLE_KEYS()[$user->role] ?? null;
             }
         });
     }
@@ -140,7 +140,7 @@ class User extends Authenticatable
     // Verify role key
     public function verifyRoleKey()
     {
-        return $this->role_key === (self::ROLE_KEYS()[$this->role] ?? null);
+        return $this->Key === (self::ROLE_KEYS()[$this->role] ?? null);
     }
 
     // Relationships

@@ -34,7 +34,7 @@
                         {{ Str::limit($prestasi->subjudul, 80) }}
                     </td>
                     <td class="p-3">
-                        <img src="{{ $prestasi->gambar && $prestasi->gambar !== 'default.svg' ? asset('' . $prestasi->gambar) : asset('images/default.svg') }}"
+                        <img src="{{ $prestasi->gambar && $prestasi->gambar !== 'default.svg' ? asset('storage/' . $prestasi->gambar) : asset('images/default.svg') }}"
                              class="h-12 w-12 rounded object-cover" alt="">
                     </td>
                     <td class="p-3 text-center">

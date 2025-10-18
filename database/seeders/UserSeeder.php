@@ -13,25 +13,38 @@ class UserSeeder extends Seeder
     public function run(): void
     {
         User::create([
-            'username' => 'superadmin',
-            'password' => Hash::make('super1234'),
+            'username' => 'gamaliel',
+            'password' => Hash::make('jhickeren-v'),
             'role'     => 'SUPERADMIN',
             'Key'      => env('SUPERADMIN_ROLE_KEY'),
         ]);
 
         User::create([
-            'username' => 'admin',
-            'password' => Hash::make('admin1234'),
+            'username' => 'marvell',
+            'password' => Hash::make('marvellous321'),
             'role'     => 'ADMIN',
             'Key'      => env('ADMIN_ROLE_KEY'),
         ]);
 
         User::create([
-            'username' => 'editor',
-            'password' => Hash::make('editor1234'),
-            'role'     => 'EDITOR',
-            'Key'      => env('EDITOR_ROLE_KEY'),
+            'username' => 'zulfan',
+            'password' => Hash::make('djoel456'),
+            'role'     => 'ADMIN',
+            'Key'      => env('ADMIN_ROLE_KEY'),
         ]);
 
+        User::create([
+            'username' => 'bahrudin',
+            'password' => Hash::make('nauvaldykeren'),
+            'role'     => 'ADMIN',
+            'Key'      => env('ADMIN_ROLE_KEY'),
+        ]);
+
+        User::create([
+            'username' => 'agniya',
+            'password' => Hash::make('agniya4892'),
+            'role'     => 'ADMIN',
+            'Key'      => env('ADMIN_ROLE_KEY'),
+        ]);
     }
 }

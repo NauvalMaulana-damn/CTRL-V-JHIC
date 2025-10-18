@@ -6,6 +6,7 @@
 <div id="chatbox" class="h-80 overflow-y-auto border rounded-lg p-3 bg-gray-50 text-sm flex flex-col gap-2 shadow-md">
 </div>
 
+<div id="question" class="h-8 text-center max-w-full text-sm border border-gray-300 rounded-md p-2" onclick="document.getElementById('message').value = this.textContent; document.getElementById('message').focus();"></div>
 <form id="chatForm" class="flex max-w-full mt-2 h-24">
     <textarea id="message" name="message" placeholder="Tulis pertanyaan kamu..." class="flex-grow border w-full rounded-l-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-300
             resize-none overflow-y-auto text-sm" rows="1" required></textarea>
@@ -126,9 +127,35 @@ function appendTyping() {
     return typing;
 }
 
+function changeQuestion() {
+    const questionElement = document.getElementById('question');
+    const question = [
+        "Apa saja jurusannya?",
+        "Bagaimana cara mendaftar?",
+        "Apa saja ekstrakurikuler yang ada?",
+        "Apa jurusan yang paling banyak diminati?",
+        "Dimana letak sekolahnya?",
+        "Apa prestasi terbaik yang pernah diperolah?",
+        "Hubungkan saya dengan admin.",
+        "Siapa kepala sekolahnya?",
+        "Apa saja fasilitas yang ada di sekolah?",
+        "Bagaimana lulusan sekolahnya?",
+        "Apa visi dan misinya?",
+        "Bagaimana sejarahnya?",
+        "Terakreditasi apa sekolahnya?",
+    ];
+
+    setInterval(() => {
+        for (const q of question) {
+            questionElement.textContent = q;
+        }
+    }, 5000);
+}
+
 // Inisialisasi saat halaman dimuat
 document.addEventListener('DOMContentLoaded', function() {
     cleanupOldHistory();
     loadChatHistory();
+    changeQuestion();
 });
 </script>

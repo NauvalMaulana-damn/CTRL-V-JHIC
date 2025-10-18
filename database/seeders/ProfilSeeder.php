@@ -29,25 +29,25 @@ class ProfilSeeder extends Seeder
         // Create 4 misi cards
         $misis = [
             [
-                'misiImage' => 'default.svg',
+                'misiImage' => 'profil/',
                 'misiTitle' => 'Unggul & Beriman',
                 'misiDesc' => 'Menjadi SMK yang unggul dalam prestasi dengan dilandasi Iman & Taqwa serta menghasilkan tamatan yang mampu bersaing di tingkat Nasional maupun Internasional.',
                 'misiColor' => 'BLUE'
             ],
             [
-                'misiImage' => 'default.svg',
+                'misiImage' => 'profil/',
                 'misiTitle' => 'Akreditasi A',
                 'misiDesc' => 'Mempertahankan dan meningkatkan akreditasi A yang telah ditetapkan oleh BAN-PDM dengan sk 1857/BAN-SM/SK/2022.',
                 'misiColor' => 'GREEN'
             ],
             [
-                'misiImage' => 'default.svg',
+                'misiImage' => 'profil',
                 'misiTitle' => 'Success By Discipline',
                 'misiDesc' => 'Dengan motto tersebut SMK PGRI 3 MALANG mampu menghasilkan lulusan yang sukses dan berkarakter disiplin.',
                 'misiColor' => 'ORANGE'
             ],
             [
-                'misiImage' => 'default.svg',
+                'misiImage' => 'profil/',
                 'misiTitle' => 'Lulus Siap Kerja',
                 'misiDesc' => 'Menghasilkan lulusan yang kompeten dan siap bekerja di berbagai bidang industri dengan skill yang relevan.',
                 'misiColor' => 'RED'

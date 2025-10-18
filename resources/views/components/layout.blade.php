@@ -3,6 +3,7 @@
 
 <head>
     <x-meta></x-meta>
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     @props(['title'])
     <title>{{ $title ?? 'SMK PGRI 3 Malang - Success by Discipline' }}</title>
     <!-- Libraries -->
@@ -21,10 +22,10 @@
     <x-header :transparent="$headerTransparent"></x-header>
     @endif
     {{ $slot }}
-    @vite(['resources/ts/app.ts'])
     <x-sidebar></x-sidebar>
     <x-footer></x-footer>
     <noscript>JavaScript anda sekarang sedang dimatikan<br>Mohon aktifkan JavaScript anda agar website ini dapat berjalan.</noscript>
+    @vite(['resources/ts/app.ts'])
 </body>
 
 </html>

@@ -38,9 +38,9 @@
                     <td class="p-3 font-semibold">{{ $user->username }}</td>
                     <td class="p-3">
                         <span class="px-2 py-1 rounded-full text-xs font-semibold
-                            @if($user->role == 'ADMIN') bg-purple-100 text-purple-800
-                            @elseif($user->role == 'EDITOR') bg-blue-100 text-blue-800
-                            @else bg-green-100 text-green-800 @endif">
+                            @if($user->role == 'ADMIN') bg-blue-100 text-blue-800
+                            @elseif($user->role == 'EDITOR') bg-green-100 text-green-800
+                            @else bg-gray-100 text-gray-800 @endif">
                             {{ $user->role }}
                         </span>
                     </td>

@@ -9,13 +9,13 @@ export default defineConfig({
         }),
     ],
     server: {
-        host: '192.168.1.7',
+        host: 'smkpgri3mlg.jh-beon.cloud',
         watch: {
             usePolling: true,
             interval: 500,
         },
         hmr: {
-            host: '192.168.1.7',
+            host: 'smkpgri3mlg.jh-beon.cloud',
             protocol: 'ws',
             port: 5173,
         },

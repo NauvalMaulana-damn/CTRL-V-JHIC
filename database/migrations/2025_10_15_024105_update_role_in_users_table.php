@@ -10,7 +10,6 @@ return new class extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
             $table->enum('role', ['SUPERADMIN', 'EDITOR', 'VIEWER'])->default('VIEWER')->change();
-            $table->string('role_key')->nullable();
         });
     }
 
@@ -18,7 +17,6 @@ return new class extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
             $table->enum('role', ['SUPERADMIN', 'EDITOR'])->default('EDITOR')->change();
-            $table->dropColumn('role_key');
         });
     }
 };
