@@ -1,74 +1,177 @@
 <div x-data="{ open: false }" class="fixed top-1/2 right-4 transform -translate-y-1/2 z-50">
 
-    <!-- Toggle Button -->
-    <button @click="open = !open" class="absolute -left-10 top-1/2 transform -translate-y-1/2 bg-white/30 backdrop-blur-md
-           p-2 rounded-full shadow-lg hover:bg-customOrange hover:text-white transition">
+    <!-- Anti Flicker saat Alpine belum jalan -->
+    <style>
+    [x-cloak] {
+        display: none !important;
+    }
 
-        <!-- Panah -->
-        <svg xmlns="http://www.w3.org/2000/svg" :class="open ? 'rotate-0' : 'rotate-180'"
-            class="h-5 w-5 transform transition-transform duration-500 ease-in-out" fill="none" viewBox="0 0 24 24"
-            stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-        </svg>
+    /* Tambahan: biar teks di chat & sidebar wrap dan scroll enak */
+    #chatbox {
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        white-space: pre-wrap;
+        scroll-behavior: smooth;
+    }
+
+    .menu-item a {
+        display: inline-block;
+        width: 100%;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+    }
+
+    /* Area chat */
+    #chatbox {
+        max-height: 70vh;
+        overflow-y: auto;
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+        background-color: #f5f7fa;
+        border-radius: 12px;
+    }
+
+    /* Bubble umum */
+    .bubble {
+        max-width: 80%;
+        padding: 0.75rem 1rem;
+        border-radius: 16px;
+        line-height: 1.4;
+        word-wrap: break-word;
+        font-size: 0.95rem;
+        animation: fadeIn 0.2s ease-in;
+    }
+
+    /* Bubble user */
+    .bubble.user {
+        align-self: flex-end;
+        background-color: #0078ff;
+        color: white;
+        border-bottom-right-radius: 4px;
+    }
+
+    /* Bubble bot */
+    .bubble.bot {
+        align-self: flex-start;
+        background-color: #e5e7eb;
+        color: #111827;
+        border-bottom-left-radius: 4px;
+    }
+
+    /* Indikator “mengetik...” */
+    .typing {
+        display: inline-block;
+        width: 40px;
+        text-align: left;
+    }
+
+    .typing span {
+        display: inline-block;
+        width: 6px;
+        height: 6px;
+        margin: 0 1px;
+        background: #999;
+        border-radius: 50%;
+        animation: blink 1.4s infinite both;
+    }
+
+    .typing span:nth-child(2) {
+        animation-delay: 0.2s;
+    }
+
+    .typing span:nth-child(3) {
+        animation-delay: 0.4s;
+    }
+
+    @keyframes blink {
+
+        0%,
+        80%,
+        100% {
+            opacity: 0;
+        }
+
+        40% {
+            opacity: 1;
+        }
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(4px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    </style>
+
+    <button @click="open = !open" class="absolute -left-16 top-1/2 transform -translate-y-1/2
+        bg-gray-300/80 backdrop-blur-md border border-white/30
+        w-14 h-14 rounded-2xl shadow-lg flex items-center justify-center
+        transition-all duration-300 hover:bg-customOrange/70 hover:text-white">
+
+        <!-- Konten tombol: panah dan ikon -->
+        <div class="flex items-center justify-center gap-1">
+            <!-- Ikon panah -->
+            <svg xmlns="http://www.w3.org/2000/svg" :class="open
+                ? 'h-5 w-5 transform rotate-0 transition-transform duration-500 ease-in-out'
+                : 'h-5 w-5 transform rotate-180 transition-transform duration-500 ease-in-out'" fill="none"
+                viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+            </svg>
+
+            <!-- Logo -->
+            <img src="{{ asset('assets/skariga logo 1.png') }}" alt="Logo" class="w-10 h-10 object-contain">
+        </div>
     </button>
 
 
     <!-- Sidebar -->
-    <div x-show="open" x-transition:enter="transform transition ease-in-out duration-500"
+    <div x-show="open" x-cloak x-transition:enter="transform transition ease-in-out duration-500"
         x-transition:enter-start="translate-x-full opacity-0" x-transition:enter-end="translate-x-0 opacity-100"
         x-transition:leave="transform transition ease-in-out duration-500"
-        x-transition:leave-start="translate-x-0 opacity-100" x-transition:leave-end="translate-x-full opacity-0" class="w-[300px] h-[600px] bg-white/40 backdrop-blur-lg
-                rounded-xl flex flex-col justify-between shadow-2xl border border-white/20">
+        x-transition:leave-start="translate-x-0 opacity-100" x-transition:leave-end="translate-x-full opacity-0" class="w-[350px] h-[600px] bg-white/80 backdrop-blur-lg rounded-xl
+            flex flex-col justify-between shadow-2xl border border-white/20">
 
-        <!-- Logo -->
+        <!-- Header -->
         <div class="p-5 border-b border-gray-200/50">
             <div class="flex items-center">
-                <img class="w-12 h-12" src="https://placehold.co/50x50" alt="Logo">
-                <h1 class="text-xl font-bold ml-3 text-dark">School Portal</h1>
+                <img class="w-18 h-12" src="{{ asset('assets/skariga logo 1.png') }}" alt="Logo">
+                <h1 class="text-xl font-bold ml-3 text-dark leading-tight">SMK PGRI 3 MALANG</h1>
             </div>
         </div>
 
-        <!-- Navigation Items -->
-        <div class="flex-1 overflow-y-auto p-5">
+        <!-- Konten Navigasi + Chat -->
+        <div class="flex-1 overflow-y-auto p-5 space-y-4">
+
+            <!-- Menu -->
             @foreach ([
-            ['icon' => 'https://placehold.co/50x50', 'label' => 'Home'],
-            ['icon' => 'https://placehold.co/50x50', 'label' => 'Profil Sekolah'],
-            ['icon' => 'https://placehold.co/50x50', 'label' => 'Prestasi'],
-            ['icon' => 'https://placehold.co/50x50', 'label' => 'Jurusan'],
-            ['icon' => 'https://placehold.co/50x50', 'label' => 'Ekstrakurikuler'],
-            ['icon' => 'https://placehold.co/50x50', 'label' => 'Alumni'],
-            ['icon' => 'https://placehold.co/50x50', 'label' => 'Pendaftaran'],
+            ['icon' => asset('assets/home (1).png'), 'label' => 'Beranda', 'href' => '/'],
+            ['icon' => asset('assets/news.png'), 'label' => 'Berita', 'href' => '/berita'],
+            ['icon' => asset('assets/profil.png'), 'label' => 'Profil', 'href' => '/profil'],
+            ['icon' => asset('assets/trophy.png'), 'label' => 'Prestasi', 'href' => '/prestasi'],
+            ['icon' => asset('assets/major.png'), 'label' => 'Jurusan', 'href' => '/jurusan'],
+            ['icon' => asset('assets/extra.png'), 'label' => 'Ekstrakurikuler', 'href' => '/ekstrakurikuler'],
+            ['icon' => asset('assets/grad.png'), 'label' => 'Alumni', 'href' => '/alumni'],
+            ['icon' => asset('assets/join.png'), 'label' => 'Pendaftaran', 'href' => '/pendaftaran'],
             ] as $item)
-            <div class="menu-item flex items-center py-3 px-4 mb-2 cursor-pointer
-                            rounded-lg transition hover:bg-customBlue hover:text-white hover:shadow-md">
-                <img class="w-6 h-6 menu-icon" src="{{ $item['icon'] }}" alt="{{ $item['label'] }}">
-                <div class="ml-4 font-semibold">{{ $item['label'] }}</div>
+            <div class="menu-item flex items-center py-3 px-4 mb-2 cursor-pointer rounded-lg
+                        transition hover:bg-customBlue hover:text-white hover:shadow-md">
+                <img class="w-6 h-6 flex-shrink-0" src="{{ $item['icon'] }}" alt="{{ $item['label'] }}">
+                <a href="{{ $item['href'] }}" class="ml-4 font-semibold truncate">
+                    {{ $item['label'] }}
+                </a>
             </div>
             @endforeach
-        </div>
 
-        <!-- Q&A Section -->
-        <div class="p-5 bg-white/30 backdrop-blur-md rounded-t-2xl border-t border-gray-200/50">
-            <div class="flex items-center mb-4">
-                <img class="w-8 h-8" src="https://placehold.co/50x50" alt="Q&A">
-                <h2 class="text-xl font-bold ml-2 text-dark">Q&A</h2>
-            </div>
-
-            <div class="flex flex-col space-y-2">
-                <div class="chat-bubble chat-right">Cara daftar gimana?</div>
-                <div class="chat-bubble chat-left">Ada Jurusan Apa?</div>
-                <div class="chat-bubble chat-right">Eskul nya ada apa aja?</div>
-            </div>
-
-            <button
-                class="w-full mt-4 bg-dark text-white py-2 rounded-lg font-semibold flex items-center justify-center hover:bg-customOrange transition">
-                Selengkapnya
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-2" fill="none" viewBox="0 0 24 24"
-                    stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                </svg>
-            </button>
+            <!-- QNA -->
+            <x-qna></x-qna>
         </div>
     </div>
 </div>

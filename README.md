@@ -11,7 +11,8 @@
 <p align="center">
   <a href="https://laravel.com/"><img src="https://img.shields.io/badge/Laravel-12.21.0-red?logo=laravel" alt="Laravel"></a>
   <a href="https://www.php.net/"><img src="https://img.shields.io/badge/PHP-8.2.12-blue?logo=php" alt="PHP"></a>
-  <a href="https://tailwindcss.com/"><img src="https://img.shields.io/badge/Tailwind%20CSS-4.1-blue?logo=tailwindcss&logoColor=blue" alt="Tailwind"></a>
+  <a href="https://tailwindcss.com/"><img src="https://img.shields.io/badge/Tailwind%20CSS-3.4.0-blue?logo=tailwindcss&logoColor=blue" alt="Tailwind CSS"></a>
+  <a href="https://alpinejs.dev/"><img src="https://img.shields.io/badge/Alpine" alt="Alpine JS"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-green" alt="License"></a>
 </p>
 
@@ -31,18 +32,18 @@ Website ini adalah website sekolah yang Informatif dan Kreatif untuk menampilkan
 
 ## ✨ Fitur Utama
 
-- 📸 **Verifikasi Wajah** dengan unggah foto & video minimal 3 detik.  
+- 📸 **Side News dan Sidebar** dengan konten yang informatif.  
 - 🌐 **Akses Web** dari perangkat apa saja yang terhubung internet.  
-- 📊 **Laporan Kehadiran** otomatis & riwayat presensi.  
+- 📊 **Data yang up-to-date** Data yang selalu diperbarukan.  
 - 🔒 **Keamanan Data** dengan enkripsi & kontrol akses.
 
 ---
 
 ## 🛠️ Teknologi yang Digunakan
 
-- **Backend:** PHP 8.2.12, Laravel 12.21.0  
-- **Frontend:** Tailwind 4.1, Blade Templating  
-- **Database:** SQLite  
+- **Backend:** PHP 8.2.12, Laravel 12+
+- **Frontend:** Tailwind 3.4.0, Blade Templating  
+- **Database:** MariaDB  
 - **Keamanan:** Enkripsi Bcrypt  
 - **Hosting:** Cloud Computing  
 
