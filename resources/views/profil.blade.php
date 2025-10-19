@@ -1,10 +1,4 @@
 <x-layout title="Profil - SMK PGRI 3 Malang" :headerTransparent="false">
-    @php
-    $assetBase = config('app.url');
-    if (request()->getHost() === 'smkpgri3mlg.web.id' || request()->getHost() === 'www.smkpgri3mlg.web.id') {
-    $assetBase = 'https://' . request()->getHost();
-    }
-    @endphp
     <style>
     @keyframes scroll {
         0% {

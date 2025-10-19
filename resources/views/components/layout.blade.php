@@ -7,14 +7,6 @@
     @props(['title'])
     <title>{{ $title ?? 'SMK PGRI 3 Malang - Success by Discipline' }}</title>
 
-    <!-- Dynamic Base URL untuk Assets -->
-    @php
-    $assetBase = config('app.url');
-    if (request()->getHost() === 'smkpgri3mlg.web.id' || request()->getHost() === 'www.smkpgri3mlg.web.id') {
-        $assetBase = 'https://' . request()->getHost();
-    }
-    @endphp
-
     <!-- Libraries -->
     @vite(['resources/css/app.css', 'resources/ts/app.ts'])
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"

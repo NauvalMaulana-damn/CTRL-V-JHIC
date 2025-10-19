@@ -1,10 +1,4 @@
 <x-layout title="SMK PGRI 3 Malang - Success by Discipline">
-    @php
-    $assetBase = config('app.url');
-    if (request()->getHost() === 'smkpgri3mlg.web.id' || request()->getHost() === 'www.smkpgri3mlg.web.id') {
-    $assetBase = 'https://' . request()->getHost();
-    }
-    @endphp
     <script>
     // Pass data dari PHP ke JavaScript sebagai array object, bukan JSON string
     window.beritas = @json($beritas);

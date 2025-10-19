@@ -1,12 +1,5 @@
 @props(['title', 'image', 'departement'])
 
-@php
-$assetBase = config('app.url');
-if (request()->getHost() === 'smkpgri3mlg.web.id' || request()->getHost() === 'www.smkpgri3mlg.web.id') {
-$assetBase = 'https://' . request()->getHost();
-}
-@endphp
-
 <div
     class="w-[400px] pb-5 shrink-0 bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-200 hover:shadow-2xl hover:-translate-y-1 transform transition duration-300 snap-start">
 

@@ -1,10 +1,4 @@
 <x-layout title="{{ $berita->title }} - SMK PGRI 3 Malang">
-    @php
-    $assetBase = config('app.url');
-    if (request()->getHost() === 'smkpgri3mlg.web.id' || request()->getHost() === 'www.smkpgri3mlg.web.id') {
-    $assetBase = 'https://' . request()->getHost();
-    }
-    @endphp
     <div class="bg-gray-50">
         <!-- Header Kosong (Hanya background) -->
 

@@ -1,13 +1,6 @@
 {{-- resources/views/components/marquee.blade.php --}}
 @props(['marquees' => collect()])
 
-@php
-$assetBase = config('app.url');
-if (request()->getHost() === 'smkpgri3mlg.web.id' || request()->getHost() === 'www.smkpgri3mlg.web.id') {
-$assetBase = 'https://' . request()->getHost();
-}
-@endphp
-
 @if($marquees->count() > 0)
 <div class="py-4 overflow-hidden rounded-lg bg-white">
     <div class="flex animate-marquee whitespace-nowrap">

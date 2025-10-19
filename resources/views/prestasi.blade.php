@@ -1,10 +1,4 @@
 <x-layout title="Prestasi - SMK PGRI 3 Malang">
-    @php
-    $assetBase = config('app.url');
-    if (request()->getHost() === 'smkpgri3mlg.web.id' || request()->getHost() === 'www.smkpgri3mlg.web.id') {
-    $assetBase = 'https://' . request()->getHost();
-    }
-    @endphp
     <div class="h-full container mx-auto px-4 py-6">
         <!-- Hero Section -->
         <!-- ✅ Versi Desktop (tetap seperti semula) -->

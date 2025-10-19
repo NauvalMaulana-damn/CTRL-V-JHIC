@@ -1,10 +1,4 @@
 <x-layout title="Alumni - SMK PGRI 3 Malang">
-    @php
-    $assetBase = config('app.url');
-    if (request()->getHost() === 'smkpgri3mlg.web.id' || request()->getHost() === 'www.smkpgri3mlg.web.id') {
-    $assetBase = 'https://' . request()->getHost();
-    }
-    @endphp
     <div class="h-full h-max-content container mx-auto px-4 py-6">
         <section class="w-full relative h-[600px] mt-2 rounded-xl overflow-hidden">
             <div class="absolute inset-0 max-w-full mx-auto h-full hover-scale rounded-2xl overflow-hidden">

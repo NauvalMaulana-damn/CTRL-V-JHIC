@@ -1,10 +1,4 @@
 <footer class="bg-[#1A1A1A] text-white py-12 mt-12 font-[Poppins]">
-    @php
-    $assetBase = config('app.url');
-    if (request()->getHost() === 'smkpgri3mlg.web.id' || request()->getHost() === 'www.smkpgri3mlg.web.id') {
-    $assetBase = 'https://' . request()->getHost();
-    }
-    @endphp
     <div class="container mx-auto px-4">
         <div class="flex flex-col md:flex-row gap-8 justify-between">
             <!-- School Info -->

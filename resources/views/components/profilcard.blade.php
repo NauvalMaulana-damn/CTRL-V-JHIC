@@ -1,13 +1,6 @@
 @props(['bgColor' => 'BLUE', 'title' => '', 'image' => ''])
 
 @php
-$assetBase = config('app.url');
-if (request()->getHost() === 'smkpgri3mlg.web.id' || request()->getHost() === 'www.smkpgri3mlg.web.id') {
-$assetBase = 'https://' . request()->getHost();
-}
-@endphp
-
-@php
 $colorClasses = [
 'BLUE' => 'bg-blue-500',
 'GREEN' => 'bg-green-500',

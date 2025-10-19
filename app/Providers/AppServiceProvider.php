@@ -14,6 +14,15 @@ class AppServiceProvider extends ServiceProvider
 {
     public function boot(): void
     {
+        View::composer('*', function ($view) {
+            $assetBase = config('app.url');
+            if (request()->getHost() === 'smkpgri3mlg.web.id' ||
+                request()->getHost() === 'www.smkpgri3mlg.web.id') {
+                $assetBase = 'https://' . request()->getHost();
+            }
+            $view->with('assetBase', $assetBase);
+        });
+
         SymfonyRequest::setTrustedProxies(
             ['*'], // atau array IP proxy yang kamu percaya
             SymfonyRequest::HEADER_X_FORWARDED_FOR |
@@ -38,22 +47,6 @@ class AppServiceProvider extends ServiceProvider
             } catch (\Exception) {
                 $view->with('marquees', collect());
             }
-
-            // ✅ Share image path helper
-            $view->with('getImagePath', function ($image, $default = 'default.svg') {
-                if ($image && $image !== 'default.svg') {
-                    if (Storage::disk('public')->exists($image)) {
-                        return asset("storage/{$image}");
-                    }
-                    if (file_exists(public_path("assets/{$image}"))) {
-                        return asset("assets/{$image}");
-                    }
-                    if (file_exists(public_path($image))) {
-                        return asset($image);
-                    }
-                }
-                return asset("images/{$default}");
-            });
         });
     }
 }

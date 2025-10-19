@@ -1,12 +1,5 @@
 @props(['image', 'title', 'onclick' => ''])
 
-@php
-$assetBase = config('app.url');
-if (request()->getHost() === 'smkpgri3mlg.web.id' || request()->getHost() === 'www.smkpgri3mlg.web.id') {
-$assetBase = 'https://' . request()->getHost();
-}
-@endphp
-
 <div class="sidenews-item group cursor-pointer" onclick="{{ $onclick }}">
     <img width="100%" height="100%" class="w-full h-40 object-cover rounded-lg mb-2 group-hover:opacity-90 transition"
         src="{{ $assetBase . '/storage/' . $image }}" alt="{{ $title }}">

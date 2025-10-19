@@ -1,10 +1,4 @@
 <x-layout title="Berita - SMK PGRI 3 Malang">
-    @php
-    $assetBase = config('app.url');
-    if (request()->getHost() === 'smkpgri3mlg.web.id' || request()->getHost() === 'www.smkpgri3mlg.web.id') {
-    $assetBase = 'https://' . request()->getHost();
-    }
-    @endphp
     <div class="bg-gray-50">
         <section class="bg-gradient-to-r from-custombbg-customBlue text-white py-12">
             <div class="container mx-auto px-4 py-4">

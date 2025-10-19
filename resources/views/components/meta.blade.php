@@ -3,10 +3,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 @php
-$assetBase = config('app.url');
-if (request()->getHost() === 'smkpgri3mlg.web.id' || request()->getHost() === 'www.smkpgri3mlg.web.id') {
-$assetBase = 'https://' . request()->getHost();
-}
 $author = "CTRL + V";
 $title = "SMK PGRI 3 MALANG";
 $desc = "Manajemen presensi online berbasis website secara mudah dan praktis.";
