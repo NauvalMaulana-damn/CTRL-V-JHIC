@@ -10,16 +10,16 @@
                     Anda login sebagai <span class="font-semibold capitalize">{{ Auth::user()->role }}</span>
                 </p>
                 @if(Auth::user()->isSuperadmin())
-                <p class="text-sm text-blue-600 mt-1">
+                <p class="text-sm text-purple-600 mt-1">
                     Anda memiliki akses penuh sebagai Super Administrator
                 </p>
-                @elseif(Auth::user()->isEditor())
-                <p class="text-sm text-green-600 mt-1">
+                @elseif(Auth::user()->isAdmin())
+                <p class="text-sm text-blue-600 mt-1">
                     Anda memiliki akses sebagai Editor
                 </p>
-                @else
-                <p class="text-sm text-gray-600 mt-1">
-                    Anda memiliki akses sebagai Viewer
+                @elseif (Auth::user()->isEditor())
+                <p class="text-sm text-green-600 mt-1">
+                    Anda memiliki akses sebagai Editor
                 </p>
                 @endif
             </div>
