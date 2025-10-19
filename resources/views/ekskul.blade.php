@@ -1,6 +1,5 @@
 <x-layout title="Ekstrakurikuler - SMK PGRI 3 Malang" :headerTransparent="false">
     <div class="h-full h-max-content container mx-auto px-4 py-6">
-        <!-- Hero SKARIGA -->
         <section class="relative h-[800px] mt-2 rounded-xl overflow-hidden">
             <div class="absolute inset-0 w-full h-full hover-scale">
                 <img src="{{ $assetBase . '/assets/ekstrahero_11zon.webp' }}" alt="Hero SKARIGA" loading="lazy"
@@ -14,20 +13,30 @@
             </div>
         </section>
 
-        <!-- Section yang akan di-update via AJAX -->
         <section class="w-full container py-12 md:py-16 overflow-hidden animate-fade-in" id="ekskul-content">
             <div class="max-w-full mx-auto">
                 <h2 class="text-3xl md:text-5xl font-bold text-center mb-12">Ekstrakurikuler</h2>
 
-                <!-- Loading indicator -->
                 <div id="loading" class="hidden text-center py-8">
                     <div class="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600"></div>
                     <p class="mt-2 text-gray-600">Memuat data...</p>
                 </div>
 
-                <!-- Content container -->
                 <div id="ekskul-data">
-                    @include('partials.ekskul-content', ['ekskuls' => $ekskuls])
+                    <div class="max-w-full mx-auto">
+                        <div class="grid grid-cols-3 gap-6">
+                            @foreach ($ekskuls as $ekskul)
+                            <x-ekscard title="{{ $ekskul->title }}" alt="{{ $ekskul->title }}"
+                                image="{{ $ekskul->image }}">
+                                {{ $ekskul->desc }}
+                            </x-ekscard>
+                            @endforeach
+                        </div>
+                    </div>
+
+                    <div class="flex justify-center mt-8 space-x-2" id="pagination-container">
+                        {{ $ekskuls->links('pagination::tailwind') }}
+                    </div>
                 </div>
             </div>
         </section>
@@ -37,24 +46,30 @@
     document.addEventListener('DOMContentLoaded', function() {
         let isLoading = false;
 
-        // Event delegation pada document yang selalu ada
         document.addEventListener('click', function(e) {
-            // Cek jika klik berasal dari pagination link
-            const paginationLink = e.target.closest('#pagination-container a, .pagination a');
+            const link = e.target.closest('a');
 
-            if (!paginationLink ||
-                paginationLink.classList.contains('text-gray-400') ||
-                paginationLink.classList.contains('cursor-not-allowed') ||
+            if (!link) return;
+
+            const href = link.getAttribute('href');
+
+            if (!href || !href.includes('?page=')) return;
+
+            const isInPaginationContainer = link.closest('#pagination-container') ||
+                link.closest('.pagination') ||
+                link.parentElement.classList.contains('pagination');
+
+            if (!isInPaginationContainer) return;
+
+            // Cek jika link disabled atau sedang loading
+            if (link.classList.contains('text-gray-400') ||
+                link.classList.contains('cursor-not-allowed') ||
                 isLoading) {
                 return;
             }
 
             e.preventDefault();
-
-            const url = paginationLink.getAttribute('href');
-            if (url && url !== '#' && url !== 'javascript:void(0)') {
-                loadPage(url);
-            }
+            loadPage(href);
         });
 
         function loadPage(url) {
@@ -68,75 +83,56 @@
             ekskulData.style.pointerEvents = 'none';
             loading.classList.remove('hidden');
 
-            fetch(url, {
-                headers: {
-                    'X-Requested-With': 'XMLHttpRequest',
-                    'Accept': 'text/html'
-                }
-            })
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error(`HTTP error! status: ${response.status}`);
-                }
-                return response.text();
-            })
-            .then(html => {
-                // Parse HTML response
-                const parser = new DOMParser();
-                const doc = parser.parseFromString(html, 'text/html');
+            fetch(url + '&ajax=true', {
+                    headers: {
+                        'X-Requested-With': 'XMLHttpRequest'
+                    }
+                })
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.text();
+                })
+                .then(html => {
+                    // Parse the entire HTML response
+                    const parser = new DOMParser();
+                    const doc = parser.parseFromString(html, 'text/html');
 
-                // Cari element ekskul-data dalam response
-                const newContent = doc.getElementById('ekskul-data');
+                    // Extract hanya bagian ekskul-data dari response
+                    const newEkskulData = doc.getElementById('ekskul-data');
 
-                if (newContent) {
-                    // Update content
-                    ekskulData.innerHTML = newContent.innerHTML;
+                    if (newEkskulData) {
+                        // Update content
+                        ekskulData.innerHTML = newEkskulData.innerHTML;
 
-                    // Update URL history
-                    window.history.pushState({url: url}, '', url);
+                        // Update URL tanpa refresh
+                        window.history.pushState({}, '', url);
 
-                    // Smooth scroll ke top
-                    const ekskulContent = document.getElementById('ekskul-content');
-                    ekskulContent.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                } else {
-                    // Fallback: reload page jika struktur tidak sesuai
-                    console.warn('AJAX response structure unexpected, falling back to page reload');
+                        // Scroll ke top dengan smooth effect
+                        document.getElementById('ekskul-content').scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    // Fallback ke page reload jika AJAX gagal
                     window.location.href = url;
-                }
-            })
-            .catch(error => {
-                console.error('AJAX Error:', error);
-                // Fallback ke refresh biasa jika AJAX gagal
-                window.location.href = url;
-            })
-            .finally(() => {
-                // Reset state
-                ekskulData.style.opacity = '1';
-                ekskulData.style.pointerEvents = 'auto';
-                loading.classList.add('hidden');
-                isLoading = false;
-            });
+                })
+                .finally(() => {
+                    // Sembunyikan loading
+                    ekskulData.style.opacity = '1';
+                    ekskulData.style.pointerEvents = 'auto';
+                    loading.classList.add('hidden');
+                    isLoading = false;
+                });
         }
 
         // Handle browser back/forward buttons
-        window.addEventListener('popstate', function(event) {
-            if (event.state && event.state.url) {
-                loadPage(event.state.url);
-            } else {
-                loadPage(window.location.href);
-            }
-        });
-
-        // Prevent initial popstate trigger
-        let initialPop = true;
-        window.addEventListener('popstate', function(e) {
-            if (initialPop) {
-                initialPop = false;
-                return;
-            }
+        window.addEventListener('popstate', function() {
+            loadPage(window.location.href);
         });
     });
     </script>
@@ -157,13 +153,18 @@
     }
 
     /* Loading animation */
-    @keyframes spin {
-        0% { transform: rotate(0deg); }
-        100% { transform: rotate(360deg); }
-    }
-
     .animate-spin {
         animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+        from {
+            transform: rotate(0deg);
+        }
+
+        to {
+            transform: rotate(360deg);
+        }
     }
     </style>
 </x-layout>
