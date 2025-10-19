@@ -156,8 +156,14 @@ function changeQuestion(index) {
 }
 
 setInterval(() => {
-    changeQuestion(currentQuestionIndex);
-    currentQuestionIndex = (currentQuestionIndex + 1) % questions.length;
+    let currentQuestionIndex = 0;
+    while (currentQuestionIndex < questions.length) {
+        changeQuestion(currentQuestionIndex);
+        currentQuestionIndex++;
+        if (currentQuestionIndex >= questions.length) {
+            currentQuestionIndex = 0;
+        }
+    }
 }, 5000);
 
 // Inisialisasi saat halaman dimuat
