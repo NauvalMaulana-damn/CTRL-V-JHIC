@@ -141,7 +141,7 @@ const questions = [
     "Apa saja ekstrakurikuler yang ada?",
     "Apa jurusan yang paling banyak diminati?",
     "Dimana letak sekolahnya?",
-    "Apa prestasi terbaik yang pernah diperolah?",
+    "Apa prestasi terbaik yang pernah diperoleh?",
     "Hubungkan saya dengan admin.",
     "Siapa kepala sekolahnya?",
     "Apa saja fasilitas yang ada di sekolah?",
@@ -152,11 +152,12 @@ const questions = [
 ];
 
 let currentQuestionIndex = 0;
-setTimeout(() => {
-    while (currentQuestionIndex < questions.length) {
-        questionElement.textContent = questions[currentQuestionIndex];
-        currentQuestionIndex++;
-    }
+
+questionElement.textContent = questions[currentQuestionIndex];
+
+setInterval(() => {
+    currentQuestionIndex = (currentQuestionIndex + 1) % questions.length;
+    questionElement.textContent = questions[currentQuestionIndex];
 }, 5000);
 
 // Inisialisasi saat halaman dimuat
