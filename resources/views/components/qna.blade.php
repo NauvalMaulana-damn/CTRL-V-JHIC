@@ -6,7 +6,9 @@
 <div id="chatbox" class="h-80 overflow-y-auto border rounded-lg p-3 bg-gray-50 text-sm flex flex-col gap-2 shadow-md">
 </div>
 
-<div id="question" class="h-8 text-center max-w-full text-sm border border-gray-300 rounded-md p-2" onclick="document.getElementById('message').value = this.textContent; document.getElementById('message').focus();"></div>
+<div id="question" class="h-8 px-2 py-3 text-center max-w-full text-sm border border-gray-300 rounded-md bg-white cursor-pointer"
+    onclick="document.getElementById('message').value = this.textContent; document.getElementById('message').focus();">
+</div>
 <form id="chatForm" class="flex max-w-full mt-2 h-24">
     <textarea id="message" name="message" placeholder="Tulis pertanyaan kamu..." class="flex-grow border w-full rounded-l-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-300
             resize-none overflow-y-auto text-sm" rows="1" required></textarea>
@@ -111,7 +113,11 @@ function appendMessage(sender, text, saveToHistory = true) {
     // Simpan ke history jika diperlukan
     if (saveToHistory) {
         const history = getChatHistory();
-        history.push({ sender, text, timestamp: Date.now() });
+        history.push({
+            sender,
+            text,
+            timestamp: Date.now()
+        });
         saveChatHistory(history);
     }
 
@@ -127,7 +133,7 @@ function appendTyping() {
     return typing;
 }
 
-function changeQuestion() {
+function changeQuestion(index) {
     const questionElement = document.getElementById('question');
     const question = [
         "Apa saja jurusannya?",
@@ -145,17 +151,19 @@ function changeQuestion() {
         "Terakreditasi apa sekolahnya?",
     ];
 
-    setInterval(() => {
-        for (const q of question) {
-            questionElement.textContent = q;
-        }
-    }, 5000);
+    for (const q of question) {
+        questionElement.textContent = q[index];
+    }
 }
 
 // Inisialisasi saat halaman dimuat
 document.addEventListener('DOMContentLoaded', function() {
     cleanupOldHistory();
     loadChatHistory();
-    changeQuestion();
+
+    setInterval(() => {
+        currentIndex = (currentIndex + 1) % totalQuestions;
+        changeQuestion(currentIndex);
+    }, 5000);
 });
 </script>
