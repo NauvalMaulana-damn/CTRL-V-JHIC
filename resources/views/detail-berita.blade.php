@@ -1,5 +1,10 @@
 <x-layout title="{{ $berita->title }} - SMK PGRI 3 Malang">
-    <x-assetbase/>
+    @php
+    $assetBase = config('app.url');
+    if (request()->getHost() === 'smkpgri3mlg.web.id' || request()->getHost() === 'www.smkpgri3mlg.web.id') {
+    $assetBase = 'https://' . request()->getHost();
+    }
+    @endphp
     <div class="bg-gray-50">
         <!-- Header Kosong (Hanya background) -->
 
@@ -53,7 +58,8 @@
                         <div id="x-sidenews" class="space-y-6">
                             @foreach ($beritaTerbaru->take(3) as $item)
                             <a href="{{ route('berita.show', $item->id) }}">
-                                <div class="sidenews-item cursor-pointer transition-all duration-300 hover:bg-gray-50 p-2 rounded-lg">
+                                <div
+                                    class="sidenews-item cursor-pointer transition-all duration-300 hover:bg-gray-50 p-2 rounded-lg">
                                     <x-sidenews title="{{ $item->title }}" image="{{ $item->gambar }}" />
                                 </div>
                             </a>

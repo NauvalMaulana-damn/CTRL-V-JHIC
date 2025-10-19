@@ -1,5 +1,10 @@
 <x-layout title="Alumni - SMK PGRI 3 Malang">
-    <x-assetbase/>
+    @php
+    $assetBase = config('app.url');
+    if (request()->getHost() === 'smkpgri3mlg.web.id' || request()->getHost() === 'www.smkpgri3mlg.web.id') {
+    $assetBase = 'https://' . request()->getHost();
+    }
+    @endphp
     <div class="h-full h-max-content container mx-auto px-4 py-6">
         <section class="w-full relative h-[600px] mt-2 rounded-xl overflow-hidden">
             <div class="absolute inset-0 max-w-full mx-auto h-full hover-scale rounded-2xl overflow-hidden">
@@ -46,8 +51,7 @@
                     @foreach($alumnis as $alumni)
                     <div
                         class="alumni-card bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100 h-full flex flex-col">
-                        <div
-                            class="relative h-40 bg-gradient-to-r {{ $alumni->bg_color }}">
+                        <div class="relative h-40 bg-gradient-to-r {{ $alumni->bg_color }}">
                             <div class="absolute -bottom-12 left-1/2 transform -translate-x-1/2">
                                 <img src="{{ $alumni->image && $alumni->image !== 'default.svg' ? $assetBase . '/storage/' . $alumni->image : $assetBase . '/images/default.svg' }}"
                                     alt="{{ $alumni->name }}" loading="lazy"

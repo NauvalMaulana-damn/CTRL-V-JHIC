@@ -1,5 +1,10 @@
 <x-layout title="Berita - SMK PGRI 3 Malang">
-    <x-assetbase/>
+    @php
+    $assetBase = config('app.url');
+    if (request()->getHost() === 'smkpgri3mlg.web.id' || request()->getHost() === 'www.smkpgri3mlg.web.id') {
+    $assetBase = 'https://' . request()->getHost();
+    }
+    @endphp
     <div class="bg-gray-50">
         <section class="bg-gradient-to-r from-custombbg-customBlue text-white py-12">
             <div class="container mx-auto px-4 py-4">
@@ -104,49 +109,51 @@
             {{--  --}}
             <!-- Di dalam grid -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12 items-stretch" id="newsGrid">
-    @foreach ($beritas as $berita)
-    <div class="news-card bg-white rounded-xl shadow-md overflow-hidden flex flex-col h-full"
-        data-type="{{ strtolower($berita->type) }}">
-        <div class="relative">
-            <img src="{{ $assetBase . $berita->gambar }}" alt="{{ $berita->title }}" class="w-full h-48 object-cover">
-            <div class="absolute top-4 left-4">
-                <span class="bg-customOrange text-white px-3 py-1 rounded-full text-xs font-medium">
-                    {{ $berita->type }}
-                </span>
+                @foreach ($beritas as $berita)
+                <div class="news-card bg-white rounded-xl shadow-md overflow-hidden flex flex-col h-full"
+                    data-type="{{ strtolower($berita->type) }}">
+                    <div class="relative">
+                        <img src="{{ $assetBase . $berita->gambar }}" alt="{{ $berita->title }}"
+                            class="w-full h-48 object-cover">
+                        <div class="absolute top-4 left-4">
+                            <span class="bg-customOrange text-white px-3 py-1 rounded-full text-xs font-medium">
+                                {{ $berita->type }}
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="p-6 flex flex-col flex-1">
+                        <div class="flex justify-between text-sm text-gray-500 mb-2">
+                            <span><i class="far fa-calendar-alt mr-1"></i>
+                                {{ $berita->created_at->format('d M Y') }}</span>
+                            <span><i class="far fa-eye mr-1"></i> {{ $berita->views }}</span>
+                        </div>
+
+                        <h3 class="text-xl font-bold text-gray-800 mb-3 break-words line-clamp-2 min-h-[56px]">
+                            {{ $berita->title }}
+                        </h3>
+
+                        <p class="text-gray-600 mb-4 break-words line-clamp-3 min-h-[72px]">
+                            {{ Str::limit($berita->deskripsi, 120) }}
+                        </p>
+
+                        <div class="mt-auto">
+                            <a href="{{ route('berita.show', $berita->id) }}"
+                                class="inline-block bg-customBlue hover:bg-blue-800 text-white px-4 py-2 rounded-lg text-sm font-medium transition-all self-start">
+                                Baca Selengkapnya
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                @endforeach
             </div>
-        </div>
-
-        <div class="p-6 flex flex-col flex-1">
-            <div class="flex justify-between text-sm text-gray-500 mb-2">
-                <span><i class="far fa-calendar-alt mr-1"></i> {{ $berita->created_at->format('d M Y') }}</span>
-                <span><i class="far fa-eye mr-1"></i> {{ $berita->views }}</span>
-            </div>
-
-            <h3 class="text-xl font-bold text-gray-800 mb-3 break-words line-clamp-2 min-h-[56px]">
-                {{ $berita->title }}
-            </h3>
-
-            <p class="text-gray-600 mb-4 break-words line-clamp-3 min-h-[72px]">
-                {{ Str::limit($berita->deskripsi, 120) }}
-            </p>
-
-            <div class="mt-auto">
-                <a href="{{ route('berita.show', $berita->id) }}"
-                    class="inline-block bg-customBlue hover:bg-blue-800 text-white px-4 py-2 rounded-lg text-sm font-medium transition-all self-start">
-                    Baca Selengkapnya
-                </a>
-            </div>
-        </div>
     </div>
-    @endforeach
-</div>
-</div>
-            <!-- Pagination -->
-            <div class="flex justify-center mt-8 space-x-2" id="pagination-container">
-                {{ $beritas->links('pagination::tailwind') }}
-            </div>
+    <!-- Pagination -->
+    <div class="flex justify-center mt-8 space-x-2" id="pagination-container">
+        {{ $beritas->links('pagination::tailwind') }}
+    </div>
 
-        </main>
+    </main>
     </div>
 
     <style>

@@ -1,4 +1,12 @@
 @props(['image', 'title', ''])
+
+@php
+$assetBase = config('app.url');
+if (request()->getHost() === 'smkpgri3mlg.web.id' || request()->getHost() === 'www.smkpgri3mlg.web.id') {
+$assetBase = 'https://' . request()->getHost();
+}
+@endphp
+
 <div
     class="bg-white rounded-2xl shadow-lg overflow-hidden flex flex-col transition-transform duration-200 hover:-translate-y-1.5">
     <img src="{{ $assetBase . '/storage/' . $image }}" alt="{{ $title }}" class="w-full h-44 object-cover" loading="lazy">

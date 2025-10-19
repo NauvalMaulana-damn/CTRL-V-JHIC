@@ -1,5 +1,12 @@
 @props(['views', 'type', 'date', 'image', 'title', 'desc'])
 
+@php
+$assetBase = config('app.url');
+if (request()->getHost() === 'smkpgri3mlg.web.id' || request()->getHost() === 'www.smkpgri3mlg.web.id') {
+$assetBase = 'https://' . request()->getHost();
+}
+@endphp
+
 <div
     class="bg-white rounded-xl shadow-md overflow-hidden transition-transform duration-300 hover:shadow-lg hover:-translate-y-1">
     <div class="h-72 relative">

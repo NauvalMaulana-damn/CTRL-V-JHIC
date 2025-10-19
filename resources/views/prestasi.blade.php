@@ -1,5 +1,10 @@
 <x-layout title="Prestasi - SMK PGRI 3 Malang">
-    <x-assetbase/>
+    @php
+    $assetBase = config('app.url');
+    if (request()->getHost() === 'smkpgri3mlg.web.id' || request()->getHost() === 'www.smkpgri3mlg.web.id') {
+    $assetBase = 'https://' . request()->getHost();
+    }
+    @endphp
     <div class="h-full container mx-auto px-4 py-6">
         <!-- Hero Section -->
         <!-- ✅ Versi Desktop (tetap seperti semula) -->
@@ -84,8 +89,8 @@
                     🥇 Juara Provinsi
                 </div>
                 <div class="w-full h-80 bg-gray-400 rounded-xl shadow-xl overflow-hidden">
-                    <img src="{{ $assetBase . '/assets/robot-manu.jpg' }}" class="w-full h-full object-cover" alt="Gambar"
-                        loading="lazy">
+                    <img src="{{ $assetBase . '/assets/robot-manu.jpg' }}" class="w-full h-full object-cover"
+                        alt="Gambar" loading="lazy">
                 </div>
                 <div
                     class="bg-sky-400 text-sky-950 px-3 py-1 rounded-full text-sm font-bold shadow-lg z-20 cursor-default">
@@ -100,8 +105,8 @@
                     🏆 Juara Internasional
                 </div>
                 <div class="w-full h-80 bg-black rounded-xl shadow-xl overflow-hidden sm:col-span-2">
-                    <img src="{{ $assetBase . '/assets/skariga intl.webp' }}" class="w-full h-full object-cover" alt="Gambar"
-                        loading="lazy">
+                    <img src="{{ $assetBase . '/assets/skariga intl.webp' }}" class="w-full h-full object-cover"
+                        alt="Gambar" loading="lazy">
                 </div>
             </div>
         </section>

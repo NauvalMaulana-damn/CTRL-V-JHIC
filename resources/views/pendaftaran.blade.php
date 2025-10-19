@@ -1,5 +1,10 @@
 <x-layout title="Pendaftaran - SMK PGRI 3 Malang">
-    <x-assetbase/>
+    @php
+    $assetBase = config('app.url');
+    if (request()->getHost() === 'smkpgri3mlg.web.id' || request()->getHost() === 'www.smkpgri3mlg.web.id') {
+    $assetBase = 'https://' . request()->getHost();
+    }
+    @endphp
     <div class="bg-white text-gray-800">
         <div class="h-full h-max-content container mx-auto px-4 py-6">
 
@@ -65,13 +70,14 @@
                                     </thead>
                                     <tbody class="divide-y divide-gray-100">
                                         @foreach ($pendaftarans as $row)
-                                            <tr class="hover:bg-gray-50 transition">
-                                                <td class="px-4 py-3 text-gray-800 font-medium "  style="background-color: #efefef">{{ $row->tahun }}</td>
-                                                <td class="px-4 py-3 text-orange-600 text-center font-semibold" >
-                                                    {{ $row->jumlah_pendaftar }}</td>
-                                                <td class="px-4 py-3 text-blue-600 font-semibold text-center" >
-                                                    {{ $row->jumlah_diterima }}</td>
-                                            </tr>
+                                        <tr class="hover:bg-gray-50 transition">
+                                            <td class="px-4 py-3 text-gray-800 font-medium "
+                                                style="background-color: #efefef">{{ $row->tahun }}</td>
+                                            <td class="px-4 py-3 text-orange-600 text-center font-semibold">
+                                                {{ $row->jumlah_pendaftar }}</td>
+                                            <td class="px-4 py-3 text-blue-600 font-semibold text-center">
+                                                {{ $row->jumlah_diterima }}</td>
+                                        </tr>
                                         @endforeach
                                     </tbody>
                                 </table>
@@ -80,7 +86,7 @@
                     </div>
                 </div>
             </section>
-            </div>
+        </div>
         </section>
         <!-- Wrapper -->
         <div class="flex flex-col md:flex-row justify-center items-start mt-12 mx-auto ">

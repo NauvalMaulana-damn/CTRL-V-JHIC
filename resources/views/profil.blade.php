@@ -1,5 +1,10 @@
 <x-layout title="Profil - SMK PGRI 3 Malang" :headerTransparent="false">
-    <x-assetbase/>
+    @php
+    $assetBase = config('app.url');
+    if (request()->getHost() === 'smkpgri3mlg.web.id' || request()->getHost() === 'www.smkpgri3mlg.web.id') {
+    $assetBase = 'https://' . request()->getHost();
+    }
+    @endphp
     <style>
     @keyframes scroll {
         0% {
@@ -72,7 +77,8 @@
         <section class="relative h-[535px] mt-2 rounded-xl overflow-hidden">
             <div class="absolute inset-0 w-full h-full hover-scale">
                 <div class="absolute inset-0 bg-gradient-to-t from-transparent via-black/5 to-black/70"></div>
-                <img src="{{ $assetBase . '/storage/' . $profil->heroImage }}" alt="Hero SKARIGA" class="w-full h-full object-cover">
+                <img src="{{ $assetBase . '/storage/' . $profil->heroImage }}" alt="Hero SKARIGA"
+                    class="w-full h-full object-cover">
                 <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
             </div>
             <div class="absolute bottom-8 left-3.5 md:left-10 z-10">
@@ -185,9 +191,7 @@
             <h2 class="text-5xl font-bold text-center mb-12">Misi</h2>
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
                 @foreach ($profil->misis as $misi)
-                <x-profilcard
-                    bgColor="{{ $misi->misiColor }}"
-                    title="{!! $misi->misiTitle !!}"
+                <x-profilcard bgColor="{{ $misi->misiColor }}" title="{!! $misi->misiTitle !!}"
                     image="{{ $assetBase . '/storage/' . $misi->misiImage }}">
                     {{ $misi->misiDesc }}
                 </x-profilcard>
@@ -207,8 +211,8 @@
                 <!-- Box 2 -->
                 <div
                     class="flex items-center justify-center gap-3 bg-orange-500 text-white rounded-lg px-6 py-4 shadow-md hover-lift hover-glow">
-                    <img src="{{ $assetBase . '/assets/hand shake.png' }}" class="w-7 h-7 hover-scale invert" alt="handshake"
-                        loading="lazy">
+                    <img src="{{ $assetBase . '/assets/hand shake.png' }}" class="w-7 h-7 hover-scale invert"
+                        alt="handshake" loading="lazy">
                     <span class="font-semibold text-lg cursor-default">Kerja Sama Industri</span>
                 </div>
 
@@ -232,12 +236,13 @@
                     title="PROFIL SMK PGRI 3 MALANG" frameborder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     referrerpolicy="strict-origin-when-cross-origin" allowfullscreen
-                    class="absolute inset-0 w-full h-full object-cover rounded-2xl"><!-- vq=hd<res> -->
+                    class="absolute inset-0 w-full h-full object-cover rounded-2xl">
+                    <!-- vq=hd<res> -->
                 </iframe>
             </div>
         </section>
 
         <!-- Sponsor -->
-        <x-marquee/>
+        <x-marquee />
     </div>
 </x-layout>
