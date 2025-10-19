@@ -3,7 +3,7 @@
         <div class="flex flex-col md:flex-row gap-8 justify-between">
             <!-- School Info -->
             <div class="w-full md:w-1/4">
-                <a href="/"><img class="h-16 mb-4" src="{{ asset('assets/skariga logo 1.png') }}" loading="lazy" alt="School Logo"></a>
+                <a href="/"><img class="h-16 mb-4" src="{{ $assetBase . '/assets/skariga logo 1.png' }}" loading="lazy" alt="School Logo"></a>
                 <p class="text-[#B9B9B9] text-lg font-bold mb-2">Success By Discipline</p>
                 <div class="h-px w-full bg-gray-700 mb-4"></div>
 
@@ -93,11 +93,11 @@
         <!-- Logo Penting -->
         {{-- <div class="border-t border-gray-700 mt-8 pt-6 text-center text-gray-500 text-sm space-x-3"> --}}
         {{-- <div class="flex flex-wrap justify-center items-center gap-6 mt-[-56px]">
-                <img class="w-[420px]" src="{{ asset('assets/logopenting.png') }}" alt="LOGOS">
+                <img class="w-[420px]" src="{{ $assetBase . '/assets/logopenting.png' }}" alt="LOGOS">
     </div> --}}
     {{-- <div class="border-t border-gray-700 mt-8 pt-6 text-center text-gray-500 text-sm space-x-3">  --}}
     <div class="flex flex-wrap justify-center items-center gap-6 mt-[-50px]">
-        <img class="h-12 md:h-16 object-contain inline-block bg-white rounded-xl" src="{{ asset('assets/upscale-logo-penting.png') }}"
+        <img class="h-12 md:h-16 object-contain inline-block bg-white rounded-xl" src="{{ $assetBase . '/assets/upscale-logo-penting.png' }}"
             alt="Yamaha Logo">
     </div>
     {{-- </div> --}}

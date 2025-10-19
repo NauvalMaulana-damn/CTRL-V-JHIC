@@ -20,7 +20,7 @@
                 <!-- Logo -->
                 <div class="flex items-center">
                     <a href="/"><img class="w-16 h-12 md:w-24 md:h-16 object-contain"
-                            src="{{ asset('assets/skariga logo 1.png') }}" alt="Logo SMK PGRI 3 Malang"></a>
+                            src="{{ $assetBase . '/assets/skariga logo 1.png' }}" alt="Logo SMK PGRI 3 Malang"></a>
                     <div class="ml-3 md:ml-4">
                         <div class="text-base md:text-xl font-medium">SMK PGRI 3 MALANG</div>
                         <div class="text-xs md:text-sm font-medium">Succes By Discipline</div>

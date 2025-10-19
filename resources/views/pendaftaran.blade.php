@@ -5,7 +5,7 @@
             <!-- Hero Section -->
             <section class="relative h-[480px] md:h-[535px] mt-2 rounded-xl overflow-hidden">
                 <div class="absolute inset-0">
-                    <img src="{{ asset('assets/header-pendaftaran.png') }}" alt="Hero SKARIGA"
+                    <img src="{{ $assetBase . '/assets/header-pendaftaran.png' }}" alt="Hero SKARIGA"
                         class="w-full h-full object-cover">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
                 </div>
@@ -87,14 +87,14 @@
             <div class="w-full md:w-1/2 ">
                 <section class="relative" id="dafOff">
                     <div class="absolute inset-0 bg-gradient-to-t from-transparent via-black/5 to-black/70"></div>
-                    <img src="{{ asset('assets/bg-p-offline.png') }}"
+                    <img src="{{ $assetBase . '/assets/bg-p-offline.png' }}"
                         class="w-full h-40 object-cover blur-[0.125rem] opacity-80" alt="Daftar Offline">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/45 via-black/30 to-transparent"></div>
                     <div class="absolute inset-0 flex items-center justify-center">
                         <h2 class="text-4xl font-bold text-white">Daftar Offline</h2>
                     </div>
                 </section>
-                <img src="{{ asset('assets/pendaftaran-offline-nobg.png') }}" alt="Hero SKARIGA"
+                <img src="{{ $assetBase . '/assets/pendaftaran-offline-nobg.png' }}" alt="Hero SKARIGA"
                     class="w-full h-auto object-cover  md:ml-10">
             </div>
 
@@ -102,7 +102,7 @@
             <div class="w-full md:w-1/2">
                 <section class="relative" id="dafOn">
                     <div class="absolute inset-0 bg-gradient-to-t from-transparent via-black/5 to-black/70"></div>
-                    <img src="{{ asset('assets/bg-p-online.png') }}"
+                    <img src="{{ $assetBase . '/assets/bg-p-online.png' }}"
                         class="w-full h-40 object-cover blur-[0.125rem] opacity-80" alt="Daftar Online">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/45 via-black/30 to-transparent"></div>
                     <div class="absolute inset-0 flex items-center justify-center">
@@ -112,7 +112,7 @@
                 </section>
                 <div class=" md:mr-5 mt-2">
                     <!-- Bungkus margin kanan di sini -->
-                    <img src="{{ asset('assets/pend-onl-nobg.png') }}" alt="Hero SKARIGA"
+                    <img src="{{ $assetBase . '/assets/pend-onl-nobg.png' }}" alt="Hero SKARIGA"
                         class="w-full h-auto object-cover">
                 </div>
             </div>

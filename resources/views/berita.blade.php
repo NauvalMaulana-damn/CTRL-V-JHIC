@@ -107,7 +107,7 @@
     <div class="news-card bg-white rounded-xl shadow-md overflow-hidden flex flex-col h-full"
         data-type="{{ strtolower($berita->type) }}">
         <div class="relative">
-            <img src="{{ $berita->gambar_url }}" alt="{{ $berita->title }}" class="w-full h-48 object-cover">
+            <img src="{{ $assetBase . $berita->gambar }}" alt="{{ $berita->title }}" class="w-full h-48 object-cover">
             <div class="absolute top-4 left-4">
                 <span class="bg-customOrange text-white px-3 py-1 rounded-full text-xs font-medium">
                     {{ $berita->type }}
@@ -139,10 +139,7 @@
     </div>
     @endforeach
 </div>
-
-
 </div>
-
             <!-- Pagination -->
             <div class="flex justify-center mt-8 space-x-2" id="pagination-container">
                 {{ $beritas->links('pagination::tailwind') }}

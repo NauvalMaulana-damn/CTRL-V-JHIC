@@ -3,7 +3,7 @@
 <div class="bg-customOrange text-white rounded-2xl shadow-md overflow-hidden
     transition-all duration-500 ease-in-out hover:bg-customBlue hover:scale-105 w-full max-w-sm">
 
-    <img src="{{ asset('assets/' . $image) }}"
+    <img src="{{ $assetBase . '/assets/' . $image }}"
         alt="{{ $title }}"
         class="w-full h-48 object-cover"
         loading="lazy">

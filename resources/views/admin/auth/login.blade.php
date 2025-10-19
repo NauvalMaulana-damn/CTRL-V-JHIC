@@ -7,7 +7,7 @@
     <title>Admin Panel - SMK PGRI 3 Malang</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdn.jsdelivr.net/npm/flyonui/dist/flyonui.min.css" rel="stylesheet">
-    <link rel="shortcut icon" href="{{ asset('assets/skariga300rbg.png') }}" type="image/x-icon">
+    <link rel="shortcut icon" href="{{ $assetBase . '/assets/skariga300rbg.png' }}" type="image/x-icon">
 </head>
 
 <body class="bg-gradient-to-br from-blue-50 to-blue-100 flex items-center justify-center min-h-screen">

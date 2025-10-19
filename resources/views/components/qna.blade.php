@@ -1,5 +1,5 @@
 <div class="flex flex-col items-center mt-6">
-    <img class="w-8 h-8" src="{{ asset('assets/faq.png') }}" alt="FAQ">
+    <img class="w-8 h-8" src="{{ $assetBase . '/assets/faq.png' }}" alt="FAQ">
     <h2 class="text-xl font-bold text-dark text-center mt-1">QnA</h2>
 </div>
 

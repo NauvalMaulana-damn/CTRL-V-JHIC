@@ -1,6 +1,6 @@
 @props(['title', 'image'])
 <section class="swiper-slide relative w-full h-full">
-    <img src="{{ asset('assets/' . $image) }}" alt="{{ $title }}"
+    <img src="{{ $assetBase . '/assets/' . $image }}" alt="{{ $title }}"
         class="headnews-img w-full h-[40vh] sm:h-[50vh] md:h-[60vh] lg:h-[70vh] object-cover" />
     <div class="absolute bottom-0 left-0 w-full h-1/2 gradient-overlay"></div>
     <div class="absolute bottom-6 left-5 md:left-8 text-white max-w-4xl" id="x-headnews-content">

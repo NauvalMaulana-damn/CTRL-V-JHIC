@@ -28,7 +28,7 @@
                 @forelse($ekskuls as $ekskul)
                 <tr class="border-b hover:bg-gray-50">
                     <td class="p-3">
-                        <img src="{{ $ekskul->image && $ekskul->image !== 'default.svg' ? asset('storage/' . $ekskul->image) : asset('images/default.svg') }}"
+                        <img src="{{ $ekskul->image && $ekskul->image !== 'default.svg' ? asset('storage/' . $ekskul->image) : $assetBase . '/images/default.svg' }}"
                             class="h-12 w-12 rounded object-cover" alt="">
                     </td>
                     <td class="p-3 font-semibold">{{ $ekskul->title }}</td>

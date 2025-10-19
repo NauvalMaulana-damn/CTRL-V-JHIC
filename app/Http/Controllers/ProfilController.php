@@ -19,13 +19,6 @@ class ProfilController extends Controller
             abort(404, 'Profil tidak ditemukan');
         }
 
-        // Helper function untuk mendapatkan path gambar
-        $getImagePath = function ($image, $default = 'default.svg') {
-            return $image && $image !== 'default.svg'
-                ? asset('storage/' . $image)
-                : asset('images/' . $default);
-        };
-
-        return view('profil', compact('profil', 'getImagePath'));
+        return view('profil', compact('profil'));
     }
 }

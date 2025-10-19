@@ -9,10 +9,10 @@
 
     <!-- Dynamic Asset Base URL -->
     @php
-        $assetBase = config('app.url');
-        if (request()->getHost() === 'smkpgri3mlg.web.id' || request()->getHost() === 'www.smkpgri3mlg.web.id') {
-            $assetBase = 'https://' . request()->getHost();
-        }
+    $assetBase = config('app.url');
+    if (request()->getHost() === 'smkpgri3mlg.web.id' || request()->getHost() === 'www.smkpgri3mlg.web.id') {
+    $assetBase = 'https://' . request()->getHost();
+    }
     @endphp
 
     <link rel="shortcut icon" href="{{ $assetBase }}/assets/skariga300rbg.png" type="image/x-icon">
@@ -25,8 +25,7 @@
             <div class="flex justify-between items-center py-4">
                 <div class="flex items-center">
                     <img class="w-16 h-12 md:w-24 md:h-16 object-contain"
-                         src="{{ $assetBase }}/assets/skariga logo 1.png"
-                         alt="Logo SMK PGRI 3 Malang">
+                        src="{{ $assetBase }}/assets/skariga logo 1.png" alt="Logo SMK PGRI 3 Malang">
                     <h1 class="text-xl font-semibold text-gray-800 ml-4">SKARIGA Admin Panel</h1>
                 </div>
 
@@ -106,7 +105,7 @@
                 </a>
 
                 <a href="{{ route('admin.pendaftaran.index') }}"
-                class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium {{ request()->routeIs('admin.pendaftaran.*') ? 'bg-gray-700 text-white' : '' }}">
+                    class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium {{ request()->routeIs('admin.pendaftaran.*') ? 'bg-gray-700 text-white' : '' }}">
                     <i class="fas fa-graduation-cap mr-2"></i>Pendaftaran
                 </a>
 

@@ -32,7 +32,7 @@
                             class="absolute -top-4 -left-4 bg-green-400 text-green-900 px-3 py-1 rounded-full text-sm font-bold shadow-lg z-20 cursor-default">
                             🥇 Juara Provinsi
                         </div>
-                        <img src="{{ asset('assets/robot-manu.jpg') }}" alt="Gambar" loading="lazy"
+                        <img src="{{ $assetBase . '/assets/robot-manu.jpg' }}" alt="Gambar" loading="lazy"
                             class="w-full h-full object-cover rounded-xl">
                     </div>
                     <!-- Kartu 2 -->
@@ -42,7 +42,7 @@
                             class="absolute -top-4 -left-4 bg-sky-400 text-sky-950 px-3 py-1 rounded-full text-sm font-bold shadow-lg z-20 cursor-default">
                             🎗️ Juara Nasional
                         </div>
-                        <img src="{{ asset('assets/skariga prestasi.jpg') }}" alt="Gambar" loading="lazy"
+                        <img src="{{ $assetBase . '/assets/skariga prestasi.jpg' }}" alt="Gambar" loading="lazy"
                             class="w-full h-full object-cover rounded-xl">
                     </div>
                     <!-- Kartu 3 -->
@@ -52,7 +52,7 @@
                             class="absolute -top-4 -left-4 bg-yellow-400 text-yellow-900 px-3 py-1 rounded-full text-sm font-bold shadow-lg z-0 cursor-default">
                             🏆 Juara Internasional
                         </div>
-                        <img src="{{ asset('assets/skariga intl.webp') }}" alt="Gambar" loading="lazy"
+                        <img src="{{ $assetBase . '/assets/skariga intl.webp' }}" alt="Gambar" loading="lazy"
                             class="w-full h-full object-cover rounded-xl">
                     </div>
                 </div>
@@ -83,7 +83,7 @@
                     🥇 Juara Provinsi
                 </div>
                 <div class="w-full h-80 bg-gray-400 rounded-xl shadow-xl overflow-hidden">
-                    <img src="{{ asset('assets/robot-manu.jpg') }}" class="w-full h-full object-cover" alt="Gambar"
+                    <img src="{{ $assetBase . '/assets/robot-manu.jpg' }}" class="w-full h-full object-cover" alt="Gambar"
                         loading="lazy">
                 </div>
                 <div
@@ -91,7 +91,7 @@
                     🎗️ Juara Nasional
                 </div>
                 <div class="w-full h-80 bg-gray-500 rounded-xl shadow-xl overflow-hidden">
-                    <img src="{{ asset('assets/skariga prestasi.jpg') }}" class="w-full h-full object-cover"
+                    <img src="{{ $assetBase . '/assets/skariga prestasi.jpg' }}" class="w-full h-full object-cover"
                         alt="Gambar" loading="lazy">
                 </div>
                 <div
@@ -99,7 +99,7 @@
                     🏆 Juara Internasional
                 </div>
                 <div class="w-full h-80 bg-black rounded-xl shadow-xl overflow-hidden sm:col-span-2">
-                    <img src="{{ asset('assets/skariga intl.webp') }}" class="w-full h-full object-cover" alt="Gambar"
+                    <img src="{{ $assetBase . '/assets/skariga intl.webp' }}" class="w-full h-full object-cover" alt="Gambar"
                         loading="lazy">
                 </div>
             </div>
@@ -145,7 +145,7 @@
                                 PARA JAWARA
                             </h2>
                         </div>
-                        <img src="{{ asset('assets/troph-pres.png') }}"
+                        <img src="{{ $assetBase . '/assets/troph-pres.png' }}"
                             class="w-20 h-20 sm:w-28 sm:h-28 drop-shadow-md transform scale-125  -rotate-12 ml-3"
                             alt="Gambar" loading="lazy">
                         <div></div>
@@ -156,7 +156,7 @@
                     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
                         @foreach ($prestasis as $prestasi)
                         <div class="bg-white shadow-md rounded-lg p-4">
-                            <img src="{{ $prestasi->gambar ? asset('storage/' . $prestasi->gambar) : asset('assets/default.svg') }}"
+                            <img src="{{ $prestasi->gambar ? $assetBase . '/storage/' . $prestasi->gambar : $assetBase . '/assets/default.svg' }}"
                                 class="w-full h-64 object-cover rounded-lg mb-4" alt="{{ $prestasi->nama }}">
                             <p class="font-semibold">{{ $prestasi->nama }}</p>
                             <p class="text-gray-500 text-sm">{{ $prestasi->subjudul }}</p>

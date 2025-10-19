@@ -71,7 +71,7 @@
         <section class="relative h-[535px] mt-2 rounded-xl overflow-hidden">
             <div class="absolute inset-0 w-full h-full hover-scale">
                 <div class="absolute inset-0 bg-gradient-to-t from-transparent via-black/5 to-black/70"></div>
-                <img src="{{ $getImagePath($profil->heroImage, 'depansekul.jpg') }}" alt="Hero SKARIGA" class="w-full h-full object-cover">
+                <img src="{{ $assetBase . '/storage/' . $profil->heroImage }}" alt="Hero SKARIGA" class="w-full h-full object-cover">
                 <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
             </div>
             <div class="absolute bottom-8 left-3.5 md:left-10 z-10">
@@ -87,16 +87,16 @@
                 <!-- Kolom Kiri: Gambar -->
                 <div class="grid gap-4">
                     <!-- Gambar besar di atas -->
-                    <img src="{{ $getImagePath($profil->profilImage1, 'gedung-seluruh.jpg') }}"
+                    <img src="{{ $assetBase . '/storage/' . $profil->profilImage1 }}"
                         class="rounded-xl shadow-md w-full h-64 object-cover hover-lift hover-brightness"
                         alt="Keseluruhan Gedung">
 
                     <!-- 3 gambar kecil di bawah -->
                     <div class="grid grid-cols-2 gap-4">
-                        <img src="{{ $getImagePath($profil->profilImage2, 'foto-depanadmin.JPG') }}"
+                        <img src="{{ $assetBase . '/storage/' . $profil->profilImage2 }}"
                             class="rounded-xl shadow-md h-40 w-full object-cover hover-lift hover-brightness"
                             alt="Gedung 1">
-                        <img src="{{ $getImagePath($profil->profilImage3, 'depan-alfa.webp') }}"
+                        <img src="{{ $assetBase . '/storage/' . $profil->profilImage3 }}"
                             class="rounded-xl shadow-md h-40 w-full object-cover hover-lift hover-brightness"
                             alt="Gedung 2">
                     </div>
@@ -145,7 +145,7 @@
                 <div class="grid md:grid-cols-2 items-start relative py-12">
                     <div class="relative flex justify-center items-start w-full">
                         <!-- Gambar Kepala Sekolah - Desktop -->
-                        <img src="{{ $getImagePath($profil->visiImage, 'bp.Luqman_kepsek-removebg-preview.png') }}"
+                        <img src="{{ $assetBase . '/storage/' . $profil->visiImage }}"
                             alt="Kepala Sekolah SMK PGRI 3 Malang"
                             class="hidden md:block absolute top-0 left-[40%] transform -translate-x-1/2 -translate-y-[41.2%] w-full md:w-[100%] max-h-[450px] object-contain">
 
@@ -156,7 +156,7 @@
 
                         <!-- Mobile Layout -->
                         <div class="md:hidden flex flex-col items-center w-full bg-transparent rounded-2xl p-6">
-                            <img src="{{ $getImagePath($profil->visiImage, 'bp.Luqman_kepsek-removebg-preview.png') }}"
+                            <img src="{{ $assetBase . '/storage/' . $profil->visiImage }}"
                                 alt="Kepala Sekolah SMK PGRI 3 Malang" class="w-full max-w-[280px] object-contain mb-6">
 
                             <div class="text-center text-white">
@@ -187,7 +187,7 @@
                 <x-profilcard
                     bgColor="{{ $misi->misiColor }}"
                     title="{!! $misi->misiTitle !!}"
-                    image="{{ $getImagePath($misi->misiImage) }}">
+                    image="{{ $assetBase . '/storage/' . $misi->misiImage }}">
                     {{ $misi->misiDesc }}
                 </x-profilcard>
                 @endforeach
@@ -198,7 +198,7 @@
                 <!-- Box 1 -->
                 <div
                     class="flex items-center justify-center gap-3 bg-orange-500 text-white rounded-lg px-6 py-4 shadow-md hover-lift hover-glow">
-                    <img src="{{ asset('assets/grad.png') }}" class="w-7 h-7 hover-scale invert" alt="graduation"
+                    <img src="{{ $assetBase . '/assets/grad.png' }}" class="w-7 h-7 hover-scale invert" alt="graduation"
                         loading="lazy">
                     <span class="font-semibold text-lg cursor-default">Lulus Siap Kerja</span>
                 </div>
@@ -206,7 +206,7 @@
                 <!-- Box 2 -->
                 <div
                     class="flex items-center justify-center gap-3 bg-orange-500 text-white rounded-lg px-6 py-4 shadow-md hover-lift hover-glow">
-                    <img src="{{ asset('assets/hand shake.png') }}" class="w-7 h-7 hover-scale invert" alt="handshake"
+                    <img src="{{ $assetBase . '/assets/hand shake.png' }}" class="w-7 h-7 hover-scale invert" alt="handshake"
                         loading="lazy">
                     <span class="font-semibold text-lg cursor-default">Kerja Sama Industri</span>
                 </div>
@@ -214,7 +214,7 @@
                 <!-- Box 3 -->
                 <div
                     class="flex items-center justify-center gap-3 bg-orange-500 text-white rounded-lg px-6 py-4 shadow-md hover-lift hover-glow">
-                    <img src="{{ asset('assets/trophy.png') }}" class="w-7 h-7 hover-scale invert" alt="trophy"
+                    <img src="{{ $assetBase . '/assets/trophy.png' }}" class="w-7 h-7 hover-scale invert" alt="trophy"
                         loading="lazy">
                     <span class="font-semibold text-lg cursor-default">Prestasi Tingkat Nasional</span>
                 </div>

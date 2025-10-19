@@ -12,17 +12,16 @@ export default defineConfig({
         host: '0.0.0.0',
         port: 5173,
         allowedHosts: [
-            '127.0.0.1',
             'smkpgri3mlg.jh-beon.cloud',
             'smkpgri3mlg.web.id',
+            'www.smkpgri3mlg.web.id'
         ],
+        cors: true,
     },
-    // TAMBAHKAN INI: Base URL relative
-    base: '/build/',
     build: {
         minify: 'terser',
         cssCodeSplit: true,
-        // Assets akan di-build ke folder build/assets
+        // Pastikan assets menggunakan relative path
         assetsDir: 'assets',
         rollupOptions: {
             output: {

@@ -53,7 +53,6 @@ return [
     */
 
     'url' => env('APP_URL', 'http://smkpgri3mlg.jh-beon.cloud'),
-    'asset_url' => env('ASSET_URL', null),
 
     /*
     |--------------------------------------------------------------------------

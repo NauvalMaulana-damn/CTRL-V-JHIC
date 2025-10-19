@@ -39,7 +39,7 @@
                         </span>
                     </td>
                     <td class="p-3">
-                        <img src="{{ $jurusan->gambar && $jurusan->gambar !== 'default.svg' ? asset('storage/' . $jurusan->gambar) : asset('images/default.svg') }}"
+                        <img src="{{ $jurusan->gambar && $jurusan->gambar !== 'default.svg' ? asset('storage/' . $jurusan->gambar) : $assetBase . '/images/default.svg' }}"
                              class="h-12 w-12 rounded object-cover" alt="{{ $jurusan->jurusan }}">
                     </td>
                     <td class="p-3 text-center">

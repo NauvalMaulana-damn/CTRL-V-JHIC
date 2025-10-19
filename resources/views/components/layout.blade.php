@@ -10,9 +10,8 @@
     <!-- Dynamic Base URL untuk Assets -->
     @php
     $assetBase = config('app.url');
-    // Jika akses dari domain sekunder, gunakan domain tersebut untuk assets
     if (request()->getHost() === 'smkpgri3mlg.web.id' || request()->getHost() === 'www.smkpgri3mlg.web.id') {
-    $assetBase = 'https://' . request()->getHost();
+        $assetBase = 'https://' . request()->getHost();
     }
     @endphp
 

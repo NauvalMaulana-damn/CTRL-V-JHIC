@@ -211,7 +211,7 @@
             <!-- Hero Section -->
             <section class="relative h-[535px] mt-2 rounded-xl overflow-hidden">
                 <div class="absolute inset-0 w-full h-full hover-scale">
-                    <img src="{{ asset('assets/jurusan.png') }}" alt="Hero SKARIGA" class="w-full h-full object-cover "
+                    <img src="{{ $assetBase . '/assets/jurusan.png' }}" alt="Hero SKARIGA" class="w-full h-full object-cover "
                         loading="lazy">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
                 </div>

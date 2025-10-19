@@ -12,6 +12,7 @@ return Application::configure(basePath: dirname(__DIR__))
     )
     ->withMiddleware(function (Middleware $middleware): void {
         $middleware->alias([
+            'cors' => \App\Http\Middleware\CorsMiddleware::class,
             'checkdomain' => \App\Http\Middleware\CheckDomain::class,
             'admin' => \App\Http\Middleware\AdminMiddleware::class,
             'trackvisitor' => \App\Http\Middleware\TrackVisitor::class,

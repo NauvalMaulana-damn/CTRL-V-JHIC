@@ -3,7 +3,7 @@
         <section class="w-full relative h-[600px] mt-2 rounded-xl overflow-hidden">
             <div class="absolute inset-0 max-w-full mx-auto h-full hover-scale rounded-2xl overflow-hidden">
                 <div class="absolute inset-0 bg-gradient-to-t from-transparent via-black/5 to-black/70"></div>
-                <img src="{{ asset('assets/alumni.png') }}" alt="Hero SKARIGA" loading="lazy"
+                <img src="{{ $assetBase . '/assets/alumni.png' }}" alt="Hero SKARIGA" loading="lazy"
                     class="w-full h-full object-cover">
                 <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
             </div>
@@ -48,7 +48,7 @@
                         <div
                             class="relative h-40 bg-gradient-to-r {{ $alumni->bg_color }}">
                             <div class="absolute -bottom-12 left-1/2 transform -translate-x-1/2">
-                                <img src="{{ $alumni->image && $alumni->image !== 'default.svg' ? asset('storage/' . $alumni->image) : asset('images/default.svg') }}"
+                                <img src="{{ $alumni->image && $alumni->image !== 'default.svg' ? $assetBase . '/storage/' . $alumni->image : $assetBase . '/images/default.svg' }}"
                                     alt="{{ $alumni->name }}" loading="lazy"
                                     class="alumni-image w-24 h-24 rounded-full object-cover">
                             </div>

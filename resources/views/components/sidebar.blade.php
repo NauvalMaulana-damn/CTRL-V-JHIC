@@ -127,7 +127,7 @@
             </svg>
 
             <!-- Logo -->
-            <img src="{{ asset('assets/skariga logo 1.png') }}" alt="Logo" class="w-10 h-10 object-contain">
+            <img src="{{ $assetBase . '/assets/skariga logo 1.png' }}" alt="Logo" class="w-10 h-10 object-contain">
         </div>
     </button>
 
@@ -142,7 +142,7 @@
         <!-- Header -->
         <div class="p-5 border-b border-gray-200/50">
             <div class="flex items-center">
-                <img class="w-18 h-12" src="{{ asset('assets/skariga logo 1.png') }}" alt="Logo">
+                <img class="w-18 h-12" src="{{ $assetBase . '/assets/skariga logo 1.png' }}" alt="Logo">
                 <h1 class="text-xl font-bold ml-3 text-dark leading-tight">SMK PGRI 3 MALANG</h1>
             </div>
         </div>
@@ -152,14 +152,14 @@
 
             <!-- Menu -->
             @foreach ([
-            ['icon' => asset('assets/home (1).png'), 'label' => 'Beranda', 'href' => '/'],
-            ['icon' => asset('assets/news.png'), 'label' => 'Berita', 'href' => '/berita'],
-            ['icon' => asset('assets/profil.png'), 'label' => 'Profil', 'href' => '/profil'],
-            ['icon' => asset('assets/trophy.png'), 'label' => 'Prestasi', 'href' => '/prestasi'],
-            ['icon' => asset('assets/major.png'), 'label' => 'Jurusan', 'href' => '/jurusan'],
-            ['icon' => asset('assets/extra.png'), 'label' => 'Ekstrakurikuler', 'href' => '/ekstrakurikuler'],
-            ['icon' => asset('assets/grad.png'), 'label' => 'Alumni', 'href' => '/alumni'],
-            ['icon' => asset('assets/join.png'), 'label' => 'Pendaftaran', 'href' => '/pendaftaran'],
+            ['icon' => $assetBase . '/assets/home (1).png', 'label' => 'Beranda', 'href' => '/'],
+            ['icon' => $assetBase . '/assets/news.png', 'label' => 'Berita', 'href' => '/berita'],
+            ['icon' => $assetBase . '/assets/profil.png', 'label' => 'Profil', 'href' => '/profil'],
+            ['icon' => $assetBase . '/assets/trophy.png', 'label' => 'Prestasi', 'href' => '/prestasi'],
+            ['icon' => $assetBase . '/assets/major.png', 'label' => 'Jurusan', 'href' => '/jurusan'],
+            ['icon' => $assetBase . '/assets/extra.png', 'label' => 'Ekstrakurikuler', 'href' => '/ekstrakurikuler'],
+            ['icon' => $assetBase . '/assets/grad.png', 'label' => 'Alumni', 'href' => '/alumni'],
+            ['icon' => $assetBase . '/assets/join.png', 'label' => 'Pendaftaran', 'href' => '/pendaftaran'],
             ] as $item)
             <div class="menu-item flex items-center py-3 px-4 mb-2 cursor-pointer rounded-lg
                         transition hover:bg-customBlue hover:text-white hover:shadow-md">

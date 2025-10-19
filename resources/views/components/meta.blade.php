@@ -6,7 +6,7 @@
 $author = "CTRL + V";
 $title = "SMK PGRI 3 MALANG";
 $desc = "Manajemen presensi online berbasis website secara mudah dan praktis.";
-$image = asset('assets/skariga(300x300).jpg');
+$image = $assetBase . '/assets/skariga(300x300).jpg';
 $keywords = "SMK PGRI 3 MALANG, SKARIGA, SMK PGRI, SMK PGRI MALANG, SMK PGRI 3, SMK, SMK 3 MALANG, PGRI, SMK MALANG, PGRI 3 MALANG, PGRI 3";
 $lower_keywords = strtolower($keywords);
 @endphp
