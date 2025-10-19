@@ -6,9 +6,9 @@
 <div id="chatbox" class="h-80 overflow-y-auto border rounded-lg p-3 bg-gray-50 text-sm flex flex-col gap-2 shadow-md">
 </div>
 
-<div id="question"
-    class="p-4 text-center max-w-full text-sm border border-gray-300 rounded-md bg-white cursor-pointer"
-    onclick="document.getElementById('message').value = this.textContent; document.getElementById('message').focus();">Apa saja jurusannya?
+<div id="question" class="p-4 text-center max-w-full text-sm border border-gray-300 rounded-md bg-white cursor-pointer"
+    onclick="document.getElementById('message').value = this.textContent; document.getElementById('message').focus();">
+    Apa saja jurusannya?
 </div>
 <form id="chatForm" class="flex max-w-full mt-2 h-24">
     <textarea id="message" name="message" placeholder="Tulis pertanyaan kamu..." class="flex-grow border w-full rounded-l-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-300
@@ -134,37 +134,24 @@ function appendTyping() {
     return typing;
 }
 
-function changeQuestion(index) {
-    const questionElement = document.getElementById('question');
-    const questions = [
-        "Apa saja jurusannya?",
-        "Bagaimana cara mendaftar?",
-        "Apa saja ekstrakurikuler yang ada?",
-        "Apa jurusan yang paling banyak diminati?",
-        "Dimana letak sekolahnya?",
-        "Apa prestasi terbaik yang pernah diperolah?",
-        "Hubungkan saya dengan admin.",
-        "Siapa kepala sekolahnya?",
-        "Apa saja fasilitas yang ada di sekolah?",
-        "Bagaimana lulusan sekolahnya?",
-        "Apa visi dan misinya?",
-        "Bagaimana sejarahnya?",
-        "Terakreditasi apa sekolahnya?",
-    ];
+const questionElement = document.getElementById('question');
+const questions = [
+    "Apa saja jurusannya?",
+    "Bagaimana cara mendaftar?",
+    "Apa saja ekstrakurikuler yang ada?",
+    "Apa jurusan yang paling banyak diminati?",
+    "Dimana letak sekolahnya?",
+    "Apa prestasi terbaik yang pernah diperolah?",
+    "Hubungkan saya dengan admin.",
+    "Siapa kepala sekolahnya?",
+    "Apa saja fasilitas yang ada di sekolah?",
+    "Bagaimana lulusan sekolahnya?",
+    "Apa visi dan misinya?",
+    "Bagaimana sejarahnya?",
+    "Terakreditasi apa sekolahnya?",
+];
 
-    questionElement.textContent = questions[index];
-}
-
-setTimeout(() => {
-    let currentQuestionIndex = 0;
-    while (currentQuestionIndex < questions.length) {
-        changeQuestion(currentQuestionIndex);
-        currentQuestionIndex++;
-        if (currentQuestionIndex >= questions.length) {
-            currentQuestionIndex = 0;
-        }
-    }
-}, 5000);
+questionElement.textContent = questions[2];
 
 // Inisialisasi saat halaman dimuat
 document.addEventListener('DOMContentLoaded', function() {
