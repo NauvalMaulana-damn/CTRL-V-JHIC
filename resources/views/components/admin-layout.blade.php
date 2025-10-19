@@ -58,7 +58,7 @@
     <!-- Navigation Menu -->
     <nav class="bg-gray-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex space-x-4">
+            <div class="flex flex-wrap gap-2 py-3">
                 <a href="{{ route('admin.dashboard') }}"
                     class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium {{ request()->routeIs('admin.dashboard') ? 'bg-gray-700 text-white' : '' }}">
                     <i class="fas fa-tachometer-alt mr-2"></i>Dashboard
