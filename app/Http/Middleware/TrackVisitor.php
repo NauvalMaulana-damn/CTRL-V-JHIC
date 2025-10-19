@@ -18,7 +18,6 @@ class TrackVisitor
     $visitorId = Cookie::get('visitor_id') ?? 'visitor_'.md5(uniqid().$request->ip().$request->userAgent());
     Cookie::queue('visitor_id', $visitorId, 60 * 24 * 30);
 
-    // 🔴 UPDATE: Always update timestamp untuk activity terbaru
     Visitor::updateOrCreate(
         ['visitor_id' => $visitorId],
         [
@@ -35,10 +34,9 @@ class TrackVisitor
     private function shouldSkipTracking(Request $request): bool
     {
         $path = $request->path();
-        return str_contains($path, 'admin') ||
-               str_contains($path, 'login') ||
-               str_contains($path, 'dashboard') ||
-               str_contains($path, 'api') ||
+        return str_contains($path, '/admin') ||
+               str_contains($path, 'admin/dashboard') ||
+               str_contains($path, '/visitors/api') ||
                $request->ajax();
     }
 }
