@@ -1,7 +1,7 @@
 <x-layout title="SMK PGRI 3 Malang - Success by Discipline">
     <script>
     // Optimasi: Data transfer lebih efisien
-    window.beritas = @json($beritas->latest()->take(4));
+    window.beritas = @json($beritas->take(4));
     </script>
 
     <!-- Main content with news sidebar -->
@@ -123,7 +123,7 @@
             <div class="bg-white p-4 md:p-5 rounded-xl shadow-sm">
                 <h3 class="font-bold text-lg md:text-xl mb-4 border-b-2 border-customOrange pb-2">Berita Terbaru</h3>
                 <div id="x-sidenews" class="space-y-4" data-news-container>
-                    @foreach ($beritas->latest()->take(4) as $berita)
+                    @foreach ($beritas->take(4) as $berita)
                     <div class="sidenews-item cursor-pointer transition-colors duration-200 hover:bg-gray-50 p-2 rounded-lg"
                          data-news-id="{{ $berita->id }}"
                          data-news-title="{{ $berita->title }}"
