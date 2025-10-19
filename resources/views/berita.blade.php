@@ -1,4 +1,5 @@
 <x-layout title="Berita - SMK PGRI 3 Malang">
+    <x-assetbase/>
     <div class="bg-gray-50">
         <section class="bg-gradient-to-r from-custombbg-customBlue text-white py-12">
             <div class="container mx-auto px-4 py-4">

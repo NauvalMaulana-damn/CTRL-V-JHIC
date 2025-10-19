@@ -1,4 +1,5 @@
 <x-layout title="{{ $berita->title }} - SMK PGRI 3 Malang">
+    <x-assetbase/>
     <div class="bg-gray-50">
         <!-- Header Kosong (Hanya background) -->
 

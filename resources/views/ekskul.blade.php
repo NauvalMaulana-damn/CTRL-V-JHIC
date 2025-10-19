@@ -1,4 +1,5 @@
 <x-layout title="Ekstrakurikuler - SMK PGRI 3 Malang" :headerTransparent="false">
+    <x-assetbase/>
     <div class="h-full h-max-content container mx-auto px-4 py-6">
         <!-- Hero SKARIGA -->
         <section class="relative h-[800px] mt-2 rounded-xl overflow-hidden">

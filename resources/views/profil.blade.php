@@ -1,4 +1,5 @@
 <x-layout title="Profil - SMK PGRI 3 Malang" :headerTransparent="false">
+    <x-assetbase/>
     <style>
     @keyframes scroll {
         0% {

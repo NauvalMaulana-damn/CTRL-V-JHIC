@@ -1,4 +1,5 @@
 <x-layout title="SMK PGRI 3 Malang - Success by Discipline">
+    <x-assetbase/>
     <script>
         // Pass data dari PHP ke JavaScript sebagai array object, bukan JSON string
         window.beritas = @json($beritas);

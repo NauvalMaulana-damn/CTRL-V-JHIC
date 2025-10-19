@@ -1,4 +1,5 @@
 <x-layout title="Jurusan - SMK PGRI 3 Malang">
+    <x-assetbase/>
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <style>
     /* Custom scrollbar untuk slider */

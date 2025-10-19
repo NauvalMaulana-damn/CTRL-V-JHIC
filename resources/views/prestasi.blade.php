@@ -1,4 +1,5 @@
 <x-layout title="Prestasi - SMK PGRI 3 Malang">
+    <x-assetbase/>
     <div class="h-full container mx-auto px-4 py-6">
         <!-- Hero Section -->
         <!-- ✅ Versi Desktop (tetap seperti semula) -->
