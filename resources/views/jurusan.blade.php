@@ -326,8 +326,8 @@
             <!-- ELEKTRO -->
             <section id="elektro" class="mt-16 max-w-full mx-auto">
                 <h3 class="text-3xl font-bold mb-6 text-center">ELEKTRO</h3>
-                <div class="slider-container overflow-x-auto">
-                    <div class="flex space-x-6 pb-4 slider snap-x snap-mandatory">
+                <div class="slider-container overflow-x-auto lg:justify-center">
+                    <div class="flex space-x-6 pb-4 slider snap-x snap-mandatory lg:justify-center">
                         @foreach ($jurusans as $jurusan)
                         @if ($jurusan->departemen == "ELEKTRO")
                         <x-jurcard title="{!! $jurusan->jurusan !!}" image="{{ $jurusan->gambar }}"
@@ -343,8 +343,8 @@
             <!-- OTOMOTIF -->
             <section id="otomotif" class="mt-16 max-w-full mx-auto">
                 <h3 class="text-3xl font-bold mb-6 text-center">OTOMOTIF</h3>
-                <div class="slider-container overflow-x-auto">
-                    <div class="flex space-x-6 pb-4 slider snap-x snap-mandatory">
+                <div class="slider-container overflow-x-auto lg:justify-center">
+                    <div class="flex space-x-6 pb-4 slider snap-x snap-mandatory lg:justify-center">
                         @foreach ($jurusans as $jurusan)
                         @if ($jurusan->departemen == "OTOMOTIF")
                         <x-jurcard title="{!! $jurusan->jurusan !!}" image="{{ $jurusan->gambar }}"
@@ -360,8 +360,8 @@
             <!-- PEMESINAN -->
             <section id="pemesinan" class="mt-16 max-w-full mx-auto ">
                 <h3 class="text-3xl font-bold mb-6 text-center">PEMESINAN</h3>
-                <div class="slider-container overflow-x-auto">
-                    <div class=" flex space-x-6 pb-4 slider snap-x snap-mandatory">
+                <div class="slider-container overflow-x-auto lg:justify-center">
+                    <div class=" flex space-x-6 pb-4 slider snap-x snap-mandatory lg:justify-center">
                         @foreach ($jurusans as $jurusan)
                         @if ($jurusan->departemen == "PEMESINAN")
                         <x-jurcard title="{!! $jurusan->jurusan !!}" image="{{ $jurusan->gambar }}"
@@ -377,8 +377,8 @@
             <!-- TIK -->
             <section id="tik" class="mt-16 max-w-full mx-auto justify-center">
                 <h3 class="text-3xl font-bold mb-6 text-center">TEKNOLOGI INFORMASI & KOMUNIKASI</h3>
-                <div class="slider-container overflow-x-auto">
-                    <div class=" flex space-x-6 pb-4 slider snap-x snap-mandatory">
+                <div class="slider-container overflow-x-auto lg:justify-center">
+                    <div class=" flex space-x-6 pb-4 slider snap-x snap-mandatory lg:justify-center">
                         @foreach ($jurusans as $jurusan)
                         @if ($jurusan->departemen == "TIK")
                         <x-jurcard title="{!! $jurusan->jurusan !!}" image="{{ $jurusan->gambar }}"
