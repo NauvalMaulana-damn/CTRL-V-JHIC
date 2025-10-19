@@ -316,7 +316,7 @@
                         <p class="text-gray-600">Statistik ini menampilkan persentase kunjungan ke setiap departemen</p>
                         <div class="mt-4 p-3 bg-purple-50 rounded-lg">
                             <p class="text-sm text-purple-700">📊 <strong>Total Kunjungan:</strong> <span
-                                    id="total-clicks">0</span> kali</p>
+                                    id="total-clicks"></span> kali</p>
                         </div>
                     </div>
                 </section>
