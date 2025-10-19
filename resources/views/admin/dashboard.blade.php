@@ -400,20 +400,21 @@
 
         const ctx = document.getElementById('visitorsChart').getContext('2d');
 
+        // Destroy chart lama jika ada
         if (chart) {
             chart.destroy();
         }
 
         // Buat chart baru
         chart = new Chart(ctx, {
-            type: 'bar',
+            type: 'line',
             data: {
                 labels: labels,
                 datasets: [{
                     label: 'Jumlah Pengunjung',
                     data: totals,
                     borderColor: 'rgb(37, 99, 235)',
-                    backgroundColor: 'rgba(37, 99, 235, 0.8)',
+                    backgroundColor: 'rgba(37, 99, 235, 0.2)',
                     tension: 0.3,
                     fill: true,
                     pointRadius: 5,
