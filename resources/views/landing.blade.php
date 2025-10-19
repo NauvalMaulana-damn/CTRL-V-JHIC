@@ -13,8 +13,8 @@
                 <div class="swiper mySwiper rounded-xl overflow-hidden"
                      x-init="setTimeout(() => swiperLoaded = true, 100)">
                     <div class="swiper-wrapper" id="x-headnews"></div>
-                    <div class="swiper-button-prev text-white"></div>
-                    <div class="swiper-button-next text-white"></div>
+                    <div class="swiper-button-prev text-white" style="color: white;"></div>
+                    <div class="swiper-button-next text-white" style="color: white;"></div>
                     <div class="swiper-pagination"></div>
                 </div>
             </section>
