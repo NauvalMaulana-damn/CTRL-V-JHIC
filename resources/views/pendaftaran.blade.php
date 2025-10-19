@@ -5,7 +5,7 @@
             <!-- Hero Section -->
             <section class="relative h-[480px] md:h-[535px] mt-2 rounded-xl overflow-hidden">
                 <div class="absolute inset-0">
-                    <img src="{{ $assetBase . '/assets/header-pendaftaran.png' }}" alt="Hero SKARIGA"
+                    <img src="{{ $assetBase . '/assets/header-pendaftaran.webp' }}" alt="Hero SKARIGA"
                         class="w-full h-full object-cover">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
                 </div>
@@ -88,8 +88,8 @@
             <div class="w-full md:w-1/2 ">
                 <section class="relative" id="dafOff">
                     <div class="absolute inset-0 bg-gradient-to-t from-transparent via-black/5 to-black/70"></div>
-                    <img src="{{ $assetBase . '/assets/bg-p-offline.png' }}"
-                        class="w-full h-40 object-cover blur-[0.125rem] opacity-80" alt="Daftar Offline">
+                    <img src="{{ $assetBase . '/assets/bg-p-offline_11zon.webp' }}"
+                        class="w-full h-40 object-cover blur-[0.125rem] opacity-80" alt="Daftar Offline" width="100%" height="160">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/45 via-black/30 to-transparent"></div>
                     <div class="absolute inset-0 flex items-center justify-center">
                         <h2 class="text-4xl font-bold text-white">Daftar Offline</h2>
@@ -103,8 +103,8 @@
             <div class="w-full md:w-1/2">
                 <section class="relative" id="dafOn">
                     <div class="absolute inset-0 bg-gradient-to-t from-transparent via-black/5 to-black/70"></div>
-                    <img src="{{ $assetBase . '/assets/bg-p-online.png' }}"
-                        class="w-full h-40 object-cover blur-[0.125rem] opacity-80" alt="Daftar Online">
+                    <img src="{{ $assetBase . '/assets/bg-p-online.webp' }}"
+                        class="w-full h-40 object-cover blur-[0.125rem] opacity-80" alt="Daftar Online" width="100%" height="160">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/45 via-black/30 to-transparent"></div>
                     <div class="absolute inset-0 flex items-center justify-center">
                         <h2 class="text-4xl font-bold text-white">Daftar Online</h2>
