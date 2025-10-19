@@ -49,8 +49,7 @@ public function getVisitorData()
     try {
         // Total semua pengunjung
         $totalVisitors = Visitor::count();
-
-        // 🔴 FIX: Pengunjung aktif (dalam 15 menit terakhir, bukan 30)
+        
         $activeVisitors = Visitor::where('visited_at', '>=', now()->subMinutes(15))
             ->distinct('visitor_id')
             ->count('visitor_id');

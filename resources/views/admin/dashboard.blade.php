@@ -319,7 +319,8 @@
                                 </div>
                             </div>
                             <div>
-                                <span class="text-sm font-medium text-gray-900">{{ $log->user->username ?? 'System' }}</span>
+                                <span
+                                    class="text-sm font-medium text-gray-900">{{ $log->user->username ?? 'System' }}</span>
                                 <span class="text-sm text-gray-600 ml-2">{{ $log->description }}</span>
                                 <span class="text-xs text-gray-400 block mt-1">
                                     {{ $log->created_at->diffForHumans() }}
@@ -348,17 +349,19 @@
         </div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script>
     let chart = null;
+    let visitorUpdateInterval;
 
     async function fetchVisitorData() {
         try {
             const res = await fetch('{{ route("admin.visitors.api") }}', {
                 headers: {
                     'X-Requested-With': 'XMLHttpRequest',
-                    'Accept': 'application/json'
-                }
+                    'Accept': 'application/json',
+                    'Cache-Control': 'no-cache'
+                },
+                cache: 'no-cache'
             });
 
             if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
@@ -366,7 +369,7 @@
             const data = await res.json();
             if (!data.success) throw new Error(data.error || 'API returned error');
 
-            // Update angka di dashboard
+            // Update angka di dashboard - REAL TIME
             document.getElementById('totalVisitors').textContent = data.totalVisitors.toLocaleString();
             document.getElementById('activeVisitors').textContent = data.activeVisitors.toLocaleString();
             document.getElementById('todayVisitors').textContent = data.todayVisitors.toLocaleString();
@@ -374,80 +377,102 @@
             // Sembunyikan teks loading
             document.getElementById('loadingText').style.display = 'none';
 
-            // Siapkan data chart
-            const labels = data.weeklyVisitors.map(v => {
-                const date = new Date(v.date);
-                return date.toLocaleDateString('id-ID', {
-                    weekday: 'short',
-                    day: 'numeric',
-                    month: 'short'
-                });
-            });
-
-            const totals = data.weeklyVisitors.map(v => v.total);
-
-            const ctx = document.getElementById('visitorsChart').getContext('2d');
-
-            // Destroy chart lama
-            if (chart) {
-                chart.destroy();
-            }
-
-            // Buat chart baru dengan FIXED height
-            chart = new Chart(ctx, {
-                type: 'line',
-                data: {
-                    labels: labels,
-                    datasets: [{
-                        label: 'Jumlah Pengunjung',
-                        data: totals,
-                        borderColor: 'rgb(37, 99, 235)',
-                        backgroundColor: 'rgba(37, 99, 235, 0.1)',
-                        tension: 0.3,
-                        fill: true,
-                        pointRadius: 5,
-                        pointHoverRadius: 7,
-                        pointBackgroundColor: 'rgb(37, 99, 235)',
-                        pointBorderColor: 'white',
-                        pointBorderWidth: 2,
-                    }],
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    plugins: {
-                        legend: {
-                            display: false
-                        }
-                    },
-                    scales: {
-                        y: {
-                            beginAtZero: true,
-                            ticks: {
-                                precision: 0
-                            },
-                            suggestedMax: Math.max(...totals) > 0 ? Math.max(...totals) + 2 :
-                                10 // FIXED MAX
-                        }
-                    },
-                    layout: {
-                        padding: {
-                            top: 10,
-                            bottom: 10
-                        }
-                    }
-                },
-            });
+            // Update chart hanya jika data berubah
+            updateVisitorChart(data.weeklyVisitors);
 
         } catch (err) {
-            console.error('Error:', err);
-            document.getElementById('loadingText').innerHTML =
-                '<div class="text-red-500">Gagal memuat data</div>';
+            console.error('Error fetching visitor data:', err);
+            // Jangan tampilkan error terus menerus, coba lagi nanti
         }
     }
 
-    // Load sekali saja, hapus interval
-    document.addEventListener('DOMContentLoaded', fetchVisitorData);
-    </script>
+    function updateVisitorChart(weeklyVisitors) {
+        const labels = weeklyVisitors.map(v => {
+            const date = new Date(v.date);
+            return date.toLocaleDateString('id-ID', {
+                weekday: 'short',
+                day: 'numeric',
+                month: 'short'
+            });
+        });
 
+        const totals = weeklyVisitors.map(v => v.total);
+
+        const ctx = document.getElementById('visitorsChart').getContext('2d');
+
+        // Destroy chart lama jika ada
+        if (chart) {
+            chart.destroy();
+        }
+
+        // Buat chart baru
+        chart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: 'Jumlah Pengunjung',
+                    data: totals,
+                    borderColor: 'rgb(37, 99, 235)',
+                    backgroundColor: 'rgba(37, 99, 235, 0.1)',
+                    tension: 0.3,
+                    fill: true,
+                    pointRadius: 5,
+                    pointHoverRadius: 7,
+                    pointBackgroundColor: 'rgb(37, 99, 235)',
+                    pointBorderColor: 'white',
+                    pointBorderWidth: 2,
+                }],
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        display: false
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        ticks: {
+                            precision: 0
+                        },
+                        suggestedMax: Math.max(...totals) > 0 ? Math.max(...totals) + 2 : 10
+                    }
+                },
+                layout: {
+                    padding: {
+                        top: 10,
+                        bottom: 10
+                    }
+                }
+            },
+        });
+    }
+
+    // Real-time update setiap 10 detik
+    function startRealTimeUpdates() {
+        // Load pertama kali
+        fetchVisitorData();
+
+        // Update setiap 10 detik
+        visitorUpdateInterval = setInterval(fetchVisitorData, 10000);
+    }
+
+    // Stop updates ketika tab tidak aktif (hemat resources)
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            clearInterval(visitorUpdateInterval);
+        } else {
+            startRealTimeUpdates();
+        }
+    });
+
+    // Mulai real-time updates ketika page load
+    document.addEventListener('DOMContentLoaded', startRealTimeUpdates);
+
+    // Juga update ketika user kembali ke tab ini
+    document.addEventListener('focus', fetchVisitorData);
+    </script>
 </x-admin-layout>
