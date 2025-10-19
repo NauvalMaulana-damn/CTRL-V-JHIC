@@ -6,7 +6,8 @@
 <div id="chatbox" class="h-80 overflow-y-auto border rounded-lg p-3 bg-gray-50 text-sm flex flex-col gap-2 shadow-md">
 </div>
 
-<div id="question" class="h-8 px-2 py-3 text-center max-w-full text-sm border border-gray-300 rounded-md bg-white cursor-pointer"
+<div id="question"
+    class="h-8 px-2 py-3 text-center max-w-full text-sm border border-gray-300 rounded-md bg-white cursor-pointer"
     onclick="document.getElementById('message').value = this.textContent; document.getElementById('message').focus();">
 </div>
 <form id="chatForm" class="flex max-w-full mt-2 h-24">
@@ -135,7 +136,7 @@ function appendTyping() {
 
 function changeQuestion(index) {
     const questionElement = document.getElementById('question');
-    const question = [
+    const questions = [
         "Apa saja jurusannya?",
         "Bagaimana cara mendaftar?",
         "Apa saja ekstrakurikuler yang ada?",
@@ -151,9 +152,7 @@ function changeQuestion(index) {
         "Terakreditasi apa sekolahnya?",
     ];
 
-    for (const q of question) {
-        questionElement.textContent = q[index];
-    }
+    questionElement.textContent = questions[index];
 }
 
 // Inisialisasi saat halaman dimuat
@@ -161,9 +160,11 @@ document.addEventListener('DOMContentLoaded', function() {
     cleanupOldHistory();
     loadChatHistory();
 
+    let currentQuestionIndex = 0;
+
     setInterval(() => {
-        currentIndex = (currentIndex + 1) % totalQuestions;
-        changeQuestion(currentIndex);
+        changeQuestion(currentQuestionIndex);
+        currentQuestionIndex = (currentQuestionIndex + 1) % questions.length;
     }, 5000);
 });
 </script>
