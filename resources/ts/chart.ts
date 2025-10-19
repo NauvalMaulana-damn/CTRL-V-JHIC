@@ -71,8 +71,6 @@ export class JurusanChartManager {
 
         // Retry failed requests saat init
         this.retryFailedRequests();
-
-        console.log("🎯 JurusanChartManager initialized");
     }
 
     public async initializeAsync(): Promise<void> {
@@ -83,8 +81,6 @@ export class JurusanChartManager {
         // Ensure chart/UI reflect any updated stats
         this.updateChart();
         this.updateTotalClicks();
-
-        console.log("🎯 JurusanChartManager async initialization complete");
     }
 
     private async loadStatsFromServer(): Promise<void> {
@@ -94,8 +90,13 @@ export class JurusanChartManager {
 
             const result = await response.json();
             if (result.success) {
-                this.stats = { ...this.stats, ...result.data };
-                console.log("📊 Loaded stats from server:", this.stats);
+                // 🔴 FIX: Convert string ke number
+                this.stats = {
+                    elektro: Number(result.data.elektro) || 0,
+                    otomotif: Number(result.data.otomotif) || 0,
+                    pemesinan: Number(result.data.pemesinan) || 0,
+                    tik: Number(result.data.tik) || 0,
+                };
 
                 // Sync dengan localStorage
                 this.saveStatsToLocalStorage();
@@ -113,9 +114,13 @@ export class JurusanChartManager {
         if (savedStats) {
             try {
                 const localStats = JSON.parse(savedStats);
-                // Merge dengan stats yang ada (server data lebih prioritas)
-                this.stats = { ...this.stats, ...localStats };
-                console.log("📊 Loaded stats from localStorage:", localStats);
+                // 🔴 FIX: Convert semua values ke number
+                this.stats = {
+                    elektro: Number(localStats.elektro) || 0,
+                    otomotif: Number(localStats.otomotif) || 0,
+                    pemesinan: Number(localStats.pemesinan) || 0,
+                    tik: Number(localStats.tik) || 0,
+                };
             } catch (error) {
                 console.error("Error loading stats from localStorage:", error);
             }
@@ -127,13 +132,27 @@ export class JurusanChartManager {
         localStorage.setItem("jurusanClickStats", JSON.stringify(this.stats));
     }
 
+    // 🔴 FIX: Method untuk increment yang proper
+    private incrementStat(
+        sectionId: keyof DepartmentStats,
+        type: "click" | "view" = "click"
+    ): void {
+        // Pastikan value adalah number sebelum di-increment
+        const currentValue = Number(this.stats[sectionId]) || 0;
+        this.stats[sectionId] = currentValue + 1;
+
+        this.saveStatsToLocalStorage();
+        this.updateChart();
+        this.updateTotalClicks();
+        this.sendStatsToServer(sectionId, type);
+    }
+
     // Inisialisasi chart
     private initializeChart(): void {
         const canvas = document.getElementById(
             "jurusanPieChart"
         ) as HTMLCanvasElement;
         if (!canvas) {
-            console.log("Chart canvas not found, skipping initialization");
             return;
         }
 
@@ -180,11 +199,19 @@ export class JurusanChartManager {
                             label: (context) => {
                                 const label = context.label || "";
                                 const value = context.raw as number;
+                                const total =
+                                    context.chart.data.datasets[0].data.reduce(
+                                        (a: number, b: number) => a + b,
+                                        0
+                                    );
+                                // 🔴 FIX: Percentage calculation di tooltip
                                 const percentage =
-                                    total > 0
-                                        ? ((value / total) * 100).toFixed(1)
-                                        : 0;
-                                return `${label}: (${percentage}%)`;
+                                    total > 0 ? (value / total) * 100 : 0;
+                                const percentageText =
+                                    percentage > 0
+                                        ? percentage.toFixed(1)
+                                        : "0.0";
+                                return `${label}: ${value} (${percentageText}%)`;
                             },
                         },
                     },
@@ -198,17 +225,28 @@ export class JurusanChartManager {
                         formatter: (value: number, context: any) => {
                             const label =
                                 context.chart.data.labels[context.dataIndex];
+                            const total =
+                                context.chart.data.datasets[0].data.reduce(
+                                    (a: number, b: number) => a + b,
+                                    0
+                                );
+                            // 🔴 FIX: Percentage calculation di chart
                             const percentage =
-                                total > 0
-                                    ? ((value / total) * 100).toFixed(1)
-                                    : 0;
+                                total > 0 ? (value / total) * 100 : 0;
+                            const percentageText =
+                                percentage > 0 ? percentage.toFixed(1) : "0.0";
 
-                            return `${label}\n${percentage}%`;
+                            return `${label}\n${percentageText}%`;
                         },
                         display: (context: any) => {
                             const value = context.dataset.data[
                                 context.dataIndex
                             ] as number;
+                            const total =
+                                context.chart.data.datasets[0].data.reduce(
+                                    (a: number, b: number) => a + b,
+                                    0
+                                );
                             const percentage =
                                 total > 0 ? (value / total) * 100 : 0;
                             return percentage > 5;
@@ -228,7 +266,6 @@ export class JurusanChartManager {
     }
 
     // Siapkan data untuk chart
-    // Siapkan data untuk chart
     private prepareChartData() {
         const labels = Object.keys(this.stats).map((key) => {
             const nameMap: { [key: string]: string } = {
@@ -240,7 +277,8 @@ export class JurusanChartManager {
             return nameMap[key] || key.toUpperCase();
         });
 
-        const data = Object.values(this.stats);
+        // 🔴 FIX: Pastikan data adalah number
+        const data = Object.values(this.stats).map((val) => Number(val) || 0);
         const total = data.reduce((sum, value) => sum + value, 0);
 
         const colors = [
@@ -269,8 +307,10 @@ export class JurusanChartManager {
 
         labels.forEach((label, i) => {
             const value = data[i];
-            const percentage =
-                total > 0 ? ((value / total) * 100).toFixed(1) : 0;
+            // 🔴 FIX: Percentage calculation yang benar
+            const percentage = total > 0 ? (value / total) * 100 : 0;
+            const percentageText =
+                percentage > 0 ? percentage.toFixed(1) : "0.0";
 
             const item = document.createElement("div");
             item.className = "legend-item";
@@ -279,7 +319,7 @@ export class JurusanChartManager {
             <span class="legend-color" style="background-color:${colors[i]}"></span>
             <div>
                 <div class="font-semibold text-gray-800">${label}</div>
-                <div class="text-sm text-gray-600">(${percentage}%) dikunjungi</div>
+                <div class="text-sm text-gray-600">${percentageText}% dikunjungi</div>
             </div>
         `;
             legendContainer.appendChild(item);
@@ -301,7 +341,6 @@ export class JurusanChartManager {
     // Setup event listeners untuk tombol departemen
     private setupEventListeners(): void {
         const buttons = document.querySelectorAll(".btn-dept");
-        console.log(`🔘 Found ${buttons.length} department buttons`);
 
         buttons.forEach((button) => {
             button.addEventListener("click", (e) => {
@@ -310,14 +349,9 @@ export class JurusanChartManager {
                 const targetId = button.getAttribute(
                     "data-target"
                 ) as keyof DepartmentStats;
-                console.log(`🖱️ Button clicked: ${targetId}`);
 
                 if (targetId && this.stats.hasOwnProperty(targetId)) {
-                    this.stats[targetId]++;
-                    this.saveStatsToLocalStorage();
-                    this.updateChart();
-                    this.updateTotalClicks();
-                    this.sendStatsToServer(targetId, "click");
+                    this.incrementStat(targetId, "click"); // 🔴 Pakai method baru
                     this.scrollToSection(targetId);
                 }
             });
@@ -328,8 +362,6 @@ export class JurusanChartManager {
     private setupIntersectionObserver(): void {
         const sections = ["elektro", "otomotif", "pemesinan", "tik"];
 
-        console.log("👀 Setting up Center-based Intersection Observer");
-
         const observer = new IntersectionObserver(
             (entries) => {
                 let mostVisibleSection: string | null = null;
@@ -339,13 +371,6 @@ export class JurusanChartManager {
                     const sectionId = entry.target.id as keyof DepartmentStats;
                     const visibilityScore =
                         this.calculateVisibilityScore(entry);
-
-                    console.log(
-                        `🔍 ${sectionId}: score=${visibilityScore.toFixed(
-                            2
-                        )}, intersecting=${entry.isIntersecting}`
-                    );
-
                     if (
                         visibilityScore > highestVisibility &&
                         visibilityScore > 0.3
@@ -356,14 +381,8 @@ export class JurusanChartManager {
                 });
 
                 if (mostVisibleSection) {
-                    console.log(
-                        `🎯 Most centered: ${mostVisibleSection}, score: ${highestVisibility.toFixed(
-                            2
-                        )}`
-                    );
                     this.handleSectionActivation(mostVisibleSection);
                 } else {
-                    console.log("🔍 No centered sections");
                     this.handleSectionDeactivation();
                 }
             },
@@ -377,9 +396,8 @@ export class JurusanChartManager {
             const section = document.getElementById(sectionId);
             if (section) {
                 observer.observe(section);
-                console.log(`✅ Now observing section: ${sectionId}`);
             } else {
-                console.warn(`❌ Section ${sectionId} not found!`);
+                //
             }
         });
 
@@ -463,14 +481,9 @@ export class JurusanChartManager {
         });
 
         if (bestSection && bestSection !== this.currentActiveSection) {
-            console.log(
-                `🎯 New centered section: ${bestSection}, score: ${bestScore.toFixed(
-                    2
-                )}`
-            );
+            //
             this.handleSectionActivation(bestSection);
         } else if (!bestSection && this.currentActiveSection) {
-            console.log("🔍 No centered sections");
             this.handleSectionDeactivation();
         }
     }
@@ -492,8 +505,6 @@ export class JurusanChartManager {
         this.lastVisibleTime[sectionId] = Date.now();
         this.showViewingNotification(sectionId);
         this.startViewTimeTracking(sectionId as keyof DepartmentStats);
-
-        console.log(`✅ Activated section: ${sectionId}`);
     }
 
     private handleSectionDeactivation(): void {
@@ -504,7 +515,6 @@ export class JurusanChartManager {
             this.lastVisibleTime[this.currentActiveSection] = 0;
             this.sectionViewTime[this.currentActiveSection] = 0;
             this.hideViewingNotification();
-            console.log(`❌ Deactivated section: ${this.currentActiveSection}`);
             this.currentActiveSection = null;
         }
     }
@@ -555,11 +565,8 @@ export class JurusanChartManager {
                 if (elapsed >= 8000) {
                     console.log(`🎯 AUTO-INCREMENT untuk: ${sectionId}`);
 
-                    this.stats[sectionId]++;
-                    this.saveStatsToLocalStorage();
-                    this.updateChart();
-                    this.updateTotalClicks();
-                    this.sendStatsToServer(sectionId, "view");
+                    this.incrementStat(sectionId, "view"); // 🔴 Pakai method baru
+
                     this.showAutoIncrementNotification(sectionId);
 
                     this.stopViewTimeTracking(sectionId);
@@ -622,8 +629,6 @@ export class JurusanChartManager {
                 top: scrollPosition,
                 behavior: "smooth",
             });
-
-            console.log(`📍 Scrolled to section: ${sectionId}`);
         } else {
             console.warn(`❌ Section ${sectionId} not found for scrolling`);
         }
@@ -639,12 +644,6 @@ export class JurusanChartManager {
                 document
                     .querySelector('meta[name="csrf-token"]')
                     ?.getAttribute("content") || "";
-
-            console.log(
-                `📤 Mengirim: ${departemen}, ${type}, CSRF: ${
-                    csrfToken ? "✅" : "❌"
-                }`
-            );
 
             const response = await fetch("/jurusan/increment-stats", {
                 method: "POST",
@@ -664,7 +663,6 @@ export class JurusanChartManager {
             }
 
             const result = await response.json();
-            console.log("✅ Statistik terkirim:", result);
         } catch (error) {
             console.error("❌ Gagal mengirim statistik:", error);
             this.queueFailedRequest(departemen, type);
@@ -711,9 +709,6 @@ export class JurusanChartManager {
                 "failedStatsRequests",
                 JSON.stringify(failedRequests)
             );
-            console.log(
-                "📦 Request disimpan di queue untuk dikirim ulang nanti"
-            );
         } catch (error) {
             console.error("Gagal menyimpan failed request:", error);
         }
@@ -725,8 +720,6 @@ export class JurusanChartManager {
                 localStorage.getItem("failedStatsRequests") || "[]"
             );
             if (failedRequests.length === 0) return;
-
-            console.log(`🔄 Retrying ${failedRequests.length} failed requests`);
 
             const successful: any[] = [];
             const failed: any[] = [];
@@ -745,17 +738,6 @@ export class JurusanChartManager {
 
             // Simpan ulang yang gagal
             localStorage.setItem("failedStatsRequests", JSON.stringify(failed));
-
-            if (successful.length > 0) {
-                console.log(
-                    `✅ Berhasil mengirim ulang ${successful.length} requests`
-                );
-            }
-            if (failed.length > 0) {
-                console.log(
-                    `❌ Masih ada ${failed.length} requests yang gagal`
-                );
-            }
         } catch (error) {
             console.error("Error retrying failed requests:", error);
         }
@@ -778,6 +760,15 @@ export class JurusanChartManager {
 
     // Update chart dengan data baru
     public updateChart(): void {
+        // 🔴 DEBUG: Log current stats
+        console.log("🔢 Current stats:", this.stats);
+        console.log("🔢 Stats types:", {
+            elektro: typeof this.stats.elektro,
+            otomotif: typeof this.stats.otomotif,
+            pemesinan: typeof this.stats.pemesinan,
+            tik: typeof this.stats.tik,
+        });
+
         if (!this.chart) {
             this.initializeChart();
             return;
@@ -795,8 +786,6 @@ export class JurusanChartManager {
         this.chart.update("none");
         this.updateChartLegend();
         this.updateTotalClicks();
-
-        console.log("📈 Chart updated");
     }
 
     // Destroy chart
@@ -816,8 +805,6 @@ export class JurusanChartManager {
             ".auto-increment-notification"
         );
         if (autoNotification) autoNotification.remove();
-
-        console.log("🧹 JurusanChartManager destroyed");
     }
 }
 
@@ -827,7 +814,6 @@ export async function initChartGabungan(): Promise<void> {
         "chartGabungan"
     ) as HTMLCanvasElement | null;
     if (!canvas) {
-        console.log("❌ Chart gabungan canvas not found");
         return;
     }
 
@@ -928,8 +914,6 @@ export async function initChartGabungan(): Promise<void> {
             },
             plugins: [arrowPlugin],
         });
-
-        console.log("✅ Chart gabungan initialized");
     } catch (error) {
         console.error("❌ Error initializing chart gabungan:", error);
     }

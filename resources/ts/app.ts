@@ -38,12 +38,12 @@ const initMobileMenu = (): void => {
 
 // ✅ Initialize News Slider dengan data berita
 const initializeNewsSlider = (): void => {
-    console.log("🔄 Initializing news slider...");
+    // console.log("🔄 Initializing news slider...");
 
     try {
         // Ambil data berita dari window object
         const beritasData = window.beritas;
-        console.log("📊 Beritas data:", beritasData);
+        // console.log("📊 Beritas data:", beritasData);
 
         if (!beritasData || !Array.isArray(beritasData)) {
             console.warn("⚠️ No valid beritas data found");
@@ -52,7 +52,7 @@ const initializeNewsSlider = (): void => {
         }
 
         allBeritas = beritasData;
-        console.log(`📰 Found ${allBeritas.length} beritas`);
+        // console.log(`📰 Found ${allBeritas.length} beritas`);
 
         if (allBeritas.length === 0) {
             console.warn("⚠️ No beritas data available");
@@ -106,7 +106,7 @@ const initializeNewsSlider = (): void => {
         // Initialize Swiper
         initializeSwiperInstance();
 
-        console.log("✅ News slider initialized successfully");
+        // console.log("✅ News slider initialized successfully");
     } catch (error) {
         console.error("❌ Error initializing news slider:", error);
         createDefaultSlide();
@@ -177,7 +177,7 @@ const initializeSwiperInstance = (): void => {
             speed: 1000,
             on: {
                 init: function () {
-                    console.log("✅ Swiper initialized successfully");
+                    // console.log("✅ Swiper initialized successfully");
                 },
             },
         });
@@ -187,13 +187,6 @@ const initializeSwiperInstance = (): void => {
 };
 
 const showNews = (beritaId: string | number): void => {
-    console.log(
-        "🔄 Showing news for ID:",
-        beritaId,
-        "Total beritas:",
-        allBeritas.length
-    );
-
     if (!newsSwiper || allBeritas.length === 0) {
         console.error("❌ Swiper not initialized or no beritas data");
         return;
@@ -202,18 +195,15 @@ const showNews = (beritaId: string | number): void => {
     // Cari index berdasarkan ID berita
     const index = allBeritas.findIndex((berita) => berita.id == beritaId);
 
-    console.log(`🔍 Found index: ${index} for ID: ${beritaId}`);
-
     if (index >= 0 && index < allBeritas.length) {
         try {
             window.scrollTo({ top: 0, behavior: "smooth" });
             newsSwiper.slideTo(index);
-            console.log(`✅ Navigated to slide: ${index} (ID: ${beritaId})`);
         } catch (error) {
-            console.error(`❌ Error navigating to slide ${index}:`, error);
+            // console.error(`❌ Error navigating to slide ${index}:`, error);
         }
     } else {
-        console.error(`❌ Invalid ID or not found: ${beritaId}`);
+        // console.error(`❌ Invalid ID or not found: ${beritaId}`);
     }
 };
 
@@ -223,7 +213,7 @@ const initSwiper = (): void => {
     if (!swiperEl) return;
 
     if (document.getElementById("x-headnews")) {
-        console.log("📰 News swiper will be handled by initializeNewsSlider");
+        // console.log("📰 News swiper will be handled by initializeNewsSlider");
         return;
     }
 
@@ -285,7 +275,7 @@ document.addEventListener("click", (e) => {
 
 // ✅ INIT based-on DOMContentLoaded Event Listener
 document.addEventListener("DOMContentLoaded", (): void => {
-    console.log("🏫 SMK PGRI 3 Malang - Initializing...");
+    // console.log("🏫 SMK PGRI 3 Malang - Initializing...");
 
     // Export functions ke global scope
     window.showNews = showNews;
@@ -302,7 +292,7 @@ document.addEventListener("DOMContentLoaded", (): void => {
     initChartGabungan();
     initJurusanChart(); // ✅ Tambahkan inisialisasi chart jurusan
 
-    console.log("🎉 All components initialized successfully");
+    // console.log("🎉 All components initialized successfully");
 });
 
 export { showNews, initializeNewsSlider };

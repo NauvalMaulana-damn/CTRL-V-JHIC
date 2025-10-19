@@ -155,7 +155,7 @@ function changeQuestion(index) {
     questionElement.textContent = questions[index];
 }
 
-setInterval(() => {
+setTimeout(() => {
     let currentQuestionIndex = 0;
     while (currentQuestionIndex < questions.length) {
         changeQuestion(currentQuestionIndex);
