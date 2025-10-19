@@ -1,6 +1,11 @@
 import { defineConfig } from "vite";
 import laravel from "laravel-vite-plugin";
 
+const config = {
+    primary: "smkpgri3mlg.jh-beon.cloud",
+    secondary: "smkpgri3mlg.web.id",
+};
+
 export default defineConfig({
     plugins: [
         laravel({
@@ -9,32 +14,33 @@ export default defineConfig({
         }),
     ],
     server: {
-        host: '0.0.0.0',
+        host: "0.0.0.0",
         port: 5173,
         allowedHosts: [
-            'smkpgri3mlg.jh-beon.cloud',
-            'smkpgri3mlg.web.id',
-            'www.smkpgri3mlg.web.id',
-            'localhost',
-            '127.0.0.1'
+            config.primary,
+            config.secondary,
+            `www.${config.primary}`,
+            `www.${config.secondary}`,
+            "localhost",
+            "127.0.0.1",
         ],
         watch: {
             usePolling: true,
             interval: 500,
         },
         hmr: {
-            host: 'smkpgri3mlg.jh-beon.cloud',
-            protocol: 'ws',
+            host: config.primary,
+            protocol: "ws",
             port: 5173,
         },
     },
     build: {
-        minify: 'terser',
+        minify: "terser",
         cssCodeSplit: true,
         rollupOptions: {
             output: {
                 manualChunks: {
-                    vendor: ['swiper'],
+                    vendor: ["swiper"],
                 },
             },
         },

@@ -206,9 +206,6 @@
     }
     </style>
 
-    <!-- Sertakan Chart.js -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
     <div class="bg-white text-gray-900 font-sans">
         <div class="h-full h-max-content container mx-auto px-4 py-6">
             <!-- Hero Section -->
