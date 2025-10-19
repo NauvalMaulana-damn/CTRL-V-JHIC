@@ -35,7 +35,7 @@
             </div>
         </section>
     </div>
-    @vite(['resources/js/ekskul.js'])
+    <script src="../js/ekskul.js" defer></script>
     <style>
     #ekskul-content {
         transition: opacity 0.3s ease-in-out;

@@ -279,7 +279,7 @@ export class JurusanChartManager {
             <span class="legend-color" style="background-color:${colors[i]}"></span>
             <div>
                 <div class="font-semibold text-gray-800">${label}</div>
-                <div class="text-sm text-gray-600">${value} kunjungan (${percentage}%)</div>
+                <div class="text-sm text-gray-600">(${percentage}%) dikunjungi</div>
             </div>
         `;
             legendContainer.appendChild(item);

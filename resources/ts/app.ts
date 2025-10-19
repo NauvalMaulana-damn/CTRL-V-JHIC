@@ -206,6 +206,7 @@ const showNews = (beritaId: string | number): void => {
 
     if (index >= 0 && index < allBeritas.length) {
         try {
+            window.scrollTo({ top: 0, behavior: "smooth" });
             newsSwiper.slideTo(index);
             console.log(`✅ Navigated to slide: ${index} (ID: ${beritaId})`);
         } catch (error) {
