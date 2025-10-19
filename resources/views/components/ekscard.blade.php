@@ -1,4 +1,4 @@
-@props(['image', 'title', ''])
+@props(['image', 'title'])
 
 <div
     class="bg-white rounded-2xl shadow-lg overflow-hidden flex flex-col transition-transform duration-200 hover:-translate-y-1.5">
