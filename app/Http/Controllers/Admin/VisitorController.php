@@ -49,7 +49,7 @@ public function getVisitorData()
     try {
         // 🔴 FIX: Gunakan method baru yang hitung visitor UNIK
         $totalVisitors = Visitor::getTotalUniqueVisitors();
-        $activeVisitors = Visitor::getActiveVisitorsCount(); // Dalam 5 menit
+        $activeVisitors = Visitor::getActiveVisitorsCount();
         $todayVisitors = Visitor::getTodayVisitorsCount();
 
         // Data 7 hari terakhir (tetap pakai total records untuk chart)

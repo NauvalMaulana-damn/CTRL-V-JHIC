@@ -49,6 +49,33 @@
                 this.currentDomain === 'www.' + this.primaryDomain;
         }
     };
+
+    setInterval(() => {
+        fetch('/api/heartbeat', {
+            method: 'POST',
+            headers: {
+                'X-Requested-With': 'XMLHttpRequest',
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                heartbeat: true
+            })
+        }).catch(() => {}); // Silent fail
+    }, 30000);
+
+    window.addEventListener('beforeunload', function() {
+        // Trigger API call untuk update status
+        fetch('/api/visitor-leave', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                action: 'leave'
+            }),
+            keepalive: true // Penting: biar tetap execute meskipun page unload
+        });
+    });
     </script>
 </body>
 

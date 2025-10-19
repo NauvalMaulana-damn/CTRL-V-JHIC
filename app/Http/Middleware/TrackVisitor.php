@@ -15,23 +15,16 @@ class TrackVisitor
         return $next($request);
     }
 
-    $ip = $request->ip();
-    $userAgent = $request->userAgent();
-    $currentUrl = $request->fullUrl();
+    $visitorId = Cookie::get('visitor_id') ?? 'visitor_'.md5(uniqid().$request->ip().$request->userAgent());
+    Cookie::queue('visitor_id', $visitorId, 60 * 24 * 30);
 
-    $visitorId = Cookie::get('visitor_id');
-    if (!$visitorId) {
-        $visitorId = 'visitor_'.md5(uniqid().$ip.$userAgent);
-        Cookie::queue('visitor_id', $visitorId, 60 * 24 * 30);
-    }
-
-    // 🔴 SIMPLE: Selalu buat/update record dengan timestamp sekarang
+    // 🔴 UPDATE: Always update timestamp untuk activity terbaru
     Visitor::updateOrCreate(
         ['visitor_id' => $visitorId],
         [
-            'ip_address' => $ip,
-            'user_agent' => substr($userAgent, 0, 255),
-            'page' => $currentUrl,
+            'ip_address' => $request->ip(),
+            'user_agent' => substr($request->userAgent(), 0, 255),
+            'page' => $request->fullUrl(),
             'visited_at' => now(),
         ]
     );
