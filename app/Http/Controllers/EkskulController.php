@@ -11,7 +11,7 @@ class EkskulController extends Controller
     $ekskuls = Ekskul::latest()->paginate(6);
 
     if ($request->ajax() || $request->has('ajax')) {
-            return view('ekskul', compact('ekskuls'))->render();
+            return view('partials.ekskul-content', compact('ekskuls'))->render();
         }
 
         return view('ekskul', compact('ekskuls'));

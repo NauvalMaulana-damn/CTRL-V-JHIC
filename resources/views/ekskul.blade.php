@@ -27,19 +27,7 @@
 
                 <!-- Content container -->
                 <div id="ekskul-data">
-                    <div class="max-w-full mx-auto">
-                        <div class="grid grid-cols-3 gap-6">
-                            @foreach ($ekskuls as $ekskul)
-                            <x-ekscard title="{{ $ekskul->title }}" alt="{{ $ekskul->title }}" image="{{ $ekskul->image }}">
-                                {{ $ekskul->desc }}
-                            </x-ekscard>
-                            @endforeach
-                        </div>
-                    </div>
-
-                    <div class="flex justify-center mt-8 space-x-2" id="pagination-container">
-                        {{ $ekskuls->links('pagination::tailwind') }}
-                    </div>
+                    @include('partials.ekskul-content', ['ekskuls' => $ekskuls])
                 </div>
             </div>
         </section>
@@ -47,39 +35,48 @@
 
     <script>
     document.addEventListener('DOMContentLoaded', function() {
-        const ekskulContent = document.getElementById('ekskul-content');
-        const ekskulData = document.getElementById('ekskul-data');
-        const loading = document.getElementById('loading');
-        const paginationContainer = document.getElementById('pagination-container');
+        let isLoading = false;
 
-        // Event delegation untuk pagination
-        paginationContainer.addEventListener('click', function(e) {
-            e.preventDefault();
+        // Event delegation pada document yang selalu ada
+        document.addEventListener('click', function(e) {
+            // Cek jika klik berasal dari pagination link
+            const paginationLink = e.target.closest('#pagination-container a, .pagination a');
 
-            const link = e.target.closest('a');
-            if (!link || link.classList.contains('text-gray-400') || link.classList.contains('cursor-not-allowed')) {
+            if (!paginationLink ||
+                paginationLink.classList.contains('text-gray-400') ||
+                paginationLink.classList.contains('cursor-not-allowed') ||
+                isLoading) {
                 return;
             }
 
-            const url = link.getAttribute('href');
-            if (url && url !== '#') {
+            e.preventDefault();
+
+            const url = paginationLink.getAttribute('href');
+            if (url && url !== '#' && url !== 'javascript:void(0)') {
                 loadPage(url);
             }
         });
 
         function loadPage(url) {
+            isLoading = true;
+
+            const ekskulData = document.getElementById('ekskul-data');
+            const loading = document.getElementById('loading');
+
             // Tampilkan loading
             ekskulData.style.opacity = '0.5';
+            ekskulData.style.pointerEvents = 'none';
             loading.classList.remove('hidden');
 
             fetch(url, {
                 headers: {
-                    'X-Requested-With': 'XMLHttpRequest'
+                    'X-Requested-With': 'XMLHttpRequest',
+                    'Accept': 'text/html'
                 }
             })
             .then(response => {
                 if (!response.ok) {
-                    throw new Error('Network response was not ok');
+                    throw new Error(`HTTP error! status: ${response.status}`);
                 }
                 return response.text();
             })
@@ -88,35 +85,58 @@
                 const parser = new DOMParser();
                 const doc = parser.parseFromString(html, 'text/html');
 
-                // Extract hanya bagian content yang diperlukan
+                // Cari element ekskul-data dalam response
                 const newContent = doc.getElementById('ekskul-data');
 
                 if (newContent) {
-                    // Update content dengan fade effect
+                    // Update content
                     ekskulData.innerHTML = newContent.innerHTML;
 
-                    // Update URL di browser (tanpa refresh)
-                    window.history.pushState({}, '', url);
+                    // Update URL history
+                    window.history.pushState({url: url}, '', url);
 
-                    // Scroll ke top section dengan smooth behavior
-                    ekskulContent.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    // Smooth scroll ke top
+                    const ekskulContent = document.getElementById('ekskul-content');
+                    ekskulContent.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                } else {
+                    // Fallback: reload page jika struktur tidak sesuai
+                    console.warn('AJAX response structure unexpected, falling back to page reload');
+                    window.location.href = url;
                 }
             })
             .catch(error => {
-                console.error('Error:', error);
+                console.error('AJAX Error:', error);
                 // Fallback ke refresh biasa jika AJAX gagal
                 window.location.href = url;
             })
             .finally(() => {
-                // Sembunyikan loading
+                // Reset state
                 ekskulData.style.opacity = '1';
+                ekskulData.style.pointerEvents = 'auto';
                 loading.classList.add('hidden');
+                isLoading = false;
             });
         }
 
         // Handle browser back/forward buttons
-        window.addEventListener('popstate', function() {
-            loadPage(window.location.href);
+        window.addEventListener('popstate', function(event) {
+            if (event.state && event.state.url) {
+                loadPage(event.state.url);
+            } else {
+                loadPage(window.location.href);
+            }
+        });
+
+        // Prevent initial popstate trigger
+        let initialPop = true;
+        window.addEventListener('popstate', function(e) {
+            if (initialPop) {
+                initialPop = false;
+                return;
+            }
         });
     });
     </script>
@@ -127,7 +147,7 @@
     }
 
     #ekskul-data {
-        transition: opacity 0.3s ease-in-out;
+        transition: all 0.3s ease-in-out;
     }
 
     /* Style untuk pagination yang disabled */
