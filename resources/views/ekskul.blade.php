@@ -44,95 +44,32 @@
 
     <script>
     document.addEventListener('DOMContentLoaded', function() {
-        let isLoading = false;
-
         document.addEventListener('click', function(e) {
-            const link = e.target.closest('a');
+            const link = e.target.closest('.pagination a, #pagination-container a');
 
-            if (!link) return;
+            if (link && link.getAttribute('href') && link.getAttribute('href').includes('?page=')) {
+                e.preventDefault();
 
-            const href = link.getAttribute('href');
+                // TAMBAH INI - Loading state
+                document.getElementById('ekskul-data').style.opacity = '0.6';
 
-            if (!href || !href.includes('?page=')) return;
+                fetch(link.href)
+                    .then(response => response.text())
+                    .then(html => {
+                        // FIX INI - Extract content dengan benar
+                        const parser = new DOMParser();
+                        const doc = parser.parseFromString(html, 'text/html');
+                        const newContent = doc.getElementById('ekskul-data');
 
-            const isInPaginationContainer = link.closest('#pagination-container') ||
-                link.closest('.pagination') ||
-                link.parentElement.classList.contains('pagination');
-
-            if (!isInPaginationContainer) return;
-
-            // Cek jika link disabled atau sedang loading
-            if (link.classList.contains('text-gray-400') ||
-                link.classList.contains('cursor-not-allowed') ||
-                isLoading) {
-                return;
+                        if (newContent) {
+                            document.getElementById('ekskul-data').innerHTML = newContent.innerHTML;
+                            window.history.pushState({}, '', link.href);
+                        }
+                    })
+                    .finally(() => {
+                        document.getElementById('ekskul-data').style.opacity = '1';
+                    });
             }
-
-            e.preventDefault();
-            loadPage(href);
-        });
-
-        function loadPage(url) {
-            isLoading = true;
-
-            const ekskulData = document.getElementById('ekskul-data');
-            const loading = document.getElementById('loading');
-
-            // Tampilkan loading
-            ekskulData.style.opacity = '0.5';
-            ekskulData.style.pointerEvents = 'none';
-            loading.classList.remove('hidden');
-
-            fetch(url + '&ajax=true', {
-                    headers: {
-                        'X-Requested-With': 'XMLHttpRequest'
-                    }
-                })
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error('Network response was not ok');
-                    }
-                    return response.text();
-                })
-                .then(html => {
-                    // Parse the entire HTML response
-                    const parser = new DOMParser();
-                    const doc = parser.parseFromString(html, 'text/html');
-
-                    // Extract hanya bagian ekskul-data dari response
-                    const newEkskulData = doc.getElementById('ekskul-data');
-
-                    if (newEkskulData) {
-                        // Update content
-                        ekskulData.innerHTML = newEkskulData.innerHTML;
-
-                        // Update URL tanpa refresh
-                        window.history.pushState({}, '', url);
-
-                        // Scroll ke top dengan smooth effect
-                        document.getElementById('ekskul-content').scrollIntoView({
-                            behavior: 'smooth',
-                            block: 'start'
-                        });
-                    }
-                })
-                .catch(error => {
-                    console.error('Error:', error);
-                    // Fallback ke page reload jika AJAX gagal
-                    window.location.href = url;
-                })
-                .finally(() => {
-                    // Sembunyikan loading
-                    ekskulData.style.opacity = '1';
-                    ekskulData.style.pointerEvents = 'auto';
-                    loading.classList.add('hidden');
-                    isLoading = false;
-                });
-        }
-
-        // Handle browser back/forward buttons
-        window.addEventListener('popstate', function() {
-            loadPage(window.location.href);
         });
     });
     </script>
