@@ -15,13 +15,15 @@ class AppServiceProvider extends ServiceProvider
     public function boot(): void
     {
         View::composer('*', function ($view) {
-            $assetBase = config('app.url');
-            if (request()->getHost() === 'smkpgri3mlg.web.id' ||
-                request()->getHost() === 'www.smkpgri3mlg.web.id') {
-                $assetBase = 'https://' . request()->getHost();
-            }
-            $view->with('assetBase', $assetBase);
-        });
+        $assetBase = config('app.url');
+
+        if (request()->getHost() === 'smkpgri3mlg.web.id' ||
+            request()->getHost() === 'www.smkpgri3mlg.web.id') {
+            $assetBase = 'https://' . request()->getHost();
+        }
+
+        $view->with('assetBase', $assetBase);
+    });
 
         SymfonyRequest::setTrustedProxies(
             ['*'], // atau array IP proxy yang kamu percaya
