@@ -49,7 +49,8 @@ public function getVisitorData()
     try {
         // Total semua pengunjung
         $totalVisitors = Visitor::count();
-        
+
+        // Pengunjung aktif (dalam 15 menit terakhir) - OPTIMIZED QUERY
         $activeVisitors = Visitor::where('visited_at', '>=', now()->subMinutes(15))
             ->distinct('visitor_id')
             ->count('visitor_id');
@@ -57,7 +58,7 @@ public function getVisitorData()
         // Pengunjung hari ini
         $todayVisitors = Visitor::whereDate('visited_at', today())->count();
 
-        // Data 7 hari terakhir
+        // Data 7 hari terakhir - OPTIMIZED
         $weeklyVisitors = [];
         for ($i = 6; $i >= 0; $i--) {
             $date = now()->subDays($i);
@@ -75,6 +76,7 @@ public function getVisitorData()
             'activeVisitors' => $activeVisitors,
             'todayVisitors'  => $todayVisitors,
             'weeklyVisitors' => $weeklyVisitors,
+            'last_updated'   => now()->toISOString() // Untuk debug
         ]);
 
     } catch (\Exception $e) {

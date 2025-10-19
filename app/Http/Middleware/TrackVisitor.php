@@ -28,9 +28,9 @@ class TrackVisitor
             Cookie::queue('visitor_id', $visitorId, 60 * 24 * 30); // 30 hari
         }
 
-        // 🔴 FIX: Cek apakah visitor dengan ID ini sudah ada dalam 2 menit terakhir
+        // 🔴 FIX: Cek apakah visitor dengan ID ini sudah ada dalam 15 menit terakhir
         $recentVisit = Visitor::where('visitor_id', $visitorId)
-            ->where('visited_at', '>=', now()->subMinutes(2))
+            ->where('visited_at', '>=', now()->subMinutes(15))
             ->first();
 
         if (!$recentVisit) {
@@ -38,12 +38,12 @@ class TrackVisitor
             Visitor::create([
                 'visitor_id' => $visitorId,
                 'ip_address' => $ip,
-                'user_agent' => substr($userAgent, 0, 255), // Pastikan tidak lebih dari 255 char
+                'user_agent' => substr($userAgent, 0, 255),
                 'page' => $currentUrl,
                 'visited_at' => now(),
             ]);
         } else {
-            // Update waktu untuk pengunjung aktif
+            // Update waktu untuk pengunjung aktif (hanya update waktu, jangan buat record baru)
             $recentVisit->update([
                 'visited_at' => now(),
                 'page' => $currentUrl

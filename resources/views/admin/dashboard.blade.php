@@ -382,7 +382,6 @@
 
         } catch (err) {
             console.error('Error fetching visitor data:', err);
-            // Jangan tampilkan error terus menerus, coba lagi nanti
         }
     }
 

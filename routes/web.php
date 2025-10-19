@@ -47,7 +47,7 @@ Route::post('/admin', [LoginController::class, 'login'])->name('admin.login.post
 Route::prefix('admin')->name('admin.')->middleware(['admin'])->group(function () {
     Route::get('/dashboard', [AdminVisitorController::class, 'dashboard'])->name('dashboard');
 
-    Route::get('/api/visitors', [AdminVisitorController::class, 'getVisitorData'])->name('visitors.api');
+    Route::get('/visitors/api', [AdminVisitorController::class, 'getVisitorData'])->name('visitors.api');
 
     Route::resource('marquee', AdminMarqueeController::class);
     Route::resource('berita', AdminBeritaController::class);
