@@ -407,7 +407,7 @@
 
         // Buat chart baru
         chart = new Chart(ctx, {
-            type: 'line',
+            type: 'bar',
             data: {
                 labels: labels,
                 datasets: [{
@@ -457,7 +457,7 @@
         fetchVisitorData();
 
         // Update setiap 5 detik
-        visitorUpdateInterval = setInterval(fetchVisitorData, 30000);
+        visitorUpdateInterval = setInterval(fetchVisitorData, 5000);
     }
 
     // Stop updates ketika tab tidak aktif (hemat resources)
