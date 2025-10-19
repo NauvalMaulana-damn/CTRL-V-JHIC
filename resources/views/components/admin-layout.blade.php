@@ -5,9 +5,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Panel - @yield('title', 'Dashboard')</title>
-    <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link rel="shortcut icon" href="{{ asset('assets/skariga300rbg.png') }}" type="image/x-icon">
+
+    <!-- Dynamic Asset Base URL -->
+    @php
+        $assetBase = config('app.url');
+        if (request()->getHost() === 'smkpgri3mlg.web.id' || request()->getHost() === 'www.smkpgri3mlg.web.id') {
+            $assetBase = 'https://' . request()->getHost();
+        }
+    @endphp
+
+    <link rel="shortcut icon" href="{{ $assetBase }}/assets/skariga300rbg.png" type="image/x-icon">
 </head>
 
 <body class="bg-gray-100">
@@ -16,8 +24,9 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center py-4">
                 <div class="flex items-center">
-                    <img class="w-16 h-12 md:w-24 md:h-16 object-contain" src="{{ asset('assets/skariga logo 1.png') }}"
-                        alt="Logo SMK PGRI 3 Malang">
+                    <img class="w-16 h-12 md:w-24 md:h-16 object-contain"
+                         src="{{ $assetBase }}/assets/skariga logo 1.png"
+                         alt="Logo SMK PGRI 3 Malang">
                     <h1 class="text-xl font-semibold text-gray-800 ml-4">SKARIGA Admin Panel</h1>
                 </div>
 
@@ -156,6 +165,7 @@
             </div>
         </div>
     </footer>
+
     <style>
     .line-clamp-3 {
         display: -webkit-box;
@@ -194,6 +204,7 @@
     }
     </style>
 
+    <!-- Dynamic Vite Assets -->
     @vite(['resources/ts/app.ts', 'resources/css/app.css'])
 </body>
 
