@@ -456,8 +456,8 @@
         // Load pertama kali
         fetchVisitorData();
 
-        // Update setiap 10 detik
-        visitorUpdateInterval = setInterval(fetchVisitorData, 10000);
+        // Update setiap 5 detik
+        visitorUpdateInterval = setInterval(fetchVisitorData, 5000);
     }
 
     // Stop updates ketika tab tidak aktif (hemat resources)

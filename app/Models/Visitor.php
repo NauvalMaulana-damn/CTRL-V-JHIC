@@ -20,19 +20,29 @@ class Visitor extends Model
         'is_active' => 'boolean'
     ];
 
-    // 🔴 METHOD BARU: Tandai pengunjung tidak aktif
-    public static function markInactiveVisitors()
+    // 🔴 METHOD BARU: Hitung pengunjung aktif yang REAL
+    public static function getActiveVisitorsCount()
     {
-        // Tandai pengunjung yang tidak aktif (last activity > 15 menit)
-        return self::where('visited_at', '<', now()->subMinutes(15))
-                  ->where('is_active', true)
-                  ->update(['is_active' => false]);
+        // Hanya yang visited_at dalam 5 menit terakhir
+        return self::where('visited_at', '>=', now()->subMinutes(5))
+                  ->distinct('visitor_id')
+                  ->count('visitor_id');
     }
 
-    // 🔴 METHOD BARU: Bersihkan data lama
-    public static function cleanupOldVisitors()
+    // 🔴 METHOD BARU: Hitung total unik visitors (bukan total records)
+    public static function getTotalUniqueVisitors()
     {
-        // Hapus data yang sudah lebih dari 7 hari
-        return self::where('visited_at', '<', now()->subDays(7))->delete();
+        return self::distinct('visitor_id')->count('visitor_id');
     }
+
+    // 🔴 METHOD BARU: Hitung pengunjung hari ini (unik)
+    public static function getTodayVisitorsCount()
+    {
+        return self::whereDate('visited_at', today())
+                  ->distinct('visitor_id')
+                  ->count('visitor_id');
+    }
+
+    // Hapus method markInactiveVisitors() dan cleanupOldVisitors()
+    // karena kita tidak butuh field is_active lagi
 }

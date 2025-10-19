@@ -24,12 +24,5 @@ return Application::configure(basePath: dirname(__DIR__))
         //
     })
     ->withSchedule(function (Schedule $schedule): void {
-        $schedule->call(function () {
-            \App\Models\Visitor::markInactiveVisitors();
-        })->everyMinute();
-
-        $schedule->call(function () {
-            \App\Models\Visitor::cleanupOldVisitors();
-        })->daily();
-    })
-    ->create();
+        //
+    })->create();

@@ -47,25 +47,27 @@ class VisitorController extends Controller
 public function getVisitorData()
 {
     try {
-        // Total semua pengunjung
-        $totalVisitors = Visitor::count();
+        // 🔴 FIX: Gunakan method baru yang hitung visitor UNIK
+        $totalVisitors = Visitor::getTotalUniqueVisitors();
+        $activeVisitors = Visitor::getActiveVisitorsCount(); // Dalam 5 menit
+        $todayVisitors = Visitor::getTodayVisitorsCount();
 
-        // Pengunjung aktif (dalam 15 menit terakhir) - OPTIMIZED QUERY
-        $activeVisitors = Visitor::where('visited_at', '>=', now()->subMinutes(15))
-            ->distinct('visitor_id')
-            ->count('visitor_id');
-
-        // Pengunjung hari ini
-        $todayVisitors = Visitor::whereDate('visited_at', today())->count();
-
-        // Data 7 hari terakhir - OPTIMIZED
+        // Data 7 hari terakhir (tetap pakai total records untuk chart)
         $weeklyVisitors = [];
+        $startDate = now()->subDays(6)->startOfDay();
+
+        $dailyCounts = Visitor::where('visited_at', '>=', $startDate)
+            ->selectRaw('DATE(visited_at) as date, COUNT(DISTINCT visitor_id) as count')
+            ->groupBy('date')
+            ->pluck('count', 'date')
+            ->toArray();
+
         for ($i = 6; $i >= 0; $i--) {
-            $date = now()->subDays($i);
-            $count = Visitor::whereDate('visited_at', $date->format('Y-m-d'))->count();
+            $date = now()->subDays($i)->format('Y-m-d');
+            $count = $dailyCounts[$date] ?? 0;
 
             $weeklyVisitors[] = [
-                'date'  => $date->format('Y-m-d'),
+                'date'  => $date,
                 'total' => $count,
             ];
         }
@@ -73,10 +75,11 @@ public function getVisitorData()
         return response()->json([
             'success'        => true,
             'totalVisitors'  => $totalVisitors,
-            'activeVisitors' => $activeVisitors,
+            'activeVisitors' => $activeVisitors, // 🔴 SEKARANG AKAN BERUBAH REAL-TIME
             'todayVisitors'  => $todayVisitors,
             'weeklyVisitors' => $weeklyVisitors,
-            'last_updated'   => now()->toISOString() // Untuk debug
+            'last_updated'   => now()->toISOString(),
+            'server_time'    => now()->format('H:i:s')
         ]);
 
     } catch (\Exception $e) {
@@ -88,7 +91,7 @@ public function getVisitorData()
             'totalVisitors'  => 0,
             'activeVisitors' => 0,
             'todayVisitors'  => 0,
-            'weeklyVisitors' => $this->getFallbackWeeklyData(),
+            'weeklyVisitors' => [],
         ], 500);
     }
 }
