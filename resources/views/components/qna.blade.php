@@ -151,7 +151,16 @@ const questions = [
     "Terakreditasi apa sekolahnya?",
 ];
 
-questionElement.textContent = questions[2];
+let currentQuestionIndex = 0;
+setInterval(() => {
+    while (currentQuestionIndex < questions.length) {
+        questionElement.textContent = questions[currentQuestionIndex];
+        currentQuestionIndex++;
+        if (currentQuestionIndex >= questions.length) {
+            currentQuestionIndex = 0;
+        }
+    }
+}, 500);
 
 // Inisialisasi saat halaman dimuat
 document.addEventListener('DOMContentLoaded', function() {
