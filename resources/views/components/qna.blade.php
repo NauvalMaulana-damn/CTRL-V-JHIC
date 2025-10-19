@@ -152,15 +152,12 @@ const questions = [
 ];
 
 let currentQuestionIndex = 0;
-setInterval(() => {
+setTimeout(() => {
     while (currentQuestionIndex < questions.length) {
         questionElement.textContent = questions[currentQuestionIndex];
         currentQuestionIndex++;
-        if (currentQuestionIndex >= questions.length) {
-            currentQuestionIndex = 0;
-        }
     }
-}, 500);
+}, 5000);
 
 // Inisialisasi saat halaman dimuat
 document.addEventListener('DOMContentLoaded', function() {
