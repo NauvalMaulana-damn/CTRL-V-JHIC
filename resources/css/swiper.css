@@ -123,3 +123,10 @@
 .dark .swiper-button-prev:hover::after {
     color: #d1d5db;
 }
+
+@media screen and (min-width: 640px) {
+    .swiper-button-next,
+    .swiper-button-prev {
+        display: none;
+    }
+}
