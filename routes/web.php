@@ -93,3 +93,8 @@ Route::get('/chat/check-session', [ChatbotController::class, 'checkSession'])->n
 
 //chart data
 Route::get('/api/chart-data', [PendaftaranController::class, 'getChartData']);
+
+// Fallback Route
+Route::fallback(function () {
+    return redirect()->route('landing.index');
+});
