@@ -1,4 +1,12 @@
 @props(['title', 'image'])
+
+@php
+$assetBase = config('app.url');
+if (request()->getHost() === 'smkpgri3mlg.web.id' || request()->getHost() === 'www.smkpgri3mlg.web.id') {
+$assetBase = 'https://' . request()->getHost();
+}
+@endphp
+
 <section class="swiper-slide relative w-full h-full">
     <img src="{{ $assetBase . '/assets/' . $image }}" alt="{{ $title }}"
         class="headnews-img w-full h-[40vh] sm:h-[50vh] md:h-[60vh] lg:h-[70vh] object-cover" />

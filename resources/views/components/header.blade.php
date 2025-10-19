@@ -1,5 +1,12 @@
 @props(['transparent' => false])
 
+@php
+$assetBase = config('app.url');
+if (request()->getHost() === 'smkpgri3mlg.web.id' || request()->getHost() === 'www.smkpgri3mlg.web.id') {
+$assetBase = 'https://' . request()->getHost();
+}
+@endphp
+
 <!-- Wrapper sticky -->
 <div x-data="{ scrolled: false }" x-init="
         scrolled = window.scrollY > 50;

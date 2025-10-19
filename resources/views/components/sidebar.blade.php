@@ -1,5 +1,12 @@
 <div x-data="{ open: false }" class="fixed top-1/2 right-4 transform -translate-y-1/2 z-50">
 
+@php
+$assetBase = config('app.url');
+if (request()->getHost() === 'smkpgri3mlg.web.id' || request()->getHost() === 'www.smkpgri3mlg.web.id') {
+$assetBase = 'https://' . request()->getHost();
+}
+@endphp
+
     <!-- Anti Flicker saat Alpine belum jalan -->
     <style>
     [x-cloak] {
