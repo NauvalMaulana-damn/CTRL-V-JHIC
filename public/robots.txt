@@ -1,17 +1,2 @@
 User-agent: *
 Allow: /
-
-# Sitemap location
-Sitemap: https://smkpgri3mlg.jh-beon.cloud/sitemap.xml
-
-# Block sensitive directories
-Disallow: /admin/
-Disallow: /login/
-Disallow: /dashboard/
-Disallow: /storage/
-Disallow: /vendor/
-
-# Allow important assets
-Allow: /assets/
-Allow: /build/
-Allow: /images/
