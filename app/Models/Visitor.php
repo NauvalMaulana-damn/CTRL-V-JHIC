@@ -24,7 +24,7 @@ class Visitor extends Model
     public static function getActiveVisitorsCount()
     {
         // Hanya yang visited_at dalam 5 menit terakhir
-        return self::where('visited_at', '>=', now()->subSeconds(5))
+        return self::where('visited_at', '>=', now()->subSeconds(200))
                   ->distinct('visitor_id')
                   ->count('visitor_id');
     }
