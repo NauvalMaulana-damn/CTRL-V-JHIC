@@ -7,8 +7,8 @@
 </div>
 
 <div id="question"
-    class="h-8 px-2 py-3 text-center max-w-full text-sm border border-gray-300 rounded-md bg-white cursor-pointer"
-    onclick="document.getElementById('message').value = this.textContent; document.getElementById('message').focus();">
+    class="p-4 text-center max-w-full text-sm border border-gray-300 rounded-md bg-white cursor-pointer"
+    onclick="document.getElementById('message').value = this.textContent; document.getElementById('message').focus();">Apa saja jurusannya?
 </div>
 <form id="chatForm" class="flex max-w-full mt-2 h-24">
     <textarea id="message" name="message" placeholder="Tulis pertanyaan kamu..." class="flex-grow border w-full rounded-l-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-300
@@ -155,16 +155,14 @@ function changeQuestion(index) {
     questionElement.textContent = questions[index];
 }
 
+setInterval(() => {
+    changeQuestion(currentQuestionIndex);
+    currentQuestionIndex = (currentQuestionIndex + 1) % questions.length;
+}, 5000);
+
 // Inisialisasi saat halaman dimuat
 document.addEventListener('DOMContentLoaded', function() {
     cleanupOldHistory();
     loadChatHistory();
-
-    let currentQuestionIndex = 0;
-
-    setInterval(() => {
-        changeQuestion(currentQuestionIndex);
-        currentQuestionIndex = (currentQuestionIndex + 1) % questions.length;
-    }, 5000);
 });
 </script>
