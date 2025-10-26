@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://smkpgri3mlg.web.id" target="_blank">
-    <img src="public/assets/" width="300" alt="Logo SMK PGRI 3 MALANG">
+    <img src="public/assets/skariga300rbg.png" width="300" alt="Logo SMK PGRI 3 MALANG">
   </a>
 </p>
 
