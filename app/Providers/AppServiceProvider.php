@@ -15,12 +15,20 @@ class AppServiceProvider extends ServiceProvider
     public function boot(): void
     {
         View::composer('*', function ($view) {
-        $assetBase = config('app.url');
-
-        if (request()->getHost() === 'smkpgri3mlg.web.id' ||
-            request()->getHost() === 'www.smkpgri3mlg.web.id') {
-            $assetBase = 'https://' . request()->getHost();
+        $primaryDomain = config('app.url');
+        $aliasDomain = 'https://' . request()->getHost();
+        $assetTestUrl = $aliasDomain . '/build/assets/app-BRZ6PHX9.css';
+        $assetBase = $primaryDomain;
+        try {
+            $headers = @get_headers($assetTestUrl);
+            if ($headers && strpos($headers[0], '200') !== false && strpos($headers[0], 'text/css') !== false) {
+                $assetBase = $aliasDomain;
+            }
+        } catch (Exception) {
+            $assetBase = $primaryDomain;
         }
+
+$view->with('assetBase', $assetBase);
 
         $view->with('assetBase', $assetBase);
     });
