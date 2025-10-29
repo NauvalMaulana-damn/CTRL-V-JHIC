@@ -26,7 +26,7 @@ class AppServiceProvider extends ServiceProvider
     });
 
         SymfonyRequest::setTrustedProxies(
-            ['*'], // atau array IP proxy yang kamu percaya
+            ['*'],
             SymfonyRequest::HEADER_X_FORWARDED_FOR |
                                 SymfonyRequest::HEADER_X_FORWARDED_HOST |
                                 SymfonyRequest::HEADER_X_FORWARDED_PROTO |
