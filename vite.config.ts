@@ -1,6 +1,16 @@
 import { defineConfig } from "vite";
 import laravel from "laravel-vite-plugin";
 
+// Function untuk detect base URL dynamically
+const getBaseUrl = () => {
+    if (process.env.NODE_ENV === "development") {
+        return "http://smkpgri3mlg.jh-beon.cloud:5173/";
+    }
+
+    // Untuk production, gunakan relative path
+    return "/build/";
+};
+
 export default defineConfig({
     plugins: [
         laravel({
@@ -9,24 +19,27 @@ export default defineConfig({
         }),
     ],
     server: {
-        host: '127.0.0.1',
-        watch: {
-            usePolling: true,
-            interval: 500,
-        },
+        host: "0.0.0.0",
+        port: 5173,
+        allowedHosts: [
+            "smkpgri3mlg.jh-beon.cloud",
+            "smkpgri3mlg.web.id",
+            "www.smkpgri3mlg.web.id",
+        ],
         hmr: {
-            host: '127.0.0.1',
-            protocol: 'ws',
-            port: 5173,
+            host: "smkpgri3mlg.jh-beon.cloud",
         },
     },
+    // PASTIKAN base adalah relative path
+    base: "/build/",
     build: {
-        minify: 'terser',
+        minify: "terser",
         cssCodeSplit: true,
+        assetsDir: "assets",
         rollupOptions: {
             output: {
                 manualChunks: {
-                    vendor: ['swiper'],
+                    vendor: ["swiper"],
                 },
             },
         },
