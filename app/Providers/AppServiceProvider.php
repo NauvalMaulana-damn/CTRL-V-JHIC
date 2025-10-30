@@ -23,7 +23,7 @@ class AppServiceProvider extends ServiceProvider
         } elseif (request()->getHost() === 'localhost') {
             $assetBase = 'http://' . request()->getHost();
         } elseif (request()->getHost() === '127.0.0.1') {
-            $assetBase = request()->getHost() . ':' . request()->getPort();
+            $assetBase = 'http://' . request()->getHost() . ':' . request()->getPort();
         }
 
         $view->with('assetBase', $assetBase);
