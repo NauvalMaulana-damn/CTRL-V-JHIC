@@ -181,14 +181,12 @@
         </div>
     </div>
 
-    <!-- JavaScript untuk AJAX Pagination -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const prestasiContent = document.getElementById('prestasi-content');
             const loadingIndicator = document.getElementById('loading');
             const prestasiContainer = document.getElementById('prestasi-container');
             
-            // Fungsi untuk memuat halaman via AJAX
             function loadPage(url) {
                 // Show loading
                 loadingIndicator.classList.remove('hidden');
