@@ -58,52 +58,55 @@
                 </div>
             </div>
         </section>
-        <!-- ✅ Versi Mobile & Tablet -->
-        <section class="lg:hidden w-full py-10 text-center">
-            <h2 class="text-2xl font-bold leading-snug mb-6">
-                SKARIGA, Sekolahnya <br />
-                Sang Juara! <br />
-                Gabung SKARIGA untuk <br />
-                Menjadi <span class="bg-yellow-300 px-1 italic">Sang Juara Selanjutnya!</span>
-            </h2>
-            <div class="flex justify-center mb-10">
-                <button
-                    class="bg-customBlue text-white px-6 py-3 rounded-full flex items-center gap-2 transition transform hover:scale-105 hover:bg-customOrange hover:shadow-lg">
-                    <span>Daftar Sekarang</span>
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
-                    </svg>
-                </button>
+       <!-- ✅ Versi Mobile & Tablet -->
+<section class="lg:hidden w-full py-6 text-center">
+    <h2 class="text-xl sm:text-2xl font-bold leading-snug mb-4">
+        SKARIGA, Sekolahnya <br />
+        Sang Juara! <br />
+        Gabung SKARIGA untuk <br />
+        Menjadi <span class="bg-yellow-300 px-1 italic">Sang Juara Selanjutnya!</span>
+    </h2>
+    <div class="flex justify-center mb-6">
+        <button
+            class="bg-customBlue text-white px-5 py-2 rounded-full flex items-center gap-2 transition transform hover:scale-105 hover:bg-customOrange hover:shadow-lg text-sm sm:text-base">
+            <span>Daftar Sekarang</span>
+            <svg class="w-3 h-3 sm:w-4 sm:h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+            </svg>
+        </button>
+    </div>
+    
+    <!-- Grid Compact untuk Kartu Prestasi -->
+    <div class="grid grid-cols-1 gap-4 max-w-md mx-auto">
+        <!-- Kartu 1 - Juara Provinsi -->
+        <div class="bg-gray-400 rounded-xl shadow-lg overflow-hidden">
+            <div class="bg-green-400 text-green-900 px-3 py-1 text-sm font-bold text-center">
+                🥇 Juara Provinsi
             </div>
-            <hr class="w-full h-px bg-gray-300 border-0 mt-4 mb-4">
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                <div
-                    class="bg-green-400 text-green-900 px-3 py-1 rounded-full text-sm font-bold shadow-lg z-20 cursor-default">
-                    🥇 Juara Provinsi
-                </div>
-                <div class="w-full h-80 bg-gray-400 rounded-xl shadow-xl overflow-hidden">
-                    <img src="{{ $assetBase . '/assets/robot-manu.jpg' }}" class="w-full h-full object-cover"
-                        alt="Gambar" loading="lazy">
-                </div>
-                <div
-                    class="bg-sky-400 text-sky-950 px-3 py-1 rounded-full text-sm font-bold shadow-lg z-20 cursor-default">
-                    🎗️ Juara Nasional
-                </div>
-                <div class="w-full h-80 bg-gray-500 rounded-xl shadow-xl overflow-hidden">
-                    <img src="{{ $assetBase . '/assets/skariga prestasi.jpg' }}" class="w-full h-full object-cover"
-                        alt="Gambar" loading="lazy">
-                </div>
-                <div
-                    class="bg-yellow-400 text-yellow-900 px-3 py-1 rounded-full text-sm font-bold shadow-lg z-0 cursor-default">
-                    🏆 Juara Internasional
-                </div>
-                <div class="w-full h-80 bg-black rounded-xl shadow-xl overflow-hidden sm:col-span-2">
-                    <img src="{{ $assetBase . '/assets/skariga intl.webp' }}" class="w-full h-full object-cover"
-                        alt="Gambar" loading="lazy">
-                </div>
+            <img src="{{ $assetBase . '/assets/robot-manu.jpg' }}" class="w-full h-48 object-cover"
+                alt="Juara Provinsi" loading="lazy">
+        </div>
+
+        <!-- Kartu 2 - Juara Nasional -->
+        <div class="bg-gray-500 rounded-xl shadow-lg overflow-hidden">
+            <div class="bg-sky-400 text-sky-950 px-3 py-1 text-sm font-bold text-center">
+                🎗️ Juara Nasional
             </div>
-        </section>
+            <img src="{{ $assetBase . '/assets/skariga prestasi.jpg' }}" class="w-full h-48 object-cover"
+                alt="Juara Nasional" loading="lazy">
+        </div>
+
+        <!-- Kartu 3 - Juara Internasional -->
+        <div class="bg-black rounded-xl shadow-lg overflow-hidden">
+            <div class="bg-yellow-400 text-yellow-900 px-3 py-1 text-sm font-bold text-center">
+                🏆 Juara Internasional
+            </div>
+            <img src="{{ $assetBase . '/assets/skariga intl.webp' }}" class="w-full h-48 object-cover"
+                alt="Juara Internasional" loading="lazy">
+        </div>
+    </div>
+</section>
         <!-- ✅ Section lainnya (stats + para jawara) tetap responsif -->
         <section class="w-full mx-auto py-8">
             <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6">
