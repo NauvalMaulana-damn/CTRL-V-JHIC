@@ -152,20 +152,22 @@
 
                         <!-- Nama di sebelah kanan leher - Desktop -->
                         <div class="hidden md:block absolute top-0 left-[450px] text-white">
-                            <h3 class="text-md font-bold leading-tight drop-shadow-md">{{ $profil->visiImageName }}</h3>
+                            <h3 class="text-md font-bold leading-tight drop-shadow-md whitespace-nowrap {{ strlen($profil->visiImageName) > 30 ? 'text-sm lg:text-md' : 'text-md' }}">
+                                {{ $profil->visiImageName }}
+                            </h3>
                         </div>
 
                         <!-- Mobile Layout -->
-                        <div class="md:hidden flex flex-col items-center w-full bg-transparent rounded-2xl p-6">
+                        <div class="md:hidden flex flex-col items-center w-full bg-transparent rounded-2xl p-4">
                             <img src="{{ $assetBase . '/storage/' . $profil->visiImage }}"
-                                alt="Kepala Sekolah SMK PGRI 3 Malang" class="w-full max-w-[280px] object-contain mb-6">
-
-                            <div class="text-center text-white">
-                                <h3 class="text-2xl font-bold leading-tight drop-shadow-lg mb-2">
+                                alt="Kepala Sekolah SMK PGRI 3 Malang" 
+                                class="w-full max-w-[200px] object-contain mb-4">
+                            
+                            <div class="text-center text-white w-full px-2">
+                                <h3 class="text-lg font-bold leading-tight drop-shadow-lg mb-2">
                                     {{ $profil->visiImageName }}
                                 </h3>
                             </div>
-                            <hr class="w-full h-px bg-gray-300 border-0 my-4">
                         </div>
                     </div>
 
