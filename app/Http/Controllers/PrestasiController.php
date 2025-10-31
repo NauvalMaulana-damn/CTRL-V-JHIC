@@ -7,8 +7,14 @@ use App\Models\Prestasi;
 
 class PrestasiController extends Controller
 {
-    public function index() {
+    public function index(Request $request) {
         $prestasis = Prestasi::latest()->paginate(6);
-        return view('prestasi', compact('prestasis'));
+        $totalPrestasi = Prestasi::latest()->count();
+
+        if ($request->ajax()) {
+            return view('prestasi', compact('prestasis', 'totalPrestasi'));
+        }
+
+        return view('prestasi', compact('prestasis', 'totalPrestasi'));
     }
 }
