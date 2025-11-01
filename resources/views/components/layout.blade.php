@@ -5,7 +5,7 @@
     <x-meta></x-meta>
     <meta name="csrf-token" content="{{ csrf_token() }}">
     @props(['title'])
-    <title>{{ $title ?? 'SMK PGRI 3 Malang - Success by Discipline' }}</title>
+    <title>SMK PGRI 3 Malang - Success by Discipline</title>
 
     <!-- Libraries -->
     @vite(['resources/css/app.css', 'resources/ts/app.ts'])
@@ -49,19 +49,6 @@
                 this.currentDomain === 'www.' + this.primaryDomain;
         }
     };
-
-    setInterval(() => {
-        fetch('/api/heartbeat', {
-            method: 'POST',
-            headers: {
-                'X-Requested-With': 'XMLHttpRequest',
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-                heartbeat: true
-            })
-        }).catch(() => {}); // Silent fail
-    }, 30000);
 
     window.addEventListener('beforeunload', function() {
         // Trigger API call untuk update status
