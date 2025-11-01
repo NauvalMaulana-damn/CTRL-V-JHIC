@@ -22,7 +22,7 @@
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-green" alt="License"></a>  
 </p>  
 
-<h2 align="center">📌 CTRL + V — Membangun Website Sekolah yang Informatif dan Kreatif</h2>  
+<h2 align="center">📌 CTRL + V — Website Sekolah yang Informatif dan Kreatif</h2>  
 
 <p align="center">  
   Presensi kapan saja, di mana saja, dengan verifikasi wajah dan video untuk kehadiran yang lebih autentik.  
