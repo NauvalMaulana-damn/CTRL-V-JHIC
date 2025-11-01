@@ -13,11 +13,11 @@
 <meta property="og:type" content="website">
 <meta property="og:title" content="SMK PGRI 3 MALANG">
 <meta property="og:description" content="Sekolah untuk Kerja, Wirausaha, Kuliah apalagi.">
-<meta property="og:image" content="{{ asset('assets/skariga300rbg.png') }}">
+<meta property="og:image" content="{{ $assetBase }}/assets/skariga300rbg.png">
 <meta property="og:url" content="https://smkpgri3mlg.web.id">
 
 
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="SMK PGRI 3 MALANG | Sekolah Pusat Keunggulan - SKARIGA">
-<meta name="twitter:description" content="SMK PGRI 3 MALANG adalah Sekolah Pusat Keunggulan (PK) dengan fokus Vokasi Digital. Siap Kerja, Kuliah, dan Wirausaha. Daftar PPDB sekarang!">
-<meta name="twitter:image" content="{{ asset('assets/skariga300rbg.png') }}">
+<meta name="twitter:title" content="SMK PGRI 3 MALANG">
+<meta name="twitter:description" content="Sekolah untuk Kerja, Wirausaha, Kuliah apalagi.">
+<meta name="twitter:image" content="{{ $assetBase }}/assets/skariga300rbg.png">
