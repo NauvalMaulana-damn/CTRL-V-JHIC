@@ -11,12 +11,11 @@ return new class extends Migration
         Schema::create('jurusan_statistiks', function (Blueprint $table) {
             $table->id();
             $table->date('tanggal');
-            $table->string('departemen'); // ubah dari enum ke string untuk sederhana
-            $table->string('type'); // ubah dari enum ke string
+            $table->string('departemen');
+            $table->string('type');
             $table->integer('jumlah')->default(0);
             $table->timestamps();
 
-            // Unique constraint
             $table->unique(['tanggal', 'departemen', 'type']);
         });
     }

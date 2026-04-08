@@ -7,16 +7,6 @@
                     <p class="text-lg text-gray-500">Ikuti perkembangan terbaru seputar kegiatan, prestasi, dan
                         informasi penting
                         dari SMK PGRI 3 Malang.</p>
-                    {{-- <div class="flex space-x-4">
-                        <button
-                            class="bg-customOrange hover:b text-white px-6 py-2 rounded-lg font-semibold transition-colors">
-                            <i class="fas fa-newspaper mr-2"></i>Semua Berita
-                        </button>
-                        {{-- <button
-                            class="bg-white text-customBlue hover:bg-gray-100 px-6 py-2 rounded-lg font-semibold transition-colors">
-                            <i class="fas fa-calendar-alt mr-2"></i>Kalender Akademik
-                        </button>
-                    </div> --}}
                 </div>
             </div>
         </section>

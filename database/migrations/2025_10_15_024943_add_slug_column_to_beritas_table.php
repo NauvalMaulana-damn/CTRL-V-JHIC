@@ -13,14 +13,12 @@ class AddSlugColumnToBeritasTable extends Migration
      */
     public function up(): void
     {
-        // Cek dulu apakah kolom slug sudah ada
         if (! Schema::hasColumn('beritas', 'slug')) {
             Schema::table('beritas', function (Blueprint $table) {
                 $table->string('slug')->nullable()->after('title');
             });
         }
 
-        // Generate slug untuk data yang sudah ada
         $beritas = Berita::all();
         foreach ($beritas as $berita) {
             if (empty($berita->slug)) {
@@ -28,7 +26,6 @@ class AddSlugColumnToBeritasTable extends Migration
             }
         }
 
-        // Set kolom slug menjadi not null dan unique
         Schema::table('beritas', function (Blueprint $table) {
             $table->string('slug')->nullable(false)->unique()->change();
         });

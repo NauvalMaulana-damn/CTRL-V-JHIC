@@ -23,10 +23,6 @@ use App\Http\Controllers\PrestasiController;
 use App\Http\Controllers\ProfilController;
 use Illuminate\Support\Facades\Route;
 
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Log;
-use Illuminate\Support\Facades\DB;
-
 // Public routes dengan tracking visitor
 Route::middleware('trackvisitor')->group(function () {
     Route::get('/', [LandingController::class, 'index'])->name('landing.index');
