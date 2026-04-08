@@ -50,13 +50,11 @@
             if (link && link.getAttribute('href') && link.getAttribute('href').includes('?page=')) {
                 e.preventDefault();
 
-                // TAMBAH INI - Loading state
                 document.getElementById('ekskul-data').style.opacity = '0.6';
 
                 fetch(link.href)
                     .then(response => response.text())
                     .then(html => {
-                        // FIX INI - Extract content dengan benar
                         const parser = new DOMParser();
                         const doc = parser.parseFromString(html, 'text/html');
                         const newContent = doc.getElementById('ekskul-data');
@@ -83,13 +81,11 @@
         transition: all 0.3s ease-in-out;
     }
 
-    /* Style untuk pagination yang disabled */
     .text-gray-400,
     .cursor-not-allowed {
         pointer-events: none;
     }
 
-    /* Loading animation */
     .animate-spin {
         animation: spin 1s linear infinite;
     }

@@ -14,11 +14,6 @@ class ProfilController extends Controller
         // Ambil data profil pertama
         $profil = Profil::first();
 
-        // Jika tidak ada data profil, redirect atau handle error
-        if (!$profil) {
-            abort(404, 'Profil tidak ditemukan');
-        }
-
-        return view('profil', compact('profil'));
+        return view('profil', ['profil' => $profil]);
     }
 }

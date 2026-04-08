@@ -63,7 +63,7 @@
                             <i class="fab fa-youtube text-sm md:text-lg text-gray-300"></i>
                         </a>
                         <!-- Instagram -->
-                        <a href="https://www.instagram.com/skariga_official?utm_source=ig_web_button_share_sheet&igsh=MWswcXk3ajU3dDV6OQ=="
+                        <a href="https://www.instagram.com/skariga_official"
                             class="w-8 h-8 md:w-10 md:h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-customInsta transition"
                             title="Instagram">
                             <i class="fab fa-instagram text-sm md:text-lg text-gray-300"></i>
@@ -96,7 +96,7 @@
 
         <!-- Logo Penting -->
         <div class="flex flex-wrap justify-center items-center gap-3 md:gap-6 mt-6 md:mt-4">
-            <img class="h-8 md:h-16 object-contain inline-block bg-white rounded-xl p-1" 
+            <img class="h-8 md:h-16 object-contain inline-block bg-white rounded-xl p-1"
                 src="{{ $assetBase . '/assets/upscale-logo-penting.png' }}" alt="Yamaha Logo">
         </div>
 

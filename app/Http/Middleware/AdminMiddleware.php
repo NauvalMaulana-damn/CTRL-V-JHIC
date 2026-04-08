@@ -2,11 +2,11 @@
 
 namespace App\Http\Middleware;
 
+use App\Models\User;
 use Closure;
 use Illuminate\Http\Request;
-use Symfony\Component\HttpFoundation\Response;
-
 use Illuminate\Support\Facades\Auth;
+use Symfony\Component\HttpFoundation\Response;
 
 class AdminMiddleware
 {
@@ -16,6 +16,7 @@ class AdminMiddleware
             return redirect()->route('admin.login');
         }
 
+        /** @var \App\Models\User $user */
         $user = Auth::user();
 
         // Cek jika user aktif
@@ -24,13 +25,11 @@ class AdminMiddleware
             return redirect()->route('admin.login')->with('error', 'Akun Anda telah dinonaktifkan.');
         }
 
-        // Cek role (SUPERADMIN, ADMIN, atau EDITOR)
         if (!in_array($user->role, ['SUPERADMIN', 'ADMIN', 'EDITOR'])) {
             Auth::logout();
             return redirect()->route('admin.login')->with('error', 'Akses ditolak.');
         }
 
-        // Verify role key
         if (!$user->verifyRoleKey()) {
             Auth::logout();
             return redirect()->route('admin.login')->with('error', 'Role key tidak valid.');

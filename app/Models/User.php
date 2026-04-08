@@ -14,7 +14,7 @@ class User extends Authenticatable
         'username',
         'password',
         'role',
-        'Key',
+        'key',
         'is_active',
     ];
 
@@ -137,10 +137,9 @@ class User extends Authenticatable
         return $this->role === 'SUPERADMIN';
     }
 
-    // Verify role key
     public function verifyRoleKey()
     {
-        return $this->Key === (self::ROLE_KEYS()[$this->role] ?? null);
+        return $this->key === (self::ROLE_KEYS()[$this->role] ?? null);
     }
 
     // Relationships

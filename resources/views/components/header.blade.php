@@ -12,8 +12,8 @@
     ">
     <!-- Header/Navigation -->
     <header :class="scrolled
-            ? 'bg-white text-[#313131] shadow-md rounded-2xl'
-            : '{{ $transparent ? 'bg-transparent text-white rounded-2xl' : 'bg-white text-[#313131] rounded-2xl' }}'"
+            ? 'bg-[#F8F8F8] text-[#313131] shadow-md rounded-2xl'
+            : '{{ $transparent ? 'bg-transparent text-white rounded-2xl' : 'bg-[F8F8F8] text-[#313131] rounded-2xl' }}'"
         class="w-full transition-all duration-300 ease-in-out" id="header">
         <div class="container mx-auto px-4 py-3">
             <div class="flex items-center justify-between">
@@ -240,7 +240,7 @@ if (input) {
         }
 
         resultsContainer.classList.remove('hidden');
-        
+
         // Adjust search results width to match input
         const inputRect = input.getBoundingClientRect();
         resultsContainer.style.width = inputRect.width + 'px';
